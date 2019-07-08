@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1435px" preserveAspectRatio="none" style="width:885px;height:1435px;" version="1.1" viewBox="0 0 885 1435" width="885px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="216.8945" style="stroke: #000000; stroke-width: 1.0;" width="10" x="111.5" y="1197.7373"/><rect fill="#FFFFFF" height="286.377" style="stroke: #000000; stroke-width: 1.0;" width="10" x="301" y="67.2295"/><rect fill="#FFFFFF" height="30" style="stroke: #000000; stroke-width: 1.0;" width="10" x="301" y="471.0537"/><rect fill="#FFFFFF" height="591.2363" style="stroke: #000000; stroke-width: 1.0;" width="10" x="301" y="606.501"/><rect fill="#FFFFFF" height="66.9648" style="stroke: #000000; stroke-width: 1.0;" width="10" x="544" y="173.1943"/><rect fill="#FFFFFF" height="480.3066" style="stroke: #000000; stroke-width: 1.0;" width="10" x="719" y="323.6064"/><rect fill="#FFFFFF" height="50.4824" style="stroke: #000000; stroke-width: 1.0;" width="10" x="719" y="977.8076"/><rect fill="#FFFFFF" height="50.4824" style="stroke: #000000; stroke-width: 1.0;" width="10" x="719" y="1297.667"/><rect fill="#FFFFFF" height="30" style="stroke: #000000; stroke-width: 1.0;" width="10" x="829" y="1078.7725"/><rect fill="#FFFFFF" height="16" style="stroke: #000000; stroke-width: 1.0;" width="10" x="829" y="1398.6318"/><rect fill="#FFFFFF" height="443.3066" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="595" x="210" y="368.6064"/><rect fill="#FFFFFF" height="302.8594" style="stroke: none; stroke-width: 1.0;" width="595" x="210" y="509.0537"/><rect fill="#FFFFFF" height="580.7188" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="860" x="13" y="825.9131"/><rect fill="#FFFFFF" height="289.8594" style="stroke: none; stroke-width: 1.0;" width="860" x="13" y="1116.7725"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="116" x2="116" y1="57.2295" y2="1423.6318"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="306" x2="306" y1="57.2295" y2="1423.6318"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="548.5" x2="548.5" y1="57.2295" y2="1423.6318"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="724" x2="724" y1="57.2295" y2="1423.6318"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="834" x2="834" y1="57.2295" y2="1423.6318"/><rect fill="#9EA0CA" height="53.2295" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="187" x="23" y="3"/><text fill="#FFFFFF" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="153" x="40" y="36.1533">GUI 미제공 클라이언트</text><rect fill="#9EA0CA" height="53.2295" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="172" x="220" y="3"/><text fill="#FFFFFF" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="138" x="237" y="36.1533">GUI 제공 클라이언트</text><rect fill="#05D686" height="53.2295" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="149" x="474.5" y="3"/><text fill="#FFFFFF" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="115" x="491.5" y="36.1533">NAVER 인증 서버</text><rect fill="#05D686" height="53.2295" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="142" x="653" y="3"/><text fill="#FFFFFF" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="670" y="36.1533">Clova 인증 서버</text><rect fill="#05D686" height="53.2295" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="58" x="805" y="3"/><text fill="#FFFFFF" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="24" x="822" y="36.1533">CIC</text><rect fill="#FFFFFF" height="216.8945" style="stroke: #000000; stroke-width: 1.0;" width="10" x="111.5" y="1197.7373"/><rect fill="#FFFFFF" height="286.377" style="stroke: #000000; stroke-width: 1.0;" width="10" x="301" y="67.2295"/><rect fill="#FFFFFF" height="30" style="stroke: #000000; stroke-width: 1.0;" width="10" x="301" y="471.0537"/><rect fill="#FFFFFF" height="591.2363" style="stroke: #000000; stroke-width: 1.0;" width="10" x="301" y="606.501"/><rect fill="#FFFFFF" height="66.9648" style="stroke: #000000; stroke-width: 1.0;" width="10" x="544" y="173.1943"/><rect fill="#FFFFFF" height="480.3066" style="stroke: #000000; stroke-width: 1.0;" width="10" x="719" y="323.6064"/><rect fill="#FFFFFF" height="50.4824" style="stroke: #000000; stroke-width: 1.0;" width="10" x="719" y="977.8076"/><rect fill="#FFFFFF" height="50.4824" style="stroke: #000000; stroke-width: 1.0;" width="10" x="719" y="1297.667"/><rect fill="#FFFFFF" height="30" style="stroke: #000000; stroke-width: 1.0;" width="10" x="829" y="1078.7725"/><rect fill="#FFFFFF" height="16" style="stroke: #000000; stroke-width: 1.0;" width="10" x="829" y="1398.6318"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="353" y1="109.7119" y2="109.7119"/><line style="stroke: #000000; stroke-width: 1.0;" x1="353" x2="353" y1="109.7119" y2="122.7119"/><line style="stroke: #000000; stroke-width: 1.0;" x1="312" x2="353" y1="122.7119" y2="122.7119"/><polygon fill="#000000" points="322,118.7119,312,122.7119,322,126.7119,318,122.7119" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="79" x="328" y="95.0752">NAVER 로그인</text><line style="stroke: #000000; stroke-width: 1.0;" x1="542" x2="532" y1="173.1943" y2="169.1943"/><line style="stroke: #000000; stroke-width: 1.0;" x1="542" x2="532" y1="173.1943" y2="177.1943"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="543" y1="173.1943" y2="173.1943"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="121" x="367" y="158.5576">NAVER 계정 정보 전달</text><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="240.1592" y2="236.1592"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="240.1592" y2="244.1592"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="311" x2="548" y1="240.1592" y2="240.1592"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="67" x="396.5" y="209.04">NAVER 계정</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="100" x="380" y="225.5225">access token 전달</text><line style="stroke: #000000; stroke-width: 1.0;" x1="717" x2="707" y1="323.6064" y2="319.6064"/><line style="stroke: #000000; stroke-width: 1.0;" x1="717" x2="707" y1="323.6064" y2="327.6064"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="718" y1="323.6064" y2="323.6064"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="225" x="372.5" y="276.0049">authorization code 요청(다음 정보를 전달)</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="150" x="372.5" y="292.4873">- NAVER 계정 access token</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="285" x="372.5" y="308.9697">- 클라이언트 인증 정보(CLOVA_OAUTH_CLIENT_ID)</text><path d="M215,368.6064 L289,368.6064 L289,396.6064 L279,406.6064 L210,406.6064 L210,373.6064 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="443.3066" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="595" x="210" y="368.6064"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="235" y="393.4521">alt</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="275" x="314" y="394.4521">["사용자 약관 동의 여부" == "동의 완료한 상태"]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="471.0537" y2="467.0537"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="471.0537" y2="475.0537"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="311" x2="718" y1="471.0537" y2="471.0537"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="176" x="427" y="456.417">authorization code 전달(200 OK)</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="210" x2="805" y1="510.0537" y2="510.0537"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="288" x="225" y="533.8994">["사용자 약관 동의 여부" == "동의하지 않은 상태"]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="606.501" y2="602.501"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="606.501" y2="610.501"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="311" x2="718" y1="606.501" y2="606.501"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="165" x="412" y="575.3818">authorization, redirect_uri 전달</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="206" x="412" y="591.8643">(451 Unavailable For Legal Reasons)</text><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="353" y1="656.9834" y2="656.9834"/><line style="stroke: #000000; stroke-width: 1.0;" x1="353" x2="353" y1="656.9834" y2="669.9834"/><line style="stroke: #000000; stroke-width: 1.0;" x1="312" x2="353" y1="669.9834" y2="669.9834"/><polygon fill="#000000" points="322,665.9834,312,669.9834,322,673.9834,318,669.9834" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="199" x="328" y="642.3467">이용 약관 페이지(redirect_uri)로 이동</text><line style="stroke: #000000; stroke-width: 1.0;" x1="717" x2="707" y1="720.4658" y2="716.4658"/><line style="stroke: #000000; stroke-width: 1.0;" x1="717" x2="707" y1="720.4658" y2="724.4658"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="718" y1="720.4658" y2="720.4658"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="229" x="400.5" y="705.8291">사용자의 이용 약관 동의 결과 전송(submit)</text><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="803.9131" y2="799.9131"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="803.9131" y2="807.9131"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="311" x2="723" y1="803.9131" y2="803.9131"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="118" x="425" y="756.3115">결과 전달(302 Found)</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="185" x="425" y="772.7939">- 성공: clova://agreement-success</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="172" x="425" y="789.2764">- 실패: clova://agreement-failure</text><path d="M18,825.9131 L92,825.9131 L92,853.9131 L82,863.9131 L13,863.9131 L13,830.9131 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="580.7188" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="860" x="13" y="825.9131"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="14" x="38" y="850.7588">alt</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="262" x="117" y="851.7588">["클라이언트 타입" == "GUI 제공 클라이언트"]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="717" x2="707" y1="977.8076" y2="973.8076"/><line style="stroke: #000000; stroke-width: 1.0;" x1="717" x2="707" y1="977.8076" y2="981.8076"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="718" y1="977.8076" y2="977.8076"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="230" x="330.5" y="913.7236">Clova access token 요청, 다음 정보를 전달</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="150" x="330.5" y="930.2061">- NAVER 계정 access token</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="121" x="330.5" y="946.6885">- 클라이언트 인증 정보</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="363" x="336.5" y="963.1709">(CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)</text><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="1028.29" y2="1024.29"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="321" y1="1028.29" y2="1032.29"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="311" x2="723" y1="1028.29" y2="1028.29"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="134" x="450.5" y="1013.6533">Clova access token 전달</text><line style="stroke: #000000; stroke-width: 1.0;" x1="827" x2="817" y1="1078.7725" y2="1074.7725"/><line style="stroke: #000000; stroke-width: 1.0;" x1="827" x2="817" y1="1078.7725" y2="1082.7725"/><line style="stroke: #000000; stroke-width: 1.0;" x1="311" x2="828" y1="1078.7725" y2="1078.7725"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="260" x="440" y="1064.1357">Clova access token을 사용하여 CIC와 연결 시작</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="873" y1="1117.7725" y2="1117.7725"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="262" x="28" y="1141.6182">["클라이언트 타입" == "GUI 미제공 클라이언"]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="121.5" x2="131.5" y1="1197.7373" y2="1193.7373"/><line style="stroke: #000000; stroke-width: 1.0;" x1="121.5" x2="131.5" y1="1197.7373" y2="1201.7373"/><line style="stroke: #000000; stroke-width: 1.0;" x1="121.5" x2="305" y1="1197.7373" y2="1197.7373"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="127" x="150.25" y="1183.1006">authorization code 전달</text><line style="stroke: #000000; stroke-width: 1.0;" x1="717" x2="707" y1="1297.667" y2="1293.667"/><line style="stroke: #000000; stroke-width: 1.0;" x1="717" x2="707" y1="1297.667" y2="1301.667"/><line style="stroke: #000000; stroke-width: 1.0;" x1="121.5" x2="718" y1="1297.667" y2="1297.667"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="230" x="235.75" y="1233.583">Clova access token 요청, 다음 정보를 전달</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="150" x="235.75" y="1250.0654">- NAVER 계정 access token</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="121" x="235.75" y="1266.5479">- 클라이언트 인증 정보</text><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="363" x="241.75" y="1283.0303">(CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)</text><line style="stroke: #000000; stroke-width: 1.0;" x1="121.5" x2="131.5" y1="1348.1494" y2="1344.1494"/><line style="stroke: #000000; stroke-width: 1.0;" x1="121.5" x2="131.5" y1="1348.1494" y2="1352.1494"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="121.5" x2="723" y1="1348.1494" y2="1348.1494"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="134" x="355.75" y="1333.5127">Clova access token 전달</text><line style="stroke: #000000; stroke-width: 1.0;" x1="827" x2="817" y1="1398.6318" y2="1394.6318"/><line style="stroke: #000000; stroke-width: 1.0;" x1="827" x2="817" y1="1398.6318" y2="1402.6318"/><line style="stroke: #000000; stroke-width: 1.0;" x1="121.5" x2="828" y1="1398.6318" y2="1398.6318"/><text fill="#000000" font-family="&quot;Noto Sans CJK KR&quot;, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="260" x="345.25" y="1383.9951">Clova access token을 사용하여 CIC와 연결 시작</text><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam defaultFontName "Noto Sans CJK KR", sans-serif
+
+skinparam note {
+  BackgroundColor #9EA0CA
+  BorderColor #ffffff
+  FontColor #ffffff
+  FontSize 14
+  FontStyle bold
+}
+
+skinparam sequence {
+  ArrowColor #000000
+  ActorBorderColor #000000
+  ActorFontStyle Bolder
+
+
+  LifeLineBorderColor #000000
+  LifeLineBackgroundColor transparent
+  ParticipantBorderColor transparent
+  ParticipantFontSize 14
+  ParticipantFontColor #ffffff
+  ParticipantFontStyle bold
+
+  BoxBorderColor #000000
+  BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+hide footbox
+
+skinparam activity {
+  BackgroundColor #9EA0CA
+  BarColor #ffffff
+  BorderColor #ffffff
+  DiamondBackgroundColor #05D686
+  DiamondBorderColor #ffffff
+  DiamondFontColor #ffffff
+  DiamondFontSize 14
+  DiamondFontStyle bold
+  FontColor #ffffff 
+  FontSize 14
+  FontStyle bold
+}
+
+participant "GUI 미제공 클라이언트" as device #9EA0CA
+participant "GUI 제공 클라이언트" as app #9EA0CA
+participant "NAVER 인증 서버" as nauth #05D686
+participant "Clova 인증 서버" as cauth #05D686
+participant CIC as cic #05D686
+
+activate app
+  app -> app: NAVER 로그인
+
+  app ->> nauth: NAVER 계정 정보 전달
+
+  activate nauth
+    nauth - ->> app: NAVER 계정\naccess token 전달
+  deactivate nauth
+
+  app ->> cauth: authorization code 요청(다음 정보를 전달)\l- NAVER 계정 access token\l- 클라이언트 인증 정보(CLOVA_OAUTH_CLIENT_ID)
+
+activate cauth
+
+deactivate app
+
+alt "사용자 약관 동의 여부" == "동의 완료한 상태"
+    cauth - ->> app: authorization code 전달(200 OK)
+    activate app
+    deactivate app
+else "사용자 약관 동의 여부" == "동의하지 않은 상태"
+  cauth - ->> app: authorization, redirect_uri 전달\l(451 Unavailable For Legal Reasons)
+  activate app
+    app -> app: 이용 약관 페이지(redirect_uri)로 이동
+    app ->> cauth: 사용자의 이용 약관 동의 결과 전송(submit)
+    cauth - ->> app: 결과 전달(302 Found)\l- 성공: clova://agreement-success\l- 실패: clova://agreement-failure
+  deactivate cauth
+end
+
+alt "클라이언트 타입" == "GUI 제공 클라이언트"
+  app ->> cauth: Clova access token 요청, 다음 정보를 전달\l- NAVER 계정 access token\l- 클라이언트 인증 정보\l  (CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)
+
+  activate cauth
+    cauth - ->> app: Clova access token 전달
+  deactivate cauth
+
+  app ->> cic: Clova access token을 사용하여 CIC와 연결 시작
+  activate cic
+  deactivate cic
+
+else "클라이언트 타입" == "GUI 미제공 클라이언"
+  app ->> device: authorization code 전달
+  deactivate app
+
+  activate device
+    device ->> cauth: Clova access token 요청, 다음 정보를 전달\l- NAVER 계정 access token\l- 클라이언트 인증 정보\l  (CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)
+
+    activate cauth
+        cauth - ->> device: Clova access token 전달
+    deactivate cauth
+
+    device ->> cic: Clova access token을 사용하여 CIC와 연결 시작
+
+    activate cic
+  end
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS949
+Language: ko
+Country: KR
+--></g></svg>
