@@ -1,3 +1,5 @@
+<!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
+
 # 클라이언트 기기 디자인 가이드라인
 
 Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관된 UI/UX를 제공해야 사용자가 제품을 사용할 때 혼란을 느끼지 않고 편리하게 사용할 수 있습니다. 이를 위해 Clova에 접속하는 클라이언트 기기를 만들 때 다음과 같은 항목에 대해 디자인 가이드라인을 제공하고 있습니다.
@@ -294,6 +296,8 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 ### 플랫폼 지원 오디오 압축 포맷 {#SupportedAudioCompressionFormat}
 
+<!-- Start of shared content: SupportedAudioCompressionFormat -->
+
 클라이언트는 Clova가 전달하는 음원을 재생해야 하므로 반드시 Clova가 지원하는 오디오 압축 포맷을 재생할 수 있어야 합니다.
 
 Clova가 지원하는 오디오 압축 포맷은 다음과 같습니다.
@@ -306,6 +310,8 @@ Clova가 지원하는 오디오 압축 포맷은 다음과 같습니다.
   <p><strong>Tip!</strong></p>
   <p>Clova가 지원하는 오디오 압축 포맷은 더 늘어날 수 있습니다.</p>
 </div>
+
+<!-- End of shared content -->
 
 ## 화면 {#Screen}
 

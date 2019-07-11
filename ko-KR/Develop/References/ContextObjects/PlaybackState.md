@@ -1,4 +1,9 @@
+<!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
+
+<!-- Start of shared content: AudioPlayer.PlaybackState -->
+
 ## AudioPlayer.PlaybackState {#PlaybackState}
+
 `AudioPlayer.PlaybackState`는 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 CIC에게 보고할때 사용하는 메시지 포맷입니다.
 
 ### Object structure
@@ -80,3 +85,5 @@
 * [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)
 * [`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver)
 * [`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested)
+
+<!-- End of shared content -->

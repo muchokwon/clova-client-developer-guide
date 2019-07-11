@@ -1,5 +1,8 @@
+<!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
+
 # SpeechSynthesizer
 
+<!-- Start of shared content: CICAPIforAudioPlayback -->
 SpeechSynthesizer 인터페이스는 클라이언트가 특정 텍스트를 TTS(text-to-speech)로 합성되도록 CIC에 요청하거나, CIC가 생성된 TTS를 클라이언트에 전달할 때 사용되는 네임스페이스입니다. SpeechSynthesizer가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
@@ -10,6 +13,7 @@ SpeechSynthesizer 인터페이스는 클라이언트가 특정 텍스트를 TTS(
 | [`SpeechStarted`](#SpeechStarted)     | Event     | 클라이언트가 TTS 재생을 시작했음을 CIC로 보고하기 위해 사용됩니다.                                 |
 | [`SpeechStopped`](#SpeechStopped)     | Event     | 클라이언트가 TTS 재생을 중지했음을 CIC로 보고하기 위해 사용됩니다.                                 |
 
+<!-- End of shared content -->
 
 ## Request event {#Request}
 
@@ -164,6 +168,8 @@ Content-Type: application/octet-stream
 * [`SpeechSynthesizer.SpeechStarted`](#SpeechStarted)
 * [`SpeechSynthesizer.SpeechStopped`](#SpeechStopped)
 
+<!-- Start of shared content: SpeechSynthesizer.SpeechFinished -->
+
 ## SpeechFinished event {#SpeechFinished}
 클라이언트가 TTS 재생을 완료했음을 CIC로 보고하기 위해 사용됩니다.
 
@@ -211,6 +217,10 @@ Content-Type: application/octet-stream
 * [`SpeechSynthesizer.Speak`](#Speak)
 * [`SpeechSynthesizer.SpeechStarted`](#SpeechStarted)
 * [`SpeechSynthesizer.SpeechStopped`](#SpeechStopped)
+
+<!-- End of shared content -->
+
+<!-- Start of shared content: SpeechSynthesizer.SpeechStarted -->
 
 ## SpeechStarted event {#SpeechStarted}
 클라이언트가 TTS 재생을 시작했음을 CIC로 보고하기 위해 사용됩니다.
@@ -260,6 +270,10 @@ Content-Type: application/octet-stream
 * [`SpeechSynthesizer.SpeechFinished`](#SpeechFinished)
 * [`SpeechSynthesizer.SpeechStopped`](#SpeechStopped)
 
+<!-- End of shared content -->
+
+<!-- Start of shared content: SpeechSynthesizer.SpeechStopped -->
+
 ## SpeechStopped event {#SpeechStopped}
 클라이언트가 TTS 재생을 중지했음을 CIC로 보고하기 위해 사용됩니다.
 
@@ -307,3 +321,5 @@ Content-Type: application/octet-stream
 * [`SpeechSynthesizer.Speak`](#Speak)
 * [`SpeechSynthesizer.SpeechFinished`](#SpeechFinished)
 * [`SpeechSynthesizer.SpeechStarted`](#SpeechStarted)
+
+<!-- End of shared content -->

@@ -1,5 +1,8 @@
+<!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
+
 # PlaybackController
 
+<!-- Start of shared content: CICAPIforAudioPlayback -->
 PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 스피커 출력을 제어할 때 사용되는 네임스페이스입니다. PlaybackController가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
@@ -31,6 +34,8 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 | [`Unmute`](#Unmute)                            | Directive | 클라이언트에게 오디오 플레이어 볼륨의 음소거를 해제하도록 지시합니다.              |
 | [`VolumeDown`](#VolumeDown)                    | Directive | **(Deprecated)** 클라이언트에게 오디오 플레이어 볼륨을 낮추도록 지시합니다.                      |
 | [`VolumeUp`](#VolumeUp)                        | Directive | **(Deprecated)** 클라이언트에게 오디오 플레이어 볼륨을 높이도록 지시합니다.                      |
+
+<!-- End of shared content -->
 
 ## CustomCommandIssued event {#CustomCommandIssued}
 사용자가 클라이언트 기기의 단축 버튼 중 하나를 눌렀을 때 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
@@ -395,6 +400,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
 
+<!-- End of shared content -->
+
+<!-- Start of shared content: PlaybackController.Pause -->
+
 ## Pause directive {#Pause}
 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생을 일시 정지해야 합니다.
 
@@ -422,6 +431,8 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * [`AudioPlayer.PlayPaused`](/Develop/References/CICInterface/AudioPlayer.md#PlayPaused)
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
 * [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+
+<!-- End of shared content -->
 
 ## PauseCommandIssued event {#PauseCommandIssued}
 사용자가 클라이언트 기기에서 일시 정지 버튼(Pause)을 누르거나 CIC로부터 [`PlaybackController.ExpectPauseCommand`](#ExpectPauseCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
@@ -655,6 +666,8 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
 * [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
 
+<!-- Start of shared content: PlaybackController.Resume -->
+
 ## Resume directive {#Resume}
 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생을 재개해야 합니다.
 
@@ -682,6 +695,8 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * [`AudioPlayer.PlayResumed`](/Develop/References/CICInterface/AudioPlayer.md#PlayResumed)
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
 * [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+
+<!-- End of shared content -->
 
 ## ResumeCommandIssued event {#ResumeCommandIssued}
 사용자가 클라이언트 기기에서 재생 버튼(Play) 또는 재개 버튼(Resume)을 누르거나 CIC로부터 [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
@@ -843,6 +858,8 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
 
+<!-- Start of shared content: PlaybackController.Stop -->
+
 ## Stop directive {#Stop}
 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생을 중지해야 합니다.
 
@@ -870,6 +887,8 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 * [`AudioPlayer.PlayStopped`](/Develop/References/CICInterface/AudioPlayer.md#PlayStopped)
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
 * [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+
+<!-- End of shared content -->
 
 ## StopCommandIssued event {#StopCommandIssued}
 사용자가 클라이언트 기기에서 재개 버튼(Resume)을 누르거나 CIC로부터 [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
