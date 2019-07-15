@@ -296,7 +296,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 ### 플랫폼 지원 오디오 압축 포맷 {#SupportedAudioCompressionFormat}
 
-<!-- Start of shared content: SupportedAudioCompressionFormat -->
+<!-- Start of the shared content: SupportedAudioCompressionFormat -->
 
 클라이언트는 Clova가 전달하는 음원을 재생해야 하므로 반드시 Clova가 지원하는 오디오 압축 포맷을 재생할 수 있어야 합니다.
 
@@ -311,7 +311,7 @@ Clova가 지원하는 오디오 압축 포맷은 다음과 같습니다.
   <p>Clova가 지원하는 오디오 압축 포맷은 더 늘어날 수 있습니다.</p>
 </div>
 
-<!-- End of shared content -->
+<!-- End of the shared content -->
 
 ## 화면 {#Screen}
 

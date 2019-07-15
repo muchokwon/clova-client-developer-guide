@@ -2,7 +2,7 @@
 
 # TemplateRuntime
 
-<!-- Start of shared content: CICAPIforAudioPlayback -->
+<!-- Start of the shared content: CICAPIforAudioPlayback -->
 TemplateRuntime 인터페이스는 클라이언트나 CIC가 미디어 플레이어에 표시할 재생 메타 정보를 요청하거나 전달할 때 사용됩니다. 실제 오디오 스트림 재생에 필요한 정보와 관련된 작업을 수행할 때는 [`AudioPlayer`](/Develop/References/CICInterface/AudioPlayer.md) 인터페이스를 사용하고 재생 목록, 앨범 이미지, 가사와 같은 재생 메타 정보와 관련된 작업을 수행할 때는 `TemplateRuntime` 인터페이스를 사용해야 합니다. 이를 통해 자신 뿐만 아니라 다른 클라이언트 기기의 재생 메타 정보를 조회하고 사용자에게 제공할 수도 있습니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
@@ -17,7 +17,7 @@ TemplateRuntime 인터페이스는 클라이언트나 CIC가 미디어 플레이
 | [`UpdateLike`](#UpdateLike)                             | Directive | 클라이언트에게 미디어 플레이어에서 특정 미디어에 대한 사용자의 좋아요(like) 여부에 따라 좋아요 표시 상태를 지정된 값으로 업데이트하도록 지시합니다.  |
 | [`UpdateSubscribe`](#UpdateSubscribe)                   | Directive | 클라이언트에게 미디어 플레이어에서 특정 미디어에 사용자의 구독(subscribe) 여부에 따라 구독 표시 상태를 지정된 값으로 업데이트하도록 지시합니다.  |
 
-<!-- End of shared content -->
+<!-- End of the shared content -->
 
 ## ExpectRequestPlayerInfo directive {#ExpectRequestPlayerInfo}
 
@@ -101,7 +101,7 @@ TemplateRuntime 인터페이스는 클라이언트나 CIC가 미디어 플레이
 * [`TemplateRuntime.UnlikeCommandIssued`](#UnlikeCommandIssued)
 * [`TemplateRuntime.UpdateLike`](#UpdateLike)
 
-<!-- Start of shared content: TemplateRuntime.RenderPlayerInfo -->
+<!-- Start of the shared content: TemplateRuntime.RenderPlayerInfo -->
 
 ## RenderPlayerInfo directive {#RenderPlayerInfo}
 
@@ -246,9 +246,9 @@ CIC가 클라이언트에게 미디어 플레이어에 표시할 재생 목록, 
 * [`TemplateRuntime.UnlikeCommandIssued`](#UnlikeCommandIssued)
 * [`TemplateRuntime.UnsubscribeCommandIssued`](#UnsubscribeCommandIssued)
 
-<!-- End of shared content -->
+<!-- End of the shared content -->
 
-<!-- Start of shared content: TemplateRuntime.RequestPlayerInfo -->
+<!-- Start of the shared content: TemplateRuntime.RequestPlayerInfo -->
 
 ## RequestPlayerInfo event {#RequestPlayerInfo}
 클라이언트가 미디어 플레이어에 표시할 재생 목록, 앨범 이미지, 가사와 같은 재생 메타 정보를 CIC에게 요청합니다. 이 이벤트 메시지를 CIC에게 전송하면 CIC는 [`TemplateRuntime.RenderPlayerInfo`](#RenderPlayerInfo) 지시 메시지를 클라이언트에게 전송합니다.
@@ -300,7 +300,7 @@ CIC가 클라이언트에게 미디어 플레이어에 표시할 재생 목록, 
 * [`TemplateRuntime.ExpectRequestPlayerInfo`](#ExpectRequestPlayerInfo)
 * [`TemplateRuntime.RenderPlayerInfo`](#RenderPlayerInfo)
 
-<!-- End of shared content -->
+<!-- End of the shared content -->
 
 ## SubscribeCommandIssued event {#SubscribeCommandIssued}
 사용자가 클라이언트 기기에서 미디어 플레이어에서 구독 버튼(Subscribe)을 눌렀을 때 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.

@@ -1,6 +1,6 @@
 <!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
 
-<!-- Start of shared content: AudioPlayer.PlaybackState -->
+<!-- Start of the shared content: AudioPlayer.PlaybackState -->
 
 ## AudioPlayer.PlaybackState {#PlaybackState}
 
@@ -86,4 +86,4 @@
 * [`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver)
 * [`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested)
 
-<!-- End of shared content -->
+<!-- End of the shared content -->
