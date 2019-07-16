@@ -69,7 +69,7 @@ CIC에 특정 텍스트를 TTS로 생성하도록 요청합니다.
 |---------------|---------|-----------------------------|:---------:|
 | `contentType`          | string  | 재생할 음성 파일의 MIME 타입. 이 필드는 재생할 음성 파일이 HLS 방식일 때 제공되며, `"application/vnd.apple.mpegurl"` 값을 가집니다. | 조건부  |
 | `format`               | string  | 파일 포맷. 현재 `"AUDIO_MPEG"`로 고정되어 있습니다. | 항상    |
-| `token`                | string  | TTS를 식별하는 token 값.<div class="note"><p><strong>Warning!</strong></p><p>이 필드의 최대 길이는 2048 바이트입니다.</p></div>                    | 항상    |
+| `token`                | string  | TTS를 식별하는 token 값.<div class="note"><p><strong>Note!</strong></p><p>이 필드의 최대 길이는 2048 바이트입니다.</p></div>                    | 항상    |
 | `ttsLang`              | string  | TTS 합성에 사용할 언어. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li><li><code>"zh"</code>: 중국어</li></ul> | 조건부    |
 | `url`                  | string  | 재생할 음성 파일의 URI.<div class="note"><p><strong>Note!</strong></p><p>이 필드의 최대 길이는 2048 바이트입니다.</p></div>                        | 항상    |
 | `x-clova-pause-before` | number  | 파일 재생 전 유휴 시간. 정수 형태 값이며, 단위는 밀리초(millisecond)입니다.        | 조건부    |
