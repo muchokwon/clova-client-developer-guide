@@ -329,7 +329,7 @@
             </ul>
           </li>
           <li><a href="/Develop/References/Context_Objects.md#PlaybackState">AudioPlayer.PlaybackState</a> 맥락 객체에 repeatMode 추가</li>
-          <li><a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> 네임스페이스에 총 12건의 메시지 스펙 추가
+          <li><a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> 네임스페이스에 총 12 건의 메시지 스펙 추가
             <ul>
               <li><a href="/Develop/References/CICInterface/PlaybackController.md#PauseCommandIssued">PlaybackController.PauseCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#PlayCommandIssued">PlaybackController.PlayCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ResumeCommandIssued">PlaybackController.ResumeCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#SetRepeatModeCommandIssued">PlaybackController.SetRepeatModeCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#StopCommandIssued">PlaybackController.StopCommandIssued</a> 이벤트 메시지 추가</li>
               <li><a href="/Develop/References/CICInterface/PlaybackController.md#ExpectNextCommand">PlaybackController.ExpectNextCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPauseCommand">PlaybackController.ExpectPauseCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPlayCommand">PlaybackController.ExpectPlayCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPreviousCommand">PlaybackController.ExpectPreviousCommand</a>,

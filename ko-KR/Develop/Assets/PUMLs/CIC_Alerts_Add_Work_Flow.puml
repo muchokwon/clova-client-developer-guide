@@ -5,7 +5,7 @@ participant 클라이언트 as client #9EA0CA
 participant CIC as cic #05D686
 
 
-user ->> client : 알람 등록 요청:\n"오늘 오후 9시에 알람 등록해줘."
+user ->> client : 알람 등록 요청:\n"오늘 오후 9 시에 알람 등록해줘."
 
 activate client
   client ->> cic : 사용자 요청 전달\n(SpeechRecognizer.Recognize 이벤트 메시지)

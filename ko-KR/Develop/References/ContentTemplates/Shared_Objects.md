@@ -7,7 +7,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 | [CurrencyObject](#CurrencyObject)         | 통화 단위와 금액 정보를 가지는 객체               |
 | [DateObject](#DateObject)                 | 날짜 정보를 가지는 객체                         |
 | [DateTimeObject](#DateTimeObject)         | 날짜와 시간 정보를 가지는 객체                    |
-| [NumberObject](#NumberObject)             | 단위 구분자(1천 단위)가 처리된 숫자 정보 또는 풍속과 같이 단위가 포함된 측정 수치 정보를 가지는 객체 |
+| [NumberObject](#NumberObject)             | 단위 구분자(천 단위)가 처리된 숫자 정보 또는 풍속과 같이 단위가 포함된 측정 수치 정보를 가지는 객체 |
 | [PercentageObject](#PercentageObject)     | 백분율 정보를 가지는 객체                        |
 | [PhoneNumberObject](#PhoneNumberObject)   | 전화 번호 정보를 가지는 객체                     |
 | [StringObject](#StringObject)             | 텍스트 정보를 가지는 객체                        |
@@ -115,13 +115,13 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 {% endraw %}
 
 ## NumberObject {#NumberObject}
-단위 구분자(1천 단위)가 처리된 숫자 정보나 풍속과 같이 단위가 포함된 측정 수치 정보를 가지는 객체입니다.
+단위 구분자(천 단위)가 처리된 숫자 정보나 풍속과 같이 단위가 포함된 측정 수치 정보를 가지는 객체입니다.
 
 ### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------
 | `type`          | string  | `"number"` 값으로 고정되어 있습니다.    |
-| `value`         | string  | 단위 구분자(1천 단위)가 처리된 숫자 정보나 단위가 포함된 측성 수치 정보 |
+| `value`         | string  | 단위 구분자(천 단위)가 처리된 숫자 정보나 단위가 포함된 측성 수치 정보 |
 
 ### Object Example
 {% raw %}

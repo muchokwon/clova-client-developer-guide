@@ -68,8 +68,8 @@
 * 알람 적용 시간: `2017-09-25T09:00:50+09:00`
 * 알람의 제목 또는 내용: `입금하기`
 * 재생해야 할 음원과 순서
-  * 1번 재생 항목: `clova://alert/bell/reminder`
-  * 2번 재생 항목: `https://abc.de.fe/tts2`
+  * 1 번 재생 항목: `clova://alert/bell/reminder`
+  * 2 번 재생 항목: `https://abc.de.fe/tts2`
 
 클라이언트가 알람 등록을 시도한 후 그 결과를 CIC에게 전달합니다. 이때, 알람 등록에 성공했다면 [`Alerts.SetAlertSucceeded`](/Develop/References/CICInterface/Alerts.md#SetAlertSucceeded) 이벤트 메시지를 CIC에 전송합니다.
 

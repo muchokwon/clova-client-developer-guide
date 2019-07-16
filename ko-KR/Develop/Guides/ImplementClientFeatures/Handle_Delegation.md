@@ -24,7 +24,7 @@ Clova 앱이 사용자 요청 처리를 위임하면 위임을 받게되는 클�
 }</code></pre>
   </li>
   <li>
-    <p>클라이언트는 위임된 요청의 처리 결과를 CIC로 부터 받기 위해 <a href="/Develop/References/CICInterface/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a> 이벤트 메시지를 CIC로 전송해야 합니다. 이때, 2번 단계에서 받은 <code>delegationId</code> 필드의 값을 그대로 <code>payload</code> 필드에 입력해야 합니다.</p>
+    <p>클라이언트는 위임된 요청의 처리 결과를 CIC로 부터 받기 위해 <a href="/Develop/References/CICInterface/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a> 이벤트 메시지를 CIC로 전송해야 합니다. 이때, 2 번 단계에서 받은 <code>delegationId</code> 필드의 값을 그대로 <code>payload</code> 필드에 입력해야 합니다.</p>
     <pre><code>{
   "context": [
     ...

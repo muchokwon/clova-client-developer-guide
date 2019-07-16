@@ -5,8 +5,8 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 |---------------|-----------------------------|-----------------------------|
 | Toast         | 문장과 관련 링크로 구성된 toast입니다.    | `toastLinkText`, `toastLinkUrl`, `toastText`                  |
 | Alert         | 문장과 확인 버튼으로 구성된 alert입니다.   | `alertText`                                                   |
-| Popup(버튼 1개) | 제목, 문장, 버튼(link)으로 구성된 popup입니다. | `mainText`, `positiveButtonText`, `positiveButtonUrl`, `title`   |
-| Popup(버튼 2개) | 제목, 문장, 두 개의 버튼으로 구성된 popup입니다. | `negativeButtonText`, `negativeButtonUrl`, `mainText`, `positiveButtonText`, `positiveButtonUrl`, `title` |
+| Popup(버튼 1 개) | 제목, 문장, 버튼(link)으로 구성된 popup입니다. | `mainText`, `positiveButtonText`, `positiveButtonUrl`, `title`   |
+| Popup(버튼 2 개) | 제목, 문장, 두 개의 버튼으로 구성된 popup입니다. | `negativeButtonText`, `negativeButtonUrl`, `mainText`, `positiveButtonText`, `positiveButtonUrl`, `title` |
 
 <div class="tip">
 <p><strong>Tip!</strong></p>
@@ -227,7 +227,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 |-----------|-----------|
 | ![Type1](/Develop/Assets/Images/Content-Template-Toast.png) | ![Type2](/Develop/Assets/Images/Content-Template-Alert.png) |
 
-| Popup 형태(버튼 1개) | Popup 형태(버튼 2개) |
+| Popup 형태(버튼 1 개) | Popup 형태(버튼 2 개) |
 |-------------------|--------------------|
 | ![Type3](/Develop/Assets/Images/Content-Template-Popup_with_One_Button.png) | ![Type](/Develop/Assets/Images/Content-Template-Popup_with_Two_Buttons.png) |
 

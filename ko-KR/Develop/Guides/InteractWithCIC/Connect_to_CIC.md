@@ -30,7 +30,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     <p>{{ book.ServiceEnv.TargetServiceForClientAuth }} 계정의 {{ "authorization code를" if book.L10N.TargetCountryCode == "JP" else "access token을" }} 획득합니다. {{ "authorization code를" if book.L10N.TargetCountryCode == "JP" else "access token을" }} 획득할 때, 사용자가 입력한 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정 정보를 이용합니다.</p>
   </li>
   <li>
-    <p><a href="/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode">Authorization code를 요청</a>합니다. Authorization code를 요청할 때, 2번 단계에서 획득한 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정의 {{ "authorization code와" if book.L10N.TargetCountryCode == "JP" else "access token과" }} <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용합니다. <code>device_id</code> 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용하면 됩니다.<br />다음은 authorization code를 요청한 예입니다.</p>
+    <p><a href="/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode">Authorization code를 요청</a>합니다. Authorization code를 요청할 때, 2 번 단계에서 획득한 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정의 {{ "authorization code와" if book.L10N.TargetCountryCode == "JP" else "access token과" }} <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용합니다. <code>device_id</code> 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용하면 됩니다.<br />다음은 authorization code를 요청한 예입니다.</p>
     <pre><code>$ curl -H "Authorization: Bearer Zc3d3QAR6zIxqceOpXoq"
     {{ book.ServiceEnv.AuthServerBaseURL }}authorize \
     {% if book.L10N.TargetCountryCode == "JP"  -%}
@@ -49,7 +49,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 }
 </code></pre></li>
   <li>
-    <p>(만약, 3번 단계에 대한 응답으로 <code>451 Unavailable For Legal Reasons</code> 상태 코드를 수신하면) 사용자에게 이용 약관 동의 페이지를 보여줘야 합니다. 약관 동의 페이지를 제공할 때, 응답 메시지 본문 <code>redirect_uri</code> 필드에 입력된 URI를 이용합니다.<br />다음은 상태 코드가 <code>451 Unavailable For Legal Reasons</code>일 때 수신하게 되는 응답 메시지의 본문의 예 입니다.</p>
+    <p>(만약, 3 번 단계에 대한 응답으로 <code>451 Unavailable For Legal Reasons</code> 상태 코드를 수신하면) 사용자에게 이용 약관 동의 페이지를 보여줘야 합니다. 약관 동의 페이지를 제공할 때, 응답 메시지 본문 <code>redirect_uri</code> 필드에 입력된 URI를 이용합니다.<br />다음은 상태 코드가 <code>451 Unavailable For Legal Reasons</code>일 때 수신하게 되는 응답 메시지의 본문의 예 입니다.</p>
     <pre><code>{
   "code": "4mrklvwoC_KNgDlvmslka",
   "redirect_uri": "https://example.net/clova/terms_3rd.html?code=4mrklvwoC_KNgDlvmslka&grant_type=code&state=FKjaJfMlakjdfTVbES5ccZ",
@@ -170,11 +170,11 @@ Downchannel 연결이 종료되거나 끊어지면 클라이언트는 즉시 새
 
 #### Ping-pong 수행 {#DoPingpong}
 
-CIC와 연결이 유지되고 있는지 파악하기 위해 클라이언트는 1분 간격으로 HTTP/2 PING 프레임을 CIC로 전송해야 합니다. CIC로부터 HTTP/2 PING ACK 응답을 받지 못하면 클라이언트는 즉시 새로운 연결을 구성해 클라이언트와 CIC간의 연결이 지속될 수 있도록 해야합니다. HTTP/2 PING 프레임에 대한 자세한 설명은 [HTTP/2 PING Payload Format](https://http2.github.io/http2-spec/#rfc.figure.12)을 참조합니다.
+CIC와 연결이 유지되고 있는지 파악하기 위해 클라이언트는 1 분 간격으로 HTTP/2 PING 프레임을 CIC로 전송해야 합니다. CIC로부터 HTTP/2 PING ACK 응답을 받지 못하면 클라이언트는 즉시 새로운 연결을 구성해 클라이언트와 CIC간의 연결이 지속될 수 있도록 해야합니다. HTTP/2 PING 프레임에 대한 자세한 설명은 [HTTP/2 PING Payload Format](https://http2.github.io/http2-spec/#rfc.figure.12)을 참조합니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>HTTP/2 PING 프레임을 전송할 수 없으면 클라이언트는 1분마다 <code>GET</code> 요청을 <code>/ping</code>으로 보내야 합니다. 이때, HTTP 204 No Content 응답을 받게 됩니다. HTTP/2 PING 프레임을 사용할 때와 마찬가지로 응답을 받지 못하면, 클라이언트는 즉시 새로운 연결을 구성해야 합니다.</p>
+  <p>HTTP/2 PING 프레임을 전송할 수 없으면 클라이언트는 1 분마다 <code>GET</code> 요청을 <code>/ping</code>으로 보내야 합니다. 이때, HTTP 204 No Content 응답을 받게 됩니다. HTTP/2 PING 프레임을 사용할 때와 마찬가지로 응답을 받지 못하면, 클라이언트는 즉시 새로운 연결을 구성해야 합니다.</p>
   <p>다음은 <code>/ping</code>으로 <code>GET</code> 요청을 보내는 예제입니다.</p>
   <pre><code>:method = GET
 :scheme = https
