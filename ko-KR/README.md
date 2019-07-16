@@ -21,8 +21,8 @@
       <td>개념 이해 및 디자인 가이드라인</td>
       <td>
         <ul>
-          <li><a href="/CIC/CIC_Overview.md#WhatisCIC">CIC란?</a></li>
-          <li><a href="/CIC/CIC_Overview.md#IndirectDialogue">간접 대화 구조</a></li>
+          <li><a href="/Develop/CIC_Overview.md#WhatisCIC">CIC란?</a></li>
+          <li><a href="/Develop/CIC_Overview.md#IndirectDialogue">간접 대화 구조</a></li>
           <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</li>
         </ul>
       </td>
@@ -31,14 +31,14 @@
       <td>가이드</td>
       <td>
         <ul>
-          <li><a href="/CIC/Guides/Interact_with_CIC.md">CIC 연동하기</a></li>
-          <li><a href="/CIC/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md">대화 ID 관리 및 작업 처리하기</a></li>
-          <li><a href="/CIC/Guides/ImplementClientFeatures/Handle_Delegation.md">위임된 사용자 요청 처리하기</a></li>
-          <li><a href="/CIC/Guides/ImplementClientFeatures/Handle_Device_Control.md">클라이언트 동작 제어 처리하기</a></li>
-          <li><a href="/CIC/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md">클라이언트 블루투스 제어 처리하기</a></li>
-          <li><a href="/CIC/Guides/ImplementClientFeatures/Handle_Alerts.md">알람 처리하기</a></li>
-          <li><a href="/CIC/Guides/ImplementClientFeatures/Handle_Audio_Playback.md">음원 재생 처리하기</a></li>
-          <li><a href="/CIC/Guides/ImplementClientFeatures/Handle_Settings.md">설정 정보 처리하기</a></li>
+          <li><a href="/Develop/Guides/Interact_with_CIC.md">CIC 연동하기</a></li>
+          <li><a href="/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md">대화 ID 관리 및 작업 처리하기</a></li>
+          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md">위임된 사용자 요청 처리하기</a></li>
+          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md">클라이언트 동작 제어 처리하기</a></li>
+          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md">클라이언트 블루투스 제어 처리하기</a></li>
+          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md">알람 처리하기</a></li>
+          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md">음원 재생 처리하기</a></li>
+          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Settings.md">설정 정보 처리하기</a></li>
         </ul>
       </td>
     </tr>
@@ -46,10 +46,10 @@
       <td>레퍼런스</td>
       <td>
         <ul>
-          <li><a href="/CIC/References/CIC_API.md">CIC API 레퍼런스</a></li>
-          <li><a href="/CIC/References/CIC_API.md#CICInterface">CIC 메시지 인터페이스</a></li>
-          <li><a href="/CIC/References/Content_Templates.md">Content template</a></li>
-          <li><a href="/CIC/References/Clova_Auth_API.md">CIC 인증 API 레퍼런스</a></li>
+          <li><a href="/Develop/References/CIC_API.md">CIC API 레퍼런스</a></li>
+          <li><a href="/Develop/References/CIC_API.md#CICInterface">CIC 메시지 인터페이스</a></li>
+          <li><a href="/Develop/References/Content_Templates.md">Content template</a></li>
+          <li><a href="/Develop/References/Clova_Auth_API.md">CIC 인증 API 레퍼런스</a></li>
         </ul>
       </td>
     </tr>
