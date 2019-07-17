@@ -1,10 +1,10 @@
-# About This Document
+## About This Document
 
 * [시작하기 전에](/README.md)
 * [문서 정보](/Document_Info.md)
 * [용어 및 약어](/Glossary.md)
 
-# Design
+## Design
 
 * [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md)
   * [클라이언트 상태](/Design/Design_Guideline_For_Client_Hardware.md#ClientStateAndEvent)
@@ -24,12 +24,12 @@
     * [부팅 화면](/Design/Design_Guideline_For_Client_Hardware.md#BootingScreen)
     * [로고 표시](/Design/Design_Guideline_For_Client_Hardware.md#DisplayingLogo)
     * [Green Dot VUI](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUI)
-      * [Green Dot VUI 색상](/Design/Design_Guideline_For_Client_Hardware.md#)
+      * [Green Dot VUI 색상](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUIColor)
       * [Green Dot VUI 동작 구분](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUIColor#GreenDotVUIActions)
 
-# Develop
+## Develop
 
-## Guides
+### Guides
 
 * [CIC 개요](/Develop/CIC_Overview.md)
   * [CIC란?](/Develop/CIC_Overview.md#WhatisCIC)
@@ -78,7 +78,7 @@
     * [음원 재생 상태 공유하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
   * [설정 정보 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Settings.md)
 
-## References
+### References
 
 * [CIC API 레퍼런스](/Develop/References/CIC_API.md)
   * [API 기본 정보](/Develop/References/CIC_API.md#BasicInfo)
