@@ -370,7 +370,7 @@ Green Dot VUI는 Clova의 음성 검색 도구이자 정체성을 나타내는 U
 화면을 가진 클라이언트 기기는 Green Dot VUI를 표현해야 합니다. Green Dot VUI에서 사용하는 색상이 무엇이고 클라이언트의 상태에 따라 어떻게 표현되어야 하는지 설명합니다.
 
 * [Green Dot VUI 색상](#GreenDotVUIColor)
-* [Green Dot VUI 표현](#RenderGreenDotVUI)
+* [Green Dot VUI 표현](#GreenDotVUIMotions)
 
 #### Green Dot VUI 색상 {#GreenDotVUIColor}
 

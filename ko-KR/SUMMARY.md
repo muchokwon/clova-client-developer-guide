@@ -25,7 +25,7 @@
     * [로고 표시](/Design/Design_Guideline_For_Client_Hardware.md#DisplayingLogo)
     * [Green Dot VUI](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUI)
       * [Green Dot VUI 색상](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUIColor)
-      * [Green Dot VUI 동작 구분](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUIColor#GreenDotVUIActions)
+      * [Green Dot VUI 동작 구분](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUIMotions)
 
 ## Develop
 
