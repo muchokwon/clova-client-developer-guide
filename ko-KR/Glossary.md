@@ -1,3 +1,7 @@
+<!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
+
+<!-- Start of the shared content: Glossary -->
+
 # 용어 및 약어
 
 <div class="note">
@@ -89,3 +93,5 @@ HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wi
 
 ### 클라이언트 인증 정보 {#ClientCredentialInfo}
 [Clova developer console](#ClovaDeveloperConsole)를 통해 클라이언트를 등록하고 획득한 인증 정보이며, [Clova access token](#ClovaAccessToken)을 획득하는데 사용됩니다. 자세한 내용은 [Clova access token 생성하기](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken) 문서를 참조합니다.
+
+<!-- End of the shared content -->
