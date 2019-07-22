@@ -21,12 +21,22 @@
   </thead>
   <tbody>
     <tr>
+      <td>2019-07-29</td>
+      <td>
+        <ul>
+          <li>미디어 재생의 제어 대상을 지정하기 위해 <a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> 네임스페이스의 <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectNextCommand">ExpectNextCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPauseCommand">ExpectPauseCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPreviousCommand">ExpectPreviousCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectResumeCommand">ExpectResumeCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectStopCommand">ExpectStopCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Pause">Pause</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Resume">Resume</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Stop">Stop</a> 지시 메시지에 target과 target.namespace 필드를 추가함</li>
+          <li>Clova developer guide에서 Clova client guide 문서로 분리됨</li>
+          <li>일부 문서 오류 수정</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>2019-07-02</td>
       <td>
         <ul>
           <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>의 <a href="/Design/Design_Guideline_For_Client_Hardware.md#LightEffect">조명 효과</a> 설명에서 대기 시간 초과(timeout)와 관련된 조명 효과 구현 여부를 선택으로 변경</li>
           <li><a href="/Develop/References/Clova_Auth_API.md">Clova 인증 API 레퍼런스</a>의 <a href="/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode">Authorization code 요청(/authorize)</a>의 redirect_uri 설명 업데이트</li>
-          <li>미디어 재생의 제어 대상을 지정하기 위해 <a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> 네임스페이스 <a href="/Develop/References/CICInterface/PlaybackController.md#NextCommandIssued">NextCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#PauseCommandIssued">PauseCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#PreviousCommandIssued">PreviousCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ResumeCommandIssued">ResumeCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#StopCommandIssued">StopCommandIssued</a>의 이벤트 메시지에 source와 source.namespace 필드를 추가함.</li>
+          <li>미디어 재생의 제어 대상을 지정하기 위해 <a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> 네임스페이스의 <a href="/Develop/References/CICInterface/PlaybackController.md#NextCommandIssued">NextCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#PauseCommandIssued">PauseCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#PreviousCommandIssued">PreviousCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ResumeCommandIssued">ResumeCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#StopCommandIssued">StopCommandIssued</a> 이벤트 메시지에 source와 source.namespace 필드를 추가함</li>
           <li>일부 예제 오탈자 교정 및 노트 상자 수준 조정</li>
         </ul>
       </td>

@@ -54,8 +54,6 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 
 ### Message example
 
-{% raw %}
-
 ```json
 {
   "context": [
@@ -80,7 +78,6 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.NextCommandIssued`](#NextCommandIssued)
@@ -95,11 +92,16 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 사용자가 클라이언트 기기에서 다음 버튼(Next)을 누른 효과가 발생한 것처럼 클라이언트가 [`PlaybackController.NextCommandIssued`](#NextCommandIssued) 이벤트 메시지를 CIC로 보내도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 관련 동작을 수행하고 [`PlaybackController.NextCommandIssued`](#NextCommandIssued) 이벤트 메시지를 CIC로 보내야 합니다.
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| target            | object  | 제어 대상 정보를 가지는 객체.<div class="note"><p><strong>Note!</strong></p><p>이 필드가 있다면 클라이언트는 <a href="#NextCommandIssued"><code>PlaybackController.NextCommandIssued</code></a> 이벤트 메시지를 전송할 때 <code>source</code> 필드를 반드시 함께 보내야 합니다.</p></div> | 조건부  |
+| target.namespace  | string  | CIC API 네임스페이스. 제어 대상이 무엇인지 파악할 수 있는 정보입니다. [`PlaybackController.NextCommandIssued`](#NextCommandIssued) 이벤트 메시지를 보낼 때 반드시 `source.namespace` 값을 이 필드의 값으로 입력해야 합니다. 다음과 같은 값을 가질 수 있습니다.<ul><li><code>"AudioPlayer"</code>: 오디오 플레이어</li><li><code>"MediaPlayer"</code>: 미디어 플레이어</li></ul>  | 항상  |
 
 ### Message example
-{% raw %}
+
 ```json
+예제 1: 대상이 지정되지 않은 예제
 {
   "directive": {
     "header": {
@@ -111,8 +113,24 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
     "payload": {}
   }
 }
+
+예제 2: 대상이 "AudioPlayer"로 지정된 예제
+{
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "ExpectNextCommand",
+      "dialogRequestId": "42390b12-ae91-4121-aa0a-37f74e8e422b",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {
+      "target": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.ExpectPauseCommand`](#ExpectPauseCommand)
@@ -126,11 +144,16 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 사용자가 클라이언트 기기에서 일시 정지 버튼(Pause)을 누른 효과가 발생한 것처럼 클라이언트가 [`PlaybackController.PauseCommandIssued`](#PauseCommandIssued) 이벤트 메시지를 CIC로 보내도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 [`PlaybackController.PauseCommandIssued`](#PauseCommandIssued) 이벤트 메시지를 CIC로 보내야 합니다.
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| target            | object  | 제어 대상 정보를 가지는 객체.<div class="note"><p><strong>Note!</strong></p><p>이 필드가 있다면 클라이언트는 <a href="#PauseCommandIssued"><code>PlaybackController.PauseCommandIssued</code></a> 이벤트 메시지를 전송할 때 <code>source</code> 필드를 반드시 함께 보내야 합니다.</p></div> | 조건부  |
+| target.namespace  | string  | CIC API 네임스페이스. 제어 대상이 무엇인지 파악할 수 있는 정보입니다. [`PlaybackController.PauseCommandIssued`](#PauseCommandIssued) 이벤트 메시지를 보낼 때 반드시 `source.namespace` 값을 이 필드의 값으로 입력해야 합니다. 다음과 같은 값을 가질 수 있습니다.<ul><li><code>"AudioPlayer"</code>: 오디오 플레이어</li><li><code>"MediaPlayer"</code>: 미디어 플레이어</li></ul>  | 항상  |
 
 ### Message example
-{% raw %}
+
 ```json
+예제 1: 대상이 지정되지 않은 예제
 {
   "directive": {
     "header": {
@@ -142,8 +165,24 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
     "payload": {}
   }
 }
+
+예제 2: 대상이 "AudioPlayer"로 지정된 예제
+{
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "ExpectPauseCommand",
+      "dialogRequestId": "7182403e-b5eb-4b71-b2af-179a7515edc4",
+      "messageId": "bbb3a40d-ad7f-4609-9021-97f3f0aa2a9e"
+    },
+    "payload": {
+      "target": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.ExpectNextCommand`](#ExpectNextCommand)
@@ -167,7 +206,7 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 | `token`               | string  | 재생해야 하는 미디어 콘텐츠의 token. 미디어 재생을 넘겨 받아야 하면 `token` 필드가 메시지에 포함됩니다. `token` 필드가 포함되어 있으면 클라이언트는 [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) 이벤트 메시지를 전송할 때 `token`에 이 필드의 값을 입력해야 합니다.  | 조건부  |
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -181,7 +220,6 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.ExpectNextCommand`](#ExpectNextCommand)
@@ -195,24 +233,45 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 사용자가 클라이언트 기기에서 이전 버튼(Previous)을 누른 효과가 발생한 것처럼 클라이언트가 [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued) 이벤트 메시지를 CIC로 보내도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 관련 동작을 수행하고 [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued) 이벤트 메시지를 CIC로 보내야 합니다.
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| target            | object  | 제어 대상 정보를 가지는 객체.<div class="note"><p><strong>Note!</strong></p><p>이 필드가 있다면 클라이언트는 <a href="#PreviousCommandIssued"><code>PlaybackController.PreviousCommandIssued</code></a> 이벤트 메시지를 전송할 때 <code>source</code> 필드를 반드시 함께 보내야 합니다.</p></div> | 조건부  |
+| target.namespace  | string  | CIC API 네임스페이스. 제어 대상이 무엇인지 파악할 수 있는 정보입니다. [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued) 이벤트 메시지를 보낼 때 반드시 `source.namespace` 값을 이 필드의 값으로 입력해야 합니다. 다음과 같은 값을 가질 수 있습니다.<ul><li><code>"AudioPlayer"</code>: 오디오 플레이어</li><li><code>"MediaPlayer"</code>: 미디어 플레이어</li></ul>  | 항상  |
 
 ### Message example
-{% raw %}
+
 ```json
+예제 1: 대상이 지정되지 않은 예제
 {
   "directive": {
     "header": {
       "namespace": "PlaybackController",
       "name": "ExpectPreviousCommand",
-      "dialogRequestId": "42390b12-ae91-4121-aa0a-37f74e8e422b",
-      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+      "dialogRequestId": "036fbb1e-4739-4453-9439-ccff68eccc63",
+      "messageId": "e32f6330-e696-4c21-9e52-529e9b4cbc14"
     },
     "payload": {}
   }
 }
+
+예제 2: 대상이 "AudioPlayer"로 지정된 예제
+{
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "ExpectPreviousCommand",
+      "dialogRequestId": "036fbb1e-4739-4453-9439-ccff68eccc63",
+      "messageId": "e32f6330-e696-4c21-9e52-529e9b4cbc14"
+    },
+    "payload": {
+      "target": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.ExpectNextCommand`](#ExpectNextCommand)
@@ -226,24 +285,45 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 사용자가 클라이언트 기기에서 재개 버튼(Resume)을 누른 효과가 발생한 것처럼 클라이언트가 [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued) 이벤트 메시지를 CIC로 보내도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued) 이벤트 메시지를 CIC로 보내야 합니다.
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| target            | object  | 제어 대상 정보를 가지는 객체.<div class="note"><p><strong>Note!</strong></p><p>이 필드가 있다면 클라이언트는 <a href="#ResumeCommandIssued"><code>PlaybackController.ResumeCommandIssued</code></a> 이벤트 메시지를 전송할 때 <code>source</code> 필드를 반드시 함께 보내야 합니다.</p></div> | 조건부  |
+| target.namespace  | string  | CIC API 네임스페이스. 제어 대상이 무엇인지 파악할 수 있는 정보입니다. [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued) 이벤트 메시지를 보낼 때 반드시 `source.namespace` 값을 이 필드의 값으로 입력해야 합니다. 다음과 같은 값을 가질 수 있습니다.<ul><li><code>"AudioPlayer"</code>: 오디오 플레이어</li><li><code>"MediaPlayer"</code>: 미디어 플레이어</li></ul>  | 항상  |
 
 ### Message example
-{% raw %}
+
 ```json
+예제 1: 대상이 지정되지 않은 예제
 {
   "directive": {
     "header": {
       "namespace": "PlaybackController",
       "name": "ExpectResumeCommand",
-      "dialogRequestId": "42390b12-ae91-4121-aa0a-37f74e8e422b",
-      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+      "dialogRequestId": "70d75f9a-2202-4a4e-a0cb-9f804d235890",
+      "messageId": "3865c844-27dd-4fda-a7d2-03ef96a4cc83"
     },
     "payload": {}
   }
 }
+
+예제 2: 대상이 "AudioPlayer"로 지정된 예제
+{
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "ExpectResumeCommand",
+      "dialogRequestId": "d7b5f918-2bb5-4b94-91c5-e1ddec0aa8c4",
+      "messageId": "c75a01b4-8402-444a-9386-aa1819d12d29"
+    },
+    "payload": {
+      "target": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.ExpectNextCommand`](#ExpectNextCommand)
@@ -258,24 +338,45 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 사용자가 클라이언트 기기에서 정지 버튼(Stop)을 누른 효과가 발생한 것처럼 클라이언트가 [`PlaybackController.StopCommandIssued`](#StopCommandIssued) 이벤트 메시지를 CIC로 보내도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 [`PlaybackController.StopCommandIssued`](#StopCommandIssued) 이벤트 메시지를 CIC로 보내야 합니다.
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| target            | object  | 제어 대상 정보를 가지는 객체.<div class="note"><p><strong>Note!</strong></p><p>이 필드가 있다면 클라이언트는 <a href="#StopCommandIssued"><code>PlaybackController.StopCommandIssued</code></a> 이벤트 메시지를 전송할 때 <code>source</code> 필드를 반드시 함께 보내야 합니다.</p></div> | 조건부  |
+| target.namespace  | string  | CIC API 네임스페이스. 제어 대상이 무엇인지 파악할 수 있는 정보입니다. [`PlaybackController.StopCommandIssued`](#StopCommandIssued) 이벤트 메시지를 보낼 때 반드시 `source.namespace` 값을 이 필드의 값으로 입력해야 합니다. 다음과 같은 값을 가질 수 있습니다.<ul><li><code>"AudioPlayer"</code>: 오디오 플레이어</li><li><code>"MediaPlayer"</code>: 미디어 플레이어</li></ul>  | 항상  |
 
 ### Message example
-{% raw %}
+
 ```json
+예제 1: 대상이 지정되지 않은 예제
 {
   "directive": {
     "header": {
       "namespace": "PlaybackController",
       "name": "ExpectStopCommand",
-      "dialogRequestId": "42390b12-ae91-4121-aa0a-37f74e8e422b",
-      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+      "dialogRequestId": "e3295587-23a5-49d7-bc72-05adf02e4a08",
+      "messageId": "8b15ad68-ee0c-44de-959a-0f0c3526b361"
     },
     "payload": {}
   }
 }
+
+예제 2: 대상이 "AudioPlayer"로 지정된 예제
+{
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "ExpectStopCommand",
+      "dialogRequestId": "bbfdad3a-333c-4a97-beb0-33ac9d46ac9d",
+      "messageId": "1a565441-e2bc-40a5-bb3e-7846767f37be"
+    },
+    "payload": {
+      "target": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.ExpectNextCommand`](#ExpectNextCommand)
@@ -297,7 +398,7 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -311,7 +412,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
@@ -323,7 +423,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 없음
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -337,7 +437,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.Previous`](#Previous)
@@ -345,7 +444,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ## NextCommandIssued event {#NextCommandIssued}
 사용자가 클라이언트 기기에서 다음 버튼(Next)을 누르거나 CIC로부터 [`PlaybackController.ExpectNextCommand`](#ExpectNextCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
-
 
 ### Context fields
 
@@ -356,17 +454,16 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | 클라이언트 기기 ID. 미디어 재생을 원격으로 제어하는 상황이 아니라면 이 필드를 생략합니다. | 선택 |
-| `source`      | string  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
-| `source.namespace` | string | CIC API 네임스페이스. 이 이벤트 메시지가 어떤 상황이나 맥락에서 전송된 것인지 파악할 수 있도록 관련 CIC API 네임스페이스를 값을 입력합니다. 현재 `"AudioPlayer"` 값만 입력할 수 있습니다.  | 필수  |
+| `source`      | object  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 제공하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
+| `source.namespace` | string | CIC API 네임스페이스. 이 이벤트 메시지가 어떤 상황이나 맥락에서 전송된 것인지 파악할 수 있도록 관련 CIC API 네임스페이스를 값을 입력합니다.<ul><li><code>"AudioPlayer"</code>: 오디오 플레이어</li><li><code>"MediaPlayer"</code>: 미디어 플레이어</li></ul>  | 필수  |
 
 ### Remarks
 * 클라이언트 기기의 버튼은 물리적인 하드웨어 방식의 버튼일 수도 있고 음악 플레이어 위젯 버튼과 같은 소프트웨어 방식의 버튼일 수도 있습니다.
 
 ### Message example
 
-{% raw %}
-
 ```json
+예제 1: 원천 정보를 지정하지 않은 예제
 {
   "context": [
     {{Alerts.AlertsState}},
@@ -387,8 +484,33 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
     "payload": {}
   }
 }
+
+예제 2: 원천 정보를 "AudioPlayer"로 지정한 예제
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "NextCommandIssued",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+    },
+    "payload": {
+      "source": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
@@ -408,11 +530,16 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생을 일시 정지해야 합니다.
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| target            | object  | 제어 대상 정보를 가지는 객체. 이 지시 메시지를 통해 제어해야 하는 대상을 알 수 있습니다. | 조건부  |
+| target.namespace  | string  | CIC API 네임스페이스. 제어 대상이 무엇인지 파악할 수 있는 정보입니다. 다음과 같은 값을 가질 수 있습니다.<ul><li><code>"AudioPlayer"</code>: 오디오 플레이어</li><li><code>"MediaPlayer"</code>: 미디어 플레이어</li></ul>  | 항상  |
 
 ### Message example
-{% raw %}
+
 ```json
+예제 1: 대상이 지정되지 않은 예제
 {
   "directive": {
     "header": {
@@ -424,8 +551,24 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
     "payload": {}
   }
 }
+
+예제 2: 대상이 "AudioPlayer"로 지정된 예제
+{
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Pause",
+      "dialogRequestId": "a85e78b4-44f7-4bea-8a40-66c181b9720f",
+      "messageId": "a76c8dfd-c1b6-44f6-a58d-fc8f33c242c1"
+    },
+    "payload": {
+      "target": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`AudioPlayer.PlayPaused`](/Develop/References/CICInterface/AudioPlayer.md#PlayPaused)
@@ -437,7 +580,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ## PauseCommandIssued event {#PauseCommandIssued}
 사용자가 클라이언트 기기에서 일시 정지 버튼(Pause)을 누르거나 CIC로부터 [`PlaybackController.ExpectPauseCommand`](#ExpectPauseCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
 
-
 ### Context fields
 
 {% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
@@ -447,7 +589,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | 클라이언트 기기 ID. 미디어 재생을 원격으로 제어하는 상황이 아니라면 이 필드를 생략합니다. | 선택 |
-| `source`      | string  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
+| `source`      | object  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 제공하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
 | `source.namespace` | string | CIC API 네임스페이스. 이 이벤트 메시지가 어떤 상황이나 맥락에서 전송된 것인지 파악할 수 있도록 관련 CIC API 네임스페이스를 값을 입력합니다. 현재 `"AudioPlayer"` 값만 입력할 수 있습니다.  | 필수  |
 
 ### Remarks
@@ -455,9 +597,8 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### Message example
 
-{% raw %}
-
 ```json
+// 예제 1: 원천 정보를 지정하지 않은 예제
 {
   "context": [
     {{Alerts.AlertsState}},
@@ -478,8 +619,33 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
     "payload": {}
   }
 }
+
+// 예제 2: 원천 정보를 "AudioPlayer"로 지정한 예제
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "PauseCommandIssued",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+    },
+    "payload": {
+      "source": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
@@ -494,7 +660,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ## PlayCommandIssued event {#PlayCommandIssued}
 사용자가 클라이언트 기기에서 특정 곡을 재생하도록 UI를 조작했거나 CIC로부터 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다. 만약, CIC로부터 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지의 `payload`에 `handover` 필드가 포함되어 있다면 이를 그대로 사용하여 미디어 재생을 이양 받아야 합니다.
-
 
 ### Context fields
 
@@ -514,8 +679,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * 사용자가 클라이언트 기기의 재생 버튼(Play)을 누를 때는 [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued) 이벤트 메시지를 CIC로 전송해야 합니다.
 
 ### Message example
-
-{% raw %}
 
 ```json
 {
@@ -539,7 +702,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)
@@ -559,7 +721,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 없음
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -573,16 +735,13 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.Next`](#Next)
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
 
-
 ## PreviousCommandIssued event {#PreviousCommandIssued}
 사용자가 클라이언트 기기에서 이전 버튼(Previous)을 누르거나 CIC로부터 [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
-
 
 ### Context fields
 
@@ -593,7 +752,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | 클라이언트 기기 ID. 미디어 재생을 원격으로 제어하는 상황이 아니라면 이 필드를 생략합니다. | 선택 |
-| `source`      | string  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
+| `source`      | object  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 제공하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
 | `source.namespace` | string | CIC API 네임스페이스. 이 이벤트 메시지가 어떤 상황이나 맥락에서 전송된 것인지 파악할 수 있도록 관련 CIC API 네임스페이스를 값을 입력합니다. 현재 `"AudioPlayer"` 값만 입력할 수 있습니다.  | 필수  |
 
 ### Remarks
@@ -601,9 +760,8 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### Message example
 
-{% raw %}
-
 ```json
+// 예제 1: 원천 정보를 지정하지 않은 예제
 {
   "context": [
     {{Alerts.AlertsState}},
@@ -624,8 +782,33 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
     "payload": {}
   }
 }
+
+// 예제 2: 원천 정보를 "AudioPlayer"로 지정한 예제
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "PreviousCommandIssued",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+    },
+    "payload": {
+      "source": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
@@ -644,7 +827,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 없음
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -658,7 +841,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.Pause`](#Pause)
@@ -672,11 +854,16 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생을 재개해야 합니다.
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| target            | object  | 제어 대상 정보를 가지는 객체. 이 지시 메시지를 통해 제어해야 하는 대상을 알 수 있습니다. | 조건부  |
+| target.namespace  | string  | CIC API 네임스페이스. 제어 대상이 무엇인지 파악할 수 있는 정보입니다. 다음과 같은 값을 가질 수 있습니다.<ul><li><code>"AudioPlayer"</code>: 오디오 플레이어</li><li><code>"MediaPlayer"</code>: 미디어 플레이어</li></ul>  | 항상  |
 
 ### Message example
-{% raw %}
+
 ```json
+// 예제 1: 대상이 지정되지 않은 예제
 {
   "directive": {
     "header": {
@@ -688,8 +875,24 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
     "payload": {}
   }
 }
+
+// 예제 2: 대상이 "AudioPlayer"로 지정된 예제
+{
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Resume",
+      "dialogRequestId": "42390b12-ae91-4121-aa0a-37f74e8e422b",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {
+      "target": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`AudioPlayer.PlayResumed`](/Develop/References/CICInterface/AudioPlayer.md#PlayResumed)
@@ -701,7 +904,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ## ResumeCommandIssued event {#ResumeCommandIssued}
 사용자가 클라이언트 기기에서 재생 버튼(Play) 또는 재개 버튼(Resume)을 누르거나 CIC로부터 [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
 
-
 ### Context fields
 
 {% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
@@ -711,7 +913,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | 클라이언트 기기 ID. 미디어 재생을 원격으로 제어하는 상황이 아니라면 이 필드를 생략합니다. | 선택 |
-| `source`      | string  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
+| `source`      | object  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 제공하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
 | `source.namespace` | string | CIC API 네임스페이스. 이 이벤트 메시지가 어떤 상황이나 맥락에서 전송된 것인지 파악할 수 있도록 관련 CIC API 네임스페이스를 값을 입력합니다. 현재 `"AudioPlayer"` 값만 입력할 수 있습니다.  | 필수  |
 
 ### Remarks
@@ -720,9 +922,8 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### Message example
 
-{% raw %}
-
 ```json
+// 예제 1: 원천 정보를 지정하지 않은 예제
 {
   "context": [
     {{Alerts.AlertsState}},
@@ -743,8 +944,33 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
     "payload": {}
   }
 }
+
+// 예제 2: 원천 정보를 "AudioPlayer"로 지정한 예제
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "ResumeCommandIssued",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+    },
+    "payload": {
+      "source": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
@@ -768,7 +994,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 | `repeatMode`  | string  | 선택된 반복 모드<ul><li><code>NONE</code>: 반복 재생 안함</li><code>REPEAT_ONE</code>: 한 곡 반복 재생</li></ul>  | 항상 |
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -784,7 +1010,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.ExpectNextCommand`](#ExpectNextCommand)
@@ -820,8 +1045,6 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 
 ### Message example
 
-{% raw %}
-
 ```json
 {
   "context": [
@@ -846,7 +1069,6 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
@@ -864,11 +1086,16 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생을 중지해야 합니다.
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| target            | object  | 제어 대상 정보를 가지는 객체. 이 지시 메시지를 통해 제어해야 하는 대상을 알 수 있습니다. | 조건부  |
+| target.namespace  | string  | CIC API 네임스페이스. 제어 대상이 무엇인지 파악할 수 있는 정보입니다. 다음과 같은 값을 가질 수 있습니다.<ul><li><code>"AudioPlayer"</code>: 오디오 플레이어</li><li><code>"MediaPlayer"</code>: 미디어 플레이어</li></ul>  | 항상  |
 
 ### Message example
-{% raw %}
+
 ```json
+// 예제 1: 대상이 지정되지 않은 예제
 {
   "directive": {
     "header": {
@@ -880,8 +1107,24 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
     "payload": {}
   }
 }
+
+// 예제 2: 대상이 "AudioPlayer"로 지정된 예제
+{
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Stop",
+      "dialogRequestId": "42390b12-ae91-4121-aa0a-37f74e8e422b",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {
+      "target": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`AudioPlayer.PlayStopped`](/Develop/References/CICInterface/AudioPlayer.md#PlayStopped)
@@ -893,7 +1136,6 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 ## StopCommandIssued event {#StopCommandIssued}
 사용자가 클라이언트 기기에서 재개 버튼(Resume)을 누르거나 CIC로부터 [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
 
-
 ### Context fields
 
 {% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
@@ -903,7 +1145,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | 클라이언트 기기 ID. 미디어 재생을 원격으로 제어하는 상황이 아니라면 이 필드를 생략합니다. | 선택 |
-| `source`      | string  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
+| `source`      | object  | 이벤트 원천 정보를 가지는 객체. 이 이벤트 메시지를 전송하게 된 상황이나 배경을 알 수 있는 정보를 포함합니다. <div class="tip"><p><strong>Tip!</strong></p><p>클라이언트가 사용자에게 음성 출력(TTS)과 음원 재생을 동시에 제공하고 있는 경우 보통 음성 출력이 제어 대상이 됩니다. 이 필드를 사용하면 이 이벤트 메시지가 어떤 대상을 제어하려고 하는지 지정해 줄 수 있습니다. Clova가 제어 대상을 알아서 지정하도록 위임하려면 이 필드를 생략하면 됩니다.</p></div>  | 선택  |
 | `source.namespace` | string | CIC API 네임스페이스. 이 이벤트 메시지가 어떤 상황이나 맥락에서 전송된 것인지 파악할 수 있도록 관련 CIC API 네임스페이스를 값을 입력합니다. 현재 `"AudioPlayer"` 값만 입력할 수 있습니다.  | 필수  |
 
 ### Remarks
@@ -911,9 +1153,8 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 
 ### Message example
 
-{% raw %}
-
 ```json
+// 예제 1: 원천 정보를 지정하지 않은 예제
 {
   "context": [
     {{Alerts.AlertsState}},
@@ -934,8 +1175,33 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
     "payload": {}
   }
 }
+
+// 예제 2: 원천 정보를 "AudioPlayer"로 지정한 예제
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "StopCommandIssued",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+    },
+    "payload": {
+      "source": {
+        "namespace": "AudioPlayer"
+      }
+    }
+  }
+}
 ```
-{% endraw %}
 
 ### See also
 * [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
@@ -955,7 +1221,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 없음
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -969,7 +1235,6 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
@@ -981,7 +1246,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 없음
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -995,7 +1260,6 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
@@ -1011,7 +1275,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -1025,7 +1289,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
@@ -1042,7 +1305,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 없음
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -1056,7 +1319,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
@@ -1074,7 +1336,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 없음
 
 ### Message example
-{% raw %}
+
 ```json
 {
   "directive": {
@@ -1088,7 +1350,6 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   }
 }
 ```
-{% endraw %}
 
 ### See also
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
