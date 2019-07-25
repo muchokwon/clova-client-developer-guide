@@ -26,6 +26,11 @@
     * [Green Dot VUI](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUI)
       * [Green Dot VUI 색상](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUIColor)
       * [Green Dot VUI 동작 구분](/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUIMotions)
+    * [Clova inside](/Design/Design_Guideline_For_Client_Hardware.md#ClovaInside)
+      * [Clova inside 배지](/Design/Design_Guideline_For_Client_Hardware.md#ClovaInsideBadge)
+      * [Clova inside 색상](/Design/Design_Guideline_For_Client_Hardware.md#ClovaInsideColor)
+      * [Clova inside 배경 색상](/Design/Design_Guideline_For_Client_Hardware.md#ClovaInsideBackgroundColor)
+      * [Clova inside 적용 규칙](/Design/Design_Guideline_For_Client_Hardware.md#ClovaInsideRules)
 
 ## Develop
 

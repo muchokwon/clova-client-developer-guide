@@ -21,11 +21,12 @@
   </thead>
   <tbody>
     <tr>
-      <td>2019-07-29</td>
+      <td>2019-07-31</td>
       <td>
         <ul>
           <li>미디어 재생의 제어 대상을 지정하기 위해 <a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> 네임스페이스의 <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectNextCommand">ExpectNextCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPauseCommand">ExpectPauseCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPreviousCommand">ExpectPreviousCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectResumeCommand">ExpectResumeCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectStopCommand">ExpectStopCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Pause">Pause</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Resume">Resume</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Stop">Stop</a> 지시 메시지에 target과 target.namespace 필드를 추가함</li>
           <li><a href="/Design/Design_Guideline_For_Client_Hardware.md#SoundEffect">디자인 가이드라인의 효과음</a> 항목에서 Attending 상태 진입 효과음 출력을 필수가 아닌 선택으로 수정</li>
+          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">디자인 가이라인</a> 문서에 <a href="/Design/Design_Guideline_For_Client_Hardware.md#ClovaInside">Clova inside</a> 관련 내용 추가</li>
           <li>Clova developer guide에서 Clova client guide 문서로 분리됨</li>
           <li>일부 문서 오류 수정</li>
         </ul>
@@ -400,7 +401,7 @@
       <td>
         <ul>
           <li><a href="/Develop/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject">AudioStreamInfoObject</a>의 durationInMilliseconds 필드에 대한 설명 수정</li>
-          <li><a href="/Develop/References/ContentTemplates/Atmosphere.md">Atmosphere</a>, <a href="/Develop/References/ContentTemplates/CardList.md">CardList</a>, <a href="/Develop/References/ContentTemplates/Humidity.md">Humidity</a>, <a href="/Develop/References/ContentTemplates/TodayWeather.md">TodayWeather</a>, <a href="CIC/References/ContentTemplates/TomorrowWeather.md">TomorrowWeather</a>, <a href="/Develop/References/ContentTemplates/WeeklyWeather.md">WeeklyWeather</a>, <a href="CIC/References/ContentTemplates/WindSpeed.md">WindSpeed</a> 템플릿에 출처 관련 필드 등 내용 추가</li>
+          <li><a href="/Develop/References/ContentTemplates/Atmosphere.md">Atmosphere</a>, <a href="/Develop/References/ContentTemplates/CardList.md">CardList</a>, <a href="/Develop/References/ContentTemplates/Humidity.md">Humidity</a>, <a href="/Develop/References/ContentTemplates/TodayWeather.md">TodayWeather</a>, <a href="/Develop/References/ContentTemplates/TomorrowWeather.md">TomorrowWeather</a>, <a href="/Develop/References/ContentTemplates/WeeklyWeather.md">WeeklyWeather</a>, <a href="/Develop/References/ContentTemplates/WindSpeed.md">WindSpeed</a> 템플릿에 출처 관련 필드 등 내용 추가</li>
           <li>일부 문서 오류 교정</li>
         </ul>
       </td>
