@@ -25,6 +25,7 @@
       <td>
         <ul>
           <li>미디어 재생의 제어 대상을 지정하기 위해 <a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> 네임스페이스의 <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectNextCommand">ExpectNextCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPauseCommand">ExpectPauseCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPreviousCommand">ExpectPreviousCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectResumeCommand">ExpectResumeCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectStopCommand">ExpectStopCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Pause">Pause</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Resume">Resume</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Stop">Stop</a> 지시 메시지에 target과 target.namespace 필드를 추가함</li>
+          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md#SoundEffect">디자인 가이드라인의 효과음</a> 항목에서 Attending 상태 진입 효과음 출력을 필수가 아닌 선택으로 수정</li>
           <li>Clova developer guide에서 Clova client guide 문서로 분리됨</li>
           <li>일부 문서 오류 수정</li>
         </ul>
