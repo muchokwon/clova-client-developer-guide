@@ -9,6 +9,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 * [조명](#Light)
 * [소리](#Audio)
 * [화면](#Screen)
+* [Green Dot VUI](#GreenDotVUI)
 
 <div class="tip">
   <p><strong>Tip!</strong></p>
