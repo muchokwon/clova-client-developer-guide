@@ -62,7 +62,7 @@ CIC를 통해 전달되는 콘텐츠 정보를 일정 범주에 맞게 정형화
 클라이언트의 현재 [맥락 정보](#Context)를 표현하는 객체입니다. 자세한 내용은 [맥락 정보(Context)](/Develop/References/Context_Objects.md) 문서를 참조합니다.
 
 ### Custom extension {#CustomExtension}
-임의의 확장된 기능을 제공하는 [extension](#ClovaExtension)입니다. Custom extension을 사용하면 음악, 쇼핑, 금융과 같은 외부 서비스의 기능을 제공할 수 있습니다. 자세한 내용은 [Clova custom extension 만들기]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Clova_Custom_Extension.md) 문서를 참조합니다.
+임의의 확장된 기능을 제공하는 [extension](#ClovaExtension)입니다. Custom extension을 사용하면 음악, 쇼핑, 금융과 같은 외부 서비스의 기능을 제공할 수 있습니다. 자세한 내용은 [Clova custom extension 만들기]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Custom_Extension.md) 문서를 참조합니다.
 
 ### Downchannel {#Downchannel}
 Downchannel은 클라이언트가 [Clova Interface Connect](#CIC)로부터 지시 메시지를 받을 때 사용되는 [HTTP/2](#HTTP2) 스트림입니다. 자세한 내용은 [CIC 연결하기](/Develop/Guides/Interact_with_CIC.md#ConnectToCIC) 문서를 참조합니다.
