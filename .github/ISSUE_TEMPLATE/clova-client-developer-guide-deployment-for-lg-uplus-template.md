@@ -1,13 +1,13 @@
 ---
 name: Clova Client Developer Guide deployment for LG Uplus template
 about: Template for announcing document deployment
-title: Deploy Clova_Client_Developer_Guide_v2000-00-00-ko-KR for LG Uplus (PDF)
+title: Deploy Clova_Client_Developer_Guide_v2000-00-00 for LG Uplus (PDF)
 labels: Deployment
 assignees: jeongil-kang
 
 ---
 
-To: @lee-tirano  , @my-jeong , @insil-lee , @j-a , @leejungho86 , @chris-choi , @ljeun-lee , @youngjin-yoon, @jm-lee 
+To: @lee-tirano  , @my-jeong , @insil-lee , @j-a , @chris-choi , @ljeun-lee , @youngjin-yoon, @jm-lee 
 
 파트너용 Clova Client Developer Guide For LGUplus v2000-00-00을 배포합니다.
 - 대상 파트너 : LG Uplus 전용
@@ -24,4 +24,7 @@ To: @lee-tirano  , @my-jeong , @insil-lee , @j-a , @leejungho86 , @chris-choi , 
 - [CIC|LG Uplus 전용] Guest mode 관련 스펙을 위해 Clova.ExpectLogin 지시 메시지를 남겨둠
 
 ## Download
+한국 비즈니스용 국문 문서
+- []()
+한국 비즈니스용 영문 문서
 - []()
