@@ -11,9 +11,7 @@
 | AudioPlayer        | [`Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)                      | 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.                          |
 | AudioPlayer        | [`StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver)    | [`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
 | AudioPlayer        | [`SynchronizePlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#SynchronizePlaybackState) | 클라이언트의 음원 재생 상태를 동기화하도록 지시합니다. [`AudioPlayer.RequestPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#RequestPlaybackState) 이벤트 메시지를 전송했던 클라이언트는 `AudioPlayer.SynchronizePlaybackState` 지시 메시지를 수신하게 됩니다. |
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 | Clova              | [`ExpectLogin`](/Develop/References/CICInterface/Clova.md#ExpectLogin)              | 클라이언트에게 사용자로부터 {{ book.ServiceEnv.OrientedService }} 계정 인증(login)을 받도록 지시합니다.          |
-{% endif -%}
 | Clova              | [`FinishExtension`](/Develop/References/CICInterface/Clova.md#FinishExtension)      | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.                                             |
 | Clova              | [`HandleDelegatedEvent`](/Develop/References/CICInterface/Clova.md#HandleDelegatedEvent) | 클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)하도록 지시합니다.   |
 | Clova              | [`Hello`](/Develop/References/CICInterface/Clova.md#Hello)                          | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.                                       |
@@ -66,9 +64,7 @@
 | Settings           | [`Update`](/Develop/References/CICInterface/Settings.md#Update)                                                             | 클라이언트에게 `payload`에 저장된 값을 설정값으로 적용하도록 지시합니다.  |
 | SpeechRecognizer   | [`ExpectSpeech`](/Develop/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) | 클라이언트에게 사용자의 음성 입력을 대기하도록 지시합니다.                                            |
 | SpeechRecognizer   | [`KeepRecording`](/Develop/References/CICInterface/SpeechRecognizer.md#KeepRecording) | 클라이언트에게 음성 입력을 계속 받도록 지시합니다.                                                |
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 | SpeechRecognizer   | [`ShowRecognizedText`](/Develop/References/CICInterface/SpeechRecognizer.md#ShowRecognizedText) | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.                                |
-{% endif -%}
 | SpeechRecognizer   | [`StopCapture`](/Develop/References/CICInterface/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |
 | SpeechSynthesizer  | [`Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)                 | 클라이언트에게 합성된 TTS를 스피커로 출력하도록 지시합니다.                                |
 | System             | [`SynchronizeState`](/Develop/References/CICInterface/System.md#SynchronizeState) | 클라이언트에게 `payload`에 있는 데이터를 동기화하도록 지시합니다.                                   |

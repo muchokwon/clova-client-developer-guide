@@ -4,9 +4,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 | [`ExpectLogin`](#ExpectLogin)                    | Directive | 클라이언트에게 사용자로부터 {{ book.ServiceEnv.OrientedService }} 계정 인증(login)을 받도록 지시합니다. |
-{% endif -%}
 | [`FinishExtension`](#FinishExtension)            | Directive | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.             |
 | [`HandleDelegatedEvent`](#HandleDelegatedEvent)  | Directive | 클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)하도록 지시합니다.   |
 | [`Hello`](#Hello)                                | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.       |
@@ -17,7 +15,6 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 | [`RenderText`](#RenderText)                      | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
 | [`StartExtension`](#StartExtension)              | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ## ExpectLogin directive {#ExpectLogin}
 
 클라이언트에게 사용자로부터 {{ book.ServiceEnv.OrientedService }} 계정 인증(login)을 받도록 지시합니다. 클라이언트가 [guest 모드](/Develop/References/Clova_Auth_API.md#GuestMode)로 동작하는 중에 {{ book.ServiceEnv.OrientedService }} 계정 인증이 필요한 서비스를 사용자에게 제공해야 할 때 CIC는 클라이언트에게 이 지시 메시지를 전달합니다.
@@ -34,6 +31,11 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 * 로그인이 성공했을 때 이전의 요청은 이어서 처리되지 않습니다. 필요하면 사용자가 재요청을 하여야 합니다.
 * `Clova.ExpectLogin` 지시 메시지의 payload는 extension을 위해 제공되며, 클라이언트에게 전달될 때는 payload가 존재하지 않습니다.
 * `Clova.ExpectLogin` 지시 메시지를 extension의 응답으로 사용할 때, extension 응답 메시지의 `response.outputSpeech` 필드는 반드시 빈 객체여야 합니다.
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>Guest 모드를 사용하려면 제휴 담당자에게 연락하시기 바랍니다.</p>
+</div>
 
 ### Message example
 
@@ -84,8 +86,6 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 ### See also
 * [Clova access token 생성하기](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
 * [Guest 모드](/Develop/References/Clova_Auth_API.md#GuestMode)
-
-{% endif %}
 
 ## FinishExtension directive {#FinishExtension}
 

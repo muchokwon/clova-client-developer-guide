@@ -1,5 +1,5 @@
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ### Remarks {#GuestMode}
+
 사용자에게 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정 인증 없이 guest 모드 형태의 서비스를 제공하려면 다음 내용을 따릅니다.
 
 1. [Clova access token 생성하기](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)에서 설명하고 있는 절차 설명 중 1 번과 2 번 단계 설명을 생략합니다.
@@ -24,4 +24,8 @@
        --data-urlencode "response_type=code" \
        --data-urlencode "state=FKjaJfMlakjdfTVbES5ccZ"
 </code></pre>
-{% endif %}
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>Guest 모드를 사용하려면 제휴 담당자에게 연락하시기 바랍니다.</p>
+</div>

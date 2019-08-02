@@ -13,9 +13,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 | [`ExpectSpeech`](#ExpectSpeech)                 | Directive | 클라이언트에게 사용자의 음성 입력을 받도록 지시합니다.                  |
 | [`KeepRecording`](#KeepRecording)               | Directive | 클라이언트에게 음성 입력을 계속 받도록 지시합니다.                     |
 | [`Recognize`](#Recognize)                       | Event     | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다.          |
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 | [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.              |
-{% endif -%}
 | [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 입력 수신을 중지하도록 지시합니다.           |
 
 ## ExpectSpeech directive {#ExpectSpeech}
@@ -222,7 +220,6 @@ Content-Type: application/octet-stream
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ## ShowRecognizedText directive {#ShowRecognizedText}
 
 Clova 음성 인식 시스템은 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지로 전달받고 있는 사용자의 음성 입력을 분석하여 인식 결과를 제공합니다. CIC는 `SpeechRecognizer.ShowRecognizedText` 지시 메시지로 사용자 음성 인식의 중간 처리 결과를 클라이언트로 전달합니다. 클라이언트는 이를 바탕으로 처리 과정을 사용자에게 실시간으로 보여 줄 수 있습니다.
@@ -237,6 +234,11 @@ Clova 음성 인식 시스템은 [`SpeechRecognizer.Recognize`](#Recognize) 이�
 
 * 해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
 * 기본적으로 CIC는 음성 인식 중간 결과를 클라이언트에게 전달하지 않으며, 일부 특수한 조건에 `SpeechRecognizer.ShowRecognizedText` 지시 메시지를 전달합니다.
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>이 지시 메시지를 사용하려면 제휴 담당자에게 연락하시기 바랍니다.</p>
+</div>
 
 ### Message example
 
@@ -296,35 +298,29 @@ Clova 음성 인식 시스템은 [`SpeechRecognizer.Recognize`](#Recognize) 이�
 * [`SpeechRecognizer.Recognize`](#Recognize)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
-{% endif %}
-
 ## StopCapture directive {#StopCapture}
 CIC가 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 받은 후 더 이상 녹음 데이터(PCM)를 수신할 필요가 없다고 판단했을 때 `SpeechRecognizer.StopCapture` 지시 메시지를 클라이언트에 전달합니다. 클라이언트는 이 메시지를 수신한 즉시 사용자 음성 녹음을 중지해야 합니다. CIC가 이 메시지를 보낸 후에도 사용자 음성 정보를 수신할 수 있지만 해당 음성 정보는 처리되지 않습니다.
 
 ### Payload fields
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `recognizedText` | string | 입력된 사용자 음성이 어떻게 인식이 되었는지 그 결과를 담고 있습니다. 기본적으로 이 필드는 `SpeechRecognizer.StopCapture` 지시 메시지에 포함되지 않으며, 일부 특수한 조건에 이 필드가 포함됩니다. | 조건부 |
-{% else %}
-없음
-{% endif %}
+| `recognizedText` | string | 입력된 사용자 음성이 어떻게 인식이 되었는지 그 결과를 담고 있습니다. 기본적으로 이 필드는 `SpeechRecognizer.StopCapture` 지시 메시지에 포함되지 않으며, 일부 특수한 조건에 이 필드가 포함됩니다.<div class="note"><p><strong>Note!</strong></p><p>이 필드를 사용하려면 제휴 담당자에게 연락하시기 바랍니다.</p></div> | 조건부 |
 
 ### Remarks
 이 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
 
 ### Message example
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ```json
+// 예제 1: recognizedText 필드가 있는 예제
 {
   "directive": {
     "header": {
       "namespace": "SpeechRecognizer",
       "name": "StopCapture",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
-      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+      "dialogRequestId": "eaa19eaa-07bc-447a-9e3f-c3b4a7d994e8",
+      "messageId": "cc9f2a05-34c8-4edd-b810-2c040ac3d672"
     },
     "payload": {
       "recognizedText": "오늘 날씨 알려줘"
@@ -332,7 +328,8 @@ CIC가 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 받은 
   }
 }
 ```
-{% else %}
+
+// 예제 2: recognizedText 필드가 없는 예제
 ```json
 {
   "directive": {
@@ -346,11 +343,8 @@ CIC가 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 받은 
   }
 }
 ```
-{% endif %}
 
 ### See also
 
 * [`SpeechRecognizer.Recognize`](#Recognize)
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 * [`SpeechRecognizer.ShowRecognizedText`](#ShowRecognizedText)
-{% endif -%}
