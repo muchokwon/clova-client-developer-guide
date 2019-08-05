@@ -1,7 +1,7 @@
 ---
 name: Clova Client Developer Guide deployment
 about: Template for announcing document deployment
-title: Deploy Clova_Client_Developer_Guide_v2000-00-00
+title: Deploy Clova Client Developer Guide v2000-00-00
 labels: Deployment
 assignees: jeongil-kang
 
