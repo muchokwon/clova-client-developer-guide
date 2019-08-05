@@ -24,7 +24,7 @@
       <td>2019-08-05</td>
       <td>
         <ul>
-          <li>클라이언트 기기 디자인 가이드라인 문서를 <a href="/Design/Client_State_And_Event.md">클라이언트 상태와 이벤트 이해</a>, <a href="/Design/Button.md">버튼</a>, <a href="/Design/Light.md">조명</a>, <a href="/Design/Audio.md">소리</a>, <a href="/Design/Screen.md">화면</a>, <a href="/Design/Clova_Inside.md">Clova inside</a> 페이지로 분리함</li>
+          <li>클라이언트 기기 디자인 가이드라인 문서를 <a href="/Design/Client_State_And_Event.md">클라이언트 상태와 이벤트</a>, <a href="/Design/Button.md">버튼</a>, <a href="/Design/Light.md">조명</a>, <a href="/Design/Audio.md">소리</a>, <a href="/Design/Screen.md">화면</a>, <a href="/Design/Clova_Inside.md">Clova inside</a> 페이지로 분리함</li>
           <li><a href="/Design/Audio.md#SupportedAudioFormat">플랫폼 지원 오디오 포맷</a> 내용에 Clova가 지원하는 컨테이너 포맷 추가</li>
         </ul>
       </td>

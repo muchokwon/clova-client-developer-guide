@@ -23,7 +23,7 @@
         <ul>
           <li><a href="/Develop/CIC_Overview.md#WhatisCIC">CIC란?</a></li>
           <li><a href="/Develop/CIC_Overview.md#IndirectDialogue">간접 대화 구조</a></li>
-          <li><a href="/Design/Client_State_And_Event.md">클라이언트 상태와 이벤트 이해</a></li>
+          <li><a href="/Design/Client_State_And_Event.md">클라이언트 상태와 이벤트</a></li>
           <li><a href="/Design/Button.md">버튼</a>, <a href="/Design/Light.md">조명</a>, <a href="/Design/Audio.md">소리</a>, <a href="/Design/Screen.md">화면</a>, <a href="/Design/Clova_Inside.md">Clova inside</a> 가이드라인</li>
         </ul>
       </td>

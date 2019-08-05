@@ -1,12 +1,12 @@
-## About This Document
+## About this document
 
 * [시작하기 전에](/README.md)
 * [문서 정보](/Document_Info.md)
 * [용어 및 약어](/Glossary.md)
 
-## Design Guideline
+## Design guidelines
 
-* [클라이언트 상태와 이벤트 이해](/Design/Client_State_And_Event.md)
+* [클라이언트 상태와 이벤트](/Design/Client_State_And_Event.md)
 * [버튼](/Design/Button.md)
   * [버튼 종류](/Design/Button.md#Buttons)
   * [버튼 가이드라인](/Design/Button.md#ButtonGuideline)
