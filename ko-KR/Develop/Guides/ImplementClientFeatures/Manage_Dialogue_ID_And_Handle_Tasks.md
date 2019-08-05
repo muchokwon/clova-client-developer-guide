@@ -30,7 +30,7 @@
 
 마지막 대화 ID를 업데이트했으면 클라이언트는 새 [대화 ID를 가진 지시 메시지를 처리하기](#HandleDirectivesByDialogueID) 위해 다음과 같은 것을 수행해야 합니다.
 
-* 이전 대화 ID를 가진 지시 메시지의 내용을 사용자에게 제공하고 있다면 [기본 오디오 재생 규칙](/Design/Design_Guideline_For_Client_Hardware.md#AudioInterruptionRule)이나 [사용자 발화 시 오디오 재생 규칙](/Design/Design_Guideline_For_Client_Hardware.md#AudioInterruptionRuleForUserUtterance)을 참고하여 이를 중단해야 합니다.
+* 이전 대화 ID를 가진 지시 메시지의 내용을 사용자에게 제공하고 있다면 [기본 오디오 재생 규칙](/Design/Audio.md#AudioInterruptionRule)이나 [사용자 발화 시 오디오 재생 규칙](/Design/Audio.md#AudioInterruptionRuleForUserUtterance)을 참고하여 이를 중단해야 합니다.
 * [메시지 큐](/Develop/Guides/Interact_with_CIC.md#ManageMessageQ)에서 이전 대화 ID를 가진 지시 메시지를 모두 폐기해야 합니다.
 
 ## 대화 ID에 따라 지시 메시지 처리하기 {#HandleDirectivesByDialogueID}

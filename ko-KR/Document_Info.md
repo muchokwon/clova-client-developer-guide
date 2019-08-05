@@ -1,5 +1,5 @@
 # 문서 정보
-이 문서는 Clova 클라이언트를 개발할 수 있도록 클라이언트 기기 디자인 가이드라인과 CIC 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다. 대상 독자는 CIC를 사용하여 Clova 서비스와 연동되는 전자 기기, 앱을 개발하려는 클라이언트 개발자입니다.
+이 문서는 Clova 클라이언트를 개발할 수 있도록 디자인 가이드라인과 CIC 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다. 대상 독자는 CIC를 사용하여 Clova 서비스와 연동되는 전자 기기, 앱을 개발하려는 클라이언트 개발자입니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -21,12 +21,21 @@
   </thead>
   <tbody>
     <tr>
+      <td>2019-08-05</td>
+      <td>
+        <ul>
+          <li>클라이언트 기기 디자인 가이드라인 문서를 <a href="/Design/Client_State_And_Event.md">클라이언트 상태와 이벤트 이해</a>, <a href="/Design/Button.md">버튼</a>, <a href="/Design/Light.md">조명</a>, <a href="/Design/Audio.md">소리</a>, <a href="/Design/Screen.md">화면</a>, <a href="/Design/Clova_Inside.md">Clova inside</a> 페이지로 분리함</li>
+          <li><a href="/Design/Audio.md#SupportedAudioFormat">플랫폼 지원 오디오 포맷</a> 내용에 Clova가 지원하는 컨테이너 포맷 추가</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>2019-07-31</td>
       <td>
         <ul>
           <li>미디어 재생의 제어 대상을 지정하기 위해 <a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> 네임스페이스의 <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectNextCommand">ExpectNextCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPauseCommand">ExpectPauseCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPreviousCommand">ExpectPreviousCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectResumeCommand">ExpectResumeCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectStopCommand">ExpectStopCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Pause">Pause</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Resume">Resume</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#Stop">Stop</a> 지시 메시지에 target과 target.namespace 필드를 추가함</li>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md#SoundEffect">디자인 가이드라인의 효과음</a> 항목에서 Attending 상태 진입 효과음 출력을 필수가 아닌 선택으로 수정</li>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">디자인 가이라인</a> 문서에 <a href="/Design/Design_Guideline_For_Client_Hardware.md#ClovaInside">Clova inside</a> 관련 내용 추가</li>
+          <li><a href="/Design/Audio.md#SoundEffect">디자인 가이드라인의 효과음</a> 항목에서 Attending 상태 진입 효과음 출력을 필수가 아닌 선택으로 수정</li>
+          <li>디자인 가이드라인에 <a href="/Design/Clova_Inside.md">Clova inside</a> 관련 내용 추가</li>
           <li>Clova developer guide에서 Clova client guide 문서로 분리됨</li>
           <li>일부 문서 오류 수정</li>
         </ul>
@@ -36,7 +45,7 @@
       <td>2019-07-02</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>의 <a href="/Design/Design_Guideline_For_Client_Hardware.md#LightEffect">조명 효과</a> 설명에서 대기 시간 초과(timeout)와 관련된 조명 효과 구현 여부를 선택으로 변경</li>
+          <li>디자인 가이드라인의 <a href="/Design/Light.md#LightEffect">조명 효과</a> 설명에서 대기 시간 초과(timeout)와 관련된 조명 효과 구현 여부를 선택으로 변경</li>
           <li><a href="/Develop/References/Clova_Auth_API.md">Clova 인증 API 레퍼런스</a>의 <a href="/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode">Authorization code 요청(/authorize)</a>의 redirect_uri 설명 업데이트</li>
           <li>미디어 재생의 제어 대상을 지정하기 위해 <a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> 네임스페이스의 <a href="/Develop/References/CICInterface/PlaybackController.md#NextCommandIssued">NextCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#PauseCommandIssued">PauseCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#PreviousCommandIssued">PreviousCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ResumeCommandIssued">ResumeCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#StopCommandIssued">StopCommandIssued</a> 이벤트 메시지에 source와 source.namespace 필드를 추가함</li>
           <li>일부 예제 오탈자 교정 및 노트 상자 수준 조정</li>
@@ -47,7 +56,7 @@
       <td>2019-06-10</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>의 <a href="/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUI">Green Dot VUI</a> 설명에 예제 추가 및 로고 업데이트 반영</li>
+          <li>디자인 가이드라인의 <a href="/Design/Screen.md#GreenDotVUI">Green Dot VUI</a> 설명에 예제 추가 및 로고 업데이트 반영</li>
           <li>특정 기기의 상태 공유를 받기 위해 <a href="/Develop/References/CICInterface/DeviceControl.md#RequestStateSynchronization">RequestStateSynchronization</a> 이벤트 메시지에 deviceId 필드 추가</li>
           <li>클라이언트 기기가 등록되지 않았거나 오프라인 상태를 표현하기 위해 <a href="/Develop/References/CICInterface/DeviceControl.md#SynchronizeState">SynchronizeState</a> 이벤트 메시지의 deviceState 필드를 조건부로 수정</li>
           <li><a href="/Develop/References/Clova_Auth_API.md">Clova 인증 API 레퍼런스</a>에서 model_id를 전부 항목으로 수정</li>
@@ -58,7 +67,7 @@
       <td>2019-05-27</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>의 Voice Agent 설명을 제거하고 <a href="/Design/Design_Guideline_For_Client_Hardware.md#GreenDotVUI">Green Dot VUI</a> 설명을 추가</li>
+          <li>디자인 가이드라인의 Voice Agent 설명을 제거하고 <a href="/Design/Screen.md#GreenDotVUI">Green Dot VUI</a> 설명을 추가</li>
           <li>Clova 클라이언트가 CIC로 <a href="/Develop/References/Context_Objects.md">맥락 정보(context)</a>를 전송할 때 임의의 정보를 선택적으로 전송하는 것이 아니라 전송 가능한 모든 상태 정보를 올리도록 설명을 수정</li>
         </ul>
       </td>
@@ -83,7 +92,7 @@
       <td>2019-04-19</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>의 <a href="/Design/Design_Guideline_For_Client_Hardware.md#AudioInterruptionRule">기본 오디오 재생 규칙</a>에서 오디오 콘텐츠를 구분할 수 있도록 각 오디오 콘텐츠 타입에 관련된 CIC API 네임스페이스를 추가</li>
+          <li>디자인 가이드라인의 <a href="/Design/Audio.md#AudioInterruptionRule">기본 오디오 재생 규칙</a>에서 오디오 콘텐츠를 구분할 수 있도록 각 오디오 콘텐츠 타입에 관련된 CIC API 네임스페이스를 추가</li>
         </ul>
       </td>
     </tr>
@@ -239,7 +248,7 @@
       <td>2018-08-29</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>에 <a href="/Design/Design_Guideline_For_Client_Hardware.md#LightColor">조명 색상</a>의 RGB 값 변경</li>
+          <li>디자인 가이드라인에 <a href="/Design/Light.md#LightColor">조명 색상</a>의 RGB 값 변경</li>
           <li><a href="/Develop/Guides/Implement_Client_Features.md">클라이언트 기능 구현하기</a> 절 추가</li>
           <li><a href="/Develop/References/CICInterface/AudioPlayer.md">AudioPlayer</a>, <a href="/Develop/References/CICInterface/TemplateRuntime.md">TemplateRuntime</a> 네임스페이스에 일부 필드 업데이트</li>
         </ul>
@@ -266,7 +275,7 @@
       <td>2018-07-23</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>의 <a href="/Design/Design_Guideline_For_Client_Hardware.md#SoundEffect">효과음</a> 중 Attending 상태 진입에 대한 효과음 업데이트</li>
+          <li>디자인 가이드라인의 <a href="/Design/Audio.md#SoundEffect">효과음</a> 중 Attending 상태 진입에 대한 효과음 업데이트</li>
           <li><a href="/Develop/References/Clova_Auth_API.md">CIC 인증 API</a>의 <a href="/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode">Authorization code 요청</a> 설명에 423 Locked 상태 코드 추가</li>
         </ul>
       </td>
@@ -325,7 +334,7 @@
       <td>2018-04-09</td>
       <td>
         <ul>
-          <li>클라이언트 기기 디자인 가이드라인에서 <a href="Design/Design_Guideline_For_Client_Hardware.md#BootingScreen">부팅 화면</a> 관련 설명 및 예제 이미지를 업데이트</li>
+          <li>클라이언트 기기 디자인 가이드라인에서 <a href="/Design/Screen.md#BootingScreen">부팅 화면</a> 관련 설명 및 예제 이미지를 업데이트</li>
                   </ul>
       </td>
     </tr>
@@ -371,8 +380,8 @@
       <td>
         <ul>
           <li><a  href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지 initiator 필드의 설명을 수정</li>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>에서 클라이언트 상태 중 Hearing 상태의 이름을 Listening으로 수정</li>
-          <li>클라이언트 기기 디자인 가이드라인의 <a href="/Design/Design_Guideline_For_Client_Hardware.md#Audio">소리</a>에서 오디오 콘텐츠 타입으로 Feedback 타입을 추가하고 설명에 관련 규칙을 추가</li>
+          <li>디자인 가이드라인에서 클라이언트 상태 중 Hearing 상태의 이름을 Listening으로 수정</li>
+          <li>클라이언트 기기 디자인 가이드라인의 <a href="/Design/Audio.md">소리</a>에서 오디오 콘텐츠 타입으로 Feedback 타입을 추가하고 설명에 관련 규칙을 추가</li>
         </ul>
       </td>
     </tr>
@@ -410,7 +419,7 @@
       <td>2018-01-29</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>에 <a href="/Design/Design_Guideline_For_Client_Hardware.md#SoundEffect">Reminder용 효과음</a> 추가</li>
+          <li>디자인 가이드라인에 <a href="/Design/Audio.md#SoundEffect">Reminder용 효과음</a> 추가</li>
           <li><a href="/Develop/References/CICInterface/Notifier.md">Notifier</a> 네임스페이스에 <a href="/Develop/References/CICInterface/Notifier.md#Notify">Notifier.Notify</a> 이벤트 메시지 추가 및 해당 네임스페이스 메시지의 payload 필드 업데이트</li>
           <li><a href="/Develop/References/Context_Objects.md#SpeechState">SpeechSynthesizer.SpeechState</a> 및 <a href="/Develop/References/CICInterface/SpeechSynthesizer.md">SpeechSynthesizer</a> 네임스페이스에 <a href="/Develop/References/CICInterface/SpeechSynthesizer.md#SpeechFinished">SpeechFinished</a>, <a href="/Develop/References/CICInterface/SpeechSynthesizer.md#SpeechStarted">SpeechStarted</a>, <a href="/Develop/References/CICInterface/SpeechSynthesizer.md#SpeechStopped">SpeechStopped</a> 이벤트 메시지 추가</li>
           <li>Multi-turn 대화를 위해 <a href="/Develop/References/CICInterface/TextRecognizer.md">TextRecognizer.Recognize</a> 이벤트 메시지에 speechId, explicit 필드 추가</li>
@@ -422,7 +431,7 @@
       <td>2018-01-22</td>
       <td>
         <ul>
-          <li>플랫폼 지원 오디오 압축 포맷 내용을 <a href="/Design/Design_Guideline_For_Client_Hardware.md#SupportedAudioCompressionFormat">클라이언트 기기 디자인 가이드라인</a>에 각각 추가</li>
+          <li><a href="/Design/Audio.md#SupportedAudioFormat">플랫폼 지원 오디오 포맷</a>을 디자인 가이드라인에 추가</li>
           <li>UML 다이어그램의 이미지 포맷 변경</li>
         </ul>
       </td>
@@ -431,7 +440,7 @@
       <td>2018-01-15</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>에 알람, 리마인더, 타이머에 대한 조명 효과 및 효과음 가이드라인 설명 추가 </li>
+          <li>디자인 가이드라인에 알람, 리마인더, 타이머에 대한 조명 효과 및 효과음 가이드라인 설명 추가 </li>
         </ul>
       </td>
     </tr>
@@ -478,8 +487,8 @@
       <td>2017-12-04</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md#AudioInterruptionRule">오디오 재생 규칙(audio interruption rule)</a>을 <a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>에 추가</li>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a>의 이미지 개선</li>
+          <li><a href="/Design/Audio.md#AudioInterruptionRule">오디오 재생 규칙(audio interruption rule)</a>을 디자인 가이드라인에 추가</li>
+          <li>디자인 가이드라인의 이미지 개선</li>
           <li>CIC 연동하기의 사전 준비사항에 <a href="/Develop/Guides/Interact_with_CIC.md#UserAgentString">User-Agent string</a>을 추가</li>
           <li><a href="/Develop/References/CIC_API.md">CIC API 레퍼런스</a>의 <a href="/Develop/References/CIC_API.md#SendEvent">이벤트 메시지 전송</a> 절에 412 Precondition Failed 상태 코드 설명 추가</li>
         </ul>
@@ -489,7 +498,7 @@
       <td>2017-11-20</td>
       <td>
         <ul>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a> 추가</li>
+          <li>디자인 가이드라인 추가</li>
           <li>오디오 콘텐츠 및 이미지 썸네일 표시를 위해 <a href="/Develop/References/ContentTemplates/CardList.md">CardList 템플릿</a>의 subType 값에 Type5, Type6를 추가</li>
         </ul>
       </td>
