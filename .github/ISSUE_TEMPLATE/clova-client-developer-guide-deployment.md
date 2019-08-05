@@ -17,7 +17,7 @@ To: @lee-tirano  , @my-jeong , @insil-lee , @j-a , @chris-choi , @ljeun-lee , @y
 - Update here
 
 ## 참고 사항
-- XX님 기술 리뷰함.
+- XX님이 기술 리뷰함.
 
 ## Download
 한국 비즈니스용 영문 문서
