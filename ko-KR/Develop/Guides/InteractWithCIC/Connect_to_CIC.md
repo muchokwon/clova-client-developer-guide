@@ -1,7 +1,7 @@
 ## CIC 연결하기 {#ConnectToCIC}
 클라이언트가 CIC와 연결하려면 다음과 같은 항목을 수행해야 합니다.
 * [Clova access token 생성하기](#CreateClovaAccessToken)
-* [연결 생성하기](#CreateConnection)
+* [처음 연결하기](#CreateConnection)
 * [인증하기](#Authorization)
 * [연결 관리하기](#ManageConnection)
 
@@ -88,7 +88,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
   </li>
 </ol>
 
-### CIC 연결하기 {#CreateConnection}
+### 처음 연결하기 {#CreateConnection}
 클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 [downchannel을 구성](/Develop/References/CIC_API.md#EstablishDownchannel)하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때, 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC가 주도(Cloud-initiated)하여 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.
 
 Downchannel은 `/v1/directives` 경로로 `GET` 방식 요청을 보내면 구성할 수 있으며, CIC에 의해 연결이 계속 유지됩니다.
@@ -161,11 +161,11 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 클라이언트와 CIC 사이에 연결이 구성되면, 클라이언트는 다음과 같은 부분을 신경써서 관리해야 합니다.
 
-* [DownChannel 유지](#KeepDownchannel)
+* [Downchannel 유지](#KeepDownchannel)
 * [Ping-pong 수행](#DoPingpong)
 * [Access token 갱신](#RefreshAccessToken)
 
-#### DownChannel 유지 {#KeepDownchannel}
+#### Downchannel 유지 {#KeepDownchannel}
 Downchannel 연결이 종료되거나 끊어지면 클라이언트는 즉시 새로운 [downchannel을 구성](#CreateConnection)하여, CIC로부터 전달되는 지시 메시지를 받지 못하는 일이 없도록 해야합니다.
 
 #### Ping-pong 수행 {#DoPingpong}

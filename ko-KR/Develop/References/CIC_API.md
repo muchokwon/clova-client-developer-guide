@@ -122,7 +122,7 @@ Content-Type: application/octet-stream
 GET /v1/directives
 ```
 
-클라이언트는 가장 먼저 CIC와 downchannel을 구성해야 합니다. Downchannel은 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내지는 지시 메시지를 수신할 때 사용됩니다. Downchannel을 구성하는 방법에 대한 자세한 내용은 [CIC 연결하기](/Develop/Guides/Interact_with_CIC.md#CreateConnection)를 참조합니다.
+클라이언트는 가장 먼저 CIC와 downchannel을 구성해야 합니다. Downchannel은 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내지는 지시 메시지를 수신할 때 사용됩니다. Downchannel을 구성하는 방법에 대한 자세한 내용은 [처음 연결하기](/Develop/Guides/Interact_with_CIC.md#CreateConnection)를 참조합니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>

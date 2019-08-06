@@ -46,7 +46,7 @@
     * [클라이언트 인증 정보](/Develop/Guides/Interact_with_CIC.md#ClientAuthInfo)
   * [CIC 연결하기](/Develop/Guides/Interact_with_CIC.md#ConnectToCIC)
     * [Clova access token 생성하기](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
-    * [연결하기](/Develop/Guides/Interact_with_CIC.md#CreateConnection)
+    * [처음 연결하기](/Develop/Guides/Interact_with_CIC.md#CreateConnection)
     * [인증하기](/Develop/Guides/Interact_with_CIC.md#Authorization)
     * [연결 관리하기](/Develop/Guides/Interact_with_CIC.md#ManageConnection)
   * [이벤트 메시지 전송하기](/Develop/Guides/Interact_with_CIC.md#SendEvent)
