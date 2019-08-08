@@ -1,0 +1,31 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Clova app" as ca #9EA0CA
+participant "Client device" as cli #9EA0CA
+participant CIC as cic #05D686
+
+activate ca
+  ca ->> cic : Send user request and delegate request handling
+deactivate ca
+
+activate cic
+
+  cic ->> cli : Direct to delegate handling (Clova.HandleDelegatedEvent directive, use downchannel)
+
+deactivate cic
+
+activate cli
+
+  cli ->> cic : Request to handle delegated user request (Clova.ProcessDelegatedEvent event)
+
+deactivate cli
+
+activate cic
+
+  cic -> cic : Handle user request
+  cic -->> cli : Send directives with handled user request
+
+deactivate cic
+
+activate cli
+  cli -> cli : Handle a general directive

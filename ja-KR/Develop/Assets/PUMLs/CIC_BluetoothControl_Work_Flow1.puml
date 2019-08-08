@@ -1,0 +1,15 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Bluetoothデバイス" as device #9EA0CA
+participant クライアント as client #9EA0CA
+participant "Clova" as clova #05D686
+
+activate device
+device -> device : ペアリングを準備する(Bluetoothアドバタイズ)
+hnote over device, clova : ペアリングできるデバイスのリストを照会するようにリクエストする
+activate clova
+  clova ->> client : DeviceControl.BtStartPairing\nディレクティブを送信する
+activate client
+  client -> client : デバイスをスキャンする(Bluetoothスキャン)
+  client -->> clova : DeviceControl.ActionExecuted (with DeviceState) \nイベントを送信する
+hnote over device, clova : スキャンされたデバイスのリストを提供する

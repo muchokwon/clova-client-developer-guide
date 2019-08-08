@@ -1,0 +1,29 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor User as user
+participant "Bluetooth device" as device #9EA0CA
+participant Client as client #9EA0CA
+participant "Clova" as clova #05D686
+
+user ->> client : Request audio playback
+activate client
+client ->> clova : SpeechRecognizer.Recognize\nSend an event message
+deactivate client
+activate clova
+alt Client role == sink
+  clova ->> client : DeviceControl.BtPlay\nSend a directive message
+
+activate client
+
+	device -> client : Receive audio stream from the Bluetooth device
+  activate device
+    client -> user : Play audio from the speaker
+else Client role == source
+        clova -> client : AudioPlayer.Play\nSend a directive message
+        client -> device : Send audio to the Bluetooth speaker
+    device -> user : Play audio from the Bluetooth speaker
+end
+  client --> clova : DeviceControl.ActionExecuted (with DeviceState) \nSend an event message
+deactivate client
+deactivate device
+deactivate clova

@@ -1,0 +1,25 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+start
+
+:Check the dialogue ID of the received directive;
+
+if ( Does a dialogue ID exist? ) then (Yes)
+
+  :Check the latest dialogue ID;
+
+  if ( Dialogue ID of directive == Latest dialogue ID ) then (Yes)
+
+  :Add the received directive to the message queue;
+  stop
+
+  else (No)
+
+  :Discard the received directive;
+  stop
+  endif
+
+else (No)
+  :Handle the received directive immediately;
+  stop
+endif

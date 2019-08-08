@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="442px" preserveAspectRatio="none" style="width:638px;height:442px;" version="1.1" viewBox="0 0 638 442" width="638px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="356.7734" style="stroke: #000000; stroke-width: 1.0;" width="10" x="80" y="64.4883"/><rect fill="#FFFFFF" height="186.8867" style="stroke: #000000; stroke-width: 1.0;" width="10" x="244" y="234.375"/><rect fill="#FFFFFF" height="308.7734" style="stroke: #000000; stroke-width: 1.0;" width="10" x="578" y="112.4883"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="85" x2="85" y1="54.4883" y2="430.2617"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="248.5" x2="248.5" y1="54.4883" y2="430.2617"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="583" x2="583" y1="54.4883" y2="430.2617"/><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="154" x="8" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="120" x="25" y="33.5352">Bluetooth device</text><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="77" x="210.5" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="227.5" y="33.5352">Client</text><rect fill="#05D686" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="74" x="546" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="40" x="563" y="33.5352">Clova</text><rect fill="#FFFFFF" height="356.7734" style="stroke: #000000; stroke-width: 1.0;" width="10" x="80" y="64.4883"/><rect fill="#FFFFFF" height="186.8867" style="stroke: #000000; stroke-width: 1.0;" width="10" x="244" y="234.375"/><rect fill="#FFFFFF" height="308.7734" style="stroke: #000000; stroke-width: 1.0;" width="10" x="578" y="112.4883"/><line style="stroke: #000000; stroke-width: 1.0;" x1="90" x2="137" y1="99.6211" y2="99.6211"/><line style="stroke: #000000; stroke-width: 1.0;" x1="137" x2="137" y1="99.6211" y2="112.6211"/><line style="stroke: #000000; stroke-width: 1.0;" x1="96" x2="137" y1="112.6211" y2="112.6211"/><polygon fill="#000000" points="106,108.6211,96,112.6211,106,116.6211,102,112.6211" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="120" x="112" y="85.0898">Bluetooth advertising</text><polygon fill="#9EA0CA" points="40,130.6211,627,130.6211,637,152.6211,627,174.6211,40,174.6211,30,152.6211,40,130.6211" style="stroke: #FFFFFF; stroke-width: 1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="293" x="187" y="158.1563">Request to retrieve a pairable device list</text><line style="stroke: #000000; stroke-width: 1.0;" x1="254" x2="264" y1="234.375" y2="230.375"/><line style="stroke: #000000; stroke-width: 1.0;" x1="254" x2="264" y1="234.375" y2="238.375"/><line style="stroke: #000000; stroke-width: 1.0;" x1="254" x2="577" y1="234.375" y2="234.375"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="159" x="336.5" y="205.7109">DeviceControl.BtStartPairing</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="147" x="342.5" y="219.8438">Send a directive message</text><line style="stroke: #000000; stroke-width: 1.0;" x1="254" x2="296" y1="282.5078" y2="282.5078"/><line style="stroke: #000000; stroke-width: 1.0;" x1="296" x2="296" y1="282.5078" y2="295.5078"/><line style="stroke: #000000; stroke-width: 1.0;" x1="255" x2="296" y1="295.5078" y2="295.5078"/><polygon fill="#000000" points="265,291.5078,255,295.5078,265,299.5078,261,295.5078" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="107" x="271" y="267.9766">Bluetooth scanning</text><line style="stroke: #000000; stroke-width: 1.0;" x1="576" x2="566" y1="357.7734" y2="353.7734"/><line style="stroke: #000000; stroke-width: 1.0;" x1="576" x2="566" y1="357.7734" y2="361.7734"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="254" x2="577" y1="357.7734" y2="357.7734"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="276" x="276" y="329.1094">DeviceControl.ActionExecuted (with DeviceState)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="136" x="348" y="343.2422">Send an event message</text><polygon fill="#9EA0CA" points="40,370.7734,627,370.7734,637,392.7734,627,414.7734,40,414.7734,30,392.7734,40,370.7734" style="stroke: #FFFFFF; stroke-width: 1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="224" x="221.5" y="398.3086">Provide the scanned device list</text><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam sequence {
+	ArrowColor #000000
+	ActorBorderColor #000000
+	ActorFontStyle Bolder
+
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor transparent
+	ParticipantBorderColor transparent
+	ParticipantFontSize 14
+	ParticipantFontColor #ffffff
+	ParticipantFontStyle bold
+
+	BoxBorderColor #000000
+	BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+skinparam note {
+	BackgroundColor #9EA0CA
+	BorderColor #ffffff
+	FontColor #ffffff
+	FontSize 14
+	FontStyle bold
+}
+hide footbox
+
+participant "Bluetooth device" as device #9EA0CA
+participant Client as client #9EA0CA
+participant "Clova" as clova #05D686
+
+activate device
+device -> device : Bluetooth advertising
+hnote over device, clova : Request to retrieve a pairable device list
+activate clova
+  clova ->> client : DeviceControl.BtStartPairing\nSend a directive message
+activate client
+  client -> client : Bluetooth scanning
+  client - ->> clova : DeviceControl.ActionExecuted (with DeviceState) \nSend an event message
+hnote over device, clova : Provide the scanned device list
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11+28
+Operating System: Mac OS X
+OS Version: 10.14.2
+Default Encoding: US-ASCII
+Language: en
+Country: KR
+--></g></svg>

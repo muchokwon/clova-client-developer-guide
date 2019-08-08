@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1103px" preserveAspectRatio="none" style="width:772px;height:1103px;" version="1.1" viewBox="0 0 772 1103" width="772px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="1017.6523" style="stroke: #000000; stroke-width: 1.0;" width="10" x="95" y="64.4883"/><rect fill="#FFFFFF" height="215.7969" style="stroke: #000000; stroke-width: 1.0;" width="10" x="361" y="235.5078"/><rect fill="#FFFFFF" height="449.9492" style="stroke: #000000; stroke-width: 1.0;" width="10" x="361" y="561.7031"/><rect fill="#FFFFFF" height="1017.6523" style="stroke: #000000; stroke-width: 1.0;" width="10" x="691" y="64.4883"/><rect fill="#FFFFFF" height="215.9297" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="425.5" x="317.5" y="125.9766"/><rect fill="#FFFFFF" height="98.3984" style="stroke: none; stroke-width: 1.0;" width="425.5" x="317.5" y="243.5078"/><rect fill="#FFFFFF" height="553.3477" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="740" x="13" y="466.3047"/><rect fill="#FFFFFF" height="215.1523" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="425.5" x="317.5" y="576.7031"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="100" x2="100" y1="54.4883" y2="1091.1406"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="365.5" x2="365.5" y1="54.4883" y2="1091.1406"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="696" x2="696" y1="54.4883" y2="1091.1406"/><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="154" x="23" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="120" x="40" y="33.5352">Bluetooth device</text><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="77" x="327.5" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="344.5" y="33.5352">Client</text><rect fill="#05D686" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="74" x="659" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="40" x="676" y="33.5352">Clova</text><rect fill="#FFFFFF" height="1017.6523" style="stroke: #000000; stroke-width: 1.0;" width="10" x="95" y="64.4883"/><rect fill="#FFFFFF" height="215.7969" style="stroke: #000000; stroke-width: 1.0;" width="10" x="361" y="235.5078"/><rect fill="#FFFFFF" height="449.9492" style="stroke: #000000; stroke-width: 1.0;" width="10" x="361" y="561.7031"/><rect fill="#FFFFFF" height="1017.6523" style="stroke: #000000; stroke-width: 1.0;" width="10" x="691" y="64.4883"/><polygon fill="#9EA0CA" points="55,69.4883,740,69.4883,750,91.4883,740,113.4883,55,113.4883,45,91.4883,55,69.4883" style="stroke: #FFFFFF; stroke-width: 1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="279" x="258" y="97.0234">Request a Bluetooth device connection</text><path d="M322.5,125.9766 L398.5,125.9766 L398.5,151.9766 L388.5,161.9766 L317.5,161.9766 L317.5,130.9766 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="215.9297" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="425.5" x="317.5" y="125.9766"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="342.5" y="148.5781">alt</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="208" x="423.5" y="149.5781">[Specific device assigned == Yes]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="381" y1="235.5078" y2="231.5078"/><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="381" y1="235.5078" y2="239.5078"/><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="690" y1="235.5078" y2="235.5078"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="225" x="418.5" y="206.8438">DeviceControl.BtConnect (with payload)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="147" x="457.5" y="220.9766">Send a directive message</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="317.5" x2="743" y1="244.5078" y2="244.5078"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="203" x="332.5" y="266.1094">[Specific device assigned == No]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="381" y1="333.9063" y2="329.9063"/><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="381" y1="333.9063" y2="337.9063"/><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="690" y1="333.9063" y2="333.9063"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="243" x="409.5" y="305.2422">DeviceControl.BtConnect (without payload)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="147" x="457.5" y="319.375">Send a directive message</text><line style="stroke: #000000; stroke-width: 1.0;" x1="105" x2="115" y1="389.0391" y2="385.0391"/><line style="stroke: #000000; stroke-width: 1.0;" x1="105" x2="115" y1="389.0391" y2="393.0391"/><line style="stroke: #000000; stroke-width: 1.0;" x1="105" x2="360" y1="389.0391" y2="389.0391"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="112" x="177" y="374.5078">Request connection</text><line style="stroke: #000000; stroke-width: 1.0;" x1="689" x2="679" y1="451.3047" y2="447.3047"/><line style="stroke: #000000; stroke-width: 1.0;" x1="689" x2="679" y1="451.3047" y2="455.3047"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="366" x2="690" y1="451.3047" y2="451.3047"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="276" x="390.5" y="422.6406">DeviceControl.ActionExecuted (with DeviceState)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="136" x="460.5" y="436.7734">Send an event message</text><path d="M18,466.3047 L99,466.3047 L99,492.3047 L89,502.3047 L13,502.3047 L13,471.3047 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="553.3477" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="740" x="13" y="466.3047"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="21" x="38" y="488.9063">opt</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="279" x="124" y="489.9063">[If the device to connect requests a PIN code]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="359" x2="349" y1="561.7031" y2="557.7031"/><line style="stroke: #000000; stroke-width: 1.0;" x1="359" x2="349" y1="561.7031" y2="565.7031"/><line style="stroke: #000000; stroke-width: 1.0;" x1="105" x2="360" y1="561.7031" y2="561.7031"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="102" x="182" y="547.1719">Request PIN code</text><path d="M322.5,576.7031 L522.5,576.7031 L522.5,602.7031 L512.5,612.7031 L317.5,612.7031 L317.5,581.7031 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="215.1523" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="425.5" x="317.5" y="576.7031"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="140" x="342.5" y="599.3047">"Enter user's PIN code"</text><line style="stroke: #000000; stroke-width: 1.0;" x1="689" x2="679" y1="667.1016" y2="663.1016"/><line style="stroke: #000000; stroke-width: 1.0;" x1="689" x2="679" y1="667.1016" y2="671.1016"/><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="690" y1="667.1016" y2="667.1016"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="208" x="427" y="638.4375">DeviceControl.BtRequestForPINCode</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="136" x="463" y="652.5703">Send an event message</text><polygon fill="#9EA0CA" points="340,680.1016,720,680.1016,730,702.1016,720,724.1016,340,724.1016,330,702.1016,340,680.1016" style="stroke: #FFFFFF; stroke-width: 1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="208" x="426.25" y="707.6367">Handle user's PIN code input</text><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="381" y1="783.8555" y2="779.8555"/><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="381" y1="783.8555" y2="787.8555"/><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="690" y1="783.8555" y2="783.8555"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="202" x="430" y="755.1914">DeviceControl.BtConnectByPINCode</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="147" x="457.5" y="769.3242">Send a directive message</text><line style="stroke: #000000; stroke-width: 1.0;" x1="105" x2="115" y1="838.9883" y2="834.9883"/><line style="stroke: #000000; stroke-width: 1.0;" x1="105" x2="115" y1="838.9883" y2="842.9883"/><line style="stroke: #000000; stroke-width: 1.0;" x1="105" x2="360" y1="838.9883" y2="838.9883"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="212" x="127" y="824.457">Request a connection using PIN code</text><line style="stroke: #000000; stroke-width: 1.0;" x1="689" x2="679" y1="901.2539" y2="897.2539"/><line style="stroke: #000000; stroke-width: 1.0;" x1="689" x2="679" y1="901.2539" y2="905.2539"/><line style="stroke: #000000; stroke-width: 1.0;" x1="371" x2="690" y1="901.2539" y2="901.2539"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="171" x="445.5" y="872.5898">DeviceControl.ActionExecuted</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="136" x="463" y="886.7227">Send an event message</text><line style="stroke: #000000; stroke-width: 1.0;" x1="359" x2="349" y1="949.3867" y2="945.3867"/><line style="stroke: #000000; stroke-width: 1.0;" x1="359" x2="349" y1="949.3867" y2="953.3867"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="105" x2="360" y1="949.3867" y2="949.3867"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="145" x="160.5" y="934.8555">Accept device connection</text><line style="stroke: #000000; stroke-width: 1.0;" x1="689" x2="679" y1="1011.6523" y2="1007.6523"/><line style="stroke: #000000; stroke-width: 1.0;" x1="689" x2="679" y1="1011.6523" y2="1015.6523"/><line style="stroke: #000000; stroke-width: 1.0;" x1="366" x2="690" y1="1011.6523" y2="1011.6523"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="150" x="453.5" y="982.9883">DeviceControl.ReportState</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="136" x="460.5" y="997.1211">Send an event message</text><polygon fill="#9EA0CA" points="55,1031.6523,740,1031.6523,750,1053.6523,740,1075.6523,55,1075.6523,45,1053.6523,55,1031.6523" style="stroke: #FFFFFF; stroke-width: 1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="169" x="313" y="1059.1875">Share connection result</text><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam sequence {
+	ArrowColor #000000
+	ActorBorderColor #000000
+	ActorFontStyle Bolder
+
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor transparent
+	ParticipantBorderColor transparent
+	ParticipantFontSize 14
+	ParticipantFontColor #ffffff
+	ParticipantFontStyle bold
+
+	BoxBorderColor #000000
+	BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+skinparam note {
+	BackgroundColor #9EA0CA
+	BorderColor #ffffff
+	FontColor #ffffff
+	FontSize 14
+	FontStyle bold
+}
+hide footbox
+
+participant "Bluetooth device" as device #9EA0CA
+participant Client as client #9EA0CA
+participant "Clova" as clova #05D686
+
+activate clova
+activate device
+hnote over device, clova : Request a Bluetooth device connection
+ alt Specific device assigned == Yes
+	clova ->> client : DeviceControl.BtConnect (with payload)\nSend a directive message
+
+	activate client
+ else Specific device assigned == No
+    clova ->> client : DeviceControl.BtConnect (without payload)\nSend a directive message
+end
+
+  client ->> device : Request connection
+  client - ->> clova : DeviceControl.ActionExecuted (with DeviceState)\nSend an event message
+
+	deactivate client
+opt If the device to connect requests a PIN code
+	device ->> client : Request PIN code
+
+	activate client
+
+  group "Enter user's PIN code"
+    client ->> clova : DeviceControl.BtRequestForPINCode\nSend an event message
+    hnote over client, clova : Handle user's PIN code input
+    clova ->> client : DeviceControl.BtConnectByPINCode\nSend a directive message
+  end
+  client ->> device : Request a connection using PIN code
+  client ->> clova: DeviceControl.ActionExecuted\nSend an event message
+	device - ->> client : Accept device connection
+  client ->> clova : DeviceControl.ReportState\nSend an event message
+deactivate client
+end
+hnote over device, clova : Share connection result
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11+28
+Operating System: Mac OS X
+OS Version: 10.14.2
+Default Encoding: US-ASCII
+Language: en
+Country: KR
+--></g></svg>

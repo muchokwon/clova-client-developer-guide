@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="571px" preserveAspectRatio="none" style="width:788px;height:571px;" version="1.1" viewBox="0 0 788 571" width="788px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="391.1953" style="stroke: #000000; stroke-width: 1.0;" width="10" x="211" y="150.2656"/><rect fill="#FFFFFF" height="123.3984" style="stroke: #000000; stroke-width: 1.0;" width="10" x="388" y="260.6641"/><rect fill="#FFFFFF" height="233.7969" style="stroke: #000000; stroke-width: 1.0;" width="10" x="743" y="198.3984"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="35" x2="35" y1="100.1328" y2="559.4609"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="215.5" x2="215.5" y1="100.1328" y2="559.4609"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="392.5" x2="392.5" y1="100.1328" y2="559.4609"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="747.5" x2="747.5" y1="100.1328" y2="559.4609"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="18" y="87.6016">User</text><ellipse cx="35" cy="13" fill="#9EA0CA" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M35,21 L35,48 M22,29 L48,29 M35,48 L22,63 M35,48 L48,63 " fill="none" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="105" x="163.5" y="48.6445"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="71" x="180.5" y="79.1797">Clova app</text><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="127" x="329.5" y="48.6445"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="93" x="346.5" y="79.1797">Client device</text><rect fill="#05D686" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="59" x="718.5" y="48.6445"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="25" x="735.5" y="79.1797">CIC</text><rect fill="#FFFFFF" height="391.1953" style="stroke: #000000; stroke-width: 1.0;" width="10" x="211" y="150.2656"/><rect fill="#FFFFFF" height="123.3984" style="stroke: #000000; stroke-width: 1.0;" width="10" x="388" y="260.6641"/><rect fill="#FFFFFF" height="233.7969" style="stroke: #000000; stroke-width: 1.0;" width="10" x="743" y="198.3984"/><line style="stroke: #000000; stroke-width: 1.0;" x1="209" x2="199" y1="150.2656" y2="146.2656"/><line style="stroke: #000000; stroke-width: 1.0;" x1="209" x2="199" y1="150.2656" y2="154.2656"/><line style="stroke: #000000; stroke-width: 1.0;" x1="35" x2="210" y1="150.2656" y2="150.2656"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="132" x="57" y="135.7344">Change device settings</text><line style="stroke: #000000; stroke-width: 1.0;" x1="741" x2="731" y1="198.3984" y2="194.3984"/><line style="stroke: #000000; stroke-width: 1.0;" x1="741" x2="731" y1="198.3984" y2="202.3984"/><line style="stroke: #000000; stroke-width: 1.0;" x1="221" x2="742" y1="198.3984" y2="198.3984"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="218" x="373" y="183.8672">Request to change the device settings</text><line style="stroke: #000000; stroke-width: 1.0;" x1="398" x2="408" y1="260.6641" y2="256.6641"/><line style="stroke: #000000; stroke-width: 1.0;" x1="398" x2="408" y1="260.6641" y2="264.6641"/><line style="stroke: #000000; stroke-width: 1.0;" x1="398" x2="742" y1="260.6641" y2="260.6641"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="205" x="468" y="232">Direct to change the device settings</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="183" x="479" y="246.1328">(Send Settings.Update directive)</text><line style="stroke: #000000; stroke-width: 1.0;" x1="398" x2="440" y1="308.7969" y2="308.7969"/><line style="stroke: #000000; stroke-width: 1.0;" x1="440" x2="440" y1="308.7969" y2="321.7969"/><line style="stroke: #000000; stroke-width: 1.0;" x1="399" x2="440" y1="321.7969" y2="321.7969"/><polygon fill="#000000" points="409,317.7969,399,321.7969,409,325.7969,405,321.7969" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="132" x="415" y="294.2656">Change device settings</text><line style="stroke: #000000; stroke-width: 1.0;" x1="741" x2="731" y1="384.0625" y2="380.0625"/><line style="stroke: #000000; stroke-width: 1.0;" x1="741" x2="731" y1="384.0625" y2="388.0625"/><line style="stroke: #000000; stroke-width: 1.0;" x1="393" x2="742" y1="384.0625" y2="384.0625"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="301" x="417.5" y="355.3984">Report the current settings information of the device</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="162" x="487" y="369.5313">(Send Settings.Report event)</text><line style="stroke: #000000; stroke-width: 1.0;" x1="221" x2="231" y1="432.1953" y2="428.1953"/><line style="stroke: #000000; stroke-width: 1.0;" x1="221" x2="231" y1="432.1953" y2="436.1953"/><line style="stroke: #000000; stroke-width: 1.0;" x1="221" x2="747" y1="432.1953" y2="432.1953"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="259" x="355" y="417.6641">Direct to synchronize to the changed settings</text><line style="stroke: #000000; stroke-width: 1.0;" x1="221" x2="263" y1="480.3281" y2="480.3281"/><line style="stroke: #000000; stroke-width: 1.0;" x1="263" x2="263" y1="480.3281" y2="493.3281"/><line style="stroke: #000000; stroke-width: 1.0;" x1="222" x2="263" y1="493.3281" y2="493.3281"/><polygon fill="#000000" points="232,489.3281,222,493.3281,232,497.3281,228,493.3281" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="133" x="238" y="465.7969">Refresh device settings</text><line style="stroke: #000000; stroke-width: 1.0;" x1="35" x2="45" y1="541.4609" y2="537.4609"/><line style="stroke: #000000; stroke-width: 1.0;" x1="35" x2="45" y1="541.4609" y2="545.4609"/><line style="stroke: #000000; stroke-width: 1.0;" x1="35" x2="215" y1="541.4609" y2="541.4609"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="132" x="59.5" y="526.9297">Provide device settings</text><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam sequence {
+	ArrowColor #000000
+	ActorBorderColor #000000
+	ActorFontStyle Bolder
+
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor transparent
+	ParticipantBorderColor transparent
+	ParticipantFontSize 14
+	ParticipantFontColor #ffffff
+	ParticipantFontStyle bold
+
+	BoxBorderColor #000000
+	BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+skinparam note {
+	BackgroundColor #9EA0CA
+	BorderColor #ffffff
+	FontColor #ffffff
+	FontSize 14
+	FontStyle bold
+}
+hide footbox
+
+actor User as user #9EA0CA
+participant "Clova app" as ca #9EA0CA
+participant "Client device" as cli #9EA0CA
+participant CIC as cic #05D686
+
+user ->> ca: Change device settings
+
+  activate ca
+
+  ca ->> cic: Request to change the device settings
+
+  activate cic
+
+    cic ->> cli: Direct to change the device settings\n(Send Settings.Update directive)
+
+    activate cli
+
+      cli -> cli: Change device settings
+
+      cli ->> cic: Report the current settings information of the device\n(Send Settings.Report event)
+
+    deactivate cli
+
+  cic ->> ca: Direct to synchronize to the changed settings
+
+  deactivate cic
+
+  ca -> ca: Refresh device settings
+  
+  ca ->> user: Provide device settings
+
+deactivate ca
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11+28
+Operating System: Mac OS X
+OS Version: 10.14.2
+Default Encoding: US-ASCII
+Language: en
+Country: KR
+--></g></svg>

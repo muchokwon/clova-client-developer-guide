@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="998px" preserveAspectRatio="none" style="width:856px;height:998px;" version="1.1" viewBox="0 0 856 998" width="856px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="30" style="stroke: #000000; stroke-width: 1.0;" width="10" x="800" y="239.6641"/><rect fill="#FFFFFF" height="153.5313" style="stroke: #000000; stroke-width: 1.0;" width="10" x="800" y="442.3281"/><rect fill="#FFFFFF" height="241.9297" style="stroke: #000000; stroke-width: 1.0;" width="10" x="800" y="658.125"/><rect fill="#FFFFFF" height="215.9297" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="479" x="365.5" y="332.7969"/><rect fill="#FFFFFF" height="98.3984" style="stroke: none; stroke-width: 1.0;" width="479" x="365.5" y="450.3281"/><rect fill="#FFFFFF" height="117.5313" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="479" x="365.5" y="673.125"/><rect fill="#FFFFFF" height="164.5313" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="479" x="365.5" y="804.6563"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="35" x2="35" y1="100.1328" y2="986.1875"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="413.5" x2="413.5" y1="100.1328" y2="986.1875"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="804.5" x2="804.5" y1="100.1328" y2="986.1875"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="18" y="87.6016">User</text><ellipse cx="35" cy="13" fill="#9EA0CA" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M35,21 L35,48 M22,29 L48,29 M35,48 L22,63 M35,48 L48,63 " fill="none" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="77" x="375.5" y="48.6445"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="392.5" y="79.1797">Client</text><rect fill="#05D686" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="59" x="775.5" y="48.6445"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="25" x="792.5" y="79.1797">CIC</text><rect fill="#FFFFFF" height="30" style="stroke: #000000; stroke-width: 1.0;" width="10" x="800" y="239.6641"/><rect fill="#FFFFFF" height="153.5313" style="stroke: #000000; stroke-width: 1.0;" width="10" x="800" y="442.3281"/><rect fill="#FFFFFF" height="241.9297" style="stroke: #000000; stroke-width: 1.0;" width="10" x="800" y="658.125"/><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="456" y1="150.2656" y2="150.2656"/><line style="stroke: #000000; stroke-width: 1.0;" x1="456" x2="456" y1="150.2656" y2="163.2656"/><line style="stroke: #000000; stroke-width: 1.0;" x1="415" x2="456" y1="163.2656" y2="163.2656"/><polygon fill="#000000" points="425,159.2656,415,163.2656,425,167.2656,421,163.2656" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="63" x="431" y="135.7344">Start alarm</text><line style="stroke: #000000; stroke-width: 1.0;" x1="798" x2="788" y1="239.6641" y2="235.6641"/><line style="stroke: #000000; stroke-width: 1.0;" x1="798" x2="788" y1="239.6641" y2="243.6641"/><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="799" y1="239.6641" y2="239.6641"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="121" x="433.5" y="196.8672">Report start of alarm</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="148" x="433.5" y="211">(Alerts.AlertStarted event,</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="347" x="433.5" y="225.1328">include activateAlerts as a required field in Alert.AlertsState)</text><line style="stroke: #000000; stroke-width: 1.0;" x1="412" x2="402" y1="317.7969" y2="313.7969"/><line style="stroke: #000000; stroke-width: 1.0;" x1="412" x2="402" y1="317.7969" y2="321.7969"/><line style="stroke: #000000; stroke-width: 1.0;" x1="35" x2="413" y1="317.7969" y2="317.7969"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="335" x="57" y="303.2656">Request to stop alarm (using utterance or physical button)</text><path d="M370.5,332.7969 L446.5,332.7969 L446.5,358.7969 L436.5,368.7969 L365.5,368.7969 L365.5,337.7969 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="215.9297" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="479" x="365.5" y="332.7969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="390.5" y="355.3984">alt</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="295" x="471.5" y="356.3984">[Type of stop alarm request == User utterance]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="798" x2="788" y1="442.3281" y2="438.3281"/><line style="stroke: #000000; stroke-width: 1.0;" x1="798" x2="788" y1="442.3281" y2="446.3281"/><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="799" y1="442.3281" y2="442.3281"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="157" x="528.5" y="413.6641">Send request to stop alarm</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="211" x="501.5" y="427.7969">(SpeechRecognizer.Recognize event)</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="365.5" x2="844.5" y1="451.3281" y2="451.3281"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="301" x="380.5" y="472.9297">[Type of stop alarm request == Physical button]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="798" x2="788" y1="540.7266" y2="536.7266"/><line style="stroke: #000000; stroke-width: 1.0;" x1="798" x2="788" y1="540.7266" y2="544.7266"/><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="799" y1="540.7266" y2="540.7266"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="157" x="528.5" y="512.0625">Send request to stop alarm</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="179" x="517.5" y="526.1953">(Alerts.RequestAlertStop event)</text><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="424" y1="595.8594" y2="591.8594"/><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="424" y1="595.8594" y2="599.8594"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="414" x2="804" y1="595.8594" y2="595.8594"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="174" x="522.5" y="581.3281">Send Alerts.StopAlert directive</text><line style="stroke: #000000; stroke-width: 1.0;" x1="798" x2="788" y1="658.125" y2="654.125"/><line style="stroke: #000000; stroke-width: 1.0;" x1="798" x2="788" y1="658.125" y2="662.125"/><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="799" y1="658.125" y2="658.125"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="156" x="529" y="629.4609">Report result of stop alarm</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="155" x="529.5" y="643.5938">(Alerts.AlertStopped event)</text><path d="M370.5,673.125 L451.5,673.125 L451.5,699.125 L441.5,709.125 L365.5,709.125 L365.5,678.125 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="117.5313" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="479" x="365.5" y="673.125"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="21" x="390.5" y="695.7266">opt</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="168" x="476.5" y="696.7266">[Alarm is repeated == Yes]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="424" y1="782.6563" y2="778.6563"/><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="424" y1="782.6563" y2="786.6563"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="414" x2="799" y1="782.6563" y2="782.6563"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="151" x="531.5" y="753.9922">Send next repeated alarm</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="142" x="536" y="768.125">(Alerts.SetAlert directive)</text><path d="M370.5,804.6563 L451.5,804.6563 L451.5,830.6563 L441.5,840.6563 L365.5,840.6563 L365.5,809.6563 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="164.5313" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="479" x="365.5" y="804.6563"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="21" x="390.5" y="827.2578">opt</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="181" x="476.5" y="828.2578">[Alarm type == Action timer]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="424" y1="900.0547" y2="896.0547"/><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="424" y1="900.0547" y2="904.0547"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="414" x2="804" y1="900.0547" y2="900.0547"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="324" x="447.5" y="885.5234">Send the directive to perform the user-scheduled action</text><line style="stroke: #000000; stroke-width: 1.0;" x1="414" x2="456" y1="948.1875" y2="948.1875"/><line style="stroke: #000000; stroke-width: 1.0;" x1="456" x2="456" y1="948.1875" y2="961.1875"/><line style="stroke: #000000; stroke-width: 1.0;" x1="415" x2="456" y1="961.1875" y2="961.1875"/><polygon fill="#000000" points="425,957.1875,415,961.1875,425,965.1875,421,961.1875" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="147" x="431" y="933.6563">Perform scheduled action</text><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam sequence {
+	ArrowColor #000000
+	ActorBorderColor #000000
+	ActorFontStyle Bolder
+
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor transparent
+	ParticipantBorderColor transparent
+	ParticipantFontSize 14
+	ParticipantFontColor #ffffff
+	ParticipantFontStyle bold
+
+	BoxBorderColor #000000
+	BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+skinparam note {
+	BackgroundColor #9EA0CA
+	BorderColor #ffffff
+	FontColor #ffffff
+	FontSize 14
+	FontStyle bold
+}
+hide footbox
+
+actor User as user #9EA0CA
+participant Client as client #9EA0CA
+participant CIC as cic #05D686
+
+
+  client -> client : Start alarm
+  client ->> cic : Report start of alarm\n(Alerts.AlertStarted event,\linclude activateAlerts as a required field in Alert.AlertsState)
+
+  activate cic
+  deactivate cic
+
+  user ->> client : Request to stop alarm (using utterance or physical button)
+
+  alt Type of stop alarm request == User utterance
+
+    client ->> cic : Send request to stop alarm\n(SpeechRecognizer.Recognize event)
+
+  activate cic
+
+  else Type of stop alarm request == Physical button
+
+    client ->> cic : Send request to stop alarm\n(Alerts.RequestAlertStop event)
+
+  end
+
+  cic - ->> client : Send Alerts.StopAlert directive
+
+  deactivate cic
+
+  client ->> cic : Report result of stop alarm\n(Alerts.AlertStopped event)
+
+  activate cic
+
+    opt Alarm is repeated == Yes
+
+      cic - ->> client : Send next repeated alarm\n(Alerts.SetAlert directive)
+
+    end
+
+    opt Alarm type == Action timer
+
+      cic - ->> client : Send the directive to perform the user-scheduled action
+
+  deactivate cic
+
+      client -> client : Perform scheduled action
+
+    end
+
+  deactivate client
+  deactivate cic
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11+28
+Operating System: Mac OS X
+OS Version: 10.14.2
+Default Encoding: US-ASCII
+Language: en
+Country: KR
+--></g></svg>

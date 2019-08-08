@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="847px" preserveAspectRatio="none" style="width:817px;height:847px;" version="1.1" viewBox="0 0 817 847" width="817px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="54.2656" style="stroke: #000000; stroke-width: 1.0;" width="10" x="41.5" y="64.4883"/><rect fill="#FFFFFF" height="370.1953" style="stroke: #000000; stroke-width: 1.0;" width="10" x="41.5" y="399.5508"/><rect fill="#FFFFFF" height="48.1328" style="stroke: #000000; stroke-width: 1.0;" width="10" x="414.5" y="118.7539"/><rect fill="#FFFFFF" height="309.0625" style="stroke: #000000; stroke-width: 1.0;" width="10" x="414.5" y="337.2852"/><rect fill="#FFFFFF" height="57.1328" style="stroke: #000000; stroke-width: 1.0;" width="10" x="414.5" y="769.7461"/><rect fill="#FFFFFF" height="170.3984" style="stroke: #000000; stroke-width: 1.0;" width="10" x="672.5" y="166.8867"/><rect fill="#FFFFFF" height="9" style="stroke: #000000; stroke-width: 1.0;" width="10" x="672.5" y="817.8789"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="46" x2="46" y1="54.4883" y2="835.8789"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="419" x2="419" y1="54.4883" y2="835.8789"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="677.5" x2="677.5" y1="54.4883" y2="835.8789"/><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="77" x="8" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="25" y="33.5352">Client</text><rect fill="#05D686" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="59" x="390" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="25" x="407" y="33.5352">CIC</text><rect fill="#05D686" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="74" x="640.5" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="40" x="657.5" y="33.5352">Clova</text><rect fill="#FFFFFF" height="54.2656" style="stroke: #000000; stroke-width: 1.0;" width="10" x="41.5" y="64.4883"/><rect fill="#FFFFFF" height="370.1953" style="stroke: #000000; stroke-width: 1.0;" width="10" x="41.5" y="399.5508"/><rect fill="#FFFFFF" height="48.1328" style="stroke: #000000; stroke-width: 1.0;" width="10" x="414.5" y="118.7539"/><rect fill="#FFFFFF" height="309.0625" style="stroke: #000000; stroke-width: 1.0;" width="10" x="414.5" y="337.2852"/><rect fill="#FFFFFF" height="57.1328" style="stroke: #000000; stroke-width: 1.0;" width="10" x="414.5" y="769.7461"/><rect fill="#FFFFFF" height="170.3984" style="stroke: #000000; stroke-width: 1.0;" width="10" x="672.5" y="166.8867"/><rect fill="#FFFFFF" height="9" style="stroke: #000000; stroke-width: 1.0;" width="10" x="672.5" y="817.8789"/><line style="stroke: #000000; stroke-width: 1.0;" x1="412.5" x2="402.5" y1="118.7539" y2="114.7539"/><line style="stroke: #000000; stroke-width: 1.0;" x1="412.5" x2="402.5" y1="118.7539" y2="122.7539"/><line style="stroke: #000000; stroke-width: 1.0;" x1="46.5" x2="413.5" y1="118.7539" y2="118.7539"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="126" x="167.5" y="90.0898">Send Recognize event</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="113" x="174" y="104.2227">"Play classic music."</text><line style="stroke: #000000; stroke-width: 1.0;" x1="670.5" x2="660.5" y1="166.8867" y2="162.8867"/><line style="stroke: #000000; stroke-width: 1.0;" x1="670.5" x2="660.5" y1="166.8867" y2="170.8867"/><line style="stroke: #000000; stroke-width: 1.0;" x1="419.5" x2="671.5" y1="166.8867" y2="166.8867"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="188" x="452" y="152.3555">Request user speech recognition</text><line style="stroke: #000000; stroke-width: 1.0;" x1="682.5" x2="724.5" y1="215.0195" y2="215.0195"/><line style="stroke: #000000; stroke-width: 1.0;" x1="724.5" x2="724.5" y1="215.0195" y2="228.0195"/><line style="stroke: #000000; stroke-width: 1.0;" x1="683.5" x2="724.5" y1="228.0195" y2="228.0195"/><polygon fill="#000000" points="693.5,224.0195,683.5,228.0195,693.5,232.0195,689.5,228.0195" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="104" x="699.5" y="200.4883">Recognize speech</text><line style="stroke: #000000; stroke-width: 1.0;" x1="682.5" x2="724.5" y1="276.1523" y2="276.1523"/><line style="stroke: #000000; stroke-width: 1.0;" x1="724.5" x2="724.5" y1="276.1523" y2="289.1523"/><line style="stroke: #000000; stroke-width: 1.0;" x1="683.5" x2="724.5" y1="289.1523" y2="289.1523"/><polygon fill="#000000" points="693.5,285.1523,683.5,289.1523,693.5,293.1523,689.5,289.1523" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="106" x="699.5" y="261.6211">Analyze semantics</text><line style="stroke: #000000; stroke-width: 1.0;" x1="424.5" x2="434.5" y1="337.2852" y2="333.2852"/><line style="stroke: #000000; stroke-width: 1.0;" x1="424.5" x2="434.5" y1="337.2852" y2="341.2852"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="424.5" x2="676.5" y1="337.2852" y2="337.2852"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="174" x="464" y="322.7539">Send semantics analysis result</text><line style="stroke: #000000; stroke-width: 1.0;" x1="51.5" x2="61.5" y1="399.5508" y2="395.5508"/><line style="stroke: #000000; stroke-width: 1.0;" x1="51.5" x2="61.5" y1="399.5508" y2="403.5508"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="51.5" x2="413.5" y1="399.5508" y2="399.5508"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="120" x="173" y="370.8867">Send Speak directive</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="131" x="167.5" y="385.0195">"Here is classic music."</text><line style="stroke: #000000; stroke-width: 1.0;" x1="51.5" x2="93.5" y1="447.6836" y2="447.6836"/><line style="stroke: #000000; stroke-width: 1.0;" x1="93.5" x2="93.5" y1="447.6836" y2="460.6836"/><line style="stroke: #000000; stroke-width: 1.0;" x1="52.5" x2="93.5" y1="460.6836" y2="460.6836"/><polygon fill="#000000" points="62.5,456.6836,52.5,460.6836,62.5,464.6836,58.5,460.6836" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="72" x="68.5" y="433.1523">Output voice</text><line style="stroke: #000000; stroke-width: 1.0;" x1="51.5" x2="61.5" y1="522.9492" y2="518.9492"/><line style="stroke: #000000; stroke-width: 1.0;" x1="51.5" x2="61.5" y1="522.9492" y2="526.9492"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="51.5" x2="413.5" y1="522.9492" y2="522.9492"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="153" x="156.5" y="494.2852">Send RenderText directive</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="131" x="167.5" y="508.418">"Here is classic music."</text><line style="stroke: #000000; stroke-width: 1.0;" x1="51.5" x2="93.5" y1="571.082" y2="571.082"/><line style="stroke: #000000; stroke-width: 1.0;" x1="93.5" x2="93.5" y1="571.082" y2="584.082"/><line style="stroke: #000000; stroke-width: 1.0;" x1="52.5" x2="93.5" y1="584.082" y2="584.082"/><polygon fill="#000000" points="62.5,580.082,52.5,584.082,62.5,588.082,58.5,584.082" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="128" x="68.5" y="556.5508">Display text on screen</text><line style="stroke: #000000; stroke-width: 1.0;" x1="51.5" x2="61.5" y1="646.3477" y2="642.3477"/><line style="stroke: #000000; stroke-width: 1.0;" x1="51.5" x2="61.5" y1="646.3477" y2="650.3477"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="51.5" x2="418.5" y1="646.3477" y2="646.3477"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="108" x="181.5" y="617.6836">Send Play directive</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="319" x="76" y="631.8164">including music information on "Vivaldi: Seasons Spring"</text><line style="stroke: #000000; stroke-width: 1.0;" x1="51.5" x2="93.5" y1="694.4805" y2="694.4805"/><line style="stroke: #000000; stroke-width: 1.0;" x1="93.5" x2="93.5" y1="694.4805" y2="707.4805"/><line style="stroke: #000000; stroke-width: 1.0;" x1="52.5" x2="93.5" y1="707.4805" y2="707.4805"/><polygon fill="#000000" points="62.5,703.4805,52.5,707.4805,62.5,711.4805,58.5,707.4805" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="68.5" y="679.9492">Play music</text><line style="stroke: #000000; stroke-width: 1.0;" x1="412.5" x2="402.5" y1="769.7461" y2="765.7461"/><line style="stroke: #000000; stroke-width: 1.0;" x1="412.5" x2="402.5" y1="769.7461" y2="773.7461"/><line style="stroke: #000000; stroke-width: 1.0;" x1="46.5" x2="413.5" y1="769.7461" y2="769.7461"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="131" x="165" y="741.082">Send PlayStarted event</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="187" x="137" y="755.2148">Send the playback state of client</text><line style="stroke: #000000; stroke-width: 1.0;" x1="670.5" x2="660.5" y1="817.8789" y2="813.8789"/><line style="stroke: #000000; stroke-width: 1.0;" x1="670.5" x2="660.5" y1="817.8789" y2="821.8789"/><line style="stroke: #000000; stroke-width: 1.0;" x1="424.5" x2="671.5" y1="817.8789" y2="817.8789"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="209" x="444" y="803.3477">Send the playback state of the client</text><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam sequence {
+	ArrowColor #000000
+	ActorBorderColor #000000
+	ActorFontStyle Bolder
+
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor transparent
+	ParticipantBorderColor transparent
+	ParticipantFontSize 14
+	ParticipantFontColor #ffffff
+	ParticipantFontStyle bold
+
+	BoxBorderColor #000000
+	BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+skinparam note {
+	BackgroundColor #9EA0CA
+	BorderColor #ffffff
+	FontColor #ffffff
+	FontSize 14
+	FontStyle bold
+}
+hide footbox
+
+participant Client as client #9EA0CA
+participant CIC as cic #05D686
+participant Clova as clova #05D686
+
+activate client
+  client ->> cic: Send Recognize event\n"Play classic music."
+deactivate client
+
+activate  cic
+  cic ->> clova: Request user speech recognition
+deactivate cic
+
+activate clova
+  clova -> clova: Recognize speech
+
+  clova -> clova: Analyze semantics
+  clova - ->> cic: Send semantics analysis result
+deactivate clova
+
+activate cic
+  cic - ->> client: Send Speak directive\n"Here is classic music."
+
+activate client
+  client -> client: Output voice
+  cic - ->> client: Send RenderText directive\n"Here is classic music."
+  client -> client: Display text on screen
+  cic - ->> client: Send Play directive\nincluding music information on "Vivaldi: Seasons Spring"
+deactivate cic
+  client -> client: Play music
+
+  client ->> cic: Send PlayStarted event\nSend the playback state of client
+
+deactivate client
+
+activate cic
+
+cic ->> clova: Send the playback state of the client
+
+activate clova
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11+28
+Operating System: Mac OS X
+OS Version: 10.14.2
+Default Encoding: US-ASCII
+Language: en
+Country: KR
+--></g></svg>

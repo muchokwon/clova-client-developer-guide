@@ -1,0 +1,62 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "GUIを提供しないクライアント" as device #9EA0CA
+participant "GUIを提供するクライアント" as app #9EA0CA
+participant "NAVER認可サーバー" as nauth #05D686
+participant "Clova認可サーバー" as cauth #05D686
+participant CIC as cic #05D686
+
+activate app
+  app -> app: NAVERログイン
+
+  app ->> nauth: NAVERアカウント情報を送信する
+
+  activate nauth
+    nauth -->> app: NAVERアカウントの\nアクセストークンを送信する
+  deactivate nauth
+
+  app ->> cauth: 認可コードをリクエストする(次の情報を送信する)\l- NAVERアカウントのアクセストークン\l- クライアント認証情報(CLOVA_OAUTH_CLIENT_ID)
+
+activate cauth
+
+deactivate app
+
+alt "利用規約に同意しているか" == "同意している"
+    cauth -->> app: 認可コードを送信する(200 OK)
+    activate app
+    deactivate app
+else 利用規約に同意しているか == "同意していない"
+  cauth -->> app: authorization、redirect_uriを送信する\l(451 Unavailable For Legal Reasons)
+  activate app
+    app -> app: 利用規約ページ(redirect_uri)にリダイレクトする
+    app ->> cauth: 利用規約への同意結果を送信する(submit)
+    cauth -->> app: 結果を送信する(302 Found)\l- 成功：clova://agreement-success\l- 失敗：clova://agreement-failure
+  deactivate cauth
+end
+
+alt "クライアントタイプ" == "GUIを提供するクライアント"
+  app ->> cauth: Clovaアクセストークンをリクエストし、次の情報を送信する\l- NAVERアカウントのアクセストークン\l- クライアント認証情報\l  (CLOVA_OAUTH_CLIENT_ID、CLOVA_OAUTH_CLIENT_SECRET)
+
+  activate cauth
+    cauth -->> app: Clovaアクセストークンを送信する
+  deactivate cauth
+
+  app ->> cic: Clovaアクセストークンを使ってCICとの接続を開始する
+  activate cic
+  deactivate cic
+
+else "クライアントタイプ" == "GUIを提供しないクライアント"
+  app ->> device: 認可コードを送信する
+  deactivate app
+
+  activate device
+    device ->> cauth: Clovaアクセストークンをリクエストし、次の情報を送信する\l- NAVERアカウントのアクセストークン\l- クライアント認証情報\l  (CLOVA_OAUTH_CLIENT_ID、CLOVA_OAUTH_CLIENT_SECRET)
+
+    activate cauth
+        cauth -->> device: Clovaアクセストークンを送信する
+    deactivate cauth
+
+    device ->> cic: Clovaアクセストークンを使ってCICとの接続を開始する
+
+    activate cic
+  end

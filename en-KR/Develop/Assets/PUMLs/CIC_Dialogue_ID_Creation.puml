@@ -1,0 +1,51 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant User as user #9EA0CA
+participant Client as client #9EA0CA
+participant CIC as cic #05D686
+
+user ->> client: Play classical music
+
+activate client
+
+  client -> client: Create a dialogue ID (A)
+
+  alt Voice request
+
+    client ->> cic: Send the SpeechRecognizer.Recognize event message\n(header.dialogRequestId: A)
+
+  else Text request
+
+    client ->> cic: Send the TextRecognizer.Recognize event message\n(header.dialogRequestId: A)
+
+  end
+
+  client -> client: Renew the latest dialogue ID
+  
+  note left: lastDialogueID: A
+
+  ... Processing request ...
+
+user -->> client: Tell me the current weather
+
+  client -> client: Create a dialogue ID (B)
+
+  alt Task handled successfully
+
+    client ->> cic: Send the SpeechRecognizer.Recognize event message\n(header.dialogRequestId: B)
+
+    client -> client: Renew the latest dialogue ID
+  
+    note left: lastDialogueID: B
+
+    client -> client: Stop processing tasks related to the previous dialogue ID (A)
+
+    client -> client: Discard all directives related to the dialogue ID (A) from the message queue
+
+  else Cancel sending event messages that occurred due to exceptions
+
+    client -> client: Stop processing tasks related to the dialogue ID (A) (continued)
+
+    note left: lastDialogueID: A
+
+  end
