@@ -30,7 +30,7 @@ Clova inside 배지 유형에 따라 모양과 크기에 대한 규칙이 있습
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Clova inside 배지는 임의로 생성하여 사용하지 않고 제공되는 이미지를 그대로 사용해야 합니다. Clova inside 이미지를 구하려면 제휴 담당자에게 연락바랍니다.</p>
+  <p>Clova inside 배지는 제공되는 이미지를 임의로 변형하지 않고 그대로 사용해야 합니다. Clova inside 이미지를 구하려면 제휴 담당자에게 연락바랍니다.</p>
 </div>
 
 ## Clova inside 색상 {#ClovaInsideColor}
