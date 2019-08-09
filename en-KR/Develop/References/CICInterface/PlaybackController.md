@@ -96,7 +96,7 @@ Instructs the client to send the [`PlaybackController.NextCommandIssued`](#NextC
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | target            | object  | Object containing the control target information.<div class="note"><p><strong>Note!</strong></p><p>If this field exists, the client must send the <code>source</code> field together with the <a href="#NextCommandIssued"><code>PlaybackController.NextCommandIssued</code></a> event message.</p></div> | Conditional  |
-| target.namespace  | string  | CIC API namespace This is the information to identify the control target. When you send the [`PlaybackController.NextCommandIssued`](#NextCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
+| target.namespace  | string  | CIC API namespace. This is the information to identify the control target. When you send the [`PlaybackController.NextCommandIssued`](#NextCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
 
@@ -148,7 +148,7 @@ Instructs the client to send the [`PlaybackController.PauseCommandIssued`](#Paus
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | target            | object  | Object containing the control target information.<div class="note"><p><strong>Note!</strong></p><p>If this field exists, the client must send the <code>source</code> field together with the <a href="#PauseCommandIssued"><code>PlaybackController.PauseCommandIssued</code></a> event message.</p></div> | Conditional  |
-| target.namespace  | string  | CIC API namespace This is the information to identify the control target. When you send the [`PlaybackController.PauseCommandIssued`](#PauseCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
+| target.namespace  | string  | CIC API namespace. This is the information to identify the control target. When you send the [`PlaybackController.PauseCommandIssued`](#PauseCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
 
@@ -237,7 +237,7 @@ Instructs the client to send the [`PlaybackController.PreviousCommandIssued`](#P
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | target            | object  | Object containing the control target information.<div class="note"><p><strong>Note!</strong></p><p>If this field exists, the client must send the <code>source</code> field together with the <a href="#PreviousCommandIssued"><code>PlaybackController.PreviousCommandIssued</code></a> event message.</p></div> | Conditional  |
-| target.namespace  | string  | CIC API namespace This is the information to identify the control target. When you send the [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
+| target.namespace  | string  | CIC API namespace. This is the information to identify the control target. When you send the [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
 
@@ -289,7 +289,7 @@ Instructs the client to send the [`PlaybackController.ResumeCommandIssued`](#Res
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | target            | object  | Object containing the control target information.<div class="note"><p><strong>Note!</strong></p><p>If this field exists, the client must send the <code>source</code> field together with the <a href="#ResumeCommandIssued"><code>PlaybackController.ResumeCommandIssued</code></a> event message.</p></div> | Conditional  |
-| target.namespace  | string  | CIC API namespace This is the information to identify the control target. When you send the [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
+| target.namespace  | string  | CIC API namespace. This is the information to identify the control target. When you send the [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
 
@@ -342,7 +342,7 @@ Instructs the client to send the [`PlaybackController.StopCommandIssued`](#StopC
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | target            | object  | Object containing the control target information.<div class="note"><p><strong>Note!</strong></p><p>If this field exists, the client must send the <code>source</code> field together with the <a href="#StopCommandIssued"><code>PlaybackController.StopCommandIssued</code></a> event message.</p></div> | Conditional  |
-| target.namespace  | string  | CIC API namespace This is the information to identify the control target. When you send the [`PlaybackController.StopCommandIssued`](#StopCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
+| target.namespace  | string  | CIC API namespace. This is the information to identify the control target. When you send the [`PlaybackController.StopCommandIssued`](#StopCommandIssued) event message, you must enter `source.namespace` as value of this field. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
 
@@ -534,7 +534,7 @@ Instructs the client to pause the current audio stream. Upon receiving the direc
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | target            | object  | The object contatining control target. You can see the target to control through this directive message. | Conditional  |
-| target.namespace  | string  | CIC API namespace This is the information to identify the control target. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
+| target.namespace  | string  | CIC API namespace. This is the information to identify the control target. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
 
@@ -858,7 +858,7 @@ Instructs the client to resume playing the audio stream. Upon receiving the dire
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | target            | object  | The object that has control target. You can see  the target to control through this directive message. | Conditional  |
-| target.namespace  | string  | CIC API namespace This is the information to identify the control target. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
+| target.namespace  | string  | CIC API namespace. This is the information to identify the control target. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
 
@@ -1090,7 +1090,7 @@ Instructs the client to stop playing an audio stream. Upon receiving the directi
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | target            | object  | The object that has control target. You can see  the target to control through this directive message. | Conditional  |
-| target.namespace  | string  | CIC API namespace This is the information to identify the control target. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
+| target.namespace  | string  | CIC API namespace. This is the information to identify the control target. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
 

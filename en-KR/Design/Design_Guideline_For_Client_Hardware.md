@@ -460,11 +460,11 @@ The rules on the **text type** badge are as shown below:
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The provided image must be used as it is for the Clova inside badge without creating at random. To get the Clova inside image, please contact the Clova partnership team.</p>
+  <p>The provided image must be used as it is for the Clova inside badge without any modifications. To get the Clova inside image, please contact the Clova partnership team.</p>
 </div>
 
 ### Clova inside color {#ClovaInsideColor}
-Use one of the four colors for the Clova inside badge and the badge color as shown below:
+Use one of the four colors for the Clova inside badge and the Clova inside background color as shown below:
 
 ![](/Design/Assets/Images/Clova_Inside-Color.png)
 
