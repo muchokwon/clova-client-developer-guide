@@ -96,7 +96,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### See also
 * [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
-* [음원 재생 상태 공유하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [음원 재생 상태 공유하기](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 
 <!-- Start of the shared content: AudioPlayer.Play -->
 
@@ -225,7 +225,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
-* [음원 재생하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [음원 재생하기](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 <!-- End of the shared content -->
 
@@ -234,7 +234,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -283,7 +283,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -325,7 +325,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### See also
 * [`AudioPlayer.Play`](#Play)
-* [음원 재생 경과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [음원 재생 경과 보고하기](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -334,13 +334,13 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## PlayPaused event {#PlayPaused}
 클라이언트가 오디오 스트림 재생을 일시 정지할 때 일시 정지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 일시 정지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 일시 정지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 일시 정지하고 PlayPaused 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -383,8 +383,8 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayResumed`](#PlayResumed)
-* [`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -394,13 +394,13 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 클라이언트가 오디오 스트림 재생을 재개할 때 재개된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [`PlaybackController.Resume`](/Develop/References/CICInterface/PlaybackController.md#Resume) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [`PlaybackController.Resume`](/Develop/References/MessageInterfaces/PlaybackController.md#Resume) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 재개하고 PlayResumed 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -443,8 +443,8 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayPaused`](#PlayPaused)
-* [`PlaybackController.Resume`](/Develop/References/CICInterface/PlaybackController.md#Resume)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`PlaybackController.Resume`](/Develop/References/MessageInterfaces/PlaybackController.md#Resume)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -455,7 +455,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -498,8 +498,8 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStopped`](#PlayStopped)
-* [음원 재생하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [음원 재생하기](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -508,13 +508,13 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## PlayStopped event {#PlayStopped}
 클라이언트가 오디오 스트림 재생을 중지할 때 재생이 중지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 중지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 중지 요청을 [`PlaybackController.Stop`](/Develop/References/CICInterface/PlaybackController.md#Stop) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 중지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 중지 요청을 [`PlaybackController.Stop`](/Develop/References/MessageInterfaces/PlaybackController.md#Stop) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 중지하고 PlayStopped 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -557,8 +557,8 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStarted`](#PlayStarted)
-* [`PlaybackController.Stop`](/Develop/References/CICInterface/PlaybackController.md#Stop)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`PlaybackController.Stop`](/Develop/References/MessageInterfaces/PlaybackController.md#Stop)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -569,7 +569,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -613,7 +613,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
-* [음원 재생 경과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [음원 재생 경과 보고하기](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -624,7 +624,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -668,7 +668,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
-* [음원 재생 경과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [음원 재생 경과 보고하기](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -679,7 +679,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -723,7 +723,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
-* [음원 재생 경과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [음원 재생 경과 보고하기](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -733,7 +733,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -743,7 +743,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 | `repeatMode`             | string  | 반복 재생 모드.<ul><li><code>"NONE"</code>: 반복 재생 안함</li><li><code>"REPEAT_ONE"</code>: 한 곡 반복 재생</li></ul>  | 필수  |
 | `stream`                 | [AudioStreamInfoObject](#AudioStreamInfoObject) | Play 지시 메시지의 `audioItem.stream`                                     | 선택 |
 | `token`                  | string  | [`AudioPlayer.Play`](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값                                          | 선택 |
-| `totalInMilliseconds`    | number | 최근 재생 미디어의 전체 길이. [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) 지시 메시지를 통해 전달받은 오디오 정보([AudioStreamInfoObject](/Develop/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject))에 `durationInMilliseconds` 필드 값이 있으면 이 필드의 값으로 입력하면 됩니다. 단위는 밀리초이며, `playerActivity` 값이 `"IDLE"`이면 이 필드 값은 입력하지 않아도 됩니다. | 선택 |
+| `totalInMilliseconds`    | number | 최근 재생 미디어의 전체 길이. [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) 지시 메시지를 통해 전달받은 오디오 정보([AudioStreamInfoObject](/Develop/References/MessageInterfaces/AudioPlayer.md#AudioStreamInfoObject))에 `durationInMilliseconds` 필드 값이 있으면 이 필드의 값으로 입력하면 됩니다. 단위는 밀리초이며, `playerActivity` 값이 `"IDLE"`이면 이 필드 값은 입력하지 않아도 됩니다. | 선택 |
 
 ### Message example
 {% raw %}
@@ -779,7 +779,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### See also
 * [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)
 * [`AudioPlayer.Play`](#Play)
-* [음원 재생 상태 공유하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [음원 재생 상태 공유하기](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 
 {% if book.DocMeta.TargetReaderType == "Internal" %}
 ## RequestPlaybackState event {#RequestPlaybackState}
@@ -788,7 +788,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -828,7 +828,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### See also
 * [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)
 * [`AudioPlayer.Play`](#Play)
-* [음원 재생 상태 공유하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [음원 재생 상태 공유하기](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 {% endif %}
 
 <!-- Start of the shared content: AudioPlayer.StreamDeliver -->
@@ -880,7 +880,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
-* [음원 재생하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [음원 재생하기](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 <!-- End of the shared content -->
 
@@ -891,7 +891,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -947,7 +947,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamDeliver`](#StreamDeliver)
-* [음원 재생하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [음원 재생하기](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 <!-- End of the shared content -->
 
@@ -997,7 +997,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### See also
 * [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
-* [음원 재생 상태 공유하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [음원 재생 상태 공유하기](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 {% endif %}
 
 ## Shared objects

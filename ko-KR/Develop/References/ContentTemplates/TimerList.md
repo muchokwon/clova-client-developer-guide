@@ -60,5 +60,5 @@ CIC는 사용자가 타이머의 목록을 요청하면 사용자에게 등록�
 ![](/Develop/Assets/Images/Content_Template-TimerList.png)
 
 ## See also
-* [Alerts](/Develop/References/CICInterface/Alerts.md) 인터페이스
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) 인터페이스
 * [Timer](/Develop/References/ContentTemplates/Timer.md)

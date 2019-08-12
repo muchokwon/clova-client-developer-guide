@@ -15,11 +15,11 @@
 
 | 오디오 콘텐츠 타입 | 설명                                                  | 관련 CIC API 네임스페이스             |
 |---------------|-------------------------------------------------------|----------------------------------|
-| Alert         | 알람 소리, 타이머 소리, 리마인더 소리, 리마인더 발화, 긴급 경보음 등의 오디오 콘텐츠             | [`Alerts`](/Develop/References/CICInterface/Alerts.md) |
-| Content       | 사용자 요청에 대한 음악, 동화, 뉴스, Podcast 등의 오디오 콘텐츠                           | [`AudioPlayer`](/Develop/References/CICInterface/AudioPlayer.md) |
-| Dialogue      | 사용자 요청에 대한 TTS 오디오 콘텐츠                                                  | [`SpeechRecognizer`](/Develop/References/CICInterface/SpeechRecognizer.md), [`SpeechSynthesizer`](/Develop/References/CICInterface/SpeechSynthesizer.md) |
+| Alert         | 알람 소리, 타이머 소리, 리마인더 소리, 리마인더 발화, 긴급 경보음 등의 오디오 콘텐츠             | [`Alerts`](/Develop/References/MessageInterfaces/Alerts.md) |
+| Content       | 사용자 요청에 대한 음악, 동화, 뉴스, Podcast 등의 오디오 콘텐츠                           | [`AudioPlayer`](/Develop/References/MessageInterfaces/AudioPlayer.md) |
+| Dialogue      | 사용자 요청에 대한 TTS 오디오 콘텐츠                                                  | [`SpeechRecognizer`](/Develop/References/MessageInterfaces/SpeechRecognizer.md), [`SpeechSynthesizer`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md) |
 | Feedback      | 초기화음, 벨소리(ring tone), 통화 연결음(ringback tone)                              | 없음 (클라이언트 자체 판단) |
-| Notification  | 비프음, 시스템 상태 발화(배터리 부족 알림, 블루투스 연결 해제 알림 등), 알림음, 알림 발화         | [`Notifier`](/Develop/References/CICInterface/Notifier.md) |
+| Notification  | 비프음, 시스템 상태 발화(배터리 부족 알림, 블루투스 연결 해제 알림 등), 알림음, 알림 발화         | [`Notifier`](/Develop/References/MessageInterfaces/Notifier.md) |
 
 <div class="note">
   <p><strong>Note!</strong></p>

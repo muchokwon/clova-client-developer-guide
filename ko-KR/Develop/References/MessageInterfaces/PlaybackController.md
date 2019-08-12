@@ -42,7 +42,7 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -191,7 +191,7 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 * [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand)
 * [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand)
 * [`PlaybackController.PauseCommandIssued`](#PauseCommandIssued)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ExpectPlayCommand directive {#ExpectPlayCommand}
 사용자가 클라이언트 기기에서 재생 버튼(Play)을 누른 효과가 발생한 것처럼 클라이언트가 [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) 이벤트 메시지를 CIC로 보내도록 지시합니다. 이 지시 메시지는 현재 재생 중인 미디어 스트림을 다른 기기에서 재생하려고 할 때에도 수신될 수 있습니다. 클라이언트는 이 지시 메시지를 받은 후 관련 동작을 수행하고 [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) 이벤트 메시지를 CIC로 보내야 합니다.
@@ -332,7 +332,7 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 * [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand)
 * [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand)
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ExpectStopCommand directive {#ExpectStopCommand}
 사용자가 클라이언트 기기에서 정지 버튼(Stop)을 누른 효과가 발생한 것처럼 클라이언트가 [`PlaybackController.StopCommandIssued`](#StopCommandIssued) 이벤트 메시지를 CIC로 보내도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 [`PlaybackController.StopCommandIssued`](#StopCommandIssued) 이벤트 메시지를 CIC로 보내야 합니다.
@@ -385,7 +385,7 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 * [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand)
 * [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## Mute directive {#Mute}
 클라이언트에게 오디오 플레이어 볼륨을 음소거하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생과 관련된 스피커 볼륨을 무음이 되도록 변경해야 합니다.
@@ -395,7 +395,7 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 
 ### Remarks
 
-Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
+Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
 
@@ -414,7 +414,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## Next directive {#Next}
 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 다음 오디오 스트림을 재생해야 합니다.
@@ -440,14 +440,14 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### See also
 * [`PlaybackController.Previous`](#Previous)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## NextCommandIssued event {#NextCommandIssued}
 사용자가 클라이언트 기기에서 다음 버튼(Next)을 누르거나 CIC로부터 [`PlaybackController.ExpectNextCommand`](#ExpectNextCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -571,9 +571,9 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ```
 
 ### See also
-* [`AudioPlayer.PlayPaused`](/Develop/References/CICInterface/AudioPlayer.md#PlayPaused)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`AudioPlayer.PlayPaused`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayPaused)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -582,7 +582,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -656,14 +656,14 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## PlayCommandIssued event {#PlayCommandIssued}
 사용자가 클라이언트 기기에서 특정 곡을 재생하도록 UI를 조작했거나 CIC로부터 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다. 만약, CIC로부터 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지의 `payload`에 `handover` 필드가 포함되어 있다면 이를 그대로 사용하여 미디어 재생을 이양 받아야 합니다.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -673,7 +673,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 | `handover`            | object  | 원격으로 미디어 재생을 넘겨 받을 때 필요한 정보를 담는 객체. 미디어 재생을 넘겨 받아야 하면 `handover` 객체의 내용을 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지 `payload`의 `handover` 객체로 채워야 합니다.     | 선택 |
 | `handover.customData` | string  | 미디어 재생에 필요한 정보.               | 필수 |
 | `handover.deviceId`   | string  | 미디어 재생을 넘겨주는 클라이언트 기기의 ID  | 필수 |
-| `token`               | string  | 재생해야 하는 미디어 콘텐츠의 token. 사용자가 목록에서 곡을 골라 재생 버튼을 눌렀을 때 [`TemplateRuntime.RenderPlayerInfo`](/Develop/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo) 지시 메시지의 `playableItems[].token` 필드 값이 적용되어야 합니다. [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지를 받았다면 해당 메시지의 `token` 필드 값을 입력해야 할 수도 있습니다.  | 선택  |
+| `token`               | string  | 재생해야 하는 미디어 콘텐츠의 token. 사용자가 목록에서 곡을 골라 재생 버튼을 눌렀을 때 [`TemplateRuntime.RenderPlayerInfo`](/Develop/References/MessageInterfaces/TemplateRuntime.md#RenderPlayerInfo) 지시 메시지의 `playableItems[].token` 필드 값이 적용되어야 합니다. [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지를 받았다면 해당 메시지의 `token` 필드 값을 입력해야 할 수도 있습니다.  | 선택  |
 
 ### Remarks
 * 사용자가 클라이언트 기기의 재생 버튼(Play)을 누를 때는 [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued) 이벤트 메시지를 CIC로 전송해야 합니다.
@@ -704,7 +704,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ```
 
 ### See also
-* [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)
+* [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)
 * [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
 * [`PlaybackController.ExpectPlayCommand`](#ExpectNextCommand)
 * [`PlaybackController.NextCommandIssued`](#NextCommandIssued)
@@ -738,14 +738,14 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### See also
 * [`PlaybackController.Next`](#Next)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## PreviousCommandIssued event {#PreviousCommandIssued}
 사용자가 클라이언트 기기에서 이전 버튼(Previous)을 누르거나 CIC로부터 [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand) 지시 메시지를 받았다면 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -845,8 +845,8 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ### See also
 * [`PlaybackController.Pause`](#Pause)
 * [`PlaybackController.Resume`](#Resume)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- Start of the shared content: PlaybackController.Resume -->
 
@@ -895,9 +895,9 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ```
 
 ### See also
-* [`AudioPlayer.PlayResumed`](/Develop/References/CICInterface/AudioPlayer.md#PlayResumed)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`AudioPlayer.PlayResumed`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayResumed)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -906,7 +906,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -981,7 +981,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## SetRepeatMode directive {#SetRepeatMode}
 
@@ -1030,7 +1030,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1127,9 +1127,9 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 ```
 
 ### See also
-* [`AudioPlayer.PlayStopped`](/Develop/References/CICInterface/AudioPlayer.md#PlayStopped)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`AudioPlayer.PlayStopped`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayStopped)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -1138,7 +1138,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1212,7 +1212,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
-* [음원 재생 제어하기](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [음원 재생 제어하기](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## TurnOffRepeatMode directive {#TurnOffRepeatMode}
 **(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 끄도록 지시합니다.
@@ -1237,7 +1237,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## TurnOnRepeatMode directive {#TurnOnRepeatMode}
 **(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 켜도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 현재 재생 중인 오디오 스트림을 계속 반복 재생해야 합니다.
@@ -1262,7 +1262,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## Unmute directive {#Unmute}
 클라이언트에게 오디오 플레이어 볼륨의 음소거를 해제하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 무음으로 설정했던 스피커 볼륨을 원래 크기로 되돌려야 합니다.
@@ -1272,7 +1272,7 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
 
 ### Remarks
 
-Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
+Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
 
@@ -1291,14 +1291,14 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## VolumeDown directive {#VolumeDown}
 **(Deprecated)** 클라이언트에게 오디오 플레이어 볼륨을 낮추도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생과 관련된 스피커 볼륨을 낮춰야 합니다. 볼륨을 낮추는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>PlaybackController.VolumeDown</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/Develop/References/CICInterface/DeviceControl.md#Decrease"><code>DiviceControl.Decrease</code></a>지시 메시지를 사용해야 합니다.</p>
+  <p><code>PlaybackController.VolumeDown</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/Develop/References/MessageInterfaces/DeviceControl.md#Decrease"><code>DiviceControl.Decrease</code></a>지시 메시지를 사용해야 합니다.</p>
 </div>
 
 ### Payload fields
@@ -1321,7 +1321,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## VolumeUp directive {#VolumeUp}
 
@@ -1329,7 +1329,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>PlaybackController.VolumeUp</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/Develop/References/CICInterface/DeviceControl.md#Increase"><code>DiviceControl.Increase</code></a>지시 메시지를 사용해야 합니다.</p>
+  <p><code>PlaybackController.VolumeUp</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/Develop/References/MessageInterfaces/DeviceControl.md#Increase"><code>DiviceControl.Increase</code></a>지시 메시지를 사용해야 합니다.</p>
 </div>
 
 ### Payload fields
@@ -1352,4 +1352,4 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)

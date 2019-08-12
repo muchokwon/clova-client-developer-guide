@@ -119,4 +119,4 @@ CIC는 사용자가 액션 타이머의 목록을 요청하면 사용자에게 �
 
 ## See also
 * [ActionTimer](/Develop/References/ContentTemplates/ActionTimer.md)
-* [Alerts](/Develop/References/CICInterface/Alerts.md) 인터페이스
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) 인터페이스

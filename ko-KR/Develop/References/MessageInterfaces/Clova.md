@@ -1,16 +1,16 @@
 # Clova
 
-Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전달할 때 사용하는 네임스페이스입니다. 사용자의 요청이 [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 전달되면 Clova에서 그 의미를 분석합니다. CIC는 인식된 결과에 따라 아래 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 아래 지시 메시지들을 처리하여 Clova에서 제공하는 기능을 사용자에게 제공해야 합니다.
+Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전달할 때 사용하는 네임스페이스입니다. 사용자의 요청이 [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) 이벤트 메시지로 전달되면 Clova에서 그 의미를 분석합니다. CIC는 인식된 결과에 따라 아래 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 아래 지시 메시지들을 처리하여 Clova에서 제공하는 기능을 사용자에게 제공해야 합니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
 | [`ExpectLogin`](#ExpectLogin)                    | Directive | 클라이언트에게 사용자로부터 {{ book.ServiceEnv.OrientedService }} 계정 인증(login)을 받도록 지시합니다. |
 | [`FinishExtension`](#FinishExtension)            | Directive | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.             |
-| [`HandleDelegatedEvent`](#HandleDelegatedEvent)  | Directive | 클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)하도록 지시합니다.   |
+| [`HandleDelegatedEvent`](#HandleDelegatedEvent)  | Directive | 클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/Develop/Guides/Handle_Delegation.md)하도록 지시합니다.   |
 | [`Hello`](#Hello)                                | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.       |
 | [`Help`](#Help)                                  | Directive | 클라이언트에게 미리 준비해둔 도움말 정보를 제공하도록 지시합니다.       |
 | [`LaunchURI`](#LaunchURI)                        | Directive | 클라이언트에게 URI로 표현되는 사이트 혹은 앱을 열거나 실행하도록 지시합니다.                         |
-| [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) | Event    | 클라이언트가 [위임된 사용자 요청](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)에 대한 결과를 CIC로부터 받기 위해 사용됩니다.  |
+| [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) | Event    | 클라이언트가 [위임된 사용자 요청](/Develop/Guides/Handle_Delegation.md)에 대한 결과를 CIC로부터 받기 위해 사용됩니다.  |
 | [`RenderTemplate`](#RenderTemplate)              | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
 | [`RenderText`](#RenderText)                      | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
 | [`StartExtension`](#StartExtension)              | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
@@ -124,7 +124,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ## HandleDelegatedEvent directive {#HandleDelegatedEvent}
 
-클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)하도록 지시합니다. 사용자는 Clova 앱을 사용할 때 요청에 대한 처리 결과를 Clova 앱이 아닌 사용자의 다른 클라이언트 기기가 결과를 받아서 처리하도록 지정할 수 있습니다. 이 지시 메시지는 결과 처리를 위임받은 클라이언트 기기에게 전달되며, 이 지시 메시지를 받은 클라이언트는 [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) 이벤트 메시지를 CIC로 전송하여 사용자가 위임한 요청의 처리 결과를 받아야 합니다.
+클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/Develop/Guides/Handle_Delegation.md)하도록 지시합니다. 사용자는 Clova 앱을 사용할 때 요청에 대한 처리 결과를 Clova 앱이 아닌 사용자의 다른 클라이언트 기기가 결과를 받아서 처리하도록 지정할 수 있습니다. 이 지시 메시지는 결과 처리를 위임받은 클라이언트 기기에게 전달되며, 이 지시 메시지를 받은 클라이언트는 [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) 이벤트 메시지를 CIC로 전송하여 사용자가 위임한 요청의 처리 결과를 받아야 합니다.
 
 ### Payload fields
 
@@ -159,7 +159,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ### See also
 * [Clova.ProcessDelegatedEvent](#ProcessDelegatedEvent)
-* [위임된 사용자 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)
+* [위임된 사용자 요청 처리하기](/Develop/Guides/Handle_Delegation.md)
 
 ## Hello directive {#Hello}
 
@@ -307,11 +307,11 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ## ProcessDelegatedEvent event {#ProcessDelegatedEvent}
 
-클라이언트가 [위임된 사용자 요청](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)에 대한 결과를 CIC로부터 받기 위해 사용됩니다. 이 이벤트 메시지를 CIC로 보낼 때 [`HandleDelegatedEvent`](#HandleDelegatedEvent) 지시 메시지를 통해 전달받은 `delegationId` 값을 이 메시지의 `payload`에 포함시켜야 합니다. 클라이언트는 이 지시 메시지에 대한 응답으로 사용자가 Clova 앱으로 요청했던 것에 대한 결과를 받게 됩니다.
+클라이언트가 [위임된 사용자 요청](/Develop/Guides/Handle_Delegation.md)에 대한 결과를 CIC로부터 받기 위해 사용됩니다. 이 이벤트 메시지를 CIC로 보낼 때 [`HandleDelegatedEvent`](#HandleDelegatedEvent) 지시 메시지를 통해 전달받은 `delegationId` 값을 이 메시지의 `payload`에 포함시켜야 합니다. 클라이언트는 이 지시 메시지에 대한 응답으로 사용자가 Clova 앱으로 요청했던 것에 대한 결과를 받게 됩니다.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -349,8 +349,8 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ### See also
 * [`Clova.HandleDelegatedEvent`](#HandleDelegatedEvent)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [위임된 사용자 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [위임된 사용자 요청 처리하기](/Develop/Guides/Handle_Delegation.md)
 
 ## RenderTemplate directive {#RenderTemplate}
 

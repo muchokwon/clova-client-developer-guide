@@ -1,7 +1,7 @@
 ## 이벤트 메시지 전송하기 {#SendEvent}
 클라이언트는 CIC로 [이벤트 메시지](/Develop/References/CIC_API.md#Event)를 전송할 수 있습니다. 이벤트 메시지는 클라이언트 요청을 CIC로 전달할 때 사용됩니다. 메시지는 JSON 포맷의 이벤트 메시지뿐만 아니라 사용자 음성 입력을 [multipart 형태의 메시지](/Develop/References/CIC_API.md#MultipartMessage)로 전송합니다.
 
-클라이언트에서 사용자의 음성 데이터를 CIC로 보낼 때 [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지를 사용합니다. 다음은 `SpeechRecognizer.Recognize`를 이용해 CIC로 이벤트 메시지를 전송하는 방법을 설명합니다.
+클라이언트에서 사용자의 음성 데이터를 CIC로 보낼 때 [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) 이벤트 메시지를 사용합니다. 다음은 `SpeechRecognizer.Recognize`를 이용해 CIC로 이벤트 메시지를 전송하는 방법을 설명합니다.
 
 <ol>
   <li>이벤트 메시지 전송을 위해 클라이언트에 <a href="#RequiredLibrary">HTTP/2용 라이브러리</a>와 <a href="#Authorization">Clova access token</a>을 준비합니다.</li>
@@ -15,9 +15,9 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
 Content-Type: multipart/form-data; boundary=Boundary-Text
 </code></pre>
   </li>
-  <li>이벤트 메시지에 포함시킬 <a href="/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md">대화 ID</a>(<code>dialogRequestId</code>)와 메시지 ID(<code>messageId</code>)를 UUID 포맷으로 생성합니다. 추후 <a href="#ManageMessageQ">메시지 큐</a>에서 지시 메시지를 선별할 수 있도록 식별 가능한 대화 ID와 메시지 ID를 생성해서 전달합니다.</li>
+  <li>이벤트 메시지에 포함시킬 <a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">대화 ID</a>(<code>dialogRequestId</code>)와 메시지 ID(<code>messageId</code>)를 UUID 포맷으로 생성합니다. 추후 <a href="#ManageMessageQ">메시지 큐</a>에서 지시 메시지를 선별할 수 있도록 식별 가능한 대화 ID와 메시지 ID를 생성해서 전달합니다.</li>
   <li>
-    <p>첫 번째 메시지 파트에 <a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize"><code>SpeechRecognizer.Recognize</code></a> API 스펙에 맞게 작성된 JSON 포맷의 이벤트 메시지와 메시지 헤더를 함께 입력한 후 CIC로 전송합니다.</p>
+    <p>첫 번째 메시지 파트에 <a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize"><code>SpeechRecognizer.Recognize</code></a> API 스펙에 맞게 작성된 JSON 포맷의 이벤트 메시지와 메시지 헤더를 함께 입력한 후 CIC로 전송합니다.</p>
     <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8<br/>
@@ -90,12 +90,12 @@ Content-Type: application/octet-stream<br/>
 --Boundary-Text--
 </code></pre>
   </li>
-  <li>CIC로부터 <a href="/Develop/References/CICInterface/SpeechRecognizer.md#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> 지시 메시지가 전달될 때까지 음성 데이터를 계속 전송합니다. 전송이 완료되면 CIC로부터 HTTP 응답 메시지가 수신됩니다.</li>
+  <li>CIC로부터 <a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> 지시 메시지가 전달될 때까지 음성 데이터를 계속 전송합니다. 전송이 완료되면 CIC로부터 HTTP 응답 메시지가 수신됩니다.</li>
 </ol>
 
 <div class="tip">
   <p><strong>Tip!</strong></p>
-  <p><a href="/Develop/References/CICInterface/TextRecognizer.md#Recognize"><code>TextRecognizer.Recognize</code></a>를 사용하면 사용자의 텍스트 입력을 처리할 수도 있습니다.</p>
+  <p><a href="/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize"><code>TextRecognizer.Recognize</code></a>를 사용하면 사용자의 텍스트 입력을 처리할 수도 있습니다.</p>
 </div>
 
 <div class="note">

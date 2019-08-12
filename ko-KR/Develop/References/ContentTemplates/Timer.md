@@ -45,5 +45,5 @@ CIC는 사용자가 타이머를 생성하면 생성한 타이머의 정보를 T
 ![](/Develop/Assets/Images/Content_Template-Timer.png)
 
 ## See also
-* [Alerts](/Develop/References/CICInterface/Alerts.md) 인터페이스
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) 인터페이스
 * [TimerList](/Develop/References/ContentTemplates/TimerList.md)

@@ -133,5 +133,5 @@ CIC는 사용자가 리마인더를 생성하면 생성한 리마인더의 정�
 ![](/Develop/Assets/Images/Content_Template-Reminder.png)
 
 ## See also
-* [Alerts](/Develop/References/CICInterface/Alerts.md) 인터페이스
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) 인터페이스
 * [ReminderList](/Develop/References/ContentTemplates/ReminderList.md)

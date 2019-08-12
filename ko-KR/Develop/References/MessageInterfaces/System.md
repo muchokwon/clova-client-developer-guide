@@ -17,7 +17,7 @@ System 인터페이스는 Clova와 클라이언트 사이에서 클라이언트 
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -50,7 +50,7 @@ System 인터페이스는 Clova와 클라이언트 사이에서 클라이언트 
 {% endraw %}
 
 ### See also
-* [`System.SynchronizeState`](/Develop/References/CICInterface/System.md#SynchronizeState)
+* [`System.SynchronizeState`](/Develop/References/MessageInterfaces/System.md#SynchronizeState)
 
 ## SynchronizeState directive {#SynchronizeState}
 클라이언트에게 `payload`에 있는 데이터를 동기화하도록 지시합니다. 클라이언트는 CIC로부터 전달된 데이터에 맞게 클라이언트에 설정된 값을 변경해야 합니다.
@@ -59,11 +59,11 @@ System 인터페이스는 Clova와 클라이언트 사이에서 클라이언트 
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `allAlerts[]`   | object array | **(Deprecated)** 클라이언트가 동기화해야 할 알람 목록을 가지는 객체 배열. [`Alerts.SetAlert`](/Develop/References/CICInterface/Alerts.md#SetAlert) 지시 메시지에 사용되는 [`payload`](/Develop/References/CICInterface/Alerts.md#SetAlertPayload) 객체와 같은 포맷을 가집니다. | 항상    |
+| `allAlerts[]`   | object array | **(Deprecated)** 클라이언트가 동기화해야 할 알람 목록을 가지는 객체 배열. [`Alerts.SetAlert`](/Develop/References/MessageInterfaces/Alerts.md#SetAlert) 지시 메시지에 사용되는 [`payload`](/Develop/References/MessageInterfaces/Alerts.md#SetAlertPayload) 객체와 같은 포맷을 가집니다. | 항상    |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>System.SynchronizeState</code> 지시 메시지를 통해 알람 정보를 동기화하는 것은 더 이상 지원하지 않을 예정이며, 해당 기능은 <a href="/Develop/References/CICInterface/Alerts.md#RequestSynchronizeAlert"><code>Alerts.RequestSynchronizeAlert</code></a> 이벤트 메시지와 <a href="/Develop/References/CICInterface/Alerts.md#SynchronizeAlert"><code>Alerts.SynchronizeAlert</code></a> 지시 메시지를 통해 지원될 예정이며, 이 메시지를 사용해야 합니다. 추후 <code>System.SynchronizeState</code> 지시 메시지에 시스템 관련 정보를 동기화할 수 있는 필드가 추가될 예정입니다.</p>
+  <p><code>System.SynchronizeState</code> 지시 메시지를 통해 알람 정보를 동기화하는 것은 더 이상 지원하지 않을 예정이며, 해당 기능은 <a href="/Develop/References/MessageInterfaces/Alerts.md#RequestSynchronizeAlert"><code>Alerts.RequestSynchronizeAlert</code></a> 이벤트 메시지와 <a href="/Develop/References/MessageInterfaces/Alerts.md#SynchronizeAlert"><code>Alerts.SynchronizeAlert</code></a> 지시 메시지를 통해 지원될 예정이며, 이 메시지를 사용해야 합니다. 추후 <code>System.SynchronizeState</code> 지시 메시지에 시스템 관련 정보를 동기화할 수 있는 필드가 추가될 예정입니다.</p>
 </div>
 
 ### Remarks

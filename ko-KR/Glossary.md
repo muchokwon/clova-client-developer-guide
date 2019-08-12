@@ -77,7 +77,7 @@ HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wi
 접근 권한을 위임하기 위한 공개 표준으로 인터넷 사용자가 다른 웹 서비스나 응용 프로그램에 사용자 계정에 접근할 수 있는 권한을 부여하는 규약입니다. Clova 플랫폼에서는 클라이언트가 [Clova access token](#ClovaAccessToken)을 획득하거나 사용자가 특정 extension을 사용 시 자신의 계정을 연결할 때 사용됩니다. 자세한 내용은 [https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)를 참고합니다.
 
 ### 대화 ID {#DialogID}
-대화 ID는 사용자가 새로운 발화를 시작할 때마다 생성되며, 클라이언트가 [Recognize](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) [이벤트 메시지](#Event)를 [Clova Interface Connect](#CIC)에 전달할 때 포함됩니다. 대화 ID는 서버측 응답을 내려줄 때 어떤 이벤트 메시지에 대한 응답인지 연결할 때 사용되며, [지시 메시지](#Directive)에도 포함됩니다. 클라이언트는 지시 메시지에 포함된 대화 ID를 보고 어떤 이벤트 메시지의 응답인지 판단해야 하며, 만약 클라이언트가 현재 가지고 있는 대화 ID와 지시 메시지의 대화 ID가 다르면 수신한 지시 메시지를 무시해야 합니다. 자세한 내용은 [대화 모델](/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md) 문서를 참조합니다.
+대화 ID는 사용자가 새로운 발화를 시작할 때마다 생성되며, 클라이언트가 [Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) [이벤트 메시지](#Event)를 [Clova Interface Connect](#CIC)에 전달할 때 포함됩니다. 대화 ID는 서버측 응답을 내려줄 때 어떤 이벤트 메시지에 대한 응답인지 연결할 때 사용되며, [지시 메시지](#Directive)에도 포함됩니다. 클라이언트는 지시 메시지에 포함된 대화 ID를 보고 어떤 이벤트 메시지의 응답인지 판단해야 하며, 만약 클라이언트가 현재 가지고 있는 대화 ID와 지시 메시지의 대화 ID가 다르면 수신한 지시 메시지를 무시해야 합니다. 자세한 내용은 [대화 모델](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md) 문서를 참조합니다.
 
 ### 맥락 정보 (Context) {#Context}
 맥락 정보(Context)는 클라이언트의 다양한 상태 정보를 의미하며 [context objects](#ContextObjects)로 표현됩니다. 자세한 내용은 [맥락 정보(Context)](/Develop/References/Context_Objects.md) 문서를 참조합니다.

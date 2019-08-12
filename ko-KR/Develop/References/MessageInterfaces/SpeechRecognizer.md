@@ -104,7 +104,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |

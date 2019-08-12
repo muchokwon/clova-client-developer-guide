@@ -33,13 +33,13 @@
       <td>
         <ul>
           <li><a href="/Develop/Guides/Interact_with_CIC.md">CIC 연동하기</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md">대화 ID 관리 및 작업 처리하기</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md">위임된 사용자 요청 처리하기</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md">클라이언트 동작 제어 처리하기</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md">클라이언트 블루투스 제어 처리하기</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md">알람 처리하기</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md">음원 재생 처리하기</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Settings.md">설정 정보 처리하기</a></li>
+          <li><a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">대화 ID 관리 및 작업 처리하기</a></li>
+          <li><a href="/Develop/Guides/Handle_Delegation.md">위임된 사용자 요청 처리하기</a></li>
+          <li><a href="/Develop/Guides/Handle_Device_Control.md">클라이언트 동작 제어 처리하기</a></li>
+          <li><a href="/Develop/Guides/Handle_Bluetooth_Control.md">클라이언트 블루투스 제어 처리하기</a></li>
+          <li><a href="/Develop/Guides/Handle_Alerts.md">알람 처리하기</a></li>
+          <li><a href="/Develop/Guides/Handle_Audio_Playback.md">음원 재생 처리하기</a></li>
+          <li><a href="/Develop/Guides/Handle_Settings.md">설정 정보 처리하기</a></li>
         </ul>
       </td>
     </tr>
@@ -47,8 +47,8 @@
       <td>레퍼런스</td>
       <td>
         <ul>
-          <li><a href="/Develop/References/CIC_API.md">CIC API 레퍼런스</a></li>
-          <li><a href="/Develop/References/CIC_API.md#CICInterface">CIC 메시지 인터페이스</a></li>
+          <li><a href="/Develop/References/CIC_API.md">CIC API</a></li>
+          <li><a href="/Develop/References/Message_Interfaces.md">메시지 인터페이스</a></li>
           <li><a href="/Develop/References/Content_Templates.md">Content template</a></li>
           <li><a href="/Develop/References/Clova_Auth_API.md">CIC 인증 API 레퍼런스</a></li>
         </ul>

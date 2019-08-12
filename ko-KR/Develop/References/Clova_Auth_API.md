@@ -1,4 +1,4 @@
-# Clova 인증 API 레퍼런스
+# Clova 인증 API
 클라이언트가 CIC에 연결하려면 [Clova access token을 생성](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)해야 합니다. Clova 인증 서버는 Clova access token 생성 및 관리에 필요한 Clova 인증 API를 제공하고 있으며, 여기에서는 Clova 인증 API에 대해 설명합니다.
 
 ## Base URI
@@ -99,7 +99,7 @@ GET|POST /authorize
 
 {% endraw %}
 
-{% include "/Develop/References/CICAuthAPI/Guest_Mode.md" %}
+{% include "/Develop/References/ClovaAuthAPI/Guest_Mode.md" %}
 
 ### See also
 * [클라이언트 인증 정보](/Develop/Guides/Interact_with_CIC.md#ClientAuthInfo)

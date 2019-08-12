@@ -7,7 +7,7 @@
 
 ## 대화 ID 생성하기 {#CreatingDialogueID}
 
-**대화 ID**는 사용자의 요청을 식별하기 위해 사용자가 발화를 시작할 때마다 생성하는 식별자입니다. 클라이언트는 CIC에 전달한 사용자의 요청을 CIC로 보낼 때마다 마지막에 보낸 사용자 요청의 대화 ID를 기억해야하며, 이를 **마지막 대화 ID**로 부릅니다. **마지막 대화 ID**란 클라이언트가 CIC에게 마지막으로 보낸 [SpeechRecognizer.Recognize](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지나 [TextRecognizer.Recognize](/Develop/References/CICInterface/TextRecognizer.md#Recognize) 이벤트 메시지에 포함된 대화 ID이며, 클라이언트는 이 마지막 대화 ID를 잘 저장해 두어야 하며, CIC로 사용자의 요청을 전달할 때마다 갱신해야 합니다.
+**대화 ID**는 사용자의 요청을 식별하기 위해 사용자가 발화를 시작할 때마다 생성하는 식별자입니다. 클라이언트는 CIC에 전달한 사용자의 요청을 CIC로 보낼 때마다 마지막에 보낸 사용자 요청의 대화 ID를 기억해야하며, 이를 **마지막 대화 ID**로 부릅니다. **마지막 대화 ID**란 클라이언트가 CIC에게 마지막으로 보낸 [SpeechRecognizer.Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) 이벤트 메시지나 [TextRecognizer.Recognize](/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize) 이벤트 메시지에 포함된 대화 ID이며, 클라이언트는 이 마지막 대화 ID를 잘 저장해 두어야 하며, CIC로 사용자의 요청을 전달할 때마다 갱신해야 합니다.
 
 클라이언트는 다음과 같이 동작을 수행해야 합니다.
 
@@ -15,7 +15,7 @@
 
 <ol>
   <li>사용자가 새로운 대화를 시작할 때마다 <strong>새로운 대화 ID를 생성</strong>(UUID 포맷 권장)합니다.</li>
-  <li><a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지로 사용자의 요청을 CIC로 전달합니다. (텍스트 명령이면, <a href="/Develop/References/CICInterface/TextRecognizer.md#Recognize">TextRecognizer.Recognize</a> 이벤트 메시지)
+  <li><a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지로 사용자의 요청을 CIC로 전달합니다. (텍스트 명령이면, <a href="/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize">TextRecognizer.Recognize</a> 이벤트 메시지)
     <ul>
       <li>이때 <a href="/Develop/References/CIC_API.md#Event">이벤트 메시지의 헤더</a>의 <code>dialogRequestId</code>에 새로 생성한 대화 ID를 포함시킵니다.</li>
     </ul>
@@ -25,7 +25,7 @@
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>마지막 대화 ID는 <strong>반드시 <a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지나 <a href="/Develop/References/CICInterface/TextRecognizer.md#Recognize">TextRecognizer.Recognize</a> 이벤트 메시지 전송을 완료한 후 갱신</strong>되어야 합니다. 마지막 대화 ID를 기억 또는 갱신하지 않으면 사용자의 갑작스런 요청 변경에 대응할 수 없게 됩니다. 이에 대한 자세한 설명은 <a href="/Develop/CIC_Overview.md#IndirectDialogue">간접 대화 구조</a>를 참조합니다.</p>
+<p>마지막 대화 ID는 <strong>반드시 <a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지나 <a href="/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize">TextRecognizer.Recognize</a> 이벤트 메시지 전송을 완료한 후 갱신</strong>되어야 합니다. 마지막 대화 ID를 기억 또는 갱신하지 않으면 사용자의 갑작스런 요청 변경에 대응할 수 없게 됩니다. 이에 대한 자세한 설명은 <a href="/Develop/CIC_Overview.md#IndirectDialogue">간접 대화 구조</a>를 참조합니다.</p>
 </div>
 
 마지막 대화 ID를 업데이트했으면 클라이언트는 새 [대화 ID를 가진 지시 메시지를 처리하기](#HandleDirectivesByDialogueID) 위해 다음과 같은 것을 수행해야 합니다.

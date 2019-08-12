@@ -2,7 +2,7 @@
 
 DeviceControl 인터페이스는 클라이언트 기기를 제어하거나 클라이언트 기기 제어 수행 결과를 CIC로 보고할 때 사용되는 네임스페이스입니다.
 
-일부 사용자의 요청은 클라이언트 기기를 제어하는 요청일 수 있습니다. 분석된 사용자의 요청이 클라이언트 기기를 제어하는 요청이면 네임스페이스 `DeviceControl`인 지시 메시지를 받게 되며 클라이언트는 수신한 지시 메시지에 맞게 클라이언트 기기를 제어해야 합니다. 클라이언트 기기 제어를 수행한 후 그 결과를 이벤트 메시지를 사용하여 CIC에 전송해야 합니다. 자세한 설명은 [클라이언트 동작 제어 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md)를 참조합니다.
+일부 사용자의 요청은 클라이언트 기기를 제어하는 요청일 수 있습니다. 분석된 사용자의 요청이 클라이언트 기기를 제어하는 요청이면 네임스페이스 `DeviceControl`인 지시 메시지를 받게 되며 클라이언트는 수신한 지시 메시지에 맞게 클라이언트 기기를 제어해야 합니다. 클라이언트 기기 제어를 수행한 후 그 결과를 이벤트 메시지를 사용하여 CIC에 전송해야 합니다. 자세한 설명은 [클라이언트 동작 제어 처리하기](/Develop/Guides/Handle_Device_Control.md)를 참조합니다.
 
 클라이언트 기기는 `DeviceControl`의 메시지를 통해 외부 블루투스 기기와 연결할 수 있습니다. CIC는 클라이언트에게 블루투스 페어링 및 연결을 위한 지시 메시지를 보내 외부 블루투스 기기와 연결하도록 지시하며, 클라이언트는 [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) 맥락 정보의 [`BluetoothInfoObject`](/Develop/References/Context_Objects.md#BluetoothInfoObject)를 통해 페어링된 기기 정보 등의 블루투스 관련 정보를 수시로 CIC에게 보고하게 됩니다. 자세한 연결 방법은 각 지시 메시지 및 이벤트 메시지를 참조합니다.
 
@@ -41,7 +41,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -99,8 +99,8 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [클라이언트 동작 제어 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md)
-* [클라이언트 블루투스 제어 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md)
+* [클라이언트 동작 제어 처리하기](/Develop/Guides/Handle_Device_Control.md)
+* [클라이언트 블루투스 제어 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md)
 
 ## ActionFailed event {#ActionFailed}
 
@@ -108,7 +108,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -167,8 +167,8 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [클라이언트 동작 제어 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md)
-* [클라이언트 블루투스 제어 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md)
+* [클라이언트 동작 제어 처리하기](/Develop/Guides/Handle_Device_Control.md)
+* [클라이언트 블루투스 제어 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md)
 
 ## BtConnect directive {#BtConnect}
 
@@ -234,10 +234,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [블루투스 기기 연결 해제 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [클라이언트 기기 설정 활성화하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [블루투스 기기 연결 해제 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [클라이언트 기기 설정 활성화하기](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)
 
 ## BtConnectByPINCode directive {#BtConnectByPINCode}
 
@@ -281,8 +281,8 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtRequestForPINCode`](#BtRequestForPINCode)
 * [`DeviceControl.ReportState`](#ReportState)
-* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
 
 ## BtDelete directive {#BtDelete}
 
@@ -333,9 +333,9 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
-* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [페어링된 블루투스 기기 삭제 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
+* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [페어링된 블루투스 기기 삭제 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
 
 ## BtDisconnect directive {#BtDisconnect}
 
@@ -389,10 +389,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [블루투스 기기 연결 해제 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [페어링된 블루투스 기기 삭제 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
+* [블루투스 기기 연결 해제 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [페어링된 블루투스 기기 삭제 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
 
 ## BtPlay directive {#BtPlay}
 
@@ -441,7 +441,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -488,7 +488,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtConnectByPINCode`](#BtConnectByPINCode)
 * [`DeviceControl.BtRequestToCancelPinCodeInput`](#BtRequestToCancelPinCodeInput)
-* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
 
 ## BtRequestToCancelPinCodeInput event {#BtRequestToCancelPinCodeInput}
 
@@ -496,7 +496,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -536,7 +536,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### See also
 
 * [`DeviceControl.BtRequestForPINCode`](#BtRequestForPINCode)
-* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
 
 ## BtRescan directive {#BtRescan}
 
@@ -577,9 +577,9 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
-* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [페어링된 블루투스 기기 삭제 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
+* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [페어링된 블루투스 기기 삭제 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
 
 ## BtStartPairing directive {#BtStartPairing}
 
@@ -622,9 +622,9 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [블루투스 기기 연결 해제 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [블루투스 기기 연결 해제 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
 
 ## BtStopPairing directive {#BtStopPairing}
 
@@ -667,10 +667,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtStartPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [블루투스 기기 연결 해제 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [클라이언트 기기 설정 활성화하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [블루투스 기기 연결 해제 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [블루투스 기기에 대한 연결 요청 처리하기](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [클라이언트 기기 설정 활성화하기](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)
 
 ## Decrease directive {#Decrease}
 
@@ -689,7 +689,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * 클라이언트는 맥락 정보인 [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) 객체를 이용해 수시로 스피커 볼륨 정보와 화면 밝기 정보를 CIC에 전달해야 합니다.
 * 사용자가 기기가 표현할 수 있는 화면의 밝기나 볼륨의 범위를 벗어나는 값 변경 요청을 하더라도 Clova는 기기에 맞게 크기 정보를 조절하여 이 지시 메시지를 보냅니다.
 * 클라이언트는 이 지시 메시지에 해당하는 내용을 처리한 후 [`DeviceControl.ActionExecuted`](#ActionExecuted) 또는 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
-* Clova는 보통 기기 제어에 대한 지시 메시지를 클라이언트에게 전달할 때 음성 안내([`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지)를 함께 제공합니다. 다만, `target` 필드가 `"volume"`으로 설정된 것처럼 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
+* Clova는 보통 기기 제어에 대한 지시 메시지를 클라이언트에게 전달할 때 음성 안내([`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) 지시 메시지)를 함께 제공합니다. 다만, `target` 필드가 `"volume"`으로 설정된 것처럼 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
 
@@ -750,8 +750,8 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.Increase`](#Increase)
 * [`DeviceControl.SetValue`](#SetValue)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [클라이언트 볼륨 조정하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceVolume)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [클라이언트 볼륨 조정하기](/Develop/Guides/Handle_Device_Control.md#HandleDeviceVolume)
 
 ## ExpectReportState directive {#ExpectReportState}
 
@@ -813,7 +813,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * 사용자가 기기가 표현할 수 있는 화면의 밝기나 볼륨의 범위를 벗어나는 값 변경 요청을 하더라도 Clova는 기기에 맞게 크기 정보를 조절하여 이 지시 메시지를 보냅니다.
 * 클라이언트는 맥락 정보인 [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) 객체를 이용해 수시로 스피커 볼륨 정보와 화면 밝기 정보를 CIC에 전달해야 합니다.
 * 클라이언트는 이 지시 메시지에 해당하는 내용을 처리한 후 [`DeviceControl.ActionExecuted`](#ActionExecuted) 또는 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
-* Clova는 보통 기기 제어에 대한 지시 메시지를 클라이언트에게 전달할 때 음성 안내([`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지)를 함께 제공합니다. 다만, `target` 필드가 `"volume"`으로 설정된 것처럼 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
+* Clova는 보통 기기 제어에 대한 지시 메시지를 클라이언트에게 전달할 때 음성 안내([`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) 지시 메시지)를 함께 제공합니다. 다만, `target` 필드가 `"volume"`으로 설정된 것처럼 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
 
@@ -874,8 +874,8 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.SetValue`](#SetValue)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [클라이언트 볼륨 조정하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceVolume)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [클라이언트 볼륨 조정하기](/Develop/Guides/Handle_Device_Control.md#HandleDeviceVolume)
 
 ## LaunchApp directive {#LaunchApp}
 
@@ -998,7 +998,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1042,7 +1042,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### See also
 * [`DeviceControl.ExpectReportState`](#ExpectReportState)
 * [`DeviceControl.SynchronizeState`](#SynchronizeState)
-* [기기 상태 정보 공유하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceStateReport)
+* [기기 상태 정보 공유하기](/Develop/Guides/Handle_Device_Control.md#HandleDeviceStateReport)
 
 ## RequestStateSynchronization event {#RequestStateSynchronization}
 
@@ -1050,7 +1050,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1136,7 +1136,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 * 클라이언트는 맥락 정보인 [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) 객체를 이용해 수시로 스피커 볼륨 정보와 화면 밝기 정보를 CIC에 전달해야 합니다.
 * 클라이언트는 이 지시 메시지에 해당하는 내용을 처리한 후 [`DeviceControl.ActionExecuted`](#ActionExecuted) 또는 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
-* Clova는 보통 기기 제어에 대한 지시 메시지를 클라이언트에게 전달할 때 음성 안내([`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지)를 함께 제공합니다. 다만, `target` 필드가 `"volume"`으로 설정된 것처럼 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
+* Clova는 보통 기기 제어에 대한 지시 메시지를 클라이언트에게 전달할 때 음성 안내([`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) 지시 메시지)를 함께 제공합니다. 다만, `target` 필드가 `"volume"`으로 설정된 것처럼 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이때는 음성 안내 대신 클라이언트 기기의 조명이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
 
@@ -1168,8 +1168,8 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.Increase`](#Increase)
 * [`DeviceControl.SetValue`](#SetValue)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [클라이언트 볼륨 조정하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceVolume)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [클라이언트 볼륨 조정하기](/Develop/Guides/Handle_Device_Control.md#HandleDeviceVolume)
 
 ## SynchronizeState directive {#SynchronizeState}
 
@@ -1189,7 +1189,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Remarks
 
-`DeviceControl.SynchronizeState` 지시 메시지는 [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)을 통해 사용자 계정에 등록된 클라이언트 전체에 브로드캐스팅되며, [대화 ID(`dialogRequestId`)](/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md#HandleDirectivesByDialogueID)를 가지지 않습니다.
+`DeviceControl.SynchronizeState` 지시 메시지는 [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)을 통해 사용자 계정에 등록된 클라이언트 전체에 브로드캐스팅되며, [대화 ID(`dialogRequestId`)](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md#HandleDirectivesByDialogueID)를 가지지 않습니다.
 
 ### Message example
 
@@ -1217,7 +1217,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.ReportState`](#ReportState)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
 
 ## TurnOff directive {#TurnOff}
 
@@ -1266,8 +1266,8 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [클라이언트 기기 설정 활성화하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [클라이언트 기기 설정 활성화하기](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)
 
 ## TurnOn directive {#TurnOn}
 
@@ -1310,5 +1310,5 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [처리 결과 보고하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [클라이언트 기기 설정 활성화하기](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [처리 결과 보고하기](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [클라이언트 기기 설정 활성화하기](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)

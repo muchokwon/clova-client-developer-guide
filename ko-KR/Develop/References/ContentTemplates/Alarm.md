@@ -96,4 +96,4 @@ CIC는 사용자가 알람을 생성하면 생성한 알람의 정보를 Alarm �
 
 ## See also
 * [AlarmList](/Develop/References/ContentTemplates/AlarmList.md)
-* [Alerts](/Develop/References/CICInterface/Alerts.md) 인터페이스
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) 인터페이스

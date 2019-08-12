@@ -3,7 +3,7 @@
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>이 맥락 정보를 작성할 때 <a href="/Develop/References/CICInterface/Alerts.md">Alerts</a>의 지시 메시지가 보내준 알람의 정보를 그대로 입력해야 합니다.</p>
+  <p>이 맥락 정보를 작성할 때 <a href="/Develop/References/MessageInterfaces/Alerts.md">Alerts</a>의 지시 메시지가 보내준 알람의 정보를 그대로 입력해야 합니다.</p>
 </div>
 
 ### Object structure
@@ -144,4 +144,4 @@
 {% endraw %}
 
 ### See also
-* [`Alerts`](/Develop/References/CICInterface/Alerts.md)
+* [`Alerts`](/Develop/References/MessageInterfaces/Alerts.md)

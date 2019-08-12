@@ -147,5 +147,5 @@ CIC는 사용자가 캘린더에 일정을 생성하면 생성한 일정의 정�
 ![](/Develop/Assets/Images/Content_Template-Schedule.png)
 
 ## See also
-* [Alerts](/Develop/References/CICInterface/Alerts.md) 인터페이스
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) 인터페이스
 * [ScheduleList](/Develop/References/ContentTemplates/ScheduleList.md)

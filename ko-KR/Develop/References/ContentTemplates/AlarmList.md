@@ -97,4 +97,4 @@ CIC는 사용자가 알람의 목록을 요청하면 사용자에게 등록된 �
 
 ## See also
 * [Alarm](/Develop/References/ContentTemplates/Alarm.md)
-* [Alerts](/Develop/References/CICInterface/Alerts.md) 인터페이스
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) 인터페이스

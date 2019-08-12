@@ -20,7 +20,7 @@
 
 ![](/Develop/Assets/Images/CIC_Alerts_Add_Work_Flow.svg)
 
-사용자가 알람 등록을 발화로 요청([`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize))하면 Clova는 사용자의 발화를 분석하고 사용자의 클라이언트 기기가 알람을 추가할 수 있도록 [`Alerts.SetAlert`](/Develop/References/CICInterface/Alerts.md#SetAlert) 지시 메시지를 보냅니다.
+사용자가 알람 등록을 발화로 요청([`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize))하면 Clova는 사용자의 발화를 분석하고 사용자의 클라이언트 기기가 알람을 추가할 수 있도록 [`Alerts.SetAlert`](/Develop/References/MessageInterfaces/Alerts.md#SetAlert) 지시 메시지를 보냅니다.
 
 클라이언트는 `Alerts.SetAlert` 지시 메시지를 받게 되며, 해당 지시 메시지에서 다음과 같은 내용 등을 확인하여 클라이언트 기기에 알람을 등록해야 합니다.
 * 알람 종류
@@ -71,7 +71,7 @@
   * 1 번 재생 항목: `clova://alert/bell/reminder`
   * 2 번 재생 항목: `https://abc.de.fe/tts2`
 
-클라이언트가 알람 등록을 시도한 후 그 결과를 CIC에게 전달합니다. 이때, 알람 등록에 성공했다면 [`Alerts.SetAlertSucceeded`](/Develop/References/CICInterface/Alerts.md#SetAlertSucceeded) 이벤트 메시지를 CIC에 전송합니다.
+클라이언트가 알람 등록을 시도한 후 그 결과를 CIC에게 전달합니다. 이때, 알람 등록에 성공했다면 [`Alerts.SetAlertSucceeded`](/Develop/References/MessageInterfaces/Alerts.md#SetAlertSucceeded) 이벤트 메시지를 CIC에 전송합니다.
 
 ```json
 {
@@ -92,7 +92,7 @@
 }
 ```
 
-알람 등록에 실패했다면 [`Alerts.SetAlertFailed`](/Develop/References/CICInterface/Alerts.md#SetAlertFailed) 이벤트 메시지를 사용합니다.
+알람 등록에 실패했다면 [`Alerts.SetAlertFailed`](/Develop/References/MessageInterfaces/Alerts.md#SetAlertFailed) 이벤트 메시지를 사용합니다.
 
 ```json
 {
@@ -113,7 +113,7 @@
 }
 ```
 
-Clova는 알람이 등록된 결과를 사용자에게 알려주기 위해 [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지와 [`Clova.RenderTemplate`](/Develop/References/CICInterface/Clova.md#RenderTemplate) 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 이 지시 메시지의 내용을 사용자에게 전달해야 합니다.
+Clova는 알람이 등록된 결과를 사용자에게 알려주기 위해 [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) 지시 메시지와 [`Clova.RenderTemplate`](/Develop/References/MessageInterfaces/Clova.md#RenderTemplate) 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 이 지시 메시지의 내용을 사용자에게 전달해야 합니다.
 
 ## 알람 시작하기 {#RingAlert}
 
@@ -121,7 +121,7 @@ Clova는 알람이 등록된 결과를 사용자에게 알려주기 위해 [`Spe
 
 ![](/Develop/Assets/Images/CIC_Alerts_Ring_Work_Flow.svg)
 
-지정한 시간이 되면 클라이언트는 알람을 울려야 하며, 알람이 시작되었음을 [`Alerts.AlertStarted`](/Develop/References/CICInterface/Alerts.md#AlertStarted) 이벤트 메시지로 CIC에게 보고해야 합니다.
+지정한 시간이 되면 클라이언트는 알람을 울려야 하며, 알람이 시작되었음을 [`Alerts.AlertStarted`](/Develop/References/MessageInterfaces/Alerts.md#AlertStarted) 이벤트 메시지로 CIC에게 보고해야 합니다.
 
 {% raw %}
 ```json
@@ -148,7 +148,7 @@ Clova는 알람이 등록된 결과를 사용자에게 알려주기 위해 [`Spe
 
 ## 알람 중지하기 {#StopAlert}
 
-사용자는 발화([`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize))나 물리적 버튼(하드웨어 방식) 또는 GUI 버튼(소프트웨어 방식)으로 알람을 중지하도록 요청할 것입니다. 이때, 클라이언트는 사용자의 알람 중지 요청을 [`Alerts.RequestAlertStop`](/Develop/References/CICInterface/Alerts.md#RequestAlertStop) 이벤트 메시지로 CIC에게 보고해야 합니다.
+사용자는 발화([`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize))나 물리적 버튼(하드웨어 방식) 또는 GUI 버튼(소프트웨어 방식)으로 알람을 중지하도록 요청할 것입니다. 이때, 클라이언트는 사용자의 알람 중지 요청을 [`Alerts.RequestAlertStop`](/Develop/References/MessageInterfaces/Alerts.md#RequestAlertStop) 이벤트 메시지로 CIC에게 보고해야 합니다.
 
 ```json
 {
@@ -169,7 +169,7 @@ Clova는 알람이 등록된 결과를 사용자에게 알려주기 위해 [`Spe
 }
 ```
 
-Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Alerts.StopAlert`](/Develop/References/CICInterface/Alerts.md#StopAlert) 지시 메시지를 보냅니다.
+Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Alerts.StopAlert`](/Develop/References/MessageInterfaces/Alerts.md#StopAlert) 지시 메시지를 보냅니다.
 
 클라이언트는 `Alerts.StopAlert` 지시 메시지를 받게 되며, 해당 지시 메시지에서 다음과 같은 내용 등을 확인하여 클라이언트 기기에서 울리는 중인 알람을 중지해야 합니다.
 * 중지해야 할 알람의 식별자
@@ -196,7 +196,7 @@ Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Al
 
 클라이언트는 지시 메시지에 지정된 `token`과 `type`의 내용과 일치하는 알람을 중지해야 합니다.
 
-클라이언트는 알람을 중지한 후 알람이 중지되었음을 [`Alerts.AlertStopped`](/Develop/References/CICInterface/Alerts.md#AlertStopped) 이벤트 메시지로 보고해야 합니다.
+클라이언트는 알람을 중지한 후 알람이 중지되었음을 [`Alerts.AlertStopped`](/Develop/References/MessageInterfaces/Alerts.md#AlertStopped) 이벤트 메시지로 보고해야 합니다.
 
 ```json
 {
@@ -231,7 +231,7 @@ Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Al
 
 ## 알람 수정 또는 삭제하기 {#EditAlert}
 
-사용자가 Clova 앱에서 알람을 수정하거나 삭제를 시도하면 Clova는 사용자 요청을 처리하기 위해 [`Alerts.SetAlert`](/Develop/References/CICInterface/Alerts.md#SetAlert) 지시 메시지 또는 [`Alerts.DeleteAlert`](/Develop/References/CICInterface/Alerts.md#DeleteAlert) 지시 메시지를 클라이언트에게 보냅니다.
+사용자가 Clova 앱에서 알람을 수정하거나 삭제를 시도하면 Clova는 사용자 요청을 처리하기 위해 [`Alerts.SetAlert`](/Develop/References/MessageInterfaces/Alerts.md#SetAlert) 지시 메시지 또는 [`Alerts.DeleteAlert`](/Develop/References/MessageInterfaces/Alerts.md#DeleteAlert) 지시 메시지를 클라이언트에게 보냅니다.
 
 알람을 수정하는 과정은 알람을 등록하는 과정을 반복하는 것과 같기 때문에, [알람 등록하기](#RegisterAlert)를 참고해주십시오.
 
@@ -260,7 +260,7 @@ Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Al
 
 클라이언트는 지시 메시지에 지정된 `token`과 `type`의 내용과 일치하는 알람을 삭제해야 합니다.
 
-클라이언트가 알람을 수정하거나 삭제합니다. 이때, 알람 삭제에 성공했다면 [`Alerts.DeleteAlertSucceeded`](/Develop/References/CICInterface/Alerts.md#DeleteAlertSucceeded) 이벤트 메시지를 CIC에 전송합니다.
+클라이언트가 알람을 수정하거나 삭제합니다. 이때, 알람 삭제에 성공했다면 [`Alerts.DeleteAlertSucceeded`](/Develop/References/MessageInterfaces/Alerts.md#DeleteAlertSucceeded) 이벤트 메시지를 CIC에 전송합니다.
 
 {% raw %}
 ```json
@@ -283,7 +283,7 @@ Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Al
 ```
 {% endraw %}
 
-알람 삭제에 실패했다면 [`Alerts.DeleteAlertFailed`](/Develop/References/CICInterface/Alerts.md#DeleteAlertFailed) 이벤트 메시지를 사용합니다.
+알람 삭제에 실패했다면 [`Alerts.DeleteAlertFailed`](/Develop/References/MessageInterfaces/Alerts.md#DeleteAlertFailed) 이벤트 메시지를 사용합니다.
 
 {% raw %}
 ```json
@@ -308,7 +308,7 @@ Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Al
 
 ## 알람 동기화하기 {#SyncAlert}
 
-사용자의 클라이언트가 추가되거나 일부 또는 특정 클라이언트가 네트워크 연결이 끊긴 후 재접속되는 상황 또는 클라이언트에 등록된 사용자의 계정이 변경되면 클라이언트는 CIC에 연결 또는 재연결되면 [`System.RequestSynchronizeState`](/Develop/References/CICInterface/System.md#RequestSynchronizeState) 이벤트 메시지를 CIC로 전송한 후, 클라이언트는 CIC로부터 [`System.SynchronizeState`](/Develop/References/CICInterface/System.md#SynchronizeState) 지시 메시지를 수신하게 되며, 이때 `allAlerts` 필드에 있는 알람 데이터를 기기 알람 정보와 동기화 해야 합니다.
+사용자의 클라이언트가 추가되거나 일부 또는 특정 클라이언트가 네트워크 연결이 끊긴 후 재접속되는 상황 또는 클라이언트에 등록된 사용자의 계정이 변경되면 클라이언트는 CIC에 연결 또는 재연결되면 [`System.RequestSynchronizeState`](/Develop/References/MessageInterfaces/System.md#RequestSynchronizeState) 이벤트 메시지를 CIC로 전송한 후, 클라이언트는 CIC로부터 [`System.SynchronizeState`](/Develop/References/MessageInterfaces/System.md#SynchronizeState) 지시 메시지를 수신하게 되며, 이때 `allAlerts` 필드에 있는 알람 데이터를 기기 알람 정보와 동기화 해야 합니다.
 
 {% raw %}
 ```json

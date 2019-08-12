@@ -105,7 +105,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 {% endraw %}
 
-위 연결 요청이 성공적으로 수행되면 CIC는 다음과 같은 [`Clova.Hello`](/Develop/References/CICInterface/Clova.md#Hello) 지시 메시지를 응답으로 보냅니다. 이는 downchannel을 통해 추가적인 지시 메시지가 전달될 준비가 되었음을 나타냅니다.
+위 연결 요청이 성공적으로 수행되면 CIC는 다음과 같은 [`Clova.Hello`](/Develop/References/MessageInterfaces/Clova.md#Hello) 지시 메시지를 응답으로 보냅니다. 이는 downchannel을 통해 추가적인 지시 메시지가 전달될 준비가 되었음을 나타냅니다.
 
 {% raw %}
 
