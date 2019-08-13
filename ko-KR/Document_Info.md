@@ -24,6 +24,7 @@
       <td>2019-08-19</td>
       <td>
         <ul>
+          <li>화면이 있는 기기에서 콘텐츠를 제공할 때 서비스 제약에 따른 콘텐츠 변형을 알리는 법적 고지를 위해 <a href="/Develop/References/ContentTemplates/CardList.md">CardList</a> 템플릿에 noticeText 필드 추가</li>
           <li>Client 기능 구현 가이드, CIC API의 인터페이스와 맥락 정보 레퍼런스의 목차 수준을 한 단계씩 올림</li>
         </ul>
       </td>
