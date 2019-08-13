@@ -22,7 +22,6 @@
 | `cardList[]`                | object array | 카드 목록을 표현하는 객체 배열 |
 | `cardList[].contentProviderText`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 콘텐츠 제공자의 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
 | `cardList[].description[]`    | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | 콘텐츠의 설명이 담긴 객체 배열          |
-| `cardList[].description[]`    | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | 콘텐츠의 설명이 담긴 객체 배열          |
 | `cardList[].imageUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | 표시해야 할 이미지의 URI가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
 | `cardList[].linkUrl`        | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | 콘텐츠의 URI 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.         |
 | `cardList[].press`          | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)       | 언론사의 이름이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.             |
