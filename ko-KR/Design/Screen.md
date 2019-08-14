@@ -80,7 +80,7 @@ Green Dot VUI의 UI 표현은 구분된 동작에 따라 달라집니다. 다음
 |----------------|-------------------------------|---------------|
 | 준비(Intro)          | 사용자가 호출어를 부르거나 버튼을 눌렀을 때 표시되는 동작         | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Intro.gif)      |
 | 대기(Waiting)        | 사용자의 음성 입력이 실제로 입력되기 전까지 표시되는 동작         | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Waiting.gif)    |
-| 입력(Speaking)      | 사용자의 음석 입력이 실제로 인지되어 입력되고 있을 때 표시되는 동작 | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Speaking.gif)    |
+| 듣기(Listening)      | 사용자의 음석 입력이 실제로 인지되어 입력되고 있을 때 표시되는 동작 | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Listening.gif)  |
 | 분석/처리(Processing) | 사용자의 요청을 분석하고 이를 처리하고 있을 때 표시되는 동작       | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Processing.gif) |
 | 대답(Answering)      | 사용자의 요청에 대한 응답을 TTS로 출력하고 있을 때 표시되는 동작. 이 동작은 다음과 같이 세 구간으로 구분됩니다.<ul><li>진입 구간: 응답(TTS)이 시작됨을 표현(1~13 번 프레임)</li><li>반복 구간: TTS 출력을 표현(14~29 번 프레임). 응답이 완료될 때까지 이 구간을 반복 재생해야 합니다.</li><li>종료 구간: 응답이 종료됨을 표현(30~41 번 프레임)</li></ul>    | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Answering.gif)  |
 | 완료(Complete)       | 사용자의 요청에 대한 응답을 마무리할 때 표시되는 동작            | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Complete.gif)  |
@@ -95,7 +95,7 @@ Green Dot VUI의 UI 표현은 구분된 동작에 따라 달라집니다. 다음
 
 * 사용자가 호출어를 부르거나 버튼을 눌러 클라이언트가 **Attending** 모드로 진입하면 **준비** 동작을 재생합니다.
 * **준비** 동작을 한 번 표시한 후 마이크를 통해 사용자의 실제 음성 입력이 시작되기 전까지 **대기** 동작을 반복 재생합니다.
-* 사용자의 실제 음성이 입력되기 시작하여 클라이언트가 **Listening** 모드로 진입하면 사용자의 음성 입력이 끝날 때까지 **입력** 동작을 반복 재생합니다.
+* 사용자의 실제 음성이 입력되기 시작하여 클라이언트가 **Listening** 모드로 진입하면 사용자의 음성 입력이 끝날 때까지 **듣기** 동작을 반복 재생합니다.
 * 사용자의 입력이 끝나고 클라이언트가 **Processing & reporting** 상태로 진입하면 응답을 출력하거나 결과 화면을 보여주기 전까지 **분석/처리** 동작을 반복 재생합니다.
 * 응답(TTS)를 출력할 때는 **대답**의 진입 구간을 한 번 재생한 후 반복 구간을 응답이 끝날 때까지 반복 재생합니다. 응답이 종료되면 종료 구간을 한 번 재생합니다.
 * 만약, 응답을 출력할 때 **대답** 동작을 구분하여 표현하기 어렵다면 반복 구간만 반복 재생합니다.
