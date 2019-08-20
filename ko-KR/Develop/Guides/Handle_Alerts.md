@@ -226,7 +226,7 @@ Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Al
 
 <div class="tip">
 <p><strong>Tip!</strong></p>
-<p>위의 흐름에서 알람을 수정하거나 삭제할 수 있으며, 오직 Clova 앱을 통해서 수정 및 삭제할 수 있습니다. 참고로 사용자의 발화에 대한 응답으로 전송되는 지시 메시지가 아니면 해당 지시 메시지는 [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)을 통해 클라이언트에게 전달됩니다.</p>
+<p>위의 흐름에서 알람을 수정하거나 삭제할 수 있으며, 오직 Clova 앱을 통해서 수정 및 삭제할 수 있습니다. 참고로 사용자의 발화에 대한 응답으로 전송되는 지시 메시지가 아니면 해당 지시 메시지는 <a href="/Develop/Guides/Interact_with_CIC.md#CreateConnection">downchannel</a>을 통해 클라이언트에게 전달됩니다.</p>
 </div>
 
 ## 알람 수정 또는 삭제하기 {#EditAlert}
