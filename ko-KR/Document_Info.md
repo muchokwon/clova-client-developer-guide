@@ -21,6 +21,14 @@
   </thead>
   <tbody>
     <tr>
+      <td>2019-08-26</td>
+      <td>
+        <ul>
+          <li>noticeText 필드의 내용과 더불어 상세 설명 페이지나 출처에 대한 링크를 제공하기 위해 <a href="/Develop/References/ContentTemplates/CardList.md">CardList</a> 템플릿에 noticeLink 필드 추가</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>2019-08-19</td>
       <td>
         <ul>
