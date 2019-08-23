@@ -63,24 +63,15 @@ Clova inside 배지와 배경 색상은 다음과 같이 4 가지 색상 중 하
 
 Clova inside를 적용할 때 지켜야 하는 규칙은 다음과 같습니다.
 
-<ul>
-  <li>Clova inside를 표현할 때 반드시 정해진 <a href="#ClovaInsideBadge">Clova inside 배지</a>를 사용해야 합니다.</li>
-  <li>Clova inside 배지와 배경 색상은 반드시 정해진 <a href="#ClovaInsideColor">색상</a>과 <a href="#ClovaInsideBackgroundColor">배경색</a> 조합을 사용해야 합니다.
-  <li>반드시 <a href="#ClovaInsideBadge">Clova inside 배지</a>의 여백 규칙과 최소 크기를 준수해야 합니다.</li>
-  <li>기기에 적용할 때 <strong>텍스트형</strong> 배지 사용을 권장합니다. 다음은 기기에 <strong>텍스트형</strong> Clova inside 배지가 적용된 예입니다.<br />
-    <img src="/Design/Assets/Images/Clova_Inside-Device_Exmaple.png" />
-  </li>
-  <li>제품 포장에 적용할 때 <strong>기본형</strong> 배지 사용을 권장합니다. 다음은 제품 포장에 <strong>기본형</strong> Clova inside 배지가 적용된 예입니다.<br />
-    <img src="/Design/Assets/Images/Clova_Inside-Package_Example.png" />
-  </li>
-  <li>제품 포장에 적용할 때 아래와 같이 설명 문구를 조합하여 사용하는 것을 권장합니다.
-    <ul>
-      <li>다음은 가로로 배지과 문구를 조합한 형태입니다.<br />
-        <img src="/Design/Assets/Images/Clova_Inside-Horizontal_Signature_For_Package.png" />
-      </li>
-      <li>다음은 세로로 배지과 문구를 조합한 형태입니다.<br />
-        <img src="/Design/Assets/Images/Clova_Inside-Vertical_Signature_For_Package.png" />
-      </li>
-    </ul>
-  </li>
-</ul>
+* Clova inside를 표현할 때 반드시 정해진 [Clova inside 배지](#ClovaInsideBadge)를 사용해야 합니다.
+* Clova inside 배지와 배경 색상은 반드시 정해진 [색상](#ClovaInsideColor)과 [배경색](#ClovaInsideBackgroundColor) 조합을 사용해야 합니다.
+* 반드시 [Clova inside 배지](#ClovaInsideBadge)의 여백 규칙과 최소 크기를 준수해야 합니다.
+* 기기에 적용할 때 **텍스트형** 배지 사용을 권장합니다. 다음은 기기에 **텍스트형** Clova inside 배지가 적용된 예입니다.<br />
+  ![](/Design/Assets/Images/Clova_Inside-Device_Exmaple.png)
+* 제품 포장에 적용할 때 **기본형** 배지 사용을 권장합니다. 다음은 제품 포장에 **기본형** Clova inside 배지가 적용된 예입니다.<br />
+  ![](/Design/Assets/Images/Clova_Inside-Package_Example.png)
+* 제품 포장에 적용할 때 아래와 같이 설명 문구를 조합하여 사용하는 것을 권장합니다.
+  * 다음은 가로로 배지과 문구를 조합한 형태입니다.<br />
+    ![](/Design/Assets/Images/Clova_Inside-Horizontal_Signature_For_Package.png)
+  * 다음은 세로로 배지과 문구를 조합한 형태입니다.<br />
+    ![](/Design/Assets/Images/Clova_Inside-Vertical_Signature_For_Package.png)

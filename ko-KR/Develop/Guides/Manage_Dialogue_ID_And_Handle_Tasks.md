@@ -13,15 +13,10 @@
 
 ![](/Develop/Assets/Images/CIC_Dialogue_ID_Creation.svg)
 
-<ol>
-  <li>사용자가 새로운 대화를 시작할 때마다 <strong>새로운 대화 ID를 생성</strong>(UUID 포맷 권장)합니다.</li>
-  <li><a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지로 사용자의 요청을 CIC로 전달합니다. (텍스트 명령이면, <a href="/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize">TextRecognizer.Recognize</a> 이벤트 메시지)
-    <ul>
-      <li>이때 <a href="/Develop/References/CIC_API.md#Event">이벤트 메시지의 헤더</a>의 <code>dialogRequestId</code>에 새로 생성한 대화 ID를 포함시킵니다.</li>
-    </ul>
-  </li>
-  <li>이벤트 메시지를 전송한 후 생성한 대화 ID를 <strong>마지막 대화 ID</strong>로 기록해 두어야 합니다.</li>
-</ol>
+1. 사용자가 새로운 대화를 시작할 때마다 **새로운 대화 ID를 생성**(UUID 포맷 권장)합니다.
+2. [SpeechRecognizer.Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) 이벤트 메시지로 사용자의 요청을 CIC로 전달합니다. (텍스트 명령이면, [TextRecognizer.Recognize](/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize) 이벤트 메시지)
+  * 이때 [이벤트 메시지의 헤더](/Develop/References/CIC_API.md#Event)의 `dialogRequestId`에 새로 생성한 대화 ID를 포함시킵니다.
+3. 이벤트 메시지를 전송한 후 생성한 대화 ID를 **마지막 대화 ID**로 기록해 두어야 합니다.
 
 <div class="note">
 <p><strong>Note!</strong></p>

@@ -9,84 +9,86 @@
 사용자는 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정 인증 정보까지 처리된 Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결 및 요청을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/Develop/References/Clova_Auth_API.md)를 이용해야 합니다.
 
 아래 그림은 클라이언트가 Clova access token은 획득하는 흐름을 나타내고 있습니다. 참고로 클라이언트는 두 가지 유형으로 구분되며, 각 유형에 따라 Clova access token을 획득하는 과정이 조금 달라집니다.
-<ul>
-  <li>
-    <p><strong>GUI 미제공 클라이언트</strong><br />화면이 없는 스피커나 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위해 클라이언트를 연동 앱(companion app)과 함께 제공하거나 Clova 앱과 연동되도록 만들어야 합니다.</p>
-  </li>
-  <li>
-    <strong>GUI 제공 클라이언트</strong><br />화면이 있는 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트이거나 Clova 앱과 같이 소프트웨어 형태로 Clova 서비스를 제공하는 클라이언트입니다.</p>
-  </li>
-</ul>
+* **GUI 미제공 클라이언트**<br />
+  화면이 없는 스피커나 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위해 클라이언트를 연동 앱(companion app)과 함께 제공하거나 Clova 앱과 연동되도록 만들어야 합니다.
+* **GUI 제공 클라이언트**<br />
+  화면이 있는 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트이거나 Clova 앱과 같이 소프트웨어 형태로 Clova 서비스를 제공하는 클라이언트입니다.
 
 ![](/Develop/Assets/Images/CIC_Authorization.svg)
 
 Clova access token을 획득하는 절차는 다음과 같습니다.
 
-<ol>
-  <li>
-    <p>우선, 사용자가 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정을 인증할 수 있는 인터페이스를 제공합니다(<a href="{{ book.ServiceEnv.LoginAPIofTargetService }}" target="_blank">{{ book.ServiceEnv.TargetServiceForClientAuth }} 아이디로 로그인하기</a>).<br /><strong>GUI 미제공 클라이언트</strong>는 사용자 음성 입력만으로 계정 인증을 할 수 없기 때문에 반드시 Clova 앱이나 연동 앱(companion app)을 사용해야 합니다.</p>
-  </li>
-  <li>
-    <p>{{ book.ServiceEnv.TargetServiceForClientAuth }} 계정의 {{ "authorization code를" if book.L10N.TargetCountryCode == "JP" else "access token을" }} 획득합니다. {{ "authorization code를" if book.L10N.TargetCountryCode == "JP" else "access token을" }} 획득할 때, 사용자가 입력한 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정 정보를 이용합니다.</p>
-  </li>
-  <li>
-    <p><a href="/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode">Authorization code를 요청</a>합니다. Authorization code를 요청할 때, 2 번 단계에서 획득한 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정의 {{ "authorization code와" if book.L10N.TargetCountryCode == "JP" else "access token과" }} <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용합니다. <code>device_id</code> 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용하면 됩니다.<br />다음은 authorization code를 요청한 예입니다.</p>
-    <pre><code>$ curl -H "Authorization: Bearer Zc3d3QAR6zIxqceOpXoq"
-    {{ book.ServiceEnv.AuthServerBaseURL }}authorize \
-    {% if book.L10N.TargetCountryCode == "JP"  -%}
-    --data-urlencode "grant_type=uauth_auth_code_v2" \
-    {% endif -%}
-    --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
-    --data-urlencode "device_id=aa123123d6-d900-48a1-b73b-aa6c156353206" \
-    --data-urlencode "model_id=test_model" \
-    --data-urlencode "response_type=code" \
-    --data-urlencode "state=FKjaJfMlakjdfTVbES5ccZ"
-</code></pre>
-    <p>수신하게 되는 응답 메시지의 본문은 다음과 같습니다. <code>code</code> 필드가 authorization code입니다.</p>
-    <pre><code>{
-  "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
-  "state": "FKjaJfMlakjdfTVbES5ccZ"
-}
-</code></pre></li>
-  <li>
-    <p>(만약, 3 번 단계에 대한 응답으로 <code>451 Unavailable For Legal Reasons</code> 상태 코드를 수신하면) 사용자에게 이용 약관 동의 페이지를 보여줘야 합니다. 약관 동의 페이지를 제공할 때, 응답 메시지 본문 <code>redirect_uri</code> 필드에 입력된 URI를 이용합니다.<br />다음은 상태 코드가 <code>451 Unavailable For Legal Reasons</code>일 때 수신하게 되는 응답 메시지의 본문의 예 입니다.</p>
-    <pre><code>{
-  "code": "4mrklvwoC_KNgDlvmslka",
-  "redirect_uri": "https://example.net/clova/terms_3rd.html?code=4mrklvwoC_KNgDlvmslka&grant_type=code&state=FKjaJfMlakjdfTVbES5ccZ",
-  "state": "FKjaJfMlakjdfTVbES5ccZ"
-}
-</code></pre>
-    <div class="note">
-      <p><strong>Note!</strong></p>
-      <p>사용자가 이용 약관에 동의하고 동의한 결과를 서버에 전송하면 클라이언트는 <code>302 Found</code>(URL Redirection) 상태 코드를 가진 응답을 다음과 같은 URL과 함께 수신하게 됩니다.</p>
-      <ul>
-        <li><code>clova://agreement-success</code>: 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li>
-        <li><code>clova://agreement-failure?error=[reason]</code>: 사용자가 약관에 동의하지 않았거나 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li>
-      </ul>
-    </div>
-  </li>
-  <li>
-    <p>(GUI 미제공 클라이언트이면) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
-  </li>
-  <li>
-    <p><a href="/Develop/References/Clova_Auth_API.md#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 요청할 때 이전에 획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등을 파라미터로 입력합니다. <br />다음은 Clova access token을 요청한 예입니다.</p>
-    <pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=authorization_code \
-    --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
-    --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \
-    --data-urlencode "code=cnl__eCSTdsdlkjfweyuxXvnlA" \
-    --data-urlencode "device_id=aa123123d6-d900-48a1-b73b-aa6c156353206" \
-    --data-urlencode "model_id=test_model"
-</code></pre>
-    <p>다음과 같은 Clova access token이 반환됩니다.</p>
-    <pre><code>{
+1. 우선, 사용자가 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정을 인증할 수 있는 인터페이스를 제공합니다(<a href="{{ book.ServiceEnv.LoginAPIofTargetService }}" target="_blank">{{ book.ServiceEnv.TargetServiceForClientAuth }} 아이디로 로그인하기</a>).<br />
+  **GUI 미제공 클라이언트**는 사용자 음성 입력만으로 계정 인증을 할 수 없기 때문에 반드시 Clova 앱이나 연동 앱(companion app)을 사용해야 합니다.
+2. {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정의 {{ "authorization code를" if book.L10N.TargetCountryCode == "JP" else "access token을" }} 획득합니다. {{ "authorization code를" if book.L10N.TargetCountryCode == "JP" else "access token을" }} 획득할 때, 사용자가 입력한 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정 정보를 이용합니다.
+3. [Authorization code를 요청](/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode)합니다.<br />
+  Authorization code를 요청할 때, 2 번 단계에서 획득한 {{ book.ServiceEnv.TargetServiceForClientAuth }} 계정의 {{ "authorization code와" if book.L10N.TargetCountryCode == "JP" else "access token과" }} [클라이언트 인증 정보](#ClientAuthInfo) 등의 정보를 이용합니다. `device_id` 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용하면 됩니다. 다음은 authorization code를 요청한 예입니다.
+  {% if book.L10N.TargetCountryCode == "KR" -%}
+  ```bash
+  $ curl -H "Authorization: Bearer Zc3d3QAR6zIxqceOpXoq"
+      {{ book.ServiceEnv.AuthServerBaseURI }}authorize \
+      --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
+      --data-urlencode "device_id=aa123123d6-d900-48a1-b73b-aa6c156353206" \
+      --data-urlencode "model_id=test_model" \
+      --data-urlencode "response_type=code" \
+      --data-urlencode "state=FKjaJfMlakjdfTVbES5ccZ"
+  ```
+  {%- elif book.L10N.TargetCountryCode == "JP"  -%}
+  ```bash
+  $ curl -H "Authorization: Bearer Zc3d3QAR6zIxqceOpXoq"
+      {{ book.ServiceEnv.AuthServerBaseURI }}authorize \
+      --data-urlencode "grant_type=uauth_auth_code_v2" \
+      --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
+      --data-urlencode "device_id=aa123123d6-d900-48a1-b73b-aa6c156353206" \
+      --data-urlencode "model_id=test_model" \
+      --data-urlencode "response_type=code" \
+      --data-urlencode "state=FKjaJfMlakjdfTVbES5ccZ"
+  ```
+  {% endif %}
+  수신하게 되는 응답 메시지의 본문은 다음과 같습니다. `code` 필드가 authorization code입니다.
+  ```json
+  {
+    "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
+    "state": "FKjaJfMlakjdfTVbES5ccZ"
+  }
+  ```
+4. (만약, 3 번 단계에 대한 응답으로 `451 Unavailable For Legal Reasons` 상태 코드를 수신하면) 사용자에게 이용 약관 동의 페이지를 보여줘야 합니다.<br />
+  약관 동의 페이지를 제공할 때, 응답 메시지 본문 `redirect_uri` 필드에 입력된 URI를 이용합니다. 다음은 상태 코드가 `451 Unavailable For Legal Reasons`일 때 수신하게 되는 응답 메시지의 본문의 예 입니다.
+  ```json
+  {
+    "code": "4mrklvwoC_KNgDlvmslka",
+    "redirect_uri": "https://example.net/clova/terms_3rd.html?code=4mrklvwoC_KNgDlvmslka&grant_type=code&state=FKjaJfMlakjdfTVbES5ccZ",
+    "state": "FKjaJfMlakjdfTVbES5ccZ"
+  }
+  ```
+  <div class="note">
+    <p><strong>Note!</strong></p>
+    <p>사용자가 이용 약관에 동의하고 동의한 결과를 서버에 전송하면 클라이언트는 <code>302 Found</code>(URL Redirection) 상태 코드를 가진 응답을 다음과 같은 URL과 함께 수신하게 됩니다.</p>
+    <ul>
+      <li><code>clova://agreement-success</code>: 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li>
+      <li><code>clova://agreement-failure?error=[reason]</code>: 사용자가 약관에 동의하지 않았거나 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li>
+    </ul>
+  </div>
+5. (GUI 미제공 클라이언트이면) authorization code를 실제 클라이언트 기기로 전송합니다.
+6. [Clova access token을 요청](/Develop/References/Clova_Auth_API.md#RequestClovaAccessToken)합니다.<br />
+  요청할 때 이전에 획득한 authorization code와 [클라이언트 인증 정보](#ClientAuthInfo) 등을 파라미터로 입력합니다. 다음은 Clova access token을 요청한 예입니다.
+  ```bash
+  $ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=authorization_code \
+      --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
+      --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \
+      --data-urlencode "code=cnl__eCSTdsdlkjfweyuxXvnlA" \
+      --data-urlencode "device_id=aa123123d6-d900-48a1-b73b-aa6c156353206" \
+      --data-urlencode "model_id=test_model"
+  ```
+  다음과 같은 Clova access token이 반환됩니다.
+  ```json
+  {
     "access_token": "XHapQasdfsdfFsdfasdflQQ7w",
     "expires_in": 332000,
     "refresh_token": "GW-Ipsdfasdfdfs3IbHFBA",
     "token_type": "Bearer"
-}
-</code></pre>
-  </li>
-</ol>
+  }
+  ```
 
 ### 처음 연결하기 {#CreateConnection}
 클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 [downchannel을 구성](/Develop/References/CIC_API.md#EstablishDownchannel)하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때, 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC가 주도(Cloud-initiated)하여 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.
