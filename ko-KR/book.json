@@ -12,7 +12,8 @@
       "DocVersion": "v2019-08-26",
       "OutputFormat": "Web",
       "ReleaseYear": "2019",
-      "TargetReaderType": "Internal"
+      "TargetReaderType": "Internal",
+      "FileExtensionForExternalLink": "html"
     },
     "ServiceEnv": {
       "AuthServerBaseURI": "https://auth.clova.ai/",
