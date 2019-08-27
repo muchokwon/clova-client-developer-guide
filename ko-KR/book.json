@@ -6,14 +6,14 @@
   "variables": {
     "DocMeta": {
       "ClassifiedInfo": "Confidential",
-      "ClovaCustomExtensionDeveloperGuideBaseURI": "https://pages.oss.navercorp.com/JTF-P6/Clova_Custom_Extension_Developer_Guide/ko-KR",
-      "ClovaHomeExtensionDeveloperGuideBaseURI": "https://pages.oss.navercorp.com/JTF-P6/Clova_Home_Extension_Developer_Guide/ko-KR",
+      "ClovaCustomExtensionDeveloperGuideBaseURI": "https://developers.naver.com/docs/clova/custom_ext",
+      "ClovaHomeExtensionDeveloperGuideBaseURI": "https://developers.naver.com/docs/clova/home_ext",
       "DocOwner": "NAVER",
       "DocVersion": "v2019-08-26",
       "OutputFormat": "Web",
       "ReleaseYear": "2019",
-      "TargetReaderType": "Internal",
-      "FileExtensionForExternalLink": "html"
+      "TargetReaderType": "Public",
+      "FileExtensionForExternalLink": "md"
     },
     "ServiceEnv": {
       "AuthServerBaseURI": "https://auth.clova.ai/",
