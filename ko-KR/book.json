@@ -6,8 +6,8 @@
   "variables": {
     "DocMeta": {
       "ClassifiedInfo": "Confidential",
-      "ClovaCustomExtensionDeveloperGuideBaseURI": "https://developers.naver.com/docs/clova/custom_ext",
-      "ClovaHomeExtensionDeveloperGuideBaseURI": "https://developers.naver.com/docs/clova/home_ext",
+      "ClovaCustomExtensionDeveloperGuideBaseURI": "https://developers.naver.com/console/clova/custom_ext",
+      "ClovaHomeExtensionDeveloperGuideBaseURI": "https://developers.naver.com/console/clova/home_ext",
       "DocOwner": "NAVER",
       "DocVersion": "v2019-08-26",
       "OutputFormat": "Web",
