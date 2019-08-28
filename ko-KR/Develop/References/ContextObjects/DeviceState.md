@@ -50,7 +50,7 @@
 | `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | 클라이언트 기기의 소리 재생 모드 정보를 보고할 때 사용하는 객체           | 선택 |
 | `soundOutput`     | [SoundOutputInfoObject](#SoundOutputInfoObject)         | 클라이언트 기기의 소리 출력을 위해 사용되고 있는 재생 장치나 방식에 대한 정보를 보고할 때 사용하는 객체 | 선택 |
 | `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | 클라이언트 기기의 스피커 볼륨 정보를 보고할 때 사용하는 객체           | 선택 |
-| `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | 클라이언트 기기의 무선 네트워크(Wi-Fi) 기능 활성화 상태와 무선 네트워크 연결 정보를 보고할 때 사용하는 객체    | 선택 |
+| `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | 클라이언트 기기의 무선랜(Wi-Fi) 기능 활성화 상태와 무선랜 연결 정보를 보고할 때 사용하는 객체    | 선택 |
 
 ### Object example
 {% raw %}
@@ -647,17 +647,17 @@
 {% endraw %}
 
 ### WifiInfoObject {#WifiInfoObject}
-클라이언트 기기의 무선 네트워크(Wi-Fi) 기능 활성화 상태와 무선 네트워크 연결 정보를 보고할 때 사용하는 객체입니다.
+클라이언트 기기의 무선랜(Wi-Fi) 기능 활성화 상태와 무선랜 연결 정보를 보고할 때 사용하는 객체입니다.
 
 #### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`            | string array | 무선 네트워크과 관련하여 수행할 수 있는 [`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md) API 목록. 다음 동작 목록 중 클라이언트 기기가 실제로 수행할 수 있는 동작을 입력합니다. <ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> | 필수 |
-| `networks[]`           | object array | 검색된 무선 네트워크 정보를 가지는 객체 배열 | 필수 |
-| `networks[].connected` | boolean      | 무선 네트워크 연결 여부. <ul><li><code>true</code>: 연결된 상태</li><li><code>false</code>: 연결되어 있지 않은 상태</li></ul> | 필수 |
-| `networks[].name`      | string       | 무선 네트워크 이름(SSID)               | 필수 |
-| `state`                | string       | 무선 네트워크 기능 활성화 상태. <ul><li><code>"off"</code>: 꺼짐</li><li><code>"on"</code>: 켜짐</li></ul> | 필수 |
+| `actions[]`            | string array | 무선랜과 관련하여 수행할 수 있는 [`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md) API 목록. 다음 동작 목록 중 클라이언트 기기가 실제로 수행할 수 있는 동작을 입력합니다. <ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> | 필수 |
+| `networks[]`           | object array | 검색된 무선랜 정보를 가지는 객체 배열 | 필수 |
+| `networks[].connected` | boolean      | 무선랜 연결 여부. <ul><li><code>true</code>: 연결된 상태</li><li><code>false</code>: 연결되어 있지 않은 상태</li></ul> | 필수 |
+| `networks[].name`      | string       | 무선랜 이름(SSID)               | 필수 |
+| `state`                | string       | 무선랜 기능 활성화 상태. <ul><li><code>"off"</code>: 꺼짐</li><li><code>"on"</code>: 켜짐</li></ul> | 필수 |
 
 #### Object example
 
