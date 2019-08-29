@@ -1,5 +1,5 @@
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ### 備考 {#GuestMode}
+
 ユーザーに、{{ book.ServiceEnv.TargetServiceForClientAuth }}アカウント認証なしにゲストモードでサービスを提供するには、以下の手順に従います。
 
 1. [Clovaアクセストークンを作成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)で説明されている手順のうち、ステップ1と2の説明を省略します。
@@ -24,4 +24,8 @@
        --data-urlencode "response_type=code" \
        --data-urlencode "state=FKjaJfMlakjdfTVbES5ccZ"
 </code></pre>
-{% endif %}
+
+<div class="note">
+  <p><strong>メモ</strong></p>
+  <p>ゲストモードを使用するには、Clova事務局までお問い合わせください。</p>
+</div>

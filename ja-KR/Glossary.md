@@ -58,8 +58,8 @@ AIアシスタントサービスを提供するパソコン/モバイルアプ�
 ### コンテンツテンプレート {#ContentTemplate}
 CICから渡されるコンテンツ情報をスケジュールカテゴリに合った形で標準化したものです。詳細については、[コンテンツテンプレート](/Develop/References/Content_Templates.md)ドキュメントを参照してください。
 
-### コンテクストオブジェクト {#ContextObjects}
-クライアントの現在の[コンテクスト](#Context)を表現するオブジェクトです。詳細については、[コンテクスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
+### コンテキストオブジェクト {#ContextObjects}
+クライアントの現在の[コンテキスト](#Context)を表現するオブジェクトです。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
 
 ### Custom Extension {#CustomExtension}
 任意の拡張された機能を提供する[Extension](#ClovaExtension)です。Custom Extensionを利用すると、音楽、ショッピング、金融など、外部サービスの機能を提供できます。詳細については、[Clova Custom Extensionを作成する]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Custom_Extension.md)ドキュメントを参照してください。
@@ -77,10 +77,10 @@ HTTPプロトコルの2番目のバージョンです。[SPDY](https://en.wikipe
 アクセス権限を委任するためのオープン標準です。インターネットのユーザーが他のウェブサービスやアプリケーションのユーザーアカウントにアクセスできる権限を付与する規約です。Clovaプラットフォームでは、クライアントが[Clovaアクセストークン](#ClovaAccessToken)を取得したり、ユーザーが特定のExtensionを使用する際、自身のアカウントを連携するために使用されます。詳細については、[https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)を参照してください。
 
 ### ダイアログID {#DialogID}
-ダイアログIDは、ユーザーが新しい発話を開始するたびに生成され、クライアントが[Recognize](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)[イベント](#Event)を[Clova Interface Connect](#CIC)に渡す際に含まれます。ダイアログIDは、サーバー側からレスポンスを返す際に、どのイベントに対するレスポンスか結び付けるために使用され、[ディレクティブ](#Directive)にも含まれます。クライアントはディレクティブに含まれたダイアログIDから、どのイベントに対するレスポンスかを判断する必要があります。もしクライアントが現在持っているダイアログIDとディレクティブのダイアログIDが異なる場合、受信したディレクティブを無視する必要があります。詳細については、[ダイアログモデル](/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md)ドキュメントを参照してください。
+ダイアログIDは、ユーザーが新しい発話を開始するたびに生成され、クライアントが[Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)[イベント](#Event)を[Clova Interface Connect](#CIC)に渡す際に含まれます。ダイアログIDは、サーバー側からレスポンスを返す際に、どのイベントに対するレスポンスか結び付けるために使用され、[ディレクティブ](#Directive)にも含まれます。クライアントはディレクティブに含まれたダイアログIDから、どのイベントに対するレスポンスかを判断する必要があります。もしクライアントが現在持っているダイアログIDとディレクティブのダイアログIDが異なる場合、受信したディレクティブを無視する必要があります。詳細については、[ダイアログモデル](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md)ドキュメントを参照してください。
 
-### コンテクスト {#Context}
-コンテクストは、クライアントの様々な状態を意味します。[コンテクストオブジェクト](#ContextObjects)として表現されます。詳細については、[コンテクスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
+### コンテキスト {#Context}
+コンテキストは、クライアントの様々な状態を意味します。[コンテキストオブジェクト](#ContextObjects)として表現されます。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
 
 ### メッセージID {#MessageID}
 メッセージIDは個々のメッセージを区別するための識別子です。[イベント](#Event)と[ディレクティブ](#Directive)は、それぞれのメッセージIDを持ちます。

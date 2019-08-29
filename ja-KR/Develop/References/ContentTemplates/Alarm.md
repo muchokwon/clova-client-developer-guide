@@ -96,4 +96,4 @@ CICは、ユーザーがアラームを作成すると、そのアラームの�
 
 ## 次の項目も参照してください。
 * [AlarmList](/Develop/References/ContentTemplates/AlarmList.md)
-* [Alerts](/Develop/References/CICInterface/Alerts.md)インターフェース
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md)インターフェース

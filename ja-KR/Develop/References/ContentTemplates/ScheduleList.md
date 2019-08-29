@@ -146,5 +146,5 @@ CICは、ユーザーがカレンダー上のスケジュールのリストを�
 ![](/Develop/Assets/Images/Content_Template-ScheduleList.png)
 
 ## 次の項目も参照してください。
-* [Alerts](/Develop/References/CICInterface/Alerts.md)インターフェース
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md)インターフェース
 * [ScheduleList](/Develop/References/ContentTemplates/ScheduleList.md)

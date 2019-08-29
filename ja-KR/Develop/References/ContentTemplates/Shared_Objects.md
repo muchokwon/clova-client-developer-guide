@@ -99,13 +99,13 @@
 {% raw %}
 
 ```json
-//例1：YYYY-MM-DDThh:mm:ssZの形式
+//サンプル1：YYYY-MM-DDThh:mm:ssZの形式
 {
   "type": "datetime",
   "value": "2017-07-26T18:00:00Z"
 }
 
-//例2：YYYYMMDD hh:mmの形式
+//サンプル2：YYYYMMDD hh:mmの形式
 {
   "type": "datetime",
   "value": "20170726 18:00"

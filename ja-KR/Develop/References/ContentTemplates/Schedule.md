@@ -147,5 +147,5 @@ CICは、ユーザーがカレンダー上にスケジュールを作成する�
 ![](/Develop/Assets/Images/Content_Template-Schedule.png)
 
 ## 次の項目も参照してください。
-* [Alerts](/Develop/References/CICInterface/Alerts.md)インターフェース
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md)インターフェース
 * [ScheduleList](/Develop/References/ContentTemplates/ScheduleList.md)

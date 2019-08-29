@@ -9,7 +9,7 @@ Clovaアプリがリクエストの処理を委任すると、委任されるク
 <ol>
   <li>Clovaアプリは、CICにユーザーのリクエストを送信する際、別のクライアントデバイスに委任を要求します。</li>
   <li>
-    <p>CICは、リクエストの処理を委任されたクライアントデバイスに、次のような<a href="/Develop/References/CICInterface/Clova.md#HandleDelegatedEvent"><code>Clova.HandleDelegatedEvent</code></a>ディレクティブを<a href="/Develop/Guides/Interact_with_CIC.md#CreateConnection">Downchannel</a>で送信します。<p>
+    <p>CICは、リクエストの処理を委任されたクライアントデバイスに、次のような<a href="/Develop/References/MessageInterfaces/Clova.md#HandleDelegatedEvent"><code>Clova.HandleDelegatedEvent</code></a>ディレクティブを<a href="/Develop/Guides/Interact_with_CIC.md#CreateConnection">Downchannel</a>で送信します。<p>
     <pre><code>{
   "directive": {
     "header": {
@@ -24,7 +24,7 @@ Clovaアプリがリクエストの処理を委任すると、委任されるク
 }</code></pre>
   </li>
   <li>
-    <p>クライアントは、委任されたリクエストの処理結果をCICから受け取るために、<a href="/Develop/References/CICInterface/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a>イベントをCICに送信する必要があります。その際、ステップ2で受け取った<code>delegationId</code>フィールドの値を、そのまま<code>payload</code>フィールドに入力します。</p>
+    <p>クライアントは、委任されたリクエストの処理結果をCICから受け取るために、<a href="/Develop/References/MessageInterfaces/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a>イベントをCICに送信する必要があります。その際、ステップ2で受け取った<code>delegationId</code>フィールドの値を、そのまま<code>payload</code>フィールドに入力します。</p>
     <pre><code>{
   "context": [
     ...
@@ -41,6 +41,6 @@ Clovaアプリがリクエストの処理を委任すると、委任されるク
   }
 }</code></pre>
   </li>
-  <li>CICは、クライアントに<a href="/Develop/References/CICInterface/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a>イベントのレスポンスとして、ユーザーが委任したリクエストの処理結果を返します。</li>
+  <li>CICは、クライアントに<a href="/Develop/References/MessageInterfaces/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a>イベントのレスポンスとして、ユーザーが委任したリクエストの処理結果を返します。</li>
   <li>クライアントは、通常の<a href="/Develop/Guides/Interact_with_CIC.md#HandleDirective">ディレクティブ</a>の処理と同じく、レスポンスとして受け取ったディレクティブを処理します。</li>
 </ol>

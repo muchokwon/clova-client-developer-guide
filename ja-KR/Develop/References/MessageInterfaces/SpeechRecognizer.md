@@ -13,9 +13,7 @@ SpeechRecognizerは、次のイベントとディレクティブを提供しま�
 | [`ExpectSpeech`](#ExpectSpeech)                 | ディレクティブ | クライアントに、ユーザーの音声の取得を開始するように指示します。                  |
 | [`KeepRecording`](#KeepRecording)               | ディレクティブ | クライアントに、ユーザーの音声の取得を続けるように指示します。                     |
 | [`Recognize`](#Recognize)                       | イベント     | 取得されるユーザーの音声を送信して、その音声を認識するようにCICにリクエストします。          |
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 | [`ShowRecognizedText`](#ShowRecognizedText)     | ディレクティブ | クライアントに、認識されたユーザーの音声をリアルタイムで送信します。              |
-{% endif -%}
 | [`StopCapture`](#StopCapture)                   | ディレクティブ | クライアントに、ユーザーの音声の取得を停止するように指示します。           |
 
 ## ExpectSpeechディレクティブ {#ExpectSpeech}
@@ -106,7 +104,7 @@ SpeechRecognizerは、次のイベントとディレクティブを提供しま�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
@@ -222,7 +220,6 @@ Content-Type: application/octet-stream
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ## ShowRecognizedTextディレクティブ {#ShowRecognizedText}
 
 Clovaの音声認識システムは、[`SpeechRecognizer.Recognize`](#Recognize)イベントで送信されているユーザーの音声を解析して、その認識結果を提供します。CICは`SpeechRecognizer.ShowRecognizedText`ディレクティブで、ユーザーの音声認識の中間処理結果をクライアントに送信します。クライアントはそれに基づいて、処理過程をユーザーにリアルタイムで表示することができます。
@@ -237,6 +234,11 @@ Clovaの音声認識システムは、[`SpeechRecognizer.Recognize`](#Recognize)
 
 * このディレクティブは、イベントに対する応答ではなく、[Downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)で送信されます。
 * 基本的に、CICは音声認識の中間結果をクライアントに送信せず、一部特殊な条件で`SpeechRecognizer.ShowRecognizedText`を送信します。
+
+<div class="note">
+  <p><strong>メモ</strong></p>
+  <p>このディレクティブを使用するには、Clova事務局までお問い合わせください。</p>
+</div>
 
 ### Message example
 
@@ -296,35 +298,29 @@ Clovaの音声認識システムは、[`SpeechRecognizer.Recognize`](#Recognize)
 * [`SpeechRecognizer.Recognize`](#Recognize)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
-{% endif %}
-
 ## StopCaptureディレクティブ {#StopCapture}
 CICが[`SpeechRecognizer.Recognize`](#Recognize)イベントを受信し、これ以上キャプチャされたオーディオ（PCM）を受信する必要がないと判断した場合、`SpeechRecognizer.StopCapture`ディレクティブをクライアントに送信します。クライアントはこのメッセージを受信したら、すぐにユーザーの音声のキャプチャを終了します。CICがこのメッセージを送信してからもユーザーの音声を受信することがありますが、その音声は処理されません。
 
 ### Payload fields
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 | フィールド名       | データ型    | 説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `recognizedText` | string | 取得したユーザーの音声がどのように認識されたかという結果が含まれます。このフィールドは、基本的に`SpeechRecognizer.StopCapture`ディレクティブに含まれず、一部特殊な条件でのみ含まれます。 | 条件付き |
-{% else %}
-なし
-{% endif %}
+| `recognizedText` | string | 取得したユーザーの音声がどのように認識されたかという結果が含まれます。このフィールドは、基本的に`SpeechRecognizer.StopCapture`ディレクティブには含まれず、一部特殊な条件でのみ含まれます。<div class="note"><p><strong>メモ</strong></p><p>このディレクティブを使用するには、Clova事務局までお問い合わせください。</p></div> | 条件付き |
 
 ### 備考
 このディレクティブはイベントに対する応答ではなく、[Downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)で送信されます。
 
 ### Message example
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ```json
+//サンプル1：recognizedTextフィールドがあるサンプル
 {
   "directive": {
     "header": {
       "namespace": "SpeechRecognizer",
       "name": "StopCapture",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
-      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+      "dialogRequestId": "eaa19eaa-07bc-447a-9e3f-c3b4a7d994e8",
+      "messageId": "cc9f2a05-34c8-4edd-b810-2c040ac3d672"
     },
     "payload": {
       "recognizedText": "今日の天気を教えて"
@@ -332,7 +328,8 @@ CICが[`SpeechRecognizer.Recognize`](#Recognize)イベントを受信し、こ�
   }
 }
 ```
-{% else %}
+
+//サンプル2：recognizedTextフィールドがないサンプル
 ```json
 {
   "directive": {
@@ -346,11 +343,8 @@ CICが[`SpeechRecognizer.Recognize`](#Recognize)イベントを受信し、こ�
   }
 }
 ```
-{% endif %}
 
 ### 次の項目も参照してください。
 
 * [`SpeechRecognizer.Recognize`](#Recognize)
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 * [`SpeechRecognizer.ShowRecognizedText`](#ShowRecognizedText)
-{% endif -%}

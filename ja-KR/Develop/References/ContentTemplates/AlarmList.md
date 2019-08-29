@@ -97,4 +97,4 @@ CICは、ユーザーがアラームのリストをリクエストすると、�
 
 ## 次の項目も参照してください。
 * [Alarm](/Develop/References/ContentTemplates/Alarm.md)
-* [Alerts](/Develop/References/CICInterface/Alerts.md)インターフェース
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md)インターフェース

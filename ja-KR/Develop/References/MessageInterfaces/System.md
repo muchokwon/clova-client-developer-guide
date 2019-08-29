@@ -17,7 +17,7 @@ Systemインターフェースは、Clovaとクライアントの間で、クラ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -50,7 +50,7 @@ Systemインターフェースは、Clovaとクライアントの間で、クラ
 {% endraw %}
 
 ### 次の項目も参照してください。
-* [`System.SynchronizeState`](/Develop/References/CICInterface/System.md#SynchronizeState)
+* [`System.SynchronizeState`](/Develop/References/MessageInterfaces/System.md#SynchronizeState)
 
 ## SynchronizeStateディレクティブ {#SynchronizeState}
 クライアントに、`payload`のデータを同期するように指示します。クライアントは、CICから受信したデータに応じて、クライアントに設定されている値を変更する必要があります。
@@ -59,11 +59,11 @@ Systemインターフェースは、Clovaとクライアントの間で、クラ
 
 | フィールド名       | データ型    | 説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `allAlerts[]`   | object array | **（Deprecated）** クライアントが同期すべきアラームのリストを含むオブジェクト配列。[`Alerts.SetAlert`](/Develop/References/CICInterface/Alerts.md#SetAlert)ディレクティブで使用される[`payload`](/Develop/References/CICInterface/Alerts.md#SetAlertPayload)オブジェクトと同じ形式です。 |     |
+| `allAlerts[]`   | object array | **（Deprecated）** クライアントが同期すべきアラームのリストを含むオブジェクト配列。[`Alerts.SetAlert`](/Develop/References/MessageInterfaces/Alerts.md#SetAlert)ディレクティブに使用される[`payload`](/Develop/References/MessageInterfaces/Alerts.md#SetAlertPayload)オブジェクトと同じ形式です。 |     |
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p><code>System.SynchronizeState</code>ディレクティブでのアラーム情報の同期は、サポートされない予定です。その機能は<a href="/Develop/References/CICInterface/Alerts.md#RequestSynchronizeAlert"><code>Alerts.RequestSynchronizeAlert</code></a>イベントと<a href="/Develop/References/CICInterface/Alerts.md#SynchronizeAlert"><code>Alerts.SynchronizeAlert</code></a>ディレクティブでサポートされる予定なので、これを使用する必要があります。今後、<code>System.SynchronizeState</code>ディレクティブにシステム関連情報を同期するフィールドが追加される予定です。</p>
+  <p><code>System.SynchronizeState</code>ディレクティブでのアラーム情報の同期は、サポートされない予定です。その機能は<a href="/Develop/References/MessageInterfaces/Alerts.md#RequestSynchronizeAlert"><code>Alerts.RequestSynchronizeAlert</code></a>イベントと<a href="/Develop/References/MessageInterfaces/Alerts.md#SynchronizeAlert"><code>Alerts.SynchronizeAlert</code></a>ディレクティブでサポートされる予定なので、これを使用する必要があります。今後、<code>System.SynchronizeState</code>ディレクティブにシステム関連情報を同期するフィールドが追加される予定です。</p>
 </div>
 
 ### 備考

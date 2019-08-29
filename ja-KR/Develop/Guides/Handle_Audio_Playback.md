@@ -4,7 +4,7 @@ Clovaはユーザーのリクエストに応じて、オーディオを再生し
 
 * [オーディオを再生する](#PlayAudioStream)
 * [オーディオ再生の進行状況をレポートする](#ReportAudioPlaybackProgress)
-* [オーディオ再生をコントロールする](#ControlAudioPlayback)
+* [オーディオ再生を制御する](#ControlAudioPlayback)
 * [オーディオ再生状態を共有する](#ShareAudioPlaybackState)
 * [ストリームの情報を管理する](#ManageStreamInfo)
 
@@ -13,7 +13,7 @@ Clovaはユーザーのリクエストに応じて、オーディオを再生し
 
 ![](/Develop/Assets/Images/CIC_Audio_Play_Work_Flow.svg)
 
-ユーザーがオーディオの再生をリクエストすると、CICは、最初にクライアントに[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブを送信します。このディレクティブには、オーディオの再生に必要な情報が含まれています。この情報を使って、オーディオファイルを探したり、プレイヤーにオーディオアイテムの情報を表示したりする必要があります。次の[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブを受信します。
+ユーザーがオーディオの再生をリクエストすると、CICは、最初にクライアントに[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブを送信します。このディレクティブには、オーディオの再生に必要な情報が含まれています。この情報を使って、オーディオファイルを探したり、プレイヤーにオーディオアイテムの情報を表示したりする必要があります。次の[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブを受信します。
 
 ```json
 {
@@ -59,7 +59,7 @@ Clovaはユーザーのリクエストに応じて、オーディオを再生し
 
 クライアントは、`audioItem.stream`フィールドに含まれた情報を使ってオーディオを再生し、`audioItem`フィールドと`source`フィールドの内容をプレイヤーのUIに表示したり、参照したりします。
 
-受信した[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブ内の`audioItem.stream.urlPlayable`フィールドの値が`false`の場合、`audioItem.stream`フィールドの情報ではオーディオアイテムをすぐに再生できません。これは、サービスの課金およびセキュリティなどのせいで、オーディオを再生する直前に、そのオーディオの実際の情報をもう一度照会する必要がある場合に発生します。次は、すぐに再生できない[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブのサンプルです。
+受信した[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブ内の`audioItem.stream.urlPlayable`フィールドの値が`false`の場合、`audioItem.stream`フィールドの情報ではストリームをすぐに再生できません。これは、サービスの課金およびセキュリティなどのせいで、オーディオを再生する直前に、そのオーディオの実際の情報をもう一度照会する必要がある場合に発生します。次は、すぐに再生できない[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブのサンプルです。
 
 ```json
 {
@@ -106,7 +106,7 @@ Clovaはユーザーのリクエストに応じて、オーディオを再生し
 }
 ```
 
-`audioItem.stream.urlPlayable`フィールドの値が`false`の場合、[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブで受け取った`audioItem.stream`フィールドの値をそのまま使用して、次のように再びCICに[`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested)イベントを送信する必要があります。
+`audioItem.stream.urlPlayable`フィールドの値が`false`の場合、[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブで受け取った`audioItem.stream`フィールドの値をそのまま使用して、次のように再びCICに[`AudioPlayer.StreamRequested`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamRequested)イベントを送信する必要があります。
 
 ```json
 {
@@ -138,7 +138,7 @@ Clovaはユーザーのリクエストに応じて、オーディオを再生し
 }
 ```
 
-上記のように[`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested)イベントを送信すると、次のように実際に再生できる情報が含まれた[`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver)ディレクティブをCICから受信します。クライアントは、新しく受信する情報でオーディオを再生します。
+上記のように[`AudioPlayer.StreamRequested`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamRequested)イベントを送信すると、次のように実際に再生できる情報が含まれた[`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver)ディレクティブをCICから受信します。クライアントは、新しく受信する情報でオーディオを再生します。
 
 ```json
 {
@@ -179,22 +179,22 @@ Clovaは、オーディオ再生に関連して、ユーザーが今どのよう
 
 ![](/Develop/Assets/Images/CIC_Audio_Play_Progress_Reporting.svg)
 
-上記の流れのとおり、一部の再生の進行状況は、[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブの`audioItem.stream.progressReport`フィールド、または[`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver)ディレクティブの`audioStream.progressReport`フィールドの値によって、レポートするかどうかが決まります。次の表は、再生の進行状況をレポートする必要がある状況と条件、使用するイベントを示します。
+上記の流れのとおり、一部の再生の進行状況は、[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブの`audioItem.stream.progressReport`フィールド、または[`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver)ディレクティブの`audioStream.progressReport`フィールドの値によって、レポートするかどうかが決まります。次の表は、再生の進行状況をレポートする必要がある状況と条件、使用するイベントを示します。
 
 | 再生ポイント                                 | 条件                         | レポートするときに使用するイベント |
 |-----------------------------------------|----------------------------|----------------------|
-| オーディオ再生を開始した直後                         |                                                                       | [`AudioPlayer.PlayStarted`](/Develop/References/CICInterface/AudioPlayer.md#PlayStarted)イベント  |
-| オーディオ再生を開始してから、指定された時間が経過するとき          | `progressReport.progressReportDelayInMilliseconds`フィールドが`null`ではない場合   | [`AudioPlayer.ProgressReportDelayPassed`](/Develop/References/CICInterface/AudioPlayer.md#ProgressReportDelayPassed)イベント  |
-| オーディオ再生を開始してから、指定された間隔の時間が経過するとき  | `progressReport.progressReportIntervalInMilliseconds`フィールドが`null`ではない場合  | [`AudioPlayer.ProgressReportIntervalPassed`](/Develop/References/CICInterface/AudioPlayer.md#ProgressReportIntervalPassed)イベント  |
-| オーディオ再生を開始してから、特定のオフセットが経過するとき  | `progressReport.progressReportPositionInMilliseconds`フィールドが`null`ではない場合  | [`AudioPlayer.ProgressReportPositionPassed`](/Develop/References/CICInterface/AudioPlayer.md#ProgressReportPositionPassed)イベント  |
-| オーディオ再生が完了した直後                         |                                                                       | [`AudioPlayer.PlayFinished`](/Develop/References/CICInterface/AudioPlayer.md#PlayFinished)イベント  |
+| オーディオ再生を開始した直後                         |                                                                       | [`AudioPlayer.PlayStarted`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayStarted)イベント  |
+| オーディオ再生を開始してから、指定された時間が経過するとき          | `progressReport.progressReportDelayInMilliseconds`フィールドが`null`ではない場合   | [`AudioPlayer.ProgressReportDelayPassed`](/Develop/References/MessageInterfaces/AudioPlayer.md#ProgressReportDelayPassed)イベント  |
+| オーディオ再生を開始してから、指定された間隔の時間が経過するとき  | `progressReport.progressReportIntervalInMilliseconds`フィールドが`null`ではない場合  | [`AudioPlayer.ProgressReportIntervalPassed`](/Develop/References/MessageInterfaces/AudioPlayer.md#ProgressReportIntervalPassed)イベント  |
+| オーディオ再生を開始してから、特定のオフセットが経過するとき  | `progressReport.progressReportPositionInMilliseconds`フィールドが`null`ではない場合  | [`AudioPlayer.ProgressReportPositionPassed`](/Develop/References/MessageInterfaces/AudioPlayer.md#ProgressReportPositionPassed)イベント  |
+| オーディオ再生が完了した直後                         |                                                                       | [`AudioPlayer.PlayFinished`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayFinished)イベント  |
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>受信した<a href="/Develop/References/CICInterface/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a>ディレクティブの<code>audioItem.stream.urlPlayable</code>フィールドが<code>false</code>の場合、後から<a href="/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a>ディレクティブでストリームの情報が新しく送信されることがあります。<code>AudioPlayer.Play</code>ディレクティブの後に受信する<code>AudioPlayer.StreamDeliver</code>ディレクティブで<code>progressReport.progressReportDelayInMilliseconds</code>、<code>progressReport.progressReportIntervalInMilliseconds</code>、<code>progressReport.progressReportPositionInMilliseconds</code>フィールドの値が変更されている場合、その値を適用してオーディオ再生の進行状況をレポートする必要があります。詳細については、<a href="#ManageStreamInfo">ストリームの情報を管理する</a>を参照してください。</p>
+  <p>受信した<a href="/Develop/References/MessageInterfaces/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a>ディレクティブの<code>audioItem.stream.urlPlayable</code>フィールドが<code>false</code>の場合、後から<a href="/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a>ディレクティブでストリームの情報が新しく送信されることがあります。<code>AudioPlayer.Play</code>ディレクティブの後に受信する<code>AudioPlayer.StreamDeliver</code>ディレクティブで<code>progressReport.progressReportDelayInMilliseconds</code>、<code>progressReport.progressReportIntervalInMilliseconds</code>、<code>progressReport.progressReportPositionInMilliseconds</code>フィールドの値が変更されている場合、その値を適用してオーディオ再生の進行状況をレポートする必要があります。詳細については、<a href="#ManageStreamInfo">ストリームの情報を管理する</a>を参照してください。</p>
 </div>
 
-Clovaは、上記のイベントから、ユーザーが今聞いているオーディオアイテムと、そのオーディオアイテムの再生ポイントを把握します。次は、[`AudioPlayer.ProgressReportIntervalPassed`](/Develop/References/CICInterface/AudioPlayer.md#ProgressReportIntervalPassed)イベントのサンプルです。このとき、[オーディオ再生に関連するコンテキストを含めて](#BuildPlaybackStateContext)送信する必要があります。
+Clovaは、上記のイベントから、ユーザーが今聞いているオーディオアイテムと、そのオーディオアイテムの再生ポイントを把握します。次は、[`AudioPlayer.ProgressReportIntervalPassed`](/Develop/References/MessageInterfaces/AudioPlayer.md#ProgressReportIntervalPassed)イベントのサンプルです。このとき、[オーディオ再生に関連するコンテキストを含めて](#BuildPlaybackStateContext)送信する必要があります。
 
 ```json
 {
@@ -242,21 +242,21 @@ Clovaは、上記のイベントから、ユーザーが今聞いているオー
 
 
 
-## オーディオ再生をコントロールする {#ControlAudioPlayback}
+## オーディオ再生を制御する {#ControlAudioPlayback}
 
-ユーザーは、クライアントがオーディオ再生を一時停止（pause）、再開（resume）、停止（stop）、もう一度再生（replay）するようにClovaにリクエストすることができます。オーディオ再生のコントロールは、次の3つの方法でリクエストできます。
+ユーザーは、クライアントがオーディオ再生を一時停止（pause）、再開（resume）、停止（stop）、もう一度再生（replay）するようにClovaにリクエストすることができます。オーディオの再生制御は、次の3つの方法でリクエストできます。
 
-* ユーザーが発話で再生をコントロールする
-* ユーザーがクライアントデバイスのボタンで再生をコントロールする
-* ユーザーがClovaアプリからリモートで特定のクライアントの再生をコントロールする
+* ユーザーが発話で再生を制御する
+* ユーザーがクライアントデバイスのボタンで再生を制御する
+* ユーザーがClovaアプリからリモートで特定のクライアントの再生を制御する
 
-Clovaは、ユーザーのオーディオ再生状況を把握する必要があります。そのため、オーディオ再生のコントロールは、クライアントでは直接行われません。再生のコントロールは、すべてClovaを介するディレクティブで行われ、主に[`PlaybackController`](/Develop/References/CICInterface/PlaybackController.md)インターフェースで実装される必要があります。また、その結果は[`AudioPlayer`](/Develop/References/CICInterface/AudioPlayer.md)インターフェースのイベントでレポートされる必要があります。
+Clovaは、ユーザーのオーディオ再生状況を把握する必要があります。そのため、オーディオの再生制御は、クライアントでは直接行われません。再生の制御は、すべてClovaを介するディレクティブで行われ、主に[`PlaybackController`](/Develop/References/MessageInterfaces/PlaybackController.md)インターフェースで実装される必要があります。また、その結果は[`AudioPlayer`](/Develop/References/MessageInterfaces/AudioPlayer.md)インターフェースのイベントでレポートされる必要があります。
 
 次は、オーディオの再生が一時停止する動作の流れを示します。
 
 ![](/Develop/Assets/Images/CIC_Audio_Playback_Control_Flow.svg)
 
-通常、ユーザーの発話から行われる再生のコントロールは、Clovaで解析され、該当する再生コントロールのディレクティブ（[`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause)）がクライアントに送信されます。ユーザーがクライアントのボタンを押して一時停止するようにリクエストした場合、次のような[`PlaybackController.PauseCommandIssued`](/Develop/References/CICInterface/PlaybackController.md#PauseCommandIssued)イベントで一時停止ボタンが押されたことをClovaにレポートする必要があります。
+通常、ユーザーの発話から行われる再生制御は、Clovaで解析され、該当する再生コントロールのディレクティブ（[`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause)）がクライアントに送信されます。ユーザーがクライアントのボタンを押して一時停止するようにリクエストした場合、次のような[`PlaybackController.PauseCommandIssued`](/Develop/References/MessageInterfaces/PlaybackController.md#PauseCommandIssued)イベントで一時停止ボタンが押されたことをClovaにレポートする必要があります。
 
 ```json
 {
@@ -274,7 +274,7 @@ Clovaは、ユーザーのオーディオ再生状況を把握する必要があ
 }
 ```
 
-ユーザーがClovaアプリからリモートでクライアントの再生コントロールをリクエストした場合、Clovaはそのクライアントに[`PlaybackController.ExpectPauseCommand`](/Develop/References/CICInterface/PlaybackController.md#ExpectPauseCommand)のようなディレクティブを送信します。これは、ユーザーがリモートでボタンを押したときと同じ動作をするように指示するメッセージです。次のメッセージを受信した場合、[`PlaybackController.PauseCommandIssued`](/Develop/References/CICInterface/PlaybackController.md#PauseCommandIssued)イベントをClovaに送信する必要があります。
+ユーザーがClovaアプリからリモートでクライアントの再生制御をリクエストした場合、Clovaはそのクライアントに[`PlaybackController.ExpectPauseCommand`](/Develop/References/MessageInterfaces/PlaybackController.md#ExpectPauseCommand)のようなディレクティブを送信します。これは、ユーザーがリモートでボタンを押したときと同じ動作をするように指示するメッセージです。次のメッセージを受信した場合、[`PlaybackController.PauseCommandIssued`](/Develop/References/MessageInterfaces/PlaybackController.md#PauseCommandIssued)イベントをClovaに送信する必要があります。
 
 ```json
 // ユーザーが一時停止ボタンを押したときと同じ動作をするようにリクエストする
@@ -291,7 +291,7 @@ Clovaは、ユーザーのオーディオ再生状況を把握する必要があ
 }
 ```
 
-Clovaは、ユーザーからリクエストされた再生コントロールを、次のようなディレクティブ（[`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause)）で渡します。クライアントは、受信したディレクティブに応じてオーディオの再生をコントロールします。
+Clovaは、ユーザーからリクエストされた再生制御を、次のようなディレクティブ（[`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause)）で渡します。クライアントは、受信したディレクティブに応じてオーディオの再生を制御します。
 
 ```json
 {
@@ -307,7 +307,7 @@ Clovaは、ユーザーからリクエストされた再生コントロールを
 }
 ```
 
-最後に、クライアントは再生コントロールが完了すると、プレイヤーの動作の変化をCICにレポートする必要があります。次は、オーディオの再生を一時停止した後、CICに送信する[AudioPlayer.PlayPaused](/Develop/References/CICInterface/AudioPlayer.md#PlayPaused)イベントです。このとき、AudioPlayerの状態に応じて[コンテキストを作成](#BuildPlaybackStateContext)する必要があります。
+最後に、クライアントは再生制御が完了すると、AudioPlayerの動作の変化をCICにレポートする必要があります。次は、オーディオの再生を一時停止した後、CICに送信する[AudioPlayer.PlayPaused](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayPaused)イベントです。このとき、AudioPlayerの状態に応じて[コンテキストを作成](#BuildPlaybackStateContext)する必要があります。
 
 ```json
 {
@@ -355,7 +355,7 @@ Clovaは、ユーザーからリクエストされた再生コントロールを
 
 ## ストリームの情報を管理する {#ManageStreamInfo}
 
-クライアントは、[オーディオを再生する](#PlayAudioStream)とき、CICからオーディオストリームに関連する情報を受信します。クライアントは、CICから[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブを受信したときから、そのディレクティブの`audioItem.stream`フィールドに含まれたストリームの情報を管理する必要があります。ここでは、以下の項目について説明します。
+クライアントは、[オーディオを再生する](#PlayAudioStream)とき、CICからオーディオストリームに関連する情報を受信します。クライアントは、CICから[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブを受信したときから、そのディレクティブの`audioItem.stream`フィールドに含まれたストリームの情報を管理する必要があります。ここでは、以下の項目について説明します。
 
 * [ストリームの情報を更新する](#UpdateStreamInfo)
 * [ストリームのコンテキストを作成する](#BuildPlaybackStateContext)
@@ -402,10 +402,10 @@ Clovaは、ユーザーからリクエストされた再生コントロールを
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>受信した<a href="/Develop/References/CICInterface/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a>ディレクティブの<code>audioItem.stream.urlPlayable</code>フィールドが<code>false</code>の場合、<strong>後から<a href="/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a>ディレクティブで受信するストリームの情報と統合する必要があります。<strong></p>
+  <p>受信した<a href="/Develop/References/MessageInterfaces/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a>ディレクティブの<code>audioItem.stream.urlPlayable</code>フィールドが<code>false</code>の場合、<strong>後から<a href="/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a>ディレクティブで受信するストリームの情報と統合する必要があります。<strong></p>
 </div>
 
-その後、[`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested)イベントを使用して、ストリームの再生に必要な情報をリクエストします。このとき、保管していた`audioItem.stream`フィールドの値を含める必要があります。
+その後、[`AudioPlayer.StreamRequested`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamRequested)イベントを使用して、ストリームの再生に必要な情報をリクエストします。このとき、保管していた`audioItem.stream`フィールドの値を含める必要があります。
 
 ```json
 {
@@ -437,7 +437,7 @@ Clovaは、ユーザーからリクエストされた再生コントロールを
 }
 ```
 
-すると、以下のように、実際に再生できる情報が含まれた[`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver)ディレクティブをCICから受信します。ここに含まれている`audioStream`フィールドの内容を**必ず統合する必要があります。**更新されたフィールドの内容は以前の内容に上書きし、更新がない部分はそのまま保持します。
+すると、以下のように、実際に再生できる情報が含まれた[`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver)ディレクティブをCICから受信します。ここに含まれている`audioStream`フィールドの内容を**必ず統合する必要があります。**更新されたフィールドの内容は以前の内容に上書きし、更新がない部分はそのまま保持します。
 
 ```json
 {
@@ -500,7 +500,7 @@ AudioPlayerが有効になっている場合には、AudioPlayerの状態に応�
 * `"PAUSE"`
 * `"STOPPED"`
 
-このとき、[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブや[`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver)ディレクティブで受信し、[管理しているストリームの情報](#UpdateStreamInfo)がコンテキストに含まれる必要があります。
+このとき、[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブや[`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver)ディレクティブで受信し、[管理しているストリームの情報](#UpdateStreamInfo)がコンテキストに含まれる必要があります。
 
 ```json
 {
@@ -538,7 +538,7 @@ AudioPlayerが有効になっている場合には、AudioPlayerの状態に応�
 }
 ```
 
-ユーザーがストリームの再生を停止するようにリクエストし、AudioPlayerの状態が`"PAUSE"`に遷移した場合にも、保管していたストリームの情報を破棄するべきではありません。ストリームの情報を破棄すると、ユーザーがオーディオを再び再生するようにリクエストしたときに、CICはクライアントで再生していたストリームの情報をコンテキストから確認できなくなります。そのため、Clovaは引き続き再生などの機能をユーザーに提供できない恐れがあります。なので、クライアントは、再起動などの特殊な状況を除いて、ストリームの情報を保管する必要があります。ストリームの情報を削除する必要がある場合、Clovaからクライアントのストリームの情報を削除するように[AudioPlayer.ClearQueue](/Develop/References/CICInterface/AudioPlayer.md#ClearQueue)のようなディレクティブを送信します。
+ユーザーがストリームの再生を停止するようにリクエストし、AudioPlayerの状態が`"PAUSE"`に遷移した場合にも、保管していたストリームの情報を破棄するべきではありません。ストリームの情報を破棄すると、ユーザーがオーディオを再び再生するようにリクエストしたときに、CICはクライアントで再生していたストリームの情報をコンテキストから確認できなくなります。そのため、Clovaは引き続き再生などの機能をユーザーに提供できない恐れがあります。なので、クライアントは、再起動などの特殊な状況を除いて、ストリームの情報を保管する必要があります。ストリームの情報を削除する必要がある場合、Clovaからクライアントのストリームの情報を削除するように[AudioPlayer.ClearQueue](/Develop/References/MessageInterfaces/AudioPlayer.md#ClearQueue)のようなディレクティブを送信します。
 
 
 ## オーディオ再生状態を共有する {#ShareAudioPlaybackState}
@@ -547,18 +547,18 @@ AudioPlayerが有効になっている場合には、AudioPlayerの状態に応�
 
 ![](/Develop/Assets/Images/CIC_Playback_State_Sync_Work_Flow.svg)
 
-1. Clovaアプリは、{{ "[`AudioPlayer.RequestPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#RequestPlaybackState)イベントを使用して" if book.DocMeta.TargetReaderType == "Internal" }}CICに対して、ユーザーのアカウントに登録されているすべてのクライアント、または特定のクライアントのオーディオ再生状態をリクエストします。
-2. CICは、[`AudioPlayer.ExpectReportPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#ExpectReportPlaybackState)ディレクティブで、ユーザーのアカウントに登録されているすべてのクライアント、または特定のクライアントに、現在のオーディオ再生状態をレポートするように指示します。
-3. オーディオ再生状態をレポートするように指示されたクライアントは、[`AudioPlayer.ReportPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#ReportPlaybackState)イベントで、CICに現在のオーディオ再生状態をレポートします。
-4. CICは、{{ "[`AudioPlayer.SynchronizePlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#SynchronizePlaybackState)を使用して" if book.DocMeta.TargetReaderType == "Internal" }}他のクライアントのオーディオ再生状態をリクエストしたクライアントに状態情報を送信し、同期するように指示します。
+1. Clovaアプリは、{{ "[`AudioPlayer.RequestPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#RequestPlaybackState)イベントを使用して" if book.DocMeta.TargetReaderType == "Internal" }}CICに対して、ユーザーのアカウントに登録されているすべてのクライアント、または特定のクライアントのオーディオ再生状態をリクエストします。
+2. CICは、[`AudioPlayer.ExpectReportPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#ExpectReportPlaybackState)ディレクティブで、ユーザーのアカウントに登録されているすべてのクライアント、または特定のクライアントに、現在のオーディオ再生状態をレポートするように指示します。
+3. オーディオ再生状態をレポートするように指示されたクライアントは、[`AudioPlayer.ReportPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#ReportPlaybackState)イベントで、CICに現在のオーディオ再生状態をレポートします。
+4. CICは、{{ "[`AudioPlayer.SynchronizePlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#SynchronizePlaybackState)を使用して" if book.DocMeta.TargetReaderType == "Internal" }}他のクライアントのオーディオ再生状態をリクエストしたクライアントに状態情報を送信し、同期するように指示します。
 
-クライアントは[`AudioPlayer.ExpectReportPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#ExpectReportPlaybackState)ディレクティブを受信すると、[`AudioPlayer.ReportPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#ReportPlaybackState)イベントをCICに送信する必要があります。そのとき、次の情報を`payload`フィールドに含める必要があります。
+クライアントは[`AudioPlayer.ExpectReportPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#ExpectReportPlaybackState)ディレクティブを受信すると、[`AudioPlayer.ReportPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#ReportPlaybackState)イベントをCICに送信する必要があります。そのとき、次の情報を`payload`フィールドに含める必要があります。
 
 * オーディオプレイヤーの状態
 * リピート再生するかどうか
 * 再生しているオーディオの現在の再生ポイント（オーディオを再生しているとき）
-* [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブで受信した[`AudioStreamInfoObject`](/Develop/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject)オブジェクト（オーディオを再生しているか、または一時停止しているとき）
-* [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブの`audioItem.stream.token`フィールドの値（オーディオを再生しているか、または位置停止しているとき）
+* [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブで受信した[`AudioStreamInfoObject`](/Develop/References/MessageInterfaces/AudioPlayer.md#AudioStreamInfoObject)オブジェクト（オーディオを再生しているか、または一時停止しているとき）
+* [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブの`audioItem.stream.token`フィールドの値（オーディオを再生しているか、または位置停止しているとき）
 * 再生しているオーディオアイテムの全体の長さ（任意）
 
 ```json

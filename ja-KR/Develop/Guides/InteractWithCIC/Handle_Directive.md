@@ -31,10 +31,10 @@
 }
 </code></pre>
   </li>
-  <li>受信したディレクティブの<a href="/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md">ダイアログID</a>（<code>dialogRequestId</code>）が、クライアントが保管しているものと一致するかを確認します。
+  <li>受信したディレクティブの<a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">ダイアログID</a>（<code>dialogRequestId</code>）が、クライアントが保管しているものと一致するかを確認します。
     <ul>
       <li>
-        <p><strong>クライアントに保存されている最終のダイアログIDと一致する場合、</strong>、APIリファレンスに基づいて、必要なアクションを実行します。通常、ディレクティブの<code>payload</code>に含まれた<a href="/Develop/References/CICInterface/SpeechSynthesizer.md#Speak"><code>cid</code>値を使用</a>すると、クライアントのアクションに必要な追加の情報（音声データ）を<a href="#ManageMessageQ">メッセージキュー</a>から識別できます。<code>cid</code>は、次のようにマルチパートメッセージのうち、1つのパートとして送信された音声データの<code>Content-ID</code>メッセージヘッダーを表します。</p>
+        <p><strong>クライアントに保存されている最終のダイアログIDと一致する場合、</strong>、APIリファレンスに基づいて、必要なアクションを実行します。通常、ディレクティブの<code>payload</code>に含まれた<a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak"><code>cid</code>値を使用</a>すると、クライアントのアクションに必要な追加の情報（音声データ）を<a href="#ManageMessageQ">メッセージキュー</a>から識別できます。<code>cid</code>は、次のようにマルチパートメッセージのうち、1つのパートとして送信された音声データの<code>Content-ID</code>メッセージヘッダーを表します。</p>
         <pre><code>--b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
 Content-Disposition: form-data; name="attachment-39b2f844-b168-4dc2-bea7-d5c249e446e3"
 Content-ID: d329085c-379e-48aa-b871-7ecebdbe831d

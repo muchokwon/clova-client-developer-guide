@@ -1,10 +1,9 @@
-# CIC APIのリファレンス
+# CIC API
 CIC APIは、CICがクライアントに提供するREST APIです。このドキュメントでは、CIC APIについて次の内容を説明しています。
 * [APIの基本情報](#BasicInfo)
 * [Downchannelを確立する](#EstablishDownchannel)
 * [イベントを送信する](#SendEvent)
 * [メッセージフォーマット](#CICMessageFormat)
-* [インターフェース](#CICInterface)
 
 ## APIの基本情報 {#BasicInfo}
 CIC APIを使用する前に、次の内容を知っておく必要があります。
@@ -22,7 +21,7 @@ CIC APIのベースURIは、次の通りです。
 
 ![](/Develop/Assets/Images/HTTP2_Structure.png)
 
-例えば、ユーザーの音声入力をCICに送るには、[SpeechRecognizer.Recognize](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)イベントと共に、キャプチャしたユーザーの音声データを送信する必要があります。クライアントは、`Content-Type`を`multipart/form-data`に設定し、1つ目のメッセージパートにイベント情報のJSONデータを、2つ目のパートにユーザーの音声のバイナリデータを格納して送信することができます。
+例えば、ユーザーの音声入力をCICに送るには、[SpeechRecognizer.Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)イベントと共に、キャプチャしたユーザーの音声データを送信する必要があります。クライアントは、`Content-Type`を`multipart/form-data`に設定し、1つ目のメッセージパートにイベント情報のJSONデータを、2つ目のパートにユーザーの音声のバイナリデータを格納して送信することができます。
 
 その際、メッセージを分けるすために、`boundary`にバウンダリ文字列を指定する必要があります。バウンダリ文字列は、メッセージパートの間に使用される場合、2個のダッシュ「--」で始まります。また、メッセージの終わりを表すときは、2個のダッシュ「--」が必要です。バウンダリ文字列は、メッセージボディで使用されないものにする必要があります。
 
@@ -70,8 +69,8 @@ Content-Type: application/octet-stream
 {% endraw %}
 
 通常のHTTPレスポンスとして、成功を示す[HTTPステータスコード](https://tools.ietf.org/html/rfc7231#section-6)（200）と共に[ディレクティブ](#Directive)が送信されます。レスポンスは、次のようなメッセージの組み合わせになります。
-* [`Synthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)は音声を出力するディレクティブで、音声データが添付されます。
-* `Synthesizer.Speak`ディレクティブと共に、追加の情報を持つディレクティブが送信されることがあります。例えば、ストリーム情報が含まれた[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブが追加で送信されることがあります。
+* [`Synthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)は音声を出力するディレクティブで、音声データが添付されます。
+* `Synthesizer.Speak`ディレクティブと共に、追加の情報を持つディレクティブが送信されることがあります。例えば、ストリーム情報が含まれた[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブが追加で送信されることがあります。
 
 上記の説明のように、CICからクライアントに対するレスポンスも、ディレクティブと音声データで構成されるマルチパートのメッセージが送信されます。次のような構造になります。
 
@@ -122,7 +121,7 @@ Content-Type: application/octet-stream
 GET /v1/directives
 ```
 
-クライアントは、最初にCICとのDownchannelを確立する必要があります。Downchannelは、特定の条件や必要に応じて、CICで開始される（Cloud-initiated）ディレクティブを受信する際に使用されます。Downchannelの確立方法についての詳細は、[CICに接続する](/Develop/Guides/Interact_with_CIC.md#CreateConnection)を参照してください。
+クライアントは、最初にCICとのDownchannelを確立する必要があります。Downchannelは、特定の条件や必要に応じて、CICで開始される（Cloud-initiated）ディレクティブを受信する際に使用されます。Downchannelの確立方法についての詳細は、[始めて接続する](/Develop/Guides/Interact_with_CIC.md#CreateConnection)を参照してください。
 
 <div class="note">
   <p><strong>メモ</strong></p>
@@ -158,7 +157,7 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w
 | Content-Type            | <pre><code>application/json; charset=UTF-8</code></pre>            |
 
 ### Response message
-CICは、HTTPレスポンスでクライアントに[Clova.Hello](/Develop/References/CICInterface/Clova.md#Hello)ディレクティブを送信します。Downchannelが確立したことを示します。
+CICは、HTTPレスポンスでクライアントに[Clova.Hello](/Develop/References/MessageInterfaces/Clova.md#Hello)ディレクティブを送信します。Downchannelが確立したことを示します。
 
 ### Status codes
 
@@ -248,7 +247,7 @@ POST /v1/events
 | Content-Type            | <ul><li>JSONデータ：<code>application/json; charset=UTF-8</code></li><li>バイナリオーディオデータ：<code>application/octet-stream</code></li></ul> |
 
 ### Request message
-ユーザーのリクエスト、またはクライアントの情報をCICに送る際、[イベント](#Event)と追加の音声情報を[マルチパートのメッセージ](#MultipartMessage)で送信する必要があります。イベントは、含まれる情報によって内容と構成が異なり、[インターフェース](#CICInterface)で区分されています。
+ユーザーのリクエスト、またはクライアントの情報をCICに送る際、[イベント](#Event)と追加の音声情報を[マルチパートのメッセージ](#MultipartMessage)で送信する必要があります。イベントは、含まれる情報によって内容と構成が異なり、[メッセージインターフェース](/Develop/References/Message_Interfaces.md)で区分されています。
 
 ### Request example
 
@@ -345,7 +344,7 @@ Content-Type: application/octet-stream
 | Content-Type            | <ul><li>JSONデータ：<code>application/json; charset=UTF-8</code></li><li>バイナリオーディオデータ：<code>application/octet-stream</code></li></ul>                     |
 
 ### Response message
-CICはHTTPレスポンスで、クライアントに動作を実行するように指示する[ディレクティブ](#Directive)と、追加の音声情報を[マルチパートメッセージ](#MultipartMessage)で送信します。ディレクティブによって構成と含まれる内容が異なり、[インターフェース](#CICInterface)で区分されています。
+CICはHTTPレスポンスで、クライアントに動作を実行するように指示する[ディレクティブ](#Directive)と、追加の音声情報を[マルチパートメッセージ](#MultipartMessage)で送信します。ディレクティブによって含まれる内容と構成が異なり、[メッセージインターフェース](/Develop/References/Message_Interfaces.md)で区分されています。
 
 ### Status codes
 
@@ -450,7 +449,7 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
 * [エラーメッセージ](#Error)
 
 ### イベント {#Event}
-イベントは、クライアントからCICに対して、ユーザーの発話またはクライアントの情報を送る際に使用されます。代表的なイベントとして、ユーザーからの音声入力を受け、認識をリクエストする[`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)があります。
+イベントは、クライアントからCICに対して、ユーザーの発話またはクライアントの情報を送る際に使用されます。代表的なイベントとして、ユーザーからの音声入力を受け、認識をリクエストする[`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)があります。
 
 #### Message structure
 {% raw %}
@@ -485,11 +484,11 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
 | `context[]`                      | object array | CICに送るクライアントのステータス情報を持つオブジェクト。次のような[コンテキスト](/Develop/References/Context_Objects.md)オブジェクトをこの配列の要素として含めることができます。イベントを送信する際、**コンテキストで表現できるすべてのクライアントの状態情報を含めます。**<ul><li><a href="/Develop/References/Context_Objects.md#AlertsState"><code>Alerts.AlertsState</code></a>：アラームまたはタイマーの状態</li><li><a href="/Develop/References/Context_Objects.md#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>：最近の再生情報</li><li><a href="/Develop/References/Context_Objects.md#DeviceState"><code>Device.DeviceState</code></a>：クライアントのデバイス情報</li><li><a href="/Develop/References/Context_Objects.md#Display"><code>Device.Display</code></a>：クライアントのディスプレイ情報</li><li><a href="/Develop/References/Context_Objects.md#Location"><code>Clova.Location</code></a>：クライアントの位置情報</li><li><a href="/Develop/References/Context_Objects.md#SavedPlace"><code>Clova.SavedPlace</code></a>：事前定義された位置情報</li><li><a href="/Develop/References/Context_Objects.md#VolumeState"><code>Speaker.VolumeState</code></a>：スピーカーの情報</li></ul> |  |
 | `event`                        | object       | イベントのヘッダーと必要なデータ（payload）を持つオブジェクト                                                                 |  |
 | `event.header`                 | object       | イベントのヘッダー                                                                                                 |  |
-| `event.header.dialogRequestId` | string       | ダイアログID（Dialog ID）。クライアントは、[`SpeechRecognizer.Regcognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)と[`TextRecognizer.Recognize`](/Develop/References/CICInterface/TextRecognizer.md#Recognize)イベントを送信するとき、必ず[ダイアログIDを作成](/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md#CreatingDialogueID)してこのフィールドに入力する必要があります。|任意 |
+| `event.header.dialogRequestId` | string       | ダイアログID（Dialog ID）。クライアントは、[`SpeechRecognizer.Regcognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)と[`TextRecognizer.Recognize`](/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize)イベントを送信するとき、必ず[ダイアログIDを作成](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md#CreatingDialogueID)してこのフィールドに入力する必要があります。|任意 |
 | `event.header.messageId`       | string       | メッセージID。メッセージを区別するための識別子です。                                                                 |  |
 | `event.header.name`            | string       | イベントのAPI名                                                                                             |  |
 | `event.header.namespace`       | string       | イベントのAPI名前空間                                                                                       |  |
-| `event.payload`                | object       | イベントに関連する情報を持つオブジェクト。使用されている[CICメッセージインターフェース](#CICInterface)によって、ペイロードの構成とフィールド値が異なります。 |  |
+| `event.payload`                | object       | イベントに関連する情報を持つオブジェクト。使用する[メッセージインターフェース](/Develop/References/Message_Interfaces.md)によって、ペイロードオブジェクトの構成とフィールド値が異なります。 |  |
 
 #### Message example
 {% raw %}
@@ -556,7 +555,7 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
 
 #### 次の項目も参照してください。
 * [コンテキスト](/Develop/References/Context_Objects.md)
-* [インターフェース](#CICInterface)
+* [メッセージインターフェース](/Develop/References/Message_Interfaces.md)
 
 ### ディレクティブ {#Directive}
 ディレクティブは、クライアントがリクエストしたイベントに応答したり、特定の条件によってクライアントに情報を渡す際に使用されます。ディレクティブは、主にユーザーの音声が認識されてから、クライアントにその意図を実行するように指示します。クライアントは、ディレクティブに含まれた意図に応じて、適切な結果をユーザーに提供したり、作業を処理する必要があります。
@@ -590,11 +589,11 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
 |---------------|---------|-----------------------------|:---------:|
 | `directive`                        | object | ディレクティブのヘッダーと必要なデータ（`payload`）を持つオブジェクト                                                           |      |
 | `directive.header`                 | object | ディレクティブのヘッダー                                                                                                 |      |
-| `directive.header.dialogRequestId` | string | ダイアログID（Dialog ID）。クライアント側で、受信した応答がどの対話に対するものなのかを確認するために使用されます。ディレクティブが[`SpeechRecognizer.Regcognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)イベントに対する応答ではない場合、このフィールドがディレクティブに含まれないこともあります。  | 条件付き  |
+| `directive.header.dialogRequestId` | string | ダイアログID（Dialog ID）。クライアント側で、受信した応答がどの対話に対するものなのかを確認するために使用されます。ディレクティブが[`SpeechRecognizer.Regcognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)イベントに対する応答ではない場合、このフィールドがディレクティブに含まれないこともあります。  | 条件付き  |
 | `directive.header.messageId`       | string | メッセージID。メッセージを区別するための識別子です。                                                                |      |
 | `directive.header.name`            | string | ディレクティブのAPI名                                                                                             |      |
 | `directive.header.namespace`       | string | ディレクティブのAPI名前空間                                                                                       |      |
-| `directive.payload`                | object | ディレクティブに関する情報を持つオブジェクト。使用されている[インターフェース](#CICInterface)によって、`payload`の構成とフィールド値が異なります。 |      |
+| `directive.payload`                | object | ディレクティブに関する情報を持つオブジェクト。使用する[メッセージインターフェース](/Develop/References/Message_Interfaces.md)によって、`payload`オブジェクトの構成とフィールド値が異なります。 |      |
 
 #### Message example
 {% raw %}
@@ -620,7 +619,7 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
 {% endraw %}
 
 #### 次の項目も参照してください。
-* [インターフェース](#CICInterface)
+* [メッセージインターフェース](/Develop/References/Message_Interfaces.md)
 
 ### エラーメッセージ {#Error}
 無効なメソッドや形式で[イベント](#Event)が送信されたり、サーバー内部のエラーなどの理由により、Clovaが正常にサービスを提供できない場合があります。その際、CICはエラーメッセージをクライアントに送信します。クライアントはエラーメッセージに応じて、適切なUX/UIを提供する必要があります。
@@ -693,26 +692,3 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
 }
 ```
 {% endraw %}
-
-## インターフェース {#CICInterface}
-
-CICメッセージはその機能と用途ごとに、それぞれ別のインターフェースとして定義され、各インターフェースは名前空間で分けられています。クライアントは、CICに送信するイベントを作成したり、CICから受信したディレクティブを解析する際、このインターフェースを使用する必要があります。
-
-次のような名前空間が提供されています。リンクはその名前空間に属するインターフェースについて詳しく説明しています。
-
-* [Alerts](/Develop/References/CICInterface/Alerts.md)
-* [AudioPlayer](/Develop/References/CICInterface/AudioPlayer.md)
-* [Clova](/Develop/References/CICInterface/Clova.md)
-* [DeviceControl](/Develop/References/CICInterface/DeviceControl.md)
-* [Notifier](/Develop/References/CICInterface/Notifier.md)
-* [PlaybackController](/Develop/References/CICInterface/PlaybackController.md)
-* [Settings](/Develop/References/CICInterface/Settings.md)
-* [SpeechRecognizer](/Develop/References/CICInterface/SpeechRecognizer.md)
-* [SpeechSynthesizer](/Develop/References/CICInterface/SpeechSynthesizer.md)
-* [System](/Develop/References/CICInterface/System.md)
-* [TemplateRuntime](/Develop/References/CICInterface/TemplateRuntime.md)
-* [TextRecognizer](/Develop/References/CICInterface/TextRecognizer.md)
-
-イベントとディレクティブの区分によるインターフェースの一覧は、次の索引を参照してください。
-* [イベントの索引](/Develop/References/CICInterface/Index_for_Events.md)
-* [ディレクティブの索引](/Develop/References/CICInterface/Index_for_Directives.md)

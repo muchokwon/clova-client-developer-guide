@@ -3,7 +3,7 @@
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>このコンテクストを作成するとき、<a href="/Develop/References/CICInterface/Alerts.md">Alerts</a>のディレクティブから受け取ったアラームの情報をそのまま入力する必要があります。</p>
+  <p>このコンテキストを作成するとき、<a href="/Develop/References/MessageInterfaces/Alerts.md">Alerts</a>のディレクティブから受け取ったアラームの情報をそのまま入力する必要があります。</p>
 </div>
 
 ### Object structure
@@ -118,21 +118,21 @@
 {% raw %}
 
 ```json
-例1：ALARMタイプ
+サンプル1：ALARMタイプ
 {
   "token": "5b3eb1a0-3a98-43ca-b28b-040462c2d2c9",
   "type": "ALARM",
   "scheduledTime": "2017-09-16T12:33:44Z"
 }
 
-例2：TIMERタイプ
+サンプル2：TIMERタイプ
 {
   "token": "26346794-0a23-446a-a34f-a0f5d957bd88",
   "type": "TIMER",
   "scheduledTime": "2017-09-14T22:22:22Z"
 }
 
-例3：REMINDERタイプ
+サンプル3：REMINDERタイプ
 {
   "token": "26346794-0a23-446a-a34f-a0f5d957bd88",
   "type": "TIMER",
@@ -144,4 +144,4 @@
 {% endraw %}
 
 ### 次の項目も参照してください。
-* [`Alerts`](/Develop/References/CICInterface/Alerts.md)
+* [`Alerts`](/Develop/References/MessageInterfaces/Alerts.md)

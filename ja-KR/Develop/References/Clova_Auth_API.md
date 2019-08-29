@@ -1,4 +1,4 @@
-# Clova認証APIのリファレンス
+# Clova認証API
 クライアントがCICに接続するには、[Clovaアクセストークンを作成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)必要があります。Clova認可サーバーは、Clovaアクセストークンの作成および管理に必要なClova認証APIを提供しています。ここでは、Clova認証APIについて説明しています。
 
 ## ベースURI
@@ -99,7 +99,7 @@ GET|POST /authorize
 
 {% endraw %}
 
-{% include "/Develop/References/CICAuthAPI/Guest_Mode.md" %}
+{% include "/Develop/References/ClovaAuthAPI/Guest_Mode.md" %}
 
 ### 次の項目も参照してください。
 * [クライアント認証情報](/Develop/Guides/Interact_with_CIC.md#ClientAuthInfo)

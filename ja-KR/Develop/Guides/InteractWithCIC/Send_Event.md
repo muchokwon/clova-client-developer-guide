@@ -1,7 +1,7 @@
 ## イベントを送信する {#SendEvent}
 クライアントは、CICに[イベント](/Develop/References/CIC_API.md#Event)を送信することができます。イベントは、クライアントからのリクエストをCICに送るために使用されます。JSON形式のメッセージと、ユーザーからの音声入力を[マルチパートメッセージ](/Develop/References/CIC_API.md#MultipartMessage)で送信します。
 
-クライアントからユーザーの音声データをCICに送信する際、[`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)イベントを使用します。以下では、`SpeechRecognizer.Recognize`を使ってCICにイベントを送信する方法について説明します。
+クライアントからユーザーの音声データをCICに送信する際、[`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)イベントを使用します。以下では、`SpeechRecognizer.Recognize`を使ってCICにイベントを送信する方法について説明します。
 
 <ol>
   <li>イベントを送信するために、クライアントに<a href="#RequiredLibrary">HTTP/2ライブラリ</a>と<a href="#Authorization">Clovaアクセストークン</a>を用意します。</li>
@@ -15,9 +15,9 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
 Content-Type: multipart/form-data; boundary=Boundary-Text
 </code></pre>
   </li>
-  <li>イベントに含まれる<a href="/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md">ダイアログID</a>（<code>dialogRequestId</code>）とメッセージID（<code>messageId</code>）をUUID形式に作成します。後ほど<a href="#ManageMessageQ">メッセージキュー</a>でディレクティブを確認できるように、識別できるダイアログIDとメッセージIDを作成して送信します。</li>
+  <li>イベントに含まれる<a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">ダイアログID</a>（<code>dialogRequestId</code>）とメッセージID（<code>messageId</code>）をUUID形式に作成します。後ほど<a href="#ManageMessageQ">メッセージキュー</a>でディレクティブを確認できるように、識別できるダイアログIDとメッセージIDを作成して送信します。</li>
   <li>
-    <p>最初のメッセージパートに、<a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize"><code>SpeechRecognizer.Recognize</code></a>API仕様に準じて作成されたJSON形式のイベントとメッセージヘッダーを入力して、CICに送信します。</p>
+    <p>最初のメッセージパートに、<a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize"><code>SpeechRecognizer.Recognize</code></a>API仕様に準じて作成されたJSON形式のイベントとメッセージヘッダーを入力して、CICに送信します。</p>
     <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8<br/>
@@ -90,12 +90,12 @@ Content-Type: application/octet-stream<br/>
 --Boundary-Text--
 </code></pre>
   </li>
-  <li>CICから<a href="/Develop/References/CICInterface/SpeechRecognizer.md#StopCapture"><code>SpeechRecognizer.StopCapture</code></a>ディレクティブを受信するまで、音声データを送り続けます。送信が完了すると、CICからHTTPレスポンスメッセージを受信します。</li>
+  <li>CICから<a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#StopCapture"><code>SpeechRecognizer.StopCapture</code></a>ディレクティブを受信するまで、音声データを送り続けます。送信が完了すると、CICからHTTPレスポンスメッセージを受信します。</li>
 </ol>
 
 <div class="tip">
   <p><strong>ヒント</strong></p>
-  <p><a href="/Develop/References/CICInterface/TextRecognizer.md#Recognize"><code>TextRecognizer.Recognize</code></a>を使用して、ユーザーのテキスト入力を処理することもできます。</p>
+  <p><a href="/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize"><code>TextRecognizer.Recognize</code></a>を使用して、ユーザーのテキスト入力を処理することもできます。</p>
 </div>
 
 <div class="note">

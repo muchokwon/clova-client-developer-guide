@@ -11,7 +11,7 @@
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>クライアントからディレクティブを受信し、正常に処理したり、または処理できなかったりする度に、<code>DeviceControl.ActionExecuted</code>または<code>DeviceControl.ActionFailed</code>イベントでCICにレポートする必要があります。詳細については、<a href="/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md">クライアントの動作制御を処理する</a>の<a href="/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse">処理結果をレポートする</a>セクションを参照してください。</p>
+  <p>クライアントからディレクティブを受信し、正常に処理したり、または処理できなかったりする度に、<code>DeviceControl.ActionExecuted</code>または<code>DeviceControl.ActionFailed</code>イベントでCICにレポートする必要があります。詳細については、<a href="/Develop/Guides/Handle_Device_Control.md">クライアントの動作制御を処理する</a>の<a href="/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse">処理結果をレポートする</a>セクションを参照してください。</p>
 </div>
 
 ## Bluetoothデバイスとの接続のリクエストを処理する {#HandleBluetoothConnect}
@@ -22,7 +22,7 @@
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow1.svg)
 
-ユーザーがClovaアプリからBluetoothペアリングモードに入ろうとすると、ClovaはユーザーのクライアントからBluetoothペアリングモードに入るように[`DeviceControl.BtStartPairing`](/Develop/References/CICInterface/DeviceControl.md#BtStartPairing)ディレクティブを送信します。このディレクティブを受信したクライアントは、Bluetoothペアリングモードに入る必要があります。次の[`DeviceControl.BtStartPairing`](/Develop/References/CICInterface/DeviceControl.md#BtStartPairing)ディレクティブを受信します。
+ユーザーがClovaアプリからBluetoothペアリングモードに入ろうとすると、ClovaはユーザーのクライアントからBluetoothペアリングモードに入るように[`DeviceControl.BtStartPairing`](/Develop/References/MessageInterfaces/DeviceControl.md#BtStartPairing)ディレクティブを送信します。このディレクティブを受信したクライアントは、Bluetoothペアリングモードに入る必要があります。次の[`DeviceControl.BtStartPairing`](/Develop/References/MessageInterfaces/DeviceControl.md#BtStartPairing)ディレクティブを受信します。
 
 ```json
 {
@@ -49,7 +49,7 @@
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow2.svg)
 
-ユーザーが接続するデバイスを指定すると、CICは、クライアントに指定されたデバイスと接続するように[`DeviceControl.BtConnect`](/Develop/References/CICInterface/DeviceControl.md#BtConnect)ディレクティブを送信します。次の[`DeviceControl.BtConnect`](/Develop/References/CICInterface/DeviceControl.md#BtConnect)ディレクティブを受信します。
+ユーザーが接続するデバイスを指定すると、CICは、クライアントに指定されたデバイスと接続するように[`DeviceControl.BtConnect`](/Develop/References/MessageInterfaces/DeviceControl.md#BtConnect)ディレクティブを送信します。次の[`DeviceControl.BtConnect`](/Develop/References/MessageInterfaces/DeviceControl.md#BtConnect)ディレクティブを受信します。
 
 ```json
 {
@@ -78,7 +78,7 @@
 * `name`：削除するBluetoothデバイスの名前
 * `role`：指定されたBluetoothデバイスと接続するときのクライアントのロール
 
-新しいBluetoothデバイスと接続するとき、BluetoothデバイスからPINコードを要求されます。BluetoothデバイスからPINコードを要求されると、[`DeviceControl.BtRequestForPINCode`](/Develop/References/CICInterface/DeviceControl.md#BtRequestForPINCode)イベントでCICにそのことを送信する必要があります。
+新しいBluetoothデバイスと接続するとき、BluetoothデバイスからPINコードを要求されます。BluetoothデバイスからPINコードを要求されると、[`DeviceControl.BtRequestForPINCode`](/Develop/References/MessageInterfaces/DeviceControl.md#BtRequestForPINCode)イベントでCICにそのことを送信する必要があります。
 
 ```json
 {
@@ -98,7 +98,7 @@
 }
 ```
 
-[`DeviceControl.BtRequestForPINCode`](/Develop/References/CICInterface/DeviceControl.md#BtRequestForPINCode)イベントを受信し、ユーザーがPINコードを入力すると、CICは[`DeviceControl.BtConnectByPINCode`](/Develop/References/CICInterface/DeviceControl.md#BtConnectByPINCode)ディレクティブで、クライアントがPINコードを要求したBluetoothデバイスと接続するように指示します。CICは、入力を受けた`pincode`フィールドの値をクライアントに送信します。
+[`DeviceControl.BtRequestForPINCode`](/Develop/References/MessageInterfaces/DeviceControl.md#BtRequestForPINCode)イベントを受信し、ユーザーがPINコードを入力すると、CICは[`DeviceControl.BtConnectByPINCode`](/Develop/References/MessageInterfaces/DeviceControl.md#BtConnectByPINCode)ディレクティブで、クライアントがPINコードを要求したBluetoothデバイスと接続するように指示します。CICは、入力を受けた`pincode`フィールドの値をクライアントに送信します。
 
 ```json
 {
@@ -131,7 +131,7 @@
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow3.svg)
 
-ユーザーがBluetoothデバイスからのオーディオ再生をリクエストすると、CICはクライアントに[`DeviceControl.BtPlay`](/Develop/References/CICInterface/DeviceControl.md#BtPlay)ディレクティブを送信します。このとき、クライアントのロールによって、オーディオが出力されるデバイスが決まります。また、クライアントは、コンテキストの[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)オブジェクトで、Bluetoothデバイスの情報をCICに随時送信する必要があります。次の[`DeviceControl.BtPlay`](/Develop/References/CICInterface/DeviceControl.md#BtPlay)ディレクティブを受信します。
+ユーザーがBluetoothデバイスからのオーディオ再生をリクエストすると、CICはクライアントに[`DeviceControl.BtPlay`](/Develop/References/MessageInterfaces/DeviceControl.md#BtPlay)ディレクティブを送信します。このとき、クライアントのロールによって、オーディオが出力されるデバイスが決まります。また、クライアントは、コンテキストの[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)オブジェクトで、Bluetoothデバイスの情報をCICに随時送信する必要があります。次の[`DeviceControl.BtPlay`](/Develop/References/MessageInterfaces/DeviceControl.md#BtPlay)ディレクティブを受信します。
 
 ```json
 {
@@ -156,7 +156,7 @@
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow4.svg)
 
-ユーザーがBluetoothデバイスとの接続解除をリクエストすると、CICはクライアントに[`DeviceControl.BtDisconnect`](/Develop/References/CICInterface/DeviceControl.md#BtDisconnect)ディレクティブを送信します。ディレクティブの内容によって、クライアントは指定されたBluetoothデバイスまたは接続されたすべてのBluetoothデバイスとの接続を解除する必要があります。また、クライアントは、コンテキストの[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)オブジェクトで、Bluetoothデバイスの情報をCICに随時送信する必要があります。接続されたすべてのBluetoothデバイスとの接続を解除するとき、以下のような[`DeviceControl.BtDisconnect`](/Develop/References/CICInterface/DeviceControl.md#BtDisconnect)ディレクティブを受信します。
+ユーザーがBluetoothデバイスとの接続解除をリクエストすると、CICはクライアントに[`DeviceControl.BtDisconnect`](/Develop/References/MessageInterfaces/DeviceControl.md#BtDisconnect)ディレクティブを送信します。ディレクティブの内容によって、クライアントは指定されたBluetoothデバイスまたは接続されたすべてのBluetoothデバイスとの接続を解除する必要があります。また、クライアントは、コンテキストの[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)オブジェクトで、Bluetoothデバイスの情報をCICに随時送信する必要があります。接続されたすべてのBluetoothデバイスとの接続を解除するとき、以下のような[`DeviceControl.BtDisconnect`](/Develop/References/MessageInterfaces/DeviceControl.md#BtDisconnect)ディレクティブを受信します。
 
 ```json
 {
@@ -178,7 +178,7 @@
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow5.svg)
 
-ユーザーがBluetoothデバイスの削除をリクエストすると、CICはクライアントに[`DeviceControl.BtDelete`](/Develop/References/CICInterface/DeviceControl.md#BtDelete)ディレクティブを送信します。クライアントは、受信したディレクティブを分析し、指定されたデバイスを削除します。次の[`DeviceControl.BtDelete`](/Develop/References/CICInterface/DeviceControl.md#BtDelete)ディレクティブを受信します。
+ユーザーがBluetoothデバイスの削除をリクエストすると、CICはクライアントに[`DeviceControl.BtDelete`](/Develop/References/MessageInterfaces/DeviceControl.md#BtDelete)ディレクティブを送信します。クライアントは、受信したディレクティブを分析し、指定されたデバイスを削除します。次の[`DeviceControl.BtDelete`](/Develop/References/MessageInterfaces/DeviceControl.md#BtDelete)ディレクティブを受信します。
 
 ```json
 {

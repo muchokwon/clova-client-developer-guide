@@ -1,7 +1,7 @@
 ## CICに接続する {#ConnectToCIC}
 クライアントがCICに接続するには、次の作業が必要です。
 * [Clovaアクセストークンを作成する](#CreateClovaAccessToken)
-* [接続を作成する](#CreateConnection)
+* [始めて接続する](#CreateConnection)
 * [認証する](#Authorization)
 * [接続を管理する](#ManageConnection)
 
@@ -88,7 +88,7 @@ Clovaアクセストークンは、次の順で取得できます。
   </li>
 </ol>
 
-### CICに接続する {#CreateConnection}
+### 始めて接続する {#CreateConnection}
 クライアントが最初にCICに接続する際、[Downchannelを確立する](/Develop/References/CIC_API.md#EstablishDownchannel)必要があります。Downchannelは、CICからディレクティブを受信する際に使用されます。その時に受信するディレクティブは、クライアントのイベントに対するレスポンスではなく、特定の条件や必要に応じてCICがクライアントに送信する（Cloud-initiated）ディレクティブです。例えば、新しい通知（push）が届いた場合、Downchannelでディレクティブが送信されます。
 
 Downchannelは、`/v1/directives`に`GET`リクエストを送信して確立することができます。一度確立すると、CICによって接続が維持されます。
@@ -105,7 +105,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 {% endraw %}
 
-上記の接続リクエストの処理が成功すると、CICは次のような[`Clova.Hello`](/Develop/References/CICInterface/Clova.md#Hello)ディレクティブをレスポンスとして送信します。それは、Downchannelで追加のディレクティブを送信する準備ができたことを示します。
+上記の接続リクエストの処理が成功すると、CICは次のような[`Clova.Hello`](/Develop/References/MessageInterfaces/Clova.md#Hello)ディレクティブをレスポンスとして送信します。それは、Downchannelで追加のディレクティブを送信する準備ができたことを示します。
 
 {% raw %}
 
