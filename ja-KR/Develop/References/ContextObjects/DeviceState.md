@@ -128,7 +128,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`     | string array | 機内モードに関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。以下のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> |  |
+| `actions[]`     | string array | 機内モードに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。以下のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> |  |
 | `state`         | string | 機内モードの設定状態。<ul><li><code>"off"</code>：オフになっている</li><li><code>"on"</code>：オンになっている</li></ul> |  |
 
 #### Object example
@@ -164,7 +164,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`     | string array | バッテリーに関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。現在、サポートされているアクションがありません。 |  |
+| `actions[]`     | string array | バッテリーに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。現在、サポートされているアクションがありません。 |  |
 | `charging`      | boolean | 充電しているかどうかを示す値。<ul><li><code>true</code>：充電している</li><li><code>false</code>：充電していない</li></ul> |  |
 | `value`         | number | バッテリーの残量。0から100までの数値を入力します。単位はパーセント（%）です。 |  |
 
@@ -199,14 +199,14 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`          | string array | Bluetooth接続に関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li><li><code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li></ul> |  |
+| `actions[]`          | string array | Bluetooth接続に関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li><li><code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li></ul> |  |
 | `btlist[]`              | object array | ペアリングされたことがあるBluetoothデバイスの情報を持つオブジェクト配列         |  |
 | `btlist[].address`      | string       | Bluetoothデバイスのデバイスアドレス                  |  |
 | `btlist[].connected`    | boolean      | Bluetoothデバイスとの接続状態。<ul><li><code>true</code>：接続している</li><li><code>false</code>：接続していない</li></ul> |  |
 | `btlist[].name`         | string       | Bluetoothデバイスの名前                      |  |
 | `btlist[].role`         | string       | そのBluetoothデバイスと接続するときのクライアントの役割。<ul><li><code>"sink"</code>：オーディオストリームを受信する役割（主にスピーカー）</li><li><code>"source"</code>：オーディオストリームを送信する役割（ストリームデータの送信者）</li></ul> |  |
-| `connecting`            | string       | Bluetoothデバイスと接続しているかどうかを示す値。<ul><li><code>"on"</code>：接続している</li><li><code>"off"</code>：接続していない</li></ul> |  |
-| `pairing`               | string       | Bluetoothペアリングモードの状態を示します。<ul><li><code>"on"</code>：ペアリングモードがオンになっている</li><li><code>"off"</code>：ペアリングモードがオフになっている</li></ul> |  |
+| `connecting`            | string       | Bluetoothデバイスとの接続を試行しているか。<ul><li><code>"on"</code>：接続を試行している</li><li><code>"off"</code>：接続を試行していない</li></ul> |  |
+| `pairing`               | string       | Bluetoothペアリングモードの状態。<ul><li><code>"on"</code>：ペアリングモードがオンになっている</li><li><code>"off"</code>：ペアリングモードがオフになっている</li></ul> |  |
 | `playerInfo`            | object       | Bluetooth接続で再生されているストリームの情報を持つオブジェクト  | 任意 |
 | `playerInfo.albumTitle` | string       | Bluetoothで再生されているストリームのアルバムのタイトル                 | 任意 |
 | `playerInfo.artistName` | string       | Bluetoothで再生されているストリームのアーティスト名                 | 任意 |
@@ -216,7 +216,7 @@
 | `scanlist[].address`    | string       | Bluetoothデバイスのデバイスアドレス                  |  |
 | `scanlist[].name`       | string       | Bluetoothデバイスの名前                      |  |
 | `scanlist[].role`       | string       | そのBluetoothデバイスと接続するときのクライアントの役割。<ul><li><code>"sink"</code>：オーディオストリームを受信する役割（主にスピーカー）</li><li><code>"source"</code>：オーディオストリームを送信する役割（ストリームデータの送信者）</li></ul> |  |
-| `scanning`              | string       | Bluetoothスキャンモードの状態を示す値。<ul><li><code>"on"</code>：スキャンモードがオンになっている</li><li><code>"off"</code>：スキャンモードがオフになっている</li></ul> |  |
+| `scanning`              | string       | Bluetoothスキャンモードの状態。<ul><li><code>"on"</code>：スキャンモードがオンになっている</li><li><code>"off"</code>：スキャンモードがオフになっている</li></ul> |  |
 | `state`                 | string       | Bluetoothのオン/オフ状態<ul><li><code>"off"</code>：オフになっている</li><li><code>"on"</code>：オンになっている</li></ul> |  |
 
 #### Object example
@@ -285,7 +285,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`          | string array | セルラーネットワークに関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
+| `actions[]`          | string array | セルラーネットワークに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
 | `state`              | string       | セルラーネットワークのオン/オフ状態。<ul><li><code>"off"</code>：オフになっている</li><li><code>"on"</code>：オンになっている</li></ul> |  |
 
 #### Object example
@@ -321,7 +321,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`     | string array | テレビチャンネルの設定に関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"SetValue"</code></li></ul> |  |
+| `actions[]`     | string array | テレビチャンネルの設定に関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"SetValue"</code></li></ul> |  |
 
 #### Object example
 
@@ -357,7 +357,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`          | string array | 省エネモードに関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
+| `actions[]`          | string array | 省エネモードに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
 | `state`              | string       | 省エネモードの設定状態。<ul><li><code>"off"</code>：オフになっている</li><li><code>"on"</code>：オンになっている</li></ul> |  |
 
 #### Object example
@@ -394,7 +394,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`          | string array | フラッシュライトに関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
+| `actions[]`          | string array | フラッシュライトに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
 | `state`              | string       | フラッシュライトの現在の状態。<ul><li><code>"off"</code>：オフになっている</li><li><code>"on"</code>：オンになっている</li></ul> |  |
 
 #### Object example
@@ -430,7 +430,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`          | string array | GPSに関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
+| `actions[]`          | string array | GPSに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
 | `state`              | string       | GPSの現在の状態。<ul><li><code>"off"</code>：オフになっている</li><li><code>"on"</code>：オンになっている</li></ul> |  |
 
 #### Object example
@@ -466,7 +466,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`          | string array | 電源の状態に関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
+| `actions[]`          | string array | 電源の状態に関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
 | `state`              | string       | 電源の状態。<ul><li><code>"active"</code>：クライアントデバイスがオンになっている</li><li><code>"idle"</code>：クライアントデバイスがオフになっている</li></ul> |  |
 
 #### Object example
@@ -502,7 +502,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`          | string array | 画面の明るさに関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"SetValue"</code></li></ul> |  |
+| `actions[]`          | string array | 画面の明るさに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"SetValue"</code></li></ul> |  |
 | `max`                | number       | クライアントデバイスの画面に設定できる明るさの最大値    |  |
 | `min`                | number       | クライアントデバイスの画面に設定できる明るさの最小値    |  |
 | `value`              | number       | 現在のクライアントデバイスの画面の明るさ                   |  |
@@ -543,7 +543,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`          | string array | サウンドモードに関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul>  |  |
+| `actions[]`          | string array | サウンドモードに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul>  |  |
 | `state`              | string       | サウンドモードの設定状態。<ul><li><code>"ring"</code>：着信モード</li><li><code>"silent"</code>：サイレントモード</li><li><code>"vibrate"</code>：バイブモード</li></ul> |  |
 
 #### Object example
@@ -610,7 +610,7 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`          | string array | スピーカー音量に関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"SetValue"</code></li></ul> |  |
+| `actions[]`          | string array | スピーカー音量に関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"SetValue"</code></li></ul> |  |
 | `max`                | number       | クライアントデバイスのスピーカーに設定できる音量の最大値    |  |
 | `min`                | number       | クライアントデバイスのスピーカーに設定できる音量の最小値    |  |
 | `value`              | number       | クライアントデバイスの現在のスピーカー音量の大きさ               |  |
@@ -653,9 +653,9 @@
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`            | string array | Wi-Fiに関連して実行できる[`DeviceControl`](/Develop/References/CICInterface/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
+| `actions[]`            | string array | Wi-Fiに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
 | `networks[]`           | object array | 検索されたWi-Fiネットワークの情報を持つオブジェクト配列 |  |
-| `networks[].connected` | boolean      | Wi-Fiネットワークに接続しているかどうかを示す値。<ul><li><code>true</code>：接続している</li><li><code>false</code>：接続していない</li></ul> |  |
+| `networks[].connected` | boolean      | Wi-Fiネットワークの接続状態。<ul><li><code>true</code>：接続している</li><li><code>false</code>：接続していない</li></ul> |  |
 | `networks[].name`      | string       | Wi-Fiネットワークの名前（SSID）               |  |
 | `state`                | string       | Wi-Fiのオン/オフ状態。<ul><li><code>"off"</code>：オフになっている</li><li><code>"on"</code>：オンになっている</li></ul> |  |
 
@@ -696,5 +696,5 @@
 {% endraw %}
 
 ### 次の項目も参照してください。
-* [`DeviceControl` API](/Develop/References/CICInterface/DeviceControl.md)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`DeviceControl` API](/Develop/References/MessageInterfaces/DeviceControl.md)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)

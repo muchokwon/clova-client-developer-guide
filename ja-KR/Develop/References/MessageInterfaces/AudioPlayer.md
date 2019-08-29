@@ -96,7 +96,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### 次の項目も参照してください。
 * [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
-* [オーディオ再生状態を共有する](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [オーディオ再生状態を共有する](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 
 <!-- Start of the shared content: AudioPlayer.Play -->
 
@@ -225,7 +225,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
-* [オーディオを再生する](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [オーディオを再生する](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 <!-- End of the shared content -->
 
@@ -234,7 +234,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -283,7 +283,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -325,7 +325,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### 次の項目も参照してください。
 * [`AudioPlayer.Play`](#Play)
-* [オーディオ再生の進行状況をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [オーディオ再生の進行状況をレポートする](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -334,13 +334,13 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ## PlayPausedイベント {#PlayPaused}
 クライアントがオーディオストリームの再生を一時停止するとき、そのオーディオストリームの情報をCICにレポートするために使用します。このイベントを送信するには、次のような事前のシナリオが必要です。
 
-1. クライアントは、[`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)イベントで、オーディオストリームの再生を一時停止するようにリクエストするユーザーの音声をCICに送信します。
-2. CICは、Clovaプラットフォームで認識された一時停止のリクエストを、[`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause)ディレクティブでクライアントに送信します。
+1. クライアントは、[`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)イベントで、オーディオストリームの再生を一時停止するようにリクエストするユーザーの音声をCICに送信します。
+2. CICは、Clovaプラットフォームで認識された一時停止のリクエストを、[`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause)ディレクティブでクライアントに送信します。
 3. クライアントはオーディオストリームの再生を一時停止し、PlayPausedイベントをCICに送信します。
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -383,8 +383,8 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ### 次の項目も参照してください。
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayResumed`](#PlayResumed)
-* [`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -394,13 +394,13 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 クライアントがオーディオストリームの再生を再開するとき、そのオーディオストリームの情報をCICにレポートするために使用します。このイベントを送信するには、次のような事前のシナリオが必要です。
 
-1. クライアントは、[`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)イベントで、オーディオストリームの再生を再開するようにリクエストするユーザーの音声をCICに送信します。
-2. CICは、Clovaプラットフォームで認識された再生再開のリクエストを、[`PlaybackController.Resume`](/Develop/References/CICInterface/PlaybackController.md#Resume)ディレクティブでクライアントに送信します。
+1. クライアントは、[`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)イベントで、オーディオストリームの再生を再開するようにリクエストするユーザーの音声をCICに送信します。
+2. CICは、Clovaプラットフォームで認識された再生再開のリクエストを、[`PlaybackController.Resume`](/Develop/References/MessageInterfaces/PlaybackController.md#Resume)ディレクティブでクライアントに送信します。
 3. クライアントは、オーディオストリームの再生を再開し、PlayResumedイベントをCICに送信します。
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -443,8 +443,8 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ### 次の項目も参照してください。
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayPaused`](#PlayPaused)
-* [`PlaybackController.Resume`](/Develop/References/CICInterface/PlaybackController.md#Resume)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`PlaybackController.Resume`](/Develop/References/MessageInterfaces/PlaybackController.md#Resume)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -455,7 +455,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -498,8 +498,8 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ### 次の項目も参照してください。
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStopped`](#PlayStopped)
-* [オーディオを再生する](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [オーディオを再生する](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -508,13 +508,13 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ## PlayStoppedイベント {#PlayStopped}
 クライアントがオーディオストリームの再生を停止するとき、そのオーディオストリームの情報をCICにレポートするために使用します。このイベントを送信するには、次のような事前のシナリオが必要です。
 
-1. クライアントは[`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)イベントで、オーディオストリームの再生を停止するようにリクエストするユーザーの音声をCICに送信します。
-2. CICは、Clovaプラットフォームで認識された停止のリクエストを、[`PlaybackController.Stop`](/Develop/References/CICInterface/PlaybackController.md#Stop)ディレクティブでクライアントに送信します。
+1. クライアントは[`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)イベントで、オーディオストリームの再生を停止するようにリクエストするユーザーの音声をCICに送信します。
+2. CICは、Clovaプラットフォームで認識された停止のリクエストを、[`PlaybackController.Stop`](/Develop/References/MessageInterfaces/PlaybackController.md#Stop)ディレクティブでクライアントに送信します。
 3. クライアントはオーディオストリームの再生を停止し、PlayStoppedイベントをCICに送信します。
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -557,8 +557,8 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ### 次の項目も参照してください。
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStarted`](#PlayStarted)
-* [`PlaybackController.Stop`](/Develop/References/CICInterface/PlaybackController.md#Stop)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`PlaybackController.Stop`](/Develop/References/MessageInterfaces/PlaybackController.md#Stop)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -569,7 +569,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -613,7 +613,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
-* [オーディオ再生の進行状況をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [オーディオ再生の進行状況をレポートする](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -624,7 +624,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -668,7 +668,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
-* [オーディオ再生の進行状況をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [オーディオ再生の進行状況をレポートする](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -679,7 +679,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -723,7 +723,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
-* [オーディオ再生の進行状況をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [オーディオ再生の進行状況をレポートする](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -733,7 +733,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
@@ -743,7 +743,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 | `repeatMode`             | string  | リピート再生モード<ul><li><code>"NONE"</code>：リピート再生しない</li><li><code>"REPEAT_ONE"</code>：一曲リピート再生</li></ul>  |   |
 | `stream`                 | [AudioStreamInfoObject](#AudioStreamInfoObject) | Playディレクティブの`audioItem.stream`                                     | 任意 |
 | `token`                  | string  | [`AudioPlayer.Play`](#Play)ディレクティブの`audioItem.stream.token`フィールドの値                                          | 任意 |
-| `totalInMilliseconds`    | number | 最近再生したメディアの全長[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブで送信されたオーディオストリーム情報（[AudioStreamInfoObject](/Develop/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject)）に`durationInMilliseconds`フィールド値がある場合、このフィールドに入力します。ミリ秒単位で、`playerActivity`の値が`"IDLE"`の場合、このフィールドの値を入力する必要はありません。 | 任意 |
+| `totalInMilliseconds`    | number | 最近再生したメディアアイテムの全長。[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブで送信されたオーディオストリームの情報（[AudioStreamInfoObject](/Develop/References/MessageInterfaces/AudioPlayer.md#AudioStreamInfoObject)）に`durationInMilliseconds`フィールド値がある場合、このフィールドに入力します。ミリ秒単位で、`playerActivity`の値が`"IDLE"`の場合、このフィールドの値を入力する必要はありません。 | 任意 |
 
 ### Message example
 {% raw %}
@@ -779,7 +779,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ### 次の項目も参照してください。
 * [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)
 * [`AudioPlayer.Play`](#Play)
-* [オーディオ再生状態を共有する](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [オーディオ再生状態を共有する](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 
 {% if book.DocMeta.TargetReaderType == "Internal" %}
 ## RequestPlaybackStateイベント {#RequestPlaybackState}
@@ -788,7 +788,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
@@ -828,7 +828,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ### 次の項目も参照してください。
 * [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)
 * [`AudioPlayer.Play`](#Play)
-* [オーディオ再生状態を共有する](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [オーディオ再生状態を共有する](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 {% endif %}
 
 <!-- Start of the shared content: AudioPlayer.StreamDeliver -->
@@ -880,7 +880,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ### 次の項目も参照してください。
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
-* [オーディオを再生する](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [オーディオを再生する](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 <!-- End of the shared content -->
 
@@ -891,7 +891,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
@@ -947,7 +947,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 ### 次の項目も参照してください。
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamDeliver`](#StreamDeliver)
-* [オーディオを再生する](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [オーディオを再生する](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 <!-- End of the shared content -->
 
@@ -997,7 +997,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
 
 ### 次の項目も参照してください。
 * [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
-* [オーディオ再生状態を共有する](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [オーディオ再生状態を共有する](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 {% endif %}
 
 ## 共有オブジェクト
@@ -1022,7 +1022,7 @@ AudioPlayer APIを使ってイベントまたはディレクティブを送信�
 | `progressReport.progressReportIntervalInMilliseconds` | number | 再生中に、指定された間隔ごとに再生状態をレポートするように指定する値です。ミリ秒単位で、このフィールドの値はnullの場合があります。        | 任意/条件付き |
 | `progressReport.progressReportPositionInMilliseconds` | number | 再生中に、指定された再生位置を経過する度に、再生状態をレポートするように指定する値です。ミリ秒単位で、このフィールドの値はnullの場合があります。    | 任意/条件付き |
 | `token`                  | string  | オーディオストリームのトークン。<div class="note"><p><strong>メモ</strong></p><p>このフィールドの最大の長さは2048バイトです。</p></div>                          |  |
-| `url`                    | string  | オーディオストリームのURI<div class="note"><p><strong>メモ</strong></p><p>提供するオーディオコンテンツは、<a href="/Design/Design_Guideline_For_Client_Hardware.md#SupportedAudioCompressionFormat">プラットフォームでサポートされているオーディオ圧縮形式</a>である必要があります。</p></div><div class="note"><p><strong>メモ</strong></p><p>このフィールドの最大の長さは、2048バイトです。</p></div>  |  |
+| `url`                    | string  | オーディオストリームのURI<div class="note"><p><strong>メモ</strong></p><p>提供するオーディオコンテンツは、<a href="/Design/Audio.md#SupportedAudioFormat">プラットフォームでサポートされているオーディオ圧縮形式</a>である必要があります。</p></div><div class="note"><p><strong>メモ</strong></p><p>このフィールドの最大の長さは、2048バイトです。</p></div>  |  |
 | `urlPlayable`            | boolean | `url`フィールドのオーディオストリームのURIがすぐに再生できるかを示す値<ul><li><code>true</code>：すぐに再生できるURI</li><li><code>false</code>：すぐ再生できないURI<a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a>イベントでオーディオストリームの情報を追加でリクエストする必要があります。</li></ul>        |  |
 
 #### 備考

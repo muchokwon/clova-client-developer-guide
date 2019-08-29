@@ -25,10 +25,10 @@
 
 ![](/Develop/Assets/Images/CIC_DeviceControl_Work_Flow1.svg)
 
-ユーザーがクライアントの制御を発話でリクエスト（[`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)）します。
+ユーザーがクライアントの制御を発話でリクエスト（[`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)）します。
 クライアントは、ユーザーのリクエストをイベントで送信します。そのとき、イベントには[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)コンテキストが含まれる必要があります。
 CICは、[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)コンテキストの`actions[]`フィールドを解析し、ユーザーからのクライアント制御のリクエストをそのクライアントで実行できるかどうかを判断します。
-クライアントがそのリクエストを処理できる場合、CICはユーザーのクライアントで特定の機能を有効にするように[`DeviceControl.TurnOn`](/Develop/References/CICInterface/DeviceControl.md#TurnOn)ディレクティブを送信します。このディレクティブには、機能を有効にするための情報が含まれているので、その情報から有効にする機能を特定する必要があります。次の[`DeviceControl.TurnOn`](/Develop/References/CICInterface/DeviceControl.md#TurnOn)ディレクティブを受信します。
+クライアントがそのリクエストを処理できる場合、CICはユーザーのクライアントで特定の機能を有効にするように[`DeviceControl.TurnOn`](/Develop/References/MessageInterfaces/DeviceControl.md#TurnOn)ディレクティブを送信します。このディレクティブには、機能を有効にするための情報が含まれているので、その情報から有効にする機能を特定する必要があります。次の[`DeviceControl.TurnOn`](/Develop/References/MessageInterfaces/DeviceControl.md#TurnOn)ディレクティブを受信します。
 
 ```json
 {
@@ -59,7 +59,7 @@ CICは、[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceSta
 
 クライアントは、`target`フィールドの情報を使って、機能を有効にする必要があります。上記のディレクティブに基づいて、クライアントは機内モードを有効にする必要があります。
 
-クライアントは、このディレクティブを処理して、その結果を[`DeviceControl.ActionExecuted`](/Develop/References/CICInterface/DeviceControl.md#ActionExecuted)または[`DeviceControl.ActionFailed`](/Develop/References/CICInterface/DeviceControl.md#ActionFailed)イベントでCICに送信する必要があります。
+クライアントは、このディレクティブを処理して、その結果を[`DeviceControl.ActionExecuted`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionExecuted)または[`DeviceControl.ActionFailed`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionFailed)イベントでCICに送信する必要があります。
 
 ## クライアントの音量を調整する {#HandleDeviceVolume}
 
@@ -69,7 +69,7 @@ CICは、[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceSta
 * ユーザーがクライアントのボタンを操作して音量を調整するようにリクエストする
 * ユーザーがClovaアプリからリモートで特定のクライアントの音量を調整するようにリクエストする
 
-ユーザーは、発話（[`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)）したり、デバイスを操作したりすることで、音量を調整するようにリクエストすることができます。ユーザーのリクエストがある場合、Clovaはユーザーの発話を解析し、ユーザーのクライアントで特定の機能を有効にするように[`DeviceControl.Increase`](/Develop/References/CICInterface/DeviceControl.md#Increase)ディレクティブを送信します。また、クライアントは、コンテキストの[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)オブジェクトで、Bluetoothデバイスの情報をCICに随時送信する必要があります。
+ユーザーは、発話（[`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)）したり、デバイスを操作したりすることで、音量を調整するようにリクエストすることができます。ユーザーのリクエストがある場合、Clovaはユーザーの発話を解析し、ユーザーのクライアントで特定の機能を有効にするように[`DeviceControl.Increase`](/Develop/References/MessageInterfaces/DeviceControl.md#Increase)ディレクティブを送信します。また、クライアントは、コンテキストの[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)オブジェクトで、Bluetoothデバイスの情報をCICに随時送信する必要があります。
 
 ユーザーが音量を上げ下げしたり、指定したりすると、クライアントは以下のディレクティブを受信します。このディレクティブの内容を確認し、クライアントで音量を調整する必要があります。
 
@@ -97,7 +97,7 @@ CICは、[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceSta
 
 上記のディレクティブに基づいて、クライアントは音量を上げる必要があります。ユーザーからの指定がない場合、デフォルト値だけ音量を上げる必要があります。デフォルト値は、開発会社で任意に設定できます。
 
-クライアントは、このディレクティブを処理して、その結果を[`DeviceControl.ActionExecuted`](/Develop/References/CICInterface/DeviceControl.md#ActionExecuted)または[`DeviceControl.ActionFailed`](/Develop/References/CICInterface/DeviceControl.md#ActionFailed)イベントでCICに送信する必要があります。
+クライアントは、このディレクティブを処理して、その結果を[`DeviceControl.ActionExecuted`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionExecuted)または[`DeviceControl.ActionFailed`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionFailed)イベントでCICに送信する必要があります。
 
 ## デバイスのステータスを共有する {#HandleDeviceStateReport}
 
@@ -105,20 +105,20 @@ Clovaアプリがユーザーのアカウントに登録されているクライ
 
 ![](/Develop/Assets/Images/CIC_DeviceControl_Work_Flow2.svg)
 
-1. クライアント（主にClovaアプリ）が[`DeviceControl.RequestStateSynchronization`](/Develop/References/CICInterface/DeviceControl.md#RequestStateSynchronization)イベントをCICに送信します。
-2. CICは、ユーザーのアカウントに登録されているすべてのクライアント（Clovaアプリを除く）に[`DeviceControl.ExpectReportState`](/Develop/References/CICInterface/DeviceControl.md#ExpectReportState)ディレクティブを、[Downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)で送信します。
-3. [`DeviceControl.ExpectReportState`](/Develop/References/CICInterface/DeviceControl.md#ExpectReportState)ディレクティブを受信したクライアントは、**[`DeviceControl.ReportState`](/Develop/References/CICInterface/DeviceControl.md#ReportState)イベントをCICに送信して、現在のステータスをレポートする必要があります。**
-4. CICは、収集されたクライアントのステータスを、[`DeviceControl.SynchronizeState`](/Develop/References/CICInterface/DeviceControl.md#SynchronizeState)ディレクティブを使って[Downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)でClovaアプリに送信します。
-5. [`DeviceControl.SynchronizeState`](/Develop/References/CICInterface/DeviceControl.md#SynchronizeState)ディレクティブを受信すると、Clovaアプリは他のクライアントのステータスを更新します。
+1. クライアント（主にClovaアプリ）が[`DeviceControl.RequestStateSynchronization`](/Develop/References/MessageInterfaces/DeviceControl.md#RequestStateSynchronization)イベントをCICに送信します。
+2. CICは、ユーザーのアカウントに登録されているすべてのクライアント（Clovaアプリを除く）に[`DeviceControl.ExpectReportState`](/Develop/References/MessageInterfaces/DeviceControl.md#ExpectReportState)ディレクティブを、[Downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)で送信します。
+3. [`DeviceControl.ExpectReportState`](/Develop/References/MessageInterfaces/DeviceControl.md#ExpectReportState)ディレクティブを受信したクライアントは、**[`DeviceControl.ReportState`](/Develop/References/MessageInterfaces/DeviceControl.md#ReportState)イベントをCICに送信して、現在のステータスをレポートする必要があります。**
+4. CICは、収集されたクライアントのステータスを、[`DeviceControl.SynchronizeState`](/Develop/References/MessageInterfaces/DeviceControl.md#SynchronizeState)ディレクティブを使って[Downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)でClovaアプリに送信します。
+5. [`DeviceControl.SynchronizeState`](/Develop/References/MessageInterfaces/DeviceControl.md#SynchronizeState)ディレクティブを受信すると、Clovaアプリは他のクライアントのステータスを更新します。
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>クライアントは、ユーザーのアカウントに新規に追加されたり、CICに再接続されたりすると、<a href="/Develop/References/CICInterface/DeviceControl.md#ExpectReportState"><code>DeviceControl.ExpectReportState</code></a>ディレクティブを受信します。その際、クライアントはClovaアプリにステータスを共有するときと同じ動作をする必要があります。</p>
+  <p>クライアントは、ユーザーのアカウントに新規に追加されたり、CICに再接続されたりすると、<a href="/Develop/References/MessageInterfaces/DeviceControl.md#ExpectReportState"><code>DeviceControl.ExpectReportState</code></a>ディレクティブを受信します。その際、クライアントはClovaアプリにステータスを共有するときと同じ動作をする必要があります。</p>
 </div>
 
 ## 処理結果をレポートする {#HandleActionExecutedResponse}
 
-クライアントの制御を正常に処理したり、または処理できなかったりする度に、`DeviceControl.ActionExecuted`または`DeviceControl.ActionFailed`イベントでCICにレポートする必要があります。正常に制御した場合、以下のような[`DeviceControl.ActionExecuted`](/Develop/References/CICInterface/DeviceControl.md#ActionExecuted)イベントをCICに送信します。
+クライアントの制御を正常に処理したり、または処理できなかったりする度に、`DeviceControl.ActionExecuted`または`DeviceControl.ActionFailed`イベントでCICにレポートする必要があります。正常に制御した場合、以下のような[`DeviceControl.ActionExecuted`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionExecuted)イベントをCICに送信します。
 
 ```json
 {
@@ -139,7 +139,7 @@ Clovaアプリがユーザーのアカウントに登録されているクライ
 }
 ```
 
-正常に制御できなかった場合には、[`DeviceControl.ActionFailed`](/Develop/References/CICInterface/DeviceControl.md#ActionFailed)イベントを送信します。
+正常に制御できなかった場合には、[`DeviceControl.ActionFailed`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionFailed)イベントを送信します。
 
 ```json
 {

@@ -45,5 +45,5 @@ CICは、ユーザーがタイマーを作成すると、そのタイマーの�
 ![](/Develop/Assets/Images/Content_Template-Timer.png)
 
 ## 次の項目も参照してください。
-* [Alerts](/Develop/References/CICInterface/Alerts.md)インターフェース
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md)インターフェース
 * [TimerList](/Develop/References/ContentTemplates/TimerList.md)

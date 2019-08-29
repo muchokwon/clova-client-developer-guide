@@ -19,7 +19,7 @@ Alertsインターフェースは、クライアントでアラームを設定�
 
 <div class="tip">
   <p><strong>ヒント</strong></p>
-  <p>アラームの設定・編集・削除・開始・停止の実装については、<a href="/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md">アラームを処理する</a>を参照してください。</p>
+  <p>アラームの設定・編集・削除・開始・停止の実装については、<a href="/Develop/Guides/Handle_Alerts.md">アラームを処理する</a>を参照してください。</p>
 </div>
 
 Alertsが提供するイベントとディレクティブは、次の通りです。
@@ -57,7 +57,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -99,7 +99,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### 次の項目も参照してください。
 * [`Alerts.AlertStopped`](#AlertStopped)
-* [アラームを鳴らす](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#RingAlert)
+* [アラームを鳴らす](/Develop/Guides/Handle_Alerts.md#RingAlert)
 
 ## AlertStoppedイベント {#AlertStopped}
 
@@ -109,7 +109,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -151,7 +151,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### 次の項目も参照してください。
 * [`Alerts.AlertStarted`](#AlertStarted)
-* [アラームを停止する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#StopAlert)
+* [アラームを停止する](/Develop/Guides/Handle_Alerts.md#StopAlert)
 
 ## DeleteAlertディレクティブ {#DeleteAlert}
 
@@ -192,7 +192,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 ### 次の項目も参照してください。
 * [`Alerts.DeleteAlertFailed`](#DeleteAlertFailed)
 * [`Alerts.DeleteAlertSucceeded`](#DeleteAlertSucceeded)
-* [アラームを編集および削除する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
+* [アラームを編集および削除する](/Develop/Guides/Handle_Alerts.md#EditAlert)
 
 ## DeleteAlertFailedイベント {#DeleteAlertFailed}
 
@@ -200,7 +200,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -243,7 +243,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 ### 次の項目も参照してください。
 * [`Alerts.DeleteAlert`](#DeleteAlert)
 * [`Alerts.DeleteAlertSucceeded`](#DeleteAlertSucceeded)
-* [アラームを編集および削除する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
+* [アラームを編集および削除する](/Develop/Guides/Handle_Alerts.md#EditAlert)
 
 ## DeleteAlertSucceededイベント {#DeleteAlertSucceeded}
 
@@ -251,7 +251,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -294,7 +294,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 ### 次の項目も参照してください。
 * [`Alerts.DeleteAlert`](#DeleteAlert)
 * [`Alerts.DeleteAlertFailed`](#DeleteAlertFailed)
-* [アラームを編集および削除する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
+* [アラームを編集および削除する](/Develop/Guides/Handle_Alerts.md#EditAlert)
 
 ## RequestAlertStopイベント {#RequestAlertStop}
 
@@ -302,7 +302,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -347,7 +347,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### 次の項目も参照してください。
 * [`Alerts.StopAlert`](#StopAlert)
-* [アラームを停止する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#StopAlert)
+* [アラームを停止する](/Develop/Guides/Handle_Alerts.md#StopAlert)
 
 ## RequestSynchronizeAlertイベント {#RequestSynchronizeAlert}
 
@@ -355,7 +355,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -388,8 +388,8 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 {% endraw %}
 
 ### 次の項目も参照してください。
-* [`System.SynchronizeAlert`](/Develop/References/CICInterface/Alerts.md#SynchronizeAlert)
-* [アラームを同期する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#SyncAlert)
+* [`System.SynchronizeAlert`](/Develop/References/MessageInterfaces/Alerts.md#SynchronizeAlert)
+* [アラームを同期する](/Develop/Guides/Handle_Alerts.md#SyncAlert)
 
 ## SetAlertディレクティブ {#SetAlert}
 
@@ -457,8 +457,8 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 ### 次の項目も参照してください。
 * [`Alerts.SetAlertFailed`](#SetAlertFailed)
 * [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded)
-* [アラームを設定する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#RegisterAlert)
-* [アラームを編集および削除する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
+* [アラームを設定する](/Develop/Guides/Handle_Alerts.md#RegisterAlert)
+* [アラームを編集および削除する](/Develop/Guides/Handle_Alerts.md#EditAlert)
 
 ## SetAlertFailedイベント {#SetAlertFailed}
 
@@ -466,7 +466,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -509,8 +509,8 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 ### 次の項目も参照してください。
 * [`Alerts.SetAlert`](#SetAlert)
 * [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded)
-* [アラームを設定する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#RegisterAlert)
-* [アラームを編集および削除する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
+* [アラームを設定する](/Develop/Guides/Handle_Alerts.md#RegisterAlert)
+* [アラームを編集および削除する](/Develop/Guides/Handle_Alerts.md#EditAlert)
 
 ## SetAlertSucceededイベント {#SetAlertSucceeded}
 
@@ -518,7 +518,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -561,8 +561,8 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 ### 次の項目も参照してください。
 * [`Alerts.SetAlert`](#SetAlert)
 * [`Alerts.SetAlertFailed`](#SetAlertFailed)
-* [アラームを設定する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#RegisterAlert)
-* [アラームを編集および削除する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
+* [アラームを設定する](/Develop/Guides/Handle_Alerts.md#RegisterAlert)
+* [アラームを編集および削除する](/Develop/Guides/Handle_Alerts.md#EditAlert)
 
 ## StopAlertディレクティブ {#StopAlert}
 
@@ -600,7 +600,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### 次の項目も参照してください。
 * [`Alerts.AlertStopped`](#AlertStopped)
-* [アラームを停止する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#StopAlert)
+* [アラームを停止する](/Develop/Guides/Handle_Alerts.md#StopAlert)
 
 ## SynchronizeAlertディレクティブ {#SynchronizeAlert}
 クライアントに対して、`payload`内にあるユーザーのアラームデータを同期するように指示します。クライアントは、CICから受信したデータに応じて、クライアントに設定されているアラームの値を変更する必要があります。
@@ -609,7 +609,7 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 | フィールド名       | データ型    | 説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `allAlerts[]`   | object array | クライアントが同期すべきアラームのリストを含むオブジェクト配列[`Alerts.SetAlert`](#SetAlert)ディレクティブで使用される[`payload`](#SetAlertPayload)オブジェクトと同じ形式です。 |     |
+| `allAlerts[]`   | object array | クライアントが同期すべきアラームのリストを含むオブジェクト配列。[`Alerts.SetAlert`](#SetAlert)ディレクティブに使用される[`payload`](#SetAlertPayload)オブジェクトと同じ形式です。 |     |
 
 ### Message example
 
@@ -657,4 +657,4 @@ Alertsが提供するイベントとディレクティブは、次の通りで�
 
 ### 次の項目も参照してください。
 * [`Alerts.RequestSynchronizeAlert`](#RequestSynchronizeAlert)
-* [アラームを同期する](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#SyncAlert)
+* [アラームを同期する](/Develop/Guides/Handle_Alerts.md#SyncAlert)

@@ -10,7 +10,7 @@ Settingsインターフェースは、Clovaとクライアントの間で、ク�
 
 <div class="tip">
   <p><strong>ヒント</strong></p>
-  <p>設定情報の更新や同期についてはは、<a href="/Develop/Guides/ImplementClientFeatures/Handle_Settings.md">設定情報を処理する</a>を参照してください。</p>
+  <p>設定情報の更新や同期についてはは、<a href="/Develop/Guides/Handle_Settings.md">設定情報を処理する</a>を参照してください。</p>
 </div>
 
 ## ExpectReportディレクティブ {#ExpectReport}
@@ -41,14 +41,14 @@ Settingsインターフェースは、Clovaとクライアントの間で、ク�
 
 ### 次の項目も参照してください。
 * [`Settings.Report`](#Report)
-* [設定情報を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Settings.md)
+* [設定情報を処理する](/Develop/Guides/Handle_Settings.md)
 
 ## Reportイベント {#Report}
 クライアントが現在の設定をCICにレポートします。クライアントがCICから[`Settings.ExpectReport`](#ExpectReport)ディレクティブを受信した場合、`Settings.Report`イベントをCICに送信する必要があります。
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -90,7 +90,7 @@ Settingsインターフェースは、Clovaとクライアントの間で、ク�
 
 ### 次の項目も参照してください。
 * [`Settings.ExpectReport`](#ExpectReport)
-* [設定情報を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Settings.md)
+* [設定情報を処理する](/Develop/Guides/Handle_Settings.md)
 
 ## Updateディレクティブ {#Update}
 クライアントに対して、`payload`に指定されている値を設定値として適用するように指示します。
@@ -132,4 +132,4 @@ Settingsインターフェースは、Clovaとクライアントの間で、ク�
 
 ### 次の項目も参照してください。
 * [`Settings.Report`](#Report)
-* [設定情報を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Settings.md)
+* [設定情報を処理する](/Develop/Guides/Handle_Settings.md)

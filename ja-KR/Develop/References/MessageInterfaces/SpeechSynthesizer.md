@@ -21,7 +21,7 @@ CICに、特定のテキストを音声に合成するようにリクエスト�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
@@ -70,7 +70,7 @@ CICに、特定のテキストを音声に合成するようにリクエスト�
 | `contentType`          | string  | 再生する音声ファイルのMIMEタイプ。このフィールドは、再生する音声ファイルがHLS形式の場合に提供されます。`"application/vnd.apple.mpegurl"`の値を持ちます。 | 条件付き  |
 | `format`               | string  | ファイル形式。現在、`"AUDIO_MPEG"`に固定されています。 |     |
 | `token`                | string  | TTSを識別するためのトークン。<div class="note"><p><strong>メモ</strong></p><p>このフィールドの最大の長さは2048バイトです。</p></div>                    |     |
-| `ttsLang`              | string  | 音声の合成に使用する言語。<ul><li><code>"en"</code>：英語</li><li><code>"ja"</code>：日本語</li><li><code>"ko"</code>：韓国語</li><li><code>"zh"</code>：中国語</li></ul> | 条件付き    |
+| `ttsLang`              | string  | TTS音声合成に使用する言語。<ul><li><code>"en"</code>：英語</li><li><code>"ja"</code>：日本語</li><li><code>"ko"</code>：韓国語</li><li><code>"zh"</code>：中国語</li></ul> | 条件付き    |
 | `url`                  | string  | 再生する音声ファイルのURI。<div class="note"><p><strong>メモ</strong></p><p>このフィールドの最大の長さは2048バイトです。</p></div>                        |     |
 | `x-clova-pause-before` | number  | ファイルの再生を開始するまでの時間。整数形式の値で、ミリ秒単位です。        | 条件付き    |
 
@@ -175,7 +175,7 @@ Content-Type: application/octet-stream
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -227,7 +227,7 @@ Content-Type: application/octet-stream
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -279,7 +279,7 @@ Content-Type: application/octet-stream
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 

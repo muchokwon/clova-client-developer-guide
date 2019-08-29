@@ -1,23 +1,20 @@
 # Clova
 
-Clovaインターフェースは、CICからユーザーリクエストの認識結果をクライアントに送信する際に使用する名前空間です。ユーザーのリクエストを[`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)イベントで受信すると、Clovaはその意味を解析します。CICは認識された結果に応じて、以下のディレクティブをクライアントに送信します。クライアントは、以下のディレクティブを処理して、Clovaの機能をユーザーに提供する必要があります。
+Clovaインターフェースは、CICからユーザーリクエストの認識結果をクライアントに送信する際に使用する名前空間です。ユーザーのリクエストを[`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)イベントで受信すると、Clovaはその意味を解析します。CICは認識された結果に応じて、以下のディレクティブをクライアントに送信します。クライアントは、以下のディレクティブを処理して、Clovaの機能をユーザーに提供する必要があります。
 
 | メッセージ         | タイプ  | 説明                                   |
 |------------------|-----------|---------------------------------------------|
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 | [`ExpectLogin`](#ExpectLogin)                    | ディレクティブ | クライアントに対して、ユーザーの{{ book.ServiceEnv.OrientedService }}アカウント認証（ログイン）を行うように指示します。 |
-{% endif -%}
 | [`FinishExtension`](#FinishExtension)            | ディレクティブ | クライアントに対して、特定のExtensionを終了するように指示します。             |
-| [`HandleDelegatedEvent`](#HandleDelegatedEvent)  | ディレクティブ | クライアントに対して、Clovaアプリから[委任されたユーザーのリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)ように指示します。   |
+| [`HandleDelegatedEvent`](#HandleDelegatedEvent)  | ディレクティブ | クライアントに対して、Clovaアプリから[委任されたユーザーのリクエストを処理する](/Develop/Guides/Handle_Delegation.md)ように指示します。   |
 | [`Hello`](#Hello)                                | ディレクティブ | クライアントに対して、Downchannelが確立したことを通知します。       |
 | [`Help`](#Help)                                  | ディレクティブ | クライアントに対して、あらかじめ用意されたヘルプを提供するように指示します。       |
 | [`LaunchURI`](#LaunchURI)                        | ディレクティブ | クライアントに、URIで表現されるウェブサイトまたはアプリを開いたり、起動するように指示します。                         |
-| [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) | イベント    | クライアントが、[委任されたユーザーのリクエスト](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)の結果をCICから受信するために使用します。  |
+| [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) | イベント    | クライアントが、[委任されたユーザーのリクエスト](/Develop/Guides/Handle_Delegation.md)の結果をCICから受信するために使用します。  |
 | [`RenderTemplate`](#RenderTemplate)              | ディレクティブ | クライアントに対して、テンプレートを表示するように指示します。                     |
 | [`RenderText`](#RenderText)                      | ディレクティブ | クライアントに対して、テキストを表示するように指示します。                     |
 | [`StartExtension`](#StartExtension)              | ディレクティブ | クライアントに対して、特定のExtensionを起動するように指示します。            |
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ## ExpectLoginディレクティブ {#ExpectLogin}
 
 クライアントに対して、ユーザーの{{ book.ServiceEnv.OrientedService }}アカウント認証（ログイン）を行うように指示します。クライアントが[ゲストモード](/Develop/References/Clova_Auth_API.md#GuestMode)で動作しているときに、{{ book.ServiceEnv.OrientedService }}アカウント認証を必要とするサービスをユーザーに提供しようとする場合、CICはクライアントにこのディレクティブを送信します。
@@ -35,12 +32,17 @@ Clovaインターフェースは、CICからユーザーリクエストの認識
 * `Clova.ExpectLogin`ディレクティブのpayloadはExtensionのために提供されます。クライアントに送信されるときにはpayloadがありません。
 * `Clova.ExpectLogin`ディレクティブをExtensionの応答として使用する場合、Extensionのレスポンスメッセージの`response.outputSpeech`フィールドは、空のオブジェクトである必要があります。
 
+<div class="note">
+  <p><strong>メモ</strong></p>
+  <p>ゲストモードを使用するには、Clova事務局までお問い合わせください。</p>
+</div>
+
 ### Message example
 
 {% raw %}
 
 ```json
-//例1：クライアントが受信するメッセージ
+//サンプル1：クライアントが受信するメッセージ
 
 {
   "directive": {
@@ -53,7 +55,7 @@ Clovaインターフェースは、CICからユーザーリクエストの認識
   }
 }
 
-//例2：Extensionのレスポンスメッセージに使用されたサンプル
+//サンプル2：Extensionのレスポンスメッセージに使用されたサンプル
 {
   "version": "0.1.0",
   "sessionAttributes": {},
@@ -84,8 +86,6 @@ Clovaインターフェースは、CICからユーザーリクエストの認識
 ### 次の項目も参照してください。
 * [Clovaアクセストークンを作成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
 * [ゲストモード](/Develop/References/Clova_Auth_API.md#GuestMode)
-
-{% endif %}
 
 ## FinishExtensionディレクティブ {#FinishExtension}
 
@@ -124,7 +124,7 @@ Clovaインターフェースは、CICからユーザーリクエストの認識
 
 ## HandleDelegatedEventディレクティブ {#HandleDelegatedEvent}
 
-クライアントに対して、Clovaアプリから[委任されたユーザーのリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)ように指示します。ユーザーはClovaアプリを使用する際、リクエストの処理結果をClovaアプリではなく、ユーザーが持っている別のクライアントデバイスで処理するように指定することができます。このディレクティブは、結果の処理を委任されたクライアントデバイスに送信されます。ディレクティブを受信したクライアントは、[`ProcessDelegatedEvent`](#ProcessDelegatedEvent)イベントをCICに送信して、ユーザーから委任されたリクエストの処理結果を受信する必要があります。
+クライアントに対して、Clovaアプリから[委任されたユーザーのリクエストを処理する](/Develop/Guides/Handle_Delegation.md)ように指示します。ユーザーはClovaアプリを使用する際、リクエストの処理結果をClovaアプリではなく、ユーザーが持っている別のクライアントデバイスで処理するように指定することができます。このディレクティブは、結果の処理を委任されたクライアントデバイスに送信されます。ディレクティブを受信したクライアントは、[`ProcessDelegatedEvent`](#ProcessDelegatedEvent)イベントをCICに送信して、ユーザーから委任されたリクエストの処理結果を受信する必要があります。
 
 ### Payload fields
 
@@ -159,7 +159,7 @@ Clovaインターフェースは、CICからユーザーリクエストの認識
 
 ### 次の項目も参照してください。
 * [Clova.ProcessDelegatedEvent](#ProcessDelegatedEvent)
-* [委任されたユーザーのリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)
+* [委任されたユーザーのリクエストを処理する](/Develop/Guides/Handle_Delegation.md)
 
 ## Helloディレクティブ {#Hello}
 
@@ -307,17 +307,17 @@ Clovaインターフェースは、CICからユーザーリクエストの認識
 
 ## ProcessDelegatedEventイベント {#ProcessDelegatedEvent}
 
-クライアントが、[委任されたユーザーのリクエスト](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)の結果をCICから受信するために使用します。このイベントをCICに送信する際、[`HandleDelegatedEvent`](#HandleDelegatedEvent)ディレクティブで受信した`delegationId`をこのメッセージの`payload`に含める必要があります。クライアントは、そのディレクティブに対する応答として、ユーザーがClovaアプリにリクエストしたことの処理結果を受信します。
+クライアントが、[委任されたユーザーのリクエスト](/Develop/Guides/Handle_Delegation.md)の結果をCICから受信するために使用します。このイベントをCICに送信する際、[`HandleDelegatedEvent`](#HandleDelegatedEvent)ディレクティブで受信した`delegationId`をこのメッセージの`payload`に含める必要があります。クライアントは、そのディレクティブに対する応答として、ユーザーがClovaアプリにリクエストしたことの処理結果を受信します。
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `delegationId` | string  | 委任されたリクエストのID。[`HandleDelegatedEvent`](#HandleDelegatedEvent)ディレクティブで受信した`delegationId`をそのまま入力する必要があります。         |      |
+| `delegationId` | string  | 委任されたリクエストのID。[`HandleDelegatedEvent`](#HandleDelegatedEvent)ディレクティブで受信した`delegationId`フィールドの値をそのまま入力する必要があります。         |      |
 
 ### Message example
 {% raw %}
@@ -349,8 +349,8 @@ Clovaインターフェースは、CICからユーザーリクエストの認識
 
 ### 次の項目も参照してください。
 * [`Clova.HandleDelegatedEvent`](#HandleDelegatedEvent)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [委任されたユーザーのリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [委任されたユーザーのリクエストを処理する](/Develop/Guides/Handle_Delegation.md)
 
 ## RenderTemplateディレクティブ {#RenderTemplate}
 

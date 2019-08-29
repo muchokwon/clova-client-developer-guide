@@ -131,5 +131,5 @@ CICは、ユーザーがリマインダーのリストをリクエストする�
 ![](/Develop/Assets/Images/Content_Template-ReminderList.png)
 
 ## 次の項目も参照してください。
-* [Alerts](/Develop/References/CICInterface/Alerts.md)インターフェース
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md)インターフェース
 * [Reminder](/Develop/References/ContentTemplates/Reminder.md)

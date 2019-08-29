@@ -42,7 +42,7 @@ PlaybackControllerインターフェースは、クライアントのオーデ�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
@@ -191,7 +191,7 @@ PlaybackControllerインターフェースは、クライアントのオーデ�
 * [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand)
 * [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand)
 * [`PlaybackController.PauseCommandIssued`](#PauseCommandIssued)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ExpectPlayCommandディレクティブ {#ExpectPlayCommand}
 ユーザーがクライアント上で「再生」ボタン（Play）を押して、その効果が発生したときのように、クライアントが[`PlaybackController.PlayCommandIssued`](#PlayCommandIssued)イベントをCICに送信するように指示します。このディレクティブは、現在再生しているオーディオストリームを別のデバイスで再生しようとするときにも受信することがあります。クライアントはこのディレクティブを受信すると、関連する動作を処理して、[`PlaybackController.PlayCommandIssued`](#PlayCommandIssued)イベントをCICに送信する必要があります。
@@ -332,7 +332,7 @@ PlaybackControllerインターフェースは、クライアントのオーデ�
 * [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand)
 * [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand)
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ExpectStopCommandディレクティブ {#ExpectStopCommand}
 ユーザーがクライアント上で「停止」ボタン（Stop）を押して、その効果が発生したときのように、クライアントが[`PlaybackController.StopCommandIssued`](#StopCommandIssued)イベントをCICに送信するように指示します。クライアントはこのディレクティブを受信すると、[`PlaybackController.StopCommandIssued`](#StopCommandIssued)イベントをCICに送信する必要があります。
@@ -385,7 +385,7 @@ PlaybackControllerインターフェースは、クライアントのオーデ�
 * [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand)
 * [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## Muteディレクティブ {#Mute}
 クライアントに、オーディオプレーヤーをミュートにするように指示します。クライアントはこのディレクティブを受信すると、オーディオストリームの再生に関連するスピーカーをミュートにする必要があります。
@@ -395,7 +395,7 @@ PlaybackControllerインターフェースは、クライアントのオーデ�
 
 ### 備考
 
-Clovaは、スピーカーの出力に関連するコントロールの場合、通知のためのオーディオファイルを[`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)ディレクティブに添付しません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのライトや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
+Clovaは、スピーカーの出力に関連するコントロールの場合、通知のためのオーディオファイルを[`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)ディレクティブに添付しません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのランプや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
 
 ### Message example
 
@@ -414,7 +414,7 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 ```
 
 ### 次の項目も参照してください。
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## Nextディレクティブ {#Next}
 クライアントに、再生キューに入っている次のオーディオストリームを再生するように指示します。クライアントは、このディレクティブを受信すると、次のオーディオストリームを再生する必要があります。
@@ -440,14 +440,14 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 
 ### 次の項目も参照してください。
 * [`PlaybackController.Previous`](#Previous)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## NextCommandIssuedイベント {#NextCommandIssued}
 ユーザーがクライアントデバイスで「次」ボタン（Next）を押したり、CICから[`PlaybackController.ExpectNextCommand`](#ExpectNextCommand)ディレクティブを受信した場合、クライアントはこのイベントをCICに送信する必要があります。CICはこのイベントを受信すると、適切なディレクティブをクライアントに送信します。
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -571,9 +571,9 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 ```
 
 ### 次の項目も参照してください。
-* [`AudioPlayer.PlayPaused`](/Develop/References/CICInterface/AudioPlayer.md#PlayPaused)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`AudioPlayer.PlayPaused`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayPaused)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -582,7 +582,7 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -656,14 +656,14 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## PlayCommandIssuedイベント {#PlayCommandIssued}
 ユーザーがクライアントデバイスで特定の楽曲を再生するようにUIを操作したり、CICから[`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand)ディレクティブを受信した場合、クライアントはこのイベントをCICに送信する必要があります。CICはこのイベントを受信すると、適切なディレクティブをクライアントに送信します。CICから送信された[`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand)ディレクティブの`payload`に`handover`フィールドが含まれている場合、そのまま使用してオーディオ再生の引き継ぐ必要があります。
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -673,7 +673,7 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 | `handover`            | object  | リモートでオーディオの再生を引き継ぐときに必要な情報を持つオブジェクト。オーディオ再生を引き継ぐ必要がある場合、`handover`オブジェクトの内容を、[`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand)ディレクティブの`payload`の`handover`オブジェクトで設定する必要があります。     | 任意 |
 | `handover.customData` | string  | オーディオの再生に必要な情報。               |  |
 | `handover.deviceId`   | string  | オーディオの再生を引き渡すクライアントデバイスのID  |  |
-| `token`               | string  | 再生するオーディオストリームのトークン。ユーザーがリストからトラックを選んで再生ボタンを押した場合、[`TemplateRuntime.RenderPlayerInfo`](/Develop/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo)ディレクティブの`playableItems[].token`フィールドの値が適用される必要があります。[`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand)ディレクティブを受信した場合、そのメッセージの`token`フィールドの値を入力する必要があることもあります。  | 任意  |
+| `token`               | string  | 再生するオーディオストリームのトークン。ユーザーがリストからトラックを選んで再生ボタンを押した場合、[`TemplateRuntime.RenderPlayerInfo`](/Develop/References/MessageInterfaces/TemplateRuntime.md#RenderPlayerInfo)ディレクティブの`playableItems[].token`フィールドの値が適用される必要があります。[`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand)ディレクティブを受信した場合、そのメッセージの`token`フィールドの値を入力する必要があることもあります。  | 任意  |
 
 ### 備考
 * ユーザーがクライアント上で「再生」ボタン（Play）を押した場合には、[`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)イベントをCICに送信する必要があります。
@@ -704,7 +704,7 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 ```
 
 ### 次の項目も参照してください。
-* [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)
+* [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)
 * [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
 * [`PlaybackController.ExpectPlayCommand`](#ExpectNextCommand)
 * [`PlaybackController.NextCommandIssued`](#NextCommandIssued)
@@ -738,14 +738,14 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 
 ### 次の項目も参照してください。
 * [`PlaybackController.Next`](#Next)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## PreviousCommandIssuedイベント {#PreviousCommandIssued}
 ユーザーがクライアントデバイスで「前へ」ボタン（Previous）を押したり、CICから[`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand)ディレクティブを受信した場合、クライアントはこのイベントをCICに送信する必要があります。CICはこのイベントを受信すると、適切なディレクティブをクライアントに送信します。
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -845,8 +845,8 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 ### 次の項目も参照してください。
 * [`PlaybackController.Pause`](#Pause)
 * [`PlaybackController.Resume`](#Resume)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- Start of the shared content: PlaybackController.Resume -->
 
@@ -895,9 +895,9 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 ```
 
 ### 次の項目も参照してください。
-* [`AudioPlayer.PlayResumed`](/Develop/References/CICInterface/AudioPlayer.md#PlayResumed)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`AudioPlayer.PlayResumed`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayResumed)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -906,7 +906,7 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -981,7 +981,7 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## SetRepeatModeディレクティブ {#SetRepeatMode}
 
@@ -1025,12 +1025,12 @@ ClovaアプリまたはコンパニオンアプリからリモートでClovaデ�
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>コンパニオンアプリからリモートでClovaデバイスの再生モードを変更するとき以外は、クライアントがこのイベントを作成・処理する必要はありません。クライアントデバイスの再生モードの変化は、<a href="/Develop/References/Context_Objects.md#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>コンテクストの<code>repeatMode</code>フィールドを使用してCICにレポートします。</p>
+  <p>コンパニオンアプリからリモートでClovaデバイスの再生モードを変更するとき以外は、クライアントがこのイベントを作成・処理する必要はありません。クライアントデバイスの再生モードの変化は、<a href="/Develop/References/Context_Objects.md#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>コンテキストの<code>repeatMode</code>フィールドを使用してCICにレポートします。</p>
 </div>
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1041,7 +1041,7 @@ ClovaアプリまたはコンパニオンアプリからリモートでClovaデ�
 
 ### 備考
 * コンパニオンアプリからClovaデバイスの再生モードを変更する機能を実装しない場合、このイベントを作成したり、このメッセージに関連して処理する作業はありません。
-* クライアントデバイスの再生モードの変化は、[`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)コンテクストの`repeatMode`フィールドを使用してCICにレポートします。
+* クライアントデバイスの再生モードの変化は、[`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)コンテキストの`repeatMode`フィールドを使用してCICにレポートします。
 
 ### Message example
 
@@ -1127,9 +1127,9 @@ ClovaアプリまたはコンパニオンアプリからリモートでClovaデ�
 ```
 
 ### 次の項目も参照してください。
-* [`AudioPlayer.PlayStopped`](/Develop/References/CICInterface/AudioPlayer.md#PlayStopped)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`AudioPlayer.PlayStopped`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayStopped)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -1138,7 +1138,7 @@ ClovaアプリまたはコンパニオンアプリからリモートでClovaデ�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1212,7 +1212,7 @@ ClovaアプリまたはコンパニオンアプリからリモートでClovaデ�
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
-* [オーディオ再生をコントロールする](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [オーディオ再生を制御する](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## TurnOffRepeatModeディレクティブ {#TurnOffRepeatMode}
 **（Deprecated）** クライアントに、1曲リピート再生モードを無効にするように指示します。
@@ -1237,7 +1237,7 @@ ClovaアプリまたはコンパニオンアプリからリモートでClovaデ�
 ```
 
 ### 次の項目も参照してください。
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## TurnOnRepeatModeディレクティブ {#TurnOnRepeatMode}
 **（Deprecated）** クライアントに、1曲リピート再生モードを有効にするように指示します。クライアントは、このディレクティブを受信すると、現在再生しているオーディオストリームをリピート再生する必要があります。
@@ -1262,7 +1262,7 @@ ClovaアプリまたはコンパニオンアプリからリモートでClovaデ�
 ```
 
 ### 次の項目も参照してください。
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## Unmuteディレクティブ {#Unmute}
 クライアントに、オーディオプレーヤーのミュートを解除するように指示します。クライアントはこのディレクティブを受信すると、スピーカーのミュートを解除して、元の音量に戻す必要があります。
@@ -1272,7 +1272,7 @@ ClovaアプリまたはコンパニオンアプリからリモートでClovaデ�
 
 ### 備考
 
-Clovaは、スピーカーの出力に関連するコントロールの場合、通知のためのオーディオファイルを[`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)ディレクティブに添付しません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのライトや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
+Clovaは、スピーカーの出力に関連するコントロールの場合、通知のためのオーディオファイルを[`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)ディレクティブに添付しません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのランプや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
 
 ### Message example
 
@@ -1291,14 +1291,14 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 ```
 
 ### 次の項目も参照してください。
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## VolumeDownディレクティブ {#VolumeDown}
 **（Deprecated）** クライアントに、オーディオプレーヤーの音量を下げるように指示します。クライアントはこのディレクティブを受信すると、オーディオストリームの再生に関連するスピーカーの音量を下げる必要があります。下げる量は、クライアントのUX基準に従います。
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p><code>PlaybackController.VolumeDown</code>ディレクティブは、今後サポートされない予定です。このディレクティブの代わりに、<a href="/Develop/References/CICInterface/DeviceControl.md#Decrease"><code>DiviceControl.Decrease</code></a>ディレクティブを使用する必要があります。</p>
+  <p><code>PlaybackController.VolumeDown</code>ディレクティブは、今後サポートされない予定です。このディレクティブの代わりに、<a href="/Develop/References/MessageInterfaces/DeviceControl.md#Decrease"><code>DiviceControl.Decrease</code></a>ディレクティブを使用する必要があります。</p>
 </div>
 
 ### Payload fields
@@ -1321,7 +1321,7 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 ```
 
 ### 次の項目も参照してください。
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## VolumeUpディレクティブ {#VolumeUp}
 
@@ -1329,7 +1329,7 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p><code>PlaybackController.VolumeUp</code>ディレクティブは、今後サポートされない予定です。このディレクティブの代わりに、<a href="/Develop/References/CICInterface/DeviceControl.md#Increase"><code>DiviceControl.Increase</code></a>ディレクティブを使用する必要があります。</p>
+  <p><code>PlaybackController.VolumeUp</code>ディレクティブは、今後サポートされない予定です。このディレクティブの代わりに、<a href="/Develop/References/MessageInterfaces/DeviceControl.md#Increase"><code>DiviceControl.Increase</code></a>ディレクティブを使用する必要があります。</p>
 </div>
 
 ### Payload fields
@@ -1352,4 +1352,4 @@ Clovaは、スピーカーの出力に関連するコントロールの場合、
 ```
 
 ### 次の項目も参照してください。
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)

@@ -3,7 +3,7 @@
 # TemplateRuntime
 
 <!-- Start of the shared content: CICAPIforAudioPlayback -->
-TemplateRuntimeインターフェースは、クライアントまたはCICがメディアプレーヤーに表示するメタデータをリクエストしたり、送信したりする際に使用します。実際にオーディオストリームの再生に必要なデータに関連する作業を処理する際には[`AudioPlayer`](/Develop/References/CICInterface/AudioPlayer.md)インターフェースを、再生リストやアルバムの画像、歌詞のようなメタデータに関連する作業を処理する際には、`TemplateRuntime`インターフェースを使用します。該当するクライアントのみでなく、他のクライアントデバイスの再生メタデータを照会し、ユーザーに提供することもできます。
+TemplateRuntimeインターフェースは、クライアントまたはCICがメディアプレーヤーに表示するメタデータをリクエストしたり、送信したりする際に使用します。実際にオーディオストリームの再生に必要なデータに関連する作業を処理する際には[`AudioPlayer`](/Develop/References/MessageInterfaces/AudioPlayer.md)インターフェースを、再生リストやアルバムの画像、歌詞のようなメタデータに関連する作業を処理する際には、`TemplateRuntime`インターフェースを使用します。該当するクライアントのみでなく、他のクライアントデバイスの再生メタデータを照会し、ユーザーに提供することもできます。
 
 | メッセージ         | タイプ  | 説明                                   |
 |------------------|---------|---------------------------------------------|
@@ -55,7 +55,7 @@ TemplateRuntimeインターフェースは、クライアントまたはCICが�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -105,7 +105,7 @@ TemplateRuntimeインターフェースは、クライアントまたはCICが�
 
 ## RenderPlayerInfoディレクティブ {#RenderPlayerInfo}
 
-CICから、メディアプレーヤーに表示する再生リスト、アルバムの画像、歌詞のような再生メタデータをクライアントに送信し、表示するように指示します。ユーザーからオーディオの再生をリクエストされると、クライアントは[`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)ディレクティブを受信してメディアを再生します。ディスプレイを持つクライアントは、必要に応じてメディアプレーヤーに再生関連情報を表示する必要があります。その際、[`TemplateRuntime.RequestPlayerInfo`](#RequestPlayerInfo)イベントで再生メタデータをCICにリクエストし、`TemplateRuntime.RenderPlayerInfo`ディレクティブを受信します。`TemplateRuntime.RenderPlayerInfo`ディレクティブには、現在再生するメディアコンテンツと、後で再生するメディアコンテンツの再生メタデータが含まれます。クライアントは、`TemplateRuntime.RenderPlayerInfo`ディレクティブの再生メタデータをユーザーに提供して、現在再生しているメディアのメタデータおよび再生リストを表示することができます。ユーザーからリスト内の特定のメディアを再生するようにリクエストされたり、「いいね」（[`TemplateRuntime.LikeCommandIssued`](#LikeCommandIssued)）、「いいね」の取り消し（[`TemplateRuntime.UnlikeCommandIssued`](#UnlikeCommandIssued)）のような動作を処理する際、ベースとなるデータ（`token`）を提供します。
+CICから、メディアプレーヤーに表示する再生リスト、アルバムの画像、歌詞のような再生メタデータをクライアントに送信し、表示するように指示します。ユーザーからオーディオの再生をリクエストされると、クライアントは[`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)ディレクティブを受信してメディアアイテムを再生します。ディスプレイを持つクライアントは、必要に応じてメディアプレーヤーに再生関連情報を表示する必要があります。その際、[`TemplateRuntime.RequestPlayerInfo`](#RequestPlayerInfo)イベントで再生メタデータをCICにリクエストし、`TemplateRuntime.RenderPlayerInfo`ディレクティブを受信します。`TemplateRuntime.RenderPlayerInfo`ディレクティブには、現在再生するメディアコンテンツと、後で再生するメディアコンテンツの再生メタデータが含まれます。クライアントは、`TemplateRuntime.RenderPlayerInfo`ディレクティブの再生メタデータをユーザーに提供して、現在再生しているメディアのメタデータおよび再生リストを表示することができます。ユーザーからリスト内の特定のメディアを再生するようにリクエストされたり、「いいね」（[`TemplateRuntime.LikeCommandIssued`](#LikeCommandIssued)）、「いいね」の取り消し（[`TemplateRuntime.UnlikeCommandIssued`](#UnlikeCommandIssued)）のような動作を処理する際、ベースとなるデータ（`token`）を提供します。
 
 ### Payload fields
 | フィールド名       | データ型    | 説明                     | 任意 |
@@ -113,7 +113,7 @@ CICから、メディアプレーヤーに表示する再生リスト、アル�
 | `controls[]`                | object array | クライアントがメディアプレーヤーで表示すべきボタンの情報を持つオブジェクト配列です。             |  |
 | `controls[].enabled`        | boolean      | `controls[].name`で設定されたボタンを、メディアプレーヤーで有効にするかを示します。<ul><li><code>true</code>：有効にする</li><li><code>false</code>：無効にする</li></ul>  |   |
 | `controls[].name`           | string       | ボタンの名前。次のいずれかになります。<ul><li><code>"NEXT"</code>：「次」ボタン</li><li><code>"PLAY_PAUSE"</code>：「再生/一時停止」ボタン</li><li><code>"PREVIOUS"</code>：「前」ボタン</li></ul>  |   |
-| `controls[].selected`       | boolean      | メディアコンテンツが選択されているかを示します。この値は、ユーザーの「好き」という概念を表す際に使用することができます。この値が`true`に設定されていたら、ユーザーが好きなアイテムとして登録したコンテンツであることを示します。メディアプレーヤーの関連するUIで、そのことを表す必要があります。<ul><li><code>true</code>：選択済み</li><li><code>false</code>：未選択</li></ul> |   |
+| `controls[].selected`       | boolean      | メディアコンテンツが選択されているかを示します。この値は、ユーザーの「好き」という概念を表す際に使用することができます。この値が`true`に設定されていたら、ユーザーが好きなアイテムとして登録したコンテンツであることを示します。メディアプレーヤーの関連するUIでそのことを表示する必要があります。<ul><li><code>true</code>：選択</li><li><code>false</code>：未選択</li></ul> |   |
 | `controls[].type`           | string       | ボタンのタイプ。現在、`"BUTTON"`のみ使用します。  |  |
 | `displayType`               | string | メディアコンテンツを表示する形式。<ul><li><code>"list"</code>：リストで表示する</li><li><code>"single"</code>：1つのアイテムを表示する</li></ul>       |  |
 | `playableItems[]`           | object array | 再生できるメディアコンテンツのリストを持つオブジェクト配列です。このフィールドは、空の配列の場合があります。  |  |
@@ -121,7 +121,7 @@ CICから、メディアプレーヤーに表示する再生リスト、アル�
 | `playableItems[].controls[]`                | object array  | 特定のメディアコンテンツを再生するとき、表示すべきボタンの情報を持つオブジェクト配列です。このオブジェクト配列は省略できます。  | 条件付き |
 | `playableItems[].controls[].enabled`        | boolean      | `playableItems[].controls[].name`で設定されたボタンを、メディアプレーヤーで有効にするかを示します。<ul><li><code>true</code>：有効にする</li><li><code>false</code>：無効にする</li></ul>  |   |
 | `playableItems[].controls[].name`           | string       | ボタンまたはコントロールUIの名前。次のいずれかになります。<ul><li><code>"BACKWARD_15S"</code>：「15秒巻き戻しする」ボタン</li><li><code>"BACKWARD_30S"</code>：「30秒巻き戻しする」ボタン</li><li><code>"BACKWARD_60S"</code>：「60秒巻き戻しする」ボタン</li><li><code>"FORWARD_15S"</code>：「15秒早送りする」ボタン</li><li><code>"FORWARD_30S"</code>：「30秒早送りする」ボタン</li><li><code>"FORWARD_60S"</code>：「60秒早送りする」ボタン</li><li><code>"NEXT"</code>：「次へ」ボタン</li><li><code>"PLAY_PAUSE"</code>：「再生/一時停止」ボタン</li><li><code>"PREVIOUS"</code>：「前へ」ボタン</li><li><code>"PROGRESS_BAR"</code>：進行状況バー</li><li><code>"REPEAT"</code>：「リピート」ボタン</li><li><code>"SUBSCRIBE_UNSUBSCRIBE"</code>：「チャンネル登録/チャンネル登録解除」ボタン</li></ul>  |   |
-| `playableItems[].controls[].selected`       | boolean      | メディアコンテンツが選択されているかを示します。この値は、ユーザーの「好き」という概念を表す際に使用することができます。この値が`true`に設定されていたら、ユーザーが好きなアイテムとして登録したコンテンツであることを示します。メディアプレーヤーの関連するUIで、そのことを表す必要があります。<ul><li><code>true</code>：選択済み</li><li><code>false</code>：未選択</li></ul> |   |
+| `playableItems[].controls[].selected`       | boolean      | メディアコンテンツが選択されているかを示します。この値は、ユーザーの「好き」という概念を表す際に使用することができます。この値が`true`に設定されていたら、ユーザーが好きなアイテムとして登録したコンテンツであることを示します。メディアプレーヤーの関連するUIでそのことを表示する必要があります。<ul><li><code>true</code>：選択</li><li><code>false</code>：未選択</li></ul> |   |
 | `playableItems[].controls[].type`           | string       | ボタンのタイプ。現在、`"BUTTON"`のみ使用します。  |  |
 | `playableItems[].headerText`       | string        | 主に、現在の再生リストのタイトルを表すテキストフィールド                                                | 条件付き  |
 | `playableItems[].isLive`           | boolean       | リアルタイムのコンテンツかどうかを示す値。<ul><li><code>true</code>：リアルタイムのコンテンツ</li><li><code>false</code>：リアルタイムのコンテンツではない</li></ul><div class="note"><p><strong>メモ</strong></p><p>リアルタイムのコンテンツは、リアルタイムのコンテンツであることを表すアイコン（例：liveアイコン）を表示する必要があります。</p></div>  | 条件付き  |
@@ -255,7 +255,7 @@ CICから、メディアプレーヤーに表示する再生リスト、アル�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -307,7 +307,7 @@ CICから、メディアプレーヤーに表示する再生リスト、アル�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -359,7 +359,7 @@ CICから、メディアプレーヤーに表示する再生リスト、アル�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -410,7 +410,7 @@ CICから、メディアプレーヤーに表示する再生リスト、アル�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 

@@ -22,7 +22,6 @@
 | `cardList[]`                | object array | カードリストを表現するオブジェクト配列 |
 | `cardList[].contentProviderText`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | コンテンツ提供元の情報を持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。  |
 | `cardList[].description[]`    | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | コンテンツの説明を持つオブジェクト配列          |
-| `cardList[].description[]`    | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | コンテンツの説明を持つオブジェクト配列          |
 | `cardList[].imageUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | 表示する画像のURIを持つオブジェクト。カードのタイプによって、このオブジェクトの`value`フィールドは空文字列（`""`）を持つ場合があります。  |
 | `cardList[].linkUrl`        | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | コンテンツのURIを持つオブジェクト。カードのタイプによって、このオブジェクトの`value`フィールドは空文字列（`""`）を持つ場合があります。         |
 | `cardList[].press`          | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)       | 報道機関の名前を持つオブジェクト。カードのタイプによって、このオブジェクトの`value`フィールドは空文字列（`""`）を持つ場合があります。             |
@@ -32,6 +31,7 @@
 | `cardList[].referenceUrl`   | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | 参照したサービスの利用結果ページのURIを持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。   |
 | `cardList[].title`          | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)       | コンテンツのタイトルを持つオブジェクト             |
 | `cardList[].videoUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | 再生するビデオまたはオーディオのURIを持つオブジェクト。カードのタイプによって、このオブジェクトの`value`フィールドは空文字列（`""`）を持つ場合があります。    |
+| `noticeText`                | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)       | コンテンツの著作権または法的事項に関する内容を持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。**このオブジェクトフィールドの値が空文字列（`""`）でない場合、必ず画面に表示される必要があります。**  |
 | `subType`                   | string  | カードのタイプを示します。次の4つのタイプが指定されます。<ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>メモ</strong></p><p>現在、<code>Type1</code>、<code>Type2</code>、<code>Type3</code>、<code>Type5</code>、<code>Type6</code>は、<strong>空文字列で表現されます</strong>。タイプを判断するとき、<code>card</code>オブジェクトのフィールド構成を確認する必要があります。</p></div>                                                    |
 | `type`                      | string  | コンテンツテンプレートのタイプを示す値。`"CardList"`を持ちます。                                                                       |
 
@@ -274,6 +274,10 @@
 {
   "subType": "Type4",
   "type": "CardList",
+  "noticeText": {
+    "type": "string",
+    "value": "自動抽出による要約です。本文の重要な内容が抜けている可能性があります。"
+  },
   "cardList": [
     {
       "contentProviderText" : {

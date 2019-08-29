@@ -2,7 +2,7 @@
 
 DeviceControlインターフェースは、クライアントデバイスをコントロールしたり、クライアントデバイスをのコントロールした結果をCICにレポートするときに使用する名前空間です。
 
-ユーザーからのリクエストには、クライアントデバイスをコントロールするためのものがあります。解析されたユーザーのリクエストがクライアントをコントロールするものなら、`DeviceControl`名前空間を持つディレクティブが送信されます。クライアントは、受信したディレクティブに応じてクライアントデバイスをコントロールする必要があります。また、デバイスをコントロールした結果を、イベントを使用してCICに送信する必要があります。詳細については、[クライアントの動作制御を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md)を参照してください。
+ユーザーからのリクエストには、クライアントデバイスをコントロールするためのものがあります。解析されたユーザーのリクエストがクライアントをコントロールするものなら、`DeviceControl`名前空間を持つディレクティブが送信されます。クライアントは、受信したディレクティブに応じてクライアントデバイスをコントロールする必要があります。また、デバイスをコントロールした結果を、イベントを使用してCICに送信する必要があります。詳細については、[クライアントの動作制御を処理する](/Develop/Guides/Handle_Device_Control.md)を参照してください。
 
 クライアントデバイスは、`DeviceControl`のメッセージを使って、外部のBluetoothデバイスと接続することができます。CICはクライアントにディレクティブを送信して、外部のBluetoothデバイスと接続するように指示します。クライアントは[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)コンテキストの[`BluetoothInfoObject`](/Develop/References/Context_Objects.md#BluetoothInfoObject)で、ペアリングしたデバイスの情報など、Bluetoothデバイスに関連する情報をCICに随時レポートします。接続方法の詳細については、それぞれのディレクティブとイベントの説明を参照してください。
 
@@ -41,7 +41,7 @@ DeviceControlでは、次のイベントとディレクティブを提供して�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -99,8 +99,8 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [クライアントの動作制御を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md)
-* [クライアントのBluetooth制御を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md)
+* [クライアントの動作制御を処理する](/Develop/Guides/Handle_Device_Control.md)
+* [クライアントのBluetooth制御を処理する](/Develop/Guides/Handle_Bluetooth_Control.md)
 
 ## ActionFailedイベント {#ActionFailed}
 
@@ -108,7 +108,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -167,8 +167,8 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [クライアントの動作制御を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md)
-* [クライアントのBluetooth制御を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md)
+* [クライアントの動作制御を処理する](/Develop/Guides/Handle_Device_Control.md)
+* [クライアントのBluetooth制御を処理する](/Develop/Guides/Handle_Bluetooth_Control.md)
 
 ## BtConnectディレクティブ {#BtConnect}
 
@@ -234,10 +234,10 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Bluetoothデバイスとの接続解除を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [クライアントデバイスの設定を有効にする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [Bluetoothデバイスとの接続解除を処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [クライアントデバイスの設定を有効にする](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)
 
 ## BtConnectByPINCodeディレクティブ {#BtConnectByPINCode}
 
@@ -281,8 +281,8 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtRequestForPINCode`](#BtRequestForPINCode)
 * [`DeviceControl.ReportState`](#ReportState)
-* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
 
 ## BtDeleteディレクティブ {#BtDelete}
 
@@ -333,9 +333,9 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
-* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [ペアリングされているBluetoothデバイスの削除を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
+* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [ペアリングされているBluetoothデバイスの削除を処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
 
 ## BtDisconnectディレクティブ {#BtDisconnect}
 
@@ -352,7 +352,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 | フィールド名       | データ型    | 説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
 | `address`     | string  | 接続解除するBluetoothデバイスのデバイスアドレス     |      |
-| `connected`   | boolean | 接続を解除しようとするBluetoothデバイスとの接続状態。<ul><li><code>true</code>：接続している</li><li><code>false</code>：接続していない</li></ul>      |      |
+| `connected`   | boolean | 接続を解除するBluetoothデバイスとの接続状態。<ul><li><code>true</code>：接続している</li><li><code>false</code>：接続していない</li></ul>      |      |
 | `name`        | string  | 接続解除するBluetoothデバイスの名前         |      |
 | `role`        | string  | そのBluetoothデバイスと接続するときのクライアントの役割。<ul><li><code>"sink"</code>：オーディオストリームを受信する役割（主にスピーカー）</li><li><code>"source"</code>：オーディオストリームを送信する役割（ストリームデータの送信者）</li></ul> |      |
 
@@ -389,10 +389,10 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Bluetoothデバイスとの接続解除を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [ペアリングされているBluetoothデバイスの削除を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
+* [Bluetoothデバイスとの接続解除を処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [ペアリングされているBluetoothデバイスの削除を処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
 
 ## BtPlayディレクティブ {#BtPlay}
 
@@ -441,7 +441,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -488,7 +488,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtConnectByPINCode`](#BtConnectByPINCode)
 * [`DeviceControl.BtRequestToCancelPinCodeInput`](#BtRequestToCancelPinCodeInput)
-* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
 
 ## BtRequestToCancelPinCodeInputイベント {#BtRequestToCancelPinCodeInput}
 
@@ -496,7 +496,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -536,7 +536,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 ### 次の項目も参照してください。
 
 * [`DeviceControl.BtRequestForPINCode`](#BtRequestForPINCode)
-* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
 
 ## BtRescanディレクティブ {#BtRescan}
 
@@ -577,9 +577,9 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
-* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [ペアリングされているBluetoothデバイスの削除を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
+* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [ペアリングされているBluetoothデバイスの削除を処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
 
 ## BtStartPairingディレクティブ {#BtStartPairing}
 
@@ -622,9 +622,9 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Bluetoothデバイスとの接続解除を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Bluetoothデバイスとの接続解除を処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
 
 ## BtStopPairingディレクティブ {#BtStopPairing}
 
@@ -667,10 +667,10 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.BtStartPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Bluetoothデバイスとの接続解除を処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [クライアントデバイスの設定を有効にする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [Bluetoothデバイスとの接続解除を処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [Bluetoothデバイスとの接続のリクエストを処理する](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [クライアントデバイスの設定を有効にする](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)
 
 ## Decreaseディレクティブ {#Decrease}
 
@@ -689,7 +689,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * クライアントは、コンテキストの[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)オブジェクトで、スピーカーの音量と画面の明るさをCICに随時送信する必要があります。
 * ユーザーから、デバイスで実現できる画面の明るさまたは音量の範囲を超える値をリクエストされた場合、Clovaはデバイスに合わせてレベルを調節してからこのディレクティブを送信します。
 * クライアントは、このディレクティブを処理して、その結果を[`DeviceControl.ActionExecuted`](#ActionExecuted)または[`DeviceControl.ActionFailed`](#ActionFailed)イベントでCICに送信する必要があります。
-* 通常、Clovaからデバイスのコントロールに関するディレクティブをクライアントに送信するとき、ユーザーに通知するためのオーディオファイル（[`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)ディレクティブ）が添付されます。ただし、`target`フィールドが`"volume"`に設定されているなど、スピーカーの出力に関するコントロールの場合には、[`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)ディレクティブにオーディオファイルが添付されません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのライトや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
+* 通常、Clovaからデバイスのコントロールに関するディレクティブをクライアントに送信するとき、ユーザーに通知するためのオーディオファイル（[`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)ディレクティブ）が添付されます。ただし、`target`フィールドが`"volume"`に設定されているなど、スピーカーの出力に関するコントロールの場合には、[`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)ディレクティブにオーディオファイルが添付されません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのランプや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
 
 ### Message example
 
@@ -750,8 +750,8 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.Increase`](#Increase)
 * [`DeviceControl.SetValue`](#SetValue)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [クライアントの音量を調整する](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceVolume)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [クライアントの音量を調整する](/Develop/Guides/Handle_Device_Control.md#HandleDeviceVolume)
 
 ## ExpectReportStateディレクティブ {#ExpectReportState}
 
@@ -813,7 +813,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * ユーザーから、デバイスで実現できる画面の明るさまたは音量の範囲を超える値をリクエストされた場合、Clovaはデバイスに合わせてレベルを調節してからこのディレクティブを送信します。
 * クライアントは、コンテキストの[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)オブジェクトで、スピーカーの音量と画面の明るさをCICに随時送信する必要があります。
 * クライアントは、このディレクティブを処理して、その結果を[`DeviceControl.ActionExecuted`](#ActionExecuted)または[`DeviceControl.ActionFailed`](#ActionFailed)イベントでCICに送信する必要があります。
-* 通常、Clovaからデバイスのコントロールに関するディレクティブをクライアントに送信するとき、ユーザーに通知するためのオーディオファイル（[`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)ディレクティブ）が添付されます。ただし、`target`フィールドが`"volume"`に設定されているなど、スピーカーの出力に関するコントロールの場合には、[`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)ディレクティブにオーディオファイルが添付されません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのライトや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
+* 通常、Clovaからデバイスのコントロールに関するディレクティブをクライアントに送信するとき、ユーザーに通知するためのオーディオファイル（[`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)ディレクティブ）が添付されます。ただし、`target`フィールドが`"volume"`に設定されているなど、スピーカーの出力に関するコントロールの場合には、[`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)ディレクティブにオーディオファイルが添付されません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのランプや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
 
 ### Message example
 
@@ -874,8 +874,8 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.SetValue`](#SetValue)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [クライアントの音量を調整する](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceVolume)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [クライアントの音量を調整する](/Develop/Guides/Handle_Device_Control.md#HandleDeviceVolume)
 
 ## LaunchAppディレクティブ {#LaunchApp}
 
@@ -998,7 +998,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1042,7 +1042,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 ### 次の項目も参照してください。
 * [`DeviceControl.ExpectReportState`](#ExpectReportState)
 * [`DeviceControl.SynchronizeState`](#SynchronizeState)
-* [デバイスのステータスを共有する](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceStateReport)
+* [デバイスのステータスを共有する](/Develop/Guides/Handle_Device_Control.md#HandleDeviceStateReport)
 
 ## RequestStateSynchronizationイベント {#RequestStateSynchronization}
 
@@ -1050,7 +1050,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1068,7 +1068,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 {% raw %}
 
 ```json
-//例1：すべてのデバイスの状態をリクエストする
+//サンプル1：すべてのデバイスの状態をリクエストする
 {
   "context": [
     {{Alerts.AlertsState}},
@@ -1090,7 +1090,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
   }
 }
 
-//例2：特定のデバイスの状態をリクエストする
+//サンプル2：特定のデバイスの状態をリクエストする
 {
   "context": [
     {{Alerts.AlertsState}},
@@ -1136,7 +1136,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 
 * クライアントは、コンテキストの[`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState)オブジェクトで、スピーカーの音量と画面の明るさをCICに随時送信する必要があります。
 * クライアントは、このディレクティブを処理して、その結果を[`DeviceControl.ActionExecuted`](#ActionExecuted)または[`DeviceControl.ActionFailed`](#ActionFailed)イベントでCICに送信する必要があります。
-* 通常、Clovaからデバイスのコントロールに関するディレクティブをクライアントに送信するとき、ユーザーに通知するためのオーディオファイル（[`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)ディレクティブ）が添付されます。ただし、`target`フィールドが`"volume"`に設定されているなど、スピーカーの出力に関するコントロールの場合には、[`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak)ディレクティブにオーディオファイルが添付されません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのライトや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
+* 通常、Clovaからデバイスのコントロールに関するディレクティブをクライアントに送信するとき、ユーザーに通知するためのオーディオファイル（[`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)ディレクティブ）が添付されます。ただし、`target`フィールドが`"volume"`に設定されているなど、スピーカーの出力に関するコントロールの場合には、[`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)ディレクティブにオーディオファイルが添付されません。それは、ユーザーの音楽鑑賞などのUXを向上させるためで、その場合には音声案内の代わりに、クライアントデバイスのランプや、短い効果音などで音量が調節されたことをユーザーに通知する必要があります。
 
 ### Message example
 
@@ -1168,8 +1168,8 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.Increase`](#Increase)
 * [`DeviceControl.SetValue`](#SetValue)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [クライアントの音量を調整する](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceVolume)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [クライアントの音量を調整する](/Develop/Guides/Handle_Device_Control.md#HandleDeviceVolume)
 
 ## SynchronizeStateディレクティブ {#SynchronizeState}
 
@@ -1189,7 +1189,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 
 ### 備考
 
-`DeviceControl.SynchronizeState`ディレクティブは、[Downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)でユーザーのアカウントに登録されているすべてのクライアントにブロードキャストされ、[ダイアログID（`dialogRequestId`）](/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md#HandleDirectivesByDialogueID)を持ちません。
+`DeviceControl.SynchronizeState`ディレクティブは、[Downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection)でユーザーのアカウントに登録されているすべてのクライアントにブロードキャストされ、[ダイアログID（`dialogRequestId`）](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md#HandleDirectivesByDialogueID)を持ちません。
 
 ### Message example
 
@@ -1217,7 +1217,7 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.ReportState`](#ReportState)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
 
 ## TurnOffディレクティブ {#TurnOff}
 
@@ -1266,8 +1266,8 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [クライアントデバイスの設定を有効にする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [クライアントデバイスの設定を有効にする](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)
 
 ## TurnOnディレクティブ {#TurnOn}
 
@@ -1310,5 +1310,5 @@ CICは、このイベントを受信すると、ユーザーのアカウント�
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [処理結果をレポートする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [クライアントデバイスの設定を有効にする](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [処理結果をレポートする](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [クライアントデバイスの設定を有効にする](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)

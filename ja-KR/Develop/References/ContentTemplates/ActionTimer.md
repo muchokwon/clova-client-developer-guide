@@ -121,4 +121,4 @@ CICは、ユーザーがアクションタイマーを作成すると、その�
 
 ## 次の項目も参照してください。
 * [ActionTimerList](/Develop/References/ContentTemplates/ActionTimerList.md)
-* [Alerts](/Develop/References/CICInterface/Alerts.md)インターフェース
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md)インターフェース

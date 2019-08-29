@@ -119,4 +119,4 @@ CICは、ユーザーがアクションタイマーのリストをリクエス�
 
 ## 次の項目も参照してください。
 * [ActionTimer](/Develop/References/ContentTemplates/ActionTimer.md)
-* [Alerts](/Develop/References/CICInterface/Alerts.md)インターフェース
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md)インターフェース
