@@ -60,5 +60,5 @@ The following example shows how the TimerList template is used on the Clova app 
 ![](/Develop/Assets/Images/Content_Template-TimerList.png)
 
 ## See also
-* [Alerts](/Develop/References/CICInterface/Alerts.md) interface
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) interface
 * [Timer](/Develop/References/ContentTemplates/Timer.md)

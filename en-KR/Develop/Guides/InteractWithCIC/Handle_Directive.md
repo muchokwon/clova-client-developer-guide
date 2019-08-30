@@ -31,10 +31,10 @@ To process directive messages received on a client:
 }
 </code></pre>
   </li>
-  <li>Check whether the <a href="/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md">dialogue ID</a> (<code>dialogRequestId</code>) of the received directive message matches the latest dialogue ID saved on the client.
+  <li>Check whether the <a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">dialogue ID</a> (<code>dialogRequestId</code>) of the received directive message matches the latest dialogue ID saved on the client.
     <ul>
       <li>
-        <p><strong>If the two dialogue IDs match</strong>, the client performs the required action in the API reference. Generally, you can distinguish the additional information (audio data) required for the client action on the <a href="#ManageMessageQ">message queue</a> <a href="/Develop/References/CICInterface/SpeechSynthesizer.md#Speak">using the <code>cid</code> value</a> in the <code>payload</code> of the directive message. <code>cid</code> refers to the <code>Content-ID</code> message header of the audio data, as shown below, that is sent as a part of the multipart message.</p>
+        <p><strong>If the two dialogue IDs match</strong>, the client performs the required action in the API reference. Generally, you can distinguish the additional information (audio data) required for the client action on the <a href="#ManageMessageQ">message queue</a> <a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak">using the <code>cid</code> value</a> in the <code>payload</code> of the directive message. <code>cid</code> refers to the <code>Content-ID</code> message header of the audio data, as shown below, that is sent as a part of the multipart message.</p>
         <pre><code>--b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
 Content-Disposition: form-data; name="attachment-39b2f844-b168-4dc2-bea7-d5c249e446e3"
 Content-ID: d329085c-379e-48aa-b871-7ecebdbe831d

@@ -13,7 +13,7 @@ When a user requests to play music, Clova directs the client to play the audio r
 
 ![](/Develop/Assets/Images/CIC_Audio_Play_Work_Flow.svg)
 
-When a user requests to play music, CIC sends the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message to the client as the first step. This directive message contains information required to play the audio stream. This information must be used to find the audio data or display the audio information on the audio player. An example of a [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message that can be received is as follows:
+When a user requests to play music, CIC sends the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message to the client as the first step. This directive message contains information required to play the audio stream. This information must be used to find the audio data or display the audio information on the audio player. An example of a [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message that can be received is as follows:
 
 ```json
 {
@@ -59,7 +59,7 @@ A simple description of the main fields of `payload` is shown below.
 
 The client plays audio using the information contained in the `audioItem.stream` field. The information contained in the `audioItem` and `source` fields can be displayed on the UI of an audio player or can be used as reference information.
 
-If the `audioItem.stream.urlPlayable` field value of the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message is set to `false`, the audio cannot be played instantly using the `audioItem.stream` field information. This occurs in situations where the actual audio information must be looked up once more before providing the audio to the user due to issues such as for service billing issue or security issue. An example of an [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message that cannot be played instantly is shown below.
+If the `audioItem.stream.urlPlayable` field value of the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message is set to `false`, the audio cannot be played instantly using the `audioItem.stream` field information. This occurs in situations where the actual audio information must be looked up once more before providing the audio to the user due to issues such as for service billing issue or security issue. An example of an [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message that cannot be played instantly is shown below.
 
 ```json
 {
@@ -106,7 +106,7 @@ If the `audioItem.stream.urlPlayable` field value of the [`AudioPlayer.Play`](/D
 }
 ```
 
-Therefore, if the `audioItem.stream.urlPlayable` field value is set to `false`, the [`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested) event message must be sent once more as shown below just before playing the audio using the `audioItem.stream` field value received in the received [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message.
+Therefore, if the `audioItem.stream.urlPlayable` field value is set to `false`, the [`AudioPlayer.StreamRequested`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamRequested) event message must be sent once more as shown below just before playing the audio using the `audioItem.stream` field value received in the received [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message.
 
 ```json
 {
@@ -138,7 +138,7 @@ Therefore, if the `audioItem.stream.urlPlayable` field value is set to `false`, 
 }
 ```
 
-When the [`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested) event message as shown above is sent, the [`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver) directive message that contains actual playable information is received from the CIC as shown below. The client can then play audio using the newly received information.
+When the [`AudioPlayer.StreamRequested`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamRequested) event message as shown above is sent, the [`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver) directive message that contains actual playable information is received from the CIC as shown below. The client can then play audio using the newly received information.
 
 ```json
 {
@@ -179,22 +179,22 @@ For Clova to understand the current situation of the user in terms of audio play
 
 ![](/Develop/Assets/Images/CIC_Audio_Play_Progress_Reporting.svg)
 
-As shown in the action flow above, whether or not some playback progress report is carried out or not depends on the values set in the `audioItem.stream.progressReport` field of the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message or the `audioStream.progressReport` field of the [`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver) directive message. The table below indicates the situations and the conditions where a report on the playback progress has to be made and the event messages that must be used.
+As shown in the action flow above, whether or not some playback progress report is carried out or not depends on the values set in the `audioItem.stream.progressReport` field of the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message or the `audioStream.progressReport` field of the [`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver) directive message. The table below indicates the situations and the conditions where a report on the playback progress has to be made and the event messages that must be used.
 
 | Point of playback                                 | Condition                         | Event message for reporting |
 |-----------------------------------------|----------------------------|----------------------|
-| Right after starting audio playback                         | Always                                                                      | [`AudioPlayer.PlayStarted`](/Develop/References/CICInterface/AudioPlayer.md#PlayStarted) event message  |
-| After starting audio playback and passing a specific duration          | When the `progressReport.progressReportDelayInMilliseconds` field is not `null`   | [`AudioPlayer.ProgressReportDelayPassed`](/Develop/References/CICInterface/AudioPlayer.md#ProgressReportDelayPassed) event message  |
-| After starting audio playback and whenever passing a specified interval  | When the `progressReport.progressReportIntervalInMilliseconds` field is not `null`  | [`AudioPlayer.ProgressReportIntervalPassed`](/Develop/References/CICInterface/AudioPlayer.md#ProgressReportIntervalPassed) event message  |
-| After starting audio playback and passing a specific point in playback  | When the `progressReport.progressReportPositionInMilliseconds` field is not `null`  | [`AudioPlayer.ProgressReportPositionPassed`](/Develop/References/CICInterface/AudioPlayer.md#ProgressReportPositionPassed) event message  |
-| Right after completing audio playback                         | Always                                                                      | [`AudioPlayer.PlayFinished`](/Develop/References/CICInterface/AudioPlayer.md#PlayFinished) event message  |
+| Right after starting audio playback                         | Always                                                                      | [`AudioPlayer.PlayStarted`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayStarted) event message  |
+| After starting audio playback and passing a specific duration          | When the `progressReport.progressReportDelayInMilliseconds` field is not `null`   | [`AudioPlayer.ProgressReportDelayPassed`](/Develop/References/MessageInterfaces/AudioPlayer.md#ProgressReportDelayPassed) event message  |
+| After starting audio playback and whenever passing a specified interval  | When the `progressReport.progressReportIntervalInMilliseconds` field is not `null`  | [`AudioPlayer.ProgressReportIntervalPassed`](/Develop/References/MessageInterfaces/AudioPlayer.md#ProgressReportIntervalPassed) event message  |
+| After starting audio playback and passing a specific point in playback  | When the `progressReport.progressReportPositionInMilliseconds` field is not `null`  | [`AudioPlayer.ProgressReportPositionPassed`](/Develop/References/MessageInterfaces/AudioPlayer.md#ProgressReportPositionPassed) event message  |
+| Right after completing audio playback                         | Always                                                                      | [`AudioPlayer.PlayFinished`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayFinished) event message  |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>If the <code>audioItem.stream.urlPlayable</code> field is <code>false</code> when the <a href="/Develop/References/CICInterface/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a> directive message is received, new streaming information can be sent as the <a href="/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a> directive messages in the future. If the values of <code>progressReport.progressReportDelayInMilliseconds</code>, <code>progressReport.progressReportIntervalInMilliseconds</code> and <code>progressReport.progressReportPositionInMilliseconds</code> fields are changed in the <code>AudioPlayer.Play</code> directive received after the <code>AudioPlayer.StreamDeliver</code> directive, the changed values must be applied to report the progress of audio playback. For more information, see <a href="#ManageStreamInfo">Managing audio information</a>.</p>
+  <p>If the <code>audioItem.stream.urlPlayable</code> field is <code>false</code> when the <a href="/Develop/References/MessageInterfaces/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a> directive message is received, new streaming information can be sent as the <a href="/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a> directive messages in the future. If the values of <code>progressReport.progressReportDelayInMilliseconds</code>, <code>progressReport.progressReportIntervalInMilliseconds</code> and <code>progressReport.progressReportPositionInMilliseconds</code> fields are changed in the <code>AudioPlayer.Play</code> directive received after the <code>AudioPlayer.StreamDeliver</code> directive, the changed values must be applied to report the progress of audio playback. For more information, see <a href="#ManageStreamInfo">Managing audio information</a>.</p>
 </div>
 
-Using the received event messages, Clova identifies the audio currently being listened to by the user and the playback point of this audio. Below is an example of the [`AudioPlayer.ProgressReportIntervalPassed`](/Develop/References/CICInterface/AudioPlayer.md#ProgressReportIntervalPassed) event message. At this time, [context information related to audio playback must be built at the same time](#BuildPlaybackStateContext) to be sent.
+Using the received event messages, Clova identifies the audio currently being listened to by the user and the playback point of this audio. Below is an example of the [`AudioPlayer.ProgressReportIntervalPassed`](/Develop/References/MessageInterfaces/AudioPlayer.md#ProgressReportIntervalPassed) event message. At this time, [context information related to audio playback must be built at the same time](#BuildPlaybackStateContext) to be sent.
 
 ```json
 {
@@ -250,13 +250,13 @@ Users can request Clova to pause, resume, stop, or replay the audio playback on 
 * User attempts playback control using buttons on client device
 * User attempts playback control of a specific client remotely from the Clova app
 
-However, the playback control on the audio is not conducted directly on the client because Clova must first identify the audio playback status of the user. All such playback controls are performed via Clova and the audio playback control must be mainly implemented via the [`PlaybackController`](/Develop/References/CICInterface/PlaybackController.md) interface. Also, the result must be reported through the event messages of the [`AudioPlayer`](/Develop/References/CICInterface/AudioPlayer.md) interface.
+However, the playback control on the audio is not conducted directly on the client because Clova must first identify the audio playback status of the user. All such playback controls are performed via Clova and the audio playback control must be mainly implemented via the [`PlaybackController`](/Develop/References/MessageInterfaces/PlaybackController.md) interface. Also, the result must be reported through the event messages of the [`AudioPlayer`](/Develop/References/MessageInterfaces/AudioPlayer.md) interface.
 
 The diagram below shows the action flow when pausing audio playback.
 
 ![](/Develop/Assets/Images/CIC_Audio_Playback_Control_Flow.svg)
 
-Generally, Clova analyzes the audio control via user utterance and the corresponding playback control directive message ([`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause)) is sent to the client. However, if the user has requested to pause the audio by pressing a button from the client, the state of the user pressing the pause button must be reported to Clova using the [`PlaybackController.PauseCommandIssued`](/Develop/References/CICInterface/PlaybackController.md#PauseCommandIssued) event message shown below.
+Generally, Clova analyzes the audio control via user utterance and the corresponding playback control directive message ([`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause)) is sent to the client. However, if the user has requested to pause the audio by pressing a button from the client, the state of the user pressing the pause button must be reported to Clova using the [`PlaybackController.PauseCommandIssued`](/Develop/References/MessageInterfaces/PlaybackController.md#PauseCommandIssued) event message shown below.
 
 ```json
 {
@@ -274,7 +274,7 @@ Generally, Clova analyzes the audio control via user utterance and the correspon
 }
 ```
 
-If the user has requested playback control of the client remotely using a Clova app, Clova sends a directive message of a [`PlaybackController.ExpectPauseCommand`](/Develop/References/CICInterface/PlaybackController.md#ExpectPauseCommand) format to this client. This is a message which directs the client to act as if a user has remotely pressed the button. Once the message below is received, the client can send a [`PlaybackController.PauseCommandIssued`](/Develop/References/CICInterface/PlaybackController.md#PauseCommandIssued) event message like above to Cova.
+If the user has requested playback control of the client remotely using a Clova app, Clova sends a directive message of a [`PlaybackController.ExpectPauseCommand`](/Develop/References/MessageInterfaces/PlaybackController.md#ExpectPauseCommand) format to this client. This is a message which directs the client to act as if a user has remotely pressed the button. Once the message below is received, the client can send a [`PlaybackController.PauseCommandIssued`](/Develop/References/MessageInterfaces/PlaybackController.md#PauseCommandIssued) event message like above to Cova.
 
 ```json
 // Request to operate as if a user has pressed the pause button
@@ -291,7 +291,7 @@ If the user has requested playback control of the client remotely using a Clova 
 }
 ```
 
-Clova sends the playback control requested by the user as the directive message ([`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause)) below, and the client can simply control audio playback according to the directive message.
+Clova sends the playback control requested by the user as the directive message ([`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause)) below, and the client can simply control audio playback according to the directive message.
 
 ```json
 {
@@ -307,7 +307,7 @@ Clova sends the playback control requested by the user as the directive message 
 }
 ```
 
-As the last step, the client can complete the playback control and report the action change in the audio player to CIC. Below shows the [AudioPlayer.PlayPaused](/Develop/References/CICInterface/AudioPlayer.md#PlayPaused) event message sent to CIC after pausing the audio playback. At this time,  [context information must be built](#BuildPlaybackStateContext) according to the state of audio player.
+As the last step, the client can complete the playback control and report the action change in the audio player to CIC. Below shows the [AudioPlayer.PlayPaused](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayPaused) event message sent to CIC after pausing the audio playback. At this time,  [context information must be built](#BuildPlaybackStateContext) according to the state of audio player.
 
 ```json
 {
@@ -355,7 +355,7 @@ As the last step, the client can complete the playback control and report the ac
 
 ## Managing audio information {#ManageStreamInfo}
 
-When [playing the audio](#PlayAudioStream), the client receives information related to the audio from CIC. From the moment of starting to receive the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive to CIC, the client must manage the audio information contained in the `audioItem.stream` field of the directive carefully. This section explains the following topics:
+When [playing the audio](#PlayAudioStream), the client receives information related to the audio from CIC. From the moment of starting to receive the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive to CIC, the client must manage the audio information contained in the `audioItem.stream` field of the directive carefully. This section explains the following topics:
 
 * [Updating audio information](#UpdateStreamInfo)
 * [Building audio context information](#BuildPlaybackStateContext)
@@ -402,10 +402,10 @@ If the `AudioPlayer.Play` directive is received, save the values  below the `aud
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>If the <code>audioItem.stream.urlPlayable</code> field is <code>false</code> when the <a href="/Develop/References/CICInterface/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a> directive is received, <strong>this must be combined with the audio information sent to the <a href="/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a> directive in the future.<strong></p>
+  <p>If the <code>audioItem.stream.urlPlayable</code> field is <code>false</code> when the <a href="/Develop/References/MessageInterfaces/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a> directive is received, <strong>this must be combined with the audio information sent to the <a href="/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a> directive in the future.<strong></p>
 </div>
 
-Use the [`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested) event afterwards to request the actual information required for audio playback. At this time, the `audioItem.stream` field value stored earlier must be sent at the same time.
+Use the [`AudioPlayer.StreamRequested`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamRequested) event afterwards to request the actual information required for audio playback. At this time, the `audioItem.stream` field value stored earlier must be sent at the same time.
 
 ```json
 {
@@ -437,7 +437,7 @@ Use the [`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPl
 }
 ```
 
-Then, the [`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver) directive message that contains actual playable information is received from the CIC as shown below. Details of the `audioStream` field contained here  **must be combined.** Overwrite the changed details of the field, and do not change or delete the parts without any changes in the newly received details.
+Then, the [`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver) directive message that contains actual playable information is received from the CIC as shown below. Details of the `audioStream` field contained here  **must be combined.** Overwrite the changed details of the field, and do not change or delete the parts without any changes in the newly received details.
 
 ```json
 {
@@ -500,7 +500,7 @@ If the audio players is in an active state, select the `playerActivity` field as
 * `"PAUSE"`
 * `"STOPPED"`
 
-At this time, after receiving through the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) or the [`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver) directive message, the [managed streaming info](#UpdateStreamInfo) must be included in the context at the same time.
+At this time, after receiving through the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) or the [`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver) directive message, the [managed streaming info](#UpdateStreamInfo) must be included in the context at the same time.
 
 ```json
 {
@@ -538,7 +538,7 @@ At this time, after receiving through the [`AudioPlayer.Play`](/Develop/Referenc
 }
 ```
 
-Even if the state of the audio player enters the `"PAUSE"` mode because the user has requested to stop the audio playback, the audio information being stored must not be discarded freely. If the audio information was discarded, CIC cannot identify information on the audio which the client was playing from the context when a user has requested to play the music again. For this reason, Clova might not be able to provide the features like resuming playback to the user. Therefore, the client must continue to maintain the audio information except for special situations like rebooting. If it is necessary to remove the audio information, Clova will send a directive such as the [AudioPlayer.ClearQueue](/Develop/References/CICInterface/AudioPlayer.md#ClearQueue) directive in order to remove the audio information of the client.
+Even if the state of the audio player enters the `"PAUSE"` mode because the user has requested to stop the audio playback, the audio information being stored must not be discarded freely. If the audio information was discarded, CIC cannot identify information on the audio which the client was playing from the context when a user has requested to play the music again. For this reason, Clova might not be able to provide the features like resuming playback to the user. Therefore, the client must continue to maintain the audio information except for special situations like rebooting. If it is necessary to remove the audio information, Clova will send a directive such as the [AudioPlayer.ClearQueue](/Develop/References/MessageInterfaces/AudioPlayer.md#ClearQueue) directive in order to remove the audio information of the client.
 
 
 ## Sharing audio playback state {#ShareAudioPlaybackState}
@@ -547,18 +547,18 @@ The client can receive a shared sound source playback state from all other or sp
 
 ![](/Develop/Assets/Images/CIC_Playback_State_Sync_Work_Flow.svg)
 
-1. Clova app requests the audio playback state of all or specific clients registered in the user account to CIC {{ "using the [`AudioPlayer.RequestPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#RequestPlaybackState) event message " if book.DocMeta.TargetReaderType == "Internal" }}.
-2. CIC instructs all or specific clients registered in the user account to report the current audio playback state using the [`AudioPlayer.ExpectReportPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#ExpectReportPlaybackState) directive message.
-3. After receiving the report request, the client reports the current audio playback state using [`AudioPlayer.ReportPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#ReportPlaybackState) event message.
-4. CIC instructs the client that made the request to synchronize information by sending the states of the information {{ "using [`AudioPlayer.SynchronizePlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#SynchronizePlaybackState)" if book.DocMeta.TargetReaderType == "Internal" }}.
+1. Clova app requests the audio playback state of all or specific clients registered in the user account to CIC {{ "using the [`AudioPlayer.RequestPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#RequestPlaybackState) event message " if book.DocMeta.TargetReaderType == "Internal" }}.
+2. CIC instructs all or specific clients registered in the user account to report the current audio playback state using the [`AudioPlayer.ExpectReportPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#ExpectReportPlaybackState) directive message.
+3. After receiving the report request, the client reports the current audio playback state using [`AudioPlayer.ReportPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#ReportPlaybackState) an event message.
+4. CIC instructs the client that made the request to synchronize information by sending the states of the information {{ "using [`AudioPlayer.SynchronizePlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#SynchronizePlaybackState)" if book.DocMeta.TargetReaderType == "Internal" }}.
 
-Therefore, the client must send the [`AudioPlayer.ReportPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#ReportPlaybackState) event message if the [`AudioPlayer.ExpectReportPlaybackState`](/Develop/References/CICInterface/AudioPlayer.md#ExpectReportPlaybackState) directive message is received, and the information below must be included in the `payload` field.
+Therefore, the client must send the [`AudioPlayer.ReportPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#ReportPlaybackState) event message if the [`AudioPlayer.ExpectReportPlaybackState`](/Develop/References/MessageInterfaces/AudioPlayer.md#ExpectReportPlaybackState) directive message is received, and the information below must be included in the `payload` field.
 
 * Audio play state
 * Repeat state
 * Current-time indicator of the audio playing (when audio is playing)
-* [`AudioStreamInfoObject`](/Develop/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) object received from the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message (when audio is playing or paused)
-* `audioItem.stream.token` field value of the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message (when audio is playing or paused)
+* [`AudioStreamInfoObject`](/Develop/References/MessageInterfaces/AudioPlayer.md#AudioStreamInfoObject) object received from the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message (when audio is playing or paused)
+* `audioItem.stream.token` field value of the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message (when audio is playing or paused)
 * Total length of the playing media (optional)
 
 ```json

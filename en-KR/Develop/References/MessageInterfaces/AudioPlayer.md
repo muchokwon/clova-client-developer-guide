@@ -16,7 +16,7 @@ The AudioPlayer namespace provides interfaces for playing an audio stream or rep
 | [`PlayResumed`](#PlayResumed)         | Event     | Reports to CIC that the client has resumed playback with the information on the audio stream.         |
 | [`PlayStarted`](#PlayStarted)         | Event     | Reports to CIC that the client has started playback with the information on the audio stream.    |
 | [`PlayStopped`](#PlayStopped)         | Event     | Reports to CIC that the client has stopped playback with the information on the audio stream.    |
-| [`ProgressReportDelayPassed`](#ProgressReportPositionPassed) | Event | Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)) after playback has started and the specified period of delay time has passed. The delay time of each audio stream is specified in the [`AudioPlayer.Play`](#Play) directive message to the client. |
+| [`ProgressReportDelayPassed`](#ProgressReportPositionPassed) | Event | Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)) after playback has started and the specified delay has passed. The delay time for each audio stream is specified in the [`AudioPlayer.Play`](#Play) directive message to the client. |
 | [`ProgressReportIntervalPassed`](#ProgressReportPositionPassed)| Event | Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)), by the specified interval, after playback has started. The report interval for each audio stream is specified in the [`AudioPlayer.Play`](#Play) directive message to the client.|
 | [`ProgressReportPositionPassed`](#ProgressReportPositionPassed) | Event | Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)) at the specified time, which is measured from the start of the audio stream. The reporting time is specified in the [`AudioPlayer.Play`](#Play) directive message.|
 | [`ReportPlaybackState`](#ReportPlaybackState)           | Event  | Reports to CIC the current playback state of the client. If the [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState) directive message is received from CIC, the client must send the `AudioPlayer.ReportPlaybackState` event messages to CIC.  |
@@ -96,7 +96,7 @@ None
 
 ### See also
 * [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
-* [Sharing audio playback state](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [Sharing audio playback state](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 
 <!-- Start of the shared content: AudioPlayer.Play -->
 
@@ -225,7 +225,7 @@ Based on the policy of music service providers, certain information required for
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
-* [Playing audio stream](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [Playing audio stream](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 <!-- End of the shared content -->
 
@@ -234,7 +234,7 @@ If the [`AudioPlayer.ClearQueue`](#ClearQueue) directive message is received fro
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -283,7 +283,7 @@ Reports to CIC that the client has finished playback with the information on the
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -325,7 +325,7 @@ Reports to CIC that the client has finished playback with the information on the
 
 ### See also
 * [`AudioPlayer.Play`](#Play)
-* [Reporting audio playback progress](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [Reporting audio playback progress](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -334,13 +334,13 @@ Reports to CIC that the client has finished playback with the information on the
 ## PlayPaused event {#PlayPaused}
 Reports to CIC that the client has paused playback with the information on the audio stream. Send this event message in the following scenario:
 
-1. The client sends CIC a user voice request ([`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)) to pause playback of an audio stream.
-2. CIC sends the playback pause request to the client with the [`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause) directive message, as the result of voice recognition by Clova platform.
+1. The client sends CIC a user voice request ([`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)) to pause playback of an audio stream.
+2. CIC sends the playback pause request to the client with the [`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause) directive message, as the result of voice recognition by the Clova platform.
 3. The client pauses playback of the audio stream and sends the PlayPaused event message to CIC.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -383,8 +383,8 @@ Reports to CIC that the client has paused playback with the information on the a
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayResumed`](#PlayResumed)
-* [`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`PlaybackController.Pause`](/Develop/References/MessageInterfaces/PlaybackController.md#Pause)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -394,13 +394,13 @@ Reports to CIC that the client has paused playback with the information on the a
 
 Reports to CIC that the client has resumed playback with the information on the audio stream. Send this event message in the following scenario:
 
-1. The client sends CIC a user voice request ([`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)) to resume the paused audio stream.
-2. CIC sends the resume request to the client  with the [`PlaybackController.Resume`](/Develop/References/CICInterface/PlaybackController.md#Resume) directive message, as the result of voice recognition by Clova platform.
+1. The client sends CIC a user voice request ([`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)) to resume the paused audio stream.
+2. CIC sends the resume request to the client  with the [`PlaybackController.Resume`](/Develop/References/MessageInterfaces/PlaybackController.md#Resume) directive message, as the result of voice recognition by the Clova platform.
 3. The client resumes playback of the audio stream and sends the PlayResumed event message to CIC.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -443,8 +443,8 @@ Reports to CIC that the client has resumed playback with the information on the 
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayPaused`](#PlayPaused)
-* [`PlaybackController.Resume`](/Develop/References/CICInterface/PlaybackController.md#Resume)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`PlaybackController.Resume`](/Develop/References/MessageInterfaces/PlaybackController.md#Resume)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -455,7 +455,7 @@ Reports to CIC that the client has started playback with the information on the 
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -498,8 +498,8 @@ Reports to CIC that the client has started playback with the information on the 
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStopped`](#PlayStopped)
-* [Playing audio stream](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Playing audio stream](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -508,13 +508,13 @@ Reports to CIC that the client has started playback with the information on the 
 ## PlayStopped event {#PlayStopped}
 Reports to CIC that the client has stopped playback with the information on the audio stream. Send this event message in the following scenario:
 
-1. The client sends CIC a user voice request with [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) event message to stop playback of an audio stream.
-2. CIC sends the stop request to the client  with the [`PlaybackController.Stop`](/Develop/References/CICInterface/PlaybackController.md#Stop) directive message, as the result of voice recognition by Clova platform.
+1. The client sends CIC a user voice request with the [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) event message to stop playback of an audio stream.
+2. CIC sends the stop request to the client  with the [`PlaybackController.Stop`](/Develop/References/MessageInterfaces/PlaybackController.md#Stop) directive message, as the result of voice recognition by the Clova platform.
 3. The client stops playback of the audio stream and sends the PlayStopped event message to CIC.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -557,8 +557,8 @@ Reports to CIC that the client has stopped playback with the information on the 
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStarted`](#PlayStarted)
-* [`PlaybackController.Stop`](/Develop/References/CICInterface/PlaybackController.md#Stop)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`PlaybackController.Stop`](/Develop/References/MessageInterfaces/PlaybackController.md#Stop)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -569,7 +569,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develo
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -613,7 +613,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develo
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
-* [Reporting audio playback progress](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [Reporting audio playback progress](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -624,7 +624,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develo
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -668,7 +668,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develo
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
-* [Reporting audio playback progress](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [Reporting audio playback progress](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -679,7 +679,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develo
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -723,7 +723,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develo
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
-* [Reporting audio playback progress](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [Reporting audio playback progress](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 <!-- End of the shared content -->
 
@@ -733,7 +733,7 @@ Reports to CIC the current playback state of the client. If the [`AudioPlayer.Ex
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | Field name       | Data type    | Description                     | Required |
@@ -743,7 +743,7 @@ Reports to CIC the current playback state of the client. If the [`AudioPlayer.Ex
 | `repeatMode`             | string  | The repeat mode.<ul><li><code>"NONE"</code>: None</li><li><code>"REPEAT_ONE"</code>: Repeat one song</li></ul>  | Required  |
 | `stream`                 | [AudioStreamInfoObject](#AudioStreamInfoObject) | The `audioItem.stream` of the Play directive message.                                     | Optional |
 | `token`                  | string  | The `audioItem.stream.token` field value of the [`AudioPlayer.Play`](#Play) directive message.                                          | Optional |
-| `totalInMilliseconds`    | number | The total duration of the recently played media. If a value exists in the `durationInMilliseconds` field of the [AudioStreamInfoObject](/Develop/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) provided by the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message, use the value of this field. The unit is in milliseconds. This field is omissible if the `playerActivity` field is set to `"IDLE"`. | Optional |
+| `totalInMilliseconds`    | number | The total duration of the recently played media. If the audio information ([AudioStreamInfoObject](/Develop/References/MessageInterfaces/AudioPlayer.md#AudioStreamInfoObject)) provided by the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message has a `durationInMilliseconds` field value, enter it as the value of this field. The unit is in milliseconds. This field is omissible if the `playerActivity` field is set to `"IDLE"`. | Optional |
 
 ### Message example
 {% raw %}
@@ -779,7 +779,7 @@ Reports to CIC the current playback state of the client. If the [`AudioPlayer.Ex
 ### See also
 * [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)
 * [`AudioPlayer.Play`](#Play)
-* [Sharing audio playback state](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [Sharing audio playback state](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 
 {% if book.DocMeta.TargetReaderType == "Internal" %}
 ## RequestPlaybackState event {#RequestPlaybackState}
@@ -788,7 +788,7 @@ Requests CIC for the current playback state of the client. Upon receiving the `A
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | Field name       | Data type    | Description                     | Required |
@@ -828,7 +828,7 @@ Requests CIC for the current playback state of the client. Upon receiving the `A
 ### See also
 * [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)
 * [`AudioPlayer.Play`](#Play)
-* [Sharing audio playback state](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [Sharing audio playback state](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 {% endif %}
 
 <!-- Start of the shared content: AudioPlayer.StreamDeliver -->
@@ -880,7 +880,7 @@ Some contents of the `AudioStreamInfoObject` object provided by the `StreamDeliv
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
-* [Playing audio stream](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [Playing audio stream](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 <!-- End of the shared content -->
 
@@ -891,7 +891,7 @@ Requests CIC for additional information needed for audio stream playback such as
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | Field name       | Data type    | Description                     | Required |
@@ -947,7 +947,7 @@ Based on the policy of music service providers, certain information required for
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamDeliver`](#StreamDeliver)
-* [Playing audio stream](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [Playing audio stream](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 <!-- End of the shared content -->
 
@@ -997,7 +997,7 @@ Instructs the client to synchronize the audio playback state. The client that ha
 
 ### See also
 * [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
-* [Sharing audio playback state](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [Sharing audio playback state](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 {% endif %}
 
 ## Shared objects
@@ -1022,7 +1022,7 @@ The object containing streaming details of an audio stream. This object is used 
 | `progressReport.progressReportIntervalInMilliseconds` | number | The interval specified to receive the playback state while audio is playing. The unit is in milliseconds. This field can have a null value.        | Optional/Conditional |
 | `progressReport.progressReportPositionInMilliseconds` | number | The point of time specified to receive the playback state to while audio is playing. The unit is in milliseconds. This field can have a null value.    | Optional/Conditional |
 | `token`                  | string  | The token of the audio stream. <div class="note"><p><strong>Note!</strong></p><p>The maximum length of this field is 2048 bytes.</p></div>                          | Required/Always |
-| `url`                    | string  | The audio stream URI.<div class="note"><p><strong>Note!</strong></p><p>The provided audio content must be in an <a href="/Design/Design_Guideline_For_Client_Hardware.md#SupportedAudioCompressionFormat">audio compression format supported by the platform</a>.</p></div><div class="note"><p><strong>Note!</strong></p><p>The maximum length of this field is 2048 bytes.</p></div>  | Required/Always |
+| `url`                    | string  | The audio stream URI.<div class="note"><p><strong>Note!</strong></p><p>The provided audio content must be in an <a href="/Design/Audio.md#SupportedAudioFormat">audio compression format supported by the platform</a>.</p></div><div class="note"><p><strong>Note!</strong></p><p>The maximum length of this field is 2048 bytes.</p></div>  | Required/Always |
 | `urlPlayable`            | boolean | Indicates whether the audio stream URI in the `url` field can be played immediately. <ul><li><code>true</code>: The client can play the audio without additional information.</li><li><code>false</code>: The client requires additional information. To obtain additional information on audio streaming, send the <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> event message to CIC.</li></ul>        | Required/Always |
 
 #### Remarks

@@ -9,7 +9,7 @@ Once the Clova app delegates handling of user request, the delegated client can 
 <ol>
   <li>The Clova app requests delegation to another client device when sending the user request to CIC.</li>
   <li>
-    <p>CIC sends the <a href="/Develop/References/CICInterface/Clova.md#HandleDelegatedEvent"><code>Clova.HandleDelegatedEvent</code></a> directive messages to the delegated client device to handle the request through a <a href="/Develop/Guides/Interact_with_CIC.md#CreateConnection">downchannel</a>.<p>
+    <p>CIC sends the <a href="/Develop/References/MessageInterfaces/Clova.md#HandleDelegatedEvent"><code>Clova.HandleDelegatedEvent</code></a> directive messages to the delegated client device to handle the request through a <a href="/Develop/Guides/Interact_with_CIC.md#CreateConnection">downchannel</a>.<p>
     <pre><code>{
   "directive": {
     "header": {
@@ -24,7 +24,7 @@ Once the Clova app delegates handling of user request, the delegated client can 
 }</code></pre>
   </li>
   <li>
-    <p>The client device must send the <a href="/Develop/References/CICInterface/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a> event message in order to receive the handling result of the delegated request from CIC. In this process, you must enterthe <code>delegationId</code> field value received from step 2 in the <code>payload</code> field without any alteration.</p>
+    <p>The client device must send the <a href="/Develop/References/MessageInterfaces/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a> event message in order to receive the handling result of the delegated request from CIC. In this process, you must enterthe <code>delegationId</code> field value received from step 2 in the <code>payload</code> field without any alteration.</p>
     <pre><code>{
   "context": [
     ...
@@ -41,6 +41,6 @@ Once the Clova app delegates handling of user request, the delegated client can 
   }
 }</code></pre>
   </li>
-  <li>CIC returns the handling result of the delegated user request to the client as a response to the <a href="/Develop/References/CICInterface/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a> event message.</li>
+  <li>CIC returns the handling result of the delegated user request to the client as a response to the <a href="/Develop/References/MessageInterfaces/Clova.md#ProcessDelegatedEvent"><code>Clova.ProcessDelegatedEvent</code></a> event message.</li>
   <li>The client can handle the directive message received as a response just like handling a normal <a href="/Develop/Guides/Interact_with_CIC.md#HandleDirective">directive message</a>.</li>
 </ol>
