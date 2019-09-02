@@ -1,0 +1,55 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Bluetoothデバイス" as device #9EA0CA
+participant クライアント as client #9EA0CA
+participant "Clova" as clova #05D686
+actor ユーザー as user #9EA0
+activate device
+device -> client: Advertising
+...
+user ->> clova : Bluetoothデバイスとの接続をリクエストする
+activate clova
+  clova -> client : DeviceControl.BtStartPairing\nディレクティブを送信する
+
+activate client
+  client -> client : スキャンする
+  client --> clova : DeviceControl.ActionExecuted(DeviceStateを含める)\nイベントを送信する
+  hnote over client, device : Bluetoothデバイスが検出される
+deactivate client
+
+ alt 特定のデバイスが指定されたか == はい
+	clova -> client : DeviceControl.BtConnect(ペイロードを含める)\nディレクティブを送信する
+
+	activate client
+ else 特定のデバイスが指定されたか == いいえ
+    clova -> client : DeviceControl.BtConnect(ペイロードを含めない)\nディレクティブを送信する
+end
+
+  client -> device : 接続をリクエストする
+  client --> clova : DeviceControl.ActionExecuted(DeviceStateを含める)\nイベントを送信する
+
+	deactivate client
+  alt PINコードを必要としているか == はい
+	device ->> client : PINコードをリクエストする
+
+	activate client
+	client -> clova : DeviceControl.BtRequestForPINCode\nイベントを送信する
+    hnote over clova, user #05D686 : PINコードをリクエストし、入力する
+
+    alt コードの入力をキャンセルしたと判断されるか == はい
+		client -> clova : DeviceControl.BtRequestToCancelPINCode\nイベントを送信する
+		hnote over clova, user #05D686 : PINコードのリクエストをキャンセルする
+    else
+ 		clova -> client : DeviceControl.BtConnectByPINCode\nディレクティブを送信する
+	end
+  end
+    client -> device : PINコードで接続する
+    client -> clova : DeviceControl.ActionExecuted\nイベントを送信する
+
+	deactivate client
+	device -->> client : 接続結果
+ deactivate device
+
+  clova -> user : 接続結果を通知する
+
+deactivate clova

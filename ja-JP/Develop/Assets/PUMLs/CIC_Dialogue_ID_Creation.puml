@@ -1,0 +1,51 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant ユーザー as user #9EA0CA
+participant クライアント as client #9EA0CA
+participant CIC as cic #05D686
+
+user ->> client: クラシック音楽を再生して
+
+activate client
+
+  client -> client: ダイアログID(A)を作成する
+
+  alt 音声でリクエストした場合
+
+    client ->> cic: SpeechRecognizer.Recognizeイベントを送信する\n(header.dialogRequestId: A)
+
+  else テキストでリクエストした場合
+
+    client ->> cic: TextRecognizer.Recognizeイベントを送信する\n(header.dialogRequestId: A)
+
+  end
+
+  client -> client: 最終ダイアログIDを更新する
+  
+  note left: lastDialogueID: A
+
+  ... リクエストを処理中 ...
+
+user -->> client: 今の天気を教えて
+
+  client -> client: ダイアログID(B)を作成する
+
+  alt 作業を正常に処理する場合
+
+    client ->> cic: SpeechRecognizer.Recognizeイベントを送信する\n(header.dialogRequestId: B)
+
+    client -> client: 最終ダイアログIDを更新する
+  
+    note left: lastDialogueID: B
+
+    client -> client: 前のダイアログID(A)に関連する作業の処理を中止する
+
+    client -> client: ダイアログID(A)に関連するディレクティブをキューから破棄する
+
+  else 例外が発生してイベントの送信をキャンセルする場合
+
+    client -> client: 前のダイアログID(A)に関連する作業を引き続き処理する
+
+    note left: lastDialogueID: A
+
+  end

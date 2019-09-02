@@ -1,0 +1,49 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor ユーザー as user #9EA0CA
+participant クライアント as client #9EA0CA
+participant CIC as cic #05D686
+
+
+client -> client : アラームが開始される
+client ->> cic : アラームの開始を報告する\n(Alerts.AlertStartedイベント、\lAlert.AlertsStateのactivateAlertsフィールドは必須)
+
+activate cic
+deactivate cic
+
+user ->> client : アラームの停止をリクエストする(発話または物理ボタン)
+
+alt アラーム停止リクエストのタイプ == ユーザーの発話
+
+  client ->> cic : アラーム停止リクエストを送信する\n(SpeechRecognizer.Recognizeイベント)
+
+activate cic
+
+else アラーム停止リクエストのタイプ == 物理ボタン
+
+  client ->> cic : アラーム停止リクエストを送信する\n(Alerts.RequestAlertStopイベント)
+
+end
+
+cic -->> client : Alerts.StopAlertディレクティブを送信する
+
+deactivate cic
+
+client ->> cic : アラームの停止結果を報告する\n(Alerts.AlertStoppedイベント)
+
+activate cic
+
+  opt アラームの繰り返し == はい
+
+    cic -->> client : アラームの次の繰り返しを送信する\n(Alerts.SetAlertディレクティブ)
+
+  end
+
+  opt アラームタイプ == アクションタイマー
+
+    cic -->> client : ユーザーが予約した動作を実行するディレクティブを送信する
+
+deactivate cic
+    client -> client : 予約された動作を実行する
+
+  end

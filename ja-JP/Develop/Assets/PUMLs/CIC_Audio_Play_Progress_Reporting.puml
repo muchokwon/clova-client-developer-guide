@@ -1,0 +1,58 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor ユーザー as user #9EA0CA
+participant クライアント as client #9EA0CA
+participant CIC as cic #05D686
+
+activate client
+
+  client -> client : オーディオ再生を開始する
+  client ->> cic : オーディオ再生を開始したことをレポートする(AudioPlayer.PlayStartedイベント)
+
+  activate cic
+  deactivate cic
+
+  opt progressReport.progressReportDelayInMilliseconds != null
+
+    ... オーディオ再生を開始してから指定された時間が経過した後 ...
+
+    client ->> cic : オーディオ再生の進行状況をレポートする(AudioPlayer.ProgressReportDelayPassedイベント)
+
+    activate cic
+    deactivate cic
+
+  end
+
+  opt progressReport.progressReportIntervalInMilliseconds != null
+
+    loop オーディオ再生が停止するまで
+
+      ... 指定された間隔の時間が経過した後 ...
+
+      client ->> cic : オーディオ再生の進行状況をレポートする(AudioPlayer.ProgressReportIntervalPassedイベント)
+
+      activate cic
+      deactivate cic
+
+    end
+
+  end
+
+  opt progressReport.progressReportPositionInMilliseconds != null
+
+    ... オーディオの特定の再生ポイントが経過した後 ...
+
+    client ->> cic : オーディオ再生の進行状況をレポートする(AudioPlayer.ProgressReportPositionPassedイベント)
+
+    activate cic
+    deactivate cic
+
+  end
+
+  ... オーディオ再生が完了した後 ...
+
+  client ->> cic : オーディオ再生が完了したことをレポートする(AudioPlayer.PlayFinishedイベント)
+
+deactivate client
+activate cic
+deactivate cic

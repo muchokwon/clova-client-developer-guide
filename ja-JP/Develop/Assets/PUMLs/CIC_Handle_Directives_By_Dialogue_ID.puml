@@ -1,0 +1,25 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+start
+
+:受信したディレクティブのダイアログIDを確認する;
+
+if ( ダイアログIDが存在する ) then (はい)
+
+  :最終ダイアログIDを確認する;
+
+  if ( ディレクティブのダイアログID == 最終ダイアログID ) then (はい)
+
+  :受信したディレクティブをメッセージキューに追加する;
+  stop
+
+  else (いいえ)
+
+  :受信したディレクティブを破棄する;
+  stop
+  endif
+
+else (いいえ)
+  :受信したディレクティブを即座に処理する;
+  stop
+endif
