@@ -1,0 +1,48 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Clovaアプリ" as ca #9EA0CA
+participant "クライアントデバイス1" as cli1 #9EA0CA
+participant "クライアントデバイス2" as cli2 #9EA0CA
+participant CIC as cic #05D686
+
+activate ca
+  ca ->> cic : DeviceControl.RequestStateSynchronizationイベントを送信する\n(クライアントデバイスの状態の更新をリクエストする)
+deactivate ca
+
+group Request state report
+
+  activate cic
+
+    cic ->> cli1 : DeviceControl.ExpectReportStateディレクティブを送信する\n(ダウンチャネルを使用する)
+    activate cli1
+
+    cic ->> cli2 : DeviceControl.ExpectReportStateディレクティブを送信する\n(ダウンチャネルを使用する)
+	deactivate cic
+    activate cli2
+
+end
+
+...クライアントの状態を収集した後...
+
+group Report state
+
+    cli2 ->> cic : DeviceControl.ReportStateイベントを送信する\n(デバイスの状態を報告する)
+    deactivate cli2
+  activate cic
+
+    cli1 ->> cic : DeviceControl.ReportStateイベントを送信する\n(デバイスの状態を報告する)
+    deactivate cli1
+
+end
+
+    cic -> cic : 収集された状態を整理する
+
+group Synchronize state
+
+    cic ->> ca : DeviceControl.SynchronizeStateディレクティブを送信する\n(ダウンチャネルを使用する)
+	deactivate cic
+    activate ca
+
+    ca -> ca : クライアントデバイスの状態を更新する
+
+end

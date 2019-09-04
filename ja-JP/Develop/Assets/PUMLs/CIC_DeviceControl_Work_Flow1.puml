@@ -1,0 +1,47 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor ユーザー as user #9EA0CA
+participant クライアント as client #9EA0CA
+participant CIC as cic #05D686
+
+user ->> client : クライアント制御リクエスト：\n"GPSをオンにして"
+
+activate client
+  client ->> cic : SpeechRecognizer.Recognizeイベントを送信する\n(Device.DeviceStateコンテキストは必須)
+
+deactivate client
+
+activate cic
+  cic -> cic : クライアントでサポートされている\n動作かどうかを確認する\n(Device.DeviceStateの\nactions[]フィールドを確認する)
+
+  alt リクエストされた動作がサポートされているか == いいえ
+
+    cic -->> client : SpeechSynthesizer.Speakディレクティブを送信する\n(「リクエストした操作はサポートされていません」)
+
+	activate client
+    client -->> user : 音声メッセージを出力する
+
+  else リクエストされた動作がサポートされているか == はい
+
+    cic -->> client : クライアント制御ディレクティブを送信する\n(DeviceControl.TurnOnディレクティブ)
+
+	deactivate cic
+    client -> client : デバイス制御リクエストを処理する
+
+    alt デバイス制御の処理結果 == 成功
+
+      client ->> cic : DeviceControl.ActionExecutedイベントを送信する
+
+	  activate cic
+
+    else デバイス制御の処理結果 == 失敗
+
+      client ->> cic : DeviceControl.ActionFailedイベントを送信する
+
+    end
+
+  end
+
+  deactivate client
+
+deactivate cic

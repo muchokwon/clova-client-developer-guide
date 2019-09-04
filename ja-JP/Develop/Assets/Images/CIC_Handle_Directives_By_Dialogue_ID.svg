@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="360.0406px" preserveAspectRatio="none" style="width:881px;height:360px;" version="1.1" viewBox="0 0 881 360" width="881.7868px" zoomAndPan="magnify"><defs/><g><ellipse cx="540.0609" cy="17.868" fill="#000000" rx="8.934" ry="8.934" style="stroke: none; stroke-width: 0.8934010152284264;"/><rect fill="#9EA0CA" height="50.4667" rx="11.1675" ry="11.1675" style="stroke: #FFFFFF; stroke-width: 1.3401015228426396;" width="285.8883" x="397.1168" y="44.6701"/><text fill="#FFFFFF" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="12.5076" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="250.1523" x="414.9848" y="74.6304">受信したディレクティブのダイアログIDを確認する</text><polygon fill="#05D686" points="465.9086,113.0048,614.2132,113.0048,624.934,129.3041,614.2132,145.6034,465.9086,145.6034,455.1878,129.3041,465.9086,113.0048" style="stroke: #FFFFFF; stroke-width: 1.3401015228426396;"/><text fill="#FFFFFF" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="12.5076" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="121.5025" x="479.3096" y="134.0311">ダイアログIDが存在する</text><text fill="#000000" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="10.7208" lengthAdjust="spacingAndGlyphs" textLength="17.868" x="428.3858" y="118.1087">はい</text><text fill="#000000" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="10.7208" lengthAdjust="spacingAndGlyphs" textLength="26.802" x="633.868" y="118.1087">いいえ</text><rect fill="#9EA0CA" height="50.4667" rx="11.1675" ry="11.1675" style="stroke: #FFFFFF; stroke-width: 1.3401015228426396;" width="178.6802" x="240.3249" y="154.5374"/><text fill="#FFFFFF" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="12.5076" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="142.9442" x="258.1929" y="184.4978">最終ダイアログIDを確認する</text><polygon fill="#05D686" points="180.467,222.8721,478.8629,222.8721,489.5838,239.1715,478.8629,255.4708,180.467,255.4708,169.7462,239.1715,180.467,222.8721" style="stroke: #FFFFFF; stroke-width: 1.3401015228426396;"/><text fill="#FFFFFF" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="12.5076" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="271.5939" x="193.868" y="243.8985">ディレクティブのダイアログID == 最終ダイアログID</text><text fill="#000000" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="10.7208" lengthAdjust="spacingAndGlyphs" textLength="17.868" x="142.9442" y="227.976">はい</text><text fill="#000000" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="10.7208" lengthAdjust="spacingAndGlyphs" textLength="26.802" x="498.5178" y="227.976">いいえ</text><rect fill="#9EA0CA" height="50.4667" rx="11.1675" ry="11.1675" style="stroke: #FFFFFF; stroke-width: 1.3401015228426396;" width="303.7563" x="8.934" y="264.4048"/><text fill="#FFFFFF" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="12.5076" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="268.0203" x="26.802" y="294.3652">受信したディレクティブをメッセージキューに追加する</text><ellipse cx="160.8122" cy="341.6735" fill="none" rx="8.934" ry="8.934" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><ellipse cx="161.2589" cy="342.1202" fill="#000000" rx="5.3604" ry="5.3604" style="stroke: none; stroke-width: 0.8934010152284264;"/><rect fill="#9EA0CA" height="50.4667" rx="11.1675" ry="11.1675" style="stroke: #FFFFFF; stroke-width: 1.3401015228426396;" width="207.269" x="394.8832" y="264.4048"/><text fill="#FFFFFF" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="12.5076" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="171.533" x="412.7513" y="294.3652">受信したディレクティブを破棄する</text><ellipse cx="498.5178" cy="341.6735" fill="none" rx="8.934" ry="8.934" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><ellipse cx="498.9645" cy="342.1202" fill="#000000" rx="5.3604" ry="5.3604" style="stroke: none; stroke-width: 0.8934010152284264;"/><rect fill="#9EA0CA" height="50.4667" rx="11.1675" ry="11.1675" style="stroke: #FFFFFF; stroke-width: 1.3401015228426396;" width="243.0051" x="628.9543" y="154.5374"/><text fill="#FFFFFF" font-family="&quot;Malgun Gothic&quot;, sans-serif" font-size="12.5076" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="207.269" x="646.8223" y="184.4978">受信したディレクティブを即座に処理する</text><ellipse cx="750.4569" cy="231.8062" fill="none" rx="8.934" ry="8.934" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><ellipse cx="750.9036" cy="232.2529" fill="#000000" rx="5.3604" ry="5.3604" style="stroke: none; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="540.0609" x2="540.0609" y1="26.802" y2="44.6701"/><polygon fill="#000000" points="536.4873,35.736,540.0609,44.6701,543.6345,35.736,540.0609,39.3096" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="160.8122" x2="160.8122" y1="314.8715" y2="332.7395"/><polygon fill="#000000" points="157.2386,323.8055,160.8122,332.7395,164.3858,323.8055,160.8122,327.3791" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="498.5178" x2="498.5178" y1="314.8715" y2="332.7395"/><polygon fill="#000000" points="494.9442,323.8055,498.5178,332.7395,502.0914,323.8055,498.5178,327.3791" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="169.7462" x2="160.8122" y1="239.1715" y2="239.1715"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="160.8122" x2="160.8122" y1="239.1715" y2="264.4048"/><polygon fill="#000000" points="157.2386,255.4708,160.8122,264.4048,164.3858,255.4708,160.8122,259.0444" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="489.5838" x2="498.5178" y1="239.1715" y2="239.1715"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="498.5178" x2="498.5178" y1="239.1715" y2="264.4048"/><polygon fill="#000000" points="494.9442,255.4708,498.5178,264.4048,502.0914,255.4708,498.5178,259.0444" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="329.665" x2="329.665" y1="205.0041" y2="222.8721"/><polygon fill="#000000" points="326.0914,213.9381,329.665,222.8721,333.2386,213.9381,329.665,217.5117" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="750.4569" x2="750.4569" y1="205.0041" y2="222.8721"/><polygon fill="#000000" points="746.8832,213.9381,750.4569,222.8721,754.0305,213.9381,750.4569,217.5117" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="455.1878" x2="329.665" y1="129.3041" y2="129.3041"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="329.665" x2="329.665" y1="129.3041" y2="154.5374"/><polygon fill="#000000" points="326.0914,145.6034,329.665,154.5374,333.2386,145.6034,329.665,149.177" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="624.934" x2="750.4569" y1="129.3041" y2="129.3041"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="750.4569" x2="750.4569" y1="129.3041" y2="154.5374"/><polygon fill="#000000" points="746.8832,145.6034,750.4569,154.5374,754.0305,145.6034,750.4569,149.177" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><line style="stroke: #000000; stroke-width: 1.3401015228426396;" x1="540.0609" x2="540.0609" y1="95.1367" y2="113.0048"/><polygon fill="#000000" points="536.4873,104.0707,540.0609,113.0048,543.6345,104.0707,540.0609,107.6444" style="stroke: #000000; stroke-width: 0.8934010152284264;"/><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam defaultFontName "Malgun Gothic", sans-serif
+
+skinparam note {
+  BackgroundColor #9EA0CA
+  BorderColor #ffffff
+  FontColor #ffffff
+  FontSize 14
+  FontStyle bold
+}
+
+skinparam sequence {
+  ArrowColor #000000
+  ActorBorderColor #000000
+  ActorFontStyle Bolder
+
+
+  LifeLineBorderColor #000000
+  LifeLineBackgroundColor transparent
+  ParticipantBorderColor transparent
+  ParticipantFontSize 14
+  ParticipantFontColor #ffffff
+  ParticipantFontStyle bold
+
+  BoxBorderColor #000000
+  BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+hide footbox
+
+skinparam activity {
+  BackgroundColor #9EA0CA
+  BarColor #ffffff
+  BorderColor #ffffff
+  DiamondBackgroundColor #05D686
+  DiamondBorderColor #ffffff
+  DiamondFontColor #ffffff
+  DiamondFontSize 14
+  DiamondFontStyle bold
+  FontColor #ffffff 
+  FontSize 14
+  FontStyle bold
+}
+
+start
+
+:受信したディレクティブのダイアログIDを確認する;
+
+if ( ダイアログIDが存在する ) then (はい)
+
+  :最終ダイアログIDを確認する;
+
+  if ( ディレクティブのダイアログID == 最終ダイアログID ) then (はい)
+
+  :受信したディレクティブをメッセージキューに追加する;
+  stop
+
+  else (いいえ)
+
+  :受信したディレクティブを破棄する;
+  stop
+  endif
+
+else (いいえ)
+  :受信したディレクティブを即座に処理する;
+  stop
+endif
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11+28
+Operating System: Mac OS X
+OS Version: 10.14.2
+Default Encoding: US-ASCII
+Language: en
+Country: KR
+--></g></svg>

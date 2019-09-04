@@ -1,0 +1,22 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Bluetoothデバイス" as device #9EA0CA
+participant クライアント as client #9EA0CA
+participant "Clova" as clova #05D686
+
+activate device
+activate client
+hnote over device, clova : Bluetoothデバイスとの接続を解除するようにリクエストする
+activate clova
+ alt 特定のデバイスが指定されたか == はい
+  clova -> client : DeviceControl.BtDisconnect (with payload)\nディレクティブを送信する
+ else 特定のデバイスが指定されたか == いいえ
+    clova -> client : DeviceControl.BtDisconnect (without payload)\nディレクティブを送信する
+end
+  client -> device : 接続を解除する
+deactivate device
+  client --> clova : DeviceControl.ActionExecuted (with DeviceState)\nイベントを送信する
+hnote over device, clova : Bluetoothデバイスとの接続を解除した結果を共有する
+deactivate client
+deactivate device
+deactivate clova

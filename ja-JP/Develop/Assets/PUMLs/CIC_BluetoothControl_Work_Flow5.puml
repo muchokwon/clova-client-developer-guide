@@ -1,0 +1,12 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant クライアント as client #9EA0CA
+participant "Clova" as clova #05D686
+
+hnote over client, clova : Bluetoothデバイスを削除するようにリクエストする
+activate clova
+  clova ->> client : DeviceControl.BtDelete (with payload)\nディレクティブを送信する
+  activate client
+  client -->> clova : DeviceControl.ActionExecuted (with DeviceState)\nイベントを送信する
+  deactivate client
+hnote over client, clova : デバイスを削除した結果を共有する

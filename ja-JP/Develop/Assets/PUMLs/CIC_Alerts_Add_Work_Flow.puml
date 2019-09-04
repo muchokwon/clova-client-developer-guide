@@ -1,0 +1,49 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor ユーザー as user #9EA0CA
+participant クライアント as client #9EA0CA
+participant CIC as cic #05D686
+
+
+user ->> client : アラームの設定をリクエストする：\n「今日の午後9時にアラームを設定して」
+
+activate client
+  client ->> cic : ユーザーのリクエストを送信する\n(SpeechRecognizer.Recognizeイベント)
+deactivate client
+
+activate cic
+  cic -> cic : ユーザーの発話を解析する
+  cic -->> client : Alerts.SetAlertディレクティブを送信する
+deactivate cic
+
+activate client
+  client -> client : クライアントデバイスにアラームを設定する
+
+alt アラーム設定結果 == 設定失敗
+
+  client ->> cic : Alerts.SetAlertFailedイベントを送信する
+  deactivate client
+  activate cic
+
+  cic -->> client : SpeechSynthesizer.Speakディレクティブを送信する\n(「アラームを設定できませんでした」)
+  deactivate cic
+  activate client
+    client -->> user : アラームの設定結果を送信する
+
+else アラーム設定結果 == 設定成功
+
+  client ->> cic : Alerts.SetAlertSucceededイベントを送信する
+
+deactivate client
+
+activate cic
+  cic -> cic : ユーザーのアラームを設定する
+  cic -->> client : SpeechSynthesizer.Speakディレクティブを送信する\n(「アラームが設定されました」)
+activate client
+  cic -->> client : Actiontimer、Alarm、Reminder、Timerテンプレートを送信する\n(Clova.RenderTemplateディレクティブ)
+deactivate cic
+
+  client -> client : 音声出力および設定されたアラームの内容を表示する
+  client -->> user : アラームの設定結果を送信する
+
+  end

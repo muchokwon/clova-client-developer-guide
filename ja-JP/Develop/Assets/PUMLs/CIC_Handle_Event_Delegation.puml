@@ -1,0 +1,29 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Clovaアプリ" as ca #9EA0CA
+participant "クライアントデバイス" as cli #9EA0CA
+participant CIC as cic #05D686
+
+activate ca
+  ca ->> cic  : ユーザーのリクエストの送信し、リクエストの処理を委任する
+deactivate ca
+
+activate cic
+
+  cic ->> cli  : 委任処理を指示する(Clova.HandleDelegatedEventディレクティブ、ダウンチャネルを使用する)
+
+  deactivate cic
+  activate cli
+
+    cli ->> cic  : 委任されたユーザーのリクエストを処理するようにリクエストする(Clova.ProcessDelegatedEventイベント)
+
+  deactivate cli
+
+  activate cic
+
+    cic -> cic  : ユーザーのリクエストを処理する
+    cic -->> cli  : ユーザーのリクエストが処理し、適切なディレクティブを送信する
+  deactivate cic
+
+  activate cli
+    cli -> cli  : 通常のディレクティブを処理する

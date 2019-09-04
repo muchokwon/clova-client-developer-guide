@@ -1,0 +1,29 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor ユーザー as user
+participant "Bluetoothデバイス" as device #9EA0CA
+participant クライアント as client #9EA0CA
+participant "Clova" as clova #05D686
+
+user ->> client : オーディオを再生するようにリクエストする
+activate client
+client ->> clova : SpeechRecognizer.Recognize\nイベントを送信する
+deactivate client
+activate clova
+alt クライアントのロール == sink
+  clova ->> client : DeviceControl.BtPlay\nディレクティブを送信する
+
+activate client
+
+	device -> client : Bluetoothデバイスからオーディオストリームを受信する
+  activate device
+    client -> user : スピーカーでオーディオを再生する
+else クライアントのロール == source
+        clova -> client : AudioPlayer.Play\nディレクティブを送信する
+        client -> device : Bluetoothスピーカーにオーディオを送信する
+    device -> user : Bluetoothスピーカーでオーディオを再生する
+end
+  client --> clova : DeviceControl.ActionExecuted (with DeviceState) \nイベントを送信する
+deactivate client
+deactivate device
+deactivate clova

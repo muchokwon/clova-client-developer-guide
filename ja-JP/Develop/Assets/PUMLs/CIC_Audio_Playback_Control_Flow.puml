@@ -1,0 +1,66 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor ユーザー as user #9EA0CA
+participant "Clovaアプリ" as app #9EA0CA
+participant クライアント as client #9EA0CA
+participant CIC as cic #05D686
+
+alt 発話でオーディオ再生をコントロールする
+
+  user ->> client : オーディオ再生をコントロールするようにリクエストする：\n「音楽を一時停止して」
+
+  activate client
+    
+    client ->> cic : ユーザーのリクエストを送信する\n(SpeechRecognizer.Recognizeイベント)
+  
+  deactivate client
+
+  activate cic
+
+    cic -> cic : ユーザーの発話を解析する
+
+else クライアントデバイスのボタンでオーディオ再生をコントロールする
+
+  user ->> client : 一時停止ボタンを押す
+
+  activate client
+    
+    client ->> cic : 一時停止の命令が発生したことをレポートする\n(PlaybackController.PauseCommandIssuedイベント)
+  
+  deactivate client
+
+else Clova Clovaアプリから、リモートでオーディオ再生をコントロールする
+
+  user ->> app : クライアントのオーディオ再生を一時停止するようにリクエストする
+
+  activate app
+
+    app ->> cic : クライアントのオーディオ再生の一時停止リクエストを送信する
+    
+  deactivate app
+
+    cic ->> client : ユーザーが一時停止ボタンを押したときと同じ動作をするようにリクエストする\n(PlaybackController.ExpectPauseCommandディレクティブ)
+
+  activate client
+
+    client ->> cic : 一時停止の命令が発生したことをレポートする\n(PlaybackController.PauseCommandIssuedイベント)
+
+  deactivate client
+
+end
+
+
+activate cic
+
+  cic -->> client : オーディオ再生を停止するように指示する\n(PlaybackController.Pauseディレクティブ)
+
+deactivate cic
+
+activate client
+
+  client -> client : オーディオ再生を一時停止する
+  client ->> cic : オーディオ再生を一時停止したことをレポートする\n(AudioPlayer.PlayResumedイベント)
+
+deactivate client
+
+activate cic

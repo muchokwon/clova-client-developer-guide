@@ -1,0 +1,38 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Bluetoothデバイス" as device #9EA0CA
+participant クライアント as client #9EA0CA
+participant "Clova" as clova #05D686
+
+activate clova
+activate device
+hnote over device, clova : Bluetoothデバイスとの接続をリクエストする
+ alt 特定のデバイスが指定されたか == はい
+	clova ->> client : DeviceControl.BtConnect (with payload)\nディレクティブを送信する
+
+	activate client
+ else 特定のデバイスが指定されたか == いいえ
+    clova ->> client : DeviceControl.BtConnect (without payload)\nディレクティブを送信する
+end
+
+  client ->> device : 接続をリクエストする
+  client -->> clova : DeviceControl.ActionExecuted (with DeviceState)\nイベントを送信する
+
+	deactivate client
+opt 接続するデバイスがPINコードを必要とする場合
+	device ->> client : PINコードをリクエストする
+
+	activate client
+
+  group "ユーザーがPINコードを入力する"
+    client ->> clova : DeviceControl.BtRequestForPINCode\nイベントを送信する
+    hnote over client, clova : ユーザーから入力されたPINコードを処理する
+    clova ->> client : DeviceControl.BtConnectByPINCode\nディレクティブを送信する
+  end
+  client ->> device : PINコードで接続するようにリクエストする
+  client ->> clova: DeviceControl.ActionExecuted\nイベントを送信する
+	device -->> client : デバイスの接続を許可する
+  client ->> clova : DeviceControl.ReportState\nイベントを送信する
+deactivate client
+end
+hnote over device, clova : 接続結果を共有する

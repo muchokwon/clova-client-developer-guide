@@ -1,0 +1,32 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor ユーザー as user #9EA0CA
+participant "Clovaアプリ" as ca #9EA0CA
+participant "クライアントデバイス" as cli #9EA0CA
+participant CIC as cic #05D686
+
+user ->> ca: デバイスの現在の設定情報を照会する
+
+activate ca
+
+  ca ->> cic: デバイスの現在の設定情報を同期するようにリクエストする
+
+  activate cic
+
+    cic ->> cli: デバイスの現在の設定情報をリクエストする\n(Settings.ExpectReportディレクティブを送信する)
+  
+    activate cli
+    
+      cli ->> cic: デバイスの現在の設定情報をレポートする\n(Settings.Reportイベントを送信する)
+    
+    deactivate cli
+
+    cic ->> ca: デバイスの現在の設定情報を同期するように指示する
+
+  deactivate cic
+    
+  ca -> ca: デバイスの設定情報を更新する
+  
+  ca ->> user: デバイスの設定情報を提供する
+
+deactivate ca
