@@ -402,7 +402,7 @@ Clovaは、ユーザーからリクエストされた再生制御を、次のよ
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>受信した<a href="/Develop/References/MessageInterfaces/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a>ディレクティブの<code>audioItem.stream.urlPlayable</code>フィールドが<code>false</code>の場合、<strong>後から<a href="/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a>ディレクティブで受信するストリームの情報と統合する必要があります。<strong></p>
+  <p>受信した<a href="/Develop/References/MessageInterfaces/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a>ディレクティブの<code>audioItem.stream.urlPlayable</code>フィールドが<code>false</code>の場合、<strong>後から<a href="/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a>ディレクティブで受信するストリームの情報と統合する必要があります。</strong></p>
 </div>
 
 その後、[`AudioPlayer.StreamRequested`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamRequested)イベントを使用して、ストリームの再生に必要な情報をリクエストします。このとき、保管していた`audioItem.stream`フィールドの値を含める必要があります。
@@ -437,7 +437,7 @@ Clovaは、ユーザーからリクエストされた再生制御を、次のよ
 }
 ```
 
-すると、以下のように、実際に再生できる情報が含まれた[`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver)ディレクティブをCICから受信します。ここに含まれている`audioStream`フィールドの内容を**必ず統合する必要があります。**更新されたフィールドの内容は以前の内容に上書きし、更新がない部分はそのまま保持します。
+すると、以下のように、実際に再生できる情報が含まれた[`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver)ディレクティブをCICから受信します。ここに含まれている`audioStream`フィールドの内容を**必ず統合する必要があります。**更新されたフィールドの内容は以前の内容に上書きし、更新がない部分はそのまま保持します。**
 
 ```json
 {

@@ -2,20 +2,20 @@
 
 participant "GUIを提供しないクライアント" as device #9EA0CA
 participant "GUIを提供するクライアント" as app #9EA0CA
-participant "NAVER認可サーバー" as nauth #05D686
+participant "LINE認可サーバー" as nauth #05D686
 participant "Clova認可サーバー" as cauth #05D686
 participant CIC as cic #05D686
 
 activate app
-  app -> app: NAVERログイン
+  app -> app: LINEログイン
 
-  app ->> nauth: NAVERアカウント情報を送信する
+  app ->> nauth: LINEアカウント情報を送信する
 
   activate nauth
-    nauth -->> app: NAVERアカウントの\nアクセストークンを送信する
+    nauth -->> app: LINEアカウントの\nアクセストークンを送信する
   deactivate nauth
 
-  app ->> cauth: 認可コードをリクエストする(次の情報を送信する)\l- NAVERアカウントのアクセストークン\l- クライアント認証情報(CLOVA_OAUTH_CLIENT_ID)
+  app ->> cauth: 認可コードをリクエストする(次の情報を送信する)\l- LINEアカウントのアクセストークン\l- クライアント認証情報(CLOVA_OAUTH_CLIENT_ID)
 
 activate cauth
 
@@ -35,7 +35,7 @@ else 利用規約に同意しているか == "同意していない"
 end
 
 alt "クライアントタイプ" == "GUIを提供するクライアント"
-  app ->> cauth: Clovaアクセストークンをリクエストし、次の情報を送信する\l- NAVERアカウントのアクセストークン\l- クライアント認証情報\l  (CLOVA_OAUTH_CLIENT_ID、CLOVA_OAUTH_CLIENT_SECRET)
+  app ->> cauth: Clovaアクセストークンをリクエストし、次の情報を送信する\l- LINEアカウントのアクセストークン\l- クライアント認証情報\l  (CLOVA_OAUTH_CLIENT_ID、CLOVA_OAUTH_CLIENT_SECRET)
 
   activate cauth
     cauth -->> app: Clovaアクセストークンを送信する
@@ -50,7 +50,7 @@ else "クライアントタイプ" == "GUIを提供しないクライアント"
   deactivate app
 
   activate device
-    device ->> cauth: Clovaアクセストークンをリクエストし、次の情報を送信する\l- NAVERアカウントのアクセストークン\l- クライアント認証情報\l  (CLOVA_OAUTH_CLIENT_ID、CLOVA_OAUTH_CLIENT_SECRET)
+    device ->> cauth: Clovaアクセストークンをリクエストし、次の情報を送信する\l- LINEアカウントのアクセストークン\l- クライアント認証情報\l  (CLOVA_OAUTH_CLIENT_ID、CLOVA_OAUTH_CLIENT_SECRET)
 
     activate cauth
         cauth -->> device: Clovaアクセストークンを送信する
