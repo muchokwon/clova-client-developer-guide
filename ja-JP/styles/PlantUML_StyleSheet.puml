@@ -4,7 +4,7 @@ skinparam shadowing false
 skinparam roundcorner 10
 skinparam padding 10
 skinparam defaultFontSize 12
-skinparam defaultFontName "Noto Sans CJK KR"
+skinparam defaultFontName "Noto Sans CJK JP"
 
 skinparam note {
   BackgroundColor #9EA0CA

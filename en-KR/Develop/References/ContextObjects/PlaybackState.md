@@ -33,8 +33,8 @@
 | `offsetInMilliseconds` | number | The most recent playback position (offset) of the recently played media. The unit is in milliseconds. This field is omissible if the `playerActivity` field is set to `"IDLE"`.                                                  | Optional |
 | `playerActivity`       | string | Indicates the state of the player. Available values are:<ul><li><code>"IDLE"</code>: Deactivated</li><li><code>"PLAYING"</code>: Playing</li><li><code>"PAUSED"</code>: Paused</li><li><code>"STOPPED"</code>: Stopped</li></ul> | Required |
 | `repeatMode`           | string  | The repeat mode.<ul><li><code>"NONE"</code>: None</li><li><code>"REPEAT_ONE"</code>: Repeat one song</li></ul>                                                   | Required  |
-| `stream`               | [AudioStreamInfoObject](/Develop/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) | The details of the currently playing media. This field is omissible if the `playerActivity` field is set as `"IDLE"`. Enter the value of media information defined in the `stream` object provided by the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) or [`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver) directive message. | Optional |
-| `totalInMilliseconds`  | number | The total duration of the recently played media. If a value exists in the `durationInMilliseconds` field of the [AudioStreamInfoObject](/Develop/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) provided by the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message, use the value of this field. The unit is in milliseconds. This field is omissible if the `playerActivity` field is set to `"IDLE"`.                                                               | Optional |
+| `stream`               | [AudioStreamInfoObject](/Develop/References/MessageInterfaces/AudioPlayer.md#AudioStreamInfoObject) | The details of the currently playing media. This field's value is omissible if the `playerActivity` field is set as `"IDLE"`. Enter the value of media information (`stream` object) provided by the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) or [`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver) directive message. | Optional |
+| `totalInMilliseconds`  | number | The total duration of the recently played media. If the audio information ([AudioStreamInfoObject](/Develop/References/MessageInterfaces/AudioPlayer.md#AudioStreamInfoObject)) provided by the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message has a (/Develop/References/MessageInterfaces/AudioPlayer.md#AudioStreamInfoObject) field value, enter it as the value of this field. The unit is in milliseconds. This field is omissible if the `playerActivity` field is set to `"IDLE"`.                                                               | Optional |
 
 ### Object example
 
@@ -82,8 +82,8 @@
 {% endraw %}
 
 ### See also
-* [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)
-* [`AudioPlayer.StreamDeliver`](/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver)
-* [`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested)
+* [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)
+* [`AudioPlayer.StreamDeliver`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamDeliver)
+* [`AudioPlayer.StreamRequested`](/Develop/References/MessageInterfaces/AudioPlayer.md#StreamRequested)
 
 <!-- End of the shared content -->

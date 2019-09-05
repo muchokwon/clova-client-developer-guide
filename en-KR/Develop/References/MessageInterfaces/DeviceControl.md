@@ -2,7 +2,7 @@
 
 The DeviceControl namespace provides interfaces for controlling client devices or reporting to CIC the result of changing client device settings.
 
-Some user requests may contain a control request of their client device. If the analyzed user request is for controlling the client device, the client will receive a directive message of the `DeviceControl` namespace. Then the client must perform the task instructed by the directive message and then send the result to CIC. For more information, see the [Handling client action control](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md).
+Some user requests may contain a control request of their client device. If the analyzed user request is for controlling the client device, the client will receive a directive message of the `DeviceControl` namespace. Then the client must perform the task instructed by the directive message and then send the result to CIC. For more information, see the [Handling client action control](/Develop/Guides/Handle_Device_Control.md).
 
 The client device can be connected to a third-party Bluetooth device using the `DeviceControl` message. CIC controls the connection to a third-party Bluetooth device by sending a directive message for Bluetooth pairing and connection to the client. The client will frequently report the information related to the paired Bluetooth device using the [`BluetoothInfoObject`](/Develop/References/Context_Objects.md#BluetoothInfoObject) of the [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) context. For more information on creating a connection, refer to each directive message and event message.
 
@@ -41,7 +41,7 @@ Reports to CIC if the client has taken an action on the specified feature or mod
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -99,8 +99,8 @@ Upon receiving the event message, CIC sends the [`SynchronizeState`](#Synchroniz
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Handling client action control](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md)
-* [Handling client Bluetooth control](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md)
+* [Handling client action control](/Develop/Guides/Handle_Device_Control.md)
+* [Handling client Bluetooth control](/Develop/Guides/Handle_Bluetooth_Control.md)
 
 ## ActionFailed event {#ActionFailed}
 
@@ -108,7 +108,7 @@ Reports to CIC if the client cannot or has failed to take an action on the speci
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -167,8 +167,8 @@ Reports to CIC if the client cannot or has failed to take an action on the speci
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Handling client action control](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md)
-* [Handling client Bluetooth control](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md)
+* [Handling client action control](/Develop/Guides/Handle_Device_Control.md)
+* [Handling client Bluetooth control](/Develop/Guides/Handle_Bluetooth_Control.md)
 
 ## BtConnect directive {#BtConnect}
 
@@ -193,7 +193,7 @@ None
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `address`     | string  | The address of the Bluetooth device to connect to.     | Always     |
-| `connected`   | boolean | Indicates the connection to the specified Bluetooth device. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul>      | Always     |
+| `connected`   | boolean | Indicates the connection status of the Bluetooth device to connect.<ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul>      | Always     |
 | `name`        | string  | The name of the Bluetooth device to connect to.         | Always     |
 | `role`        | string  | Role of a client when connecting to the Bluetooth device.<ul><li><code>"sink"</code>: Role of receiving audio stream (mainly a speaker)</li><li><code>"source"</code>: Role of transmitting audio stream (sender of audio data)</li></ul> | Always     |
 
@@ -234,10 +234,10 @@ None
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Handling Bluetooth device unpairing](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [Handling Bluetooth connection requests](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Enabling client device settings](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [Handling Bluetooth device unpairing](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [Handling Bluetooth connection requests](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Enabling client device settings](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)
 
 ## BtConnectByPINCode directive {#BtConnectByPINCode}
 
@@ -281,8 +281,8 @@ Instructs the client to connect to the Bluetooth speaker that has requested a PI
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtRequestForPINCode`](#BtRequestForPINCode)
 * [`DeviceControl.ReportState`](#ReportState)
-* [Handling Bluetooth connection requests](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Handling Bluetooth connection requests](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
 
 ## BtDelete directive {#BtDelete}
 
@@ -293,7 +293,7 @@ Instructs the client to remove a specific device from the list of paired Bluetoo
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `address`     | string  | The address of the Bluetooth device to remove.     | Always     |
-| `connected`   | boolean | Indicates the connection to the Bluetooth device to remove. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul>      | Always     |
+| `connected`   | boolean | Indicates the connection status of the Bluetooth device to remove.<ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul>      | Always     |
 | `name`        | string  | The name of the Bluetooth device to remove.         | Always     |
 | `role`        | string  | Role of a client when connecting to the Bluetooth device.<ul><li><code>"sink"</code>: Role of receiving audio stream (mainly a speaker)</li><li><code>"source"</code>: Role of transmitting audio stream (sender of audio data)</li></ul> | Always     |
 
@@ -333,9 +333,9 @@ Instructs the client to remove a specific device from the list of paired Bluetoo
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
-* [Handling Bluetooth connection requests](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Deleting paired Bluetooth device](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
+* [Handling Bluetooth connection requests](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Deleting paired Bluetooth device](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
 
 ## BtDisconnect directive {#BtDisconnect}
 
@@ -352,7 +352,7 @@ None
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `address`     | string  | The address of the Bluetooth device to disconnect.     | Always     |
-| `connected`   | boolean | Indicates the connection to the Bluetooth device to disconnect. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul>      | Always     |
+| `connected`   | boolean | Indicates the connection status of the Bluetooth device to disconnect. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul>      | Always     |
 | `name`        | string  | The name of the Bluetooth device to disconnect.         | Always     |
 | `role`        | string  | Role of a client when connecting to the Bluetooth device.<ul><li><code>"sink"</code>: Role of receiving audio stream (mainly a speaker)</li><li><code>"source"</code>: Role of transmitting audio stream (sender of audio data)</li></ul> | Always     |
 
@@ -389,10 +389,10 @@ None
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Handling Bluetooth device unpairing](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [Handling Bluetooth connection requests](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Deleting paired Bluetooth device](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
+* [Handling Bluetooth device unpairing](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [Handling Bluetooth connection requests](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Deleting paired Bluetooth device](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
 
 ## BtPlay directive {#BtPlay}
 
@@ -441,7 +441,7 @@ Sends the PIN code input request of the Bluetooth speaker to CIC.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -488,7 +488,7 @@ Sends the PIN code input request of the Bluetooth speaker to CIC.
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtConnectByPINCode`](#BtConnectByPINCode)
 * [`DeviceControl.BtRequestToCancelPinCodeInput`](#BtRequestToCancelPinCodeInput)
-* [Handling Bluetooth connection requests](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Handling Bluetooth connection requests](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
 
 ## BtRequestToCancelPinCodeInput event {#BtRequestToCancelPinCodeInput}
 
@@ -496,7 +496,7 @@ Sends the cancellation request for the PIN code input from the Bluetooth speaker
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -536,7 +536,7 @@ None
 ### See also
 
 * [`DeviceControl.BtRequestForPINCode`](#BtRequestForPINCode)
-* [Handling Bluetooth connection requests](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Handling Bluetooth connection requests](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
 
 ## BtRescan directive {#BtRescan}
 
@@ -577,9 +577,9 @@ None
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
-* [Handling Bluetooth connection requests](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Deleting paired Bluetooth device](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
+* [Handling Bluetooth connection requests](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Deleting paired Bluetooth device](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDelete)
 
 ## BtStartPairing directive {#BtStartPairing}
 
@@ -622,9 +622,9 @@ None
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Handling Bluetooth device unpairing](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [Handling Bluetooth connection requests](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Handling Bluetooth device unpairing](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [Handling Bluetooth connection requests](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
 
 ## BtStopPairing directive {#BtStopPairing}
 
@@ -667,10 +667,10 @@ None
 * [`DeviceControl.BtStartPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Handling Bluetooth device unpairing](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
-* [Handling Bluetooth connection requests](/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Enabling client device settings](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [Handling Bluetooth device unpairing](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothDisconnect)
+* [Handling Bluetooth connection requests](/Develop/Guides/Handle_Bluetooth_Control.md#HandleBluetoothConnect)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Enabling client device settings](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)
 
 ## Decrease directive {#Decrease}
 
@@ -689,7 +689,7 @@ Instructs the client to turn down the speaker volume or lower the screen brightn
 * The client must frequently report the current speaker volume and screen brightness to CIC using the [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) context object.
 * Even if the user requests a change of value that exceeds the range of screen brightness or volume that the device can express, Clova sends this directive message by adjusting the requested amount to the device.
 * The client must send the result of handling this directive message to CIC using the [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
-* Clova normally provides a voice guide ([`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) directive message ) when sending a directive message to the client for device control. However, if the control is related to speaker output like the `"volume"` is set in the `target` field, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
+* Clova normally provides a voice guide ([`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) directive message ) when sending a directive message to the client for device control. However, if the control is related to speaker output like the `"volume"` is set in the `target` field, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
 
 ### Message example
 
@@ -750,8 +750,8 @@ Instructs the client to turn down the speaker volume or lower the screen brightn
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.Increase`](#Increase)
 * [`DeviceControl.SetValue`](#SetValue)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Adjusting device volume](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceVolume)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Adjusting device volume](/Develop/Guides/Handle_Device_Control.md#HandleDeviceVolume)
 
 ## ExpectReportState directive {#ExpectReportState}
 
@@ -813,7 +813,7 @@ Instructs the client to turn up the speaker volume or increase the screen bright
 * Even if the user requests a change of value that exceeds the range of screen brightness or volume that the device can express, Clova sends this directive message by adjusting the requested amount to the device.
 * The client must frequently report the current speaker volume and screen brightness to CIC using the [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) context object.
 * The client must send the result of handling this directive message to CIC using the [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
-* Clova normally provides a voice guide ([`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) directive message ) when sending a directive message to the client for device control. However, if the control is related to speaker output like the `"volume"` is set in the `target` field, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
+* Clova normally provides a voice guide ([`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) directive message ) when sending a directive message to the client for device control. However, if the control is related to speaker output like the `"volume"` is set in the `target` field, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
 
 ### Message example
 
@@ -874,8 +874,8 @@ Instructs the client to turn up the speaker volume or increase the screen bright
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.SetValue`](#SetValue)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Adjusting device volume](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceVolume)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Adjusting device volume](/Develop/Guides/Handle_Device_Control.md#HandleDeviceVolume)
 
 ## LaunchApp directive {#LaunchApp}
 
@@ -998,7 +998,7 @@ Reports to CIC of the current device state.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1042,7 +1042,7 @@ None
 ### See also
 * [`DeviceControl.ExpectReportState`](#ExpectReportState)
 * [`DeviceControl.SynchronizeState`](#SynchronizeState)
-* [Sharing device state information](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceStateReport)
+* [Sharing device state information](/Develop/Guides/Handle_Device_Control.md#HandleDeviceStateReport)
 
 ## RequestStateSynchronization event {#RequestStateSynchronization}
 
@@ -1050,7 +1050,7 @@ Requests for the current state of other client devices registered to the current
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1136,7 +1136,7 @@ Instructs the client to set the speaker volume level or screen brightness level 
 
 * The client must frequently report the current speaker volume and screen brightness to CIC using the [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) context object.
 * The client must send the result of handling this directive message to CIC using the [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
-* Clova normally provides a voice guide ([`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) directive message ) when sending a directive message to the client for device control. However, if the control is related to speaker output like the `"volume"` is set in the `target` field, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
+* Clova normally provides a voice guide ([`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) directive message ) when sending a directive message to the client for device control. However, if the control is related to speaker output like the `"volume"` is set in the `target` field, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
 
 ### Message example
 
@@ -1168,8 +1168,8 @@ Instructs the client to set the speaker volume level or screen brightness level 
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.Increase`](#Increase)
 * [`DeviceControl.SetValue`](#SetValue)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Adjusting device volume](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleDeviceVolume)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Adjusting device volume](/Develop/Guides/Handle_Device_Control.md#HandleDeviceVolume)
 
 ## SynchronizeState directive {#SynchronizeState}
 
@@ -1189,7 +1189,7 @@ A client may receive this directive message in the following cases:
 
 ### Remarks
 
-The `DeviceControl.SynchronizeState` directive message is broadcasted to all the clients registered to the user account through a [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection) and does not contain a [dialogue ID (`dialogRequestId`)](/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md#HandleDirectivesByDialogueID).
+The `DeviceControl.SynchronizeState` directive message is broadcasted to all the clients registered to the user account through a [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection) and does not contain a [dialogue ID (`dialogRequestId`)](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md#HandleDirectivesByDialogueID).
 
 ### Message example
 
@@ -1217,7 +1217,7 @@ The `DeviceControl.SynchronizeState` directive message is broadcasted to all the
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.ReportState`](#ReportState)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
 
 ## TurnOff directive {#TurnOff}
 
@@ -1266,8 +1266,8 @@ Instructs the client to turn off or disable a specified feature or mode. For exa
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Enabling client device settings](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Enabling client device settings](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)
 
 ## TurnOn directive {#TurnOn}
 
@@ -1310,5 +1310,5 @@ Instructs the client to turn on or enable a specified feature or mode. For examp
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.TurnOn`](#TurnOn)
-* [Reporting handled results](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse)
-* [Enabling client device settings](/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleClientFeatureToggle)
+* [Reporting handled results](/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse)
+* [Enabling client device settings](/Develop/Guides/Handle_Device_Control.md#HandleClientFeatureToggle)

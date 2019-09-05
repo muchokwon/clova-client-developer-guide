@@ -22,7 +22,6 @@ The Cardlist template has standardized the data to be displayed on the screen as
 | `cardList[]`                | object array | The object array that has a list of information units to be displayed as cards. |
 | `cardList[].contentProviderText`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | The information of the content provider. The `value` field of this object can have an empty string (`""`).  |
 | `cardList[].description[]`    | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the information about the content this card is to display.          |
-| `cardList[].description[]`    | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the information about the content this card is to display.          |
 | `cardList[].imageUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | The URI of the image to display. The `value` field of this object may have an empty string (`""`) depending on the card type.  |
 | `cardList[].linkUrl`        | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | The URI information of the content. The `value` field of this object may have an empty string (`""`) depending on the card type.         |
 | `cardList[].press`          | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)       | The name of the news press. The `value` field of this object may have an empty string (`""`) depending on the card type.             |
@@ -32,6 +31,7 @@ The Cardlist template has standardized the data to be displayed on the screen as
 | `cardList[].referenceUrl`   | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | The information on the usage result URI of the referred service. The `value` field of this object can have an empty string (`""`).   |
 | `cardList[].title`          | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)       | The title of the content.             |
 | `cardList[].videoUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)             | The URI of the video or audio to play. The `value` field of this object may have an empty string (`""`) depending on the card type.    |
+| `noticeText`                | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)       | The details related to copyright or legal matters with the content. The `value` field of this object can have an empty string (`""`). **If the field value of this object is not an empty string (`""`), it must be displayed on the screen.**  |
 | `subType`                   | string  | The type of this card. Four available types are: <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p><code>Type1</code>, <code>Type2</code>, <code>Type3</code>, <code>Type5</code>, and <code>Type6</code> are displayed as an <strong>empty string</strong>. You must determine the type by checking the fields of the <code>card</code> object.</p></div>                                                    |
 | `type`                      | string  | The type of this template. The value is always `"CardList"`.                                                                       |
 
@@ -274,6 +274,10 @@ The Cardlist template has standardized the data to be displayed on the screen as
 {
   "subType": "Type4",
   "type": "CardList",
+  "noticeText": {
+    "type": "string",
+    "value": "As the details are summarized by automatic extraction technology, the main contents of the body can be excluded."
+  },
   "cardList": [
     {
       "contentProviderText" : {

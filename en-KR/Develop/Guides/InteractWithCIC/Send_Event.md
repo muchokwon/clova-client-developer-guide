@@ -1,7 +1,7 @@
 ## Sending events {#SendEvent}
 The client can send [event messages](/Develop/References/CIC_API.md#Event) to CIC. Event messages are used for sending client requests to CIC. Messages can be sent as an event message in a JSON format, but can also send user voice input as a [multipart message format](/Develop/References/CIC_API.md#MultipartMessage).
 
-To send user speech data from the client to CIC, use the [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) event message. The following describes the method of sending an event to CIC using `SpeechRecognizer.Recognize`.
+To send user speech data from the client to CIC, use the [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) event message. The following describes the method of sending an event to CIC using `SpeechRecognizer.Recognize`.
 
 <ol>
   <li>Import an <a href="#RequiredLibrary">HTTP/2 library</a> on the client and make sure you have a <a href="#Authorization">Clova access token</a> ready.</li>
@@ -15,9 +15,9 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
 Content-Type: multipart/form-data; boundary=Boundary-Text
 </code></pre>
   </li>
-  <li>Create a <a href="/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md">dialogue ID</a> (<code>dialogRequestId</code>) and a message ID (<code>messageId</code>), both in UUID format. Make sure the IDs are unique, as they will later be used to find a matching directive message from <a href="#ManageMessageQ">message queues</a>.</li>
+  <li>Create a <a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">dialogue ID</a> (<code>dialogRequestId</code>) and a message ID (<code>messageId</code>), both in UUID format. Make sure the IDs are unique, as they will later be used to find a matching directive message from <a href="#ManageMessageQ">message queues</a>.</li>
   <li>
-    <p>The first part of the message should contain the message header and the message body in JSON, including event information based on the <a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize"><code>SpeechRecognizer.Recognize</code></a> API specification.</p>
+    <p>The first part of the message should contain the message header and the message body in JSON, including event information based on the <a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize"><code>SpeechRecognizer.Recognize</code></a> API specification.</p>
     <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8<br/>
@@ -90,12 +90,12 @@ Content-Type: application/octet-stream<br/>
 --Boundary-Text--
 </code></pre>
   </li>
-  <li>Continue sending the speech data until CIC returns the <a href="/Develop/References/CICInterface/SpeechRecognizer.md#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> directive message. Once the sending is complete, CIC returns an HTTP response message to the client.</li>
+  <li>Continue sending the speech data until CIC returns the <a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> directive message. Once the sending is complete, CIC returns an HTTP response message to the client.</li>
 </ol>
 
 <div class="tip">
   <p><strong>Tip!</strong></p>
-  <p>To process a text input request, use the <a href="/Develop/References/CICInterface/TextRecognizer.md#Recognize"><code>TextRecognizer.Recognize</code></a> event.</p>
+  <p>To process a text input request, use the <a href="/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize"><code>TextRecognizer.Recognize</code></a> event.</p>
 </div>
 
 <div class="note">

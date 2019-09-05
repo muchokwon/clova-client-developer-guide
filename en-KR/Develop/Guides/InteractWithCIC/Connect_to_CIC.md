@@ -1,7 +1,7 @@
 ## Connecting with CIC {#ConnectToCIC}
 To connect a client with CIC, complete the following steps.
 * [Creating Clova access tokens](#CreateClovaAccessToken)
-* [Creating connections](#CreateConnection)
+* [Creating connection](#CreateConnection)
 * [Getting authorizations](#Authorization)
 * [Managing connections](#ManageConnection)
 
@@ -88,7 +88,7 @@ Obtain a Clova access token by following the instructions provided below:
   </li>
 </ol>
 
-### Connecting with CIC {#CreateConnection}
+### Creating connection {#CreateConnection}
 To establish an initial connection between a client and CIC, the first thing to do is [create a downchannel](/Develop/References/CIC_API.md#EstablishDownchannel). A downchannel is used for a client to receive directive messages from CIC. Directive messages sent through the downchannel are not responses to event messages but are cloud-initiated directives sent to the client in certain conditions or needs. For example, when a new push message arrives on a cloud queue, CIC will send a directive message through a downchannel to notify the user.
 
 To create a downchannel, send a `GET` request to `/v1/directives`. Once a downchannel is established, CIC keeps the connection open.
@@ -105,7 +105,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 {% endraw %}
 
-When the above connect request is successfully completed, CIC responds with the [`Clova.Hello`](/Develop/References/CICInterface/Clova.md#Hello) directive message. This indicates that CIC is ready to send more directive message through the downchannel.
+When the above connect request is successfully completed, CIC responds with the [`Clova.Hello`](/Develop/References/MessageInterfaces/Clova.md#Hello) directive message. This indicates that CIC is ready to send more directive message through the downchannel.
 
 {% raw %}
 

@@ -45,5 +45,5 @@ The following example shows how the Timer template is used on the Clova app dist
 ![](/Develop/Assets/Images/Content_Template-Timer.png)
 
 ## See also
-* [Alerts](/Develop/References/CICInterface/Alerts.md) interface
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) interface
 * [TimerList](/Develop/References/ContentTemplates/TimerList.md)
