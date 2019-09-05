@@ -3,7 +3,7 @@
 # TemplateRuntime
 
 <!-- Start of the shared content: CICAPIforAudioPlayback -->
-The TemplateRuntime namespace is used when the client or CIC requests or sends the playback metadata to display on the media player. The [`AudioPlayer`](/Develop/References/MessageInterfaces/AudioPlayer.md) interface must be used when performing tasks related to the information required for the actual audio stream playback and the `TemplateRuntime` interface must be used when performing tasks related to the playback metadata information such as play list, album image, or lyrics. Through this, the client can retrieve the playback metadata of another client device as well as itself and also provide the information to the user.
+The TemplateRuntime namespace is used when the client or CIC requests or sends the playback metadata to display on the media player. The [`AudioPlayer`](/Develop/References/CICInterface/AudioPlayer.md) interface must be used when performing tasks related to the information required for the actual audio stream playback and the `TemplateRuntime` interface must be used when performing tasks related to the playback metadata information such as play list, album image, or lyrics. Through this, the client can retrieve the playback metadata of another client device as well as itself and also provide the information to the user.
 
 | Message name         | Type  | Description                                   |
 |------------------|-----------|---------------------------------------------|
@@ -55,7 +55,7 @@ Reports to CIC when the user presses the Like button for specific media from the
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -105,7 +105,7 @@ Reports to CIC when the user presses the Like button for specific media from the
 
 ## RenderPlayerInfo directive {#RenderPlayerInfo}
 
-Instructs the client to display the sent playback metadata such as a playlist, album image, and lyrics on the media player. When the user requests to play music, the client plays the media by receiving the [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play) directive message. If necessary, a client with a display may have to express information related to playback on the media player. For this process, the playback metadata can be requested from CIC using the [`TemplateRuntime.RequestPlayerInfo`](#RequestPlayerInfo) event message and the `TemplateRuntime.RenderPlayerInfo` directive message is returned. The `TemplateRuntime.RenderPlayerInfo` directive message contains playback metadata on the media to play now and media to play later. The client is able to display metadata and play list of the currently playing media by providing the playback metadata of the `TemplateRuntime.RenderPlayerInfo` directive message to the user. It also provides the base data (`token`) that can process the user request to play specific media in the playlist, or to perform actions such as Like ([`TemplateRuntime.LikeCommandIssued`](#LikeCommandIssued)) or Unlike ([`TemplateRuntime.UnlikeCommandIssued`](#UnlikeCommandIssued)).
+Instructs the client to display the sent playback metadata such as a playlist, album image, and lyrics on the media player. When the user requests to play music, the client plays the media by receiving the [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play) directive message. If necessary, a client with a display may have to express information related to playback on the media player. For this process, the playback metadata can be requested from CIC using the [`TemplateRuntime.RequestPlayerInfo`](#RequestPlayerInfo) event message and the `TemplateRuntime.RenderPlayerInfo` directive message is returned. The `TemplateRuntime.RenderPlayerInfo` directive message contains playback metadata on the media to play now and media to play later. The client is able to display metadata and play list of the currently playing media by providing the playback metadata of the `TemplateRuntime.RenderPlayerInfo` directive message to the user. It also provides the base data (`token`) that can process the user request to play specific media in the playlist, or to perform actions such as Like ([`TemplateRuntime.LikeCommandIssued`](#LikeCommandIssued)) or Unlike ([`TemplateRuntime.UnlikeCommandIssued`](#UnlikeCommandIssued)).
 
 ### Payload fields
 | Field name       | Data type    | Description                     | Included |
@@ -113,7 +113,7 @@ Instructs the client to display the sent playback metadata such as a playlist, a
 | `controls[]`                | object array | The object array that has the button information that the client must display on the media player.             | Always |
 | `controls[].enabled`        | boolean      | Indicates whether the buttons specified in `controls[].name` must be enabled from the media player.<ul><li><code>true</code>: Enable</li><li><code>false</code>: Disable</li></ul>  | Always  |
 | `controls[].name`           | string       | The button name. Available values are:<ul><li><code>"NEXT"</code>: Next</li><li><code>"PLAY_PAUSE"</code>: Play/Pause</li><li><code>"PREVIOUS"</code>: Previous</li></ul>  | Always  |
-| `controls[].selected`       | boolean      | Indicates whether the media content is selected. This value can be used for displaying user preferences. For example, if this value is set as `true`, the content must be expressed on the relevant UI of the media player, because the user has selected it as a preference. <ul><li><code>true</code>: Selected</li><li><code>false</code>: Not selected</li></ul> | Always  |
+| `controls[].selected`       | boolean      | Indicates whether the media content is selected. This value can be used for displaying user preferences. For example, if this value is set as `true`, the content must be expressed on the relevant UI of the media player since the user has selected it as a preference. <ul><li><code>true</code>: Selected</li><li><code>false</code>: Not selected</li></ul> | Always  |
 | `controls[].type`           | string       | The type of button. Currently, only the `"BUTTON"` value is available.  | Always |
 | `displayType`               | string | Display format of the media content.<ul><li><code>"list"</code>: Display a list</li><li><code>"single"</code>: Display a single item</li></ul>       | Always |
 | `playableItems[]`           | object array | The object containing the list of media content that can be played. This field can be an empty array.  | Always |
@@ -255,7 +255,7 @@ Requests CIC for playback metadata such as a playlist, album image, and lyrics t
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -264,7 +264,7 @@ Requests CIC for playback metadata such as a playlist, album image, and lyrics t
 | `range`        | object  | The scope of the playback metadata. If this field is empty, the client will receive a random number of metadata.   | Optional  |
 | `range.after`  | number  | Requests n number of playback metadata included in the next playlist from the existing media content. For example, if the value of `range.after` is set as `5` without specifying the value of `range.before` field, the playback metadata equivalent to a total of six media contents, including the base media content, is received. | Optional  |
 | `range.before` | number  | Requests n number of playback metadata included in the previous playlist from the base media content.  | Optional  |
-| `token`        | string  | The token of the media content that becomes the starting point when importing the playback metadata. Make sure to enter the token value provided in the `playableItems[].token` field of the [`TemplateRuntime.RenderPlayerInfo`](#RenderPlayerInfo) directive message. | Required |
+| `token`        | string  | The token of the media content which becomes the starting standard when importing the playback metadata. Make sure to enter the token value provided in the `playableItems[].token` field of the [`TemplateRuntime.RenderPlayerInfo`](#RenderPlayerInfo) directive message. | Required |
 
 ### Message example
 
@@ -307,7 +307,7 @@ Reports to CIC when the user presses the Subscribe button for specific media fro
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -359,7 +359,7 @@ Reports to CIC when the user presses the Unlike button for specific media from t
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -410,7 +410,7 @@ Reports to CIC when the user presses the Unsubscribe button for specific media f
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 

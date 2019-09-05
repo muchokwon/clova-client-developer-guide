@@ -19,7 +19,7 @@ You must implement the following on a client, using the Alerts interfaces:
 
 <div class="tip">
   <p><strong>Tip!</strong></p>
-  <p>For more information on how to implement registering, modifying, deleting, starting, or stopping alarms, see <a href="/Develop/Guides/Handle_Alerts.md">Handling alerts</a>.</p>
+  <p>For more information on how to implement registering, modifying, deleting, starting, or stopping alarms, see <a href="/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md">Handling alerts</a>.</p>
 </div>
 
 The Alerts namespace provides the following event messages and directive message.
@@ -57,7 +57,7 @@ Reports to CIC that the client has started ringing an alarm. Once the alarm star
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -99,7 +99,7 @@ Reports to CIC that the client has started ringing an alarm. Once the alarm star
 
 ### See also
 * [`Alerts.AlertStopped`](#AlertStopped)
-* [Starting alarms](/Develop/Guides/Handle_Alerts.md#RingAlert)
+* [Starting alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#RingAlert)
 
 ## AlertStopped event {#AlertStopped}
 
@@ -109,7 +109,7 @@ Reports to CIC that the client has stopped ringing an alarm. Once the ringing al
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -151,7 +151,7 @@ Reports to CIC that the client has stopped ringing an alarm. Once the ringing al
 
 ### See also
 * [`Alerts.AlertStarted`](#AlertStarted)
-* [Stopping alarms](/Develop/Guides/Handle_Alerts.md#StopAlert)
+* [Stopping alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#StopAlert)
 
 ## DeleteAlert directive {#DeleteAlert}
 
@@ -192,7 +192,7 @@ Instructs the client to delete the specified alarm. Upon receipt, the client mus
 ### See also
 * [`Alerts.DeleteAlertFailed`](#DeleteAlertFailed)
 * [`Alerts.DeleteAlertSucceeded`](#DeleteAlertSucceeded)
-* [Editing or deleting alarms](/Develop/Guides/Handle_Alerts.md#EditAlert)
+* [Editing or deleting alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
 
 ## DeleteAlertFailed event {#DeleteAlertFailed}
 
@@ -200,7 +200,7 @@ Reports to CIC that the client has failed to delete the specified alarm. The cli
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -243,7 +243,7 @@ Reports to CIC that the client has failed to delete the specified alarm. The cli
 ### See also
 * [`Alerts.DeleteAlert`](#DeleteAlert)
 * [`Alerts.DeleteAlertSucceeded`](#DeleteAlertSucceeded)
-* [Editing or deleting alarms](/Develop/Guides/Handle_Alerts.md#EditAlert)
+* [Editing or deleting alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
 
 ## DeleteAlertSucceeded event {#DeleteAlertSucceeded}
 
@@ -251,7 +251,7 @@ Reports to CIC that the client has successfully deleted the specified alarm. The
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -294,7 +294,7 @@ Reports to CIC that the client has successfully deleted the specified alarm. The
 ### See also
 * [`Alerts.DeleteAlert`](#DeleteAlert)
 * [`Alerts.DeleteAlertFailed`](#DeleteAlertFailed)
-* [Editing or deleting alarms](/Develop/Guides/Handle_Alerts.md#EditAlert)
+* [Editing or deleting alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
 
 ## RequestAlertStop event {#RequestAlertStop}
 
@@ -302,7 +302,7 @@ Requests to CIC to stop the ringing alarm. The client must send this event messa
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -347,7 +347,7 @@ Stopping a ringing alarm requires informing CIC of the stoppage and getting conf
 
 ### See also
 * [`Alerts.StopAlert`](#StopAlert)
-* [Stopping alarms](/Develop/Guides/Handle_Alerts.md#StopAlert)
+* [Stopping alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#StopAlert)
 
 ## RequestSynchronizeAlert event {#RequestSynchronizeAlert}
 
@@ -355,7 +355,7 @@ Reports to CIC that the client needs to synchronize the alarm information of the
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -388,8 +388,8 @@ None
 {% endraw %}
 
 ### See also
-* [`System.SynchronizeAlert`](/Develop/References/MessageInterfaces/Alerts.md#SynchronizeAlert)
-* [Synchronizing alarms](/Develop/Guides/Handle_Alerts.md#SyncAlert)
+* [`System.SynchronizeAlert`](/Develop/References/CICInterface/Alerts.md#SynchronizeAlert)
+* [Synchronizing alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#SyncAlert)
 
 ## SetAlert directive {#SetAlert}
 
@@ -457,8 +457,8 @@ Report the result of executing the instruction to CIC using either one of the fo
 ### See also
 * [`Alerts.SetAlertFailed`](#SetAlertFailed)
 * [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded)
-* [Registering alarms](/Develop/Guides/Handle_Alerts.md#RegisterAlert)
-* [Editing or deleting alarms](/Develop/Guides/Handle_Alerts.md#EditAlert)
+* [Registering alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#RegisterAlert)
+* [Editing or deleting alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
 
 ## SetAlertFailed event {#SetAlertFailed}
 
@@ -466,7 +466,7 @@ Reports to CIC that the client has failed to add or change the specified alarm. 
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -509,8 +509,8 @@ Reports to CIC that the client has failed to add or change the specified alarm. 
 ### See also
 * [`Alerts.SetAlert`](#SetAlert)
 * [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded)
-* [Registering alarms](/Develop/Guides/Handle_Alerts.md#RegisterAlert)
-* [Editing or deleting alarms](/Develop/Guides/Handle_Alerts.md#EditAlert)
+* [Registering alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#RegisterAlert)
+* [Editing or deleting alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
 
 ## SetAlertSucceeded event {#SetAlertSucceeded}
 
@@ -518,7 +518,7 @@ Reports to CIC that the client has successfully added or changed the specified a
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -561,8 +561,8 @@ Reports to CIC that the client has successfully added or changed the specified a
 ### See also
 * [`Alerts.SetAlert`](#SetAlert)
 * [`Alerts.SetAlertFailed`](#SetAlertFailed)
-* [Registering alarms](/Develop/Guides/Handle_Alerts.md#RegisterAlert)
-* [Editing or deleting alarms](/Develop/Guides/Handle_Alerts.md#EditAlert)
+* [Registering alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#RegisterAlert)
+* [Editing or deleting alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#EditAlert)
 
 ## StopAlert directive {#StopAlert}
 
@@ -600,7 +600,7 @@ Instructs the client to stop the specified alarm. Upon receiving the directive, 
 
 ### See also
 * [`Alerts.AlertStopped`](#AlertStopped)
-* [Stopping alarms](/Develop/Guides/Handle_Alerts.md#StopAlert)
+* [Stopping alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#StopAlert)
 
 ## SynchronizeAlert directive {#SynchronizeAlert}
 Instructs the client to synchronize the alarm data of a user in the `payload` field. Upon receiving the directive, the client should modify the set alarm values according to the data from CIC.
@@ -609,7 +609,7 @@ Instructs the client to synchronize the alarm data of a user in the `payload` fi
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
-| `allAlerts[]`   | object array | An object array that has a list of alarms to synchronize. It is in the same format as the [`payload`](#SetAlertPayload) object used in the [`Alerts.SetAlert`](#SetAlert) directive message. | Always    |
+| `allAlerts[]`   | object array | An object array that has the list of alarms for synchronization. The alarm information is specified in the format used in the [`payload`](#SetAlertPayload) of the [`Alerts.SetAlert`](#SetAlert) directive message. | Always    |
 
 ### Message example
 
@@ -657,4 +657,4 @@ Instructs the client to synchronize the alarm data of a user in the `payload` fi
 
 ### See also
 * [`Alerts.RequestSynchronizeAlert`](#RequestSynchronizeAlert)
-* [Synchronizing alarms](/Develop/Guides/Handle_Alerts.md#SyncAlert)
+* [Synchronizing alarms](/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md#SyncAlert)

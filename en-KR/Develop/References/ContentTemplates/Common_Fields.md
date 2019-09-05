@@ -121,8 +121,8 @@ The client must control a specific function in response to this scheme.
 
 | Parameter name    | Description                         | Included |
 |---------------|-----------------------------|:--------:|
-| command       | Control command<ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>LaunchApp</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul>                      | Always |
-| target        | The target to be controlled.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Cellular network</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wi-Fi</li></ul> | Always |
+| command       | Control command <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>LaunchApp</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul>                      | Always |
+| target        | The control target. <ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Cellular network</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wi-Fi</li></ul> | Always |
 | value         | Setting value. This value is being designated when the `command` parameter is a `setValue`. It is also applied when setting speaker volume (`"volume"`) or screen brightness (`"screenbrightness"`) or controlling TV channel (`"channel"`). | Conditional |
 
 The following is an example of the action URI scheme.
@@ -175,7 +175,7 @@ The client must output specific texts as voice in response to this scheme.
 
 | Parameter name    | Description                         | Included |
 |---------------|-----------------------------|:---------:|
-| lang          | The language of the text to be read out<ul><li><code>"en"</code>: English</li><li><code>"ja"</code>: Japanese</li><li><code>"ko"</code>: Korean</li></ul> | Always |
+| lang          | The language of the text to be read out. <ul><li><code>"en"</code>: English</li><li><code>"ja"</code>: Japanese</li><li><code>"ko"</code>: Korean</li></ul> | Always |
 | text          | The text to be read out.                   | Conditional |
 
 The following is an example of the action URI scheme.
