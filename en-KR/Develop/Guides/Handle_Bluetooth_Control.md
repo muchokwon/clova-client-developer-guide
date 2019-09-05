@@ -11,7 +11,7 @@ This section explains the following:
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>After receiving the directive message, the client must always report the result of the response to CIC using the <code>DeviceControl.ActionExecuted</code> or <code>DeviceControl.ActionFailed</code> event messages, every time the handled outcome is successful or not. For more information, see <a href="/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md#HandleActionExecutedResponse">Reporting handled results</a> of the <a href="/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md">Handling client action control</a>.</p>
+  <p>After receiving the directive message, the client must always report the result of the response to CIC using the <code>DeviceControl.ActionExecuted</code> or <code>DeviceControl.ActionFailed</code> event messages, every time the handled outcome is successful or not. For more information, see <a href="/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse">Reporting handled results</a> of the <a href="/Develop/Guides/Handle_Device_Control.md">Handling client action control</a>.</p>
 </div>
 
 ## Handling Bluetooth connection requests {#HandleBluetoothConnect}
@@ -22,7 +22,7 @@ The action flow of handling the entry into the Bluetooth pairing mode is as foll
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow1.svg)
 
-After a user attempts to enter the Bluetooth pairing mode using Clova app, Clova sends the [`DeviceControl.BtStartPairing`](/Develop/References/CICInterface/DeviceControl.md#BtStartPairing) directive message to the client to enter the Bluetooth pairing mode. After receiving this directive message, the client must enter the Bluetooth pairing mode. An example of a [`DeviceControl.BtStartPairing`](/Develop/References/CICInterface/DeviceControl.md#BtStartPairing) directive message that can be received is as follows:
+After a user attempts to enter the Bluetooth pairing mode using Clova app, Clova sends the [`DeviceControl.BtStartPairing`](/Develop/References/MessageInterfaces/DeviceControl.md#BtStartPairing) directive message to the client to enter the Bluetooth pairing mode. After receiving this directive message, the client must enter the Bluetooth pairing mode. An example of a [`DeviceControl.BtStartPairing`](/Develop/References/MessageInterfaces/DeviceControl.md#BtStartPairing) directive message that can be received is as follows:
 
 ```json
 {
@@ -49,7 +49,7 @@ The action flow of handling paring with a new Bluetooth device is as follows:
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow2.svg)
 
-Once the user specifies the device to pair with, CIC sends the [`DeviceControl.BtConnect`](/Develop/References/CICInterface/DeviceControl.md#BtConnect) directive message to pair with the specified device to the client. An example of a [`DeviceControl.BtConnect`](/Develop/References/CICInterface/DeviceControl.md#BtConnect) directive message that can be received is as follows:
+Once the user specifies the device to pair with, CIC sends the [`DeviceControl.BtConnect`](/Develop/References/MessageInterfaces/DeviceControl.md#BtConnect) directive message to pair with the specified device to the client. An example of a [`DeviceControl.BtConnect`](/Develop/References/MessageInterfaces/DeviceControl.md#BtConnect) directive message that can be received is as follows:
 
 ```json
 {
@@ -78,7 +78,7 @@ A simple description of the main fields of `payload` is shown below.
 * `name`: The name of the Bluetooth device to remove.
 * `role`: The role of the client when connecting to the Bluetooth device.
 
-When connecting with a new Bluetooth device, the Bluetooth device requests for a PIN code. Upon request, this request must be sent to CIC using the [`DeviceControl.BtRequestForPINCode`](/Develop/References/CICInterface/DeviceControl.md#BtRequestForPINCode) event message.
+When connecting with a new Bluetooth device, the Bluetooth device requests for a PIN code. Upon request, this request must be sent to CIC using the [`DeviceControl.BtRequestForPINCode`](/Develop/References/MessageInterfaces/DeviceControl.md#BtRequestForPINCode) event message.
 
 ```json
 {
@@ -98,7 +98,7 @@ When connecting with a new Bluetooth device, the Bluetooth device requests for a
 }
 ```
 
-Once the [`DeviceControl.BtRequestForPINCode`](/Develop/References/CICInterface/DeviceControl.md#BtRequestForPINCode) event message is received and the user enters the PIN code, CIC directs the client to connect with the Bluetooth device that has requested the PIN code using the [`DeviceControl.BtConnectByPINCode`](/Develop/References/CICInterface/DeviceControl.md#BtConnectByPINCode) directive message. CIC sends the `pincode` field value used for connection to the client.
+Once the [`DeviceControl.BtRequestForPINCode`](/Develop/References/MessageInterfaces/DeviceControl.md#BtRequestForPINCode) event message is received and the user enters the PIN code, CIC directs the client to connect with the Bluetooth device that has requested the PIN code using the [`DeviceControl.BtConnectByPINCode`](/Develop/References/MessageInterfaces/DeviceControl.md#BtConnectByPINCode) directive message. CIC sends the `pincode` field value used for connection to the client.
 
 ```json
 {
@@ -131,7 +131,7 @@ The action flow of handling the Bluetooth device audio playback request through 
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow3.svg)
 
-Once the user requests to play audio through the Bluetooth device, CIC sends the [`DeviceControl.BtPlay`](/Develop/References/CICInterface/DeviceControl.md#BtPlay) directive message to the client. At this time, the output location of the audio is determined according to the role of client. Also, the client must frequently report the state of the connected Bluetooth device to CIC using the context information, [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) object. An example of a [`DeviceControl.BtPlay`](/Develop/References/CICInterface/DeviceControl.md#BtPlay) directive message that can be received is as follows:
+Once the user requests to play audio through the Bluetooth device, CIC sends the [`DeviceControl.BtPlay`](/Develop/References/MessageInterfaces/DeviceControl.md#BtPlay) directive message to the client. At this time, the output location of the audio is determined according to the role of client. Also, the client must frequently report the state of the connected Bluetooth device to CIC using the context information, [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) object. An example of a [`DeviceControl.BtPlay`](/Develop/References/MessageInterfaces/DeviceControl.md#BtPlay) directive message that can be received is as follows:
 
 ```json
 {
@@ -156,7 +156,7 @@ If a user requests to disconnect a currently connected Bluetooth device, Clova d
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow4.svg)
 
-Once the user requests to disconnect the Bluetooth device, CIC sends the [`DeviceControl.BtDisconnect`](/Develop/References/CICInterface/DeviceControl.md#BtDisconnect) directive message to the client. The client must disconnect the specified Bluetooth device or all connected Bluetooth devices according to the contents of the directive message. Also, the client must frequently report the state of the connected Bluetooth device to CIC using the context information, [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) object. An example of a [`DeviceControl.BtDisconnect`](/Develop/References/CICInterface/DeviceControl.md#BtDisconnect) directive message that can be received when disconnecting all Bluetooth devices, is as follows:
+Once the user requests to disconnect the Bluetooth device, CIC sends the [`DeviceControl.BtDisconnect`](/Develop/References/MessageInterfaces/DeviceControl.md#BtDisconnect) directive message to the client. The client must disconnect the specified Bluetooth device or all connected Bluetooth devices according to the contents of the directive message. Also, the client must frequently report the state of the connected Bluetooth device to CIC using the context information, [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) object. An example of a [`DeviceControl.BtDisconnect`](/Develop/References/MessageInterfaces/DeviceControl.md#BtDisconnect) directive message that can be received when disconnecting all Bluetooth devices, is as follows:
 
 ```json
 {
@@ -178,7 +178,7 @@ Once the user requests to delete the saved Bluetooth device, Clova directs the c
 
 ![](/Develop/Assets/Images/CIC_BluetoothControl_Work_Flow5.svg)
 
-Once the user requests to delete the Bluetooth device, CIC sends the [`DeviceControl.BtDelete`](/Develop/References/CICInterface/DeviceControl.md#BtDelete) directive message to the client. The client analyzes the received directive message and deletes the specified device. An example of a [`DeviceControl.BtDelete`](/Develop/References/CICInterface/DeviceControl.md#BtDelete) directive message that can be received is as follows:
+Once the user requests to delete the Bluetooth device, CIC sends the [`DeviceControl.BtDelete`](/Develop/References/MessageInterfaces/DeviceControl.md#BtDelete) directive message to the client. The client analyzes the received directive message and deletes the specified device. An example of a [`DeviceControl.BtDelete`](/Develop/References/MessageInterfaces/DeviceControl.md#BtDelete) directive message that can be received is as follows:
 
 ```json
 {

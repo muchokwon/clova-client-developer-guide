@@ -7,7 +7,7 @@ To solve the issues with the [indirect dialogue structure](/Develop/CIC_Overview
 
 ## Creating a dialogue ID {#CreatingDialogueID}
 
-To identify individual user requests, a **dialogue ID** is created every time a user starts speaking to Clova. The client must remember the dialogue ID of the last user request sent to CIC. The client must also call this the **latest dialogue ID**. **Latest dialogue ID** refers to the dialogue ID contained in the [SpeechRecognizer.Recognize](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) event message or the [TextRecognizer.Recognize](/Develop/References/CICInterface/TextRecognizer.md#Recognize) event message and is the last one sent from the client to CIC. The client must save this last dialogue ID for future use and must renew it every time a user request is sent to CIC.
+To identify individual user requests, a **dialogue ID** is created every time a user starts speaking to Clova. The client must remember the dialogue ID of the last user request sent to CIC. The client must also call this the **latest dialogue ID**. **Latest dialogue ID** refers to the dialogue ID contained in the [SpeechRecognizer.Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) event message or the [TextRecognizer.Recognize](/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize) event message and is the last one sent from the client to CIC. The client must save this last dialogue ID for future use and must renew it every time a user request is sent to CIC.
 
 The following actions are required by the client regarding the dialogue IDs:
 
@@ -15,7 +15,7 @@ The following actions are required by the client regarding the dialogue IDs:
 
 <ol>
   <li><strong>Create a new dialogue ID</strong> (UUID format recommended) every time a user initiates a dialogue.</li>
-  <li>Send the user request to CIC using the <a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> event message. (For text requests, use the <a href="/Develop/References/CICInterface/TextRecognizer.md#Recognize">TextRecognizer.Recognize</a> event message.)
+  <li>Send the user request to CIC using the <a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> event message. (For text requests, use the <a href="/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize">TextRecognizer.Recognize</a> event message.)
     <ul>
       <li>Here, include the newly created dialogue ID in <code>dialogRequestId</code> of the <a href="/Develop/References/CIC_API.md#Event">event message header</a>.</li>
     </ul>
@@ -25,12 +25,12 @@ The following actions are required by the client regarding the dialogue IDs:
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>The latest dialogue ID <strong> must be updated after the process of the <a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> event message or the <a href="/Develop/References/CICInterface/TextRecognizer.md#Recognize">TextRecognizer.Recognize</a> event message </strong> is complete. The client will not be able to respond to the sudden change of request by the user if it does not remember or renew the latest dialogue ID. For more information, see <a href="/Develop/CIC_Overview.md#IndirectDialogue">Indirect dialogue structure</a>.</p>
+<p>The latest dialogue ID <strong> must be updated after the process of the <a href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> event message or the <a href="/Develop/References/MessageInterfaces/TextRecognizer.md#Recognize">TextRecognizer.Recognize</a> event message </strong> is complete. The client will not be able to respond to the sudden change of request by the user if it does not remember or renew the latest dialogue ID. For more information, see <a href="/Develop/CIC_Overview.md#IndirectDialogue">Indirect dialogue structure</a>.</p>
 </div>
 
 Once the latest dialogue ID is updated, the client must perform the following in order to [handle the directive messages containing the dialogue ID](#HandleDirectivesByDialogueID):
 
-* If the details containing old dialogue IDs are provided to the user, this must be stopped by referring to the [Rules for basic audio playback](/Design/Design_Guideline_For_Client_Hardware.md#AudioInterruptionRule) or [Audio playback rules for user utterances](/Design/Design_Guideline_For_Client_Hardware.md#AudioInterruptionRuleForUserUtterance).
+* If the details containing old dialogue IDs are provided to the user, this must be stopped by referring to the [Rules for basic audio playback](/Design/Audio.md#AudioInterruptionRule) or [Audio playback rules for user utterances](/Design/Audio.md#AudioInterruptionRuleForUserUtterance).
 * All directive messages containing old dialogue IDs must be discarded from the [message queue](/Develop/Guides/Interact_with_CIC.md#ManageMessageQ).
 
 ## Handling directive messages by dialogue ID {#HandleDirectivesByDialogueID}
