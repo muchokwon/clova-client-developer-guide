@@ -10,7 +10,7 @@ The Settings namespace provides an interface to update or synchronize the client
 
 <div class="tip">
   <p><strong>Tip!</strong></p>
-  <p>For more information on updating or synchronizing the settings, see <a href="/Develop/Guides/Handle_Settings.md">Handling settings</a>.</p>
+  <p>For more information on updating or synchronizing the settings, see <a href="/Develop/Guides/ImplementClientFeatures/Handle_Settings.md">Handling settings</a>.</p>
 </div>
 
 ## ExpectReport directive {#ExpectReport}
@@ -41,20 +41,20 @@ None
 
 ### See also
 * [`Settings.Report`](#Report)
-* [Handling settings](/Develop/Guides/Handle_Settings.md)
+* [Handling settings](/Develop/Guides/ImplementClientFeatures/Handle_Settings.md)
 
 ## Report event {#Report}
 The client reports the current settings information to CIC. If the [`Settings.ExpectReport`](#ExpectReport) directive message is received from CIC, the client must send the `Settings.Report` event message to CIC.
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `configuration` | object | Object containing the predefined settings information of the client. All sub-fields of this object have a string type.<div class="tip"><p><strong>Tip!</strong></p><p>The settings data may be defined differently for each client. For any inquiries about predefining the client settings information, contact the Clova partnership team.</p></div> | Required   |
+| `configuration` | object | Object containing the predefined settings information of the client. All sub-fields of this object have a string type.<div class="tip"><p><strong>Tip!</strong></p><p>The settings datamay be defined differently for each client. For any inquiries about predefining the client settings information, contact the Clova partnership team.</p></div> | Required   |
 
 ### Message example
 {% raw %}
@@ -90,7 +90,7 @@ The client reports the current settings information to CIC. If the [`Settings.Ex
 
 ### See also
 * [`Settings.ExpectReport`](#ExpectReport)
-* [Handling settings](/Develop/Guides/Handle_Settings.md)
+* [Handling settings](/Develop/Guides/ImplementClientFeatures/Handle_Settings.md)
 
 ## Update directive {#Update}
 Instructs the client to apply the values saved to `payload` as the setting value.
@@ -132,4 +132,4 @@ Instructs the client to apply the values saved to `payload` as the setting value
 
 ### See also
 * [`Settings.Report`](#Report)
-* [Handling settings](/Develop/Guides/Handle_Settings.md)
+* [Handling settings](/Develop/Guides/ImplementClientFeatures/Handle_Settings.md)

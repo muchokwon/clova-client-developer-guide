@@ -21,7 +21,7 @@ Requests CIC to generate a specified text into TTS.
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 | Field name       | Data type    | Description                     | Required |
@@ -175,7 +175,7 @@ Reports to CIC that the client has finished playing the TTS.
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -227,7 +227,7 @@ Reports to CIC that the client has started playing the TTS.
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -279,7 +279,7 @@ Reports to CIC that the client has stopped playing the TTS.
 
 ### Context fields
 
-{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
+{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 

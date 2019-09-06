@@ -15,7 +15,7 @@ The Alarm template is used in providing alarm information for the client to disp
 | Field name       | Data type    | Description                     |
 |---------------|---------|-----------------------------|
 | `repeatDay[]`     | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the repeat day(s) for a weekly alarm.     |
-| `repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values of `value` field are: <ul><li>Empty String (<code>""</code>): One-time alarm </li><li><code>"daily"</code>: Daily alarm</li><li><code>"weekly"</code>: Weekly alarm</li></ul> |
+| `repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values are: <ul><li>Empty String (<code>""</code>): One-time alarm </li><li><code>"daily"</code>: Daily alarm</li><li><code>"weekly"</code>: Weekly alarm</li></ul> |
 | `scheduledTime` | [DateTimeObject](/Develop/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this alarm is to ring.                         |
 | `token`         | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this alarm.                            |
 | `type`          | string                                                                              | The type of this template. The value is always `"Alarm"`.             |
@@ -96,4 +96,4 @@ The following example shows how the Alarm template is used on the Clova app dist
 
 ## See also
 * [AlarmList](/Develop/References/ContentTemplates/AlarmList.md)
-* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) interface
+* [Alerts](/Develop/References/CICInterface/Alerts.md) interface

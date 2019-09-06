@@ -18,7 +18,7 @@ The ActionTimerList template is used in providing a list of action timers for th
 | `actionTimerList[].action`       | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The action the user has set on this action timer. **The value is always an empty string (`""`). This field is reserved for future extension.** |
 | `actionTimerList[].label`        | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The action the user has entered. |
 | `actionTimerList[].repeatDay[]`     | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the repeat day(s) for a weekly action timer. |
-| `actionTimerList[].repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values of `value` field are: <ul><li>Empty string(<code>""</code>): One-time action timer</li><li><code>"daily"</code>: Daily action timer</li><li><code>"weekly"</code>: Weekly action timer</li></ul> |
+| `actionTimerList[].repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values are: <ul><li>Empty string (<code>""</code>): One-time action timer</li><li><code>"daily"</code>: Daily action timer</li><li><code>"weekly"</code>: Weekly action timer</li></ul> |
 | `actionTimerList[].scheduledTime` | [DateTimeObject](/Develop/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this action timer is to go off.      |
 | `actionTimerList[].token`         | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this action timer.              |
 | `type`        | string                                                                                                | The type of this template. The value is always `"ActionTimerList"`.             |
@@ -119,4 +119,4 @@ The following example shows how the ActionTimerList template is used on the Clov
 
 ## See also
 * [ActionTimer](/Develop/References/ContentTemplates/ActionTimer.md)
-* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) interface
+* [Alerts](/Develop/References/CICInterface/Alerts.md) interface

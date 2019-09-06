@@ -1,5 +1,5 @@
+{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ### Remarks {#GuestMode}
-
 To provide Clova services in guest mode without authenticating the {{ book.ServiceEnv.TargetServiceForClientAuth }} account, complete the following steps:
 
 1. Skip step 1 and step 2 in the descriptions of instructions for [creating Clova access tokens](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken).
@@ -24,8 +24,4 @@ The following code is an example of requesting a guest code.
        --data-urlencode "response_type=code" \
        --data-urlencode "state=FKjaJfMlakjdfTVbES5ccZ"
 </code></pre>
-
-<div class="note">
-  <p><strong>Note!</strong></p>
-  <p>To use the guest mode, contact the partnership team.</p>
-</div>
+{% endif %}
