@@ -51,7 +51,7 @@ Notifier 인터페이스는 CIC가 클라이언트 기기에 알림이 있음을
 | `assetPlayOrder[]`   | string array | `assets[]` 필드에 등록된 알림음을 어떤 순서로 재생해야 하는지 표현하고 있는 문자열 배열입니다. 배열에 저장된 오디오 콘텐츠 식별자의 순서대로 알림음을 재생하면 됩니다.            | 항상  |
 | `assets[]`           | object array | 알림과 관련된 오디오 콘텐츠를 담고 있는 객체 배열                          | 항상 |
 | `assets[].assetId`   | string       | 오디오 콘텐츠를 구분하는 식별자                                        | 항상 |
-| `assets[].url`       | string       | 오디오 콘텐츠의 URI 정보입니다. 다음과 같은 scheme 값이나 오디오 콘텐츠의 URI 값을 가집니다.<ul><li><code>"clova://notifier/sound/default"</code>: 기본 알림음을 지칭하는 scheme입니다. 미리 정의된 기본 알림음을 재생합니다.</li><li>오디오 콘텐츠의 URI(<code>"http(s)://~</code>): 알림 내용이 담긴 오디오 콘텐츠의 URI. 해당 URI의 오디오 콘텐츠를 재생합니다.</li></ul>    | 항상 |
+| `assets[].url`       | string       | 오디오 콘텐츠의 URI 정보입니다. 다음과 같은 scheme 값이나 오디오 콘텐츠의 URI 값을 가집니다.<ul><li><code>"clova://notifier/sound/default"</code>: 기본 알림음을 지칭하는 scheme입니다. 미리 정의된 기본 알림음을 재생합니다.</li><li>오디오 콘텐츠의 URI(<code>"http://~"</code> 또는 <code>"https://~"</code>): 알림 내용이 담긴 오디오 콘텐츠의 URI. 해당 URI의 오디오 콘텐츠를 재생합니다.</li></ul>    | 항상 |
 | `light`              | string       | 조명 설정 정보<ul><li><code>"DEFAULT"</code>: 알림 표시용 조명을 점등해야 합니다.</li><li><code>"NONE"</code>: 알림 표시용 조명을 점등하지 않습니다.</li></ul>   | 항상  |
 
 ### Remarks
