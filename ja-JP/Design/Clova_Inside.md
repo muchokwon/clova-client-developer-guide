@@ -50,7 +50,7 @@ Clova insideバッジと背景色は、次の4つから1つを使用してくだ
 
 ## Clova insideの背景色 {#ClovaInsideBackgroundColor}
 
-[Clova insideバッジ](#ClovaInsideBadge)を適用する際、最初にバッジの背景色を決める必要があります。デバイス・パッケージの素材などの環境や条件によって、[Clova insideの色](#ClovaInsideColor)から適切な色を1つ選択します。Clova insideの背景色とバッジの色は、以下の組み合わせから1つを使用してください。
+[Clova insideバッジ](#ClovaInsideBadge)を適用する際、最初にバッジの背景色を決める必要があります。デバイスやパッケージの素材などの環境や条件によって、[Clova insideの色](#ClovaInsideColor)から適切な色を1つ選択します。Clova insideの背景色とバッジの色は、以下の組み合わせから1つを使用してください。
 
 ![](/Design/Assets/Images/Clova_Inside-Background_Color-Combinations.png)
 
