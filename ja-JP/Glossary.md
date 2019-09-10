@@ -79,7 +79,7 @@ HTTPのバージョンの1つです。[SPDY](https://en.wikipedia.org/wiki/SPDY)
 クライアントの現在の[コンテキスト](#Context)を表現するオブジェクトです。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
 
 ### コンテンツテンプレート {#ContentTemplate}
-CICから渡されるコンテンツ情報をスケジュールカテゴリに合った形で標準化したものです。詳細については、[コンテンツテンプレート](/Develop/References/Content_Templates.md)ドキュメントを参照してください。
+CICから渡されるコンテンツ情報を定型化したフォーマットです。詳細については、[コンテンツテンプレート](/Develop/References/Content_Templates.md)ドキュメントを参照してください。
 
 ### ダイアログID {#DialogID}
 ダイアログIDは、ユーザーが新しい発話を開始するたびに生成され、クライアントが[Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)[イベント](#Event)を[Clova Interface Connect](#CIC)に渡す際に含まれます。ダイアログIDは、サーバー側からレスポンスを返す際に、どのイベントに対するレスポンスか結び付けるために使用され、[ディレクティブ](#Directive)にも含まれます。クライアントはディレクティブに含まれたダイアログIDから、どのイベントに対するレスポンスかを判断する必要があります。もしクライアントが現在持っているダイアログIDとディレクティブのダイアログIDが異なる場合、受信したディレクティブを無視する必要があります。詳細については、[ダイアログモデル](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md)ドキュメントを参照してください。
