@@ -19,7 +19,7 @@
 CICがクライアントに提供するREST APIです。クライアントは、CIC APIを使用してClovaと情報を交換します。
 
 ### Clova {#Clova}
-[Clova](https://clova.ai)は、{{ book.ServiceEnv.OrientedService }}が開発およびサービスを提供しているAIプラットフォームです。ユーザーの音声やイメージを認識し、それを解析して、ユーザーの希望する情報やサービスを提供します。サードパーティの開発者は、Clovaの持つ技術を活用して、AIサービスを提供するデバイスまたは家電製品を制作できます。また、Clovaを利用して、保有しているコンテンツやサービスを提供することもできます。
+[Clova](https://clova.line.me/)は、{{ book.ServiceEnv.OrientedService }}が開発およびサービスを提供しているAIプラットフォームです。ユーザーの音声やイメージを認識し、それを解析して、ユーザーの希望する情報やサービスを提供します。サードパーティの開発者は、Clovaの持つ技術を活用して、AIサービスを提供するデバイスまたは家電製品を制作できます。また、Clovaを利用して、保有しているコンテンツやサービスを提供することもできます。
 
 ### Clova Developer Center {#ClovaDeveloperConsole}
 Clovaプラットフォームと連携するクライアントデバイス、または[Clova Extension](#ClovaExtension)を開発する開発者に次の内容を提供する<a target="_blank" href="{{ book.ServiceEnv.DeveloperConsoleURI }}">Webツール</a>です。
