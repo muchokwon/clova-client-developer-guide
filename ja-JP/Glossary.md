@@ -73,7 +73,7 @@ HTTPプロトコルの2番目のバージョンです。[SPDY](https://en.wikipe
 [Clova Developer Center](#ClovaDeveloperConsole)でクライアントを登録し、取得した認証情報です。[Clovaアクセストークン](#ClovaAccessToken)の取得に使用されます。詳細については、[Clovaアクセストークンを生成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
 
 ### コンテキスト {#Context}
-コンテキストは、クライアントの様々な状態を意味します。[コンテキストオブジェクト](#ContextObjects)として表現されます。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
+クライアントの様々な状態を示す情報です。[コンテキストオブジェクト](#ContextObjects)として表現されます。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
 
 ### コンテキストオブジェクト {#ContextObjects}
 クライアントの現在の[コンテキスト](#Context)を表現するオブジェクトです。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
