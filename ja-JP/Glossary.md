@@ -21,9 +21,6 @@ CICがクライアントに提供するREST APIです。クライアントは、
 ### Clova {#Clova}
 [Clova](https://clova.ai)は、{{ book.ServiceEnv.OrientedService }}が開発およびサービスを提供しているAIプラットフォームです。ユーザーの音声やイメージを認識し、それを解析して、ユーザーの希望する情報やサービスを提供します。サードパーティの開発者は、Clovaの持つ技術を活用して、AIサービスを提供するデバイスまたは家電製品を制作できます。また、Clovaを利用して、保有しているコンテンツやサービスを提供することもできます。
 
-### Clovaアクセストークン {#ClovaAccessToken}
-クライアントが[Clova Interface Connect](#CIC)で[イベント](#Event)を送る際、Clovaがクライアントを認証する手段です。詳細については、[Clovaアクセストークンを生成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
-
 ### Clova Developer Center {#ClovaDeveloperConsole}
 Clovaプラットフォームと連携するクライアントデバイス、または[Clova Extension](#ClovaExtension)を開発する開発者に次の内容を提供する<a target="_blank" href="{{ book.ServiceEnv.DeveloperConsoleURI }}">Webツール</a>です。
 * クライアントデバイスを登録する
@@ -48,24 +45,17 @@ IoTデバイス制御サービスを提供するための[Extension](#ClovaExten
 ### Clova Interface Connect（CIC） {#CIC}
 AIアシスタントサービスを提供するパソコン/モバイルアプリ、モバイルデバイスまたは家電製品などのクライアントに、Clovaとの連携ができるインターフェースを提供するプラットフォームです。詳細については、[CICの概要](/Develop/CIC_Overview.md)ドキュメントを参照してください。
 
-### Clovaアプリ {#ClovaApp}
+### Clovaアクセストークン {#ClovaAccessToken}
+クライアントが[Clova Interface Connect](#CIC)で[イベント](#Event)を送る際、Clovaがクライアントを認証する手段です。詳細については、[Clovaアクセストークンを生成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
 
+### Clovaアプリ {#ClovaApp}
 {{ book.ServiceEnv.OrientedService }}が開発し、iOSおよびAndroidプラットフォームで配布したClovaアプリです。Clovaに指示を与えるだけでなく、クライアントデバイスを登録し、管理できるアプリです。
 
 ### Clova認証API {#ClovaAuthAPI}
 クライアントが[Clovaアクセストークン](#ClovaAccessToken)を取得するために使用するAPIです。詳細については、[Clova認証API](/Develop/References/Clova_Auth_API.md)ドキュメントを参照してください。
 
-### コンテンツテンプレート {#ContentTemplate}
-CICから渡されるコンテンツ情報をスケジュールカテゴリに合った形で標準化したものです。詳細については、[コンテンツテンプレート](/Develop/References/Content_Templates.md)ドキュメントを参照してください。
-
-### コンテキストオブジェクト {#ContextObjects}
-クライアントの現在の[コンテキスト](#Context)を表現するオブジェクトです。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
-
 ### Custom Extension {#CustomExtension}
 任意の拡張された機能を提供する[Extension](#ClovaExtension)です。Custom Extensionを利用すると、音楽、ショッピング、金融など、外部サービスの機能を提供できます。詳細については、[Clova Custom Extensionを作成する]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Custom_Extension.md)ドキュメントを参照してください。
-
-### Downchannel {#Downchannel}
-クライアントが[Clova Interface Connect](#CIC)からディレクティブを渡される際に使用される[HTTP/2](#HTTP2)ストリームです。詳細については、[CICに接続する](/Develop/Guides/Interact_with_CIC.md#ConnectToCIC)ドキュメントを参照してください。
 
 ### Extension {#Extension}
 [Clova Extension](#ClovaExtension)の別の言い方
@@ -76,22 +66,31 @@ HTTPプロトコルの2番目のバージョンです。[SPDY](https://en.wikipe
 ### OAuth 2.0
 アクセス権限を委任するためのオープン標準です。インターネットのユーザーが他のウェブサービスやアプリケーションのユーザーアカウントにアクセスできる権限を付与する規約です。Clovaプラットフォームでは、クライアントが[Clovaアクセストークン](#ClovaAccessToken)を取得したり、ユーザーが特定のExtensionを使用する際、自身のアカウントを連携するために使用されます。詳細については、[https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)を参照してください。
 
-### ダイアログID {#DialogID}
-ダイアログIDは、ユーザーが新しい発話を開始するたびに生成され、クライアントが[Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)[イベント](#Event)を[Clova Interface Connect](#CIC)に渡す際に含まれます。ダイアログIDは、サーバー側からレスポンスを返す際に、どのイベントに対するレスポンスか結び付けるために使用され、[ディレクティブ](#Directive)にも含まれます。クライアントはディレクティブに含まれたダイアログIDから、どのイベントに対するレスポンスかを判断する必要があります。もしクライアントが現在持っているダイアログIDとディレクティブのダイアログIDが異なる場合、受信したディレクティブを無視する必要があります。詳細については、[ダイアログモデル](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md)ドキュメントを参照してください。
+### イベント {#Event}
+クライアントから[Clova Interface Connect](#CIC)に渡すメッセージです。ユーザーのリクエストを渡したり、またはクライアントの状態が変更されたことを知らせるためにこのメッセージを送信します。
+
+### クライアントの認証情報 {#ClientCredentialInfo}
+[Clova Developer Center](#ClovaDeveloperConsole)でクライアントを登録し、取得した認証情報です。[Clovaアクセストークン](#ClovaAccessToken)の取得に使用されます。詳細については、[Clovaアクセストークンを生成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
 
 ### コンテキスト {#Context}
 コンテキストは、クライアントの様々な状態を意味します。[コンテキストオブジェクト](#ContextObjects)として表現されます。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
 
-### メッセージID {#MessageID}
-メッセージIDは個々のメッセージを区別するための識別子です。[イベント](#Event)と[ディレクティブ](#Directive)は、それぞれのメッセージIDを持ちます。
+### コンテキストオブジェクト {#ContextObjects}
+クライアントの現在の[コンテキスト](#Context)を表現するオブジェクトです。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
 
-### イベント（Event） {#Event}
-クライアントから[Clova Interface Connect](#CIC)に渡すメッセージです。ユーザーのリクエストを渡したり、またはクライアントの状態が変更されたことを知らせるためにこのメッセージを送信します。
+### コンテンツテンプレート {#ContentTemplate}
+CICから渡されるコンテンツ情報をスケジュールカテゴリに合った形で標準化したものです。詳細については、[コンテンツテンプレート](/Develop/References/Content_Templates.md)ドキュメントを参照してください。
 
-### ディレクティブ（Directive） {#Directive}
+### ダイアログID {#DialogID}
+ダイアログIDは、ユーザーが新しい発話を開始するたびに生成され、クライアントが[Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)[イベント](#Event)を[Clova Interface Connect](#CIC)に渡す際に含まれます。ダイアログIDは、サーバー側からレスポンスを返す際に、どのイベントに対するレスポンスか結び付けるために使用され、[ディレクティブ](#Directive)にも含まれます。クライアントはディレクティブに含まれたダイアログIDから、どのイベントに対するレスポンスかを判断する必要があります。もしクライアントが現在持っているダイアログIDとディレクティブのダイアログIDが異なる場合、受信したディレクティブを無視する必要があります。詳細については、[ダイアログモデル](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md)ドキュメントを参照してください。
+
+### ダウンチャネル {#Downchannel}
+クライアントが[Clova Interface Connect](#CIC)からディレクティブを渡される際に使用される[HTTP/2](#HTTP2)ストリームです。詳細については、[CICに接続する](/Develop/Guides/Interact_with_CIC.md#ConnectToCIC)ドキュメントを参照してください。
+
+### ディレクティブ {#Directive}
 [Clova Interface Connect](#CIC)がクライアントのアクションを制御するように指定したメッセージです。ディレクティブは、クライアントがリクエストしたイベントに応答したり、特定の条件によってクライアントに情報を渡す際に使用されます。
 
-### クライアントの認証情報 {#ClientCredentialInfo}
-[Clova Developer Center](#ClovaDeveloperConsole)でクライアントを登録し、取得した認証情報です。[Clovaアクセストークン](#ClovaAccessToken)の取得に使用されます。詳細については、[Clovaアクセストークンを生成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
+### メッセージID {#MessageID}
+メッセージIDは個々のメッセージを区別するための識別子です。[イベント](#Event)と[ディレクティブ](#Directive)は、それぞれのメッセージIDを持ちます。
 
 <!-- End of the shared content -->
