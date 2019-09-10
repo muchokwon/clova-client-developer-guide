@@ -1022,7 +1022,7 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 | `progressReport.progressReportIntervalInMilliseconds` | number | 재생 중 지정된 시간 간격으로 재생 상태 정보를 보고받기 위해 지정되는 값입니다. 단위는 밀리 초이며, 이 필드는 null 값을 가질 수 있습니다.        | 선택/조건부 |
 | `progressReport.progressReportPositionInMilliseconds` | number | 재생 중 지정된 시점을 지날 때마다 재생 상태 정보를 보고받기 위해 지정되는 값입니다. 단위는 밀리 초이며, 이 필드는 null 값을 가질 수 있습니다.    | 선택/조건부 |
 | `token`                  | string  | 오디오 스트림 token. <div class="note"><p><strong>Note!</strong></p><p>이 필드의 최대 길이는 2048 바이트입니다.</p></div>                          | 필수/항상 |
-| `url`                    | string  | 오디오 스트림 URI<div class="note"><p><strong>Note!</strong></p><p>제공하려는 오디오 콘텐츠는 <a href="/Design/Audio.md#SupportedAudioFormat">플랫폼이 지원하는 오디오 압축 포맷</a>이어야 합니다.</p></div><div class="note"><p><strong>Note!</strong></p><p>이 필드의 최대 길이는 2048 바이트입니다.</p></div>  | 필수/항상 |
+| `url`                    | string  | 오디오 스트림 URI<div class="note"><p><strong>Note!</strong></p><p>제공하려는 오디오 콘텐츠는 <a href="/Design/Sound.md#SupportedAudioFormat">플랫폼이 지원하는 오디오 압축 포맷</a>이어야 합니다.</p></div><div class="note"><p><strong>Note!</strong></p><p>이 필드의 최대 길이는 2048 바이트입니다.</p></div>  | 필수/항상 |
 | `urlPlayable`            | boolean | `url` 필드의 오디오 스트림 URI가 바로 재생 가능한 형태인지 구분하는 값. <ul><li><code>true</code>: 바로 재생이 가능한 형태의 URI</li><li><code>false</code>: 바로 재생이 불가능한 형태의 URI. <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> 이벤트 메시지를 사용하여 오디오 스트림 정보를 추가로 요청해야 합니다.</li></ul>        | 필수/항상 |
 
 #### Remarks

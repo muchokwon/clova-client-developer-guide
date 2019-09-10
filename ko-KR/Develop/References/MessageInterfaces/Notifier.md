@@ -96,7 +96,7 @@ Notifier 인터페이스는 CIC가 클라이언트 기기에 알림이 있음을
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.SetIndicator`](#SetIndicator)
 * [조명](/Design/Light.md)
-* [소리](/Design/Audio.md)
+* [소리](/Design/Sound.md)
 
 ## SetIndicator directive {#SetIndicator}
 클라이언트에게 사용자가 읽지 않은 알림이 있음을 표시하도록 지시합니다. 클라이언트는 알림용 조명을 켜거나 지정된 알림음을 재생해야 합니다.
@@ -145,4 +145,4 @@ Notifier 인터페이스는 CIC가 클라이언트 기기에 알림이 있음을
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.Notify`](#Notify)
 * [조명](/Design/Light.md)
-* [소리](/Design/Audio.md)
+* [소리](/Design/Sound.md)
