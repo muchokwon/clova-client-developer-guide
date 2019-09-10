@@ -49,7 +49,7 @@ AIアシスタントサービスを提供するパソコン/モバイルアプ�
 クライアントが[Clova Interface Connect](#CIC)で[イベント](#Event)を送る際、Clovaがクライアントを認証する手段です。詳細については、[Clovaアクセストークンを生成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
 
 ### Clovaアプリ {#ClovaApp}
-{{ book.ServiceEnv.OrientedService }}が開発し、iOSおよびAndroidプラットフォームで配布したClovaアプリです。Clovaに指示を与えるだけでなく、クライアントデバイスを登録し、管理できるアプリです。
+{{ book.ServiceEnv.OrientedService }}が開発し、iOSおよびAndroidプラットフォームで配布するClovaアプリです。Clovaに指示を与えるだけでなく、クライアントデバイスを登録し、管理できるアプリです。
 
 ### Clova認証API {#ClovaAuthAPI}
 クライアントが[Clovaアクセストークン](#ClovaAccessToken)を取得するために使用するAPIです。詳細については、[Clova認証API](/Develop/References/Clova_Auth_API.md)ドキュメントを参照してください。
