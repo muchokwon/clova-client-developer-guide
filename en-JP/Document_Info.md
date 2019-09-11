@@ -67,7 +67,7 @@ The revision history of this document is as follows:
       <td>2019-05-20</td>
       <td>
         <ul>
-          <li>Added <a href="/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ManageStreamInfo">Managing audio information</a> section to the <a href="/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md">Handling audio playback</a> guide</li>
+          <li>Added <a href="/Develop/Guides/Handle_Audio_Playback.md#ManageStreamInfo">Managing audio information</a> section to the <a href="/Develop/Guides/Handle_Audio_Playback.md">Handling audio playback</a> guide</li>
         </ul>
       </td>
     </tr>

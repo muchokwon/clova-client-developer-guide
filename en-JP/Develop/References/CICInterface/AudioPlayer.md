@@ -91,7 +91,7 @@ None
 
 ### See also
 * [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
-* [Sharing audio playback state](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [Sharing audio playback state](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 
 ## Play directive {#Play}
 Instructs the client to either play or add to the playback queue the specified audio stream.
@@ -218,7 +218,7 @@ Based on the policy of music service providers, certain information required for
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
-* [Playing audio stream](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [Playing audio stream](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 ## PlaybackQueueCleared event {#PlaybackQueueCleared}
 If the [`AudioPlayer.ClearQueue`](#ClearQueue) directive message is received from CIC, the client must send the `PlaybackQueueCleared` event message after initializing the playback queue.
@@ -314,7 +314,7 @@ Reports to CIC that the client has finished playback with the information on the
 
 ### See also
 * [`AudioPlayer.Play`](#Play)
-* [Reporting audio playback progress](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [Reporting audio playback progress](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 ## PlayPaused event {#PlayPaused}
 Reports to CIC that the client has paused playback with the information on the audio stream. Send this event message in the following scenario:
@@ -369,7 +369,7 @@ Reports to CIC that the client has paused playback with the information on the a
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayResumed`](#PlayResumed)
 * [`PlaybackController.Pause`](/Develop/References/CICInterface/PlaybackController.md#Pause)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## PlayResumed event {#PlayResumed}
 
@@ -425,7 +425,7 @@ Reports to CIC that the client has resumed playback with the information on the 
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayPaused`](#PlayPaused)
 * [`PlaybackController.Resume`](/Develop/References/CICInterface/PlaybackController.md#Resume)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## PlayStarted event {#PlayStarted}
 Reports to CIC that the client has started playback with the information on the audio stream.
@@ -475,8 +475,8 @@ Reports to CIC that the client has started playback with the information on the 
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStopped`](#PlayStopped)
-* [Playing audio stream](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Playing audio stream](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## PlayStopped event {#PlayStopped}
 Reports to CIC that the client has stopped playback with the information on the audio stream. Send this event message in the following scenario:
@@ -531,7 +531,7 @@ Reports to CIC that the client has stopped playback with the information on the 
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStarted`](#PlayStarted)
 * [`PlaybackController.Stop`](/Develop/References/CICInterface/PlaybackController.md#Stop)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ProgressReportDelayPassed event {#ProgressReportDelayPassed}
 Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)) after the delay, specified period of time, has passed. The delay is a period of time specified in the [`AudioPlayer.Play`](#Play) directive message.
@@ -582,7 +582,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develo
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
-* [Reporting audio playback progress](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [Reporting audio playback progress](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 ## ProgressReportIntervalPassed event {#ProgressReportIntervalPassed}
 Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)), by the specified interval, after playback has started. The interval is specified in the [`AudioPlayer.Play`](#Play) directive message.
@@ -633,7 +633,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develo
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
-* [Reporting audio playback progress](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [Reporting audio playback progress](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 ## ProgressReportPositionPassed event {#ProgressReportPositionPassed}
 Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)) at the specified time, which is measured from the start of the audio stream. The reporting time is specified in the [`AudioPlayer.Play`](#Play) directive message.
@@ -684,7 +684,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/Develo
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
-* [Reporting audio playback progress](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
+* [Reporting audio playback progress](/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress)
 
 ## ReportPlaybackState event {#ReportPlaybackState}
 
@@ -738,7 +738,7 @@ Reports to CIC the current playback state of the client. If the [`AudioPlayer.Ex
 ### See also
 * [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)
 * [`AudioPlayer.Play`](#Play)
-* [Sharing audio playback state](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [Sharing audio playback state](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 
 {% if book.DocMeta.TargetReaderType == "Internal" %}
 ## RequestPlaybackState event {#RequestPlaybackState}
@@ -787,7 +787,7 @@ Requests CIC for the current playback state of the client. Upon receiving the `A
 ### See also
 * [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)
 * [`AudioPlayer.Play`](#Play)
-* [Sharing audio playback state](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [Sharing audio playback state](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 {% endif %}
 
 ## StreamDeliver directive {#StreamDeliver}
@@ -837,7 +837,7 @@ Some contents of the `AudioStreamInfoObject` object provided by the `StreamDeliv
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
-* [Playing audio stream](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [Playing audio stream](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 ## StreamRequested event {#StreamRequested}
 Requests CIC for additional information needed for audio stream playback such as a streaming URI.
@@ -900,7 +900,7 @@ Based on the policy of music service providers, certain information required for
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamDeliver`](#StreamDeliver)
-* [Playing audio stream](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#PlayAudioStream)
+* [Playing audio stream](/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream)
 
 {% if book.DocMeta.TargetReaderType == "Internal" %}
 ## SynchronizePlaybackState directive {#SynchronizePlaybackState}
@@ -948,7 +948,7 @@ Instructs the client to synchronize the audio playback state. The client that ha
 
 ### See also
 * [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
-* [Sharing audio playback state](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ShareAudioPlaybackState)
+* [Sharing audio playback state](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 {% endif %}
 
 ## Shared objects

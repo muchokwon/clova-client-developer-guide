@@ -52,7 +52,7 @@ A web application that provides extended capabilities to Clova for a more divers
 A platform that provides tools and interfaces for development and deployment of a Clova extension. It supports communication between Clova and extensions.
 
 ### Clova Home extension {#ClovaHomeExtension}
-An [extension](#ClovaExtension) that provides a service for controlling IoT appliances. For more information, see [Building a Clova Home extension]({{ book.DocMeta.ClovaHomeExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Clova_Home_Extension.md).
+An [extension](#ClovaExtension) that provides a service for controlling IoT appliances. For more information, see [Building a Clova Home extension]({{ book.DocMeta.ClovaHomeExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Clova_Home_Extension.{{ book.DocMeta.FileExtensionForExternalLink}}).
 
 ### Clova Interface Connect (CIC) {#CIC}
 A platform that serves as an interface between Clova and a client aiming to provide AI assistant services such as PC/mobile apps, mobile devices, or home appliances. For more information, see [CIC overview](/Develop/CIC_Overview.md).

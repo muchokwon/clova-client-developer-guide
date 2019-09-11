@@ -18,18 +18,18 @@ Follow the guide provided below to learn how to develop a client.
 </div>
 
 
-{% include "/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md" %}
+{% include "/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md" %}
 
-{% include "/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md" %}
+{% include "/Develop/Guides/Handle_Delegation.md" %}
 
-{% include "/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md" %}
+{% include "/Develop/Guides/Handle_Device_Control.md" %}
 
-{% include "/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md" %}
+{% include "/Develop/Guides/Handle_Bluetooth_Control.md" %}
 
-{% include "/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md" %}
+{% include "/Develop/Guides/Handle_Alerts.md" %}
 
-{% include "/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md" %}
+{% include "/Develop/Guides/Handle_Audio_Playback.md" %}
 
-{% include "/Develop/Guides/ImplementClientFeatures/Handle_Settings.md" %}
+{% include "/Develop/Guides/Handle_Settings.md" %}
 
-{% include "/Develop/Guides/ImplementClientFeatures/Restrictions_On_Line_Music.md" %}
+{% include "/Develop/Guides/Restrictions_On_Line_Music.md" %}
