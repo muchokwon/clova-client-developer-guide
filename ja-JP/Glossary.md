@@ -61,7 +61,7 @@ AIアシスタントサービスを提供するパソコン/モバイルアプ�
 [Clova Extension](#ClovaExtension)の別名
 
 ### HTTP/2 {#HTTP2}
-HTTPのバージョンの1つです。[SPDY](https://en.wikipedia.org/wiki/SPDY)に基づき、インターネット技術タスクフォース(IETF)において開発されています。1997年にRFC 2068として規定されたHTTP/1.1をバージョンアップしたものであり、2014年12月にProposed Standard(標準への提唱)として制定され、2015年2月17日にIESGで正式な仕様として承認されました。2015年5月に<a href="https://tools.ietf.org/html/rfc7540" target="_blank">RFC 7540</a>として公開されました。
+HTTPのバージョンの1つです。[SPDY](https://en.wikipedia.org/wiki/SPDY)に基づき、インターネット技術タスクフォース（IETF）において開発されています。1997年にRFC 2068として規定されたHTTP/1.1をバージョンアップしたものであり、2014年12月にProposed Standard(標準への提唱)として制定され、2015年2月17日にIESGで正式な仕様として承認されました。2015年5月に<a href="https://tools.ietf.org/html/rfc7540" target="_blank">RFC 7540</a>として公開されました。
 
 ### OAuth 2.0
 アクセス権限を委任するためのオープンスタンダードです。インターネットのユーザーが他のウェブサービスやアプリケーションのユーザーアカウントにアクセスできる権限を付与する規約です。Clovaプラットフォームでは、クライアントが[Clovaアクセストークン](#ClovaAccessToken)を取得したり、ユーザーが特定のExtensionを使用したりする際、自身のアカウントを連携するために使用されます。詳細については、[https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)を参照してください。
