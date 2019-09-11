@@ -32,13 +32,13 @@ Developers can use the following documents when necessary:
       <td>
         <ul>
           <li><a href="/Develop/Guides/Interact_with_CIC.md">Interacting with CIC</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md">Handling tasks and managing dialogue IDs</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Delegation.md">Handling delegated user requests</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Device_Control.md">Handling device control</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Bluetooth_Control.md">Handling client Bluetooth control</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Alerts.md">Handling alerts</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md">Handling audio playback</a></li>
-          <li><a href="/Develop/Guides/ImplementClientFeatures/Handle_Settings.md">Handling settings</a></li>
+          <li><a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">Handling tasks and managing dialogue IDs</a></li>
+          <li><a href="/Develop/Guides/Handle_Delegation.md">Handling delegated user requests</a></li>
+          <li><a href="/Develop/Guides/Handle_Device_Control.md">Handling device control</a></li>
+          <li><a href="/Develop/Guides/Handle_Bluetooth_Control.md">Handling client Bluetooth control</a></li>
+          <li><a href="/Develop/Guides/Handle_Alerts.md">Handling alerts</a></li>
+          <li><a href="/Develop/Guides/Handle_Audio_Playback.md">Handling audio playback</a></li>
+          <li><a href="/Develop/Guides/Handle_Settings.md">Handling settings</a></li>
         </ul>
       </td>
     </tr>
