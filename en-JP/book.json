@@ -1,0 +1,43 @@
+{
+  "title": "Clova Client Developer Guide",
+  "description": "This documentation provides developer guides as well as API references for CIC platforms provided by Clova.",
+  "direction": "ltr",
+  "author": "LINE Corporation",
+  "variables": {
+    "DocMeta": {
+      "ClassifiedInfo": "Confidential",
+      "DocOwner": "LINE",
+      "DocVersion": "v4.0.1",
+      "ReleaseYear": "2019",
+      "TargetReaderType": "Partner",
+      "ClovaCustomExtensionDeveloperGuideBaseURI": "https://pages.oss.navercorp.com/JTF-P6/Clova_Custom_Extension_Developer_Guide/en-JP",
+      "ClovaHomeExtensionDeveloperGuideBaseURI": "https://pages.oss.navercorp.com/JTF-P6/Clova_Home_Extension_Developer_Guide/en-JP",
+      "FileExtensionForExternalLink": "html"
+    },
+    "ServiceEnv": {
+      "AuthServerBaseURL": "https://clova-authgw.line-apps.com/",
+      "CICBaseURL": "https://clova-cic.line-apps.com/",
+      "LoginAPIofTargetService": "https://developers.line.biz/en/docs/line-login/web/integrate-line-login-v2/",
+      "OrientedService": "LINE",
+      "OrientedServiceWithLowerCase": "line",
+      "ProposalRegisterURL": "https://partners.line.me/en/partner/join",
+      "TargetServiceForClientAuth": "LINE",
+      "RedirectURIonLINEAuth": "https://cic-client.clova.ai/login/line/redirect_uri/v2/"
+    },
+    "L10N": {
+      "TargetCountryCode": "JP",
+      "Language": "en"
+    }
+  },
+  "pdf": {
+    "fontSize": 11,
+    "margin": {
+      "top": 40,
+      "bottom": 40,
+      "left": 30,
+      "right": 30
+    },
+    "paperSize": "a3"
+  },
+  "plugins": ["-search", "-lunr"]
+}

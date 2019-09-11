@@ -1,0 +1,58 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor User as user #9EA0CA
+participant "Clova app" as ca #9EA0CA
+participant "Client device" as cli #9EA0CA
+participant CIC as cic #05D686
+
+group Synchronizing the settings information
+  user ->> ca: Look up the client device settings information
+  activate ca
+  ca ->> cic: Request for synchronizing the current settings information
+  activate cic
+
+    cic ->> cli: Send Settings.ExpectReport directive
+    activate cli
+    cli ->> cic: Send Settings.Report event
+    deactivate cli
+
+  cic ->> ca: Request for synchronizing the current settings information
+  deactivate cic
+  ca -> ca: Update the device settings information
+  ca ->> user: Display the device settings informaiton
+  deactivate ca
+end
+
+group Changing the settings from the Clova app
+  user ->> ca: Change the device settings
+  activate ca
+  ca ->> cic: Reqeust to update the device settings
+  activate cic
+
+    cic ->> cli: Send Settings.Update directive
+    activate cli
+    cli ->> cic: Send Settings.Report event
+    deactivate cli
+
+  cic ->> ca: Instructs the client app to apply the changed settings
+  deactivate cic
+  ca -> ca: Update the device settings
+  ca ->> user: Display the device settings information
+  deactivate ca
+end
+
+group Changing the settings directly from the client device
+  user ->> cli: Change the device settings
+  activate cli
+      cli ->> cic: Send Settings.Report event
+  deactivate cli
+      activate cic
+
+  cic ->> ca: Instructs the client app to apply the changed settings
+  deactivate cli
+  activate ca
+  deactivate cic
+  ca -> ca: Update the device settings
+  ca ->> user: Display the device settings information
+  deactivate ca
+end

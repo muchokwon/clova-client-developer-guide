@@ -1,0 +1,15 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Bluetooth device" as device #9EA0CA
+participant Client as client #9EA0CA
+participant "Clova" as clova #05D686
+
+activate device
+device -> device : Bluetooth advertising
+hnote over device, clova : Request to retrieve a pairable device list
+activate clova
+  clova ->> client : DeviceControl.BtStartPairing\nSend a directive message
+activate client
+  client -> client : Bluetooth scanning
+  client -->> clova : DeviceControl.ActionExecuted (with DeviceState) \nSend an event message
+hnote over device, clova : Provide the scanned device list

@@ -1,0 +1,47 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor User as user #9EA0CA
+participant Client as client #9EA0CA
+participant CIC as cic #05D686
+
+user ->> client : Client control request:\n"Turn on GPS."
+
+activate client
+  client ->> cic : Send SpeechRecognizer.Recognize event\n(Include Device.DeviceState context as required information)
+
+deactivate client
+
+activate cic
+  cic -> cic : Analyze whether the action is\nsupported by the client\n(Analyze the actions[]\nfield of Device.DeviceState)
+
+  alt Requested action is supported == No
+
+    cic -->> client : Send SpeechSynthesizer.Speak directive\n("The action is not supported.")
+
+	activate client
+    client -->> user : Output voice message
+
+  else Requested action is supported == Yes
+
+    cic -->> client : Send client control directive\n(DeviceControl.TurnOn directive)
+
+	deactivate cic
+    client -> client : Handle control device request
+
+    alt Result of handling device control == Success
+
+      client ->> cic : Send DeviceControl.ActionExecuted event
+
+      activate cic
+
+    else Result of handling device control == Failure
+
+      client ->> cic : Send DeviceControl.ActionFailed event
+
+    end
+
+  end
+
+  deactivate client
+
+deactivate cic
