@@ -80,7 +80,7 @@ The UI expression of Green Dot VUI varies depending on the identified action. Be
 |----------------|-------------------------------|---------------|
 | Intro          | The motion displayed when the user has invoked a wake word or pressed a button.         | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Intro.gif)      |
 | Waiting        | The motion displayed until the voice input of the user is actually entered.         | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Waiting.gif)    |
-| Speaking      | The motion displayed when the voice input of the user is actually recognized and entered. | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Speaking.gif)    |
+| Speaking      | The motion displayed when the voice input of the user is actually recognized and entered. | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Listening.gif)    |
 | Processing | The motion displayed when the user request is analyzed and handled.       | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Processing.gif) |
 | Answering      | The motion displayed when a response on the user request is being output as TTS. This motion is classified into the following three sections:<ul><li>Entry section: Expresses that TTS has started (frames 1-13).</li><li>Repeat section: Expresses the TTS output (frames 14-29). This section must be played repeatedly until the response is completed.</li><li>End section: Expresses that the response has ended (frames 30-41).</li></ul>    | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Answering.gif)  |
 | Complete       | The motion displayed when completing a response on the user request.            | ![](/Design/Assets/Images/Clova-Client-Green_Dot_VUI_Complete.gif)  |
