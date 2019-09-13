@@ -1,0 +1,82 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Client without GUI" as device #9EA0CA
+participant "Client with GUI" as app #9EA0CA
+participant "LINE authorization server" as lauth #05D686
+participant "Clova terms-and-conditions page" as term #05D686
+participant "Clova authorization server" as cauth #05D686
+participant CIC as cic #05D686
+
+activate app
+app -> lauth: Start LINE OAuth with \nclient_id and redirect_uri
+
+lauth -> cauth: HTTP Redirect to grant web page for Clova authentication with LINE auth code
+activate cauth
+cauth -->> app: Show grant web page
+deactivate cauth
+
+app -> cauth: Tap OK
+deactivate app
+
+activate cauth
+
+alt "3rd party Android app"
+  cauth -> app: intent://package=com.3rdparty.app&code=abc&state=xyz
+  activate app
+
+else "web app or iOS"
+  cauth -> app: http://redirect_uri/&code=abc&state=xyz
+end
+
+deactivate cauth
+
+app -> cauth: Request Clova OAuth authorization code (send next information)\l- Authorization code of LINE account\l- grant_type=uauth_auth_code_v2\l- Client credentials\l  (CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)
+
+activate cauth
+
+cauth -> lauth: LINE access token request with LINE auth code
+lauth -->> cauth: LINE access token
+
+alt "User agreed to terms-of-service agreement" == "Yes"
+  cauth -->> app: Return authorization code (200 OK)
+else "User agreed to terms-and-conditions agreement" == "No"
+  cauth -->> app: Return authorization code\land redirect_uri\l(451 Unavailable For Legal Reasons)
+  deactivate cauth
+  app -> term: Redirect to terms-and-conditions page (redirect_uri)
+  activate term
+  term -->> app: Show terms-and-conditions page
+  app -> term: Tap agree/disagree
+  term ->> cauth: Send result of user agreement\nto terms-and-conditions (submit)
+  activate cauth
+  cauth -->> term: Return result (302 Found)\l- clova://agreement-success\l- Failure: clova://agreement-failure
+  deactivate cauth
+  term -->> app: Return result (302 Found)\l- clova://agreement-success\l- Failure: clova://agreement-failure
+  deactivate term
+end
+
+alt "Client type" == "Client with GUI"
+  app ->> cauth: Request Clova access token (send next information)\l- Authorization code\l- Client credentials\l  (CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)
+
+  activate cauth
+  cauth -->> app: Return Clova access token
+  deactivate cauth
+
+  app ->> cic: Start connection to CIC using Clova access token
+  activate cic
+  deactivate cic
+
+else "Client type" == "Client without GUI"
+  app ->> device: Forward authorization code
+  deactivate app
+
+  activate device
+  device ->> cauth: Request Clova access token (send next information)\l- Authorization code\l- Client credentials\l  (CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)
+
+  activate cauth
+  cauth -->> device: Send Clova access token
+  deactivate cauth
+
+  device ->> cic: Start connection to CIC using Clova access token
+
+  activate cic
+end

@@ -1,0 +1,53 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor User as user #9EA0CA
+participant Client as client #9EA0CA
+participant CIC as cic #05D686
+
+
+  client -> client : Start alarm
+  client ->> cic : Report start of alarm\n(Alerts.AlertStarted event,\linclude activateAlerts as a required field in Alert.AlertsState)
+
+  activate cic
+  deactivate cic
+
+  user ->> client : Request to stop alarm (using utterance or physical button)
+
+  alt Type of stop alarm request == User utterance
+
+    client ->> cic : Send request to stop alarm\n(SpeechRecognizer.Recognize event)
+
+  activate cic
+
+  else Type of stop alarm request == Physical button
+
+    client ->> cic : Send request to stop alarm\n(Alerts.RequestAlertStop event)
+
+  end
+
+  cic -->> client : Send Alerts.StopAlert directive
+
+  deactivate cic
+
+  client ->> cic : Report result of stop alarm\n(Alerts.AlertStopped event)
+
+  activate cic
+
+    opt Alarm is repeated == Yes
+
+      cic -->> client : Send next repeated alarm\n(Alerts.SetAlert directive)
+
+    end
+
+    opt Alarm type == Action timer
+
+      cic -->> client : Send the directive to perform the user-scheduled action
+
+  deactivate cic
+
+      client -> client : Perform scheduled action
+
+    end
+
+  deactivate client
+  deactivate cic

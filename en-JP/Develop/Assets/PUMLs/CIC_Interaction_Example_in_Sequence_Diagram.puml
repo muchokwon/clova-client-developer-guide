@@ -1,0 +1,41 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant Client as client #9EA0CA
+participant CIC as cic #05D686
+participant Clova as clova #05D686
+
+activate client
+  client ->> cic: Send Recognize event\n"Play classic music."
+deactivate client
+
+activate  cic
+  cic ->> clova: Request user speech recognition
+deactivate cic
+
+activate clova
+  clova -> clova: Recognize speech
+
+  clova -> clova: Analyze semantics
+  clova -->> cic: Send semantics analysis result
+deactivate clova
+
+activate cic
+  cic -->> client: Send Speak directive\n"Here is classic music."
+
+activate client
+  client -> client: Output voice
+  cic -->> client: Send RenderText directive\n"Here is classic music."
+  client -> client: Display text on screen
+  cic -->> client: Send Play directive\nincluding music information on "Vivaldi: Seasons Spring"
+deactivate cic
+  client -> client: Play music
+
+  client ->> cic: Send PlayStarted event\nSend the playback state of client
+
+deactivate client
+
+activate cic
+
+cic ->> clova: Send the playback state of the client
+
+activate clova
