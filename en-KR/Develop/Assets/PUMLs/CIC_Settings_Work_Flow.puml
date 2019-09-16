@@ -6,45 +6,45 @@ participant "Client device" as cli #9EA0CA
 participant CIC as cic #05D686
 
 group Synchronizing the settings information
-  user ->> ca: Look up the client device settings information
+  user ->> ca: Looks up the client device settings information
   activate ca
-  ca ->> cic: Request for synchronizing the current settings information
+  ca ->> cic: Requests for synchronizing the current settings information
   activate cic
 
-    cic ->> cli: Send Settings.ExpectReport directive
+    cic ->> cli: Sends Settings.ExpectReport directive
     activate cli
-    cli ->> cic: Send Settings.Report event
+    cli ->> cic: Sends Settings.Report event
     deactivate cli
 
-  cic ->> ca: Request for synchronizing the current settings information
+  cic ->> ca: Requests for synchronizing the current settings information
   deactivate cic
-  ca -> ca: Update the device settings information
-  ca ->> user: Display the device settings informaiton
+  ca -> ca: Updates the device settings information
+  ca ->> user: Displays the device settings informaiton
   deactivate ca
 end
 
 group Changing the settings from the Clova app
-  user ->> ca: Change the device settings
+  user ->> ca: Changes the device settings
   activate ca
-  ca ->> cic: Reqeust to update the device settings
+  ca ->> cic: Reqeusts to update the device settings
   activate cic
 
-    cic ->> cli: Send Settings.Update directive
+    cic ->> cli: Sends Settings.Update directive
     activate cli
-    cli ->> cic: Send Settings.Report event
+    cli ->> cic: Sends Settings.Report event
     deactivate cli
 
   cic ->> ca: Instructs the client app to apply the changed settings
   deactivate cic
-  ca -> ca: Update the device settings
-  ca ->> user: Display the device settings information
+  ca -> ca: Updates the device settings
+  ca ->> user: Displays the device settings information
   deactivate ca
 end
 
 group Changing the settings directly from the client device
-  user ->> cli: Change the device settings
+  user ->> cli: Changes the device settings
   activate cli
-      cli ->> cic: Send Settings.Report event
+      cli ->> cic: Sends Settings.Report event
   deactivate cli
       activate cic
 
@@ -52,7 +52,7 @@ group Changing the settings directly from the client device
   deactivate cli
   activate ca
   deactivate cic
-  ca -> ca: Update the device settings
-  ca ->> user: Display the device settings information
+  ca -> ca: Updates the device settings
+  ca ->> user: Displays the device settings information
   deactivate ca
 end

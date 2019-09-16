@@ -6,10 +6,10 @@ participant "Clova" as clova #05D686
 
 activate device
 device -> device : Bluetooth advertising
-hnote over device, clova : Request to retrieve a pairable device list
+hnote over device, clova : Requests to retrieve a pairable device list
 activate clova
-  clova ->> client : DeviceControl.BtStartPairing\nSend a directive message
+  clova ->> client : DeviceControl.BtStartPairing\nSends a directive message
 activate client
   client -> client : Bluetooth scanning
-  client -->> clova : DeviceControl.ActionExecuted (with DeviceState) \nSend an event message
-hnote over device, clova : Provide the scanned device list
+  client -->> clova : DeviceControl.ActionExecuted (with DeviceState) \nSends an event message
+hnote over device, clova : Provides the scanned device list

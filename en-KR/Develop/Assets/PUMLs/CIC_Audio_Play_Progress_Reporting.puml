@@ -6,8 +6,8 @@ participant CIC as cic #05D686
 
 activate client
 
-  client -> client : Start audio playback
-  client ->> cic : Report start of audio playback (AudioPlayer.PlayStarted event)
+  client -> client : Starts audio playback
+  client ->> cic : Reports start of audio playback (AudioPlayer.PlayStarted event)
 
   activate cic
   deactivate cic
@@ -16,7 +16,7 @@ activate client
 
     ... After starting audio playback and passing a specific duration ...
 
-    client ->> cic : Report progress of audio playback (AudioPlayer.ProgressReportDelayPassed event)
+    client ->> cic : Reports progress of audio playback (AudioPlayer.ProgressReportDelayPassed event)
 
     activate cic
     deactivate cic
@@ -29,7 +29,7 @@ activate client
 
       ... After passing a specific time interval, ...
 
-      client ->> cic : Report progress of audio playback (AudioPlayer.ProgressReportIntervalPassed event)
+      client ->> cic : Reports progress of audio playback (AudioPlayer.ProgressReportIntervalPassed event)
 
       activate cic
       deactivate cic
@@ -42,7 +42,7 @@ activate client
 
     ... After passing a specific point in playback ...
 
-    client ->> cic : Report progress of audio playback (AudioPlayer.ProgressReportPositionPassed event)
+    client ->> cic : Reports progress of audio playback (AudioPlayer.ProgressReportPositionPassed event)
 
     activate cic
     deactivate cic
@@ -51,7 +51,7 @@ activate client
 
   ... After completing audio playback ...
 
-  client ->> cic : Report completion of audio playback (AudioPlayer.PlayFinished event)
+  client ->> cic : Reports completion of audio playback (AudioPlayer.PlayFinished event)
 
 deactivate client
 activate cic

@@ -5,30 +5,30 @@ participant "Clova app" as ca #9EA0CA
 participant "Client device" as cli #9EA0CA
 participant CIC as cic #05D686
 
-user ->> ca: Change device settings
+user ->> ca: Changes device settings
 
   activate ca
 
-  ca ->> cic: Request to change the device settings
+  ca ->> cic: Requests to change the device settings
 
   activate cic
 
-    cic ->> cli: Direct to change the device settings\n(Send Settings.Update directive)
+    cic ->> cli: Directs to change the device settings\n(Sends Settings.Update directive)
 
     activate cli
 
-      cli -> cli: Change device settings
+      cli -> cli: Changes device settings
 
-      cli ->> cic: Report the current settings information of the device\n(Send Settings.Report event)
+      cli ->> cic: Reports the current settings information of the device\n(Sends Settings.Report event)
 
     deactivate cli
 
-  cic ->> ca: Direct to synchronize to the changed settings
+  cic ->> ca: Directs to synchronize to the changed settings
 
   deactivate cic
 
-  ca -> ca: Refresh device settings
-  
-  ca ->> user: Provide device settings
+  ca -> ca: Refreshes device settings
+
+  ca ->> user: Provides device settings
 
 deactivate ca

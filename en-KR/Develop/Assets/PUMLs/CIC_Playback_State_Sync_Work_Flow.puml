@@ -6,17 +6,17 @@ participant "Client device 2" as cli2 #9EA0CA
 participant CIC as cic #05D686
 
 activate ca
-  ca ->> cic : Request playback state of clients
+  ca ->> cic : Requests playback state of clients
 deactivate ca
 
 group Request state report
 
   activate cic
 
-    cic ->> cli1 : Forward AudioPlayer.ExpectReportPlaybackState directive\n(via downchannel)
+    cic ->> cli1 : Forwards AudioPlayer.ExpectReportPlaybackState directive\n(via downchannel)
     activate cli1
 
-    cic ->> cli2 : Forward AudioPlayer.ExpectReportPlaybackState directive\n(via downchannel)
+    cic ->> cli2 : Forwards AudioPlayer.ExpectReportPlaybackState directive\n(via downchannel)
     activate cli2
 
   deactivate cic
@@ -27,23 +27,23 @@ end
 
 group Report state
 
-    cli2 ->> cic : Send AudioPlayer.ReportPlaybackState event\n(Reporting playback state)
+    cli2 ->> cic : Sends AudioPlayer.ReportPlaybackState event\n(Reporting playback state)
     deactivate cli2
   activate cic
 
-    cli1 ->> cic : Send AudioPlayer.ReportPlaybackState event\n(Reporting playback state)
+    cli1 ->> cic : Sends AudioPlayer.ReportPlaybackState event\n(Reporting playback state)
     deactivate cli1
 
 end
 
-    cic -> cic : Refine collected state
+    cic -> cic : Refines collected state
 
 group Synchronize state
 
-    cic ->> ca : Share playback state
+    cic ->> ca : Shares playback state
     activate ca
 
-    ca -> ca : Update playback state of clients
+    ca -> ca : Updates playback state of clients
 
   deactivate cic
 
