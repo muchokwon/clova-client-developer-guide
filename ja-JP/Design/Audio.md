@@ -16,7 +16,7 @@
 | オーディオコンテンツのタイプ | 説明                                                  | 関連するCIC APIの名前空間             |
 |---------------|-------------------------------------------------------|----------------------------------|
 | Alert         | アラーム音、タイマー音、リマインダー音、リマインダー発話、緊急の警報音などのオーディオコンテンツ             | [`Alerts`](/Develop/References/MessageInterfaces/Alerts.md) |
-| Content       | ユーザーのリクエストに対する音楽、動画、ニュース、ポッドキャストなどのオーディオコンテンツ                           | [`AudioPlayer`](/Develop/References/MessageInterfaces/AudioPlayer.md) |
+| Content       | ユーザーのリクエストに対する音楽、絵本、ラジオなどのオーディオコンテンツ                           | [`AudioPlayer`](/Develop/References/MessageInterfaces/AudioPlayer.md) |
 | Dialogue      | ユーザーのリクエストに対するTTSオーディオコンテンツ                                                  | [`SpeechRecognizer`](/Develop/References/MessageInterfaces/SpeechRecognizer.md), [`SpeechSynthesizer`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md) |
 | Feedback      | リセット音、着信音（ring tone）、呼び出し音（ringback tone）                              | なし（クライアントで判断する） |
 | Notification  | 発信音、システム状態の発話（バッテリー不足の通知、Bluetooth接続解除の通知など）、通知音、通知発話         | [`Notifier`](/Develop/References/MessageInterfaces/Notifier.md) |
