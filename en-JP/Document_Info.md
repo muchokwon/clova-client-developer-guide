@@ -334,7 +334,7 @@ The revision history of this document is as follows:
       <td>2018-01-15</td>
       <td>
         <ul>
-          <li>Added guideline descriptions on <a href="/Design/light.html">light</a> and <a href="/Design/Audio.html#SoundEffect">sound effects</a> for alarms, reminders, and timers to the Design guidelines</li>
+          <li>Added guideline descriptions on <a href="/Design/Light.md">light</a> and <a href="/Design/Audio.html#SoundEffect">sound effects</a> for alarms, reminders, and timers to the Design guidelines</li>
         </ul>
       </td>
     </tr>
