@@ -1,5 +1,5 @@
 # README
-This document provides design guidelines for client devices and developer guide/API reference for CIC platforms in order to develop the Clova client. The intended audiences of this document are client developers using CIC to develop electronic devices and apps that link with the Clova services.
+This document provides Design guidelines and developer guide/API reference for CIC platforms in order to develop the Clova client. The intended audiences of this document are client developers using CIC to develop electronic devices and apps that link with the Clova services.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -24,7 +24,7 @@ The revision history of this document is as follows:
       <td>2019-07-17</td>
       <td>
         <ul>
-          <li>Added <a href="/Develop/Guides/Implement_Client_Features.md#RestrictionsOnLineMusic">Restrictions on LINE MUSIC</a> to the <a href="/Develop/Guides/Implement_Client_Features.md">Implementing client features</a> guide</li>
+          <li>Added <a href="/Develop/Guides/Restrictions_On_Line_Music.md">Restrictions on LINE MUSIC</a> to the Development guide</li>
         </ul>
       </td>
     </tr>
@@ -32,8 +32,8 @@ The revision history of this document is as follows:
       <td>2019-07-03</td>
       <td>
         <ul>
-          <li>Revised the <a href="/Develop/Guides/InteractWithCIC/Preparation.md#ClientAuthInfo">Client credentials</a> guide</li>
-          <li>Revised the <a href="/Develop/Guides/InteractWithCIC/Connect_to_CIC.md#CreateClovaAccessToken">Creating Clova access tokens</a> guide</li>
+          <li>Revised the <a href="/Develop/Guides/Interact_with_CIC.html#ClientAuthInfo">Client credentials</a> guide</li>
+          <li>Revised the <a href="/Develop/Guides/Interact_with_CIC.html#CreateClovaAccessToken">Creating Clova access tokens</a> guide</li>
           <li>Revised the <a href="/Develop/References/Clova_Auth_API.md">Clova auth APreference</a> guide</li>
           <li>Revised some notation errors in the document history</li>
         </ul>
@@ -52,8 +52,8 @@ The revision history of this document is as follows:
       <td>2019-01-04</td>
       <td>
         <ul>
-          <li>Added the <a href=/Develop/Guides/Implement_Client_Features.md#HandleDeviceControl>Handling client action control</a> guide</li>
-          <li>Added the <a href=/Develop/Guides/Implement_Client_Features.md#HandleBluetoothControl>Handling client Bluetooth control</a> guide</li>
+          <li>Added the <a href=/Develop/Guides/Handle_Device_Control.md>Handling client action control</a> guide</li>
+          <li>Added the <a href=/Develop/Guides/Handle_Bluetooth_Control.md>Handling client Bluetooth control</a> guide</li>
           <li>Added the <a href="/Develop/References/CICInterface/AudioPlayer.md#PlaybackQueueCleared">AudioPlayer.PlaybackQueueCleared</a> event to report the playback queue initialization action to the <a href="/Develop/References/CICInterface/AudioPlayer.md">AudioPlayer API</a></li>
         </ul>
       </td>
@@ -62,8 +62,8 @@ The revision history of this document is as follows:
       <td>2018-12-24</td>
       <td>
         <ul>
-          <li>Added the <a href=/Develop/Guides/Implement_Client_Features.md#HandleDeviceControl>Handling client action control</a> guide</li>
-          <li>Added the <a href=/Develop/Guides/Implement_Client_Features.md#HandleBluetoothControl>Handling client Bluetooth control</a> guide</li>
+          <li>Added the <a href=/Develop/Guides/Handle_Device_Control.md>Handling client action control</a> guide</li>
+          <li>Added the <a href=/Develop/Guides/Handle_Bluetooth_Control.md>Handling client Bluetooth control</a> guide</li>
           <li>Added the nowTemperatureImageCode field and the nowTemperatureImageUrl field related to the current weather information in the <a href="/Develop/References/ContentTemplates/TodayWeather.md">TodayWeather</a> template</li>
           <li>Revised documentation errors in the <a href="/Develop/References/ContentTemplates/TodayWeather.md">TodayWeather</a> template</li>
           <li>Added the link of the added document in <a href="/README.md">Before getting started</a></li>
@@ -75,7 +75,7 @@ The revision history of this document is as follows:
       <td>2018-11-30</td>
       <td>
         <ul>
-          <li>Separated the description of the dialogue model into <a href="/Develop/CIC_Overview.md#IndirectDialogue">Indirect dialogue structure</a> and <a href="/Develop/Guides/Implement_Client_Features.md#ManageDialogueIDAndHandleTasks">Handling tasks and managing dialogue IDs,</a>, and supplemented the content</li>
+          <li>Separated the description of the dialogue model into <a href="/Develop/CIC_Overview.md#IndirectDialogue">Indirect dialogue structure</a> and <a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">Handling tasks and managing dialogue IDs,</a>, and supplemented the content</li>
           <li>Added a value field to the <a href="/Develop/References/CICInterface/DeviceControl.md#Decrease">DeviceControl.Decrease</a> and <a href="/Develop/References/CICInterface/DeviceControl.md#Increase">DeviceControl.Increase</a> directives to support adjustment of the screen brightness or volume of a device by a specifiamount</li>
         </ul>
       </td>
@@ -84,7 +84,7 @@ The revision history of this document is as follows:
       <td>2018-11-16</td>
       <td>
         <ul>
-          <li>Added a guide for <a href="/Develop/Guides/Implement_Client_Features.html#HandleSettings">Handling settings</a> related to the settings information in <a href="/Develop/Guides/Implement_Client_Features.html">Implementing client features</a></li>
+          <li>Added a guide for <a href="/Develop/Guides/Handle_Settings.md">Handling settings</a> related to the settings information in the Development guide</li>
         </ul>
       </td>
     </tr>
@@ -92,12 +92,12 @@ The revision history of this document is as follows:
       <td>2018-11-09</td>
       <td>
         <ul>
-          <li>Added the guide for <a href="/Develop/Guides/Implement_Client_Features.html#HandleAudioPlayback">Handling audio playback</a> related to audio playback and playback control in <a href="/Develop/Guides/Implement_Client_Features.html">Implementing client features</a> (and includes the following content)
+          <li>Added the guide for <a href="/Develop/Guides/Handle_Audio_Playback.md">Handling audio playback</a> related to audio playback and playback control in the Development guide (and includes the following content)
             <ul>
-              <li><a href="/Develop/Guides/Implement_Client_Features.html#PlayAudioStream">Playing audio stream</a></li>
-              <li><a href="/Develop/Guides/Implement_Client_Features.html#ReportAudioPlaybackProgress">Reporting audio playback progress</a></li>
-              <li><a href="/Develop/Guides/Implement_Client_Features.html#ControlAudioPlayback">Controlling audio playback</a></li>
-              <li><a href="/Develop/Guides/Implement_Client_Features.html#ShareAudioPlaybackState">Sharing audio playback state</a></li>
+              <li><a href="/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream">Playing audio stream</a></li>
+              <li><a href="/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress">Reporting audio playback progress</a></li>
+              <li><a href="/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback">Controlling audio playback</a></li>
+              <li><a href="/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState">Sharing audio playback state</a></li>
             </ul>
           </li>
         </ul>
@@ -138,7 +138,7 @@ The revision history of this document is as follows:
       <td>2018-09-07</td>
       <td>
         <ul>
-          <li>Revised errors in links and mistakes in code examples in the <a href="/Develop/Guides/Implement_Client_Features.html#HandleAlerts">Handling alerts</a> section</li>
+          <li>Revised errors in links and mistakes in code examples in the <a href="/Develop/Guides/Handle_Alerts.md">Handling alerts</a> section</li>
         </ul>
       </td>
     </tr>
@@ -146,8 +146,7 @@ The revision history of this document is as follows:
       <td>2018-08-29</td>
       <td>
         <ul>
-          <li>Changed the RGB value of the <a href="/Design/Design_Guideline_For_Client_Hardware.html#LightColor">light colors</a> in the <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
-          <li>Added a section on <a href="/Develop/Guides/Implement_Client_Features.html">Implementing client features</a></li>
+          <li>Changed the RGB value of the <a href="/Design/Light.md#LightColor">light colors</a> in the Design guidelines</li>
           <li>Updated some fields in the <a href="/Develop/References/CICInterface/AudioPlayer.html">AudioPlayer</a> and <a href="/Develop/References/CICInterface/TemplateRuntime.html">TemplateRuntime</a> namespaces</li>
         </ul>
       </td>
@@ -173,7 +172,7 @@ The revision history of this document is as follows:
       <td>2018-07-23</td>
       <td>
         <ul>
-          <li>Updated the sound effect of entering the attending state among the <a href="/Design/Design_Guideline_For_Client_Hardware.html#SoundEffect">sound effects</a> of the <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
+          <li>Updated the sound effect of entering the attending state among the <a href="/Design/Audio.md#SoundEffect">sound effects</a> of the Design guidelines</li>
           <li>Added 423 Locked status code to the section on <a href="/Develop/References/Clova_Auth_API.html#RequestAuthorizationCode">Requesting an authorization code</a> under <a href="/Develop/References/Clova_Auth_API.html">CIauth API</a></li>
         </ul>
       </td>
@@ -232,7 +231,7 @@ The revision history of this document is as follows:
       <td>2018-04-09</td>
       <td>
         <ul>
-          <li>Updated the description and example image for the <a href="Design/Design_Guideline_For_Client_Hardware.html#BootingScreen">bootscreen</a> in the Design guidelines for client devices</li>
+          <li>Updated the description and example image for the <a href="Design/Screen.md#BootingScreen">bootscreen</a> in the Design guidelines</li>
         </ul>
       </td>
     </tr>
@@ -276,8 +275,8 @@ The revision history of this document is as follows:
       <td>
         <ul>
           <li>Modified the description of the initiator field of the <a href="/Develop/References/CICInterface/SpeechRecognizer.html#Recognize">SpeechRecognizer.Recognize</a> event</li>
-          <li>Changed the name of the hearing state to listening state in the client states of the <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
-          <li>Added Feedback type in the audio content type and explanation on rules in the <a href="/Design/Design_Guideline_For_Client_Hardware.html#Audio">Audio</a> section of the Design guidelines for client devices</li>
+          <li>Changed the name of the hearing state to listening state in the client states of the <a href="/Design/Screen.md#GreenDotVUI">Green Dot VUI</a></li>
+          <li>Added Feedback type in the audio content type and explanation on rules in the <a href="/Design/Audio.md">Audio</a> section of the Design guidelines</li>
         </ul>
       </td>
     </tr>
@@ -306,7 +305,7 @@ The revision history of this document is as follows:
       <td>
         <ul>
           <li>Modified the description of the durationInMilliseconds field of <a href="/Develop/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a></li>
-          <li>Added new information such as a field to state the source on the following templates: <a href="/Develop/References/ContentTemplates/Atmosphere.html">Atmosphere</a>, <a href="/Develop/References/ContentTemplates/CardList.html">CardList</a>, <a href="/Develop/References/ContentTemplates/Humidity.html">Humidity</a>, <a href="/Develop/References/ContentTemplates/TodayWeather.html">TodayWeather</a>, <a href="CIC/References/ContentTemplates/TomorrowWeather.html">TomorrowWeather</a>, <a href="/Develop/References/ContentTemplates/WeeklyWeather.html">WeeklyWeather</a>, and <a href="CIC/References/ContentTemplates/WindSpeed.html">WindSpeed</a></li>
+          <li>Added new information such as a field to state the source on the following templates: <a href="/Develop/References/ContentTemplates/Atmosphere.html">Atmosphere</a>, <a href="/Develop/References/ContentTemplates/CardList.html">CardList</a>, <a href="/Develop/References/ContentTemplates/Humidity.html">Humidity</a>, <a href="/Develop/References/ContentTemplates/TodayWeather.html">TodayWeather</a>, <a href="/Develop/References/ContentTemplates/TomorrowWeather.html">TomorrowWeather</a>, <a href="/Develop/References/ContentTemplates/WeeklyWeather.html">WeeklyWeather</a>, and <a href="/Develop/References/ContentTemplates/WindSpeed.html">WindSpeed</a></li>
           <li>Emended some errors in the document</li>
         </ul>
       </td>
@@ -315,7 +314,7 @@ The revision history of this document is as follows:
       <td>2018-01-29</td>
       <td>
         <ul>
-          <li>Added <a href="/Design/Design_Guideline_For_Client_Hardware.html#SoundEffect">sound effects for reminders</a> in the <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
+          <li>Added <a href="/Design/Audio.md#SoundEffect">sound effects for reminders</a> in the Design guidelines</li>
           <li>Added the <a href="/Develop/References/CICInterface/Notifier.html#Notify">Notifier.Notify</a> event to the <a href="/Develop/References/CICInterface/Notifier.html">Notifier</a> namespace and updated the payload field of the namespace</li>
           <li>Added <a href="/Develop/References/CICInterface/SpeechSynthesizer.html#SpeechFinished">SpeechFinished</a>, <a href="/Develop/References/CICInterface/SpeechSynthesizer.html#SpeechStarted">SpeechStarted</a>, and <a href="/Develop/References/CICInterface/SpeechSynthesizer.html#SpeechStopped">SpeechStopped</a> event messages to the <a href="/Develop/References/Context_Objects.html#SpeechState">SpeechSynthesizer.SpeechState</a> and <a href="/Develop/References/CICInterface/SpeechSynthesizer.html">SpeechSynthesizer</a> namespaces</li>
           <li>Added speechId and explicit fields to the <a href="/Develop/References/CICInterface/TextRecognizer.html">TextRecognizer.Recognize</a> event for multi-turn dialogues</li>
@@ -326,7 +325,7 @@ The revision history of this document is as follows:
       <td>2018-01-22</td>
       <td>
         <ul>
-          <li>Added a section on supported audio compression formats in the <a href="/Design/Design_Guideline_For_Client_Hardware.html#SupportedAudioCompressionFormat">Design guidelines for client devices</a> and <a href="/Design/Design_Guideline_For_Extension.html#SupportedAudioCompressionFormat">Design guidelines for extensions</a></li>
+          <li>Added a section on supported audio compression formats in the <a href="/Design/Audio.html#SupportedAudioCompressionFormat">Design guidelines for client device</a> and <a href="{{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI}}/Design/Design_Guideline_For_Extension.html#SupportedAudioCompressionFormat">Design guidelines for extensions</a></li>
           <li>Changed the image format of the UML diagram</li>
         </ul>
       </td>
@@ -335,7 +334,7 @@ The revision history of this document is as follows:
       <td>2018-01-15</td>
       <td>
         <ul>
-          <li>Added guideline descriptions on light and sound effects for alarms, reminders, and timers to the <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
+          <li>Added guideline descriptions on <a href="/Design/light.html">light</a> and <a href="/Design/Audio.html#SoundEffect">sound effects</a> for alarms, reminders, and timers to the Design guidelines</li>
         </ul>
       </td>
     </tr>
@@ -343,7 +342,7 @@ The revision history of this document is as follows:
       <td>2018-01-08</td>
       <td>
         <ul>
-          <li>Added a section on <a href="/Develop/Guides/Implement_Client_Features.html#HandleDelegation">Handling delegated user requests</a> and added the <a href="/Develop/References/CICInterface/Clova.html#HandleDelegatedEvent">Clova.HandleDelegatedEvent</a> directive and the <a href="/Develop/References/CICInterface/Clova.html#ProcessDelegatedEvent">Clova.ProcessDelegatedEvent</a> event</li>
+          <li>Added a section on <a href="/Develop/Guides/Handle_Delegation.html#HandleDelegation">Handling delegated user requests</a> and added the <a href="/Develop/References/CICInterface/Clova.html#HandleDelegatedEvent">Clova.HandleDelegatedEvent</a> directive and the <a href="/Develop/References/CICInterface/Clova.html#ProcessDelegatedEvent">Clova.ProcessDelegatedEvent</a> event</li>
           <li>Added a description to include the <a href="/Develop/References/Context_Objects.html#PlaybackState">AudioPlayer.PlaybackState</a> context information in <a href="/Develop/References/CICInterface/PlaybackController.html#NextCommandIssued">PlaybackController.NextCommandIssued</a> and <a href="/Develop/References/CICInterface/PlaybackController.html#PreviousCommandIssued">PlaybackController.PreviousCommandIssued</a> event messages</li>
           <li>Revised the description of the interaction structure of the <a href="/Develop/References/CICInterface/Alerts.html">Alerts</a> API</li>
           <li>Added the description of the <a href="/Develop/References/CICInterface/DeviceControl.html#DeviceControlWorkFlow">interaction structure</a> of the <a href="/Develop/References/CICInterface/DeviceControl.html">DeviceControl</a> API</li>
@@ -382,8 +381,8 @@ The revision history of this document is as follows:
       <td>2017-12-04</td>
       <td>
         <ul>
-          <li>Added <a href="/Design/Design_Guideline_For_Client_Hardware.html#AudioInterruptionRule">audio interruption rules</a> to the <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
-          <li>Improved the images in <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
+          <li>Added <a href="/Design/Audio.html#AudioInterruptionRule">audio interruption rules</a> to the Design guidelines</li>
+          <li>Improved the images in Design guidelines</li>
           <li>Added the section on <a href="/Develop/Guides/Interact_with_CIC.html#UserAgentString">user-agent strings</a> for prerequisites before interacting with CIC</li>
           <li>Added the description of the 412 Precondition failed code in the <a href="/Develop/References/CIC_API.html#SendEvent">Sending event messages</a> section of the <a href="/Develop/References/CIC_API.html">CIAPreference</a></li>
         </ul>
@@ -393,7 +392,7 @@ The revision history of this document is as follows:
       <td>2017-11-20</td>
       <td>
         <ul>
-          <li>Added <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
+          <li>Added the Design guidelines section</a></li>
           <li>Added Type5 and Type6 to the subType value of the <a href="/Develop/References/ContentTemplates/CardList.html">CardList template</a> to display audio content and image thumbnails</li>
         </ul>
       </td>
