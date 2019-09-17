@@ -52,8 +52,8 @@ The revision history of this document is as follows:
       <td>2019-01-04</td>
       <td>
         <ul>
-          <li>Added the <a href=/Develop/Guides/Handle_Device_Control.md>Handling client action control</a> guide</li>
-          <li>Added the <a href=/Develop/Guides/Handle_Bluetooth_Control.md>Handling client Bluetooth control</a> guide</li>
+          <li>Added the <a href="/Develop/Guides/Handle_Device_Control.md">Handling client action control</a> guide</li>
+          <li>Added the <a href="/Develop/Guides/Handle_Bluetooth_Control.md">Handling client Bluetooth control</a> guide</li>
           <li>Added the <a href="/Develop/References/CICInterface/AudioPlayer.md#PlaybackQueueCleared">AudioPlayer.PlaybackQueueCleared</a> event message to report the playback queue initialization action to the <a href="/Develop/References/CICInterface/AudioPlayer.md">AudioPlayer API</a></li>
         </ul>
       </td>
@@ -62,8 +62,8 @@ The revision history of this document is as follows:
       <td>2018-12-24</td>
       <td>
         <ul>
-          <li>Added the <a href=/Develop/Guides/Handle_Device_Control.md>Handling client action control</a> guide</li>
-          <li>Added the <a href=/Develop/Guides/Handle_Bluetooth_Control.md>Handling client Bluetooth control</a> guide</li>
+          <li>Added the <a href="/Develop/Guides/Handle_Device_Control.md">Handling client action control</a> guide</li>
+          <li>Added the <a href="/Develop/Guides/Handle_Bluetooth_Control.md">Handling client Bluetooth control</a> guide</li>
           <li>Added the nowTemperatureImageCode field and the nowTemperatureImageUrl field related to the current weather information in the <a href="/Develop/References/ContentTemplates/TodayWeather.md">TodayWeather</a> template</li>
           <li>Corrected documentation errors in the <a href="/Develop/References/ContentTemplates/TodayWeather.md">TodayWeather</a> template</li>
           <li>Added the link of the added document in <a href="/README.md">Before getting started</a></li>
@@ -76,7 +76,7 @@ The revision history of this document is as follows:
       <td>
         <ul>
           <li>Separated the description of the dialogue model into <a href="/Develop/CIC_Overview.md#IndirectDialogue">Indirect dialogue structure</a> and <a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">Handling tasks and managing dialogue IDs,</a>, and supplemented the content</li>
-          <li>Added a value field to the <a href="/Develop/References/CICInterface/DeviceControl.md#Decrease">DeviceControl.Decrease</a> and <a href="/Develop/References/CICInterface/DeviceControl.md#Increase">DeviceControl.Increase</a> directive messages to support adjustment of the screen brightness or volume of a device by a specific amount</li>
+          <li>Added a value field to the <a href="/Develop/References/CICInterface/DeviceControl.md#Decrease">DeviceControl.Decrease</a> and <a href="/Develop/References/CICInterface/DeviceControl.md#Increase">DeviceControl.Increase</a> directive messages to support adjustment of the screen brightness or volume of a device by a specific level</li>
         </ul>
       </td>
     </tr>
@@ -92,7 +92,7 @@ The revision history of this document is as follows:
       <td>2018-11-09</td>
       <td>
         <ul>
-          <li>Added the guide for <a href="/Develop/Guides/Handle_Audio_Playback.md">Handling audio playback</a> related to audio playback and playback control in the Development guide (and includes the following content)
+          <li>Added the guide for <a href="/Develop/Guides/Handle_Audio_Playback.md">Handling audio playback</a> related to audio playback and playback control in the Development guide (and includes the following contents:)
             <ul>
               <li><a href="/Develop/Guides/Handle_Audio_Playback.md#PlayAudioStream">Playing audio stream</a></li>
               <li><a href="/Develop/Guides/Handle_Audio_Playback.md#ReportAudioPlaybackProgress">Reporting audio playback progress</a></li>
@@ -128,7 +128,7 @@ The revision history of this document is as follows:
         <ul>
           <li>Added the format field to the payload of <a href="/Develop/References/CICInterface/AudioPlayer.md">AudioPlayer</a> <a href="/Develop/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject">AudioStreamInfoObject</a> to specify the MIME type of content</li>
           <li>Added SubscribeCommandIssued and UnsubscribeCommandIssued event messages, and UpdateLike and UpdateSubscribe directive messages to the <a href="/Develop/References/CICInterface/TemplateRuntime.md">TemplateRuntime</a> namespace to handle Like and Subscribe features when playing media content</li>
-          <li>Added the button information that must be displayed when playing media content or the type of Ucontrol to the <a href="/Develop/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo">TemplateRuntime.RenderPlayerInfo</a> directive message</li>
+          <li>Added the button information that must be displayed when playing media content or the type of UI control to the <a href="/Develop/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo">TemplateRuntime.RenderPlayerInfo</a> directive message</li>
           <li>Corrected some wrong code examples</li>
           <li>Revised some incorrect links</li>
         </ul>
@@ -164,7 +164,7 @@ The revision history of this document is as follows:
       <td>2018-08-09</td>
       <td>
         <ul>
-          <li>Revised the description of the dialogue model</li>
+          <li>Supplemented the description of the dialogue model</li>
         </ul>
       </td>
     </tr>
@@ -214,7 +214,7 @@ The revision history of this document is as follows:
       <td>
         <ul>
           <li>Added the LaunchURI directive message to the DeviceControl namespace</li>
-          <li>Deprecated the <a href="/Develop/References/CICInterface/DeviceControl.md#LaunchApp">LaunchApp</a> directive and the <a href="/Develop/References/CICInterface/DeviceControl.md#OpenScreen">OpenScreen</a> directive of the <a href="/Develop/References/CICInterface/DeviceControl.md">DeviceControl</a> namespace</li>
+          <li>Deprecated the <a href="/Develop/References/CICInterface/DeviceControl.md#LaunchApp">LaunchApp</a> directive message and the <a href="/Develop/References/CICInterface/DeviceControl.md#OpenScreen">OpenScreen</a> directive message of the <a href="/Develop/References/CICInterface/DeviceControl.md">DeviceControl</a> namespace</li>
         </ul>
       </td>
     </tr>
@@ -222,7 +222,7 @@ The revision history of this document is as follows:
       <td>2018-04-16</td>
       <td>
         <ul>
-          <li>Updated the description of the wakeWord field and audio data of the <a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> event message</li>
+          <li>Updated the description of the wakeWord field and audio data of the <a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> event</li>
           <li>Added the <a href="/Develop/References/CICInterface/DeviceControl.md#Open">Open</a> directive message to the <a href="/Develop/References/CICInterface/DeviceControl.md">DeviceControl</a> namespace</li>
         </ul>
       </td>
@@ -344,7 +344,7 @@ The revision history of this document is as follows:
         <ul>
           <li>Added a section on <a href="/Develop/Guides/Handle_Delegation.md#HandleDelegation">Handling delegated user requests</a> and added the <a href="/Develop/References/CICInterface/Clova.md#HandleDelegatedEvent">Clova.HandleDelegatedEvent</a> directive message and the <a href="/Develop/References/CICInterface/Clova.md#ProcessDelegatedEvent">Clova.ProcessDelegatedEvent</a> event message</li>
           <li>Added a description to include the <a href="/Develop/References/Context_Objects.md#PlaybackState">AudioPlayer.PlaybackState</a> context information in <a href="/Develop/References/CICInterface/PlaybackController.md#NextCommandIssued">PlaybackController.NextCommandIssued</a> and <a href="/Develop/References/CICInterface/PlaybackController.md#PreviousCommandIssued">PlaybackController.PreviousCommandIssued</a> event messages</li>
-          <li>Revised the description of the interaction structure of the <a href="/Develop/References/CICInterface/Alerts.md">Alerts</a> API</li>
+          <li>Supplemented the description of the interaction structure of the <a href="/Develop/References/CICInterface/Alerts.md">Alerts</a> API</li>
           <li>Added the description of the <a href="/Develop/References/CICInterface/DeviceControl.md#DeviceControlWorkFlow">interaction structure</a> of the <a href="/Develop/References/CICInterface/DeviceControl.md">DeviceControl</a> API</li>
           <li>Corrected errors on some content templates and shared objects</li>
         </ul>
@@ -384,7 +384,7 @@ The revision history of this document is as follows:
           <li>Added <a href="/Design/Audio.md#AudioInterruptionRule">audio interruption rules</a> to the Design guidelines</li>
           <li>Improved the images in Design guidelines</li>
           <li>Added the section on <a href="/Develop/Guides/Interact_with_CIC.md#UserAgentString">user-agent strings</a> for prerequisites before interacting with CIC</li>
-          <li>Added the description of the 412 Precondition failed code in the <a href="/Develop/References/CIC_API.md#SendEvent">Sending event message messages</a> section of the <a href="/Develop/References/CIC_API.md">CIC API reference</a></li>
+          <li>Added the description of the 412 Precondition failed code in the <a href="/Develop/References/CIC_API.md#SendEvent">Sending event messages</a> section of the <a href="/Develop/References/CIC_API.md">CIC API reference</a></li>
         </ul>
       </td>
     </tr>
@@ -491,7 +491,7 @@ The revision history of this document is as follows:
           <li>Added the <a href="/Develop/References/CICInterface/Clova.md#Help">Clova.Help</a> directive message</li>
           <li>Added the <a href="/Develop/References/CICInterface/DeviceControl.md#LaunchApp">DeviceControl.LaunchApp</a> directive message</li>
           <li>Added the TextRecognizer namespace and the <a href="/Develop/References/CICInterface/TextRecognizer.md">TextRecognizer.Recognize</a> event message</li>
-          <li>Updated content on CIAPI: Added status codes for the request and response header, and applied the format of the REST APreference to the document</li>
+          <li>Updated content on CIC API: Added status codes for the request and response header, and applied the format of the REST APreference to the document</li>
         </ul>
       </td>
     </tr>
@@ -502,7 +502,7 @@ The revision history of this document is as follows:
           <li>Added the specification on set-top box TV channels and on the power state to <a href="/Develop/References/Context_Objects.md#DeviceState">Device.DeviceState</a> and <a href="/Develop/References/CICInterface/DeviceControl.md">DeviceControl API</a></li>
           <li>Added and changed some target values in the <a href="/Develop/References/CICInterface/DeviceControl.md">DeviceControl API</a>: power, energysave, screenbrightness</li>
           <li>Changed the name SetPoint of the <a href="/Develop/References/CICInterface/DeviceControl.md">DeviceControl API</a> to <a href="/Develop/References/CICInterface/DeviceControl.md#SetValue">SetValue</a></li>
-          <li>Updated <a href="/Develop/References/Clova_Auth_API.md">Clova auth API</a>: Added request /response headers and status codes, and applied the format of the REST API reference to the document</li>
+          <li>Updated <a href="/Develop/References/Clova_Auth_API.md">Clova auth API</a>: Added request / response headers and status codes, and applied the format of the REST API reference to the document</li>
         </ul>
       </td>
     </tr>
