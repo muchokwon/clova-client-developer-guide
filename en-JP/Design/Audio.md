@@ -14,7 +14,7 @@ A client may have to play other audio content during audio playback. In this cas
 | Audio content type | Description                                                  | Related CIC API namespace             |
 |---------------|-------------------------------------------------------|----------------------------------|
 | Alert         | Audio content such as alarm sounds, timer sounds, reminder sounds, reminder utterance, emergency warning sounds.             | [`Alerts`](/Develop/References/CICInterface/Alerts.md) |
-| Content       | Audio content such as music, stories, news, and podcasts provided upon user request.                           | [`AudioPlayer`](/Develop/References/CICInterface/AudioPlayer.md) |
+| Content       | Audio content such as music, picture book and radio provided upon user request.                           | [`AudioPlayer`](/Develop/References/CICInterface/AudioPlayer.md) |
 | Dialogue      | TTS audio content provided upon user request.                                                  | [`SpeechRecognizer`](/Develop/References/CICInterface/SpeechRecognizer.md), [`SpeechSynthesizer`](/Develop/References/CICInterface/SpeechSynthesizer.md) |
 | Feedback      | Audio content such as reset sound, ring tone, and ringback tone.                              | None (Determined by the client itself) |
 | Notification  | Audio content such as Beep sound, system state utterance (e.g., notification for low battery or Bluetooth disconnection), notification sound, and notification utterance.         | [`Notifier`](/Develop/References/CICInterface/Notifier.md) |
