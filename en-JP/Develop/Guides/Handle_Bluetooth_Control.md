@@ -13,7 +13,7 @@ This section explains the following:
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>After receiving the directive message, the client must always report the result of the response to CIC using the <code>DeviceControl.ActionExecuted</code> or <code>DeviceControl.ActionFailed</code> event messages, every time the handled outcome is successful or not. For more information, see <a href="/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse">Reporting handled results</a> of the <a href="/Develop/Guides/Handle_Device_Control.md>Handling client action control"</a>.</p>
+  <p>After receiving the directive message, the client must always report the result of the response to CIC using the <code>DeviceControl.ActionExecuted</code> or <code>DeviceControl.ActionFailed</code> event messages, every time the handled outcome is successful or not. For more information, see <a href="/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse">Reporting handled results</a> of the <a href="/Develop/Guides/Handle_Device_Control.md">Handling client action control</a>.</p>
 </div>
 
 ### Handling Bluetooth connection requests {#HandleBluetoothConnect}
