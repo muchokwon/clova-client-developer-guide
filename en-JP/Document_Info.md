@@ -24,7 +24,7 @@ The revision history of this document is as follows:
       <td>2019-07-17</td>
       <td>
         <ul>
-          <li>Added <a href="/Develop/Guides/Restrictions_On_Line_Music.md">Restrictions on LINE MUSIC</a> to the Development guide</li>
+          <li>Added the <a href="/Develop/Guides/Restrictions_On_Line_Music.md">Restrictions on LINE MUSIC</a></li>
         </ul>
       </td>
     </tr>
@@ -65,7 +65,7 @@ The revision history of this document is as follows:
           <li>Added the <a href="/Develop/Guides/Handle_Device_Control.md">Handling client action control</a> guide</li>
           <li>Added the <a href="/Develop/Guides/Handle_Bluetooth_Control.md">Handling client Bluetooth control</a> guide</li>
           <li>Added the nowTemperatureImageCode field and the nowTemperatureImageUrl field related to the current weather information in the <a href="/Develop/References/ContentTemplates/TodayWeather.md">TodayWeather</a> template</li>
-          <li>Corrected documentation errors in the <a href="/Develop/References/ContentTemplates/TodayWeather.md">TodayWeather</a> template</li>
+          <li>Corrected documentation errors in the <a href="/Develop/References/ContentTemplates/TodayWeather.md">TodayWeather</a> template</li>
           <li>Added the link of the added document in <a href="/README.md">Before getting started</a></li>
           <li>Corrected the notation error in the note type of some sequence diagrams</li>
         </ul>
@@ -75,7 +75,7 @@ The revision history of this document is as follows:
       <td>2018-11-30</td>
       <td>
         <ul>
-          <li>Separated the description of the dialogue model into <a href="/Develop/CIC_Overview.md#IndirectDialogue">Indirect dialogue structure</a> and <a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">Handling tasks and managing dialogue IDs,</a>, and supplemented the content</li>
+          <li>Separated the description of the dialogue model into <a href="/Develop/CIC_Overview.md#IndirectDialogue">Indirect dialogue structure</a> and <a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">Handling tasks and managing dialogue IDs</a>, and supplemented the content</li>
           <li>Added a value field to the <a href="/Develop/References/CICInterface/DeviceControl.md#Decrease">DeviceControl.Decrease</a> and <a href="/Develop/References/CICInterface/DeviceControl.md#Increase">DeviceControl.Increase</a> directive messages to support adjustment of the screen brightness or volume of a device by a specific level</li>
         </ul>
       </td>
@@ -130,7 +130,7 @@ The revision history of this document is as follows:
           <li>Added SubscribeCommandIssued and UnsubscribeCommandIssued event messages, and UpdateLike and UpdateSubscribe directive messages to the <a href="/Develop/References/CICInterface/TemplateRuntime.md">TemplateRuntime</a> namespace to handle Like and Subscribe features when playing media content</li>
           <li>Added the button information that must be displayed when playing media content or the type of UI control to the <a href="/Develop/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo">TemplateRuntime.RenderPlayerInfo</a> directive message</li>
           <li>Corrected some wrong code examples</li>
-          <li>Revised some incorrect links</li>
+          <li>Corrected some incorrect links</li>
         </ul>
       </td>
     </tr>
@@ -250,7 +250,7 @@ The revision history of this document is as follows:
           <li>Added a total of 12 message specifications to the <a href="/Develop/References/CICInterface/PlaybackController.md">PlaybackController</a> namespace
             <ul>
               <li>Added the <a href="/Develop/References/CICInterface/PlaybackController.md#PauseCommandIssued">PlaybackController.PauseCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#PlayCommandIssued">PlaybackController.PlayCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ResumeCommandIssued">PlaybackController.ResumeCommandIssued</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#SetRepeatModeCommandIssued">PlaybackController.SetRepeatModeCommandIssued</a>, and <a href="/Develop/References/CICInterface/PlaybackController.md#StopCommandIssued">PlaybackController.StopCommandIssued</a> event messages</li>
-              <li><a href="/Develop/References/CICInterface/PlaybackController.md#ExpectNextCommand">PlaybackController.ExpectNextCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPauseCommand">PlaybackController.ExpectPauseCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPlayCommand">PlaybackController.ExpectPlayCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPreviousCommand">PlaybackController.ExpectPreviousCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectResumeCommand">PlaybackController.ExpectResumeCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectStopCommand">PlaybackController.ExpectStopCommand</a>, and <a href="/Develop/References/CICInterface/PlaybackController.md#SetRepeatMode">PlaybackController.SetRepeatMode</a> directive messages</li> The
+              <li><a href="/Develop/References/CICInterface/PlaybackController.md#ExpectNextCommand">PlaybackController.ExpectNextCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPauseCommand">PlaybackController.ExpectPauseCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPlayCommand">PlaybackController.ExpectPlayCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectPreviousCommand">PlaybackController.ExpectPreviousCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectResumeCommand">PlaybackController.ExpectResumeCommand</a>, <a href="/Develop/References/CICInterface/PlaybackController.md#ExpectStopCommand">PlaybackController.ExpectStopCommand</a>, and <a href="/Develop/References/CICInterface/PlaybackController.md#SetRepeatMode">PlaybackController.SetRepeatMode</a> directive messages</li>
               <li><a href="/Develop/References/CICInterface/PlaybackController.md#TurnOnRepeatMode">PlaybackController.TurnOnRepeatMode</a> and <a href="/Develop/References/CICInterface/PlaybackController.md#TurnOffRepeatMode">PlaybackController.TurnOffRepeatMode</a> directive messages are scheduled to be removed</li>
             </ul>
           </li>
