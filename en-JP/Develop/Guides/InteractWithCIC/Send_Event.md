@@ -15,7 +15,7 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
 Content-Type: multipart/form-data; boundary=Boundary-Text
 </code></pre>
   </li>
-  <li>Create a <a href="/Develop/Guides/Implement_Client_Features.md#ManageDialogueIDAndHandleTasks">dialogue ID</a> (<code>dialogRequestId</code>) and a message ID (<code>messageId</code>), both in UUID format. Make sure the IDs are unique, as they will later be used to find a matching directive from <a href="#ManageMessageQ">message queues</a>.</li>
+  <li>Create a <a href="/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md">dialogue ID</a> (<code>dialogRequestId</code>) and a message ID (<code>messageId</code>), both in UUID format. Make sure the IDs are unique, as they will later be used to find a matching directive from <a href="#ManageMessageQ">message queues</a>.</li>
   <li>
     <p>The first part of the message should contain the message header and the message body in JSON, including event information based on the <a href="/Develop/References/CICInterface/SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> API specification.</p>
     <pre><code>--Boundary-Text

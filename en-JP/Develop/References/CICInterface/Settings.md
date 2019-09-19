@@ -10,7 +10,7 @@ The Settings namespace provides an interface to update or synchronize the client
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>For more information on updating or synchronizing the settings, see <a href="/Develop/Guides/Implement_Client_Features.md#HandleSettings">Handling settings</a>.</p>
+  <p>For more information on updating or synchronizing the settings, see <a href="/Develop/Guides/Handle_Settings.md">Handling settings</a>.</p>
 </div>
 
 ## ExpectReport directive {#ExpectReport}
@@ -41,7 +41,7 @@ None
 
 ### See also
 * [`Settings.Report`](#Report)
-* [Handling settings](/Develop/Guides/Implement_Client_Features.md#HandleSettings)
+* [Handling settings](/Develop/Guides/Handle_Settings.md)
 
 ## Report event {#Report}
 The client reports the current settings information to CIC. If the [`Settings.ExpectReport`](#ExpectReport) directive is received from CIC, the client must send the `Settings.Report` event to CIC.
@@ -90,7 +90,7 @@ The client reports the current settings information to CIC. If the [`Settings.Ex
 
 ### See also
 * [`Settings.ExpectReport`](#ExpectReport)
-* [Handling settings](/Develop/Guides/Implement_Client_Features.md#HandleSettings)
+* [Handling settings](/Develop/Guides/Handle_Settings.md)
 
 ## Update directive {#Update}
 Instructs the client to apply the values saved to `payload` as the setting value.
@@ -132,4 +132,4 @@ Instructs the client to apply the values saved to `payload` as the setting value
 
 ### See also
 * [`Settings.Report`](#Report)
-* [Handling settings](/Develop/Guides/Implement_Client_Features.md#HandleSettings)
+* [Handling settings](/Develop/Guides/Handle_Settings.md)

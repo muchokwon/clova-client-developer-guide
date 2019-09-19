@@ -80,6 +80,7 @@
     * [Building audio context information](/Develop/Guides/Handle_Audio_Playback.md#BuildPlaybackStateContext)
   * [Sharing audio playback state](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 * [Handling settings](/Develop/Guides/Handle_Settings.md)
+* [Restrictions on LINE MUSIC](/Develop/Guides/Restrictions_On_Line_Music.md)
 
 ### References
 

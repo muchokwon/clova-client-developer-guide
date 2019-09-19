@@ -1,4 +1,4 @@
-## Handling client Bluetooth control {#HandleBluetoothControl}
+# Handling client Bluetooth control {#HandleBluetoothControl}
 
 Users can control the Bluetooth connection action of a client through utterance or operation. Upon receiving such a request, Clova sends a directive to the client to perform the action requested by the user. And the client must be able to suitably handle all Bluetooth control-related messages sent by Clova for each situation.
 
@@ -13,10 +13,10 @@ This section explains the following:
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>After receiving the directive message, the client must always report the result of the response to CIC using the <code>DeviceControl.ActionExecuted</code> or <code>DeviceControl.ActionFailed</code> event messages, every time the handled outcome is successful or not. For more information, see <a href="/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse">Reporting handled results</a> of the <a href="/Develop/Guides/Handle_Device_Control.md>Handling client action control"</a>.</p>
+  <p>After receiving the directive message, the client must always report the result of the response to CIC using the <code>DeviceControl.ActionExecuted</code> or <code>DeviceControl.ActionFailed</code> event messages, every time the handled outcome is successful or not. For more information, see <a href="/Develop/Guides/Handle_Device_Control.md#HandleActionExecutedResponse">Reporting handled results</a> of the <a href="/Develop/Guides/Handle_Device_Control.md">Handling client action control</a>.</p>
 </div>
 
-### Handling Bluetooth connection requests {#HandleBluetoothConnect}
+## Handling Bluetooth connection requests {#HandleBluetoothConnect}
 
 For a user to connect the client with a new Bluetooth device that was never connected before, the client must first enter into the Bluetooth pairing mode. The user can remotely enter the Bluetooth pairing mode of a specific client from the Clova app.
 
@@ -122,7 +122,7 @@ Once the [`DeviceControl.BtRequestForPINCode`](/Develop/References/CICInterface/
   <p>When connecting with devices that was already paired, the process of entering the pairing mode and checking the PIN code is omitted.</p>
 </div>
 
-### Handling Bluetooth audio playback {#HandleBluetoothPlayAudio}
+## Handling Bluetooth audio playback {#HandleBluetoothPlayAudio}
 
 Once the user requests to play audio through the Bluetooth device connected with the client, Clova directs the client to play the audio via CIC. The audio playback through a Bluetooth device can be requested using the following two methods:
 
@@ -152,7 +152,7 @@ Once the user requests to play audio through the Bluetooth device, CIC sends the
 If the client role is `"sink"`, the client receives the audio stream from the connected Bluetooth device and output sound via the speaker.
 If the client role is `"source"`, the client plays the audio stream that was paused or previously played from the client via the connected Bluetooth device. If there were no audio stream that was previously played or it cannot be specified, send the same event message as the user requesting with an utterance "Play music" to CIC or send an audio content playback request that is suitable for the product UI/UX to CIC.
 
-### Handling Bluetooth disconnection {#HandleBluetoothDisconnect}
+## Handling Bluetooth disconnection {#HandleBluetoothDisconnect}
 
 If a user requests to disconnect a currently connected Bluetooth device, Clova directs the client to unpair the Bluetooth device via CIC. The action flow of handling the disconnection is shown below.
 
@@ -174,7 +174,7 @@ Once the user requests to disconnect the Bluetooth device, CIC sends the [`Devic
 }
 ```
 
-### Deleting paired Bluetooth devices {#HandleBluetoothDelete}
+## Deleting paired Bluetooth devices {#HandleBluetoothDelete}
 
 Once the user requests to delete the saved Bluetooth device, Clova directs the client to delete the specified Bluetooth device via CIC. The action flow of deleting the saved Bluetooth device is as follows:
 

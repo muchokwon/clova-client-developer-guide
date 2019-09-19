@@ -147,7 +147,7 @@ None
 * [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand)
 * [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand)
 * [`PlaybackController.PauseCommandIssued`](#PauseCommandIssued)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ExpectPlayCommand directive {#ExpectPlayCommand}
 Instructs the client to send the [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) event to CIC just like the effect of a user pressing the Play button from the client device. The client can also receive this directive when attempting to play the currently playing media stream from another device. Upon receiving this directive, the client must perform the relevant action and send the [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) event to CIC.
@@ -247,7 +247,7 @@ None
 * [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand)
 * [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand)
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ExpectStopCommand directive {#ExpectStopCommand}
 Instructs the client to send the [`PlaybackController.StopCommandIssued`](#StopCommandIssued) event to CIC just like the effect of a user pressing the Stop button from the client device. Upon receiving this directive, the client must send the [`PlaybackController.StopCommandIssued`](#StopCommandIssued) event to CIC.
@@ -279,7 +279,7 @@ None
 * [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand)
 * [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## Mute directive {#Mute}
 Instructs the client to mute the audio player. Upon receiving this directive, the client must mute the speaker for the audio stream playback.
@@ -419,7 +419,7 @@ None
 ### See also
 * [`AudioPlayer.PlayPaused`](/Develop/References/CICInterface/AudioPlayer.md#PlayPaused)
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## PauseCommandIssued event {#PauseCommandIssued}
 Reports to CIC if the user presses the Pause button on the client device or responds to the [`PlaybackController.ExpectPauseCommand`](#ExpectPauseCommand) directive from CIC. Upon receiving the event, CIC sends the appropriate directive to the client.
@@ -475,7 +475,7 @@ Reports to CIC if the user presses the Pause button on the client device or resp
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## PlayCommandIssued event {#PlayCommandIssued}
 Reports to CIC if the user presses the Play button on the client device or responds to the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive from CIC. Upon receiving the event, CIC sends the appropriate directive to the client. If the `handover` field exists is in the `payload` of the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive received from CIC, the client must take over the media playback using the field value.
@@ -647,7 +647,7 @@ None
 * [`PlaybackController.Pause`](#Pause)
 * [`PlaybackController.Resume`](#Resume)
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## Resume directive {#Resume}
 Instructs the client to resume playing the audio stream. Upon receiving this directive, the client must resume playing the audio stream.
@@ -675,7 +675,7 @@ None
 ### See also
 * [`AudioPlayer.PlayResumed`](/Develop/References/CICInterface/AudioPlayer.md#PlayResumed)
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ResumeCommandIssued event {#ResumeCommandIssued}
 Reports to CIC if the user presses the Resume button on the client device or responds to the [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand) directive from CIC. Upon receiving the event, CIC sends the appropriate directive to the client.
@@ -731,7 +731,7 @@ Reports to CIC if the user presses the Resume button on the client device or res
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## SetRepeatMode directive {#SetRepeatMode}
 
@@ -854,7 +854,7 @@ None
 ### See also
 * [`AudioPlayer.PlayStopped`](/Develop/References/CICInterface/AudioPlayer.md#PlayStopped)
 * [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## StopCommandIssued event {#StopCommandIssued}
 Reports to CIC if the user presses the Resume button on the client device or responds to the [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand) directive from CIC. Upon receiving the event, CIC sends the appropriate directive to the client.
@@ -910,7 +910,7 @@ Reports to CIC if the user presses the Resume button on the client device or res
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
-* [Controlling audio playback](/Develop/Guides/Implement_Client_Features.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## TurnOffRepeatMode directive {#TurnOffRepeatMode}
 **(Deprecated)** Instructs the client to stop the repeat function for one song.

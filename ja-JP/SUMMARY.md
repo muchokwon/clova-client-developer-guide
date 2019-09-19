@@ -80,6 +80,7 @@
     * [ストリームのコンテキストを作成する](/Develop/Guides/Handle_Audio_Playback.md#BuildPlaybackStateContext)
   * [オーディオ再生状態を共有する](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 * [設定情報を処理する](/Develop/Guides/Handle_Settings.md)
+* [LINE MUSICに関する制限事項](/Develop/Guides/Restrictions_On_Line_Music.md)
 
 ### リファレンス
 

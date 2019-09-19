@@ -95,7 +95,8 @@ This directive is sent through a [downchannel](/Develop/Guides/Interact_with_CIC
 ### See also
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.SetIndicator`](#SetIndicator)
-* [Design guidelines for client devices](/Design/Design_Guideline_For_Client_Hardware.md)
+* [Audio](/Design/Audio.md)
+* [Lights](/Design/Light.md)
 
 ## SetIndicator directive {#SetIndicator}
 Instructs the client to display that there is a notification that the user has not read. Upon receipt, the client must turn on the light indicator or play the specified notification sound.
@@ -143,4 +144,5 @@ This directive is sent through a [downchannel](/Develop/Guides/Interact_with_CIC
 ### See also
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.Notify`](#Notify)
-* [Design guidelines for client devices](/Design/Design_Guideline_For_Client_Hardware.md)
+* [Audio](/Design/Audio.md)
+* [Lights](/Design/Light.md)

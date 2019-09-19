@@ -23,7 +23,7 @@ Developers can use the following documents when necessary:
         <ul>
           <li><a href="/Develop/CIC_Overview.md#WhatisCIC">What is CIC?</a></li>
           <li><a href="/Develop/CIC_Overview.md#IndirectDialogue">Indirect dialogue structure</a></li>
-          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">Design guidelines for client devices</li>
+          <li>Design guidelines for <a href="/Design/Button.md">Buttons</a>, <a href="/Design/Light.md">Lights</a>, <a href="/Design/Audio.md">Audio</a>, <a href="/Design/Screen.md">Screen</a> and <a href="/Design/Clova_Inside.md">Clova inside</a></li>
         </ul>
       </td>
     </tr>
@@ -39,6 +39,7 @@ Developers can use the following documents when necessary:
           <li><a href="/Develop/Guides/Handle_Alerts.md">Handling alerts</a></li>
           <li><a href="/Develop/Guides/Handle_Audio_Playback.md">Handling audio playback</a></li>
           <li><a href="/Develop/Guides/Handle_Settings.md">Handling settings</a></li>
+          <li><a href="/Develop/Guides/Restrictions_On_Line_Music.md">Restrictions on LINE MUSIC</a></li>
         </ul>
       </td>
     </tr>

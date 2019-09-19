@@ -1,4 +1,4 @@
-## Restrictions on LINE MUSIC {#RestrictionsOnLineMusic}
+# Restrictions on LINE MUSIC {#RestrictionsOnLineMusic}
 
 Users can run LINE MUSIC, LINE Corporation's music streaming service, on the client device or the Clova app. The following restrictions apply when running LINE MUSIC on the client device:
 

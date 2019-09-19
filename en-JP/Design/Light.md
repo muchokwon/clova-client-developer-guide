@@ -1,4 +1,4 @@
-## Lights {#Light}
+# Lights {#Light}
 
 A client device must provide LED to indicate the [Client states and events](#ClientStateAndEvent) or the feedback on user request. This section describes the lights that can be provided by the client and the guidelines for implementation.
 
@@ -6,7 +6,7 @@ A client device must provide LED to indicate the [Client states and events](#Cli
 * [Light effects](#LightEffect)
 * [Light guidelines](#LightGuideline)
 
-### Light colors {#LightColor}
+## Light colors {#LightColor}
 
 The client must use the following colors of light:
 
@@ -38,7 +38,7 @@ The following image shows the implementation of light colors on Wave:
   </tbody>
 </table>
 
-### Light effects {#LightEffect}
+## Light effects {#LightEffect}
 
 Light effects are used for the purpose of delivering more details on the meaning or state in addition to the meaning delivered by the [Light colors](#LightColor).
 
@@ -64,7 +64,7 @@ The table below shows how to express the client device [states and events](#Clie
 | Immediately after exceeding the wait time           | Slowly turn off the Green light.         | Required     |
 | Start alarm, reminder, or timer      | Repeat the rippling effect of the Warm White light.  | Optional     |
 
-### Light guidelines {#LightGuideline}
+## Light guidelines {#LightGuideline}
 
 The following guidelines must be followed when providing lights.
   - A person with eyesight of 0.7 (decimal visual acuity) must be able to distinguish the [Light colors](#LightColor) within 1m distance.
