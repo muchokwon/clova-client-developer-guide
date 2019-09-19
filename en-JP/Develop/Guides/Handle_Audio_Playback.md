@@ -402,7 +402,7 @@ If the `AudioPlayer.Play` directive is received, save the values below the `audi
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>If the <code>audioItem.stream.urlPlayable</code> field is <code>false</code> when the <a href="/Develop/References/CICInterface/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a> directive is received, <strong>this must be combined with the audio information sent to the <a href="/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a> directive in the future.<strong></p>
+  <p>If the <code>audioItem.stream.urlPlayable</code> field is <code>false</code> when the <a href="/Develop/References/CICInterface/AudioPlayer.md#Play"><code>AudioPlayer.Play</code></a> directive is received, <strong>this must be combined with the audio information sent to the <a href="/Develop/References/CICInterface/AudioPlayer.md#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a> directive in the future.</strong></p>
 </div>
 
 Use the [`AudioPlayer.StreamRequested`](/Develop/References/CICInterface/AudioPlayer.md#StreamRequested) event afterwards to request the actual information required for audio playback. At this time, the `audioItem.stream` field value stored earlier must be sent at the same time.

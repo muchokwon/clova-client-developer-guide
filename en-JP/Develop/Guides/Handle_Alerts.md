@@ -1,4 +1,4 @@
-## Handling alerts {#HandleAlerts}
+# Handling alerts {#HandleAlerts}
 
 Users can make a voice request to ask Clova to add an alarm. Once Clova receives such request, Clova registers the alarm or sends a directive to the client to sound the alarm at the set time. And the client must be able to suitably handle all alarm-related messages sent by Clova for each situation.
 
@@ -14,7 +14,7 @@ This section explains the following:
 <p>Note that maintaining a network connection is crucial in providing the alarm service, as alarm information is provided by CIC.</p>
 </div>
 
-### Registering alarms {#RegisterAlert}
+## Registering alarms {#RegisterAlert}
 
 The flow of registering an alarm via user voice is as follows:
 
@@ -115,7 +115,7 @@ If alarm registration failed, the client sends an [`Alerts.SetAlertFailed`](/Dev
 
 To inform the user of the request result, Clova sends the [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) directive and the [`Clova.RenderTemplate`](/Develop/References/CICInterface/Clova.md#RenderTemplate) directive to the client. The client must then send the details of this directive to the user.
 
-### Starting alarms {#RingAlert}
+## Starting alarms {#RingAlert}
 
 When it becomes the set time, Clova sends a directive to sound the alarm. The workflow for starting an alarm is explained below.
 
@@ -146,7 +146,7 @@ The client sounds the alarm at the set time and reports to CIC that the client h
 
 Once the alarm sounds, the client must provide the details of the ringing alarm in all event messages sent to CIC at this time. For this process, you must use the `activeAlerts` field of the [`Alert.AlertsState`](/Develop/References/Context_Objects.md#AlertsState) context.
 
-### Stopping alarms {#StopAlert}
+## Stopping alarms {#StopAlert}
 
 The user then requests to stop the alarm via voice([`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)) or via pressing a button on the client device or client app. Upon user request, the client must report the alarm stop request of the user to CIC as an [`Alerts.RequestAlertStop`](/Develop/References/CICInterface/Alerts.md#RequestAlertStop) event message.
 
@@ -229,7 +229,7 @@ If the registered alarm is an action timer alarm, Clova sends a directive corres
 <p>Alarms can be changed or removed in the middle of the workflow but only through the Clova app. Also, note that any directives that are not a response to a voice request are designed to be forwarded to the client through a [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection).</p>
 </div>
 
-### Editing or deleting alarms {#EditAlert}
+## Editing or deleting alarms {#EditAlert}
 
 When a user edits or deletes an alarm from the Clova app, Clova sends an [`Alerts.SetAlert`](/Develop/References/CICInterface/Alerts.md#SetAlert) directive or an [`Alerts.DeleteAlert`](/Develop/References/CICInterface/Alerts.md#DeleteAlert) directive accordingly to handle the user request.
 
@@ -306,7 +306,7 @@ If alarm deletion failed, the client sends an [`Alerts.DeleteAlertFailed`](/Deve
 ```
 {% endraw %}
 
-### Synchronizing alarms {#SyncAlert}
+## Synchronizing alarms {#SyncAlert}
 
 The client sends the [`System.RequestSynchronizeState`](/Develop/References/CICInterface/System.md#RequestSynchronizeState) event message to CIC when: a new client is added, one or multiple clients are reconnected after a lost network connection, or a client is connected after a change in the user account registered to the client. The client then receives a [`System.SynchronizeState`](/Develop/References/CICInterface/System.md#SynchronizeState) directive from CIC and must synchronize the alarm information in the `allAlerts` field of the directive with the device alarm information.
 
