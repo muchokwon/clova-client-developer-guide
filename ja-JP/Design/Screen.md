@@ -156,7 +156,7 @@ Push to talkボタンは、[Green Dot VUI](#GreenDotVUI)をアクティブにす
 
 * クライアントデバイスのマイクが無効、またはミュート状態の場合は、Idle状態のときにグレーアウトのUIを表示します。
 
-![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute.png)
+![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute.png =x150)
 
 <div class="note">
   <p><strong>メモ</strong></p>
