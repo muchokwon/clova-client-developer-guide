@@ -109,3 +109,56 @@ Green Dot VUIのUI表現はアクションごとに異なります。以下の�
   <p><strong>メモ</strong></p>
   <p>Green Dot VUIのモーション画像が必要な場合、Clova事務局までお問い合わせください。</p>
 </div>
+
+
+## Push to talkボタン {#PushToTalkButton}
+
+Push to talkボタンは、[Green Dot VUI](#GreenDotVUI)をアクティブにするために使用するUIデザインです。クライアントデバイスの画面上にタッチ式のUIボタンとして表示し、押したあとにGreen Dot VUIがアクティブになるように実装します。
+
+ここでは、Push to talkボタンで使用される色やクライアントの状態による表現方法を説明します。
+
+* [Push to talkボタンの色](#PushToTalkButtonColor)
+* [Push to talkボタンのアクション](#PushToTalkButtonMotions)
+
+### Push to talkボタンの色 {#PushToTalkButtonColor}
+
+デバイスのマイクが有効な場合のPush to talkボタンは、2つの色のグラデーションで表現する必要があります。
+
+![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Active.png)
+
+以下は、上図で使用されている2色の詳細です。
+
+| 色の名称        | RGB値       | CMYK値     | PANTONEカラー   |
+|----------------|-------------|-------------|-------------|
+| Greendot Green | <span style="color:#03EB64; font-size:150%; vertical-align:middle;">&#9724;</span> 3, 235, 100(#03EB64) | 60, 0, 75, 0   | 2270C |
+| Greendot Blue  | <span style="color:#1EC8EB; font-size:150%; vertical-align:middle;">&#9724;</span>30, 200, 235(#1EC8EB) | 70, 5, 0, 0   |  298C |
+
+また、デバイスのマイクが無効またはミュート状態の場合は、ボタンをグレーアウトで表現する必要があります。
+
+![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute.png)
+
+以下は、上図で使用されている色の詳細です。
+
+| RGB値       | 不透明度    |
+|-------------|-------------|
+| <span style="color:#999999; font-size:150%; vertical-align:middle;">&#9724;</span>153, 153, 153(#999999)     | 25%         |
+
+
+### Push to talkボタンのアクション {#PushToTalkButtonMotions}
+
+ユーザーの動作や[クライアントの状態](/Design/Client_State_And_Event.md)遷移に応じてPush to talkボタンの動作を表現する必要があります。以下では、状態ごとにPush to talkボタンを表現するルールを説明します。
+
+* クライアントデバイスのマイクが有効な場合は、Idle状態のときにPush to talkボタンを表示します。
+* ユーザーがPush to talkボタンを押すと、Green Dot VUIがアクティブになります。
+* ユーザーの音声入力を処理してGreen Dot VUIのモーションが完了すると、Push to talkボタンの表示に戻ります。
+
+![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Interaction.gif)
+
+* クライアントデバイスのマイクが無効、またはミュート状態の場合は、Idle状態のときにグレーアウトのUIを表示します。
+
+![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute.png)
+
+<div class="note">
+  <p><strong>メモ</strong></p>
+  <p>Push to talkボタンの画像が必要な場合、Clova事務局までお問い合わせください。</p>
+</div>
