@@ -122,7 +122,7 @@ Push to talkボタンは、[Green Dot VUI](#GreenDotVUI)をアクティブにす
 
 ### Push to talkボタンの色 {#PushToTalkButtonColor}
 
-デバイスのマイクが有効な場合のPush to talkボタンは、3つの色のグラデーションで表現する必要があります。
+クライアントデバイスのマイクが有効な場合のPush to talkボタンは、3つの色のグラデーションで表現する必要があります。
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Active.png)
 
@@ -134,7 +134,7 @@ Push to talkボタンは、[Green Dot VUI](#GreenDotVUI)をアクティブにす
 | Greendot Mint  | <span style="color:#14E6BE; font-size:150%; vertical-align:middle;">&#9724;</span>20, 230, 190(#14E6BE) | 50, 0, 25, 0   | 3255C |
 | Greendot Blue  | <span style="color:#1EC8EB; font-size:150%; vertical-align:middle;">&#9724;</span>30, 200, 235(#1EC8EB) | 70, 5, 0, 0   |  298C |
 
-また、デバイスのマイクが無効またはミュート状態の場合は、ボタンをグレーアウトで表現する必要があります。
+クライアントデバイスのマイクが無効またはミュート状態の場合は、ボタンをグレーアウトで表示する必要があります。
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute.png)
 
@@ -149,13 +149,15 @@ Push to talkボタンは、[Green Dot VUI](#GreenDotVUI)をアクティブにす
 
 ユーザーの動作や[クライアントの状態](/Design/Client_State_And_Event.md)遷移に応じてPush to talkボタンの動作を表現する必要があります。以下では、状態ごとにPush to talkボタンを表現するルールを説明します。
 
-* クライアントデバイスのマイクが有効な場合は、Idle状態のときにPush to talkボタンを表示します。
-* ユーザーがPush to talkボタンを押すと、Green Dot VUIがアクティブになります。
-* ユーザーの音声入力を処理してGreen Dot VUIのモーションが完了すると、Push to talkボタンの表示に戻ります。
+* クライアントデバイスのマイクが有効な場合:
+  - Idle状態のときにPush to talkボタンを表示します。
+  - ユーザーがPush to talkボタンを押すと、Green Dot VUIがアクティブになります。
+  - ユーザーの音声入力を処理してGreen Dot VUIのモーションが完了すると、Push to talkボタンの表示に戻ります。
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Presentation.gif)
 
-* クライアントデバイスのマイクが無効、またはミュート状態の場合は、Idle状態のときにグレーアウトのUIを表示します。
+* クライアントデバイスのマイクが無効、またはミュート状態の場合:
+  - Idle状態のときにグレーアウトのUIを表示します。
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute_Presentation.png)
 
