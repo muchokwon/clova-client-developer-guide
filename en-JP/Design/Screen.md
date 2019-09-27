@@ -109,9 +109,6 @@ An example of Green Dot VUI motion is shown below.
   <p><strong>Note!</strong></p>
   <p>Please contact the Clova partnership team if you want access to Green Dot VUI image assets.</p>
 </div>
-
-## Push to talk button {#PushToTalkButton}
-
 Push to talk button is a UI design to activate [Green Dot VUI](#GreenDotVUI). Push to talk button is provided as a touch UI button on the client device's screen. When the user touches the UI button, Green Dot VUI must be activated.
 
 This section provides explanation on what colors are used in Push to talk button, and how they must be expressed depending on the client state.
@@ -121,7 +118,7 @@ This section provides explanation on what colors are used in Push to talk button
 
 ### Push to talk button color {#PushToTalkButtonColor}
 
-When the client device's microphone is activated, Push to talk button must be expressed by putting three types of gradients in the following shape.
+When the client device's microphone is available, Push to talk button must be expressed by putting three types of gradients in the following shape.
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Active.png)
 
@@ -154,7 +151,7 @@ The Push to talk button presentation must be expressed according to a user actio
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Presentation.gif)
 
-* When the client device's microphone is deactivated or in the mute on state:
+* When the client device's microphone is unavailable :
   - Push to talk button UI is displayed to be grayed out.
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute_Presentation.png)
