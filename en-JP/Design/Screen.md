@@ -114,7 +114,7 @@ Push to talk button is a UI design to activate [Green Dot VUI](#GreenDotVUI). Pu
 This section provides explanation on what colors are used in Push to talk button, and how they must be expressed depending on the client state.
 
 * [Push to talk button color](#PushToTalkButtonColor)
-* [Identifying Push to talk button presentation](#PushToTalkButtonPresentation)  
+* [Push to talk button presentation](#PushToTalkButtonPresentation)  
 
 ### Push to talk button color {#PushToTalkButtonColor}
 
@@ -140,7 +140,7 @@ The information of the color in the above image are as follows:
 | <span style="color:#999999; font-size:150%; vertical-align:middle;">&#9724;</span>153, 153, 153(#999999)     | 25%         |
 
 
-### Identifying Push to talk button presentation {#PushToTalkButtonPresentation}
+### Push to talk button presentation {#PushToTalkButtonPresentation}
 
 The Push to talk button presentation must be expressed according to a user action or the change of the client state. Below are the explanations of the rules on how Push to talk button must be expressed according to each state.
 
