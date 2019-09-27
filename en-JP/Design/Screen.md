@@ -145,7 +145,7 @@ The information of the color in the above image are as follows:
 
 ### Identifying Push to talk button presentation {#PushToTalkButtonPresentation}
 
-The Push to talk button presentation must be expressed according to the user action or the change of the client state. Below are the explanations of the rules on how Push to talk button must be expressed according to each state.
+The Push to talk button presentation must be expressed according to a user action or the change of the client state. Below are the explanations of the rules on how Push to talk button must be expressed according to each state.
 
 * When the client device's microphone is activated:
   - If the client state is **Idle**, display the Push to talk button UI on the client device's screen.
