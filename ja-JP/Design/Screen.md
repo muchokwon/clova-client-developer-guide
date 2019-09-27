@@ -5,6 +5,7 @@
 * [起動画面](#BootingScreen)
 * [ロゴの表示](#DisplayingLogo)
 * [Green Dot VUI](#GreenDotVUI)
+* [Push to talkボタン](#PushToTalkButton)
 
 ## 起動画面 {#BootingScreen}
 
@@ -122,7 +123,7 @@ Push to talkボタンは、[Green Dot VUI](#GreenDotVUI)をアクティブにす
 
 ### Push to talkボタンの色 {#PushToTalkButtonColor}
 
-クライアントデバイスのマイクが有効な場合のPush to talkボタンは、3つの色のグラデーションで表現する必要があります。
+クライアントデバイスのマイクが有効な場合のPush to talkボタンは、2つの色のグラデーションで表現する必要があります。
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Active.png)
 
@@ -131,7 +132,6 @@ Push to talkボタンは、[Green Dot VUI](#GreenDotVUI)をアクティブにす
 | 色の名称        | RGB値       | CMYK値     | PANTONEカラー   |
 |----------------|-------------|-------------|-------------|
 | Greendot Green | <span style="color:#03EB64; font-size:150%; vertical-align:middle;">&#9724;</span> 3, 235, 100(#03EB64) | 60, 0, 75, 0   | 2270C |
-| Greendot Mint  | <span style="color:#14E6BE; font-size:150%; vertical-align:middle;">&#9724;</span>20, 230, 190(#14E6BE) | 50, 0, 25, 0   | 3255C |
 | Greendot Blue  | <span style="color:#1EC8EB; font-size:150%; vertical-align:middle;">&#9724;</span>30, 200, 235(#1EC8EB) | 70, 5, 0, 0   |  298C |
 
 クライアントデバイスのマイクが無効またはミュート状態の場合は、ボタンをグレーアウトで表示する必要があります。
