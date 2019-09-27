@@ -125,12 +125,11 @@ When the client device's microphone is activated, Push to talk button must be ex
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Active.png)
 
-The information of the 3 colors used in the above image are as follows:
+The information of the 2 colors used in the above image are as follows:
 
 | Color        | RGB value       | CMYK value     | Pantone value   |
 |----------------|-------------|-------------|-------------|
 | Greendot Green | <span style="color:#03EB64; font-size:150%; vertical-align:middle;">&#9724;</span> 3, 235, 100(#03EB64) | 60, 0, 75, 0   | 2270C |
-| Greendot Mint  | <span style="color:#14E6BE; font-size:150%; vertical-align:middle;">&#9724;</span>20, 230, 190(#14E6BE) | 50, 0, 25, 0   | 3255C |
 | Greendot Blue  | <span style="color:#1EC8EB; font-size:150%; vertical-align:middle;">&#9724;</span>30, 200, 235(#1EC8EB) | 70, 5, 0, 0   |  298C |
 
 When the microphone is deactivated or in the mute on state, Push to talk button must be expressed by grayed out.
