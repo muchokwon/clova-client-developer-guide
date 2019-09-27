@@ -155,7 +155,7 @@ The Push to talk button presentation must be expressed according to the user act
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Presentation.gif)
 
-* When the client device's microphone is deactivated or in the mute on state:
+* When the client device's microphone is deactivated or the client state is **mute on**:
   - Push to talk button UI is displayed to be grayed out.
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute_Presentation.png)
