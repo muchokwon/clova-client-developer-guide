@@ -147,7 +147,7 @@ The information of the color in the above image are as follows:
 
 The Push to talk button presentation must be expressed according to a user action or the change of the client state. Below are the explanations of the rules on how Push to talk button must be expressed according to each state.
 
-* When the client device's microphone is activated:
+* When the client device's microphone is available:
   - If the client state is **Idle**, display the Push to talk button UI on the client device's screen.
   - If the user touches the Push to talk button, activate the Green Dot VUI.
   - After processing the user utterances and the Green Dot VUI motion finished, back to Push to talk button UI.
