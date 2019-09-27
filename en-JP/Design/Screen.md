@@ -57,7 +57,7 @@ A client device with a screen must be able to implement Green Dot VUI. This sect
 * [Green Dot VUI color](#GreenDotVUIColor)
 * [Green Dot VUI rendering](#RenderGreenDotVUI)
 
-## Green Dot VUI color {#GreenDotVUIColor}
+### Green Dot VUI color {#GreenDotVUIColor}
 
 Green Dot VUI must be expressed by putting three types of gradients in the following ring shapes.
 
@@ -72,7 +72,7 @@ The information of the 3 colors used in the above image are as follows:
 | Greendot Blue  | <span style="color:#1EC8EB; font-size:150%; vertical-align:middle;">&#9724;</span>30, 200, 235(#1EC8EB) | 70, 5,  0, 0   |  298C |
 
 
-## Green Dot VUI motion {#GreenDotVUIMotions}
+### Green Dot VUI motion {#GreenDotVUIMotions}
 
 The UI expression of Green Dot VUI varies depending on the identified action. Below is a table which describes the actions of Green Dot VUI.
 
