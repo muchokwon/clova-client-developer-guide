@@ -24,7 +24,7 @@
   * [로고 표시](/Design/Screen.md#DisplayingLogo)
   * [Green Dot VUI](/Design/Screen.md#GreenDotVUI)
     * [Green Dot VUI 색상](/Design/Screen.md#GreenDotVUIColor)
-    * [Green Dot VUI 동작 구분](/Design/Screen.md#GreenDotVUIMotions)
+    * [Green Dot VUI 동작](/Design/Screen.md#GreenDotVUIMotions)
 * [Clova inside](/Design/Clova_Inside.md)
   * [Clova inside 배지](/Design/Clova_Inside.md#ClovaInsideBadge)
   * [Clova inside 색상](/Design/Clova_Inside.md#ClovaInsideColor)

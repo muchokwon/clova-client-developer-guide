@@ -26,7 +26,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
   {% if book.L10N.TargetCountryCode == "KR" -%}
   ```bash
   $ curl -H "Authorization: Bearer Zc3d3QAR6zIxqceOpXoq"
-      {{ book.ServiceEnv.AuthServerBaseURI }}authorize \
+      {{ book.ServiceEnv.AuthAPIBaseURI }}authorize \
       --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
       --data-urlencode "device_id=aa123123d6-d900-48a1-b73b-aa6c156353206" \
       --data-urlencode "model_id=test_model" \
@@ -36,7 +36,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
   {%- elif book.L10N.TargetCountryCode == "JP"  -%}
   ```bash
   $ curl -H "Authorization: Bearer Zc3d3QAR6zIxqceOpXoq"
-      {{ book.ServiceEnv.AuthServerBaseURI }}authorize \
+      {{ book.ServiceEnv.AuthAPIBaseURI }}authorize \
       --data-urlencode "grant_type=uauth_auth_code_v2" \
       --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
       --data-urlencode "device_id=aa123123d6-d900-48a1-b73b-aa6c156353206" \
@@ -73,7 +73,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 6. [Clova access token을 요청](/Develop/References/Clova_Auth_API.md#RequestClovaAccessToken)하십시오.<br />
   요청할 때 이전에 획득한 authorization code와 [클라이언트 인증 정보](#ClientAuthInfo) 등을 파라미터로 입력해야 합니다. 다음은 Clova access token을 요청한 예입니다.
   ```bash
-  $ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=authorization_code \
+  $ curl {{ book.ServiceEnv.AuthAPIBaseURI }}token?grant_type=authorization_code \
       --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
       --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \
       --data-urlencode "code=cnl__eCSTdsdlkjfweyuxXvnlA" \
@@ -190,7 +190,7 @@ Authorization: Bearer [YOUR_ACCESS_TOKEN]
 
 클라이언트는 access token을 획득할 때 해당 access token이 언제 만료되는지 `expires_in` 필드에 명시된 만료 시간을 보고 파악해낼 수 있습니다. 이 시간이 만료되거나 만료된 access token을 사용하여 HTTP 401 Unauthorized의 상태 값을 가진 [오류 메시지](/Develop/References/CIC_API.md#Error)를 받으면 access token을 갱신해야 합니다. 아래와 같이 [Clova access token을 획득](/Develop/References/Clova_Auth_API.md#RequestClovaAccessToken)할 때 받았던 refresh token (`refresh_token`)과 갱신에 필요한 파라미터를 전달하면 [Clova access token을 갱신](/Develop/References/Clova_Auth_API.md#RefreshClovaAccessToken)할 수 있습니다.
 
-<pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=refresh_token \
+<pre><code>$ curl {{ book.ServiceEnv.AuthAPIBaseURI }}token?grant_type=refresh_token \
        --data-urlencode "client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ" \
        --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \
        --data-urlencode "refresh_token=GW-Ipsdfasdfdfs3IbHFBA" \

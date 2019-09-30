@@ -16,7 +16,7 @@
 
 다음은 guest 모드 용 authorization code를 요청하는 예제입니다.
 
-<pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}authorize \
+<pre><code>$ curl {{ book.ServiceEnv.AuthAPIBaseURI }}authorize \
        --data-urlencode "request_vu=Y" \
        --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
        --data-urlencode "device_id=aa123123d6-d900-48a1-b73b-aa6c156353206" \
