@@ -122,7 +122,7 @@ This section provides explanation on what colors are used in Push to talk button
 
 ### Push to talk button color {#PushToTalkButtonColor}
 
-When the client device's microphone is available, Push to talk button must be expressed by putting three types of gradients in the following shape.
+When the client device's microphone is available, Push to talk button must be expressed by putting two types of gradients in the following shape.
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Active.png)
 
@@ -155,7 +155,7 @@ The Push to talk button presentation must be expressed according to a user actio
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Presentation.gif)
 
-* When the client device's microphone is unavailable :
+* When the client device's microphone is unavailable:
   - Push to talk button UI is displayed to be grayed out.
 
 ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute_Presentation.png)
