@@ -5,6 +5,7 @@ The following UI components must be provided on the screen via the display devic
 * [Bootscreen](#BootingScreen)
 * [Logo display](#DisplayingLogo)
 * [Green Dot VUI](#GreenDotVUI)
+* [Push to talk button](#PushToTalkButton)
 
 ## Bootscreen {#BootingScreen}
 
@@ -109,6 +110,9 @@ An example of Green Dot VUI motion is shown below.
   <p><strong>Note!</strong></p>
   <p>Please contact the Clova partnership team if you want access to Green Dot VUI image assets.</p>
 </div>
+
+## Push to talk button {#PushToTalkButton}
+
 Push to talk button is a UI design to activate [Green Dot VUI](#GreenDotVUI). Push to talk button is provided as a touch UI button on the client device's screen. When the user touches the UI button, Green Dot VUI must be activated.
 
 This section provides explanation on what colors are used in Push to talk button, and how they must be expressed depending on the client state.
