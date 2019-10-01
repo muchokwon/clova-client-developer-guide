@@ -16,7 +16,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 | [URIObject](#URIObject)                   | URI 정보를 가지는 객체                         |
 
 
-# ActionObject {#ActionObject}
+## ActionObject {#ActionObject}
 클라이언트가 사용자에게 제공해야 할 동작 정보를 가지는 객체입니다.
 
 ### Object fields
@@ -37,7 +37,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 {% endraw %}
 
-# CurrencyObject {#CurrencyObject}
+## CurrencyObject {#CurrencyObject}
 통화와 금액 정보를 가지는 객체입니다.
 
 ### Object fields
