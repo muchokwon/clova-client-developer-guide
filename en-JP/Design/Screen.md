@@ -56,7 +56,7 @@ Green Dot VUI is both a voice search tool for Clova and a UI design that represe
 A client device with a screen must be able to implement Green Dot VUI. This section provides explanation on what colors are used in Green Dot VUI, and how they must be expressed depending on the client state.
 
 * [Green Dot VUI color](#GreenDotVUIColor)
-* [Green Dot VUI motion](#RenderGreenDotVUI)
+* [Green Dot VUI motions](#RenderGreenDotVUI)
 
 ### Green Dot VUI color {#GreenDotVUIColor}
 
@@ -73,7 +73,7 @@ The information of the 3 colors used in the above image are as follows:
 | Greendot Blue  | <span style="color:#1EC8EB; font-size:150%; vertical-align:middle;">&#9724;</span>30, 200, 235(#1EC8EB) | 70, 5,  0, 0   |  298C |
 
 
-### Green Dot VUI motion {#GreenDotVUIMotions}
+### Green Dot VUI motions {#GreenDotVUIMotions}
 
 The UI expression of Green Dot VUI varies depending on the identified action. Below is a table which describes the actions of Green Dot VUI.
 
