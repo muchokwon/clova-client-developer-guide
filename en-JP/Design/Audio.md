@@ -1,4 +1,3 @@
-<!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
 # Sound {#Audio}
 
 This section describes the guidelines for outputting audio content or sound effects from the client device.
@@ -139,8 +138,6 @@ The following guidelines must be followed when providing sound effects.
 
 Since a client must play the audio content delivered by Clova, it must be able to play the audio compression formats supported by Clova.
 
-<!-- Start of the shared content: SupportedAudioFormat -->
-
 Audio compression formats supported by Clova are as follows:
 
 | Audio compression format                     | File extension | License cost |
@@ -151,5 +148,3 @@ Audio compression formats supported by Clova are as follows:
   <p><strong>Note!</strong></p>
   <p>More audio compression formats may be supported by Clova in the future.</p>
 </div>
-
-<!-- End of the shared content -->
