@@ -14,7 +14,7 @@
   * [Light colors](/Design/Light.md#LightColor)
   * [Light effects](/Design/Light.md#LightEffect)
   * [Light guidelines](/Design/Light.md#LightGuideline)
-* [Audio](/Design/Audio.md)
+* [Sound](/Design/Audio.md)
   * [Rules for basic audio playback](/Design/Audio.md#AudioInterruptionRule)
   * [Audio playback rules for user utterances](/Design/Audio.md#AudioInterruptionRuleForUserUtterance)
   * [Sound effects](/Design/Audio.md#SoundEffect)

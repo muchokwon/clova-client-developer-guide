@@ -1,4 +1,4 @@
-# Audio {#Audio}
+# Sound {#Audio}
 
 This section describes the guidelines for outputting audio content or sound effects from the client device.
 
