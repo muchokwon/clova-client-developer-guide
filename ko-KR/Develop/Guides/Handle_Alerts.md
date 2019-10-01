@@ -233,7 +233,7 @@ Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Al
 
 사용자가 Clova 앱에서 알람을 수정하거나 삭제를 시도하면 Clova는 사용자 요청을 처리하기 위해 [`Alerts.SetAlert`](/Develop/References/MessageInterfaces/Alerts.md#SetAlert) 지시 메시지 또는 [`Alerts.DeleteAlert`](/Develop/References/MessageInterfaces/Alerts.md#DeleteAlert) 지시 메시지를 클라이언트에게 보냅니다.
 
-알람을 수정하는 과정은 알람을 등록하는 과정을 반복하는 것과 같기 때문에, [알람 등록하기](#RegisterAlert)를 참고해주십시오.
+알람을 수정하는 과정은 알람을 등록하는 과정을 반복하는 것과 같기 때문에, [알람 등록하기](#RegisterAlert)를 참고합니다.
 
 사용자가 알람을 삭제하라는 요청을 했을 때 클라이언트는 `Alerts.DeleteAlert` 지시 메시지를 받게 되며, 해당 지시 메시지에서 다음과 같은 내용 등을 확인하여 클라이언트 기기에서 울리는 중인 알람을 삭제해야 합니다.
 * 삭제해야 할 알람의 식별자
