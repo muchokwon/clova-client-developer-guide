@@ -18,8 +18,8 @@ The ReminderList template is used in providing information about multiple remind
 | `reminderList[].content`       | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | **(Deprecated)** The content of the reminder added by the user. This object is scheduled to be replaced with the `label` field. |
 | `reminderList[].label`         | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The message of the reminder added by the user. |
 | `reminderList[].repeatDay[]`     | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the repeat day(s) for a weekly reminder. |
-| `reminderList[].repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values of `value` field are: <ul><li>Empty string (<code>""</code>): One-time reminder</li><li><code>"daily"</code>: Daily reminder</li><li><code>"weekly"</code>: Weekly reminder</li></ul> |
-| `reminderList[].status`        | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | Indicates whether the task of the reminder is completed or not. Available values of `value` field are: <ul><li><code>"TODO"</code>: Reminder is not yet completed</li><li><code>"DONE"</code>: Reminder is completed</li></ul> |
+| `reminderList[].repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values are: <ul><li>Empty string (<code>""</code>): One-time reminder</li><li><code>"daily"</code>: Daily reminder</li><li><code>"weekly"</code>: Weekly reminder</li></ul> |
+| `reminderList[].status`        | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | Indicates whether the task of the reminder is completed or not. Available values are: <ul><li><code>"TODO"</code>: Reminder is not yet completed</li><li><code>"DONE"</code>: Reminder is completed</li></ul> |
 | `reminderList[].scheduledTime` | [DateTimeObject](/Develop/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this reminder is to go off.      |
 | `reminderList[].token`         | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of the reminder.  |
 | `type`                         | string                                                                              | The type of this template. The value is always `"ReminderList"`.             |
@@ -131,5 +131,5 @@ The following example shows how the ReminderList template is used on the Clova a
 ![](/Develop/Assets/Images/Content_Template-ReminderList.png)
 
 ## See also
-* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) interface
+* [Alerts](/Develop/References/CICInterface/Alerts.md) interface
 * [Reminder](/Develop/References/ContentTemplates/Reminder.md)

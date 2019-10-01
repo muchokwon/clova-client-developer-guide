@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="367.2145px" preserveAspectRatio="none" style="width:881px;height:367px;" version="1.1" viewBox="0 0 881 367" width="881.8783px" zoomAndPan="magnify"><defs/><g><ellipse cx="529.2209" cy="18.7834" fill="#000000" rx="9.3917" ry="9.3917" style="stroke: none; stroke-width: 0.9391675560298826;"/><rect fill="#FEFECE" height="50.8398" rx="11.7396" ry="11.7396" style="stroke: #A80036; stroke-width: 1.4087513340448239;" width="290.2028" x="384.1195" y="46.9584"/><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="252.6361" x="402.9029" y="76.6375">Check the dialogue ID of the received directive</text><polygon fill="#FEFECE" points="447.9829,116.5815,610.4589,116.5815,621.7289,132.6097,610.4589,148.6379,447.9829,148.6379,436.7129,132.6097,447.9829,116.5815" style="stroke: #A80036; stroke-width: 1.4087513340448239;"/><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="136.1793" x="461.1313" y="136.869">Does a dialogue ID exist?</text><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="18.7834" x="408.5379" y="120.8408">Yes</text><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="15.0267" x="631.1206" y="120.8408">No</text><rect fill="#FEFECE" height="50.8398" rx="11.7396" ry="11.7396" style="stroke: #A80036; stroke-width: 1.4087513340448239;" width="188.7727" x="225.4002" y="158.0296"/><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="151.206" x="244.1836" y="187.7088">Check the latest dialogue ID</text><polygon fill="#FEFECE" points="182.1985,227.6527,457.3746,227.6527,468.6446,243.681,457.3746,259.7092,182.1985,259.7092,170.9285,243.681,182.1985,227.6527" style="stroke: #A80036; stroke-width: 1.4087513340448239;"/><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="248.8794" x="195.3469" y="247.9402">Dialogue ID of directive == Latest dialogue ID</text><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="18.7834" x="142.7535" y="231.912">Yes</text><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="15.0267" x="478.0363" y="231.912">No</text><rect fill="#FEFECE" height="50.8398" rx="11.7396" ry="11.7396" style="stroke: #A80036; stroke-width: 1.4087513340448239;" width="304.2903" x="9.3917" y="269.1009"/><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="266.7236" x="28.175" y="298.78">Add the received directive to the message queue</text><ellipse cx="161.5368" cy="348.1157" fill="none" rx="9.3917" ry="9.3917" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><ellipse cx="162.0064" cy="348.5852" fill="#000000" rx="5.635" ry="5.635" style="stroke: none; stroke-width: 0.9391675560298826;"/><rect fill="#FEFECE" height="50.8398" rx="11.7396" ry="11.7396" style="stroke: #A80036; stroke-width: 1.4087513340448239;" width="199.1035" x="378.4845" y="269.1009"/><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="161.5368" x="397.2679" y="298.78">Discard the received directive</text><ellipse cx="478.0363" cy="348.1157" fill="none" rx="9.3917" ry="9.3917" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><ellipse cx="478.5059" cy="348.5852" fill="#000000" rx="5.635" ry="5.635" style="stroke: none; stroke-width: 0.9391675560298826;"/><rect fill="#FEFECE" height="50.8398" rx="11.7396" ry="11.7396" style="stroke: #A80036; stroke-width: 1.4087513340448239;" width="265.7844" x="605.7631" y="158.0296"/><text fill="#000000" font-family="sans-serif" font-size="11.27" lengthAdjust="spacingAndGlyphs" textLength="228.2177" x="624.5464" y="187.7088">Handle the received directive immediately</text><ellipse cx="738.6553" cy="237.0444" fill="none" rx="9.3917" ry="9.3917" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><ellipse cx="739.1249" cy="237.514" fill="#000000" rx="5.635" ry="5.635" style="stroke: none; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="529.2209" x2="529.2209" y1="28.175" y2="46.9584"/><polygon fill="#000000" points="525.4642,37.5667,529.2209,46.9584,532.9776,37.5667,529.2209,41.3234" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="161.5368" x2="161.5368" y1="319.9406" y2="338.724"/><polygon fill="#000000" points="157.7801,329.3323,161.5368,338.724,165.2935,329.3323,161.5368,333.089" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="478.0363" x2="478.0363" y1="319.9406" y2="338.724"/><polygon fill="#000000" points="474.2796,329.3323,478.0363,338.724,481.793,329.3323,478.0363,333.089" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="170.9285" x2="161.5368" y1="243.681" y2="243.681"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="161.5368" x2="161.5368" y1="243.681" y2="269.1009"/><polygon fill="#000000" points="157.7801,259.7092,161.5368,269.1009,165.2935,259.7092,161.5368,263.4658" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="468.6446" x2="478.0363" y1="243.681" y2="243.681"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="478.0363" x2="478.0363" y1="243.681" y2="269.1009"/><polygon fill="#000000" points="474.2796,259.7092,478.0363,269.1009,481.793,259.7092,478.0363,263.4658" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="319.7866" x2="319.7866" y1="208.8694" y2="227.6527"/><polygon fill="#000000" points="316.0299,218.2611,319.7866,227.6527,323.5432,218.2611,319.7866,222.0177" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="738.6553" x2="738.6553" y1="208.8694" y2="227.6527"/><polygon fill="#000000" points="734.8986,218.2611,738.6553,227.6527,742.412,218.2611,738.6553,222.0177" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="436.7129" x2="319.7866" y1="132.6097" y2="132.6097"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="319.7866" x2="319.7866" y1="132.6097" y2="158.0296"/><polygon fill="#000000" points="316.0299,148.6379,319.7866,158.0296,323.5432,148.6379,319.7866,152.3946" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="621.7289" x2="738.6553" y1="132.6097" y2="132.6097"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="738.6553" x2="738.6553" y1="132.6097" y2="158.0296"/><polygon fill="#000000" points="734.8986,148.6379,738.6553,158.0296,742.412,148.6379,738.6553,152.3946" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><line style="stroke: #000000; stroke-width: 1.4087513340448239;" x1="529.2209" x2="529.2209" y1="97.7982" y2="116.5815"/><polygon fill="#000000" points="525.4642,107.1898,529.2209,116.5815,532.9776,107.1898,529.2209,110.9465" style="stroke: #000000; stroke-width: 0.9391675560298826;"/><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam sequence {
+	ArrowColor #000000
+	ActorBorderColor #000000
+	ActorFontStyle Bolder
+
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor transparent
+	ParticipantBorderColor transparent
+	ParticipantFontSize 14
+	ParticipantFontColor #ffffff
+	ParticipantFontStyle bold
+
+	BoxBorderColor #000000
+	BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+skinparam note {
+	BackgroundColor #9EA0CA
+	BorderColor #ffffff
+	FontColor #ffffff
+	FontSize 14
+	FontStyle bold
+}
+hide footbox
+
+start
+
+:Check the dialogue ID of the received directive;
+
+if ( Does a dialogue ID exist? ) then (Yes)
+
+  :Check the latest dialogue ID;
+
+  if ( Dialogue ID of directive == Latest dialogue ID ) then (Yes)
+
+  :Add the received directive to the message queue;
+  stop
+
+  else (No)
+
+  :Discard the received directive;
+  stop
+  endif
+
+else (No)
+  :Handle the received directive immediately;
+  stop
+endif
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11+28
+Operating System: Mac OS X
+OS Version: 10.14.2
+Default Encoding: US-ASCII
+Language: en
+Country: KR
+--></g></svg>

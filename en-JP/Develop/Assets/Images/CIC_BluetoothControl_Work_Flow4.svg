@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="535px" preserveAspectRatio="none" style="width:599px;height:535px;" version="1.1" viewBox="0 0 599 535" width="599px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="324.5508" style="stroke: #000000; stroke-width: 1.0;" width="10" x="80" y="64.4883"/><rect fill="#FFFFFF" height="386.8164" style="stroke: #000000; stroke-width: 1.0;" width="10" x="205.5" y="64.4883"/><rect fill="#FFFFFF" height="386.8164" style="stroke: #000000; stroke-width: 1.0;" width="10" x="535.5" y="64.4883"/><rect fill="#FFFFFF" height="215.9297" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="425.5" x="162" y="125.9766"/><rect fill="#FFFFFF" height="98.3984" style="stroke: none; stroke-width: 1.0;" width="425.5" x="162" y="243.5078"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="85" x2="85" y1="54.4883" y2="523.793"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="210" x2="210" y1="54.4883" y2="523.793"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="540.5" x2="540.5" y1="54.4883" y2="523.793"/><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="154" x="8" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="120" x="25" y="33.5352">Bluetooth device</text><rect fill="#9EA0CA" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="77" x="172" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="189" y="33.5352">Client</text><rect fill="#05D686" height="50.4883" rx="5" ry="5" style="stroke: #FFFFFF; stroke-width: 1.5;" width="74" x="503.5" y="3"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="40" x="520.5" y="33.5352">Clova</text><rect fill="#FFFFFF" height="324.5508" style="stroke: #000000; stroke-width: 1.0;" width="10" x="80" y="64.4883"/><rect fill="#FFFFFF" height="386.8164" style="stroke: #000000; stroke-width: 1.0;" width="10" x="205.5" y="64.4883"/><rect fill="#FFFFFF" height="386.8164" style="stroke: #000000; stroke-width: 1.0;" width="10" x="535.5" y="64.4883"/><polygon fill="#9EA0CA" points="40,69.4883,584,69.4883,594,91.4883,584,113.4883,40,113.4883,30,91.4883,40,69.4883" style="stroke: #FFFFFF; stroke-width: 1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="273" x="175.75" y="97.0234">Request to disable a Bluetooth device</text><path d="M167,125.9766 L243,125.9766 L243,151.9766 L233,161.9766 L162,161.9766 L162,130.9766 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="215.9297" rx="5" ry="5" style="stroke: #000000; stroke-width: 2.0;" width="425.5" x="162" y="125.9766"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="187" y="148.5781">alt</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="208" x="268" y="149.5781">[Specific device assigned == Yes]</text><polygon fill="#000000" points="226.5,231.5078,216.5,235.5078,226.5,239.5078,222.5,235.5078" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="220.5" x2="534.5" y1="235.5078" y2="235.5078"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="241" x="255" y="206.8438">DeviceControl.BtDisconnect (with payload)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="147" x="302" y="220.9766">Send a directive message</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="162" x2="587.5" y1="244.5078" y2="244.5078"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="203" x="177" y="266.1094">[Specific device assigned == No]</text><polygon fill="#000000" points="226.5,329.9063,216.5,333.9063,226.5,337.9063,222.5,333.9063" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="220.5" x2="534.5" y1="333.9063" y2="333.9063"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="259" x="246" y="305.2422">DeviceControl.BtDisconnect (without payload)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="147" x="302" y="319.375">Send a directive message</text><polygon fill="#000000" points="96,385.0391,86,389.0391,96,393.0391,92,389.0391" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="90" x2="204.5" y1="389.0391" y2="389.0391"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="62" x="114.25" y="374.5078">Disconnect</text><polygon fill="#000000" points="528.5,447.3047,538.5,451.3047,528.5,455.3047,532.5,451.3047" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="210.5" x2="534.5" y1="451.3047" y2="451.3047"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="276" x="237.5" y="422.6406">DeviceControl.ActionExecuted (with DeviceState)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="136" x="307.5" y="436.7734">Send an event message</text><polygon fill="#9EA0CA" points="40,464.3047,584,464.3047,594,486.3047,584,508.3047,40,508.3047,30,486.3047,40,464.3047" style="stroke: #FFFFFF; stroke-width: 1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="359" x="132.75" y="491.8398">Share the result of disabling the Bluetooth device</text><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam sequence {
+	ArrowColor #000000
+	ActorBorderColor #000000
+	ActorFontStyle Bolder
+
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor transparent
+	ParticipantBorderColor transparent
+	ParticipantFontSize 14
+	ParticipantFontColor #ffffff
+	ParticipantFontStyle bold
+
+	BoxBorderColor #000000
+	BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+skinparam note {
+	BackgroundColor #9EA0CA
+	BorderColor #ffffff
+	FontColor #ffffff
+	FontSize 14
+	FontStyle bold
+}
+hide footbox
+
+participant "Bluetooth device" as device #9EA0CA
+participant Client as client #9EA0CA
+participant "Clova" as clova #05D686
+
+activate device
+activate client
+hnote over device, clova : Request to disable a Bluetooth device
+activate clova
+ alt Specific device assigned == Yes
+  clova -> client : DeviceControl.BtDisconnect (with payload)\nSend a directive message
+ else Specific device assigned == No
+    clova -> client : DeviceControl.BtDisconnect (without payload)\nSend a directive message
+end
+  client -> device : Disconnect
+deactivate device
+  client - -> clova : DeviceControl.ActionExecuted (with DeviceState)\nSend an event message
+hnote over device, clova : Share the result of disabling the Bluetooth device
+deactivate client
+deactivate device
+deactivate clova
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11+28
+Operating System: Mac OS X
+OS Version: 10.14.2
+Default Encoding: US-ASCII
+Language: en
+Country: KR
+--></g></svg>

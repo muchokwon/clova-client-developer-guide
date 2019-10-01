@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="397.1638px" preserveAspectRatio="none" style="width:872px;height:397px;" version="1.1" viewBox="0 0 872 397" width="872.5718px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="39.7489" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="54.969" y="63.8713"/><rect fill="#FFFFFF" height="47.6723" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="179.7636" y="151.2926"/><rect fill="#FFFFFF" height="69.4619" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="179.7636" y="307.1852"/><rect fill="#FFFFFF" height="47.6723" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="717.5689" y="103.6202"/><rect fill="#FFFFFF" height="108.2203" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="717.5689" y="198.9649"/><line style="stroke: #000000; stroke-width: 0.9904333145751266; stroke-dasharray: 5.0,5.0;" x1="59.426" x2="59.426" y1="53.967" y2="385.561"/><line style="stroke: #000000; stroke-width: 0.9904333145751266; stroke-dasharray: 5.0,5.0;" x1="184.2206" x2="184.2206" y1="53.967" y2="385.561"/><line style="stroke: #000000; stroke-width: 0.9904333145751266; stroke-dasharray: 5.0,5.0;" x1="722.0259" x2="722.0259" y1="53.967" y2="385.561"/><rect fill="#9EA0CA" height="50.0053" rx="4.9522" ry="4.9522" style="stroke: #FFFFFF; stroke-width: 1.4856499718626899;" width="103.9955" x="7.9235" y="2.9713"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13.8661" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="70.3208" x="24.7608" y="33.2143">Clova app</text><rect fill="#9EA0CA" height="50.0053" rx="4.9522" ry="4.9522" style="stroke: #FFFFFF; stroke-width: 1.4856499718626899;" width="125.785" x="121.8233" y="2.9713"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13.8661" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="92.1103" x="138.6607" y="33.2143">Client device</text><rect fill="#05D686" height="50.0053" rx="4.9522" ry="4.9522" style="stroke: #FFFFFF; stroke-width: 1.4856499718626899;" width="58.4356" x="693.3033" y="2.9713"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13.8661" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="24.7608" x="710.1407" y="33.2143">CIC</text><rect fill="#FFFFFF" height="39.7489" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="54.969" y="63.8713"/><rect fill="#FFFFFF" height="47.6723" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="179.7636" y="151.2926"/><rect fill="#FFFFFF" height="69.4619" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="179.7636" y="307.1852"/><rect fill="#FFFFFF" height="47.6723" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="717.5689" y="103.6202"/><rect fill="#FFFFFF" height="108.2203" style="stroke: #000000; stroke-width: 0.9904333145751266;" width="9.9043" x="717.5689" y="198.9649"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="715.5881" x2="705.6837" y1="103.6202" y2="99.6585"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="715.5881" x2="705.6837" y1="103.6202" y2="107.5819"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="59.9212" x2="716.5785" y1="103.6202" y2="103.6202"/><text fill="#000000" font-family="sans-serif" font-size="11.8852" lengthAdjust="spacingAndGlyphs" textLength="283.2639" x="247.1131" y="89.228">Send user request and delegate request handling</text><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="189.668" x2="199.5723" y1="151.2926" y2="147.3308"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="189.668" x2="199.5723" y1="151.2926" y2="155.2543"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="189.668" x2="721.5307" y1="151.2926" y2="151.2926"/><text fill="#000000" font-family="sans-serif" font-size="11.8852" lengthAdjust="spacingAndGlyphs" textLength="489.2741" x="211.4575" y="136.9003">Direct to delegate handling (Clova.HandleDelegatedEvent directive, use downchannel)</text><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="715.5881" x2="705.6837" y1="198.9649" y2="195.0032"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="715.5881" x2="705.6837" y1="198.9649" y2="202.9266"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="184.7158" x2="716.5785" y1="198.9649" y2="198.9649"/><text fill="#000000" font-family="sans-serif" font-size="11.8852" lengthAdjust="spacingAndGlyphs" textLength="455.5993" x="223.3427" y="184.5727">Request to handle delegated user request (Clova.ProcessDelegatedEvent event)</text><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="727.4733" x2="769.0715" y1="246.6372" y2="246.6372"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="769.0715" x2="769.0715" y1="246.6372" y2="259.5129"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="728.4637" x2="769.0715" y1="259.5129" y2="259.5129"/><polygon fill="#000000" points="738.368,255.5511,728.4637,259.5129,738.368,263.4746,734.4063,259.5129" style="stroke: #000000; stroke-width: 0.9904333145751266;"/><text fill="#000000" font-family="sans-serif" font-size="11.8852" lengthAdjust="spacingAndGlyphs" textLength="116.8711" x="744.3106" y="232.245">Handle user request</text><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="189.668" x2="199.5723" y1="307.1852" y2="303.2235"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="189.668" x2="199.5723" y1="307.1852" y2="311.1469"/><line style="stroke: #000000; stroke-width: 0.9904333145751266; stroke-dasharray: 2.0,2.0;" x1="189.668" x2="721.5307" y1="307.1852" y2="307.1852"/><text fill="#000000" font-family="sans-serif" font-size="11.8852" lengthAdjust="spacingAndGlyphs" textLength="239.6849" x="336.2521" y="292.793">Send directives with handled user request</text><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="189.668" x2="231.2662" y1="354.8576" y2="354.8576"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="231.2662" x2="231.2662" y1="354.8576" y2="367.7332"/><line style="stroke: #000000; stroke-width: 0.9904333145751266;" x1="190.6584" x2="231.2662" y1="367.7332" y2="367.7332"/><polygon fill="#000000" points="200.5627,363.7715,190.6584,367.7332,200.5627,371.6949,196.601,367.7332" style="stroke: #000000; stroke-width: 0.9904333145751266;"/><text fill="#000000" font-family="sans-serif" font-size="11.8852" lengthAdjust="spacingAndGlyphs" textLength="150.5459" x="206.5053" y="340.4653">Handle a general directive</text><!--
+@startuml
+scale max 880 width
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 10
+skinparam defaultFontSize 12
+skinparam sequence {
+	ArrowColor #000000
+	ActorBorderColor #000000
+	ActorFontStyle Bolder
+
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor transparent
+	ParticipantBorderColor transparent
+	ParticipantFontSize 14
+	ParticipantFontColor #ffffff
+	ParticipantFontStyle bold
+
+	BoxBorderColor #000000
+	BoxFontColor #ffffff
+    BoxFontSize 14
+    BoxFontStyle bold
+}
+skinparam note {
+	BackgroundColor #9EA0CA
+	BorderColor #ffffff
+	FontColor #ffffff
+	FontSize 14
+	FontStyle bold
+}
+hide footbox
+
+participant "Clova app" as ca #9EA0CA
+participant "Client device" as cli #9EA0CA
+participant CIC as cic #05D686
+
+activate ca
+  ca ->> cic : Send user request and delegate request handling
+deactivate ca
+
+activate cic
+
+  cic ->> cli : Direct to delegate handling (Clova.HandleDelegatedEvent directive, use downchannel)
+
+deactivate cic
+
+activate cli
+
+  cli ->> cic : Request to handle delegated user request (Clova.ProcessDelegatedEvent event)
+
+deactivate cli
+
+activate cic
+
+  cic -> cic : Handle user request
+  cic - ->> cli : Send directives with handled user request
+
+deactivate cic
+
+activate cli
+  cli -> cli : Handle a general directive
+
+@enduml
+
+PlantUML version 1.2018.12(Sun Oct 21 19:15:15 KST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11+28
+Operating System: Mac OS X
+OS Version: 10.14.2
+Default Encoding: US-ASCII
+Language: en
+Country: KR
+--></g></svg>

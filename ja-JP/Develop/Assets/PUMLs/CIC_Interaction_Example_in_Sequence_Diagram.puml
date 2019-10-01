@@ -5,10 +5,10 @@ participant クライアント as client #9EA0CA
 participant CIC as cic #05D686
 participant Clova as clova #05D686
 
-user ->> client: 「クラシック音楽をプレイして」
+user ->> client: 「クラシック音楽を再生して」
 
 activate client
-  client ->> cic: Recognizeイベントを送信する\n「クラシック音楽をプレイして」
+  client ->> cic: Recognizeイベントを送信する\n「クラシック音楽を再生して」
 deactivate client
 
 activate  cic
@@ -24,10 +24,10 @@ activate clova
 deactivate clova
 
 activate cic
-  cic -->> client: 要請結果を指示メッセージで転送\n「案内音声,音源情報,再生指示など」
+  cic -->> client: リクエスト結果をディレクティブで送信\n（案内音声、音源情報、再生指示など）
 deactivate cic
 
 activate client
-  client -> client: 指示メッセージ処理
+  client -> client: ディレクティブを処理
   client -->> user: 処理結果の提供
 deactivate client

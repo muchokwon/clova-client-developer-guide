@@ -1,0 +1,55 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Bluetooth device" as device #9EA0CA
+participant Client as client #9EA0CA
+participant "Clova" as clova #05D686
+actor User as user #9EA0
+activate device
+device -> client: Advertising
+...
+user ->> clova : Request a Bluetooth device connection
+activate clova
+  clova -> client : Send DeviceControl.BtStartPairing directive
+
+activate client
+  client -> client : Scanning
+  client --> clova : Send DeviceControl.ActionExecuted event\n(with DeviceState)
+  hnote over client, device : Found a Bluetooth device
+deactivate client
+
+ alt Specific device assigned == Yes
+	clova -> client : Send DeviceControl.BtConnect directive\n(with payload)
+
+	activate client
+ else Specific device assigned == No
+    clova -> client : Send DeviceControl.BtConnect directive\n(without payload)
+end
+
+  client -> device : Request connection
+  client --> clova : Send DeviceControl.ActionExecuted event\n(with DeviceState)
+
+	deactivate client
+  alt PIN code required == Yes
+	device ->> client : Request PIN code
+
+	activate client
+	client -> clova : Send DeviceControl.BtRequestForPINCode event
+    hnote over clova, user #05D686 : Request PIN code and handle input
+
+    alt Decide to cancel code input == Yes
+		client -> clova : Send DeviceControl.BtRequestToCancelPINCode event
+		hnote over clova, user #05D686 : Handle cancellation of PIN code request
+    else
+ 		clova -> client : Send DeviceControl.BtConnectByPINCode directive
+	end
+  end
+    client -> device : Connect using PIN code
+    client -> clova : Send DeviceControl.ActionExecuted event
+
+	deactivate client
+	device -->> client : Connection result
+ deactivate device
+
+  clova -> user : Notify of connection result
+
+deactivate clova

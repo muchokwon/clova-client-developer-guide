@@ -6,10 +6,10 @@
 | 음성 데이터            | 클라이언트 스피커를 통해 출력하려는 음성 정보                  |
 | JSON 형식의 콘텐츠 정보 | <ul><li>클라이언트의 화면을 통해 표시하려는 데이터(<a href="/Develop/References/Content_Templates.md">content template</a> 참조)</li><li>음악과 같이 재생하려는 콘텐츠의 위치와 인증 정보가 담긴 데이터</li></ul> |
 
-클라이언트는 다음과 같이 지시 메시지를 처리해야 합니다.
+클라이언트는 다음과 절차와 같이 지시 메시지를 처리해야 합니다.
 
-1. 특정 이벤트 메시지의 응답이나 downchannel을 통해 전달받는 지시 메시지를 미리 정해둔 [메시지 큐](#ManageMessageQ)에 저장합니다.
-2. 수신된 [지시 메시지](/Develop/References/CIC_API.md#Directive)의 메시지 헤더를 분석(parsing)합니다.<br />
+1. 특정 이벤트 메시지의 응답이나 downchannel을 통해 전달받는 지시 메시지를 미리 정해둔 [메시지 큐](#ManageMessageQ)에 저장하십시오.
+2. 수신된 [지시 메시지](/Develop/References/CIC_API.md#Directive)의 메시지 헤더를 분석(parsing)하십시오.<br />
   일반적으로 `dialogRequestId`는 사용자 요청, `namespace`와 `name`은 [API](/Develop/References/CIC_API.md)를 구분하는데 사용합니다. 다음은 수신된 지시 메시지의 예입니다.
   ```json
   {
@@ -30,8 +30,8 @@
     }
   }
   ```
-3. 수신한 지시 메시지의 [대화 ID](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md)(`dialogRequestId`)가 클라이언트가 보관하고 있는 대화 ID와 대응되는지 확인합니다.
-  * **클라이언트가 보관하고 있는 마지막 대화 ID와 일치하면**, API 레퍼런스에 따라 필요한 동작을 수행합니다. 일반적으로 지시 메시지의 `payload`에 포함된 <a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak">`cid` 값을 이용</a>하여 클라이언트 동작에 필요한 부가 정보(음성 데이터)를 [메시지 큐](#ManageMessageQ)에서 선별해 낼 수 있습니다. `cid`가 의미하는 것은 다음과 같이 multipart 메시지 중 한 부분으로 전달된 음성 데이터의 `Content-ID` 메시지 헤더를 의미합니다.
+3. 수신한 지시 메시지의 [대화 ID](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md)(`dialogRequestId`)가 클라이언트가 보관하고 있는 대화 ID와 대응되는지 확인하십시오.
+  * **클라이언트가 보관하고 있는 마지막 대화 ID와 일치하면**, API 레퍼런스에 따라 필요한 동작을 수행하십시오. 지시 메시지의 `payload`에 포함된 [`cid` 값을 이용](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak)하여 클라이언트 동작에 필요한 부가 정보(음성 데이터)를 [메시지 큐](#ManageMessageQ)에서 선별해 낼 수 있습니다. `cid`는 다음과 같이 multipart 메시지 중 한 부분으로 전달된 음성 데이터의 `Content-ID` 메시지 헤더를 의미합니다.
     ```
     --b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
     Content-Disposition: form-data; name="attachment-39b2f844-b168-4dc2-bea7-d5c249e446e3"
@@ -40,7 +40,7 @@
     [[ binary audio attachment ]]<br />
     --b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
     ```
-  * **클라이언트가 보관하고 있는 대화 ID와 일치하지 않으면**, 해당 지시 메시지와 관련된 모든 메시지를 무시하고 큐에서 제거합니다.
+  * **클라이언트가 보관하고 있는 대화 ID와 일치하지 않으면**, 해당 지시 메시지와 관련된 모든 메시지를 무시하고 큐에서 제거하십시오.
 
 <div class="note">
   <p><strong>Note!</strong></p>

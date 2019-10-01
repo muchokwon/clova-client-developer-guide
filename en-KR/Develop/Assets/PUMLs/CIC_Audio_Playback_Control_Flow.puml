@@ -7,43 +7,43 @@ participant CIC as cic #05D686
 
 alt Control audio playback through utterance
 
-  user ->> client : Request music playback control:\n"Pause music."
+  user ->> client : Requests music playback control:\n"Pause music."
 
   activate client
-    
-    client ->> cic : Send user request\n(SpeechRecognizer.Recognize event)
-  
+
+    client ->> cic : Sends user request\n(SpeechRecognizer.Recognize event)
+
   deactivate client
 
   activate cic
 
-    cic -> cic : Analyze user utterance
+    cic -> cic : Analyzes user utterance
 
 else Control audio playback using the client device button
 
-  user ->> client : Press pause button
+  user ->> client : Presses pause button
 
   activate client
-    
-    client ->> cic : Report occurrence of pause command\n(PlaybackController.PauseCommandIssued event)
-  
+
+    client ->> cic : Reports occurrence of pause command\n(PlaybackController.PauseCommandIssued event)
+
   deactivate client
 
 else Clova Remote control audio playback using Clova app
 
-  user ->> app : Request to pause audio playback on the client
+  user ->> app : Requests to pause audio playback on the client
 
   activate app
 
-    app ->> cic : Send request to pause audio playback on the client
-    
+    app ->> cic : Sends request to pause audio playback on the client
+
   deactivate app
 
-    cic ->> client : Request to operate as if a user has pressed the pause button\n(PlaybackController.ExpectPauseCommand directive)
+    cic ->> client : Requests to operate as if a user has pressed the pause button\n(PlaybackController.ExpectPauseCommand directive)
 
   activate client
 
-    client ->> cic : Report occurrence of pause command\n(PlaybackController.PauseCommandIssued event)
+    client ->> cic : Reports occurrence of pause command\n(PlaybackController.PauseCommandIssued event)
 
   deactivate client
 
@@ -52,14 +52,14 @@ end
 
 activate cic
 
-  cic -->> client : Direct to stop audio playback\n(PlaybackController.Pause directive)
+  cic -->> client : Directs to stop audio playback\n(PlaybackController.Pause directive)
 
 deactivate cic
 
 activate client
 
-  client -> client : Pause audio playback
-  client ->> cic : Report pause of audio playback\n(AudioPlayer.PlayResumed event)
+  client -> client : Pauses audio playback
+  client ->> cic : Reports pause of audio playback\n(AudioPlayer.PlayResumed event)
 
 deactivate client
 

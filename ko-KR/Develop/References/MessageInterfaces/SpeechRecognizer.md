@@ -2,9 +2,9 @@
 
 SpeechRecognizer 인터페이스는 사용자의 음성 인식을 위해 사용되는 네임스페이스입니다. 사용자의 음성 입력은 다음과 같이 수행되어야 합니다.
 
-1. 클라이언트는 사용자의 음성이 입력될 때 CIC로 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 전송합니다.
-2. 클라이언트는 입력되는 사용자의 음성을 200ms 단위로 계속 CIC에 전송해야 합니다.
-3. 클라이언트는 CIC로부터 [`SpeechRecognizer.StopCapture`](#StopCapture) 지시 메시지를 받기 전까지 2 번 단계를 계속 수행해야 합니다.
+1. 사용자의 음성이 입력될 때 CIC로 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 전송하십시오.
+2. 입력되는 사용자의 음성을 200ms 단위로 계속 CIC에 전송하십시오.
+3. CIC로부터 [`SpeechRecognizer.StopCapture`](#StopCapture) 지시 메시지를 받기 전까지 2 번 단계를 계속 수행하십시오.
 
 SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 

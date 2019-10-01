@@ -16,7 +16,7 @@
       "FileExtensionForExternalLink": "md"
     },
     "ServiceEnv": {
-      "AuthServerBaseURI": "https://auth.clova.ai/",
+      "AuthAPIBaseURI": "https://auth.clova.ai/",
       "CICBaseURI": "https://prod-ni-cic.clova.ai/",
       "DeveloperCenterForumURI": "https://developers.naver.com/forum/list",
       "DeveloperCenterName": "NAVER 개발자 센터",

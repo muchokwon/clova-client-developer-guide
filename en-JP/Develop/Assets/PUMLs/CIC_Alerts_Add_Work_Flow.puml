@@ -1,0 +1,49 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor User as user #9EA0CA
+participant Client as client #9EA0CA
+participant CIC as cic #05D686
+
+
+user ->> client : Request to add an alarm:\n"Set an alarm for 9 PM today."
+
+activate client
+  client ->> cic : Send user request\n(SpeechRecognizer.Recognize event)
+deactivate client
+
+activate cic
+  cic -> cic : Analyze user utterance
+  cic -->> client : Send Alerts.SetAlert directive
+deactivate cic
+
+activate client
+  client -> client : Add an alarm to client device
+
+alt Result of adding an alarm == Failed to add
+
+  client ->> cic : Send Alerts.SetAlertFailed event
+  deactivate client
+  activate cic
+
+    cic -->> client : Send SpeechSynthesizer.Speak directive\n("Could not set the alarm.")
+  deactivate cic
+  activate client
+    client -->> user : Send result of adding an alarm
+
+else Result of adding an alarm == Success
+
+  client ->> cic : Send Alerts.SetAlertSucceeded event
+
+deactivate client
+
+activate cic
+  cic -> cic : Add user alarm
+  cic -->> client : Send SpeechSynthesizer.Speak directive\n("The alarm is set.")
+activate client
+  cic -->> client : Send Actiontimer, Alarm, Reminder, and Timer templates\n(Clova.RenderTemplate directive)
+deactivate cic
+
+  client -> client : Output voice and display added alarm details
+  client -->> user : Send result of adding an alarm
+
+  end

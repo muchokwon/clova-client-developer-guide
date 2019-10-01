@@ -1,0 +1,26 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+actor User as user #9EA0CA
+participant "Clova app" as ca #9EA0CA
+participant "Client device" as cli #9EA0CA
+participant CIC as cic #05D686
+
+user ->> cli: Change device settings
+
+activate cli
+    cli ->> cic: Report the current settings information of the device\n(Send Settings.Report event)
+  
+deactivate cli
+
+activate cic
+
+  cic ->> ca: Direct to synchronize to the changed settings
+
+deactivate cic
+
+activate ca
+
+  ca -> ca: Refresh device settings
+  ca ->> user: Provide device settings
+  
+deactivate ca

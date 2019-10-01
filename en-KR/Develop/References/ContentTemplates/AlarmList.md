@@ -16,7 +16,7 @@ The AlarmList template is used in providing information of multiple alarms for t
 |---------------|---------|-----------------------------|
 | `alarmList[]`               | object array  | The object array that has the list of alarms registered by the user.                                                                                           |
 | `alarmList[].repeatDay[]`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the repeat day(s) for a weekly alarm.  |
-| `alarmList[].repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values of `value` field are: <ul><li>Empty string (<code>""</code>): One-time alarm</li><li><code>"daily"</code>: Daily alarm</li><li><code>"weekly"</code>: Weekly alarm</li></ul> |
+| `alarmList[].repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values are: <ul><li>Empty string (<code>""</code>): One-time alarm</li><li><code>"daily"</code>: Daily alarm</li><li><code>"weekly"</code>: Weekly alarm</li></ul> |
 | `alarmList[].scheduledTime` | [DateTimeObject](/Develop/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this alarm is to ring.                       |
 | `alarmList[].token`         | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this alarm.                               |
 | `type`                      | string                                                                              | The type of this template. The value is always `"AlarmList"`.             |
@@ -97,4 +97,4 @@ The following example shows how the AlarmList template is used on the Clova app 
 
 ## See also
 * [Alarm](/Develop/References/ContentTemplates/Alarm.md)
-* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) interface
+* [Alerts](/Develop/References/CICInterface/Alerts.md) interface

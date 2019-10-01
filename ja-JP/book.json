@@ -1,5 +1,5 @@
 {
-  "title": "Clova Client Developer GUide",
+  "title": "Clova Client Developer Guide",
   "description": "このドキュメントは、Clovaクライアントの開発をサポートするために、デザインガイドラインとCICプラットフォームの開発ガイドおよびAPIリファレンスを提供します。",
   "direction": "ltr",
   "author": "LINE Corporation",
@@ -8,6 +8,7 @@
       "ClassifiedInfo": "Confidential",
       "ClovaCustomExtensionDeveloperGuideBaseURI": "https://pages.oss.navercorp.com/JTF-P6/Clova_Custom_Extension_Developer_Guide/ja-JP",
       "ClovaHomeExtensionDeveloperGuideBaseURI": "https://pages.oss.navercorp.com/JTF-P6/Clova_Home_Extension_Developer_Guide/ja-JP",
+      "FileExtensionForExternalLink": "html",
       "DocOwner": "LINE",
       "DocVersion": "v2019-08-19",
       "OutputFormat": "Web",

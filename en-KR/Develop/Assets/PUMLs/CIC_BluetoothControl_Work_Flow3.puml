@@ -5,25 +5,25 @@ participant "Bluetooth device" as device #9EA0CA
 participant Client as client #9EA0CA
 participant "Clova" as clova #05D686
 
-user ->> client : Request audio playback
+user ->> client : Requests audio playback
 activate client
-client ->> clova : SpeechRecognizer.Recognize\nSend an event message
+client ->> clova : SpeechRecognizer.Recognize\nSends an event message
 deactivate client
 activate clova
 alt Client role == sink
-  clova ->> client : DeviceControl.BtPlay\nSend a directive message
+  clova ->> client : DeviceControl.BtPlay\nSends a directive message
 
 activate client
 
-	device -> client : Receive audio stream from the Bluetooth device
+	device -> client : Receives audio stream from the Bluetooth device
   activate device
-    client -> user : Play audio from the speaker
+    client -> user : Plays audio from the speaker
 else Client role == source
-        clova -> client : AudioPlayer.Play\nSend a directive message
-        client -> device : Send audio to the Bluetooth speaker
-    device -> user : Play audio from the Bluetooth speaker
+        clova -> client : AudioPlayer.Play\nSends a directive message
+        client -> device : Sends audio to the Bluetooth speaker
+    device -> user : Plays audio from the Bluetooth speaker
 end
-  client --> clova : DeviceControl.ActionExecuted (with DeviceState) \nSend an event message
+  client --> clova : DeviceControl.ActionExecuted (with DeviceState) \nSends an event message
 deactivate client
 deactivate device
 deactivate clova

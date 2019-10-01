@@ -25,11 +25,14 @@
   * [Green Dot VUI](/Design/Screen.md#GreenDotVUI)
     * [Green Dot VUIの色](/Design/Screen.md#GreenDotVUIColor)
     * [Green Dot VUIのアクション](/Design/Screen.md#GreenDotVUIMotions)
-* [Clovaインサイド](/Design/Clova_Inside.md)
-  * [Clovaインサイドバッジ](/Design/Clova_Inside.md#ClovaInsideBadge)
-  * [Clovaインサイドの色](/Design/Clova_Inside.md#ClovaInsideColor)
-  * [Clovaインサイドの背景色](/Design/Clova_Inside.md#ClovaInsideBackgroundColor)
-  * [Clovaインサイドに関するガイドライン](/Design/Clova_Inside.md#ClovaInsideRules)
+  * [Push to talkボタン](/Design/Screen.md#PushToTalkButton)
+    * [Push to talkボタンの色](/Design/Screen.md#PushToTalkButtonColor)
+    * [Push to talkボタンの表現](/Design/Screen.md#PushToTalkButtonPresentation)
+* [Clova inside](/Design/Clova_Inside.md)
+  * [Clova insideバッジ](/Design/Clova_Inside.md#ClovaInsideBadge)
+  * [Clova insideの色](/Design/Clova_Inside.md#ClovaInsideColor)
+  * [Clova insideの背景色](/Design/Clova_Inside.md#ClovaInsideBackgroundColor)
+  * [Clova insideに関するガイドライン](/Design/Clova_Inside.md#ClovaInsideRules)
 
 ## 開発
 
@@ -80,6 +83,7 @@
     * [ストリームのコンテキストを作成する](/Develop/Guides/Handle_Audio_Playback.md#BuildPlaybackStateContext)
   * [オーディオ再生状態を共有する](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 * [設定情報を処理する](/Develop/Guides/Handle_Settings.md)
+* [LINE MUSICに関する制限事項](/Develop/Guides/Restrictions_On_Line_Music.md)
 
 ### リファレンス
 

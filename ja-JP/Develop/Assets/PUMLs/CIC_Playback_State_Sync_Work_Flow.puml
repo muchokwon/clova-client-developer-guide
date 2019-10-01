@@ -1,49 +1,49 @@
 !include ../../../styles/PlantUML_StyleSheet.puml
 
-participant "Clova app" as ca #9EA0CA
-participant "Client device 1" as cli1 #9EA0CA
-participant "Client device 2" as cli2 #9EA0CA
+participant "Clovaアプリ" as ca #9EA0CA
+participant "クライアント 1" as cli1 #9EA0CA
+participant "クライアント 2" as cli2 #9EA0CA
 participant CIC as cic #05D686
 
 activate ca
-  ca ->> cic : Request playback state of clients
+  ca ->> cic : クライアントのオーディオ再生状態をリクエストする
 deactivate ca
 
 group Request state report
 
   activate cic
 
-    cic ->> cli1 : Forward AudioPlayer.ExpectReportPlaybackState directive\n(via downchannel)
+    cic ->> cli1 : AudioPlayer.ExpectReportPlaybackStateディレクティブを送信する\n(via downchannel)
     activate cli1
 
-    cic ->> cli2 : Forward AudioPlayer.ExpectReportPlaybackState directive\n(via downchannel)
+    cic ->> cli2 : AudioPlayer.ExpectReportPlaybackStateディレクティブを送信する\n(via downchannel)
     activate cli2
 
   deactivate cic
 
 end
 
-...After collecting playback state from clients...
+... クライアントから再生状態を収集した後 ...
 
 group Report state
 
-    cli2 ->> cic : Send AudioPlayer.ReportPlaybackState event\n(Reporting playback state)
+    cli2 ->> cic : AudioPlayer.ReportPlaybackStateイベントを送信する\n(再生状態をレポートする)
     deactivate cli2
   activate cic
 
-    cli1 ->> cic : Send AudioPlayer.ReportPlaybackState event\n(Reporting playback state)
+    cli1 ->> cic : AudioPlayer.ReportPlaybackStateイベントを送信する\n(再生状態をレポートする)
     deactivate cli1
 
 end
 
-    cic -> cic : Refine collected state
+    cic -> cic : 収集された状態を整理する
 
 group Synchronize state
 
-    cic ->> ca : Share playback state
+    cic ->> ca : 再生状態を共有する
     activate ca
 
-    ca -> ca : Update playback state of clients
+    ca -> ca : クライアントの再生状態を更新する
 
   deactivate cic
 

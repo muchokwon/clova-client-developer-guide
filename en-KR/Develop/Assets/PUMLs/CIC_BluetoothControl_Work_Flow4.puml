@@ -6,17 +6,17 @@ participant "Clova" as clova #05D686
 
 activate device
 activate client
-hnote over device, clova : Request to disable a Bluetooth device
+hnote over device, clova : Requests to disable a Bluetooth device
 activate clova
  alt Specific device assigned == Yes
-  clova -> client : DeviceControl.BtDisconnect (with payload)\nSend a directive message
+  clova -> client : DeviceControl.BtDisconnect (with payload)\nSends a directive message
  else Specific device assigned == No
-    clova -> client : DeviceControl.BtDisconnect (without payload)\nSend a directive message
+    clova -> client : DeviceControl.BtDisconnect (without payload)\nSends a directive message
 end
-  client -> device : Disconnect
+  client -> device : Disconnects
 deactivate device
-  client --> clova : DeviceControl.ActionExecuted (with DeviceState)\nSend an event message
-hnote over device, clova : Share the result of disabling the Bluetooth device
+  client --> clova : DeviceControl.ActionExecuted (with DeviceState)\nSends an event message
+hnote over device, clova : Shares the result of disabling the Bluetooth device
 deactivate client
 deactivate device
 deactivate clova

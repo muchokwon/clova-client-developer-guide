@@ -1,4 +1,4 @@
-# Clova auth API
+# Clova auth API reference
 To connect a client with CIC, you must [create a Clova access token](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken). The Clova authorization server provides the Clova auth API for you to create and manage Clova access tokens.
 
 ## Base URI
@@ -99,7 +99,7 @@ GET|POST /authorize
 
 {% endraw %}
 
-{% include "/Develop/References/ClovaAuthAPI/Guest_Mode.md" %}
+{% include "/Develop/References/CICAuthAPI/Guest_Mode.md" %}
 
 ### See also
 * [Client credentials](/Develop/Guides/Interact_with_CIC.md#ClientAuthInfo)

@@ -20,7 +20,7 @@ The ScheduleList template is used in providing information about multiple schedu
 | `scheduleList[].end`           | [DateTimeObject](/Develop/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/Develop/References/ContentTemplates/Shared_Objects.md#DateObject)  | The end date and time of this schedule. For an all-day schedule, the object type is DateObject containing the date of the schedule only. |
 | `scheduleList[].start`         | [DateTimeObject](/Develop/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/Develop/References/ContentTemplates/Shared_Objects.md#DateObject)  | The start date and time of this schedule. For an all-day schedule, the object type is DateObject containing the date of the schedule only. |
 | `scheduleList[].repeatDay[]`     | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the repeat day(s) for a weekly schedule. |
-| `scheduleList[].repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values of `value` field are: <ul><li>Empty string (<code>""</code>): One-time schedule </li><li><code>"daily"</code>: Daily schedule</li><li><code>"weekly"</code>: Weekly schedule</li></ul> |
+| `scheduleList[].repeatPeriod`  | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values are: <ul><li>Empty string (<code>""</code>): One-time schedule </li><li><code>"daily"</code>: Daily schedule</li><li><code>"weekly"</code>: Weekly schedule</li></ul> |
 | `scheduleList[].token`         | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of the schedule.  |
 | `type`        | string                                                                              | The type of this template. The value is always `"ScheduleList"`.             |
 
@@ -146,5 +146,5 @@ The following example shows how the ScheduleList template is used on the Clova a
 ![](/Develop/Assets/Images/Content_Template-ScheduleList.png)
 
 ## See also
-* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) interface
+* [Alerts](/Develop/References/CICInterface/Alerts.md) interface
 * [ScheduleList](/Develop/References/ContentTemplates/ScheduleList.md)

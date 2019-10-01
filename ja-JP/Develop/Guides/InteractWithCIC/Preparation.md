@@ -29,7 +29,7 @@ HTTP/2プロトコルで接続するために、クライアントを開発す�
   <p>HTTPヘッダーにUser-Agent文字列が含まれなかったり、ルールに合わないUser-Agent文字列を送信した場合、クライアントの接続やリクエストが拒否されることがあります。</p>
 </div>
 
-User-Agent文字列を作成する際、順守すべき文法（BNF記法）(https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form))は次の通りです。
+User-Agent文字列を作成する際、順守すべき文法（[BNF記法](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form)）は次の通りです。
 
 ```
 letter     = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M"

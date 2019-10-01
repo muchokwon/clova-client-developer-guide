@@ -2,7 +2,7 @@
 このドキュメントでは、Clova Interface Connect（以下、CIC）について説明します。このドキュメントから、CICとは何で、どのような仕組みで動作するかを知ることができます。また、ここではCICに関するガイドとリファレンスも提供されます。
 
 ## CICとは? {#WhatisCIC}
-CICは、AIアシスタントサービスを提供するパソコン・モバイルアプリ、モバイルデバイスまたは家電製品などのクライアントに、Clovaと連携できるインターフェースを提供するプラットフォームです。CICが提供する[API](/Develop/References/CIC_API.md)を使って、ユーザーのリクエストをClovaに送信し、CICを介して、Clovaからの応答をクライアントに提供します。
+CICは、AIアシスタントサービスを提供するコンピュータ/モバイルアプリ、モバイルデバイスまたは家電製品などのクライアントに、Clovaと連携できるインターフェースを提供するプラットフォームです。CICが提供する[API](/Develop/References/CIC_API.md)を使って、ユーザーのリクエストをClovaに送信し、CICを介して、Clovaからの応答をクライアントに提供します。
 
 ![](/Develop/Assets/Images/CIC_Interaction_Structure.png)
 

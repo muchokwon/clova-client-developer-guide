@@ -1,0 +1,47 @@
+!include ../../../styles/PlantUML_StyleSheet.puml
+
+participant "Clova app" as ca #9EA0CA
+participant "Client device 1" as cli1 #9EA0CA
+participant "Client device 2" as cli2 #9EA0CA
+participant CIC as cic #05D686
+
+activate ca
+  ca ->> cic : Send DeviceControl.RequestStateSynchronization event\n(Request to update the state of client device)
+deactivate ca
+
+group Request state report
+
+  activate cic
+
+    cic ->> cli1 : Send DeviceControl.ExpectReportState directive\n(Use Downchannel)
+    activate cli1
+
+    cic ->> cli2 : Send DeviceControl.ExpectReportState directive\n(Use Downchannel)
+  deactivate cic
+    activate cli2
+
+end
+
+...After collecting the client state...
+
+group Report state
+
+    cli2 ->> cic : Send DeviceControl.ReportState event\n(Report device state)
+    deactivate cli2
+  activate cic
+
+    cli1 ->> cic : Send DeviceControl.ReportState event\n(Report device state)
+    deactivate cli1
+
+end
+
+    cic -> cic : Organize the collected state
+group Synchronize state
+
+    cic ->> ca : Send DeviceControl.SynchronizeState directive\n(Use Downchannel)
+	deactivate cic
+    activate ca
+
+    ca -> ca : Update client device state
+
+end
