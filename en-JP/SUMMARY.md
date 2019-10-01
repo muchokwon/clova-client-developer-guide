@@ -24,7 +24,7 @@
   * [Logo display](/Design/Screen.md#DisplayingLogo)
   * [Green Dot VUI](/Design/Screen.md#GreenDotVUI)
     * [Green Dot VUI color](/Design/Screen.md#GreenDotVUIColor)
-    * [Green Dot VUI motions](/Design/Screen.md#GreenDotVUIMotions)
+    * [Green Dot VUI motion](/Design/Screen.md#GreenDotVUIMotions)
   * [Push to talk button](/Design/Screen.md#PushToTalkButton)
     * [Push to talk button color](/Design/Screen.md#PushToTalkButtonColor)
     * [Push to talk button presentation](/Design/Screen.md#PushToTalkButtonPresentation)  
