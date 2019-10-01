@@ -150,7 +150,7 @@ The Push to talk button presentation must be expressed according to a user actio
 
 | Microphone state | Rules    | UI Motion |
 | :--------------: | -------- | --------- |
-| Available        | <ul><li>If the client state is **Idle**, the Push to talk button UI should be displayed on the client device's screen.</li><li>If the user touches the Push to talk button, the Green Dot VUI must be activated.</li><li> After processing the user utterances and the Green Dot VUI motion finished, back to Push to talk button UI.</li></ul> | ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Presentation.gif) |
+| Available        | <ul><li>If the client state is <strong>Idle</strong>, the Push to talk button UI should be displayed on the client device's screen.</li><li>If the user touches the Push to talk button, the Green Dot VUI must be activated.</li><li> After processing the user utterances and the Green Dot VUI motion finished, back to Push to talk button UI.</li></ul> | ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Presentation.gif) |
 | Unavailable      | <ul><li>Push to talk button UI must be grayed out.</li></ul> | ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute_Presentation.png) |
 
 <div class="note">
