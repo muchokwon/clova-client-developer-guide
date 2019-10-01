@@ -1,4 +1,4 @@
-# Clova inside {#ClovaInside}
+# Clova inside
 Clova inside는 특정 제품에 Clova의 기술이 탑재되었음을 알려주는 브랜드 요소입니다. 적용 매체와 환경의 특성을 파악하여 인쇄 매체와 같은 표현물에 Clova inside가 제대로 표시되도록 해야 합니다.
 
 이를 위해 다음과 같은 내용을 설명합니다.
