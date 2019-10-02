@@ -172,7 +172,7 @@ The revision history of this document is as follows:
       <td>2018-07-23</td>
       <td>
         <ul>
-          <li>Updated the sound effect of entering the attending state among the <a href="/Design/Audio.md#SoundEffect">sound effects</a> of the Design guidelines</li>
+          <li>Updated the sound effect of entering the attending state among the <a href="/Design/Sound.md#SoundEffect">sound effects</a> of the Design guidelines</li>
           <li>Added 423 Locked status code to the section on <a href="/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode">Requesting an authorization code</a> under <a href="/Develop/References/Clova_Auth_API.md">CIC auth API</a></li>
         </ul>
       </td>
@@ -276,7 +276,7 @@ The revision history of this document is as follows:
         <ul>
           <li>Revised the description of the initiator field of the <a href="/Develop/References/CICInterface/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> event message</li>
           <li>Modified the name of the hearing state to listening state in the client states of the <a href="/Design/Screen.md#GreenDotVUI">Green Dot VUI</a></li>
-          <li>Added Feedback type in the audio content type and description on rules in the <a href="/Design/Audio.md">Audio</a> section of the Design guidelines</li>
+          <li>Added Feedback type in the audio content type and description on rules in the <a href="/Design/Sound.md">Audio</a> section of the Design guidelines</li>
         </ul>
       </td>
     </tr>
@@ -314,7 +314,7 @@ The revision history of this document is as follows:
       <td>2018-01-29</td>
       <td>
         <ul>
-          <li>Added <a href="/Design/Audio.md#SoundEffect">sound effects for reminders</a> in the Design guidelines</li>
+          <li>Added <a href="/Design/Sound.md#SoundEffect">sound effects for reminders</a> in the Design guidelines</li>
           <li>Added the <a href="/Develop/References/CICInterface/Notifier.md#Notify">Notifier.Notify</a> event message to the <a href="/Develop/References/CICInterface/Notifier.md">Notifier</a> namespace and updated the payload field of the namespace</li>
           <li>Added <a href="/Develop/References/CICInterface/SpeechSynthesizer.md#SpeechFinished">SpeechFinished</a>, <a href="/Develop/References/CICInterface/SpeechSynthesizer.md#SpeechStarted">SpeechStarted</a>, and <a href="/Develop/References/CICInterface/SpeechSynthesizer.md#SpeechStopped">SpeechStopped</a> event messages to the <a href="/Develop/References/Context_Objects.md#SpeechState">SpeechSynthesizer.SpeechState</a> and <a href="/Develop/References/CICInterface/SpeechSynthesizer.md">SpeechSynthesizer</a> namespaces</li>
           <li>Added speechId and explicit fields to the <a href="/Develop/References/CICInterface/TextRecognizer.md">TextRecognizer.Recognize</a> event message for multi-turn dialogues</li>
@@ -325,7 +325,7 @@ The revision history of this document is as follows:
       <td>2018-01-22</td>
       <td>
         <ul>
-          <li>Added a separate section on supported audio compression formats respectively in the <a href="/Design/Audio.md#SupportedAudioCompressionFormat">Design guidelines for client devices</a> and <a href="{{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI}}/Design/Design_Guideline_For_Extension.html#SupportedAudioCompressionFormat">Design guidelines for extensions</a></li>
+          <li>Added a separate section on supported audio compression formats respectively in the <a href="/Design/Sound.md#SupportedAudioCompressionFormat">Design guidelines for client devices</a> and <a href="{{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI}}/Design/Design_Guideline_For_Extension.html#SupportedAudioCompressionFormat">Design guidelines for extensions</a></li>
           <li>Changed the image format of the UML diagram</li>
         </ul>
       </td>
@@ -334,7 +334,7 @@ The revision history of this document is as follows:
       <td>2018-01-15</td>
       <td>
         <ul>
-          <li>Added guideline descriptions on <a href="/Design/Light.md">light</a> and <a href="/Design/Audio.md#SoundEffect">sound effects</a> for alarms, reminders, and timers to the Design guidelines</li>
+          <li>Added guideline descriptions on <a href="/Design/Light.md">light</a> and <a href="/Design/Sound.md#SoundEffect">sound effects</a> for alarms, reminders, and timers to the Design guidelines</li>
         </ul>
       </td>
     </tr>
@@ -381,7 +381,7 @@ The revision history of this document is as follows:
       <td>2017-12-04</td>
       <td>
         <ul>
-          <li>Added <a href="/Design/Audio.md#AudioInterruptionRule">audio interruption rules</a> to the Design guidelines</li>
+          <li>Added <a href="/Design/Sound.md#AudioInterruptionRule">audio interruption rules</a> to the Design guidelines</li>
           <li>Improved the images in Design guidelines</li>
           <li>Added the section on <a href="/Develop/Guides/Interact_with_CIC.md#UserAgentString">user-agent strings</a> for prerequisites before interacting with CIC</li>
           <li>Added the description of the 412 Precondition failed code in the <a href="/Develop/References/CIC_API.md#SendEvent">Sending event messages</a> section of the <a href="/Develop/References/CIC_API.md">CIC API reference</a></li>
