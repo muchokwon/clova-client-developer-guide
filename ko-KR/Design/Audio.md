@@ -1,6 +1,6 @@
 <!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
 
-# 소리
+# 오디오
 
 클라이언트 기기에서 오디오 콘텐츠, 효과음 등을 출력할 때 어떤 사항을 지켜야 하는지 설명합니다.
 
