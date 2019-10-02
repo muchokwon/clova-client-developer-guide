@@ -1,6 +1,6 @@
 <!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
 
-# サウンド
+# オーディオ
 
 クライアントデバイスでオーディオコンテンツ、効果音などを出力する際に順守するべき内容を説明します。
 
