@@ -94,7 +94,7 @@ Green Dot VUIのUI表現はアクションごとに異なります。以下の�
 
 ユーザーの動作や[クライアントの状態](/Design/Client_State_And_Event.md)遷移に応じてGreen Dot VUIの動作を表現する必要があります。以下では、状態ごとにGreen Dot VUIを表現するルールを説明します。
 
-* ユーザーがウェイクワードを言ったり、ボタンを押して**Attending**状態に入ると、**準備**モーションを再生します。
+* ユーザーがウェイクワードを言ったり、ボタンを押したりしてクライアントが**Attending**状態に入ると、**準備**モーションを再生します。
 * **準備**モーションを1回再生し、マイクからユーザーの音声入力が実際に開始されるまで**待機**モーションを繰り返して再生します。
 * ユーザーの音声入力が開始され、クライアントが**Listening**状態に入ると、ユーザーの音声入力が終了するまで**聞き取り**モーションをループ再生します。
 * ユーザーの入力が終了し、クライアントが**Processing & reporting**状態に入ると、応答を出力するか、結果画面を表示するまで**解析/処理**モーションを繰り返して再生します。
@@ -147,19 +147,12 @@ Push to talkボタンは、[Green Dot VUI](#GreenDotVUI)をアクティブにす
 
 ### Push to talkボタンの表現 {#PushToTalkButtonPresentation}
 
-ユーザーの動作や[クライアントの状態](/Design/Client_State_And_Event.md)遷移に応じてPush to talkボタンの動作を表現する必要があります。以下では、状態ごとにPush to talkボタンを表現するルールを説明します。
+ユーザーの動作や[クライアントの状態](/Design/Client_State_And_Event.md)遷移に応じてPush to talkボタンの動作を表現する必要があります。ここでは、マイクの状態ごとにPush to talkボタンを表現するルールを説明します。
 
-* クライアントデバイスのマイクが有効な場合:
-  - Idle状態のときにPush to talkボタンを表示します。
-  - ユーザーがPush to talkボタンを押すと、Green Dot VUIがアクティブになります。
-  - ユーザーの音声入力を処理してGreen Dot VUIのモーションが完了すると、Push to talkボタンの表示に戻ります。
-
-![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Presentation.gif)
-
-* クライアントデバイスのマイクが無効、またはミュート状態の場合:
-  - Idle状態のときにグレーアウトのUIを表示します。
-
-![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute_Presentation.png)
+| マイクの状態 | ルール    | UIモーション（Motion） |
+| :--------------: | -------- | --------- |
+| 有効        | Push to talk buttonを次のように表示します: <ul><li>クライアントが<strong>Idle</strong>状態のときにPush to talkボタンを表示します。</li><li>ユーザーがPush to talkボタンを押すと、Green Dot VUIがアクティブになります。</li><li>ユーザーの音声入力を処理してGreen Dot VUIのモーションが完了すると、Push to talkボタンの表示に戻ります。</li></ul> | ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Presentation.gif) |
+| 無効またはミュート状態     | Push to talk buttonをグレーアウト状態で表示します | ![](/Design/Assets/Images/Clova-Client-Push_To_Talk_Button_Mute_Presentation.png) |
 
 <div class="note">
   <p><strong>メモ</strong></p>
