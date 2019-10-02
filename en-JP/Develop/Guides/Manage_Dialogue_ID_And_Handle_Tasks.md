@@ -27,7 +27,7 @@ The following actions are required by the client regarding the dialogue IDs:
 
 Once the latest dialogue ID is updated, the client must perform the following in order to [handle the directive messages containing the dialogue ID](#HandleDirectivesByDialogueID):
 
-* If the details containing old dialogue IDs are provided to the user, this must be stopped by referring to the [Rules for basic audio playback](/Design/Sound.md#AudioInterruptionRule) or [Audio playback rules for user utterances](/Design/Sound.md#AudioInterruptionRuleForUserUtterance).
+* If the details containing old dialogue IDs are provided to the user, this must be stopped by referring to the [Rules for basic audio playback](/Design/Audio.md#AudioInterruptionRule) or [Audio playback rules for user utterances](/Design/Audio.md#AudioInterruptionRuleForUserUtterance).
 * All directive messages containing old dialogue IDs must be discarded from the [message queue](/Develop/Guides/Interact_with_CIC.md#ManageMessageQ).
 
 ### Handling directive messages by dialogue ID {#HandleDirectivesByDialogueID}

@@ -24,7 +24,7 @@
           <li><a href="/Develop/CIC_Overview.md#WhatisCIC">CICとは?</a></li>
           <li><a href="/Develop/CIC_Overview.md#IndirectDialogue">間接ダイアログ</a></li>
           <li><a href="/Design/Client_State_And_Event.md">クライアントの状態とイベント</a></li>
-          <li><a href="/Design/Button.md">ボタン</a>、<a href="/Design/Light.md">ランプ</a>、<a href="/Design/Sound.md">サウンド</a>、<a href="/Design/Screen.md">画面</a>、<a href="/Design/Clova_Inside.md">Clovaインサイド</a>のガイドライン</li>
+          <li><a href="/Design/Button.md">ボタン</a>、<a href="/Design/Light.md">ランプ</a>、<a href="/Design/Audio.md">オーディオ</a>、<a href="/Design/Screen.md">画面</a>、<a href="/Design/Clova_Inside.md">Clovaインサイド</a>のガイドライン</li>
         </ul>
       </td>
     </tr>
