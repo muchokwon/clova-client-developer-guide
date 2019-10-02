@@ -15,7 +15,7 @@
 | Error                  | 시스템 오류가 발생한 상태                                                |
 | Mute on                | 마이크 음소거를 설정한 상태                                               |
 
-위에서 언급된 상태는 [조명](/Design/Light.md), [효과음](/Design/Sound.md#SoundEffect), [화면](/Design/Screen.md) 등을 통해 표현될 수 있으며, 상태 사이의 전이 동작은 사용자의 음성이나 [버튼](/Design/Button.md) 조작, 환경 요인 등으로 실행되거나 발현될 수 있습니다.
+위에서 언급된 상태는 [조명](/Design/Light.md), [효과음](/Design/Audio.md#SoundEffect), [화면](/Design/Screen.md) 등을 통해 표현될 수 있으며, 상태 사이의 전이 동작은 사용자의 음성이나 [버튼](/Design/Button.md) 조작, 환경 요인 등으로 실행되거나 발현될 수 있습니다.
 
 또한, 클라이언트에서 다음과 같은 이벤트가 발생할 수 있으며, 이 이벤트도 소리나 조명으로 표현해야 합니다.
 
