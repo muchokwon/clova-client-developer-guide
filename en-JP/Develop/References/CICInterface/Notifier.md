@@ -95,7 +95,7 @@ This directive is sent through a [downchannel](/Develop/Guides/Interact_with_CIC
 ### See also
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.SetIndicator`](#SetIndicator)
-* [Audio](/Design/Audio.md)
+* [Sound](/Design/Sound.md)
 * [Lights](/Design/Light.md)
 
 ## SetIndicator directive {#SetIndicator}
@@ -144,5 +144,5 @@ This directive is sent through a [downchannel](/Develop/Guides/Interact_with_CIC
 ### See also
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.Notify`](#Notify)
-* [Audio](/Design/Audio.md)
+* [Sound](/Design/Sound.md)
 * [Lights](/Design/Light.md)

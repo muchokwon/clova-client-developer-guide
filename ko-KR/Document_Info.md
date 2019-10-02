@@ -41,8 +41,8 @@
       <td>2019-08-05</td>
       <td>
         <ul>
-          <li>클라이언트 기기 디자인 가이드라인 문서를 <a href="/Design/Client_State_And_Event.md">클라이언트 상태와 이벤트</a>, <a href="/Design/Button.md">버튼</a>, <a href="/Design/Light.md">조명</a>, <a href="/Design/Sound.md">소리</a>, <a href="/Design/Screen.md">화면</a>, <a href="/Design/Clova_Inside.md">Clova inside</a> 페이지로 분리함</li>
-          <li><a href="/Design/Sound.md#SupportedAudioFormat">플랫폼 지원 오디오 포맷</a> 내용에 Clova가 지원하는 컨테이너 포맷 추가</li>
+          <li>클라이언트 기기 디자인 가이드라인 문서를 <a href="/Design/Client_State_And_Event.md">클라이언트 상태와 이벤트</a>, <a href="/Design/Button.md">버튼</a>, <a href="/Design/Light.md">조명</a>, <a href="/Design/Audio.md">소리</a>, <a href="/Design/Screen.md">화면</a>, <a href="/Design/Clova_Inside.md">Clova inside</a> 페이지로 분리함</li>
+          <li><a href="/Design/Audio.md#SupportedAudioFormat">플랫폼 지원 오디오 포맷</a> 내용에 Clova가 지원하는 컨테이너 포맷 추가</li>
         </ul>
       </td>
     </tr>
@@ -51,7 +51,7 @@
       <td>
         <ul>
           <li>미디어 재생의 제어 대상을 지정하기 위해 <a href="/Develop/References/MessageInterfaces/PlaybackController.md">PlaybackController</a> 네임스페이스의 <a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectNextCommand">ExpectNextCommand</a>, <a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectPauseCommand">ExpectPauseCommand</a>, <a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectPreviousCommand">ExpectPreviousCommand</a>, <a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectResumeCommand">ExpectResumeCommand</a>, <a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectStopCommand">ExpectStopCommand</a>, <a href="/Develop/References/MessageInterfaces/PlaybackController.md#Pause">Pause</a>, <a href="/Develop/References/MessageInterfaces/PlaybackController.md#Resume">Resume</a>, <a href="/Develop/References/MessageInterfaces/PlaybackController.md#Stop">Stop</a> 지시 메시지에 target과 target.namespace 필드를 추가함</li>
-          <li><a href="/Design/Sound.md#SoundEffect">디자인 가이드라인의 효과음</a> 항목에서 Attending 상태 진입 효과음 출력을 필수가 아닌 선택으로 수정</li>
+          <li><a href="/Design/Audio.md#SoundEffect">디자인 가이드라인의 효과음</a> 항목에서 Attending 상태 진입 효과음 출력을 필수가 아닌 선택으로 수정</li>
           <li>디자인 가이드라인에 <a href="/Design/Clova_Inside.md">Clova inside</a> 관련 내용 추가</li>
           <li>Clova developer guide에서 Clova client guide 문서로 분리됨</li>
           <li>일부 문서 오류 수정</li>
@@ -109,7 +109,7 @@
       <td>2019-04-19</td>
       <td>
         <ul>
-          <li>디자인 가이드라인의 <a href="/Design/Sound.md#AudioInterruptionRule">기본 오디오 재생 규칙</a>에서 오디오 콘텐츠를 구분할 수 있도록 각 오디오 콘텐츠 타입에 관련된 CIC API 네임스페이스를 추가</li>
+          <li>디자인 가이드라인의 <a href="/Design/Audio.md#AudioInterruptionRule">기본 오디오 재생 규칙</a>에서 오디오 콘텐츠를 구분할 수 있도록 각 오디오 콘텐츠 타입에 관련된 CIC API 네임스페이스를 추가</li>
         </ul>
       </td>
     </tr>
@@ -292,7 +292,7 @@
       <td>2018-07-23</td>
       <td>
         <ul>
-          <li>디자인 가이드라인의 <a href="/Design/Sound.md#SoundEffect">효과음</a> 중 Attending 상태 진입에 대한 효과음 업데이트</li>
+          <li>디자인 가이드라인의 <a href="/Design/Audio.md#SoundEffect">효과음</a> 중 Attending 상태 진입에 대한 효과음 업데이트</li>
           <li><a href="/Develop/References/Clova_Auth_API.md">CIC 인증 API</a>의 <a href="/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode">Authorization code 요청</a> 설명에 423 Locked 상태 코드 추가</li>
         </ul>
       </td>
@@ -398,7 +398,7 @@
         <ul>
           <li><a  href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지 initiator 필드의 설명을 수정</li>
           <li>디자인 가이드라인에서 클라이언트 상태 중 Hearing 상태의 이름을 Listening으로 수정</li>
-          <li>클라이언트 기기 디자인 가이드라인의 <a href="/Design/Sound.md">소리</a>에서 오디오 콘텐츠 타입으로 Feedback 타입을 추가하고 설명에 관련 규칙을 추가</li>
+          <li>클라이언트 기기 디자인 가이드라인의 <a href="/Design/Audio.md">소리</a>에서 오디오 콘텐츠 타입으로 Feedback 타입을 추가하고 설명에 관련 규칙을 추가</li>
         </ul>
       </td>
     </tr>
@@ -436,7 +436,7 @@
       <td>2018-01-29</td>
       <td>
         <ul>
-          <li>디자인 가이드라인에 <a href="/Design/Sound.md#SoundEffect">Reminder용 효과음</a> 추가</li>
+          <li>디자인 가이드라인에 <a href="/Design/Audio.md#SoundEffect">Reminder용 효과음</a> 추가</li>
           <li><a href="/Develop/References/MessageInterfaces/Notifier.md">Notifier</a> 네임스페이스에 <a href="/Develop/References/MessageInterfaces/Notifier.md#Notify">Notifier.Notify</a> 이벤트 메시지 추가 및 해당 네임스페이스 메시지의 payload 필드 업데이트</li>
           <li><a href="/Develop/References/Context_Objects.md#SpeechState">SpeechSynthesizer.SpeechState</a> 및 <a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md">SpeechSynthesizer</a> 네임스페이스에 <a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md#SpeechFinished">SpeechFinished</a>, <a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md#SpeechStarted">SpeechStarted</a>, <a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md#SpeechStopped">SpeechStopped</a> 이벤트 메시지 추가</li>
           <li>Multi-turn 대화를 위해 <a href="/Develop/References/MessageInterfaces/TextRecognizer.md">TextRecognizer.Recognize</a> 이벤트 메시지에 speechId, explicit 필드 추가</li>
@@ -448,7 +448,7 @@
       <td>2018-01-22</td>
       <td>
         <ul>
-          <li><a href="/Design/Sound.md#SupportedAudioFormat">플랫폼 지원 오디오 포맷</a>을 디자인 가이드라인에 추가</li>
+          <li><a href="/Design/Audio.md#SupportedAudioFormat">플랫폼 지원 오디오 포맷</a>을 디자인 가이드라인에 추가</li>
           <li>UML 다이어그램의 이미지 포맷 변경</li>
         </ul>
       </td>
@@ -504,7 +504,7 @@
       <td>2017-12-04</td>
       <td>
         <ul>
-          <li><a href="/Design/Sound.md#AudioInterruptionRule">오디오 재생 규칙(audio interruption rule)</a>을 디자인 가이드라인에 추가</li>
+          <li><a href="/Design/Audio.md#AudioInterruptionRule">오디오 재생 규칙(audio interruption rule)</a>을 디자인 가이드라인에 추가</li>
           <li>디자인 가이드라인의 이미지 개선</li>
           <li>CIC 연동하기의 사전 준비사항에 <a href="/Develop/Guides/Interact_with_CIC.md#UserAgentString">User-Agent string</a>을 추가</li>
           <li><a href="/Develop/References/CIC_API.md">CIC API</a>의 <a href="/Develop/References/CIC_API.md#SendEvent">이벤트 메시지 전송</a> 절에 412 Precondition Failed 상태 코드 설명 추가</li>
