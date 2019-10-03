@@ -117,11 +117,11 @@ Music、Radio、Picture book、Song、Sound Effectなどのドメインで使用
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
-| ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Media_Player_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Media_Playert_Dark.png) |
+| ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Media_Player_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Media_Player_Dark.png) |
 
 #### 次の項目も参照してください。
 * [コンテンツテンプレート](/Develop/References/Content_Templates.md)
-* [TemplateRuntime](/Develop/References/CICInterface/TemplateRuntime.md)
+* [TemplateRuntime](/Develop/References/MessageInterfaces/TemplateRuntime.md)
 
 ### Plain {#Plain}
 
