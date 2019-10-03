@@ -28,6 +28,7 @@
   * [Push to talkボタン](/Design/Screen.md#PushToTalkButton)
     * [Push to talkボタンの色](/Design/Screen.md#PushToTalkButtonColor)
     * [Push to talkボタンの表現](/Design/Screen.md#PushToTalkButtonPresentation)
+  * [フルスクリーン表示のためのデザインガイド](/Design/Full_Screen_Design_Guides.md)
 * [Clova inside](/Design/Clova_Inside.md)
   * [Clova insideバッジ](/Design/Clova_Inside.md#ClovaInsideBadge)
   * [Clova insideの色](/Design/Clova_Inside.md#ClovaInsideColor)
