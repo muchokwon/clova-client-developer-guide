@@ -18,8 +18,6 @@
 | `mainText`               | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | メインテキストを持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。                                     |
 | `motionCode`             | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | アクションが定義されたコード。アクションコードを利用して、クライアントであらかじめ定義されたアクションを実行することができます。クライアントにアクションを表現する機能がない場合、このコードを無視します。<div class="note"><p><strong>メモ</strong></p><p>アクションコードの仕様の詳細は、関連する提携担当者までお問い合わせください。</p></div> |
 | `paragraphText`          | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | パラグラフのテキストを持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。                                |
-| `provider.logoUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)       | 参照したサービスのロゴ画像のURIを持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。  |
-| `provider.name`          | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 参照したサービスの名称のテキストを持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。  |
 | `referenceText`          | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 参照したサービスの情報を持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。  |
 | `referenceUrl`           | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)       | 参照したサービスの利用結果ページのURIを持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。   |
 | `sentenceText`           | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 文章のテキストを持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。                                |
