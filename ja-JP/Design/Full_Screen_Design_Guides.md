@@ -1,12 +1,17 @@
 # フルスクリーン表示のためのデザインガイド {#FullScreenDesignGuides}
 
-ディスプレイを持つクライアントデバイスでコンテンツを表示する場合には、ドメインごとに使用を推奨する[コンテンツテンプレート](/Develop/References/Content_Templates.md)が決められています。また、テキストの推奨フォントファミリーが指定されています。
+ディスプレイを持つクライアントデバイスでコンテンツを表示する場合には、ドメインごとに使用を推奨する[コンテンツテンプレート](/Develop/References/Content_Templates.md)があります。また、テキストの推奨フォントファミリーが指定されています。
 
 ここでは、テレビなどのディスプレイ装置でフルスクリーン表示を行う場合のフォントやレイアウトについて説明します。
 
 * [フォント](#fonts)
-* [推奨するコンテンツテンプレート](#ContentTemplates)
-* [適用例](#ApplicationsByDomains)
+* [コンテンツテンプレート](#ContentTemplates)
+  - [Text](#Text)
+  - [ImageText](#ImageText)
+  - [CardList](#CardList)
+  - [Weather](#Weather)
+  - [Media Player](#MediaPlayer)
+  - [Plain](#Plain)
 
 <div class="note">
   <p><strong>メモ</strong></p>
@@ -15,7 +20,7 @@
 
 ## フォント {#fonts}
 
-推奨するフォントファミリーは次のとおりです。
+クライアントデバイスでテキストを表示する際の推奨フォントファミリーは次のとおりです。
 
 | ウェイト   | 英数字・記号     | 日本語  |
 | ---------- | ---------------- | ------- |
@@ -23,7 +28,7 @@
 | Bold       | Calibre Medium   | 新ゴ DB |
 | Extra bold | Calibre Semibold | 新ゴ DB |
 
-## 推奨するコンテンツテンプレート {#ContentTemplates}
+## コンテンツテンプレート {#ContentTemplates}
 
 コンテンツテンプレートは、CICから送信されるコンテンツ情報をカテゴリごとに定型化したものです。フルスクリーン表示を行う場合は、ドメインごと推奨するコンテンツテンプレートが指定されています。コンテンツテンプレートとドメインの組み合わせの例は次のとおりです。
 
@@ -36,16 +41,7 @@
 | [Media Player](#MediaPlayer) | <ul><li>Music</li><li>Radio</li><li>Picture book</li><li>Song</li><li>Sound Effect</li></ul> |
 | [Plain](#Plain)              | その他のドメイン                                             |
 
-## 適用例 {#ApplicationsByDomains}
-
-コンテンツテンプレートの適用例を
-
-* [Text](#Text)
-* [ImageText](#ImageText)
-* [CardList](#CardList)
-* [Weather](#Weather)
-* [Media Player](#MediaPlayer)
-* [Plain](#Plain)
+以下は、テンプレートごとの適用例です。
 
 ### Text {#Text}
 
@@ -53,11 +49,21 @@ Textテンプレートは、画面に表示するテキストデータを提供�
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
-| ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Dark.png) |
+| <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Dark.png" width="450"> |
+
+#### UI example
+
+![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Example.png)
+
+| <!-- --> | フィールド名 | データ型 | 説明 |
+| -------- | ------------ | -------- | ---- |
+| 1        | `mainText`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | メインテキストを持つオブジェクト |
+| 2        | `paragraphText` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | パラグラフのテキストを持つオブジェクト |
+| 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li>`provider.logoUrl`：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li>`provider.name`：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
 
 <div class="warning">
   <p><strong>注意</strong></p>
-  <p>ResponseにWikipediaのロゴが含まれる場合は、ロゴの表示は必須です。</p>
+  <p>レスポンスにWikipediaのロゴ画像が含まれる場合は、ロゴの表示は必須です。</p>
 </div>
 
 #### 次の項目も参照してください。
@@ -70,17 +76,26 @@ ImageTextテンプレートは、画面に表示する画像とテキストデ�
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
-| ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_ImageText_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_ImageText_Dark.png) |
+| <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_ImageText_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_ImageText_Dark.png" width="450"> |
+
+#### UI example
+
+![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_ImageText_Example.png)
+
+| <!-- --> | フィールド名 | データ型 | 説明 |
+| -------- | ------------ | -------- | ---- |
+| 1        | `mainText`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | メインテキストを持つオブジェクト |
+| 2        | `paragraphText` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | パラグラフのテキストを持つオブジェクト |
+| 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li>`provider.logoUrl`：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li>`provider.name`：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
 
 <div class="warning">
   <p><strong>注意</strong></p>
-  <p>ResponseにWikipediaのロゴが含まれる場合は、ロゴの表示は必須です。</p>
+  <p>レスポンスにWikipediaのロゴ画像が含まれる場合は、ロゴの表示は必須です。</p>
 </div>
 
 #### 次の項目も参照してください。
 * [コンテンツテンプレート](/Develop/References/Content_Templates.md)
 * [ImageText](/Develop/References/ContentTemplates/ImageText.md)
-
 
 ### CardList {#CardList}
 
@@ -90,6 +105,10 @@ CardListテンプレートは、画面にカードリスト形式で表現され
 | -------------- | ------------ |
 | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_CardList_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_CardList_Dark.png) |
 
+| ノーマルモード | ダークモード |
+| -------------- | ------------ |
+| <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Dark.png" width="450"> |
+
 #### 次の項目も参照してください。
 * [コンテンツテンプレート](/Develop/References/Content_Templates.md)
 * [CardList](/Develop/References/ContentTemplates/CardList.md)
@@ -98,8 +117,8 @@ CardListテンプレートは、画面にカードリスト形式で表現され
 
 Weatherテンプレートは、天気情報を提供するテンプレートです。現在の天気（[TodayWeather](/Develop/References/ContentTemplates/TodayWeather.md)）、1日の天気予報（[TomorrowWeather](/Develop/References/ContentTemplates/TomorrowWeather.md)）、1週間の天気予報（[WeeklyWeather](/Develop/References/ContentTemplates/WeeklyWeather.md)）の適用例は次のとおりです。
 
-| ノーマルモード | ダークモード |
-| -------------- | ------------ |
+| <!-- --> | ノーマルモード | ダークモード |
+| -------- | -------------- | ------------ |
 | 現在の天気     | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Current_Weather_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Current_Weather_Dark.png) |
 | 1日の予報 | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Daily_Forcast_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Daily_Forcast_Dark.png) |
 | 複数日の予報 | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Multi_Day_Forcast_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Multi_Day_Forcast_Dark.png) |
@@ -119,6 +138,10 @@ Music、Radio、Picture book、Song、Sound Effectなどのドメインで使用
 | -------------- | ------------ |
 | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Media_Player_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Media_Player_Dark.png) |
 
+| ノーマルモード | ダークモード |
+| -------------- | ------------ |
+| <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Dark.png" width="450"> |
+
 #### 次の項目も参照してください。
 * [コンテンツテンプレート](/Develop/References/Content_Templates.md)
 * [TemplateRuntime](/Develop/References/MessageInterfaces/TemplateRuntime.md)
@@ -130,6 +153,10 @@ Plainテンプレートは、前述のドメインに当てはまらない場合
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
 | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Plain_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Plain_Dark.png) |
+
+| ノーマルモード | ダークモード |
+| -------------- | ------------ |
+| <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Dark.png" width="450"> |
 
 #### 次の項目も参照してください。
 * [コンテンツテンプレート](/Develop/References/Content_Templates.md)
