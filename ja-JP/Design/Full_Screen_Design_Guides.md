@@ -1,11 +1,11 @@
 # フルスクリーン表示のためのデザインガイド {#FullScreenDesignGuides}
 
-ディスプレイを持つクライアントデバイスでコンテンツを表示する場合には、ドメインごとに使用を推奨する[コンテンツテンプレート](/Develop/References/Content_Templates.md)があります。また、テキストの推奨フォントファミリーが指定されています。
+ディスプレイを持つクライアントデバイスでコンテンツを表示する場合には、ドメインごとに使用を推奨する[デザインテンプレート](/Develop/References/Content_Templates.md)があります。また、テキストの推奨フォントファミリーが指定されています。
 
 ここでは、テレビなどのディスプレイ装置でフルスクリーン表示を行う場合のフォントやレイアウトについて説明します。
 
 * [フォント](#fonts)
-* [コンテンツテンプレート](#ContentTemplates)
+* [デザインテンプレート](#DesignTemplates)
   - [Text](#Text)
   - [ImageText](#ImageText)
   - [CardList](#CardList)
@@ -28,11 +28,11 @@
 | Bold       | Calibre Medium   | 新ゴ DB |
 | Extra bold | Calibre Semibold | 新ゴ DB |
 
-## コンテンツテンプレート {#ContentTemplates}
+## デザインテンプレート {#DesignTemplates}
 
-コンテンツテンプレートは、CICから送信されるコンテンツ情報をカテゴリごとに定型化したものです。フルスクリーン表示を行う場合は、ドメインごと推奨するコンテンツテンプレートが指定されています。コンテンツテンプレートとドメインの組み合わせの例は次のとおりです。
+デザインテンプレートとは、CICから送信されるコンテンツ情報をカテゴリごとに定型化した[コンテンツテンプレート](/Develop/References/Content_Templates.md)と、コンテンツテンプレートのどのフィールドを使用してレイアウトするかをあらかじめルール化したものです。デザインテンプレートとドメインの組み合わせの例は次のとおりです。
 
-| コンテンツテンプレート名     | 使用を推奨するドメイン                                       |
+| デザインテンプレート名       | 使用を推奨するドメイン                                       |
 | ---------------------------- | ------------------------------------------------------------ |
 | [Text](#Text)                | <ul><li>Answering Engine</li><li>Calendar</li><li>Chat</li><li>Train info</li><li>Translation</li></ul> |
 | [ImageText](#ImageText)      | <ul><li>Answering Engine</li><li>Fortune</li></ul>           |
@@ -41,11 +41,11 @@
 | [Media Player](#MediaPlayer) | <ul><li>Music</li><li>Radio</li><li>Picture book</li><li>Song</li><li>Sound Effect</li></ul> |
 | [Plain](#Plain)              | その他のドメイン                                             |
 
-以下は、テンプレートごとの適用例です。
+以下は、各デザインテンプレートの適用例です。
 
 ### Text {#Text}
 
-Textテンプレートは、画面に表示するテキストデータを提供するテンプレートです。フルスクリーン表示を行う場合は、Answering Engine、Calendar、Chat、Train info、Translationなどのドメインで使用されます。
+Textは、画面に表示するテキストデータを提供するデザインテンプレートです。Answering Engine、Calendar、Chat、Train info、Translationなどのドメインで使用されます。
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
@@ -68,11 +68,11 @@ Textテンプレートは、画面に表示するテキストデータを提供�
 
 #### 次の項目も参照してください。
 * [コンテンツテンプレート](/Develop/References/Content_Templates.md)
-* [Text](/Develop/References/ContentTemplates/Text.md)
+* [Textテンプレート](/Develop/References/ContentTemplates/Text.md)
 
 ### ImageText {#ImageText}
 
-ImageTextテンプレートは、画面に表示する画像とテキストデータを一緒に提供するテンプレートです。フルスクリーン表示を行う場合は、Answering Engine、Fortuneなどのドメインで使用されます。
+ImageTextは、画面に表示する画像とテキストデータを一緒に提供するデザインテンプレートです。Answering Engine、Fortuneなどのドメインで使用されます。
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
@@ -87,6 +87,7 @@ ImageTextテンプレートは、画面に表示する画像とテキストデ�
 | 1        | `mainText`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | メインテキストを持つオブジェクト |
 | 2        | `paragraphText` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | パラグラフのテキストを持つオブジェクト |
 | 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li>`provider.logoUrl`：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li>`provider.name`：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
+| 4        | `imageUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 画像のURIを持つオブジェクト|
 
 <div class="warning">
   <p><strong>注意</strong></p>
@@ -95,23 +96,43 @@ ImageTextテンプレートは、画面に表示する画像とテキストデ�
 
 #### 次の項目も参照してください。
 * [コンテンツテンプレート](/Develop/References/Content_Templates.md)
-* [ImageText](/Develop/References/ContentTemplates/ImageText.md)
+* [ImageTextテンプレート](/Develop/References/ContentTemplates/ImageText.md)
 
 ### CardList {#CardList}
 
-CardListテンプレートは、画面にカードリスト形式で表現されるデータを定型化したテンプレートです。フルスクリーン表示を行う場合は、News、Schedule、Briefing、Memoなどのドメインで使用されます。
+CardListは、画面にカードリスト形式で表現されるデータを定型化したデザインテンプレートです。News、Schedule、Briefing、Memoなどのドメインで使用されます。
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
-| ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_CardList_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_CardList_Dark.png) |
+| <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_CardList_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_CardList_Dark.png" width="450"> |
 
-| ノーマルモード | ダークモード |
-| -------------- | ------------ |
-| <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Dark.png" width="450"> |
+#### UI example
+
+![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_CardList_Example.png)
+
+CardListデザインテンプレートは、次の2種類のコンテンツテンプレートに対応しています。
+
+1. [CardListテンプレート](/Develop/References/ContentTemplates/CardList.md) カードタイプ:Type 2
+
+| <!-- --> | フィールド名 | データ型 | 説明 |
+| -------- | ------------ | -------- | ---- |
+| 1        | `mainText`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | メインテキストを持つオブジェクト |
+| 2        | `paragraphText` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | パラグラフのテキストを持つオブジェクト |
+| 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li>`provider.logoUrl`：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li>`provider.name`：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
+| 4        | `imageUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 画像のURIを持つオブジェクト|
+
+2. [ScheduleList](/Develop/References/ContentTemplates/ScheduleList.md)
+
+| <!-- --> | フィールド名 | データ型 | 説明 |
+| -------- | ------------ | -------- | ---- |
+| 1        | `mainText`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | メインテキストを持つオブジェクト |
+| 2        | `paragraphText` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | パラグラフのテキストを持つオブジェクト |
+| 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li>`provider.logoUrl`：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li>`provider.name`：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
+| 4        | `imageUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 画像のURIを持つオブジェクト|
 
 #### 次の項目も参照してください。
 * [コンテンツテンプレート](/Develop/References/Content_Templates.md)
-* [CardList](/Develop/References/ContentTemplates/CardList.md)
+* [CardListテンプレート](/Develop/References/ContentTemplates/CardList.md)
 
 ### Weather {#Weather}
 
@@ -131,7 +152,7 @@ Weatherテンプレートは、天気情報を提供するテンプレートで�
 
 ### Media Player {#MediaPlayer}
 
-Media Playerは、音楽などの音声コンテンツと画像、メディアの操作インターフェースを一緒に提供するテンプレートです。
+Media Playerは、音楽などの音声コンテンツと画像、操作インターフェースを一緒に提供するデザインテンプレートです。
 Music、Radio、Picture book、Song、Sound Effectなどのドメインで使用されます。
 
 | ノーマルモード | ダークモード |
@@ -148,15 +169,11 @@ Music、Radio、Picture book、Song、Sound Effectなどのドメインで使用
 
 ### Plain {#Plain}
 
-Plainテンプレートは、前述のドメインに当てはまらない場合や、特別な画面表示が必要ない場合に使用されるテンプレートです。
+Plainテンプレートは、前述のドメインに当てはまらない場合や、特別な画面表示が必要ない場合に使用されるデザインテンプレートです。
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
-| ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Plain_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Plain_Dark.png) |
-
-| ノーマルモード | ダークモード |
-| -------------- | ------------ |
-| <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Dark.png" width="450"> |
+| <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Plain_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Plain_Dark.png" width="450"> |
 
 #### 次の項目も参照してください。
 * [コンテンツテンプレート](/Develop/References/Content_Templates.md)
