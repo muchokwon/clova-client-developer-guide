@@ -1,6 +1,6 @@
 # フルスクリーン表示のためのデザインガイド
 
-ディスプレイを持つクライアントデバイスでコンテンツを表示する場合には、推奨フォントと、ドメインごとに使用を推奨する[デザインテンプレート](#DesignTemplates)が指定されています。
+ディスプレイを持つクライアントデバイスでコンテンツを表示する場合には、推奨フォントと、ドメインごとに推奨する[デザインテンプレート](#DesignTemplates)が指定されています。
 
 ここでは、テレビなどのディスプレイ装置でフルスクリーン表示を行う場合のデザインについて説明します。
 
@@ -31,7 +31,7 @@
 
 ## デザインテンプレート {#DesignTemplates}
 
-デザインテンプレートとは、CICから渡されるコンテンツ情報を定型化した[コンテンツテンプレート](/Develop/References/Content_Templates.md)と、コンテンツテンプレートのどのオブジェクトを使用するかをあらかじめルール化したものです。デザインテンプレートとドメインの主な組み合わせの例は次のとおりです。
+デザインテンプレートとは、CICから渡されるコンテンツ情報を定型化した[コンテンツテンプレート](/Develop/References/Content_Templates.md)や[メッセージインターフェース](/Develop/References/Message_Interfaces.md)と、どのオブジェクトを使用するかをルール化したものです。デザインテンプレートとドメインの主な組み合わせの例は次のとおりです。
 
 | デザインテンプレート         | ドメイン                                           |
 | ---------------------------- | -------------------------------------------------- |
@@ -49,14 +49,16 @@
 Textは、画面に表示するテキストデータを提供するデザインテンプレートです。主にAnswering Engine、Calendar、Chat、Train info、Translationなどのドメインで使用されます。
 
 #### UI examples
+
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
 | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Dark.png" width="450"> |
 
 #### 使用するコンテンツテンプレート
-![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Example.png)
 
 [Textテンプレート](/Develop/References/ContentTemplates/Text.md)
+
+![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Text_Example.png)
 
 | <!-- --> | フィールド名 | データ型 | 説明 |
 | -------- | ------------ | -------- | ---- |
@@ -70,7 +72,6 @@ Textは、画面に表示するテキストデータを提供するデザイン�
 </div>
 
 #### 次の項目も参照してください。
-* [コンテンツテンプレート](/Develop/References/Content_Templates.md)
 * [Textテンプレート](/Develop/References/ContentTemplates/Text.md)
 
 ### ImageText {#ImageText}
@@ -85,9 +86,9 @@ ImageTextは、画面に表示する画像とテキストデータを一緒に�
 
 #### 使用するコンテンツテンプレート
 
-![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_ImageText_Example.png)
-
 [ImageTextテンプレート](/Develop/References/ContentTemplates/ImageText.md)
+
+![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_ImageText_Example.png)
 
 | <!-- --> | フィールド名 | データ型 | 説明 |
 | -------- | ------------ | -------- | ---- |
@@ -102,12 +103,11 @@ ImageTextは、画面に表示する画像とテキストデータを一緒に�
 </div>
 
 #### 次の項目も参照してください。
-* [コンテンツテンプレート](/Develop/References/Content_Templates.md)
 * [ImageTextテンプレート](/Develop/References/ContentTemplates/ImageText.md)
 
 ### CardList {#CardList}
 
-CardListは、画面にカードリスト形式で表現されるデータを定型化したデザインテンプレートです。News、Schedule、Briefing、Memoなどのドメインで使用されます。
+CardListは、カードリスト形式のデザインテンプレートです。主にNews、Schedule、Briefing、Memoなどのドメインで使用されます。
 
 #### UI examples
 
@@ -117,7 +117,7 @@ CardListは、画面にカードリスト形式で表現されるデータを定
 
 #### 使用するコンテンツテンプレート
 
-CardListデザインテンプレートは、次の2種類のコンテンツテンプレートに対応しています。
+CardListデザインテンプレートは、次のコンテンツテンプレートに対応しています。
 
 ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_CardList_Example.png)
 
@@ -183,19 +183,18 @@ CardListデザインテンプレートは、次の2種類のコンテンツテ�
 </table>
 
 #### 次の項目も参照してください。
-* [コンテンツテンプレート](/Develop/References/Content_Templates.md)
 * [CardListテンプレート](/Develop/References/ContentTemplates/CardList.md)
 * [ScheduleListテンプレート](/Develop/References/ContentTemplates/ScheduleList.md)
 
 ### Weather {#Weather}
 
-Weatherテンプレートは、天気情報を提供するテンプレートです。現在の天気（[TodayWeather](/Develop/References/ContentTemplates/TodayWeather.md)）、1日の天気予報（[TomorrowWeather](/Develop/References/ContentTemplates/TomorrowWeather.md)）、1週間の天気予報（[WeeklyWeather](/Develop/References/ContentTemplates/WeeklyWeather.md)）などを表示することができます。
+Weatherは、天気情報を提供するデザインテンプレートです。使用するコンテンツテンプレートによって、現在の天気、1日の天気予報、1週間の天気予報などを表現することができます。
 
 #### UI examples
 
 | <!-- --> | ノーマルモード | ダークモード |
 | -------- | -------------- | ------------ |
-| 現在の天気     | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Current_Weather_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Current_Weather_Dark.png) |
+| 現在の天気 | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Current_Weather_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Current_Weather_Dark.png) |
 | 1日の予報 | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Daily_Forcast_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Daily_Forcast_Dark.png) |
 | 複数日の予報 | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Multi_Day_Forcast_Light.png) | ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Multi_Day_Forcast_Dark.png) |
 
@@ -206,44 +205,66 @@ Weatherデザインテンプレートは、次のコンテンツテンプレー�
 
 - [TodayWeather](/Develop/References/ContentTemplates/TodayWeather.md)
 
+![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Current_Weather_Example.png)
+
+| <!-- --> | フィールド名 | データ型 | 説明 |
+| -------- | ------------ | -------- | ---- |
+| 1        | `nowWeatherImageUrl` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 現在の天気画像ファイルのURIを持つオブジェクト |
+
+
 - [TomorrowWeather](/Develop/References/ContentTemplates/TomorrowWeather.md)
 
+![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Daily_Forcast_Example.png)
 
+| <!-- --> | フィールド名 | データ型 | 説明 |
+| -------- | ------------ | -------- | ---- |
+| 1        | `tomorrowWeatherImageUrl` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 明日の天気画像ファイルのURIを持つオブジェクト |
 
 - [WeeklyWeather](/Develop/References/ContentTemplates/WeeklyWeather.md)
 
+![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Multi_Day_Forcast_Example.png)
 
 #### 次の項目も参照してください。
-* [コンテンツテンプレート](/Develop/References/Content_Templates.md)
 * [TodayWeather](/Develop/References/ContentTemplates/TodayWeather.md)
 * [TomorrowWeather](/Develop/References/ContentTemplates/TomorrowWeather.md)
 * [WeeklyWeather](/Develop/References/ContentTemplates/WeeklyWeather.md)
 
 ### Media Player {#MediaPlayer}
 
-Media Playerは、音楽などのオーディオコンテンツと画像、操作インターフェースを一緒に提供するデザインテンプレートです。
-主にMusic、Radio、Picture book、Song、Sound Effectなどのドメインで使用されます。
+Media Playerは、オーディオコンテンツのタイトルやアルバムの画像、操作ボタンを一緒に提供するデザインテンプレートです。主にMusic、Radio、Picture book、Song、Sound Effectなどのドメインで使用されます。
 
-#### UI example
+#### UI examples
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
 | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Media_Player_Light.png" width="450"> | <img src="/Design/Assets/Images/Clova-Client-Full_Screen_Template_Media_Player_Dark.png" width="450"> |
 
-#### UI example
+#### 使用するインターフェース
+
+[TemplateRuntime](/Develop/References/MessageInterfaces/TemplateRuntime.md)インターフェース > [RenderPlayerInfo](/Develop/References/MessageInterfaces/TemplateRuntime.md#RenderPlayerInfo)ディレクティブ
 
 ![](/Design/Assets/Images/Clova-Client-Full_Screen_Template_Media_Player_Example.png)
 
+| <!-- --> | フィールド名                    | データ型 | 説明                                                         |
+| -------- | ------------------------------- | -------- | ------------------------------------------------------------ |
+| 1        | `playableItems[].titleText`     | string   | 現在のオーディオコンテンツのタイトルを表すテキストフィールド |
+| 2        | `playableItems[].titleSubText1` | string   | 主にアーティスト名を表すテキストフィールド                   |
+| 3        | `playableItems[].titleSubText2` | string   | 主にアルバム名を表すサブテキストフィールド                   |
+| 4        | `playableItems[].artImageUrl`   | string   | メディアコンテンツ関連画像のURI。アルバムのジャケット画像や関連アイコンなどの画像があるURI。 |
+| 5        | プログレスバー                  | <!-- --> | クライアントデバイス内のProgressを元に描画します             |
+| 6        | 操作ボタン                      | <!-- --> | デザイン素材をClova事務局から直接配布します<ul><li><code>Previous</code>/<code>Next</code>/<code>Pause</code>/<code>Resume</code>ボタンは設置必須</li><li><code>List</code>/<code>Loop</code>/<code>お気に入り</code>ボタンはOptional (案件別）</li></ul> |
+| 7        | `provider.logoUrl`              | string   | メディアコンテンツ提供元のロゴ画像のURI。LINE MUSICやRadioドメインでは必須。 |
 
 #### 次の項目も参照してください。
-* [コンテンツテンプレート](/Develop/References/Content_Templates.md)
 * [TemplateRuntime](/Develop/References/MessageInterfaces/TemplateRuntime.md)
+* [`TemplateRuntime.RenderPlayerInfo`](/Develop/References/MessageInterfaces/TemplateRuntime.md#RenderPlayerInfo)
+
 
 ### Plain {#Plain}
 
 Plainは、前述のドメインに当てはまらない場合や、特別な画面表示が必要ない場合に使用されるデザインテンプレートです。
 
-#### UI example
+#### UI examples
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
@@ -253,7 +274,7 @@ Plainは、前述のドメインに当てはまらない場合や、特別な画
 
 フルスクリーン表示をしている際にClovaを呼び出した場合は、[Green Dot VUI](/Design/Screen.md#GreenDotVUI)や認識結果などを画面の下部に配置します。
 
-#### UI example
+#### UI examples
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
