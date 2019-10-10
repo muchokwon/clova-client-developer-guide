@@ -5,37 +5,37 @@ participant "Clova app" as app #9EA0CA
 participant Client as client #9EA0CA
 participant CIC as cic #05D686
 
-alt Control audio playback through utterance
+alt Control audio playback through an utterance
 
-  user ->> client : Requests music playback control:\n"Pause music."
+  user ->> client : Requests a music playback control:\n"Pause music."
 
   activate client
 
-    client ->> cic : Sends user request\n(SpeechRecognizer.Recognize event)
+    client ->> cic : Sends the user request\n(SpeechRecognizer.Recognize event)
 
   deactivate client
 
   activate cic
 
-    cic -> cic : Analyzes user utterance
+    cic -> cic : Analyzes the user utterance
 
 else Control audio playback using the client device button
 
-  user ->> client : Presses pause button
+  user ->> client : Presses the Pause button
 
   activate client
 
-    client ->> cic : Reports occurrence of pause command\n(PlaybackController.PauseCommandIssued event)
+    client ->> cic : Reports an occurrence of pause command\n(PlaybackController.PauseCommandIssued event)
 
   deactivate client
 
-else Clova Remote control audio playback using Clova app
+else Clova Remote control of audio playback using the Clova app
 
   user ->> app : Requests to pause audio playback on the client
 
   activate app
 
-    app ->> cic : Sends request to pause audio playback on the client
+    app ->> cic : Sends a request to pause audio playback on the client
 
   deactivate app
 
@@ -43,7 +43,7 @@ else Clova Remote control audio playback using Clova app
 
   activate client
 
-    client ->> cic : Reports occurrence of pause command\n(PlaybackController.PauseCommandIssued event)
+    client ->> cic : Reports an occurrence of pause command\n(PlaybackController.PauseCommandIssued event)
 
   deactivate client
 
@@ -58,8 +58,8 @@ deactivate cic
 
 activate client
 
-  client -> client : Pauses audio playback
-  client ->> cic : Reports pause of audio playback\n(AudioPlayer.PlayResumed event)
+  client -> client : Pauses the audio playback
+  client ->> cic : Reports the pause of audio playback\n(AudioPlayer.PlayResumed event)
 
 deactivate client
 

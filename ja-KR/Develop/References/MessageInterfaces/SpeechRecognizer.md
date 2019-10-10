@@ -2,9 +2,9 @@
 
 SpeechRecognizerインターフェースは、ユーザーの音声を認識するために使用する名前空間です。ユーザーの発話は、次のように入力されます。
 
-1. クライアントは、ユーザーの音声入力が開始すると、CICに[`SpeechRecognizer.Recognize`](#Recognize)イベントを送信します。
-2. クライアントは、入力されるユーザーの音声を200ミリ秒ずつ分割し、リアルタイムでCICに送信します。
-3. クライアントは、CICから[`SpeechRecognizer.StopCapture`](#StopCapture)ディレクティブを受信するまで、ステップ2を続ける必要があります。
+1. ユーザーの音声入力が開始すると、CICに[`SpeechRecognizer.Recognize`](#Recognize)イベントを送信します。
+2. 入力されるユーザーの音声を200ミリ秒ずつ分割し、リアルタイムでCICに送信します。
+3. CICから[`SpeechRecognizer.StopCapture`](#StopCapture)ディレクティブを受信するまで、ステップ2を続ける必要があります。
 
 SpeechRecognizerは、次のイベントとディレクティブを提供します。
 

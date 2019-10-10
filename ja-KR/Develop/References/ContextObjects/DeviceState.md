@@ -50,7 +50,7 @@
 | `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | クライアントデバイスのサウンドモードの情報をレポートするときに使用されるオブジェクト           | 任意 |
 | `soundOutput`     | [SoundOutputInfoObject](#SoundOutputInfoObject)         | クライアントデバイスの音声出力に使用されているオーディオ装置や再生方式に関する情報をレポートするときに使用されるオブジェクトです。 | 任意 |
 | `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | クライアントデバイスのスピーカーの音量情報をレポートするときに使用されるオブジェクト           | 任意 |
-| `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | クライアントデバイスのWi-Fiの状態と、Wi-Fiネットワークの接続情報をレポートするときに使用されるオブジェクト    | 任意 |
+| `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | クライアントデバイスの無線LAN（Wi-Fi）機能のオン/オフ状態と、無線LANの接続情報をレポートするときに使用されるオブジェクト    | 任意 |
 
 ### Object example
 {% raw %}
@@ -647,17 +647,17 @@
 {% endraw %}
 
 ### WifiInfoObject {#WifiInfoObject}
-クライアントデバイスのWi-Fiの状態と、Wi-Fiネットワークの接続情報をレポートするときに使用されるオブジェクトです。
+クライアントデバイスの無線LAN（Wi-Fi）機能のオン/オフ状態と、無線LANの接続情報をレポートするときに使用されるオブジェクトです。
 
 #### Object fields
 
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `actions[]`            | string array | Wi-Fiに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
-| `networks[]`           | object array | 検索されたWi-Fiネットワークの情報を持つオブジェクト配列 |  |
-| `networks[].connected` | boolean      | Wi-Fiネットワークの接続状態。<ul><li><code>true</code>：接続している</li><li><code>false</code>：接続していない</li></ul> |  |
-| `networks[].name`      | string       | Wi-Fiネットワークの名前（SSID）               |  |
-| `state`                | string       | Wi-Fiのオン/オフ状態。<ul><li><code>"off"</code>：オフになっている</li><li><code>"on"</code>：オンになっている</li></ul> |  |
+| `actions[]`            | string array | 無線LANに関連して実行できる[`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md)APIのリスト。次のリストのうち、クライアントデバイスが実際に実行できるアクションを入力します。<ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li></ul> |  |
+| `networks[]`           | object array | 検索された無線LANの情報を持つオブジェクト配列 | 必須 |
+| `networks[].connected` | boolean      | 無線LANの接続状態。<ul><li><code>true</code>：接続している</li><li><code>false</code>：接続していない</li></ul> |  |
+| `networks[].name`      | string       | 無線LANの名前（SSID）               | 必須 |
+| `state`                | string       | 無線LAN機能のオン/オフ状態。<ul><li><code>"off"</code>：オフになっている</li><li><code>"on"</code>：オンになっている</li></ul> |  |
 
 #### Object example
 

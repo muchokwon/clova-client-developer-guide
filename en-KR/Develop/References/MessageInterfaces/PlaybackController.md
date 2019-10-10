@@ -42,7 +42,7 @@ Reports to CIC when the user presses one of the shortcut buttons on the client d
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | Field name       | Data type    | Description                     | Required |
@@ -191,7 +191,7 @@ Example 2: An example where target is specified as "AudioPlayer"
 * [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand)
 * [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand)
 * [`PlaybackController.PauseCommandIssued`](#PauseCommandIssued)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ExpectPlayCommand directive {#ExpectPlayCommand}
 Instructs the client to send the [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) event message to CIC just like the effect of a user pressing the Play button from the client device. The client can also receive this directive message when attempting to play the currently playing media stream from another device. Upon receiving the directive message, the client must perform the relevant action and send the [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) event message to CIC.
@@ -332,7 +332,7 @@ Example 2: An example where target is specified as "AudioPlayer"
 * [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand)
 * [`PlaybackController.ExpectStopCommand`](#ExpectStopCommand)
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## ExpectStopCommand directive {#ExpectStopCommand}
 Instructs the client to send the [`PlaybackController.StopCommandIssued`](#StopCommandIssued) event message to CIC just like the effect of a user pressing the Stop button from the client device. Upon receiving the directive message, the client must send the [`PlaybackController.StopCommandIssued`](#StopCommandIssued) event message to CIC.
@@ -385,7 +385,7 @@ Example 2: An example where target is specified as "AudioPlayer"
 * [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand)
 * [`PlaybackController.ExpectResumeCommand`](#ExpectResumeCommand)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## Mute directive {#Mute}
 Instructs the client to mute the audio player. Upon receiving the directive message, the client must mute the speaker for the audio stream playback.
@@ -395,7 +395,7 @@ None
 
 ### Remarks
 
-If the control is related to speaker output, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
+If the control is related to speaker output, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
 
 ### Message example
 
@@ -414,7 +414,7 @@ If the control is related to speaker output, Clova does not provide a voice guid
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## Next directive {#Next}
 Instructs the client to start playing the next audio stream in the playback queue. Upon receiving the directive message, the client must play the next audio stream in queue.
@@ -440,14 +440,14 @@ None
 
 ### See also
 * [`PlaybackController.Previous`](#Previous)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## NextCommandIssued event {#NextCommandIssued}
 Reports to CIC if the user presses the Next button on the client device or responds to the [`PlaybackController.ExpectNextCommand`](#ExpectNextCommand) directive message from CIC. Upon receiving the event message, CIC sends the appropriate directive message to the client.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -455,7 +455,7 @@ Reports to CIC if the user presses the Next button on the client device or respo
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | The client device ID. Skip this field if you are not controlling the media playback remotely. | Optional |
 | `source`      | object  | Object containing the original information of event. Includes the information to find out the situation or the background for sending this event message. <div class="tip"><p><strong>Tip!</strong></p><p>If the client is providing speech output (TTS) and audio playback to the user at the same time, the speech output becomes the control target. Using this field, you can specify  on which target this event message is trying to control. Omit this field to delegate so that Clova specifies the control target by itself.</p></div>  | Optional  |
-| `source.namespace` | string | CIC API namespace Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from.<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Required  |
+| `source.namespace` | string | CIC API namespace. Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from.<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Required  |
 
 ### Remarks
 * The button on the client device can either be a physical button or a software button like a widget button on a music player.
@@ -571,9 +571,9 @@ Example 2: An example where target is specified as "AudioPlayer"
 ```
 
 ### See also
-* [`AudioPlayer.PlayPaused`](/Develop/References/CICInterface/AudioPlayer.md#PlayPaused)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`AudioPlayer.PlayPaused`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayPaused)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -582,7 +582,7 @@ Reports to CIC if the user presses the Pause button on the client device or resp
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -590,7 +590,7 @@ Reports to CIC if the user presses the Pause button on the client device or resp
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | The client device ID. Skip this field if you are not controlling the media playback remotely. | Optional |
 | `source`      | object  | Object containing the original information of event. Includes the information to find out the situation or the background for sending this event message. <div class="tip"><p><strong>Tip!</strong></p><p>If the client is providing speech output (TTS) and audio playback to the user at the same time, the speech output becomes the control target. Using this field, you can specify  on which target this event message is trying to control. Omit this field to delegate so that Clova specifies the control target by itself.</p></div>  | Optional  |
-| `source.namespace` | string | CIC API namespace Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from. Only `"AudioPlayer"` value is currently available.  | Required  |
+| `source.namespace` | string | CIC API namespace. Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from. Only `"AudioPlayer"` value is currently available.  | Required  |
 
 ### Remarks
 * The button on the client device can either be a physical button or a software button like a widget button on a music player.
@@ -656,14 +656,14 @@ Reports to CIC if the user presses the Pause button on the client device or resp
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## PlayCommandIssued event {#PlayCommandIssued}
 Reports to CIC if the user operates the UI to play a specific song on the client device or responds to the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive message from CIC. Upon receiving the event message, CIC sends the appropriate directive message to the client. If the `handover` field exists is in the `payload` of the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive message received from CIC, the client must take over the media playback using the field value.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -673,7 +673,7 @@ Reports to CIC if the user operates the UI to play a specific song on the client
 | `handover`            | object  | Object containing information required for remote takeover of media playback. If media playback must be taken over, use the `handover` object as the `handover` object in `payload` of the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive message.     | Optional |
 | `handover.customData` | string  | The information required to play the media.               | Required |
 | `handover.deviceId`   | string  | The ID of the client device handing over media playback.  | Required |
-| `token`               | string  | The token of the media to play. When the user presses the Play button after selecting a media on the playlist, the `playableItems[].token` field value of the [`TemplateRuntime.RenderPlayerInfo`](/Develop/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo) directive message must be applied to this field. Or, the value of the `token` field value may need to be used if the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive message is received.  | Optional  |
+| `token`               | string  | The token of the media to play. When the user presses the Play button after selecting media from the playlist, the `playableItems[].token` field value of the [`TemplateRuntime.RenderPlayerInfo`](/Develop/References/MessageInterfaces/TemplateRuntime.md#RenderPlayerInfo) directive message must be applied to this field. If the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive message is received, it may be necessary to enter the value of the `token` field of the message.  | Optional  |
 
 ### Remarks
 * The [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued) event message must be sent to CIC when a user presses the Play button from the client device.
@@ -704,7 +704,7 @@ Reports to CIC if the user operates the UI to play a specific song on the client
 ```
 
 ### See also
-* [`AudioPlayer.Play`](/Develop/References/CICInterface/AudioPlayer.md#Play)
+* [`AudioPlayer.Play`](/Develop/References/MessageInterfaces/AudioPlayer.md#Play)
 * [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
 * [`PlaybackController.ExpectPlayCommand`](#ExpectNextCommand)
 * [`PlaybackController.NextCommandIssued`](#NextCommandIssued)
@@ -738,14 +738,14 @@ None
 
 ### See also
 * [`PlaybackController.Next`](#Next)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## PreviousCommandIssued event {#PreviousCommandIssued}
 Reports to CIC if the user presses the Previous button on the client device or responds to the [`PlaybackController.ExpectPreviousCommand`](#ExpectPreviousCommand) directive message from CIC. Upon receiving the event message, CIC sends the appropriate directive message to the client.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -753,7 +753,7 @@ Reports to CIC if the user presses the Previous button on the client device or r
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | The client device ID. Skip this field if you are not controlling the media playback remotely. | Optional |
 | `source`      | object  | Object containing the original information of event. Includes the information to find out the situation or the background for sending this event message. <div class="tip"><p><strong>Tip!</strong></p><p>If the client is providing speech output (TTS) and audio playback to the user at the same time, the speech output becomes the control target. Using this field, you can specify  on which target this event message is trying to control. Omit this field to delegate so that Clova specifies the control target by itself.</p></div>  | Optional  |
-| `source.namespace` | string | CIC API namespace Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from.: audio player. Only `"AudioPlayer"` value is currently available.  | Required  |
+| `source.namespace` | string | CIC API namespace. Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from.: audio player. Only `"AudioPlayer"` value is currently available.  | Required  |
 
 ### Remarks
 * The button on the client device can either be a physical button or a software button like a widget button on a music player.
@@ -845,8 +845,8 @@ None
 ### See also
 * [`PlaybackController.Pause`](#Pause)
 * [`PlaybackController.Resume`](#Resume)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- Start of the shared content: PlaybackController.Resume -->
 
@@ -857,7 +857,7 @@ Instructs the client to resume playing the audio stream. Upon receiving the dire
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
-| target            | object  | The object that has control target. You can see  the target to control through this directive message. | Conditional  |
+| target            | object  | The object that has control target. You can see the target to control through this directive message. | Conditional  |
 | target.namespace  | string  | CIC API namespace. This is the information to identify the control target. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
@@ -895,9 +895,9 @@ Instructs the client to resume playing the audio stream. Upon receiving the dire
 ```
 
 ### See also
-* [`AudioPlayer.PlayResumed`](/Develop/References/CICInterface/AudioPlayer.md#PlayResumed)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`AudioPlayer.PlayResumed`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayResumed)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -906,7 +906,7 @@ Reports to CIC if the user presses the Play button or the Resume button on the c
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -914,7 +914,7 @@ Reports to CIC if the user presses the Play button or the Resume button on the c
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | The client device ID. Skip this field if you are not controlling the media playback remotely. | Optional |
 | `source`      | object  | Object containing the original information of event. Includes the information to find out the situation or the background for sending this event message. <div class="tip"><p><strong>Tip!</strong></p><p>If the client is providing speech output (TTS) and audio playback to the user at the same time, the speech output becomes the control target. Using this field, you can specify  on which target this event message is trying to control. Omit this field to delegate so that Clova specifies the control target by itself.</p></div>  | Optional  |
-| `source.namespace` | string | CIC API namespace Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from.: audio player. Only `"AudioPlayer"` value is currently available.  | Required  |
+| `source.namespace` | string | CIC API namespace. Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from.: audio player. Only `"AudioPlayer"` value is currently available.  | Required  |
 
 ### Remarks
 * The button on the client device can either be a physical button or a software button like a widget button on a music player.
@@ -981,7 +981,7 @@ Reports to CIC if the user presses the Play button or the Resume button on the c
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## SetRepeatMode directive {#SetRepeatMode}
 
@@ -1030,7 +1030,7 @@ Reports to CIC to change the play mode of a Clova device remotely from the Clova
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1089,7 +1089,7 @@ Instructs the client to stop playing an audio stream. Upon receiving the directi
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
-| target            | object  | The object that has control target. You can see  the target to control through this directive message. | Conditional  |
+| target            | object  | The object that has control target. You can see the target to control through this directive message. | Conditional  |
 | target.namespace  | string  | CIC API namespace. This is the information to identify the control target. Available values are:<ul><li><code>"AudioPlayer"</code>: audio player</li><li><code>"MediaPlayer"</code>: media player</li></ul>  | Always  |
 
 ### Message example
@@ -1127,9 +1127,9 @@ Instructs the client to stop playing an audio stream. Upon receiving the directi
 ```
 
 ### See also
-* [`AudioPlayer.PlayStopped`](/Develop/References/CICInterface/AudioPlayer.md#PlayStopped)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [`AudioPlayer.PlayStopped`](/Develop/References/MessageInterfaces/AudioPlayer.md#PlayStopped)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 <!-- End of the shared content -->
 
@@ -1138,7 +1138,7 @@ Reports to CIC if the user presses the Resume button on the client device or res
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -1146,7 +1146,7 @@ Reports to CIC if the user presses the Resume button on the client device or res
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | The client device ID. Skip this field if you are not controlling the media playback remotely. | Optional |
 | `source`      | object  | Object containing the original information of event. Includes the information to find out the situation or the background for sending this event message. <div class="tip"><p><strong>Tip!</strong></p><p>If the client is providing speech output (TTS) and audio playback to the user at the same time, the speech output becomes the control target. Using this field, you can specify  on which target this event message is trying to control. Omit this field to delegate so that Clova specifies the control target by itself.</p></div>  | Optional  |
-| `source.namespace` | string | CIC API namespace Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from.: audio player. Only `"AudioPlayer"` value is currently available.  | Required  |
+| `source.namespace` | string | CIC API namespace. Enter the related CIC API namespace value to identify what kind of situation or context this event message is sent from.: audio player. Only `"AudioPlayer"` value is currently available.  | Required  |
 
 ### Remarks
 * The button on the client device can either be a physical button or a software button like a widget button on a music player.
@@ -1212,7 +1212,7 @@ Reports to CIC if the user presses the Resume button on the client device or res
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 * [`PlaybackController.ResumeCommandIssued`](#ResumeCommandIssued)
 * [`PlaybackController.SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued)
-* [Controlling audio playback](/Develop/Guides/ImplementClientFeatures/Handle_Audio_Playback.md#ControlAudioPlayback)
+* [Controlling audio playback](/Develop/Guides/Handle_Audio_Playback.md#ControlAudioPlayback)
 
 ## TurnOffRepeatMode directive {#TurnOffRepeatMode}
 **(Deprecated)** Instructs the client to stop the repeat function for one song.
@@ -1237,7 +1237,7 @@ None
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## TurnOnRepeatMode directive {#TurnOnRepeatMode}
 **(Deprecated)** Instructs the client to start the repeat function for one song. Upon receiving the directive message, the client must repeat the current audio stream.
@@ -1262,7 +1262,7 @@ None
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## Unmute directive {#Unmute}
 Instructs the client to unmute the audio player. Upon receiving the directive message, the client must restore the volume level to before mute was applied.
@@ -1272,7 +1272,7 @@ None
 
 ### Remarks
 
-If the control is related to speaker output, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
+If the control is related to speaker output, Clova does not provide a voice guide with the [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) directive message. This is in consideration of the UX such as for a user listening to music. For this, you must implement an action to inform the user that the volume has been changed using the lights or a simple sound effect on the client.
 
 ### Message example
 
@@ -1291,14 +1291,14 @@ If the control is related to speaker output, Clova does not provide a voice guid
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## VolumeDown directive {#VolumeDown}
 **(Deprecated)** Instructs the client to turn down the audio player volume. Upon receiving the directive message, the client must turn down the volume of the audio player. The volume adjustment level depends on the client UX standard.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The <code>PlaybackController.VolumeDown</code> directive message is to be deprecated. You must use the <a href="/Develop/References/CICInterface/DeviceControl.md#Decrease"><code>DiviceControl.Decrease</code></a> directive message instead of this directive message.</p>
+  <p>The <code>PlaybackController.VolumeDown</code> directive message is to be deprecated. You must use the <a href="/Develop/References/MessageInterfaces/DeviceControl.md#Decrease"><code>DiviceControl.Decrease</code></a> directive message instead.</p>
 </div>
 
 ### Payload fields
@@ -1321,7 +1321,7 @@ None
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
 
 ## VolumeUp directive {#VolumeUp}
 
@@ -1329,7 +1329,7 @@ None
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The <code>PlaybackController.VolumeUp</code> directive message is to be deprecated. You must use the <a href="/Develop/References/CICInterface/DeviceControl.md#Increase"><code>DiviceControl.Increase</code></a> directive message instead.</p>
+  <p>The <code>PlaybackController.VolumeUp</code> directive message is to be deprecated. You must use the <a href="/Develop/References/MessageInterfaces/DeviceControl.md#Increase"><code>DiviceControl.Increase</code></a> directive message instead.</p>
 </div>
 
 ### Payload fields
@@ -1352,4 +1352,4 @@ None
 ```
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)

@@ -51,7 +51,7 @@ Instructs the client to send notification details to the user. The client must t
 | `assetPlayOrder[]`   | string array | The string array that expresses the order of playing the notification sound registered in the `assets[]` field. Play the notification sound in the order of the audio content ID stored in the array.            | Always  |
 | `assets[]`           | object array | The object array that has the audio content related to notifications.                          | Always |
 | `assets[].assetId`   | string       | The ID of audio.                                        | Always |
-| `assets[].url`       | string       | The URI of audio. The URI can be specified in the following ways:<ul><li><code>"clova://notifier/sound/default"</code>: A scheme used to refer to the default notification sound. The predefined default sound is played.</li><li>URI of audio (<code>"http(s)://~</code>): The URI of the audio that contains the notification details. The audio in the URI is played.</li></ul>    | Always |
+| `assets[].url`       | string       | The URI of audio. The URI can be specified in the following ways:<ul><li><code>"clova://notifier/sound/default"</code>: A scheme used to refer to the default notification sound. The predefined default sound is played.</li><li>URI of audio (<code>"http://~"</code> or <code>"https://~"</code>): The URI of the audio that contains the notification details. The audio in the URI is played.</li></ul>    | Always |
 | `light`              | string       | The flash light settings.<ul><li><code>"DEFAULT"</code>: Turns on the light indicator.</li><li><code>"NONE"</code>: Does not turn on the light indicator.</li></ul>   | Always  |
 
 ### Remarks
@@ -95,7 +95,8 @@ This directive message is sent through a [downchannel](/Develop/Guides/Interact_
 ### See also
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.SetIndicator`](#SetIndicator)
-* [Design guidelines for client devices](/Design/Design_Guideline_For_Client_Hardware.md)
+* [Lights](/Design/Light.md)
+* [Sound](/Design/Audio.md)
 
 ## SetIndicator directive {#SetIndicator}
 Instructs the client to display that there is a notification that the user has not read. Upon receipt, the client must turn on the light indicator or play the specified notification sound.
@@ -108,7 +109,7 @@ Instructs the client to display that there is a notification that the user has n
 | `assets[].assetId`   | string       | The ID of audio.                                        | Always |
 | `assets[].url`       | string       | The URI of audio. The URI can be specified in the following ways:<ul><li><code>"clova://notifier/sound/default"</code>: A scheme used to refer to the default notification sound. The predefined default sound is played.</li><li>URI of audio (<code>"http(s)://~</code>): The URI of the audio that contains the notification details. The audio in the URI is played.</li></ul>    | Always |
 | `light`              | string       | The flash light settings.<ul><li><code>"DEFAULT"</code>: Turns on the light indicator.</li><li><code>"NONE"</code>: Does not turn on the light indicator.</li></ul> | Always    |
-| `new`                | boolean      | Indicates whether the notification to turn on the indicator is a new notification. <ul><li><code>true</code>: When the notification is new.</li><li><code>false</code>: When the notification is not new.</li></ul> | Always    |
+| `new`                | boolean      | Indicates whether or not the directive message is about a new notification. <ul><li><code>true</code>: When the notification is new.</li><li><code>false</code>: When the notification is not new.</li></ul> | Always    |
 
 ### Remarks
 This directive message is sent through a [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection), which means that this directive message is not a response to an event message.
@@ -143,4 +144,5 @@ This directive message is sent through a [downchannel](/Develop/Guides/Interact_
 ### See also
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.Notify`](#Notify)
-* [Design guidelines for client devices](/Design/Design_Guideline_For_Client_Hardware.md)
+* [Lights](/Design/Light.md)
+* [Sound](/Design/Audio.md)

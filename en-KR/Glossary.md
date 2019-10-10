@@ -43,7 +43,7 @@ A web application that provides extended capabilities to Clova for a more divers
 A platform that provides tools and interfaces for development and deployment of a Clova extension. It supports communication between Clova and extensions.
 
 ### Clova Home extension {#ClovaHomeExtension}
-An [extension](#ClovaExtension) that provides a service for controlling IoT appliances. For more information, see [Building a Clova Home extension]({{ book.DocMeta.ClovaHomeExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Clova_Home_Extension.md).
+An [extension](#ClovaExtension) that provides a service for controlling IoT appliances. For more information, see [Building a Clova Home extension]({{ book.DocMeta.ClovaHomeExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Clova_Home_Extension.{{ book.DocMeta.FileExtensionForExternalLink }}).
 
 ### Clova Interface Connect (CIC) {#CIC}
 A platform that serves as an interface between Clova and a client aiming to provide AI assistant services such as PC/mobile apps, mobile devices, or home appliances. For more information, see [CIC overview](/Develop/CIC_Overview.md).
@@ -62,7 +62,7 @@ Standardized formats for displaying content returned from CIC. For more informat
 Objects that express the current [context information](#Context) of a client. For more information, see [Context](/Develop/References/Context_Objects.md).
 
 ### Custom extension {#CustomExtension}
-An [extension](#ClovaExtension) that provides extended capabilities. A custom extension lets you provide third-party services such as music, shopping, or banking. For more information, see [Building a Clova custom extension]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Custom_Extension.md).
+An [extension](#ClovaExtension) that provides extended capabilities. A custom extension lets you provide third-party services such as music, shopping, or banking. For more information, see [Building a Clova custom extension]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Custom_Extension.{{ book.DocMeta.FileExtensionForExternalLink }}).
 
 ### Downchannel {#Downchannel}
 An [HTTP/2](#HTTP2) stream through which clients receive directive messages from [CIC](#CIC). For more information, see [Connecting with CIC](/Develop/Guides/Interact_with_CIC.md#ConnectToCIC).
@@ -77,7 +77,7 @@ The second version of the HTTP protocol. HTTP/2 is based on [SPDY](https://en.wi
 A public standard for delegation of access permission. The protocol allows internet users to grant account access right to other web services or applications. On the Clova platform, it is used for account linking when clients try to obtain [Clova access tokens](#ClovaAccessToken) or users try to use a certain extension. For more information, go to [https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749).
 
 ### Dialogue ID {#DialogID}
-A dialogue ID is created every time a user initiates new speech input. It is included when clients send [Recognize](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) [event messages](#Event) to [Clova Interface Connect](#CIC). Dialogue IDs are also included in [directive messages](#Directive) when responses are returned from a server side to map those responses to corresponding event messages. Clients check the dialogue ID included in a directive message and determine which directive message is responding to which event message. If the dialogue ID at the client side is different from that of the directive message, the directive message must be disregarded. For more information, see [Dialogue model](/Develop/Guides/ImplementClientFeatures/Manage_Dialogue_ID_And_Handle_Tasks.md).
+A dialogue ID is created every time a user initiates new speech input. It is included when clients send [Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) [event messages](#Event) to [Clova Interface Connect](#CIC). Dialogue IDs are also included in [directive messages](#Directive) when responses are returned from a server side to map those responses to corresponding event messages. Clients check the dialogue ID included in a directive message and determine which directive message is responding to which event message. If the dialogue ID at the client side is different from that of the directive message, the directive message must be disregarded. For more information, see [Dialogue model](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md).
 
 ### Context {#Context}
 Various states of a client. It is expressed with [context objects](#ContextObjects). For more information, see [Context](/Develop/References/Context_Objects.md).

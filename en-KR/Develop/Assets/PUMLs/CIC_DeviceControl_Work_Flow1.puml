@@ -4,39 +4,39 @@ actor User as user #9EA0CA
 participant Client as client #9EA0CA
 participant CIC as cic #05D686
 
-user ->> client : Client control request:\n"Turn on GPS."
+user ->> client : Requests a client control:\n"Turn on GPS."
 
 activate client
-  client ->> cic : Sends SpeechRecognizer.Recognize event\n(Includes Device.DeviceState context as required information)
+  client ->> cic : Sends the SpeechRecognizer.Recognize event\n(Includes Device.DeviceState context as required information)
 
 deactivate client
 
 activate cic
-  cic -> cic : Analyzes whether the action is\nsupported by the client\n(Analyze the actions[]\nfield of Device.DeviceState)
+  cic -> cic : Analyzes whether the action is\nsupported by the client\n(Analyzes the actions[]\nfield of Device.DeviceState)
 
   alt Requested action is supported == No
 
-    cic -->> client : Sends SpeechSynthesizer.Speak directive\n("The action is not supported.")
+    cic -->> client : Sends the SpeechSynthesizer.Speak directive\n("The action is not supported.")
 
 	activate client
-    client -->> user : Outputs voice message
+    client -->> user : Outputs a voice message
 
   else Requested action is supported == Yes
 
-    cic -->> client : Sends client control directive\n(DeviceControl.TurnOn directive)
+    cic -->> client : Sends the client control directive\n(DeviceControl.TurnOn directive)
 
 	deactivate cic
-    client -> client : Handles control device request
+    client -> client : Handles the device control request
 
     alt Result of handling device control == Success
 
-      client ->> cic : Sends DeviceControl.ActionExecuted event
+      client ->> cic : Sends the DeviceControl.ActionExecuted event
 
       activate cic
 
     else Result of handling device control == Failure
 
-      client ->> cic : Sends DeviceControl.ActionFailed event
+      client ->> cic : Sends the DeviceControl.ActionFailed event
 
     end
 

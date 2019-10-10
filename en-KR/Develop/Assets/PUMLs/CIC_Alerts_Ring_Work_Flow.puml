@@ -5,37 +5,37 @@ participant Client as client #9EA0CA
 participant CIC as cic #05D686
 
 
-  client -> client : Start alarm
-  client ->> cic : Reports start of alarm\n(Alerts.AlertStarted event,\lincludes activateAlerts as a required field in Alert.AlertsState)
+  client -> client : Starts an alarm
+  client ->> cic : Reports the start of alarm\n(Alerts.AlertStarted event,\lincludes activateAlerts as a required field in Alert.AlertsState)
 
   activate cic
   deactivate cic
 
-  user ->> client : Requests to stop alarm (using utterance or physical button)
+  user ->> client : Requests to stop the alarm (using an utterance or physical button)
 
   alt Type of stop alarm request == User utterance
 
-    client ->> cic : Sends request to stop alarm\n(SpeechRecognizer.Recognize event)
+    client ->> cic : Sends a request to stop the alarm\n(SpeechRecognizer.Recognize event)
 
   activate cic
 
   else Type of stop alarm request == Physical button
 
-    client ->> cic : Sends request to stop alarm\n(Alerts.RequestAlertStop event)
+    client ->> cic : Sends a request to stop the alarm\n(Alerts.RequestAlertStop event)
 
   end
 
-  cic -->> client : Sends Alerts.StopAlert directive
+  cic -->> client : Sends the Alerts.StopAlert directive
 
   deactivate cic
 
-  client ->> cic : Reports result of stop alarm\n(Alerts.AlertStopped event)
+  client ->> cic : Reports the result of stopping the alarm\n(Alerts.AlertStopped event)
 
   activate cic
 
     opt Alarm is repeated == Yes
 
-      cic -->> client : Sends next repeated alarm\n(Alerts.SetAlert directive)
+      cic -->> client : Sends the next repeated alarm\n(Alerts.SetAlert directive)
 
     end
 
@@ -45,7 +45,7 @@ participant CIC as cic #05D686
 
   deactivate cic
 
-      client -> client : Performs scheduled action
+      client -> client : Performs the scheduled action
 
     end
 

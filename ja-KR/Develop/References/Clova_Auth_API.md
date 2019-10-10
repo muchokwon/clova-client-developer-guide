@@ -4,7 +4,7 @@
 ## ベースURI
 Clova認可サーバーのベースURIは、次のとおりです。
 
-<pre><code>{{ book.ServiceEnv.AuthServerBaseURI }}
+<pre><code>{{ book.ServiceEnv.AuthAPIBaseURI }}
 </code></pre>
 
 ## 認可コードをリクエストする {#RequestAuthorizationCode}
@@ -135,7 +135,7 @@ GET|POST /token?grant_type=authorization_code
 
 ### Request example
 
-<pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=authorization_code \
+<pre><code>$ curl {{ book.ServiceEnv.AuthAPIBaseURI }}token?grant_type=authorization_code \
        --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
        --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \
        --data-urlencode "code=cnl__eCSTdsdlkjfweyuxXvnlA" \
@@ -212,7 +212,7 @@ GET|POST /token?grant_type=refresh_token
 
 ### Request example
 
-<pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=refresh_token \
+<pre><code>$ curl {{ book.ServiceEnv.AuthAPIBaseURI }}token?grant_type=refresh_token \
        --data-urlencode "client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ" \
        --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \
        --data-urlencode "refresh_token=GW-Ipsdfasdfdfs3IbHFBA" \
@@ -288,7 +288,7 @@ GET|POST /token?grant_type=delete
 
 ### Request example
 
-<pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=delete \
+<pre><code>$ curl {{ book.ServiceEnv.AuthAPIBaseURI }}token?grant_type=delete \
        --data-urlencode "access_token=xFcH08vYQcahQWouqIzWOw" \
        --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
        --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \

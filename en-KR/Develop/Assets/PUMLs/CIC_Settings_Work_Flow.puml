@@ -11,9 +11,9 @@ group Synchronizing the settings information
   ca ->> cic: Requests for synchronizing the current settings information
   activate cic
 
-    cic ->> cli: Sends Settings.ExpectReport directive
+    cic ->> cli: Sends the Settings.ExpectReport directive
     activate cli
-    cli ->> cic: Sends Settings.Report event
+    cli ->> cic: Sends the Settings.Report event
     deactivate cli
 
   cic ->> ca: Requests for synchronizing the current settings information
@@ -29,9 +29,9 @@ group Changing the settings from the Clova app
   ca ->> cic: Reqeusts to update the device settings
   activate cic
 
-    cic ->> cli: Sends Settings.Update directive
+    cic ->> cli: Sends the Settings.Update directive
     activate cli
-    cli ->> cic: Sends Settings.Report event
+    cli ->> cic: Sends the Settings.Report event
     deactivate cli
 
   cic ->> ca: Instructs the client app to apply the changed settings
@@ -44,7 +44,7 @@ end
 group Changing the settings directly from the client device
   user ->> cli: Changes the device settings
   activate cli
-      cli ->> cic: Sends Settings.Report event
+      cli ->> cic: Sends the Settings.Report event
   deactivate cli
       activate cic
 

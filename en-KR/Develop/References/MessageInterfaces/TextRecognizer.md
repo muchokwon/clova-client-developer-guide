@@ -3,17 +3,17 @@
 The TextRecognizer namespace provides an interface to request to CIC to recognize the user text entry.
 
 ## Recognize event {#Recognize}
-The `TextRecognizer.Recognize` event sends the user text entry to CIC and requests to recognize what the user wants. The natural language analysis system and dialogue understanding system of Clova interpret the text input and processes user requests accordingly. Use this event instead of the [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize) event message if the client cannot receive voice input from a user or the client microphone is not functioning properly.
+The `TextRecognizer.Recognize` event sends the user text entry to CIC and requests to recognize what the user wants. The natural language analysis system and dialogue understanding system of Clova interpret the text input and processes user requests accordingly. Use this event instead of the [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize) event message if the client cannot receive voice input from a user or the client microphone is not functioning properly.
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `explicit`         | boolean  | To acquire additional user input due to the [`SpeechRecognizer.ExpectSpeech`](/Develop/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) directive, use the value of the `explicit` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional  |
-| `speechId`   | string   | To acquire additional user input due to the [`SpeechRecognizer.ExpectSpeech`](/Develop/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) directive, use the value of the `expectSpeechId` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional  |
+| `explicit`         | boolean  | To acquire additional user input due to the [`SpeechRecognizer.ExpectSpeech`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#ExpectSpeech) directive, use the value of the `explicit` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional  |
+| `speechId`   | string   | To acquire additional user input due to the [`SpeechRecognizer.ExpectSpeech`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#ExpectSpeech) directive, use the value of the `expectSpeechId` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional  |
 | `text`        | string  | The text entered by a user. | Required     |
 
 ### Message example
@@ -62,5 +62,5 @@ The `TextRecognizer.Recognize` event sends the user text entry to CIC and reques
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.ExpectSpeech`](/Develop/References/CICInterface/SpeechRecognizer.md#ExpectSpeech)
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.ExpectSpeech`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#ExpectSpeech)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)

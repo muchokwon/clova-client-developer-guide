@@ -33,8 +33,8 @@
       <td>2019/08/05</td>
       <td>
         <ul>
-          <li>クライアントデバイスのデザインガイドラインドキュメントを<a href="/Design/Client_State_And_Event.md">クライアントの状態とイベント</a>、<a href="/Design/Button.md">ボタン</a>、<a href="/Design/Light.md">ランプ</a>、<a href="/Design/Sound.md">サウンド</a>、<a href="/Design/Screen.md">画面</a>、<a href="/Design/Clova_Inside.md">Clova inside</a>ページに分割</li>
-          <li><a href="/Design/Sound.md#SupportedAudioFormat">プラットフォームでサポートされる音声ファイルフォーマット</a>に、Clovaでサポートされるコンテナフォーマットを追加</li>
+          <li>クライアントデバイスのデザインガイドラインドキュメントを<a href="/Design/Client_State_And_Event.md">クライアントの状態とイベント</a>、<a href="/Design/Button.md">ボタン</a>、<a href="/Design/Light.md">ランプ</a>、<a href="/Design/Audio.md">オーディオ</a>、<a href="/Design/Screen.md">画面</a>、<a href="/Design/Clova_Inside.md">Clova inside</a>ページに分割</li>
+          <li><a href="/Design/Audio.md#SupportedAudioFormat">プラットフォームでサポートされる音声ファイルフォーマット</a>に、Clovaでサポートされるコンテナフォーマットを追加</li>
         </ul>
       </td>
     </tr>
@@ -43,7 +43,7 @@
       <td>
         <ul>
           <li>メディア再生の制御対象を指定するために、<a href="/Develop/References/MessageInterfaces/PlaybackController.md">PlaybackController</a>名前空間の<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectNextCommand">ExpectNextCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectPauseCommand">ExpectPauseCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectPreviousCommand">ExpectPreviousCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectResumeCommand">ExpectResumeCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectStopCommand">ExpectStopCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#Pause">Pause</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#Resume">Resume</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#Stop">Stop</a>ディレクティブに、、targetとtarget.namespaceフィールドを追加</li>
-          <li><a href="/Design/Sound.md#SoundEffect">デザインガイドラインの効果音</a>で、Attending状態遷移時の効果音の再生を、必須ではなく任意に修正</li>
+          <li><a href="/Design/Audio.md#SoundEffect">デザインガイドラインの効果音</a>で、Attending状態遷移時の効果音の再生を、必須ではなく任意に修正</li>
           <li>デザインガイドラインに<a href="/Design/Clova_Inside.md">Clova inside</a>の内容を追加</li>
           <li>ClovaクライアントデベロッパーガイドからClovaクライアントガイドに分割</li>
           <li>一部のドキュメントの誤りを訂正</li>
@@ -101,7 +101,7 @@
       <td>2019/04/19</td>
       <td>
         <ul>
-          <li>デザインガイドラインの<a href="/Design/Sound.md#AudioInterruptionRule">オーディオ再生の基本ルール</a>に、オーディオコンテンツを区別するため、オーディオコンテンツのタイプに関連するCIC APIの名前空間を追加</li>
+          <li>デザインガイドラインの<a href="/Design/Audio.md#AudioInterruptionRule">オーディオ再生の基本ルール</a>に、オーディオコンテンツを区別するため、オーディオコンテンツのタイプに関連するCIC APIの名前空間を追加</li>
         </ul>
       </td>
     </tr>
@@ -284,7 +284,7 @@
       <td>2018/07/23</td>
       <td>
         <ul>
-          <li>デザインガイドラインの<a href="/Design/Sound.md#SoundEffect">効果音</a>のうち、Attending状態遷移時の効果音を更新</li>
+          <li>デザインガイドラインの<a href="/Design/Audio.md#SoundEffect">効果音</a>のうち、Attending状態遷移時の効果音を更新</li>
           <li><a href="/Develop/References/Clova_Auth_API.md">CIC認証API</a>の<a href="/Develop/References/Clova_Auth_API.md#RequestAuthorizationCode">認可コードをリクエストする</a>の説明に423 Lockedステータスコードを追加</li>
         </ul>
       </td>
@@ -390,7 +390,7 @@
         <ul>
           <li><a  href="/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize">SpeechRecognizer.Recognize</a>イベントのinitiatorフィールドの説明を修正</li>
           <li>デザインガイドラインで、クライアントの状態のうち、Hearing状態の名前をListeningに修正</li>
-          <li>クライアントデバイスのデザインガイドラインの<a href="/Design/Sound.md">オーディオ</a>で、オーディオコンテンツのタイプにFeedbackタイプを追加し、関連ルールを説明に追加</li>
+          <li>クライアントデバイスのデザインガイドラインの<a href="/Design/Audio.md">オーディオ</a>で、オーディオコンテンツのタイプにFeedbackタイプを追加し、関連ルールを説明に追加</li>
         </ul>
       </td>
     </tr>
@@ -428,7 +428,7 @@
       <td>2018/01/29</td>
       <td>
         <ul>
-          <li>デザインガイドラインに<a href="/Design/Sound.md#SoundEffect">リマインダーの効果音</a>を追加</li>
+          <li>デザインガイドラインに<a href="/Design/Audio.md#SoundEffect">リマインダーの効果音</a>を追加</li>
           <li><a href="/Develop/References/MessageInterfaces/Notifier.md">Notifier</a>名前空間に<a href="/Develop/References/MessageInterfaces/Notifier.md#Notify">Notifier.Notify</a>イベントを追加およびその名前空間で使用されるメッセージのpayloadフィールドを更新</li>
           <li><a href="/Develop/References/Context_Objects.md#SpeechState">SpeechSynthesizer.SpeechState</a>および<a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md">SpeechSynthesizer</a>名前空間に<a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md#SpeechFinished">SpeechFinished</a>、<a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md#SpeechStarted">SpeechStarted</a>、<a href="/Develop/References/MessageInterfaces/SpeechSynthesizer.md#SpeechStopped">SpeechStopped</a>イベントを追加</li>
           <li>マルチターン対話のために、<a href="/Develop/References/MessageInterfaces/TextRecognizer.md">TextRecognizer.Recognize</a>イベントにspeechId、explicitフィールドを追加</li>
@@ -440,7 +440,7 @@
       <td>2018/01/22</td>
       <td>
         <ul>
-          <li><a href="/Design/Sound.md#SupportedAudioFormat">プラットフォームでサポートされる音声ファイルフォーマット</a>をデザインガイドラインに追加</li>
+          <li><a href="/Design/Audio.md#SupportedAudioFormat">プラットフォームでサポートされる音声ファイルフォーマット</a>をデザインガイドラインに追加</li>
           <li>UMLダイアグラムの画像形式を変更</li>
         </ul>
       </td>
@@ -496,7 +496,7 @@
       <td>2017/12/04</td>
       <td>
         <ul>
-          <li><a href="/Design/Sound.md#AudioInterruptionRule">オーディオ再生のルール（audio interruption rule）</a>をデザインガイドラインに追加</li>
+          <li><a href="/Design/Audio.md#AudioInterruptionRule">オーディオ再生のルール（audio interruption rule）</a>をデザインガイドラインに追加</li>
           <li>デザインガイドラインの画像を改善</li>
           <li>CICと連携するための事前準備に<a href="/Develop/Guides/Interact_with_CIC.md#UserAgentString">User-Agent string</a>を追加</li>
           <li><a href="/Develop/References/CIC_API.md">CIC API</a>の<a href="/Develop/References/CIC_API.md#SendEvent">イベントを送信する</a>セクションに、412 Precondition Failedステータスコードの説明を追加</li>

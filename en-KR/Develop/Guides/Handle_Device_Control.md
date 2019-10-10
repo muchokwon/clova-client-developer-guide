@@ -25,10 +25,10 @@ The flow of activating or deactivating device settings is as follows:
 
 ![](/Develop/Assets/Images/CIC_DeviceControl_Work_Flow1.svg)
 
-The user makes a voice request ([`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)) to control the client.
+The user makes a voice request ([`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)) to control the client.
 The client sends the user request as an event message. For this process, the [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) context must be included in the event message.
 CIC determines whether the client can perform the control request of the user by analyzing the `actions[]` field in the [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) context.
-When the client is able to handle the request, CIC sends the [`DeviceControl.TurnOn`](/Develop/References/CICInterface/DeviceControl.md#TurnOn) directive message to enable a specific function from the client. This directive message contains the information necessary to enable the function, so the client must find the correct function to activate using the information in the message. An example of a [`DeviceControl.TurnOn`](/Develop/References/CICInterface/DeviceControl.md#TurnOn) directive message that can be received is as follows:
+When the client is able to handle the request, CIC sends the [`DeviceControl.TurnOn`](/Develop/References/MessageInterfaces/DeviceControl.md#TurnOn) directive message to enable a specific function from the client. This directive message contains the information necessary to enable the function, so the client must find the correct function to activate using the information in the message. An example of a [`DeviceControl.TurnOn`](/Develop/References/MessageInterfaces/DeviceControl.md#TurnOn) directive message that can be received is as follows:
 
 ```json
 {
@@ -59,7 +59,7 @@ The `target` field of `payload` shows the control target and may contain the fol
 
 The client must enable the function using the information contained in the `target` field. Based on the directive message above, the client must enable airplane mode.
 
-The client must send the result of handling this directive message to CIC using the [`DeviceControl.ActionExecuted`](/Develop/References/CICInterface/DeviceControl.md#ActionExecuted) or [`DeviceControl.ActionFailed`](/Develop/References/CICInterface/DeviceControl.md#ActionFailed) event message.
+The client must send the result of handling this directive message to CIC using the [`DeviceControl.ActionExecuted`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionExecuted) or [`DeviceControl.ActionFailed`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionFailed) event message.
 
 ## Adjusting device volume {#HandleDeviceVolume}
 
@@ -69,7 +69,7 @@ Users can make a request Clova to adjust the volume of the client device playing
 * User attempts volume adjustment using a button on the client
 * User attempts volume adjustment of a specific client remotely from the Clova app
 
-The user may request to adjust volume through speech ([`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)) or device operation. Once the user makes such request, Clova analyzes the user utterance and sends the [`DeviceControl.Increase`](/Develop/References/CICInterface/DeviceControl.md#Increase) directive message to enable a specific function from the client. Also, the client must frequently report the state of the connected Bluetooth device to CIC using the context information, [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) object.
+The user may request to adjust volume through speech ([`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)) or device operation. Once the user makes such request, Clova analyzes the user utterance and sends the [`DeviceControl.Increase`](/Develop/References/MessageInterfaces/DeviceControl.md#Increase) directive message to enable a specific function from the client. Also, the client must frequently report the state of the connected Bluetooth device to CIC using the context information, [`Device.DeviceState`](/Develop/References/Context_Objects.md#DeviceState) object.
 
 As the user increases or decreases the volume or specifies a value, the client receives the directive message below. The client must adjust the volume according to the information in the received directive message.
 
@@ -97,7 +97,7 @@ The `target` field of `payload` is the field to show the control target. The `ta
 
 Based on the directive message above, the client must increase the volume. Unless specified from the user, the volume must be adjusted by the default increase amount. The default increase amount can be set by the developer company.
 
-The client must send the result of handling this directive message to CIC using the [`DeviceControl.ActionExecuted`](/Develop/References/CICInterface/DeviceControl.md#ActionExecuted) or [`DeviceControl.ActionFailed`](/Develop/References/CICInterface/DeviceControl.md#ActionFailed) event message.
+The client must send the result of handling this directive message to CIC using the [`DeviceControl.ActionExecuted`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionExecuted) or [`DeviceControl.ActionFailed`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionFailed) event message.
 
 ## Sharing device state information {#HandleDeviceStateReport}
 
@@ -105,20 +105,20 @@ There are times when the Clova app needs to check the states of clients register
 
 ![](/Develop/Assets/Images/CIC_DeviceControl_Work_Flow2.svg)
 
-1. The client (usually the Clova app) sends the [`DeviceControl.RequestStateSynchronization`](/Develop/References/CICInterface/DeviceControl.md#RequestStateSynchronization) event message to CIC.
-2. CIC sends the [`DeviceControl.ExpectReportState`](/Develop/References/CICInterface/DeviceControl.md#ExpectReportState) directive message to all clients (excluding the Clova app) registered in the user account through the [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection).
-3. Upon receiving the [`DeviceControl.ExpectReportState`](/Develop/References/CICInterface/DeviceControl.md#ExpectReportState) directive message, the client **must report its current state by sending the [`DeviceControl.ReportState`](/Develop/References/CICInterface/DeviceControl.md#ReportState) event message to CIC.**
-4. CIC uses the [`DeviceControl.SynchronizeState`](/Develop/References/CICInterface/DeviceControl.md#SynchronizeState) directive message to send the collected state information to the Clova app using the [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection).
-5. Once receiving the [`DeviceControl.SynchronizeState`](/Develop/References/CICInterface/DeviceControl.md#SynchronizeState) directive message , the Clova app updates the state of other clients.
+1. The client (usually the Clova app) sends the [`DeviceControl.RequestStateSynchronization`](/Develop/References/MessageInterfaces/DeviceControl.md#RequestStateSynchronization) event message to CIC.
+2. CIC sends the [`DeviceControl.ExpectReportState`](/Develop/References/MessageInterfaces/DeviceControl.md#ExpectReportState) directive message to all clients (excluding the Clova app) registered in the user account through the [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection).
+3. Upon receiving the [`DeviceControl.ExpectReportState`](/Develop/References/MessageInterfaces/DeviceControl.md#ExpectReportState) directive message, the client **must report its current state by sending the [`DeviceControl.ReportState`](/Develop/References/MessageInterfaces/DeviceControl.md#ReportState) event message to CIC.**
+4. CIC uses the [`DeviceControl.SynchronizeState`](/Develop/References/MessageInterfaces/DeviceControl.md#SynchronizeState) directive message to send the collected state information to the Clova app using the [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection).
+5. Once receiving the [`DeviceControl.SynchronizeState`](/Develop/References/MessageInterfaces/DeviceControl.md#SynchronizeState) directive message , the Clova app updates the state of other clients.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The client will receives the <a href="/Develop/References/CICInterface/DeviceControl.md#ExpectReportState"><code>DeviceControl.ExpectReportState</code></a> directive message when it is newly added to the user account or is reconnected to CIC. In this process, the client must perform the same actions for the process of sharing the state information with the Clova app.</p>
+  <p>The client will receives the <a href="/Develop/References/MessageInterfaces/DeviceControl.md#ExpectReportState"><code>DeviceControl.ExpectReportState</code></a> directive message when it is newly added to the user account or is reconnected to CIC. In this process, the client must perform the same actions for the process of sharing the state information with the Clova app.</p>
 </div>
 
 ## Reporting handled results {#HandleActionExecutedResponse}
 
-The client must always report the result of the response to CIC using the `DeviceControl.ActionExecuted` or `DeviceControl.ActionFailed` event messages, every time the handled outcome is successful or not. The [`DeviceControl.ActionExecuted`](/Develop/References/CICInterface/DeviceControl.md#ActionExecuted) event message below is sent to CIC when the control is successful.
+The client must always report the result of the response to CIC using the `DeviceControl.ActionExecuted` or `DeviceControl.ActionFailed` event messages, every time the handled outcome is successful or not. The [`DeviceControl.ActionExecuted`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionExecuted) event message below is sent to CIC when the control is successful.
 
 ```json
 {
@@ -139,7 +139,7 @@ The client must always report the result of the response to CIC using the `Devic
 }
 ```
 
-If failed, the client sends an [`DeviceControl.ActionFailed`](/Develop/References/CICInterface/DeviceControl.md#ActionFailed) event message.
+If failed, the client sends an [`DeviceControl.ActionFailed`](/Develop/References/MessageInterfaces/DeviceControl.md#ActionFailed) event message.
 
 ```json
 {

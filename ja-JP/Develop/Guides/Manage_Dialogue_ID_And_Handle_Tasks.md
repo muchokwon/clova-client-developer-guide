@@ -30,7 +30,7 @@
 
 最終ダイアログIDを更新した後、クライアントは、新しい[ダイアログIDを持つディレクティブを処理する](#HandleDirectivesByDialogueID)ために、以下を実行する必要があります。
 
-* 前のダイアログIDを持つディレクティブの内容をユーザーに提供している場合、[オーディオ再生の基本ルール](/Design/Sound.md#AudioInterruptionRule)または[ユーザー発話時のオーディオ再生ルール](/Design/Sound.md#AudioInterruptionRuleForUserUtterance)を参照して、それを中止する必要があります。
+* 前のダイアログIDを持つディレクティブの内容をユーザーに提供している場合、[オーディオ再生の基本ルール](/Design/Audio.md#AudioInterruptionRule)または[ユーザー発話時のオーディオ再生ルール](/Design/Audio.md#AudioInterruptionRuleForUserUtterance)を参照して、それを中止する必要があります。
 * [メッセージキュー](/Develop/Guides/Interact_with_CIC.md#ManageMessageQ)から以前のダイアログIDを持つディレクティブをすべて破棄する必要があります。
 
 ## ダイアログIDによってディレクティブを処理する {#HandleDirectivesByDialogueID}

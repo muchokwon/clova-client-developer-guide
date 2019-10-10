@@ -1,11 +1,13 @@
-# Sound {#Sound}
+<!-- Note! This content includes shared parts. Therefore, when you update this file, you should beware of synchronization. -->
+
+# Audio
 
 This section describes the guidelines for outputting audio content or sound effects from the client device.
 
 * [Rules for basic audio playback](#AudioInterruptionRule)
 * [Audio playback rules for user utterances](#AudioInterruptionRuleForUserUtterance)
 * [Sound effects](#SoundEffect)
-* [Supported audio compression formats](#SupportedAudioCompressionFormat)
+* [Supported audio formats](#SupportedAudioFormat)
 
 ## Rules for basic audio playback {#AudioInterruptionRule}
 
@@ -13,11 +15,11 @@ A client may have to play other audio content during audio playback. In this cas
 
 | Audio content type | Description                                                  | Related CIC API namespace             |
 |---------------|-------------------------------------------------------|----------------------------------|
-| Alert         | Audio content such as alarm sounds, timer sounds, reminder sounds, reminder utterance, emergency warning sounds.             | [`Alerts`](/Develop/References/CICInterface/Alerts.md) |
-| Content       | Audio content such as music, picture book and radio provided upon user request.                           | [`AudioPlayer`](/Develop/References/CICInterface/AudioPlayer.md) |
-| Dialogue      | TTS audio content provided upon user request.                                                  | [`SpeechRecognizer`](/Develop/References/CICInterface/SpeechRecognizer.md), [`SpeechSynthesizer`](/Develop/References/CICInterface/SpeechSynthesizer.md) |
+| Alert         | Audio content such as alarm sounds, timer sounds, reminder sounds, reminder utterance, emergency warning sounds.             | [`Alerts`](/Develop/References/MessageInterfaces/Alerts.md) |
+| Content       | Audio content such as music, stories, news, and podcasts provided upon user request.                           | [`AudioPlayer`](/Develop/References/MessageInterfaces/AudioPlayer.md) |
+| Dialogue      | TTS audio content provided upon user request.                                                  | [`SpeechRecognizer`](/Develop/References/MessageInterfaces/SpeechRecognizer.md), [`SpeechSynthesizer`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md) |
 | Feedback      | Audio content such as reset sound, ring tone, and ringback tone.                              | None (Determined by the client itself) |
-| Notification  | Audio content such as Beep sound, system state utterance (e.g., notification for low battery or Bluetooth disconnection), notification sound, and notification utterance.         | [`Notifier`](/Develop/References/CICInterface/Notifier.md) |
+| Notification  | Audio content such as Beep sound, system state utterance (e.g., notification for low battery or Bluetooth disconnection), notification sound, and notification utterance.         | [`Notifier`](/Develop/References/MessageInterfaces/Notifier.md) |
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -112,11 +114,11 @@ A client must provide sound effects in addition to the [Lights](#Light) in order
 
 ### Sound effect type {#SoundEffects}
 
-In order to express [states and events](#ClientStateAndEvent) of the client, the following sound effects must be provided:
+In order to express [states and events](/Design/Client_State_And_Event.md) of the client, the following sound effects must be provided:
 
 | State or event              | Sample sound effect                     | Required |
 |---------------------------|------------------------------|:---------:|
-| Entering the attending state         | <audio title="Attending" controls><source src="./Assets/Sounds/Clova-Client-Soundeffect-Attending.wav" type="audio/wav" /></audio> | Required     |
+| Entering the attending state         | <audio title="Attending" controls><source src="./Assets/Sounds/Clova-Client-Soundeffect-Attending.wav" type="audio/wav" /></audio> | Optional     |
 | Entering the error state             | <audio title="Error" controls><source src="./Assets/Sounds/Clova-Client-SoundEffect-Error.wav" type="audio/wav" /></audio>         | Required     |
 | Entering the mute on state           | <audio title="Mute on" controls><source src="./Assets/Sounds/Clova-Client-SoundEffect-Mute_On.wav" type="audio/wav" /></audio>     | Required     |
 | Disabling the mute on state           | <audio title="Mute off" controls><source src="./Assets/Sounds/Clova-Client-SoundEffect-Mute_Off.wav" type="audio/wav" /></audio>   | Required     |
@@ -134,17 +136,29 @@ The following guidelines must be followed when providing sound effects.
 * The sound effects must be consistent with the light effects or screen states.
 * If you are providing a sound effect for button feedback, the sound effect must be suitable to the property and feeling of a button.
 
-## Supported audio compression formats {#SupportedAudioCompressionFormat}
+## Supported audio formats {#SupportedAudioFormat}
 
 Since a client must play the audio content delivered by Clova, it must be able to play the audio compression formats supported by Clova.
 
+<!-- Start of the shared content: SupportedAudioFormat -->
+
 Audio compression formats supported by Clova are as follows:
 
-| Audio compression format                     | File extension | License cost |
-|----------------------------------|:--------:|-----------|
-| MPEG-1 or MPEG-2 Audio Layer III | .mp3     | Free       |
+| Audio compression format                     | License cost |
+|----------------------------------|-----------|
+| MPEG-1 or MPEG-2 Audio Layer III | Free       |
 
-<div class="note">
-  <p><strong>Note!</strong></p>
-  <p>More audio compression formats may be supported by Clova in the future.</p>
+Audio container formats supported by Clova are as follows:
+
+| Container Format   | MIME Type                      | Remark                           |
+|-------------|-------------------------------|-------------------------------|
+| mp3         | audio/mpeg                    | <!-- -->                      |
+| m3u8        | application/vnd.apple.mpegurl | Uses HTTP Live Streaming       |
+
+
+<div class="tip">
+  <p><strong>Tip!</strong></p>
+  <p>More audio compression formats may be additionally supported by Clova in the future.</p>
 </div>
+
+<!-- End of the shared content -->

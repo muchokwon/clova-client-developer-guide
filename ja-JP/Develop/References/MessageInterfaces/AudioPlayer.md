@@ -1022,7 +1022,7 @@ AudioPlayer APIを使ってイベントまたはディレクティブを送信�
 | `progressReport.progressReportIntervalInMilliseconds` | number | 再生中に、指定された間隔ごとに再生状態をレポートするように指定する値です。ミリ秒単位で、このフィールドの値はnullの場合があります。        | 任意/条件付き |
 | `progressReport.progressReportPositionInMilliseconds` | number | 再生中に、指定された再生位置を経過する度に、再生状態をレポートするように指定する値です。ミリ秒単位で、このフィールドの値はnullの場合があります。    | 任意/条件付き |
 | `token`                  | string  | オーディオストリームのトークン。<div class="note"><p><strong>メモ</strong></p><p>このフィールドの最大の長さは2048バイトです。</p></div>                          |  |
-| `url`                    | string  | オーディオストリームのURI<div class="note"><p><strong>メモ</strong></p><p>提供するオーディオコンテンツは、<a href="/Design/Sound.md#SupportedAudioFormat">プラットフォームでサポートされているオーディオ圧縮形式</a>である必要があります。</p></div><div class="note"><p><strong>メモ</strong></p><p>このフィールドの最大の長さは、2048バイトです。</p></div>  |  |
+| `url`                    | string  | オーディオストリームのURI<div class="note"><p><strong>メモ</strong></p><p>提供するオーディオコンテンツは、<a href="/Design/Audio.md#SupportedAudioFormat">プラットフォームでサポートされているオーディオ圧縮形式</a>である必要があります。</p></div><div class="note"><p><strong>メモ</strong></p><p>このフィールドの最大の長さは、2048バイトです。</p></div>  |  |
 | `urlPlayable`            | boolean | `url`フィールドのオーディオストリームのURIがすぐに再生できるかを示す値<ul><li><code>true</code>：すぐに再生できるURI</li><li><code>false</code>：すぐ再生できないURI<a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a>イベントでオーディオストリームの情報を追加でリクエストする必要があります。</li></ul>        |  |
 
 #### 備考

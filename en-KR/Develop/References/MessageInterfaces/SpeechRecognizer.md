@@ -2,7 +2,7 @@
 
 The SpeechRecognizer namespace provides interfaces for processing recognition of user voice request. To have a voice request processed:
 
-1. Send CIC the [`SpeechRecognizer.Recognize`](#Recognize) event when the user makes a voice request.
+1. Send the [`SpeechRecognizer.Recognize`](#Recognize) event to CIC when the user makes a voice request.
 2. Continue to send the speech input to CIC in every 200ms.
 3. Repeat step 2 until the [`SpeechRecognizer.StopCapture`](#StopCapture) directive message from CIC is received.
 
@@ -13,9 +13,7 @@ The SpeechRecognizer namespace provides the following events and directives.
 | [`ExpectSpeech`](#ExpectSpeech)                 | Directive | Instructs the client to receive user voice input.                  |
 | [`KeepRecording`](#KeepRecording)               | Directive | Instructs the client to continually receive voice input.                     |
 | [`Recognize`](#Recognize)                       | Event     | Requests CIC for speech recognition on the user audio request.          |
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 | [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | Returns the recognition result of a user voice request in real-time.              |
-{% endif -%}
 | [`StopCapture`](#StopCapture)                   | Directive | Instructs the client to stop receiving voice input from the user.           |
 
 ## ExpectSpeech directive {#ExpectSpeech}
@@ -106,7 +104,7 @@ CIC can process the following audio formats:
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 | Field name       | Data type    | Description                     | Required |
@@ -222,7 +220,6 @@ Content-Type: application/octet-stream
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ## ShowRecognizedText directive {#ShowRecognizedText}
 
 This directive returns recognition results to the client in real time. The speech recognition system of Clova analyzes and returns the user voice request in real time while receiving the voice request through the [`SpeechRecognizer.Recognize`](#Recognize) event. During the recognition process, CIC returns partial recognition result to the client with the `SpeechRecognizer.ShowRecognizedText` directive. The client has an option to display the recognition progress in real time.
@@ -237,6 +234,11 @@ This directive returns recognition results to the client in real time. The speec
 
 * This directive message is sent through a [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection), which means that this directive is not a response to an event message.
 * CIC does not provide partial result to the client by default. The `SpeechRecognizer.ShowRecognizedText` directive is sent only under special conditions.
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>To use this directive message, contact the partnership team.</p>
+</div>
 
 ### Message example
 
@@ -296,35 +298,29 @@ This directive returns recognition results to the client in real time. The speec
 * [`SpeechRecognizer.Recognize`](#Recognize)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
-{% endif %}
-
 ## StopCapture directive {#StopCapture}
-This directive returns the last recognition result and instructs the client to stop recording the user voice when CIC decides no more voice recording (PCM) is required upon receiving the [`SpeechRecognizer.Recognize`](#Recognize) event. Upon receiving the directive, the client must immediately stop recoding the user request. However, a client can choose to continue to receive a user request even after CIC sends this directive, but the voice request taken after receiving this directive will not be processed by Clova.
+This `SpeechRecognizer.StopCapture` directive returns the last recognition result and instructs the client to stop recording the user voice when CIC decides no more voice recording (PCM) is required upon receiving the [`SpeechRecognizer.Recognize`](#Recognize) event. Upon receiving the directive, the client must immediately stop recoding the user request. However, a client can choose to continue to receive a user request even after CIC sends this directive, but the voice request taken after receiving this directive will not be processed by Clova.
 
 ### Payload fields
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
-| `recognizedText` | string | The last recognition result of the user voice request. This field is included only under special conditions. | Conditional |
-{% else %}
-None
-{% endif %}
+| `recognizedText` | string | The last recognition result of the user voice request. Basically, this field is not included in the `SpeechRecognizer.StopCapture` directive message and included only under special conditions.<div class="note"><p><strong>Note!</strong></p><p>To use this field, contact the partnership team.</p></div> | Conditional |
 
 ### Remarks
 This directive is sent through a [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection), not as a response to an event.
 
 ### Message example
 
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" %}
 ```json
+// Example 1: An example which contains the recognizedText field
 {
   "directive": {
     "header": {
       "namespace": "SpeechRecognizer",
       "name": "StopCapture",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
-      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+      "dialogRequestId": "eaa19eaa-07bc-447a-9e3f-c3b4a7d994e8",
+      "messageId": "cc9f2a05-34c8-4edd-b810-2c040ac3d672"
     },
     "payload": {
       "recognizedText": "Let me know today's weather"
@@ -332,7 +328,8 @@ This directive is sent through a [downchannel](/Develop/Guides/Interact_with_CIC
   }
 }
 ```
-{% else %}
+
+// Example 2: An example which does not contain the recognizedText field
 ```json
 {
   "directive": {
@@ -346,11 +343,8 @@ This directive is sent through a [downchannel](/Develop/Guides/Interact_with_CIC
   }
 }
 ```
-{% endif %}
 
 ### See also
 
 * [`SpeechRecognizer.Recognize`](#Recognize)
-{% if book.DocMeta.TargetReaderType == "Internal" or book.DocMeta.TargetReaderType == "Uplus" -%}
 * [`SpeechRecognizer.ShowRecognizedText`](#ShowRecognizedText)
-{% endif -%}

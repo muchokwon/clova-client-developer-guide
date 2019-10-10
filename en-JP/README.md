@@ -23,7 +23,7 @@ Developers can use the following documents when necessary:
         <ul>
           <li><a href="/Develop/CIC_Overview.md#WhatisCIC">What is CIC?</a></li>
           <li><a href="/Develop/CIC_Overview.md#IndirectDialogue">Indirect dialogue structure</a></li>
-          <li>Design guidelines for <a href="/Design/Button.md">Buttons</a>, <a href="/Design/Light.md">Lights</a>, <a href="/Design/Design/Sound.md">Sound</a>, <a href="/Design/Screen.md">Screen</a> and <a href="/Design/Clova_Inside.md">Clova inside</a></li>
+          <li>Design guidelines for <a href="/Design/Button.md">Buttons</a>, <a href="/Design/Light.md">Lights</a>, <a href="/Design/Audio.md">Audio</a>, <a href="/Design/Screen.md">Screen</a> and <a href="/Design/Clova_Inside.md">Clova inside</a></li>
         </ul>
       </td>
     </tr>

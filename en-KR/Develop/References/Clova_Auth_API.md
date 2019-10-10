@@ -1,10 +1,10 @@
-# Clova auth API reference
+# Clova auth API
 To connect a client with CIC, you must [create a Clova access token](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken). The Clova authorization server provides the Clova auth API for you to create and manage Clova access tokens.
 
 ## Base URI
 The base URI of the Clova authorization server is as follows.
 
-<pre><code>{{ book.ServiceEnv.AuthServerBaseURI }}
+<pre><code>{{ book.ServiceEnv.AuthAPIBaseURI }}
 </code></pre>
 
 ## Requesting an authorization code {#RequestAuthorizationCode}
@@ -99,7 +99,7 @@ GET|POST /authorize
 
 {% endraw %}
 
-{% include "/Develop/References/CICAuthAPI/Guest_Mode.md" %}
+{% include "/Develop/References/ClovaAuthAPI/Guest_Mode.md" %}
 
 ### See also
 * [Client credentials](/Develop/Guides/Interact_with_CIC.md#ClientAuthInfo)
@@ -135,7 +135,7 @@ GET|POST /token?grant_type=authorization_code
 
 ### Request example
 
-<pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=authorization_code \
+<pre><code>$ curl {{ book.ServiceEnv.AuthAPIBaseURI }}token?grant_type=authorization_code \
        --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
        --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \
        --data-urlencode "code=cnl__eCSTdsdlkjfweyuxXvnlA" \
@@ -212,7 +212,7 @@ GET|POST /token?grant_type=refresh_token
 
 ### Request example
 
-<pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=refresh_token \
+<pre><code>$ curl {{ book.ServiceEnv.AuthAPIBaseURI }}token?grant_type=refresh_token \
        --data-urlencode "client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ" \
        --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \
        --data-urlencode "refresh_token=GW-Ipsdfasdfdfs3IbHFBA" \
@@ -288,7 +288,7 @@ GET|POST /token?grant_type=delete
 
 ### Request example
 
-<pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}token?grant_type=delete \
+<pre><code>$ curl {{ book.ServiceEnv.AuthAPIBaseURI }}token?grant_type=delete \
        --data-urlencode "access_token=xFcH08vYQcahQWouqIzWOw" \
        --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
        --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \

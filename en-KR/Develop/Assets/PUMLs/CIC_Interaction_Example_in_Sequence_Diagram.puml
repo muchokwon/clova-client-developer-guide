@@ -5,32 +5,32 @@ participant CIC as cic #05D686
 participant Clova as clova #05D686
 
 activate client
-  client ->> cic: Sends Recognize event\n"Play classic music."
+  client ->> cic: Sends a recognition event\n"Play classic music."
 deactivate client
 
 activate  cic
-  cic ->> clova: Requests user speech recognition
+  cic ->> clova: Requests the user speech recognition
 deactivate cic
 
 activate clova
-  clova -> clova: Recognizes speech
+  clova -> clova: Recognizes the speech
 
-  clova -> clova: Analyzes semantics
-  clova -->> cic: Sends semantics analysis result
+  clova -> clova: Analyzes the semantics
+  clova -->> cic: Sends the semantics analysis result
 deactivate clova
 
 activate cic
-  cic -->> client: Sends Speak directive\n"Here is classic music."
+  cic -->> client: Sends the Speak directive\n"Here is classic music."
 
 activate client
-  client -> client: Outputs voice
-  cic -->> client: Sends RenderText directive\n"Here is classic music."
-  client -> client: Displays text on screen
-  cic -->> client: Sends Play directive\nincluding music information on "Vivaldi: Seasons Spring"
+  client -> client: Outputs a voice
+  cic -->> client: Sends the RenderText directive\n"Here is classic music."
+  client -> client: Displays text on the screen
+  cic -->> client: Sends the Play directive\nincluding music information on "Vivaldi: Seasons Spring"
 deactivate cic
   client -> client: Plays music
 
-  client ->> cic: Sends PlayStarted event\nSends the playback state of client
+  client ->> cic: Sends the PlayStarted event\nSends the playback state of client
 
 deactivate client
 

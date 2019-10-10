@@ -20,7 +20,7 @@ The flow of registering an alarm via user voice is as follows:
 
 ![](/Develop/Assets/Images/CIC_Alerts_Add_Work_Flow.svg)
 
-When the user makes a request([`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)) for alarm registration via voice, Clova analyzes the user utterance and sends the [`Alerts.SetAlert`](/Develop/References/CICInterface/Alerts.md#SetAlert) directive message to the user client for the client to add the alarm.
+When the user makes a request([`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)) for alarm registration via voice, Clova analyzes the user utterance and sends the [`Alerts.SetAlert`](/Develop/References/MessageInterfaces/Alerts.md#SetAlert) directive message to the user client for the client to add the alarm.
 
 The client receives the `Alerts.SetAlert` directive message. Upon receipt, the client must register the alarm on the client device by checking the following details from this directive message:
 * Alarm type
@@ -71,7 +71,7 @@ The directive message above holds the information shown below. And the client mu
   * First song to play: `clova://alert/bell/reminder`
   * Second song to play: `https://abc.de.fe/tts2`
 
-The client attempts to register the alarm and then passes the result to CIC. If alarm registration was successful, the client sends an [`Alerts.SetAlertSucceeded`](/Develop/References/CICInterface/Alerts.md#SetAlertSucceeded) event message to CIC.
+The client attempts to register the alarm and then passes the result to CIC. If alarm registration was successful, the client sends an [`Alerts.SetAlertSucceeded`](/Develop/References/MessageInterfaces/Alerts.md#SetAlertSucceeded) event message to CIC.
 
 ```json
 {
@@ -92,7 +92,7 @@ The client attempts to register the alarm and then passes the result to CIC. If 
 }
 ```
 
-If alarm registration failed, the client sends an [`Alerts.SetAlertFailed`](/Develop/References/CICInterface/Alerts.md#SetAlertFailed) event message.
+If alarm registration failed, the client sends an [`Alerts.SetAlertFailed`](/Develop/References/MessageInterfaces/Alerts.md#SetAlertFailed) event message.
 
 ```json
 {
@@ -113,7 +113,7 @@ If alarm registration failed, the client sends an [`Alerts.SetAlertFailed`](/Dev
 }
 ```
 
-To inform the user of the request result, Clova sends the [`SpeechSynthesizer.Speak`](/Develop/References/CICInterface/SpeechSynthesizer.md#Speak) and the [`Clova.RenderTemplate`](/Develop/References/CICInterface/Clova.md#RenderTemplate) directive messages to the client. The client must then send the details of this directive messages to the user.
+To inform the user of the request result, Clova sends the [`SpeechSynthesizer.Speak`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#Speak) and the [`Clova.RenderTemplate`](/Develop/References/MessageInterfaces/Clova.md#RenderTemplate) directive messages to the client. The client must then send the details of this directive messages to the user.
 
 ## Starting alarms {#RingAlert}
 
@@ -121,7 +121,7 @@ When it becomes the set time, Clova sends a directive message to sound the alarm
 
 ![](/Develop/Assets/Images/CIC_Alerts_Ring_Work_Flow.svg)
 
-The client sounds the alarm at the set time and reports to CIC that the client has started the alarm with the [`Alerts.AlertStarted`](/Develop/References/CICInterface/Alerts.md#AlertStarted) event message.
+The client sounds the alarm at the set time and reports to CIC that the client has started the alarm with the [`Alerts.AlertStarted`](/Develop/References/MessageInterfaces/Alerts.md#AlertStarted) event message.
 
 {% raw %}
 ```json
@@ -148,7 +148,7 @@ Once the alarm sounds, the client must provide the details of the ringing alarm 
 
 ## Stopping alarms {#StopAlert}
 
-The user then requests to stop the alarm via voice([`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)) or via pressing a button on the client device or client app. Upon user request, the client must report the alarm stop request of the user to CIC as an [`Alerts.RequestAlertStop`](/Develop/References/CICInterface/Alerts.md#RequestAlertStop) event message.
+The user then requests to stop the alarm via voice([`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)) or via pressing a button on the client device or client app. Upon user request, the client must report the alarm stop request of the user to CIC as an [`Alerts.RequestAlertStop`](/Develop/References/MessageInterfaces/Alerts.md#RequestAlertStop) event message.
 
 ```json
 {
@@ -169,7 +169,7 @@ The user then requests to stop the alarm via voice([`SpeechRecognizer.Recognize`
 }
 ```
 
-Clova sends the [`Alerts.StopAlert`](/Develop/References/CICInterface/Alerts.md#StopAlert) directive message to the client to stop the alarm.
+Clova sends the [`Alerts.StopAlert`](/Develop/References/MessageInterfaces/Alerts.md#StopAlert) directive message to the client to stop the alarm.
 
 The client receives the `Alerts.StopAlert` directive message. Upon receipt, the client must stop the alarm ringing on the client device by checking the following details from this directive message:
 * ID of the alarm to stop
@@ -196,7 +196,7 @@ An example of an `Alerts.StopAlert` directive message that can be received is as
 
 The client must stop the alarm with the same `token` and `type` values specified in the directive message.
 
-Once the client stops the alarm, it must then send an [`Alerts.AlertStopped`](/Develop/References/CICInterface/Alerts.md#AlertStopped) event message to CIC to report that the client has stopped the alarm.
+Once the client stops the alarm, it must then send an [`Alerts.AlertStopped`](/Develop/References/MessageInterfaces/Alerts.md#AlertStopped) event message to CIC to report that the client has stopped the alarm.
 
 ```json
 {
@@ -226,14 +226,14 @@ If the registered alarm is an action timer alarm, Clova sends a directive messag
 
 <div class="tip">
 <p><strong>Tip!</strong></p>
-<p>Alarms can be changed or removed in the middle of the workflow but only through the Clova app. Also, note that any directive messages that are not a response to a voice request are designed to be forwarded to the client through a [downchannel](/Develop/Guides/Interact_with_CIC.md#CreateConnection).</p>
+<p>Alarms can be changed or removed in the middle of the workflow but only through the Clova app. Note that any directive messages that are not a response to a voice request are designed to be forwarded to the client through a <a href="/Develop/Guides/Interact_with_CIC.md#CreateConnection">downchannel</a>.</p>
 </div>
 
 ## Editing or deleting alarms {#EditAlert}
 
-When a user edits or deletes an alarm from the Clova app, Clova sends an [`Alerts.SetAlert`](/Develop/References/CICInterface/Alerts.md#SetAlert) directive message or an [`Alerts.DeleteAlert`](/Develop/References/CICInterface/Alerts.md#DeleteAlert) directive accordingly to handle the user request.
+When a user edits or deletes an alarm from the Clova app, Clova sends an [`Alerts.SetAlert`](/Develop/References/MessageInterfaces/Alerts.md#SetAlert) directive message or an [`Alerts.DeleteAlert`](/Develop/References/MessageInterfaces/Alerts.md#DeleteAlert) directive accordingly to handle the user request.
 
-For more information, see [Registering alerts](#RegisterAlert) as the process of editing an alarm is almost identical to the process of registering an alarm.
+For more information, see [Registering alerts](#RegisterAlert), as the process of editing an alarm is almost identical to the process of registering an alarm.
 
 When the user requests to delete an alarm, the client receives the `Alerts.DeleteAlert` directive message. The client must then delete the alarm ringing on the client device by checking the following details from this directive message:
 * ID of the alarm to delete
@@ -260,7 +260,7 @@ An example of a `Alerts.DeleteAlert` directive message that can be received is a
 
 The client must delete the alarm with the same `token` and `type` values specified in the directive message.
 
-The client performs alarm modification or deletion. If alarm deletion was successful, the client sends an [`Alerts.DeleteAlertSucceeded`](/Develop/References/CICInterface/Alerts.md#DeleteAlertSucceeded) event message to CIC.
+The client performs alarm modification or deletion. If alarm deletion was successful, the client sends an [`Alerts.DeleteAlertSucceeded`](/Develop/References/MessageInterfaces/Alerts.md#DeleteAlertSucceeded) event message to CIC.
 
 {% raw %}
 ```json
@@ -283,7 +283,7 @@ The client performs alarm modification or deletion. If alarm deletion was succes
 ```
 {% endraw %}
 
-If alarm deletion failed, the client sends an [`Alerts.DeleteAlertFailed`](/Develop/References/CICInterface/Alerts.md#DeleteAlertFailed) event message.
+If alarm deletion failed, the client sends an [`Alerts.DeleteAlertFailed`](/Develop/References/MessageInterfaces/Alerts.md#DeleteAlertFailed) event message.
 
 {% raw %}
 ```json
@@ -308,7 +308,7 @@ If alarm deletion failed, the client sends an [`Alerts.DeleteAlertFailed`](/Deve
 
 ## Synchronizing alarms {#SyncAlert}
 
-The client sends the [`System.RequestSynchronizeState`](/Develop/References/CICInterface/System.md#RequestSynchronizeState) event message to CIC when: a new client is added, one or multiple clients are reconnected after a lost network connection, or a client is connected after a change in the user account registered to the client. The client then receives a [`System.SynchronizeState`](/Develop/References/CICInterface/System.md#SynchronizeState) directive message from CIC and must synchronize the alarm information in the `allAlerts` field of the directive message with the device alarm information.
+The client sends the [`System.RequestSynchronizeState`](/Develop/References/MessageInterfaces/System.md#RequestSynchronizeState) event message to CIC when: a new client is added, one or multiple clients are reconnected after a lost network connection, or a client is connected after a change in the user account registered to the client. The client then receives a [`System.SynchronizeState`](/Develop/References/MessageInterfaces/System.md#SynchronizeState) directive message from CIC and must synchronize the alarm information in the `allAlerts` field of the directive message with the device alarm information.
 
 {% raw %}
 ```json

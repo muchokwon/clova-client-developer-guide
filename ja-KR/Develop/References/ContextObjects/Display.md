@@ -61,4 +61,4 @@
 
 ### 次の項目も参照してください。
 * [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
-* [Custom Extensionのメッセージ]({{ book.ServiceEnv.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/References/Custom_Extension_Message.md)
+* [Custom Extensionのメッセージ]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/References/Custom_Extension_Message.{{ book.DocMeta.FileExtensionForExternalLink }})

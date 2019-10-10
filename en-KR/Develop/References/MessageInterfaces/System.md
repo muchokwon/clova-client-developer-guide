@@ -17,7 +17,7 @@ Reports to CIC that the client needs to synchronize information related to the s
 
 ### Context fields
 
-{% include "/Develop/References/CICInterface/Context_Objects_List.md" %}
+{% include "/Develop/References/MessageInterfaces/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -50,7 +50,7 @@ None
 {% endraw %}
 
 ### See also
-* [`System.SynchronizeState`](/Develop/References/CICInterface/System.md#SynchronizeState)
+* [`System.SynchronizeState`](/Develop/References/MessageInterfaces/System.md#SynchronizeState)
 
 ## SynchronizeState directive {#SynchronizeState}
 Instructs the client to synchronize the data in the `payload`. Upon receiving the directive message, the client should modify the set value according to the data from CIC.
@@ -59,11 +59,11 @@ Instructs the client to synchronize the data in the `payload`. Upon receiving th
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
-| `allAlerts[]`   | object array | **(Deprecated)** The object array that has a list of alarms to synchronize. The alarm information is specified in the format used in the [`payload`](/Develop/References/CICInterface/Alerts.md#SetAlertPayload) of the [`Alerts.SetAlert`](/Develop/References/CICInterface/Alerts.md#SetAlert) directive message. | Always    |
+| `allAlerts[]`   | object array | **(Deprecated)** An object array that has a list of alarms to synchronize. It is in the same format as the [`payload`](/Develop/References/MessageInterfaces/Alerts.md#SetAlertPayload) object used in the [`Alerts.SetAlert`](/Develop/References/MessageInterfaces/Alerts.md#SetAlert) directive message. | Always    |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Synchronization of alarm information through the <code>System.SynchronizeState</code> directive messages will no longer be supported. This feature will be supported through the <a href="/Develop/References/CICInterface/Alerts.md#RequestSynchronizeAlert"><code>Alerts.RequestSynchronizeAlert</code></a> event message and the <a href="/Develop/References/CICInterface/Alerts.md#SynchronizeAlert"><code>Alerts.SynchronizeAlert</code></a> directive message, and these messages must be used. In the future, a field to synchronize the system information will be added to the <code>System.SynchronizeState</code> directive message.</p>
+  <p>Synchronization of alarm information through the <code>System.SynchronizeState</code> directive messages will no longer be supported. This feature will be supported through the <a href="/Develop/References/MessageInterfaces/Alerts.md#RequestSynchronizeAlert"><code>Alerts.RequestSynchronizeAlert</code></a> event message and the <a href="/Develop/References/MessageInterfaces/Alerts.md#SynchronizeAlert"><code>Alerts.SynchronizeAlert</code></a> directive message, and these messages must be used. In the future, a field to synchronize the system information will be added to the <code>System.SynchronizeState</code> directive message.</p>
 </div>
 
 ### Remarks

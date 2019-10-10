@@ -6,17 +6,17 @@ participant "Client device 2" as cli2 #9EA0CA
 participant CIC as cic #05D686
 
 activate ca
-  ca ->> cic : Sends DeviceControl.RequestStateSynchronization event\n(Requests to update the state of client device)
+  ca ->> cic : Sends the DeviceControl.RequestStateSynchronization event\n(Requests to update the state of client device)
 deactivate ca
 
 group Request state report
 
   activate cic
 
-    cic ->> cli1 : Sends DeviceControl.ExpectReportState directive\n(Uses Downchannel)
+    cic ->> cli1 : Sends the DeviceControl.ExpectReportState directive\n(Uses Downchannel)
     activate cli1
 
-    cic ->> cli2 : Sends DeviceControl.ExpectReportState directive\n(Uses Downchannel)
+    cic ->> cli2 : Sends the DeviceControl.ExpectReportState directive\n(Uses Downchannel)
   deactivate cic
     activate cli2
 
@@ -26,11 +26,11 @@ end
 
 group Report state
 
-    cli2 ->> cic : Sends DeviceControl.ReportState event\n(Reports device state)
+    cli2 ->> cic : Sends the DeviceControl.ReportState event\n(Reports device state)
     deactivate cli2
   activate cic
 
-    cli1 ->> cic : Sends DeviceControl.ReportState event\n(Reports device state)
+    cli1 ->> cic : Sends the DeviceControl.ReportState event\n(Reports device state)
     deactivate cli1
 
 end
@@ -38,10 +38,10 @@ end
     cic -> cic : Organizes the collected state
 group Synchronize state
 
-    cic ->> ca : Sends DeviceControl.SynchronizeState directive\n(Uses Downchannel)
+    cic ->> ca : Sends the DeviceControl.SynchronizeState directive\n(Uses Downchannel)
 	deactivate cic
     activate ca
 
-    ca -> ca : Updates client device state
+    ca -> ca : Updates the client device state
 
 end

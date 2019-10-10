@@ -51,7 +51,7 @@ Notifierインターフェースは、CICがクライアントデバイスに通
 | `assetPlayOrder[]`   | string array | `assets[]`フィールドに登録された通知音の再生順序を表す文字列配列です。配列に格納されたオーディオコンテンツの識別子の順番通りに通知音を再生します。            |   |
 | `assets[]`           | object array | 通知に関連するオーディオコンテンツを持つオブジェクト配列                          |  |
 | `assets[].assetId`   | string       | オーディオコンテンツを区別するための識別子                                        |  |
-| `assets[].url`       | string       | オーディオコンテンツのURIです。次のようなスキームまたはオーディオコンテンツのURIを持ちます。<ul><li><code>"clova://notifier/sound/default"</code>：デフォルトの通知音を示すスキームです。あらかじめ定義された通知音を再生します。</li><li>オーディオコンテンツのURI（<code>"http(s)://~</code>）：通知の内容が含まれたオーディオコンテンツのURI。そのURIのオーディオコンテンツを再生します。</li></ul>    |  |
+| `assets[].url`       | string       | オーディオコンテンツのURIです。次のようなスキームまたはオーディオコンテンツのURIを持ちます。<ul><li><code>"clova://notifier/sound/default"</code>：デフォルトの通知音を示すスキームです。あらかじめ定義された通知音を再生します。</li><li>オーディオコンテンツのURI（<code>"http://~"</code>または<code>"https://~"</code>）：通知の内容が含まれたオーディオコンテンツのURI。そのURIのオーディオコンテンツを再生します。</li></ul>    |  |
 | `light`              | string       | ランプの設定情報<ul><li><code>"DEFAULT"</code>：通知があることを示すランプを点灯します。</li><li><code>"NONE"</code>：通知があることを示すランプを点灯しません。</li></ul>   |   |
 
 ### 備考

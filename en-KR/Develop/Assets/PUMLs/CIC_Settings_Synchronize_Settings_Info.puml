@@ -25,8 +25,8 @@ activate ca
 
   deactivate cic
 
-  ca -> ca: Refreshes device settings
+  ca -> ca: Refreshes the device settings
 
-  ca ->> user: Provides device settings
+  ca ->> user: Provides the device settings
 
 deactivate ca

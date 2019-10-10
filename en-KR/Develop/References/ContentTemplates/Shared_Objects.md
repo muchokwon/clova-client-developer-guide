@@ -16,7 +16,7 @@ The content templates use the following JSON objects to represent commonly used 
 | [URIObject](#URIObject)                   | The object that has URI information.                         |
 
 
-# ActionObject {#ActionObject}
+## ActionObject {#ActionObject}
 This object contains the actions that the client must perform.
 
 ### Object fields
@@ -37,7 +37,7 @@ This object contains the actions that the client must perform.
 
 {% endraw %}
 
-# CurrencyObject {#CurrencyObject}
+## CurrencyObject {#CurrencyObject}
 This object contains the amount and currency of money.
 
 ### Object fields

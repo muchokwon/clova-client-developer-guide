@@ -96,7 +96,7 @@ Notifierインターフェースは、CICがクライアントデバイスに通
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.SetIndicator`](#SetIndicator)
 * [ランプ](/Design/Light.md)
-* [サウンド](/Design/Sound.md)
+* [オーディオ](/Design/Audio.md)
 
 ## SetIndicatorディレクティブ {#SetIndicator}
 クライアントに、未読の通知があることを表示するように指示します。クライアントは、通知があることを示すランプを点灯したり、指定されたオーディオインジケーターを再生する必要があります。
@@ -145,4 +145,4 @@ Notifierインターフェースは、CICがクライアントデバイスに通
 * [`Notifier.ClearIndicator`](#ClearIndicator)
 * [`Notifier.Notify`](#Notify)
 * [ランプ](/Design/Light.md)
-* [サウンド](/Design/Sound.md)
+* [オーディオ](/Design/Audio.md)
