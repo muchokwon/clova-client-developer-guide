@@ -8,42 +8,42 @@ participant CIC as cic #05D686
 user ->> client : Requests to add an alarm:\n"Set an alarm for 9 PM today."
 
 activate client
-  client ->> cic : Sends user request\n(SpeechRecognizer.Recognize event)
+  client ->> cic : Sends the user request\n(SpeechRecognizer.Recognize event)
 deactivate client
 
 activate cic
-  cic -> cic : Analyzes user utterance
-  cic -->> client : Sends Alerts.SetAlert directive
+  cic -> cic : Analyzes the user utterance
+  cic -->> client : Sends the Alerts.SetAlert directive
 deactivate cic
 
 activate client
-  client -> client : Adds an alarm to client device
+  client -> client : Adds an alarm to the client device
 
 alt Result of adding an alarm == Failed to add
 
-  client ->> cic : Sends Alerts.SetAlertFailed event
+  client ->> cic : Sends the Alerts.SetAlertFailed event
   deactivate client
   activate cic
 
-    cic -->> client : Sends SpeechSynthesizer.Speak directive\n("Could not set the alarm.")
+    cic -->> client : Sends the SpeechSynthesizer.Speak directive\n("Could not set the alarm.")
   deactivate cic
   activate client
-    client -->> user : Sends result of adding an alarm
+    client -->> user : Sends the result of adding an alarm
 
 else Result of adding an alarm == Success
 
-  client ->> cic : Sends Alerts.SetAlertSucceeded event
+  client ->> cic : Sends the Alerts.SetAlertSucceeded event
 
 deactivate client
 
 activate cic
-  cic -> cic : Adds user alarm
-  cic -->> client : Sends SpeechSynthesizer.Speak directive\n("The alarm is set.")
+  cic -> cic : Adds a user alarm
+  cic -->> client : Sends the SpeechSynthesizer.Speak directive\n("The alarm is set.")
 activate client
-  cic -->> client : Sends Actiontimer, Alarm, Reminder, and Timer templates\n(Clova.RenderTemplate directive)
+  cic -->> client : Sends the Actiontimer, Alarm, Reminder, and Timer templates\n(Clova.RenderTemplate directive)
 deactivate cic
 
-  client -> client : Outputs voice and display added alarm details
-  client -->> user : Sends result of adding an alarm
+  client -> client : Outputs a voice and displays the added alarm details
+  client -->> user : Sends the result of adding an alarm
 
   end

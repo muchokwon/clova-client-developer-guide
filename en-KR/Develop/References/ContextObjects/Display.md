@@ -60,5 +60,5 @@
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/Develop/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [Custom extension messages]({{ book.ServiceEnv.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/References/CEK_API.md#CustomExtMessage)
+* [`SpeechRecognizer.Recognize`](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)
+* [Custom extension messages]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/References/Custom_Extension_Message.{{ book.DocMeta.FileExtensionForExternalLink }})

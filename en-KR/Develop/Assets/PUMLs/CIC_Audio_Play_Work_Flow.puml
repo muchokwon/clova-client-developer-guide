@@ -5,32 +5,32 @@ participant Client as client #9EA0CA
 participant CIC as cic #05D686
 
 
-user ->> client : Requests music playback:\n"Play some upbeat music."
+user ->> client : Requests a music playback:\n"Play some upbeat music."
 
 activate client
-  client ->> cic : Sends user request\n(SpeechRecognizer.Recognize event)
+  client ->> cic : Sends the user request\n(SpeechRecognizer.Recognize event)
 deactivate client
 
 activate cic
-  cic -> cic : Analyzes user utterance
+  cic -> cic : Analyzes the user utterance
   cic -->> client : Directs audio playback (AudioPlayer.Play directive)
 deactivate cic
 
 activate client
-  client -> client : Analyzes audioItem.stream field of AudioPlayer.Play directive
+  client -> client : Analyzes the audioItem.stream field of AudioPlayer.Play directive
 
 opt audioItem.stream.urlPlayable == false
 
 ... Time elapses until right before starting audio playback, ...
 
-  client ->> cic : Requests actual audio information to the audioItem.stream field\n(AudioPlayer.StreamRequested event)
+  client ->> cic : Requests the actual audio information to the audioItem.stream field\n(AudioPlayer.StreamRequested event)
   deactivate client
   activate cic
 
-    cic -->> client : Sends playable audio information\n(AudioPlayer.StreamDeliver directive)
+    cic -->> client : Sends the playable audio information\n(AudioPlayer.StreamDeliver directive)
   deactivate cic
   activate client
-    client -> client : Analyzes audioStream field of AudioPlayer.StreamDeliver directive
+    client -> client : Analyzes the audioStream field of AudioPlayer.StreamDeliver directive
 end
 
-client -> client : Starts audio playback
+client -> client : Starts the audio playback

@@ -9,47 +9,47 @@ device -> client: Advertising
 ...
 user ->> clova : Requests a Bluetooth device connection
 activate clova
-  clova -> client : Sends DeviceControl.BtStartPairing directive
+  clova -> client : Sends the DeviceControl.BtStartPairing directive
 
 activate client
   client -> client : Scans
-  client --> clova : Sends DeviceControl.ActionExecuted event\n(with DeviceState)
+  client --> clova : Sends the DeviceControl.ActionExecuted event\n(with DeviceState)
   hnote over client, device : Found a Bluetooth device
 deactivate client
 
  alt Specific device assigned == Yes
-	clova -> client : Sends DeviceControl.BtConnect directive\n(with payload)
+	clova -> client : Sends the DeviceControl.BtConnect directive\n(with payload)
 
 	activate client
  else Specific device assigned == No
-    clova -> client : Sends DeviceControl.BtConnect directive\n(without payload)
+    clova -> client : Sends the DeviceControl.BtConnect directive\n(without payload)
 end
 
-  client -> device : Requests connection
-  client --> clova : Sends DeviceControl.ActionExecuted event\n(with DeviceState)
+  client -> device : Requests a connection
+  client --> clova : Sends the DeviceControl.ActionExecuted event\n(with DeviceState)
 
 	deactivate client
   alt PIN code required == Yes
-	device ->> client : Requests PIN code
+	device ->> client : Requests a PIN code
 
 	activate client
-	client -> clova : Sends DeviceControl.BtRequestForPINCode event
-    hnote over clova, user #05D686 : Requests PIN code and handle input
+	client -> clova : Sends the DeviceControl.BtRequestForPINCode event
+    hnote over clova, user #05D686 : Requests a PIN code and handles the input
 
     alt Decide to cancel code input == Yes
-		client -> clova : Sends DeviceControl.BtRequestToCancelPINCode event
-		hnote over clova, user #05D686 : Handles cancellation of PIN code request
+		client -> clova : Sends the DeviceControl.BtRequestToCancelPINCode event
+		hnote over clova, user #05D686 : Handles the cancellation of PIN code request
     else
- 		clova -> client : Sends DeviceControl.BtConnectByPINCode directive
+ 		clova -> client : Sends the DeviceControl.BtConnectByPINCode directive
 	end
   end
-    client -> device : Connects using PIN code
-    client -> clova : Sends DeviceControl.ActionExecuted event
+    client -> device : Connects using a PIN code
+    client -> clova : Sends the DeviceControl.ActionExecuted event
 
 	deactivate client
-	device -->> client : Returns connection result
+	device -->> client : Returns the connection result
  deactivate device
 
-  clova -> user : Notifies of connection result
+  clova -> user : Notifies of the connection result
 
 deactivate clova

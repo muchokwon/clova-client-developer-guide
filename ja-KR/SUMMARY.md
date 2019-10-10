@@ -24,12 +24,12 @@
   * [ロゴの表示](/Design/Screen.md#DisplayingLogo)
   * [Green Dot VUI](/Design/Screen.md#GreenDotVUI)
     * [Green Dot VUIの色](/Design/Screen.md#GreenDotVUIColor)
-    * [Green Dot VUIのアクション](/Design/Screen.md#GreenDotVUIMotions)
-* [Clovaインサイド](/Design/Clova_Inside.md)
-  * [Clovaインサイドバッジ](/Design/Clova_Inside.md#ClovaInsideBadge)
-  * [Clovaインサイドの色](/Design/Clova_Inside.md#ClovaInsideColor)
-  * [Clovaインサイドの背景色](/Design/Clova_Inside.md#ClovaInsideBackgroundColor)
-  * [Clovaインサイドに関するガイドライン](/Design/Clova_Inside.md#ClovaInsideRules)
+    * [Green Dot VUIのモーション](/Design/Screen.md#GreenDotVUIMotions)
+* [Clova inside](/Design/Clova_Inside.md)
+  * [Clova insideバッジ](/Design/Clova_Inside.md#ClovaInsideBadge)
+  * [Clova insideの色](/Design/Clova_Inside.md#ClovaInsideColor)
+  * [Clova insideの背景色](/Design/Clova_Inside.md#ClovaInsideBackgroundColor)
+  * [Clova insideに関するガイドライン](/Design/Clova_Inside.md#ClovaInsideRules)
 
 ## 開発
 

@@ -2,12 +2,12 @@
 The MemoList template is used in providing a list of memos for the client to display on the client screen. When the user requests a list of memos, CIC sends the list of memos registered by the user to the client in the form of the MemoList template.
 
 <div class="tip">
-<p><strong>Tip!</strong></p>
-<p>The following restrictions apply when using the MemoList template:</p>
-<ul>
-  <li>Voice requests can be used only to add a memo or to check a list of memos.</li>
-  <li>To modify or delete a memo, the user must use the Clova app.</li>
-</ul>
+  <p><strong>Tip!</strong></p>
+  <p>The following restrictions apply when using the MemoList template:</p>
+  <ul>
+    <li>Voice requests can be used only to add a memo or to check a list of memos.</li>
+    <li>To modify or delete a memo, the user must use the Clova app.</li>
+  </ul>
 </div>
 
 ## Template fields

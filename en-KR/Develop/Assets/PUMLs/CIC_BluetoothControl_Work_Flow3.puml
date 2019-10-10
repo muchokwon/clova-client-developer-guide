@@ -15,7 +15,7 @@ alt Client role == sink
 
 activate client
 
-	device -> client : Receives audio stream from the Bluetooth device
+	device -> client : Receives an audio stream from the Bluetooth device
   activate device
     client -> user : Plays audio from the speaker
 else Client role == source

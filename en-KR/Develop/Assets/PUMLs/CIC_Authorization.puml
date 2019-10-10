@@ -7,56 +7,56 @@ participant "Clova authorization server" as cauth #05D686
 participant CIC as cic #05D686
 
 activate app
-  app -> app: NAVER login
+  app -> app: Logs in to NAVER
 
   app ->> nauth: Sends NAVER account information
 
   activate nauth
-    nauth -->> app: Sends NAVER account\naccess token
+    nauth -->> app: Sends the NAVER account\naccess token
   deactivate nauth
 
-  app ->> cauth: Requests authorization code (send next information)\l- NAVER account access token\l- Client credentials (CLOVA_OAUTH_CLIENT_ID)
+  app ->> cauth: Requests the authorization code (Sends the next information)\l- NAVER account access token\l- Client credentials (CLOVA_OAUTH_CLIENT_ID)
 
 activate cauth
 
 deactivate app
 
 alt "Status of Terms and Conditions agreement" == "Agreed"
-    cauth -->> app: Sends authorization code (200 OK)
+    cauth -->> app: Sends the authorization code (200 OK)
     activate app
     deactivate app
 else Status of Terms and Conditions agreement == "Not agreed"
-  cauth -->> app: Sends authorization, redirect_uri\l(451 Unavailable For Legal Reasons)
+  cauth -->> app: Sends the authorization, redirect_uri\l(451 Unavailable For Legal Reasons)
   activate app
-    app -> app: Move to the Terms and Conditions page (redirect_uri)
-    app ->> cauth: Sends result of user agreement to the Terms and Conditions (submit)
-    cauth -->> app: Sends result (302 Found)\l- Success: clova://agreement-success\l- Failure: clova://agreement-failure
+    app -> app: Moves to the Terms and Conditions page (redirect_uri)
+    app ->> cauth: Sends the result of user agreement to the Terms and Conditions (submit)
+    cauth -->> app: Sends the result (302 Found)\l- Success: clova://agreement-success\l- Failure: clova://agreement-failure
   deactivate cauth
 end
 
 alt "Client type" == "Client with GUI"
-  app ->> cauth: Requests Clova access token (send next information)\l- NAVER account access token\l- Client credentials\l  (CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)
+  app ->> cauth: Requests the Clova access token (Send the next information)\l- NAVER account access token\l- Client credentials\l  (CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)
 
   activate cauth
-    cauth -->> app: Sends Clova access token
+    cauth -->> app: Sends the Clova access token
   deactivate cauth
 
-  app ->> cic: Starts connection to CIC using Clova access token
+  app ->> cic: Starts connection to CIC using the Clova access token
   activate cic
   deactivate cic
 
 else "Client type" == "Client without GUI"
-  app ->> device: Sends authorization code
+  app ->> device: Sends the authorization code
   deactivate app
 
   activate device
-    device ->> cauth: Requests Clova access token (send next information)\l- NAVER account access token\l- Client credentials\l  (CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)
+    device ->> cauth: Requests the Clova access token (Sends the next information)\l- NAVER account access token\l- Client credentials\l  (CLOVA_OAUTH_CLIENT_ID, CLOVA_OAUTH_CLIENT_SECRET)
 
     activate cauth
-        cauth -->> device: Sends Clova access token
+        cauth -->> device: Sends the Clova access token
     deactivate cauth
 
-    device ->> cic: Starts connection to CIC using Clova access token
+    device ->> cic: Starts connection to CIC using the Clova access token
 
     activate cic
   end

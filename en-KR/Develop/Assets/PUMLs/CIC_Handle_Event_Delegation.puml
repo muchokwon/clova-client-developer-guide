@@ -5,7 +5,7 @@ participant "Client device" as cli #9EA0CA
 participant CIC as cic #05D686
 
 activate ca
-  ca ->> cic : Sends user request and delegate request handling
+  ca ->> cic : Sends a user request and delegates request handling
 deactivate ca
 
 activate cic
@@ -16,14 +16,14 @@ deactivate cic
 
 activate cli
 
-  cli ->> cic : Requests to handle delegated user request (Clova.ProcessDelegatedEvent event)
+  cli ->> cic : Requests to handle the delegated user request (Clova.ProcessDelegatedEvent event)
 
 deactivate cli
 
 activate cic
 
-  cic -> cic : Handles user request
-  cic -->> cli : Sends directives with handled user request
+  cic -> cic : Handles the user request
+  cic -->> cli : Sends the directives with the handled user request
 
 deactivate cic
 

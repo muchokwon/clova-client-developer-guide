@@ -2,12 +2,12 @@
 The Timer template is used in providing timer information for the client to display on the client screen. When the user creates a timer, CIC sends the timer information to the client in the form of the Timer template.
 
 <div class="tip">
-<p><strong>Tip!</strong></p>
-<p>The following restrictions apply when using the Timer template:</p>
-<ul>
-  <li>Voice requests can be used only to add a timer or to check a list of timers.</li>
-  <li>To modify or delete a timer, the user must use the Clova app.</li>
-</ul>
+  <p><strong>Tip!</strong></p>
+  <p>The following restrictions apply when using the Timer template:</p>
+  <ul>
+    <li>Voice requests can be used only to add a timer or to check a list of timers.</li>
+    <li>To modify or delete a timer, the user must use the Clova app.</li>
+  </ul>
 </div>
 
 ## Template fields
@@ -45,5 +45,5 @@ The following example shows how the Timer template is used on the Clova app dist
 ![](/Develop/Assets/Images/Content_Template-Timer.png)
 
 ## See also
-* [Alerts](/Develop/References/CICInterface/Alerts.md) interface
+* [Alerts](/Develop/References/MessageInterfaces/Alerts.md) interface
 * [TimerList](/Develop/References/ContentTemplates/TimerList.md)

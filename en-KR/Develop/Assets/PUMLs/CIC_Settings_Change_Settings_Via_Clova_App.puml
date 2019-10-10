@@ -5,7 +5,7 @@ participant "Clova app" as ca #9EA0CA
 participant "Client device" as cli #9EA0CA
 participant CIC as cic #05D686
 
-user ->> ca: Changes device settings
+user ->> ca: Changes the device settings
 
   activate ca
 
@@ -17,7 +17,7 @@ user ->> ca: Changes device settings
 
     activate cli
 
-      cli -> cli: Changes device settings
+      cli -> cli: Changes the device settings
 
       cli ->> cic: Reports the current settings information of the device\n(Sends Settings.Report event)
 
@@ -27,8 +27,8 @@ user ->> ca: Changes device settings
 
   deactivate cic
 
-  ca -> ca: Refreshes device settings
+  ca -> ca: Refreshes the device settings
 
-  ca ->> user: Provides device settings
+  ca ->> user: Provides the device settings
 
 deactivate ca

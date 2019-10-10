@@ -3,7 +3,7 @@
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Fill in the context object with the alarm information provided by the <a href="/Develop/References/CICInterface/Alerts.md">Alerts</a> directive message without any alterations.</p>
+  <p>Fill in the context object with the alarm information provided by the <a href="/Develop/References/MessageInterfaces/Alerts.md">Alerts</a> directive message without any alterations.</p>
 </div>
 
 ### Object structure
@@ -144,4 +144,4 @@ Example 3: REMINDER type
 {% endraw %}
 
 ### See also
-* [`Alerts`](/Develop/References/CICInterface/Alerts.md)
+* [`Alerts`](/Develop/References/MessageInterfaces/Alerts.md)

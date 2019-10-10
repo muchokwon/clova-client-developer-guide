@@ -21,6 +21,14 @@
   </thead>
   <tbody>
     <tr>
+      <td>2019/08/26</td>
+      <td>
+        <ul>
+          <li>noticeTextフィールドの内容と共に詳細ページや提供元のリンクを提供するために、<a href="/Develop/References/ContentTemplates/CardList.md">CardList</a>テンプレートにnoticeLinkフィールドを追加</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>2019/08/19</td>
       <td>
         <ul>
@@ -33,7 +41,7 @@
       <td>2019/08/05</td>
       <td>
         <ul>
-          <li>クライアントデバイスのデザインガイドラインドキュメントを<a href="/Design/Client_State_And_Event.md">クライアントの状態とイベント</a>、<a href="/Design/Button.md">ボタン</a>、<a href="/Design/Light.md">ランプ</a>、<a href="/Design/Audio.md">サウンド</a>、<a href="/Design/Screen.md">画面</a>、<a href="/Design/Clova_Inside.md">Clovaインサイド</a>ページに分割</li>
+          <li>クライアントデバイスのデザインガイドラインドキュメントを<a href="/Design/Client_State_And_Event.md">クライアントの状態とイベント</a>、<a href="/Design/Button.md">ボタン</a>、<a href="/Design/Light.md">ランプ</a>、<a href="/Design/Audio.md">サウンド</a>、<a href="/Design/Screen.md">画面</a>、<a href="/Design/Clova_Inside.md">Clova inside</a>ページに分割</li>
           <li><a href="/Design/Audio.md#SupportedAudioFormat">プラットフォームでサポートされる音声ファイルフォーマット</a>に、Clovaでサポートされるコンテナフォーマットを追加</li>
         </ul>
       </td>
@@ -44,7 +52,7 @@
         <ul>
           <li>メディア再生の制御対象を指定するために、<a href="/Develop/References/MessageInterfaces/PlaybackController.md">PlaybackController</a>名前空間の<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectNextCommand">ExpectNextCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectPauseCommand">ExpectPauseCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectPreviousCommand">ExpectPreviousCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectResumeCommand">ExpectResumeCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#ExpectStopCommand">ExpectStopCommand</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#Pause">Pause</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#Resume">Resume</a>、<a href="/Develop/References/MessageInterfaces/PlaybackController.md#Stop">Stop</a>ディレクティブに、、targetとtarget.namespaceフィールドを追加</li>
           <li><a href="/Design/Audio.md#SoundEffect">デザインガイドラインの効果音</a>で、Attending状態遷移時の効果音の再生を、必須ではなく任意に修正</li>
-          <li>デザインガイドラインに<a href="/Design/Clova_Inside.md">Clovaインサイド</a>の内容を追加</li>
+          <li>デザインガイドラインに<a href="/Design/Clova_Inside.md">Clova inside</a>の内容を追加</li>
           <li>ClovaクライアントデベロッパーガイドからClovaクライアントガイドに分割</li>
           <li>一部のドキュメントの誤りを訂正</li>
         </ul>

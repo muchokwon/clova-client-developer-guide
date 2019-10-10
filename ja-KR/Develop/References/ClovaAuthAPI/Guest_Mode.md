@@ -1,11 +1,11 @@
 ### 備考 {#GuestMode}
 
-ユーザーに、{{ book.ServiceEnv.TargetServiceForClientAuth }}アカウント認証なしにゲストモードでサービスを提供するには、以下の手順に従います。
+ユーザーに{{ book.ServiceEnv.TargetServiceForClientAuth }}アカウント認証なしにゲストモードでサービスを提供するには、以下の手順に従ってください。
 
-1. [Clovaアクセストークンを作成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)で説明されている手順のうち、ステップ1と2の説明を省略します。
+1. [Clovaアクセストークンを作成する](/Develop/Guides/Interact_with_CIC.md#CreateClovaAccessToken)で説明されている手順のうち、ステップ1と2を省略します。
 2. ステップ3で[認可コードをリクエスト](#RequestAuthorizationCode)する際、次の内容を適用します。
-  * リクエストヘッダーに`Authorization`フィールドを入力しません。
-  * `request_vu`をクエリパラメーターとして追加し、`Y`に設定します。
+  * リクエストヘッダーから`Authorization`フィールドを省略してください。
+  * `request_vu`をクエリパラメータとして追加し、`Y`に指定してください。
 
 <div class="tip">
   <p><strong>ヒント</strong></p>
@@ -16,7 +16,7 @@
 
 次は、ゲストモードのための認可コードをリクエストするサンプルです。
 
-<pre><code>$ curl {{ book.ServiceEnv.AuthServerBaseURI }}authorize \
+<pre><code>$ curl {{ book.ServiceEnv.AuthAPIBaseURI }}authorize \
        --data-urlencode "request_vu=Y" \
        --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
        --data-urlencode "device_id=aa123123d6-d900-48a1-b73b-aa6c156353206" \

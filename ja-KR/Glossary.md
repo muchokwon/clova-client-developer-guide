@@ -43,7 +43,7 @@ Clovaプラットフォームと連携するクライアントデバイス、ま
 Clova Extensionを開発および配布する際に、必要なツールとインターフェースを提供するプラットフォームです。ClovaとExtensionのコミュニケーションをサポートします。
 
 ### Clova Home Extension {#ClovaHomeExtension}
-IoTデバイス制御サービスを提供するための[Extension](#ClovaExtension)です。詳細については、[Clova Home Extensionを作成する]({{ book.DocMeta.ClovaHomeExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Clova_Home_Extension.md)ドキュメントを参照してください。
+IoTデバイス制御サービスを提供するための[Extension](#ClovaExtension)です。詳細については、[Clova Home Extensionを作成する]({{ book.DocMeta.ClovaHomeExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Clova_Home_Extension.{{ book.DocMeta.FileExtensionForExternalLink }})ドキュメントを参照してください。
 
 ### Clova Interface Connect（CIC） {#CIC}
 AIアシスタントサービスを提供するパソコン/モバイルアプリ、モバイルデバイスまたは家電製品などのクライアントに、Clovaとの連携ができるインターフェースを提供するプラットフォームです。詳細については、[CICの概要](/Develop/CIC_Overview.md)ドキュメントを参照してください。
@@ -62,25 +62,26 @@ CICから渡されるコンテンツ情報をスケジュールカテゴリに�
 クライアントの現在の[コンテキスト](#Context)を表現するオブジェクトです。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
 
 ### Custom Extension {#CustomExtension}
-任意の拡張された機能を提供する[Extension](#ClovaExtension)です。Custom Extensionを利用すると、音楽、ショッピング、金融など、外部サービスの機能を提供できます。詳細については、[Clova Custom Extensionを作成する]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Custom_Extension.md)ドキュメントを参照してください。
+任意の拡張された機能を提供する[Extension](#ClovaExtension)です。Custom Extensionを利用すると、音楽、ショッピング、金融など、外部サービスの機能を提供できます。詳細については、[Clova Custom Extensionを作成する]({{ book.DocMeta.ClovaCustomExtensionDeveloperGuideBaseURI }}/Develop/Guides/Build_Custom_Extension.{{ book.DocMeta.FileExtensionForExternalLink }})ドキュメントを参照してください。
 
 ### Downchannel {#Downchannel}
 クライアントが[Clova Interface Connect](#CIC)からディレクティブを渡される際に使用される[HTTP/2](#HTTP2)ストリームです。詳細については、[CICに接続する](/Develop/Guides/Interact_with_CIC.md#ConnectToCIC)ドキュメントを参照してください。
 
 ### Extension {#Extension}
-[Clova Extension](#ClovaExtension)の別の言い方
+[Clova Extension](#ClovaExtension)の別名
 
 ### HTTP/2 {#HTTP2}
-HTTPプロトコルの2番目のバージョンです。[SPDY](https://en.wikipedia.org/wiki/SPDY)に基づき、インターネット技術タスクフォース（IETF）において開発されています。1997年にRFC 2068として規定されたHTTP/1.1をバージョンアップしたものであり、2014年12月にProposed Standard（標準への提唱）として制定され、2015年2月17日にIESGで正式な仕様として承認されました。2015年5月に[<a href="https://tools.ietf.org/html/rfc7540" target="_blank">RFC 7540</a>]として公開されました。
+HTTPのバージョンの1つです。[SPDY](https://en.wikipedia.org/wiki/SPDY)に基づき、インターネット技術タスクフォース（IETF）において開発されています。1997年にRFC 2068として規定されたHTTP/1.1をバージョンアップしたものであり、2014年12月にProposed Standard（標準への提唱）として制定され、2015年2月17日にIESGで正式な仕様として承認されました。2015年5月に<a href="https://tools.ietf.org/html/rfc7540" target="_blank">RFC 7540</a>として公開されました。
 
 ### OAuth 2.0
-アクセス権限を委任するためのオープン標準です。インターネットのユーザーが他のウェブサービスやアプリケーションのユーザーアカウントにアクセスできる権限を付与する規約です。Clovaプラットフォームでは、クライアントが[Clovaアクセストークン](#ClovaAccessToken)を取得したり、ユーザーが特定のExtensionを使用する際、自身のアカウントを連携するために使用されます。詳細については、[https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)を参照してください。
+アクセス権限を委任するためのオープンスタンダードです。インターネットのユーザーが他のウェブサービスやアプリケーションのユーザーアカウントにアクセスできる権限を付与する規約です。Clovaプラットフォームでは、クライアントが[Clovaアクセストークン](#ClovaAccessToken)を取得したり、ユー
+ザーが特定のExtensionを使⽤したりする際、自身のアカウントを連携するために使用されます。詳細については、[https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)を参照してください。
 
 ### ダイアログID {#DialogID}
 ダイアログIDは、ユーザーが新しい発話を開始するたびに生成され、クライアントが[Recognize](/Develop/References/MessageInterfaces/SpeechRecognizer.md#Recognize)[イベント](#Event)を[Clova Interface Connect](#CIC)に渡す際に含まれます。ダイアログIDは、サーバー側からレスポンスを返す際に、どのイベントに対するレスポンスか結び付けるために使用され、[ディレクティブ](#Directive)にも含まれます。クライアントはディレクティブに含まれたダイアログIDから、どのイベントに対するレスポンスかを判断する必要があります。もしクライアントが現在持っているダイアログIDとディレクティブのダイアログIDが異なる場合、受信したディレクティブを無視する必要があります。詳細については、[ダイアログモデル](/Develop/Guides/Manage_Dialogue_ID_And_Handle_Tasks.md)ドキュメントを参照してください。
 
 ### コンテキスト {#Context}
-コンテキストは、クライアントの様々な状態を意味します。[コンテキストオブジェクト](#ContextObjects)として表現されます。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
+クライアントの様々な状態を⽰す情報です。[コンテキストオブジェクト](#ContextObjects)として表現されます。詳細については、[コンテキスト](/Develop/References/Context_Objects.md)ドキュメントを参照してください。
 
 ### メッセージID {#MessageID}
 メッセージIDは個々のメッセージを区別するための識別子です。[イベント](#Event)と[ディレクティブ](#Directive)は、それぞれのメッセージIDを持ちます。

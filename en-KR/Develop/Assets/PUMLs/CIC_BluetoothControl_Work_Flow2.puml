@@ -20,19 +20,19 @@ end
 
 	deactivate client
 opt If the device to connect requests a PIN code
-	device ->> client : Requests PIN code
+	device ->> client : Requests a PIN code
 
 	activate client
 
-  group "Enter user's PIN code"
+  group "Enter the user's PIN code"
     client ->> clova : DeviceControl.BtRequestForPINCode\nSends an event message
-    hnote over client, clova : Handles user's PIN code input
+    hnote over client, clova : Handles the user's PIN code input
     clova ->> client : DeviceControl.BtConnectByPINCode\nSends a directive message
   end
   client ->> device : Requests a connection using PIN code
   client ->> clova: DeviceControl.ActionExecuted\nSends an event message
-	device -->> client : Accepts device connection
+	device -->> client : Accepts the device connection
   client ->> clova : DeviceControl.ReportState\nSends an event message
 deactivate client
 end
-hnote over device, clova : Shares connection result
+hnote over device, clova : Shares the connection result

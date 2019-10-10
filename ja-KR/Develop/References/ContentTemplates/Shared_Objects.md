@@ -16,7 +16,7 @@
 | [URIObject](#URIObject)                   | URIを持つオブジェクト                         |
 
 
-# ActionObject {#ActionObject}
+## ActionObject {#ActionObject}
 クライアントがユーザーに提供するアクションを持つオブジェクトです。
 
 ### Object fields
@@ -37,7 +37,7 @@
 
 {% endraw %}
 
-# CurrencyObject {#CurrencyObject}
+## CurrencyObject {#CurrencyObject}
 通貨と金額を持つオブジェクトです。
 
 ### Object fields
