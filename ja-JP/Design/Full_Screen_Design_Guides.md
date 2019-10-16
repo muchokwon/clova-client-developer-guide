@@ -93,7 +93,7 @@ ImageTextは、画面に表示する画像とテキストデータを一緒に�
 | <!-- --> | フィールド名 | データ型 | 説明 |
 | -------- | ------------ | -------- | ---- |
 | 1        | `mainText`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | メインテキストを持つオブジェクト |
-| 2        | `paragraphText` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | パラグラフのテキストを持つオブジェクト |
+| 2        | `referenceText` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 参照したサービスの情報を持つオブジェクト |
 | 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li>`provider.logoUrl`：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li>`provider.name`：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
 | 4        | `imageUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 画像のURIを持つオブジェクト|
 
@@ -274,7 +274,7 @@ Plainは、前述のドメインに当てはまらない場合や、特別な画
 
 フルスクリーン表示をしている際にClovaを呼び出した場合は、[Green Dot VUI](/Design/Screen.md#GreenDotVUI)や認識結果などを画面の下部に配置します。
 
-#### UI examples
+### UI examples
 
 | ノーマルモード | ダークモード |
 | -------------- | ------------ |
