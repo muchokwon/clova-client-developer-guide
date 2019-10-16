@@ -64,12 +64,7 @@ Textは、画面に表示するテキストデータを提供するデザイン�
 | -------- | ------------ | -------- | ---- |
 | 1        | `mainText`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | メインテキストを持つオブジェクト |
 | 2        | `paragraphText` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | パラグラフのテキストを持つオブジェクト |
-| 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li>`provider.logoUrl`：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li>`provider.name`：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
-
-<div class="warning">
-  <p><strong>注意</strong></p>
-  <p>レスポンスにWikipediaのロゴ画像が含まれる場合は、ロゴの表示は必須です。</p>
-</div>
+| 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li><code>provider.logoUrl</code>：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li><code>provider.name</code>：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
 
 #### 次の項目も参照してください。
 * [Textテンプレート](/Develop/References/ContentTemplates/Text.md)
@@ -94,13 +89,8 @@ ImageTextは、画面に表示する画像とテキストデータを一緒に�
 | -------- | ------------ | -------- | ---- |
 | 1        | `mainText`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | メインテキストを持つオブジェクト |
 | 2        | `referenceText` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 参照したサービスの情報を持つオブジェクト |
-| 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li>`provider.logoUrl`：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li>`provider.name`：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
+| 3        | `provider.logoUrl`または`provider.name` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | <ul><li><code>provider.logoUrl</code>：参照したサービスのロゴ画像のURIを持つオブジェクト</li><li><code>provider.name</code>：参照したサービスの名称のテキストを持つオブジェクト</li></ul><div class="note"><p><strong>メモ</strong></p><p>レスポンスに<code>provider</code>情報が含まれる場合は、掲載は必須です。</p><p>画像とテキストのどちらを表示するかは、スキルによって異なります。</p></div> |
 | 4        | `imageUrl`       | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 画像のURIを持つオブジェクト|
-
-<div class="warning">
-  <p><strong>注意</strong></p>
-  <p>レスポンスにWikipediaのロゴ画像が含まれる場合は、ロゴの表示は必須です。</p>
-</div>
 
 #### 次の項目も参照してください。
 * [ImageTextテンプレート](/Develop/References/ContentTemplates/ImageText.md)
@@ -251,8 +241,8 @@ Media Playerは、オーディオコンテンツのタイトルやアルバム�
 | 2        | `playableItems[].titleSubText1` | string   | 主にアーティスト名を表すテキストフィールド                   |
 | 3        | `playableItems[].titleSubText2` | string   | 主にアルバム名を表すサブテキストフィールド                   |
 | 4        | `playableItems[].artImageUrl`   | string   | メディアコンテンツ関連画像のURI。アルバムのジャケット画像や関連アイコンなどの画像があるURI。 |
-| 5        | プログレスバー                  | <!-- --> | クライアントデバイス内のProgressを元に描画します             |
-| 6        | 操作ボタン                      | <!-- --> | デザイン素材をClova事務局から直接配布します<ul><li><code>Previous</code>/<code>Next</code>/<code>Pause</code>/<code>Resume</code>ボタンは設置必須</li><li><code>List</code>/<code>Loop</code>/<code>お気に入り</code>ボタンはOptional (案件別）</li></ul> |
+| 5        | （なし）                        | <!-- --> | プログレスバー：クライアントデバイス内のProgressを元に描画します |
+| 6        | （なし）                        | <!-- --> | 操作ボタン：デザイン素材をClova事務局から直接配布します<ul><li><code>Previous</code>/<code>Next</code>/<code>Pause</code>/<code>Resume</code>ボタンは設置必須</li><li><code>List</code>/<code>Loop</code>/<code>お気に入り</code>ボタンはOptional (案件別）</li></ul> |
 | 7        | `provider.logoUrl`              | string   | メディアコンテンツ提供元のロゴ画像のURI。LINE MUSICやRadioドメインでは必須。 |
 
 #### 次の項目も参照してください。
