@@ -27,6 +27,7 @@
 | `lowTempWeather`           | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 気温が一番低いときの天気情報を持つオブジェクト  |
 | `referenceText`             | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 参照したサービスの情報を持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。  |
 | `referenceUrl`              | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject)       | 参照したサービスの利用結果ページのURIを持つオブジェクト。このオブジェクトの`value`フィールドは、空文字列（`""`）を持つ場合があります。   |
+| `tomorrowWeatherImageUrl` | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 明日の天気画像ファイルのURIを持つオブジェクト |
 | `type`                      | string | コンテンツテンプレートのタイプを示す値。`"TomorrowWeather"`を持ちます。 |
 
 {% include "/Develop/References/ContentTemplates/Shared_Weather_Code.md" %}
