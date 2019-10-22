@@ -61,14 +61,6 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     "state": "FKjaJfMlakjdfTVbES5ccZ"
   }
   ```
-  <div class="note">
-    <p><strong>Note!</strong></p>
-    <p>사용자가 이용 약관에 동의하고 동의한 결과를 서버에 전송하면 클라이언트는 <code>302 Found</code>(URL Redirection) 상태 코드를 가진 응답을 다음과 같은 URL과 함께 수신하게 됩니다.</p>
-    <ul>
-      <li><code>clova://agreement-success</code>: 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li>
-      <li><code>clova://agreement-failure?error=[reason]</code>: 사용자가 약관에 동의하지 않았거나 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li>
-    </ul>
-  </div>
 5. (GUI 미제공 클라이언트이면) authorization code를 실제 클라이언트 기기로 전송하십시오.
 6. [Clova access token을 요청](/Develop/References/Clova_Auth_API.md#RequestClovaAccessToken)하십시오.<br />
   요청할 때 이전에 획득한 authorization code와 [클라이언트 인증 정보](#ClientAuthInfo) 등을 파라미터로 입력해야 합니다. 다음은 Clova access token을 요청한 예입니다.
@@ -89,6 +81,14 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     "token_type": "Bearer"
   }
   ```
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>사용자가 이용 약관에 동의하고 동의한 결과를 서버에 전송하면 클라이언트는 <code>302 Found</code>(URL Redirection) 상태 코드를 가진 응답을 다음과 같은 URL과 함께 수신하게 됩니다.</p>
+  <ul>
+    <li><code>clova://agreement-success</code>: 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li>
+    <li><code>clova://agreement-failure?error=[reason]</code>: 사용자가 약관에 동의하지 않았거나 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li>
+  </ul>
+</div>
 
 ### 처음 연결하기 {#CreateConnection}
 클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 [downchannel을 구성](/Develop/References/CIC_API.md#EstablishDownchannel)하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때, 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC가 주도(Cloud-initiated)하여 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.
