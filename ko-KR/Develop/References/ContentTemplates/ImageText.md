@@ -1,5 +1,5 @@
 # ImageText Template
-화면에 표시해야 할 이미지와 텍스트 데이터를 함께 제공하는 템플릿입니다. 썸네일 이미지와 텍스트를 표시하거나 지도와 텍스트를 함께 표시할 때 사용됩니다.
+화면에 표시해야 할 이미지와 텍스트 데이터를 함께 제공하는 템플릿입니다. 주로 인물 정보, 책 정보, 드라마 정보를 표시할 때 사용됩니다.
 
 <div class="tip">
 <p><strong>Tip!</strong></p>
@@ -23,104 +23,247 @@
 
 ## Template example
 
-{% raw %}
+{% tabs example1="인물 정보", example2="책 정보", example3="드라마 정보" %}
 
+{% content "example1" %}
 ```json
 // 예제 1.
-// 사용자 요청: 리오넬 메시의 소속팀은? (썸네일 이미지와 텍스트 표시)
+// 사용자 요청: 박보검이 누구야? (인물 정보)
+
 {
   "type": "ImageText",
+  "actionList": [{
+    "type": "action",
+    "value": ""
+  }],
+  "appLinkUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "display": {
+    "leftImageUrl": {
+      "type": "url",
+      "value": "https://ssl.example.net/sstatic/people/portrait/201908/20190828135041569.jpg"
+    },
+    "leftMainTextA": {
+      "type": "string",
+      "value": "박보검"
+    },
+    "leftMainTextB": {
+      "type": "string",
+      "value": ""
+    },
+    "leftSubTextList": [],
+    "listItems": [],
+    "referenceText": {
+      "type": "string",
+      "value": "네이버 검색결과"
+    },
+    "referenceUrl": {
+      "type": "url",
+      "value": "https://m.search.example.com/search.example?where\u003dm\u0026sm\u003dmob_lic\u0026query\u003d%EB%B0%95%EB%B3%B4%EA%B2%80%20%ED%94%84%EB%A1%9C%ED%95%84"
+    },
+    "rightMainTextA": {
+      "type": "string",
+      "value": "블러썸 엔터테인먼트"
+    },
+    "rightMainTextB": {
+      "type": "string",
+      "value": "탤런트, 영화배우"
+    },
+    "rightSubTextList": [{
+      "type": "string",
+      "value": "27세 1993년 6월 16일"
+    }, {
+      "type": "string",
+      "value": ""
+    }, {
+      "type": "string",
+      "value": ""
+    }]
+  },
   "imageUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "linkUrl": {
     "type": "url",
     "value": ""
   },
   "mainText": {
     "type": "string",
-    "value": "리오넬 메시"
+    "value": "박보검"
   },
   "referenceText": {
     "type": "string",
-    "value": "검색결과"
+    "value": "네이버 검색결과"
   },
   "referenceUrl": {
     "type": "url",
-    "value": "https://m.search.contentservice.example.com/search?where=m&sm=mob_lic&query=%eb%a6%ac%ec%98%a4%eb%84%ac+%eb%a9%94%ec%8b%9c+%ec%86%8c%ec%86%8d%ed%8c%80"
+    "value": "https://m.search.example.com/search.example?where\u003dm\u0026sm\u003dmob_lic\u0026query\u003d%EB%B0%95%EB%B3%B4%EA%B2%80%20%ED%94%84%EB%A1%9C%ED%95%84"
   },
-  "subTextList": [
-    {
-      "type": "string",
-      "value": "FC 바르셀로나"
-    }
-  ],
+  "subText": {
+    "type": "string",
+    "value": ""
+  },
+  "subTextList": [{
+    "type": "string",
+    "value": "탤런트, 영화배우"
+  }, {
+    "type": "string",
+    "value": "1993년 6월 16일"
+  }],
   "thumbImageType": {
     "type": "string",
     "value": "인물"
   },
   "thumbImageUrl": {
     "type": "url",
-    "value": "https://sstatic.contentservice.example.net/people/3/201607071816066361.jpg"
+    "value": "https://ssl.example.net/sstatic/people/portrait/201908/20190828135041569.jpg"
   }
 }
-
+```
+{% content "example2" %}
+```json
 // 예제 2.
-// 사용자 요청: 현재 위치 알려줘 (지도 이미지와 텍스트 표시)
+// 달팽이 식당이 뭐야? (책 정보)
+
 {
+  "type": "ImageText",
+  "actionList": [{
+    "type": "action",
+    "value": ""
+  }],
   "appLinkUrl": {
     "type": "url",
-    "value": "nmap://map?lat=37.3594589&lng=127.1047745&level=13&mode=1&traffic=false&bicycle=false&cadastral=false&appname=com.contentservice.clova"
+    "value": ""
   },
   "imageUrl": {
     "type": "url",
-    "value": "https://simg.pstatic.example.net/static.map/image?caller=mw_search&crs=EPSG:4326&scale=2&format=jpg&dataversion=163.2&version=1.1&baselayer=default&center=127.1047745,37.3594589&markers=type,default2_s,127.1047745,37.3594589&level=10&h=402&w=515"
+    "value": "https://s.example.net/movie.phinf/20160802_267/1470106362241IL294_JPEG/movie_image.jpg?type\u003dw640_2"
   },
   "linkUrl": {
     "type": "url",
-    "value": "https://m.map.contentservice.example.com/map.nhn?lat=37.3594589&lng=127.1047745&dlevel=&mapMode=&pinTitle=&boundary=&traffic="
+    "value": ""
   },
   "mainText": {
     "type": "string",
-    "value": "경기도 성남시 분당구 정자1동"
-  },
-  "meta": {
-    "version": {
-      "type": "string",
-      "value": "v0.1"
-    }
+    "value": "달팽이 식당"
   },
   "referenceText": {
     "type": "string",
-    "value": "검색결과"
+    "value": "네이버 검색결과"
   },
   "referenceUrl": {
     "type": "url",
-    "value": "https://m.search.contentservice.example.com/search?where=m&sm=mob_lic&query=%ed%98%84%ec%9e%ac+%ec%9c%84%ec%b9%98"
+    "value": "https://m.search.example.com/search.example?where\u003dm\u0026sm\u003dmob_lic\u0026query\u003d%EB%8B%AC%ED%8C%BD%EC%9D%B4%20%EC%8B%9D%EB%8B%B9"
   },
-  "subTextList": [
-    {
-      "type": "string",
-      "value": ""
-    }
-  ],
-  "thumbImageType": {
+  "subText": {
     "type": "string",
     "value": ""
   },
+  "subTextList": [{
+    "type": "string",
+    "value": "드라마"
+  }, {
+    "type": "string",
+    "value": ""
+  }, {
+    "type": "string",
+    "value": "도미나가 마이"
+  }, {
+    "type": "string",
+    "value": "시바사키 코우, 요 키미코, 에나미 쿄코, 미츠시마 히카리, 미우라 토모카즈, 시다 미라이, 타키모토 미오리, 다나카 테츠시, 브라더 톰, 아데이토"
+  }],
+  "thumbImageType": {
+    "type": "string",
+    "value": "인물"
+  },
   "thumbImageUrl": {
+    "type": "url",
+    "value": "https://s.example.net/movie.phinf/20160802_267/1470106362241IL294_JPEG/movie_image.jpg?type\u003dw640_2"
+  }
+}
+```
+{% content "example3" %}
+```json
+// 예제 3.
+// 눈이 부시게가 뭐야? (드라마 정보)
+
+{
+  "type": "ImageText",
+  "actionList": [{
+    "type": "action",
+    "value": ""
+  }],
+  "appLinkUrl": {
     "type": "url",
     "value": ""
   },
-  "type": "ImageText"
+  "imageUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "linkUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "mainText": {
+    "type": "string",
+    "value": "눈이 부시게"
+  },
+  "referenceText": {
+    "type": "string",
+    "value": "네이버 검색결과"
+  },
+  "referenceUrl": {
+    "type": "url",
+    "value": "https://m.search.naver.com/search.naver?where\u003dm\u0026sm\u003dmob_lic\u0026query\u003d%EB%88%88%EC%9D%B4%20%EB%B6%80%EC%8B%9C%EA%B2%8C"
+  },
+  "subText": {
+    "type": "string",
+    "value": ""
+  },
+  "subTextList": [{
+    "type": "string",
+    "value": "드라마"
+  }, {
+    "type": "string",
+    "value": "JTBC 2019.02.11 ~ 2019.03.19"
+  }, {
+    "type": "string",
+    "value": "김혜자, 한지민, 남주혁, 손호준, 안내상, 이정은, 김희원, 김가은, 송상은, 정영숙, 황정민"
+  }, {
+    "type": "string",
+    "value": "닐슨코리아 9.7%"
+  }],
+  "thumbImageType": {
+    "type": "string",
+    "value": "인물"
+  },
+  "thumbImageUrl": {
+    "type": "url",
+    "value": "http://sstatic.naver.net/keypage/image/dss/57/74/31/50/57_8743150_poster_image_1548036460716.jpg"
+  }
 }
 ```
-
-{% endraw %}
+{% endtabs %}
 
 ## UI example {#UIExample}
 다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 ImageText 템플릿의 내용을 표현한 UI 예제입니다.
 
-| 썸네일 이미지와 텍스트 | 지도 이미지와 텍스트 |
-|-------|-------|
-| ![Thumbnail](/Develop/Assets/Images/Content_Template-Thumbimage_and_Text.png) | ![Map and text](/Develop/Assets/Images/Content_Template-Mapimage_and_Text.png) |
+{% tabs people="인물 정보", book="책 정보", drama="드라마 정보" %}
+
+{% content "people" %}
+![Type1](/Develop/Assets/Images/Content_Template-ImageText-People.png)
+
+{% content "book" %}
+![Type2](/Develop/Assets/Images/Content_Template-ImageText-Book.png)
+
+{% content "drama" %}
+![Type3](/Develop/Assets/Images/Content_Template-ImageText-Drama.png)
+
+{% endtabs %}
 
 ## See also
 * [CardList](/Develop/References/ContentTemplates/CardList.md)

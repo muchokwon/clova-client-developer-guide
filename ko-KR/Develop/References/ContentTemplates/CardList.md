@@ -38,7 +38,9 @@
 
 ## Template example
 
-{% raw %}
+{% tabs example1="Type1, Type2 예제", example2="Type3 예제", example3="Type4 예제", example4="Type5 예제" %}
+
+{% content "example1" %}
 ```json
 // Type1, Type2 예제:
 // 사용자 요청: 공포 영화 추천해줘
@@ -46,14 +48,12 @@
 {
   "subType": "",
   "type": "CardList",
-  "cardList": [
-    {
-      "contentProviderText" : {
-        "type" : "string",
-        "value" : "영화"
+  "cardList": [{
+      "contentProviderText": {
+        "type": "string",
+        "value": "영화"
       },
-      "description": [
-        {
+      "description": [{
           "type": "string",
           "value": "공포, 스릴러"
         },
@@ -100,12 +100,11 @@
       }
     },
     {
-      "contentProviderText" : {
-        "type" : "string",
-        "value" : "영화"
+      "contentProviderText": {
+        "type": "string",
+        "value": "영화"
       },
-      "description": [
-        {
+      "description": [{
           "type": "string",
           "value": "공포"
         },
@@ -154,7 +153,9 @@
     ...
   ]
 }
-
+```
+{% content "example2" %}
+```json
 // Type3 예제
 // 사용자 요청: 축구 동영상 보여줘
 {
@@ -268,8 +269,10 @@
     ...
   ]
 }
+```
 
-
+{% content "example3" %}
+```json
 // Type4 예제
 // 사용자 요청: 최신 뉴스 보여줘
 {
@@ -387,7 +390,10 @@
     ...
   ]
 }
+```
 
+{% content "example4" %}
+```json
 // Type5 예제
 // 사용자 요청: ASMR 들려줘
 {
@@ -507,24 +513,35 @@
   "subType": "",
   "type": "CardList"
 }
-
 ```
-{% endraw %}
+{% endtabs %}
 
 ## UI example {#UIExample}
 다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 CardList 템플릿의 내용을 각 카드 타입별로 표현한 UI 예제입니다.
 
-| `Type1` | `Type2` |
-|-------|-------|
-| ![Type1](/Develop/Assets/Images/Content_Template-Content_Card_Type.png) | ![Type2](/Develop/Assets/Images/Content_Template-Content_Card_with_Link_Type.png) |
+{% tabs type1="Type1", type2="Type2", type3="Type3", type4="Type4", type5="Type5" %}
 
-| `Type3` | `Type4` |
-|-------|-------|
-| ![Type3](/Develop/Assets/Images/Content_Template-Video_Card_Type.png) | ![Type4](/Develop/Assets/Images/Content_Template-News_Card_Type.png) |
+{% content "type1" %}
+![Type1](/Develop/Assets/Images/Content_Template-CardList-Type1.png)
+
+{% content "type2" %}
+![Type2](/Develop/Assets/Images/Content_Template-CardList-Type2.png)
+
+{% content "type3" %}
+![Type3](/Develop/Assets/Images/Content_Template-CardList-Type3.png)
+
+{% content "type4" %}
+![Type4](/Develop/Assets/Images/Content_Template-CardList-Type4.png)
+
+{% content "type5" %}
+![Type5](/Develop/Assets/Images/Content_Template-CardList-Type5.png)
+
+{% endtabs %}
+
 
 <div class="tip">
 <p><strong>Tip!</strong></p>
-<p><code>Type5</code>, <code>Type6</code>이 사용된 화면 예제를 준비하고 있습니다.</p>
+<p><code>Type6</code>이 사용된 화면 예제를 준비하고 있습니다.</p>
 </div>
 
 ## See also

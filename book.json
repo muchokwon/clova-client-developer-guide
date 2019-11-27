@@ -1,5 +1,5 @@
 {
-  "plugins": ["-search", "-lunr", "page-toc-button", "search-plus"],
+  "plugins": ["-search", "-lunr", "page-toc-button", "search-plus", "simpletabs"],
   "pluginsConfig": {
     "page-toc-button": {
       "maxTocDepth": 4,
