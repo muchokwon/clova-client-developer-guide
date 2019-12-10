@@ -11,7 +11,8 @@
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `announcementOfAtmosphere`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 예보 안내 문구가 담긴 객체. 현재 대기 상태 정보를 보여줄 때는 이 필드가 생략됩니다. 생략될 때 이 객체의 `value` 필드는 빈 문자열(`""`)을 가집니다. |
-| `bgClipUrl`     | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 배경 영상 파일의 URI 정보가 담긴 객체. <div class="warning"><p><strong>Warning!</strong></p><p>해당 필드의 데이터는 라이센스 문제로 제휴처에서는 사용하실 수 없습니다.</p></div> |
+| `bgClipUrl`     | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 배경 영상 파일의 URI 정보가 담긴 객체. <div class="warning"><p><strong>Warning!</strong></p><p>해당 필드의 데이터는 라이선스 문제로 제휴처에서는 사용하실 수 없습니다.</p></div> |
+| `bgDefaultUrl`              | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 배경 이미지 파일의 URI 정보가 담긴 객체. <div class="note"><p><strong>Note!</strong></p><p><code>bgClipUrl</code> 필드의 영상을 준비하는 동안 <code>bgDefaultUrl</code> 필드의 이미지를 표시할 수 있습니다. 또한, 기술적인 문제나 라이선스 문제로 <code>bgClipUrl</code> 필드의 영상을 제공할 수 없을 때 사용할 수 있습니다.</p></div> |
 | `concentrationOfAtmosphere` | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 현재 대기 상태나 공기질 수준 정보가 담긴 객체. 예보를 할 때는 이 필드가 생략됩니다. 생략될 때는 이 객체의 `value` 필드는 빈 문자열(`""`)을 가집니다. |
 | `contentProviderText`       | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 콘텐츠 제공자의 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
 | `halfDayAtmosphereList[]`             | object array | 반나절 단위(오전/오후)로 구분된 시간대별 대기 정보를 가지는 객체 배열                                    |
