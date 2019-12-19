@@ -221,15 +221,28 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 {% endraw %}
 
 ## UI example {#UIExample}
-다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 Popup 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 landscape 화면 형태에서 Popup 템플릿의 내용을 표현한 UI 예제입니다.
 
-| Toast 형태 | Alert 형태 |
-|-----------|-----------|
-| ![Type1](/Develop/Assets/Images/Content-Template-Toast.png) | ![Type2](/Develop/Assets/Images/Content-Template-Alert.png) |
+{% tabs example1="Toast 형태", example2="Alert 형태", example3="Popup 형태(버튼 1 개)", example4="Popup 형태(버튼 2 개)" %}
 
-| Popup 형태(버튼 1 개) | Popup 형태(버튼 2 개) |
-|-------------------|--------------------|
-| ![Type3](/Develop/Assets/Images/Content-Template-Popup_with_One_Button.png) | ![Type](/Develop/Assets/Images/Content-Template-Popup_with_Two_Buttons.png) |
+{% content "example1" %}
+![Content_Template-Toast](/Develop/Assets/Images/Content_Template-Toast.png)
+
+{% content "example2" %}
+![Content_Template-Alert](/Develop/Assets/Images/Content_Template-Alert.png)
+
+{% content "example3" %}
+![Content_Template-Popup_with_One_Button](/Develop/Assets/Images/Content_Template-Popup_with_One_Button.png)
+
+{% content "example4" %}
+![Content-Template-Popup_with_Two_Buttons](/Develop/Assets/Images/Content_Template-Popup_with_Two_Buttons.png)
+
+{% endtabs %}
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>화면의 어떤 부분에 어떤 필드의 데이터가 표시되어야 나타내는 이미지를 곧 업데이트할 예정입니다.</p>
+</div>
 
 ## See also
 * [CardList](/Develop/References/ContentTemplates/CardList.md)

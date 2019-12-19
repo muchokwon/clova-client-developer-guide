@@ -59,10 +59,10 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -468,10 +468,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -490,10 +490,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -603,10 +603,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -625,10 +625,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -685,10 +685,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -766,10 +766,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -788,10 +788,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -928,10 +928,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -950,10 +950,10 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -1050,10 +1050,10 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -1159,10 +1159,10 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -1181,10 +1181,10 @@ Clova 앱 또는 연동 앱(companion app)에서 원격으로 Clova 기기의 �
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],

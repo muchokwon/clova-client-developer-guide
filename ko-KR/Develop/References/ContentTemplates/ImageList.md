@@ -21,9 +21,7 @@
 
 ## Template example
 
-{% raw %}
 ```json
-// 예제 1.
 // 사용자 요청: 자동차 사진 보여줘
 {
   "type": "ImageList",
@@ -85,14 +83,24 @@
 }
 
 ```
-{% endraw %}
 
 ## UI example {#UIExample}
-다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 ImageList 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 landscape 화면 형태에서 ImageList 템플릿의 내용을 표현한 UI 예제입니다.
 
-| 썸네일 목록 | 선택한 이미지 표시 |
-|-------|-------|
-| ![Thumbnail](/Develop/Assets/Images/Content_Template-Thumbnail_List.png) | ![Original](/Develop/Assets/Images/Content_Template-Original_Image.png) |
+{% tabs example1="예제 1", example2="예제 2" %}
+
+{% content "example1" %}
+![Content_Template-ImageList-Example1](/Develop/Assets/Images/Content_Template-ImageList-Example1.png)
+
+{% content "example2" %}
+![Content_Template-ImageList-Example2](/Develop/Assets/Images/Content_Template-ImageList-Example2.png)
+
+{% endtabs %}
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>화면의 어떤 부분에 어떤 필드의 데이터가 표시되어야 나타내는 이미지를 곧 업데이트할 예정입니다.</p>
+</div>
 
 ## See also
 * [CardList](/Develop/References/ContentTemplates/ImageList.md)

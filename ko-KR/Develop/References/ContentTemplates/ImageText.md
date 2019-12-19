@@ -23,11 +23,7 @@
 
 ## Template example
 
-{% tabs example1="인물 정보", example2="책 정보", example3="드라마 정보" %}
-
-{% content "example1" %}
 ```json
-// 예제 1.
 // 사용자 요청: 박보검이 누구야? (인물 정보)
 
 {
@@ -123,147 +119,16 @@
   }
 }
 ```
-{% content "example2" %}
-```json
-// 예제 2.
-// 달팽이 식당이 뭐야? (책 정보)
-
-{
-  "type": "ImageText",
-  "actionList": [{
-    "type": "action",
-    "value": ""
-  }],
-  "appLinkUrl": {
-    "type": "url",
-    "value": ""
-  },
-  "imageUrl": {
-    "type": "url",
-    "value": "https://s.example.net/movie.phinf/20160802_267/1470106362241IL294_JPEG/movie_image.jpg?type\u003dw640_2"
-  },
-  "linkUrl": {
-    "type": "url",
-    "value": ""
-  },
-  "mainText": {
-    "type": "string",
-    "value": "달팽이 식당"
-  },
-  "referenceText": {
-    "type": "string",
-    "value": "네이버 검색결과"
-  },
-  "referenceUrl": {
-    "type": "url",
-    "value": "https://m.search.example.com/search.example?where\u003dm\u0026sm\u003dmob_lic\u0026query\u003d%EB%8B%AC%ED%8C%BD%EC%9D%B4%20%EC%8B%9D%EB%8B%B9"
-  },
-  "subText": {
-    "type": "string",
-    "value": ""
-  },
-  "subTextList": [{
-    "type": "string",
-    "value": "드라마"
-  }, {
-    "type": "string",
-    "value": ""
-  }, {
-    "type": "string",
-    "value": "도미나가 마이"
-  }, {
-    "type": "string",
-    "value": "시바사키 코우, 요 키미코, 에나미 쿄코, 미츠시마 히카리, 미우라 토모카즈, 시다 미라이, 타키모토 미오리, 다나카 테츠시, 브라더 톰, 아데이토"
-  }],
-  "thumbImageType": {
-    "type": "string",
-    "value": "인물"
-  },
-  "thumbImageUrl": {
-    "type": "url",
-    "value": "https://s.example.net/movie.phinf/20160802_267/1470106362241IL294_JPEG/movie_image.jpg?type\u003dw640_2"
-  }
-}
-```
-{% content "example3" %}
-```json
-// 예제 3.
-// 눈이 부시게가 뭐야? (드라마 정보)
-
-{
-  "type": "ImageText",
-  "actionList": [{
-    "type": "action",
-    "value": ""
-  }],
-  "appLinkUrl": {
-    "type": "url",
-    "value": ""
-  },
-  "imageUrl": {
-    "type": "url",
-    "value": ""
-  },
-  "linkUrl": {
-    "type": "url",
-    "value": ""
-  },
-  "mainText": {
-    "type": "string",
-    "value": "눈이 부시게"
-  },
-  "referenceText": {
-    "type": "string",
-    "value": "네이버 검색결과"
-  },
-  "referenceUrl": {
-    "type": "url",
-    "value": "https://m.search.naver.com/search.naver?where\u003dm\u0026sm\u003dmob_lic\u0026query\u003d%EB%88%88%EC%9D%B4%20%EB%B6%80%EC%8B%9C%EA%B2%8C"
-  },
-  "subText": {
-    "type": "string",
-    "value": ""
-  },
-  "subTextList": [{
-    "type": "string",
-    "value": "드라마"
-  }, {
-    "type": "string",
-    "value": "JTBC 2019.02.11 ~ 2019.03.19"
-  }, {
-    "type": "string",
-    "value": "김혜자, 한지민, 남주혁, 손호준, 안내상, 이정은, 김희원, 김가은, 송상은, 정영숙, 황정민"
-  }, {
-    "type": "string",
-    "value": "닐슨코리아 9.7%"
-  }],
-  "thumbImageType": {
-    "type": "string",
-    "value": "인물"
-  },
-  "thumbImageUrl": {
-    "type": "url",
-    "value": "http://sstatic.naver.net/keypage/image/dss/57/74/31/50/57_8743150_poster_image_1548036460716.jpg"
-  }
-}
-```
-{% endtabs %}
 
 ## UI example {#UIExample}
-다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 ImageText 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 landscape 화면 형태에서 ImageText 템플릿의 내용을 표현한 UI 예제입니다.
 
-{% tabs people="인물 정보", book="책 정보", drama="드라마 정보" %}
+![Content_Template-ImageText](/Develop/Assets/Images/Content_Template-ImageText.png)
 
-{% content "people" %}
-![Type1](/Develop/Assets/Images/Content_Template-ImageText-People.png)
-
-{% content "book" %}
-![Type2](/Develop/Assets/Images/Content_Template-ImageText-Book.png)
-
-{% content "drama" %}
-![Type3](/Develop/Assets/Images/Content_Template-ImageText-Drama.png)
-
-{% endtabs %}
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>화면의 어떤 부분에 어떤 필드의 데이터가 표시되어야 나타내는 이미지를 곧 업데이트할 예정입니다.</p>
+</div>
 
 ## See also
 * [CardList](/Develop/References/ContentTemplates/CardList.md)
