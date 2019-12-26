@@ -309,9 +309,25 @@
 {% endraw %}
 
 ## UI example {#UIExample}
-다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 TodayWeather 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 landscape 화면 형태에서 TodayWeather 템플릿의 내용을 표현한 UI 예제입니다.
 
-![TodayWeather](/Develop/Assets/Images/Content-Template-TodayWeather.png)
+{% tabs example1="예제 1", example2="예제 2", example3="예제 3" %}
+
+{% content "example1" %}
+![Content_Template-TodayWeather-Example1](/Develop/Assets/Images/Content_Template-TodayWeather-Example1.png)
+
+{% content "example2" %}
+![Content_Template-TodayWeather-Example2](/Develop/Assets/Images/Content_Template-TodayWeather-Example2.png)
+
+{% content "example3" %}
+![Content_Template-TodayWeather-Example3](/Develop/Assets/Images/Content_Template-TodayWeather-Example3.png)
+
+{% endtabs %}
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>화면의 어떤 부분에 어떤 필드의 데이터가 표시되어야 나타내는 이미지를 곧 업데이트할 예정입니다.</p>
+</div>
 
 ## See also
 * [Atmosphere](/Develop/References/ContentTemplates/Atmosphere.md)

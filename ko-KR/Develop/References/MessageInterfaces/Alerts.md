@@ -1,6 +1,6 @@
 # Alerts
 
-Alerts 인터페이스는 클라이언트에서 알람을 등록/수정/제거/시작/중지할 때 사용되는 네임스페이스입니다. 알람의 종류는 다음 표와 같습니다.
+Alerts 인터페이스는 클라이언트에서 알람을 등록/수정/제거/시작/중지할 때 사용되는 네임스페이스입니다. 사용자는 알람을 음성이나 Clova 앱으로 추가할 수 있고 Clova 앱으로만 알람을 수정 및 삭제할 수 있습니다. 알람의 종류는 다음 표와 같습니다.
 
 | 알람 종류       | 설명                                |
 |---------------|------------------------------------|
@@ -9,7 +9,7 @@ Alerts 인터페이스는 클라이언트에서 알람을 등록/수정/제거/�
 | 리마인더(`"REMINDER"`)      | 지정한 날짜와 시간에 사용자가 입력한 내용을 표시하거나 들려주면서 울리는 알람. 예를 들면 사용자가 "내일 7 시에 약 먹을 시간이라고 알려줘"라고 하면 "내일 7 시"는 알람을 울려야 하는 시간되고 "약 먹을 시간"은 알람을 울리 때 알려줘야 하는 내용이됩니다. 클라이언트는 알람이 울릴 때 사용자에게 알려줘야 하는 내용을 화면에 표시하거나 음성으로 들려줘야 합니다.       |
 | 타이머(`"TIMER"`)           | 지정한 시간이 경과한 후 울리는 알람                                         |
 
-사용자는 알람을 음성이나 Clova 앱으로 추가할 수 있고 Clova 앱으로만 알람을 수정 및 삭제할 수 있습니다. Clova는 알람과 관련된 정보를 클라우드 환경에 보관하며, 사용자가 등록한 알람을 CIC를 통해 클라이언트에게 전달합니다. Clova는 반복 알람이면 현재 시간에 가장 근접한 알람만 클라이언트에게 전달하며, 해당 알람이 중지될 때 다음 차례의 반복 알람을 클라이언트에게 전달합니다.
+Clova는 알람과 관련된 정보를 클라우드 환경에 보관하며, 사용자가 등록한 알람을 CIC를 통해 클라이언트에게 전달합니다. Clova는 반복 알람이면 현재 시간에 가장 근접한 알람만 클라이언트에게 전달하며, 해당 알람이 중지될 때 다음 차례의 반복 알람을 클라이언트에게 전달합니다.
 
 따라서 클라이언트는 Alerts 인터페이스를 이용해 다음과 같은 동작을 수행해야 합니다.
 * CIC로부터 지시 메시지를 전달받으면 지시 메시지의 내용에 따라 알람을 등록/수정/삭제해야 합니다.
@@ -74,10 +74,10 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -126,10 +126,10 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -217,10 +217,10 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -268,10 +268,10 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -322,10 +322,10 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -368,10 +368,10 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -483,10 +483,10 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -535,10 +535,10 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
