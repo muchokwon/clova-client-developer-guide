@@ -202,6 +202,7 @@
 | `actions[]`          | string array | 블루투스 연결과 관련하여 수행할 수 있는 [`DeviceControl`](/Develop/References/MessageInterfaces/DeviceControl.md) API 목록. 다음 동작 목록 중 클라이언트 기기가 실제로 수행할 수 있는 동작을 입력합니다. <ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li><li><code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li></ul> | 필수 |
 | `btlist[]`              | object array | 페이링된 적이 있는 블루투스 기기 정보를 가지는 객체 배열         | 필수 |
 | `btlist[].address`      | string       | 블루투스 기기의 장치 주소                  | 필수 |
+| `btlist[].availableServiceClassList` | string array | 블루투스 서비스 클래스 이름을 가지는 배열. `"AudioSource"`, `"AudioSink"`와 같은 값을 가질 수 있습니다. <div class="tip"><p><strong>Tip!</strong></p><p>블루투스 서비스 클래스 이름에 대한 자세한 설명은 <a target="_blank" href="https://www.bluetooth.com/specifications/assigned-numbers/service-discovery/">Bluetooth Service Discovery 문서</a>를 참고합니다. Clova가 현재 사용하고 있는 프로파일은 A2DP, AVRCP 입니다.</p></div>           | 필수 |
 | `btlist[].connected`    | boolean      | 블루투스 기기와의 연결 여부. <ul><li><code>true</code>: 연결된 상태</li><li><code>false</code>: 연결되어 있지 않은 상태</li></ul> | 필수 |
 | `btlist[].name`         | string       | 블루투스 기기의 이름                      | 필수 |
 | `btlist[].role`         | string       | 해당 블루투스 기기와 연결 시 클라이언트의 역할.<ul><li><code>"sink"</code>: 오디오 스트림을 수신하는 역할(주로 스피커)</li><li><code>"source"</code>: 오디오 스트림을 송신하는 역할(음원 데이터 전달자)</li></ul> | 필수 |

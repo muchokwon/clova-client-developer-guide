@@ -1,5 +1,5 @@
 # ImageText Template
-화면에 표시해야 할 이미지와 텍스트 데이터를 함께 제공하는 템플릿입니다. 썸네일 이미지와 텍스트를 표시하거나 지도와 텍스트를 함께 표시할 때 사용됩니다.
+화면에 표시해야 할 이미지와 텍스트 데이터를 함께 제공하는 템플릿입니다. 주로 인물 정보, 책 정보, 드라마 정보를 표시할 때 사용됩니다.
 
 <div class="tip">
 <p><strong>Tip!</strong></p>
@@ -23,104 +23,112 @@
 
 ## Template example
 
-{% raw %}
-
 ```json
-// 예제 1.
-// 사용자 요청: 리오넬 메시의 소속팀은? (썸네일 이미지와 텍스트 표시)
+// 사용자 요청: 박보검이 누구야? (인물 정보)
+
 {
   "type": "ImageText",
+  "actionList": [{
+    "type": "action",
+    "value": ""
+  }],
+  "appLinkUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "display": {
+    "leftImageUrl": {
+      "type": "url",
+      "value": "https://ssl.example.net/sstatic/people/portrait/201908/20190828135041569.jpg"
+    },
+    "leftMainTextA": {
+      "type": "string",
+      "value": "박보검"
+    },
+    "leftMainTextB": {
+      "type": "string",
+      "value": ""
+    },
+    "leftSubTextList": [],
+    "listItems": [],
+    "referenceText": {
+      "type": "string",
+      "value": "네이버 검색결과"
+    },
+    "referenceUrl": {
+      "type": "url",
+      "value": "https://m.search.example.com/search.example?where\u003dm\u0026sm\u003dmob_lic\u0026query\u003d%EB%B0%95%EB%B3%B4%EA%B2%80%20%ED%94%84%EB%A1%9C%ED%95%84"
+    },
+    "rightMainTextA": {
+      "type": "string",
+      "value": "블러썸 엔터테인먼트"
+    },
+    "rightMainTextB": {
+      "type": "string",
+      "value": "탤런트, 영화배우"
+    },
+    "rightSubTextList": [{
+      "type": "string",
+      "value": "27세 1993년 6월 16일"
+    }, {
+      "type": "string",
+      "value": ""
+    }, {
+      "type": "string",
+      "value": ""
+    }]
+  },
   "imageUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "linkUrl": {
     "type": "url",
     "value": ""
   },
   "mainText": {
     "type": "string",
-    "value": "리오넬 메시"
+    "value": "박보검"
   },
   "referenceText": {
     "type": "string",
-    "value": "검색결과"
+    "value": "네이버 검색결과"
   },
   "referenceUrl": {
     "type": "url",
-    "value": "https://m.search.contentservice.example.com/search?where=m&sm=mob_lic&query=%eb%a6%ac%ec%98%a4%eb%84%ac+%eb%a9%94%ec%8b%9c+%ec%86%8c%ec%86%8d%ed%8c%80"
+    "value": "https://m.search.example.com/search.example?where\u003dm\u0026sm\u003dmob_lic\u0026query\u003d%EB%B0%95%EB%B3%B4%EA%B2%80%20%ED%94%84%EB%A1%9C%ED%95%84"
   },
-  "subTextList": [
-    {
-      "type": "string",
-      "value": "FC 바르셀로나"
-    }
-  ],
+  "subText": {
+    "type": "string",
+    "value": ""
+  },
+  "subTextList": [{
+    "type": "string",
+    "value": "탤런트, 영화배우"
+  }, {
+    "type": "string",
+    "value": "1993년 6월 16일"
+  }],
   "thumbImageType": {
     "type": "string",
     "value": "인물"
   },
   "thumbImageUrl": {
     "type": "url",
-    "value": "https://sstatic.contentservice.example.net/people/3/201607071816066361.jpg"
+    "value": "https://ssl.example.net/sstatic/people/portrait/201908/20190828135041569.jpg"
   }
-}
-
-// 예제 2.
-// 사용자 요청: 현재 위치 알려줘 (지도 이미지와 텍스트 표시)
-{
-  "appLinkUrl": {
-    "type": "url",
-    "value": "nmap://map?lat=37.3594589&lng=127.1047745&level=13&mode=1&traffic=false&bicycle=false&cadastral=false&appname=com.contentservice.clova"
-  },
-  "imageUrl": {
-    "type": "url",
-    "value": "https://simg.pstatic.example.net/static.map/image?caller=mw_search&crs=EPSG:4326&scale=2&format=jpg&dataversion=163.2&version=1.1&baselayer=default&center=127.1047745,37.3594589&markers=type,default2_s,127.1047745,37.3594589&level=10&h=402&w=515"
-  },
-  "linkUrl": {
-    "type": "url",
-    "value": "https://m.map.contentservice.example.com/map.nhn?lat=37.3594589&lng=127.1047745&dlevel=&mapMode=&pinTitle=&boundary=&traffic="
-  },
-  "mainText": {
-    "type": "string",
-    "value": "경기도 성남시 분당구 정자1동"
-  },
-  "meta": {
-    "version": {
-      "type": "string",
-      "value": "v0.1"
-    }
-  },
-  "referenceText": {
-    "type": "string",
-    "value": "검색결과"
-  },
-  "referenceUrl": {
-    "type": "url",
-    "value": "https://m.search.contentservice.example.com/search?where=m&sm=mob_lic&query=%ed%98%84%ec%9e%ac+%ec%9c%84%ec%b9%98"
-  },
-  "subTextList": [
-    {
-      "type": "string",
-      "value": ""
-    }
-  ],
-  "thumbImageType": {
-    "type": "string",
-    "value": ""
-  },
-  "thumbImageUrl": {
-    "type": "url",
-    "value": ""
-  },
-  "type": "ImageText"
 }
 ```
 
-{% endraw %}
-
 ## UI example {#UIExample}
-다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 ImageText 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 landscape 화면 형태에서 ImageText 템플릿의 내용을 표현한 UI 예제입니다.
 
-| 썸네일 이미지와 텍스트 | 지도 이미지와 텍스트 |
-|-------|-------|
-| ![Thumbnail](/Develop/Assets/Images/Content_Template-Thumbimage_and_Text.png) | ![Map and text](/Develop/Assets/Images/Content_Template-Mapimage_and_Text.png) |
+![Content_Template-ImageText](/Develop/Assets/Images/Content_Template-ImageText.png)
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>화면의 어떤 부분에 어떤 필드의 데이터가 표시되어야 나타내는 이미지를 곧 업데이트할 예정입니다.</p>
+</div>
 
 ## See also
 * [CardList](/Develop/References/ContentTemplates/CardList.md)

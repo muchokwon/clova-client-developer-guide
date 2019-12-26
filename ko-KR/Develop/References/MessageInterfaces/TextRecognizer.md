@@ -24,10 +24,10 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],

@@ -326,10 +326,10 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],

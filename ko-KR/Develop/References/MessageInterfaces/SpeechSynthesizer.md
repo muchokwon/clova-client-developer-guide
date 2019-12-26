@@ -36,10 +36,10 @@ CIC에 특정 텍스트를 TTS로 생성하도록 요청합니다.
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -191,10 +191,10 @@ Content-Type: application/octet-stream
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -243,10 +243,10 @@ Content-Type: application/octet-stream
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -295,10 +295,10 @@ Content-Type: application/octet-stream
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],

@@ -63,10 +63,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -131,10 +131,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -462,10 +462,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -514,10 +514,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -1019,10 +1019,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -1073,10 +1073,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
@@ -1095,10 +1095,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
     {{Speaker.VolumeState}},
     {{SpeechSynthesizer.SpeechState}}
   ],
