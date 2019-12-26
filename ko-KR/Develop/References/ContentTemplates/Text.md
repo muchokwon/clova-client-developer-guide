@@ -1,5 +1,5 @@
 # Text Template
-화면에 표시해야 할 텍스트 데이터를 제공하는 템플릿입니다. 강조하는 형태의 텍스트, 문단 형태의 텍스트, 표 형태의 텍스트를 표시할 때 사용됩니다.
+화면에 표시해야 할 텍스트 데이터를 제공하는 템플릿입니다. 강조하는 형태, 문장 형태, 문단 형태, 표 형태를 표시할 때 사용됩니다.
 
 <div class="tip">
 <p><strong>Tip!</strong></p>
@@ -395,11 +395,28 @@
 {% endraw %}
 
 ## UI example {#UIExample}
-다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 Text 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 landscape 화면 형태에서 Text 템플릿의 내용을 표현한 UI 예제입니다.
 
-| 강조하는 형태의 텍스트 | 문단 형태의 텍스트 | 표 형태의 텍스트 |
-|-------|-------|-------|
-| ![Highlight](/Develop/Assets/Images/Content_Template-Highlight_Text.png) | ![Paragraph](/Develop/Assets/Images/Content_Template-Paragragh_Text.png) | ![Table](/Develop/Assets/Images/Content_Template-Table_Text.png) |
+{% tabs highlight="강조하는 형태", sentence="문장 형태", paragraph="문단 형태", table="표 형태" %}
+
+{% content "highlight" %}
+![Content_Template-Text-Highlight](/Develop/Assets/Images/Content_Template-Text-Highlight.png)
+
+{% content "sentence" %}
+![Content_Template-Text-Sentence](/Develop/Assets/Images/Content_Template-Text-Sentence.png)
+
+{% content "paragraph" %}
+![Content_Template-Text-Paragraph](/Develop/Assets/Images/Content_Template-Text-Paragraph.png)
+
+{% content "table" %}
+![Content_Template-Text-Table](/Develop/Assets/Images/Content_Template-Text-Table.png)
+
+{% endtabs %}
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>화면의 어떤 부분에 어떤 필드의 데이터가 표시되어야 나타내는 이미지를 곧 업데이트할 예정입니다.</p>
+</div>
 
 ## See also
 * [CardList](/Develop/References/ContentTemplates/CardList.md)

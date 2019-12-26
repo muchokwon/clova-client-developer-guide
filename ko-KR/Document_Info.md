@@ -21,6 +21,15 @@
   </thead>
   <tbody>
     <tr>
+      <td>2019-12-30</td>
+      <td>
+        <ul>
+          <li><a href="/Develop/References/Content_Templates.md">Content template</a>의 예제 화면을 landscape 화면 형태의 UI 예제로 업데이트 (추후 모식도 제공 예정)</li>
+          <li>블루투스 서비스 클래스 이름 정보를 공유하기 위해 <a href="/Develop/References/Context_Objects.md#DeviceState">Device.DeviceState</a> 맥락 정보의 <a href="/Develop/References/Context_Objects.md#BluetoothInfoObject">BluetoothInfoObject</a> 객체에 btlist[].availableServiceClassList 필드를 추가</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>2019-08-26</td>
       <td>
         <ul>

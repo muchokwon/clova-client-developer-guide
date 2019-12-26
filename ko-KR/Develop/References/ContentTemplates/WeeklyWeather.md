@@ -223,9 +223,14 @@
 {% endraw %}
 
 ## UI example {#UIExample}
-다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 WeeklyWeather 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 landscape 화면 형태에서 WeeklyWeather 템플릿의 내용을 표현한 UI 예제입니다.
 
-![WeeklyWeather](/Develop/Assets/Images/Content-Template-WeeklyWeather.png)
+![Content_Template-WeeklyWeather](/Develop/Assets/Images/Content_Template-WeeklyWeather.png)
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>화면의 어떤 부분에 어떤 필드의 데이터가 표시되어야 나타내는 이미지를 곧 업데이트할 예정입니다.</p>
+</div>
 
 ## See also
 * [Atmosphere](/Develop/References/ContentTemplates/Atmosphere.md)

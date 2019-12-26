@@ -141,9 +141,14 @@ CIC는 사용자가 캘린더 일정의 목록을 요청하면 사용자에게 �
 
 ## UI example {#UIExample}
 
-다음은 {{ book.ServiceEnv.OrientedService }}가 배포한 모바일용 Clova 앱에서 ScheduleList 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 landscape 화면 형태에서 ScheduleList 템플릿의 내용을 표현한 UI 예제입니다.
 
-![](/Develop/Assets/Images/Content_Template-ScheduleList.png)
+![Content_Template-ScheduleList](/Develop/Assets/Images/Content_Template-ScheduleList.png)
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>화면의 어떤 부분에 어떤 필드의 데이터가 표시되어야 나타내는 이미지를 곧 업데이트할 예정입니다.</p>
+</div>
 
 ## See also
 * [Alerts](/Develop/References/MessageInterfaces/Alerts.md) 인터페이스
