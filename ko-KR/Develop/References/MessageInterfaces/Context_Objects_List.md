@@ -1,4 +1,5 @@
 클라이언트의 상태를 파악하여 다음과 같은 [맥락 정보(Context)](/Develop/References/Context_Objects.md)를 함께 전송해야 합니다.
+
 * [`Alerts.AlertsState`](/Develop/References/Context_Objects.md#AlertsState)
 * [`AudioPlayer.PlaybackState`](/Develop/References/Context_Objects.md#PlaybackState)
 * [`Clova.Location`](/Develop/References/Context_Objects.md#Location)

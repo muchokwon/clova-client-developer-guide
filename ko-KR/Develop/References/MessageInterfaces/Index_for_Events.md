@@ -47,6 +47,7 @@
 | SpeechSynthesizer | [`SpeechStopped`](/Develop/References/MessageInterfaces/SpeechSynthesizer.md#SpeechStopped)     | 클라이언트가 TTS 재생을 중지했음을 CIC로 보고하기 위해 사용됩니다.                                 |
 | System          | [`RequestSynchronizeState`](/Develop/References/MessageInterfaces/System.md#RequestSynchronizeState) | 클라이언트가 Clova의 클라우드 환경에 저장된 공유 정보를 동기화해야 할 때 이 이벤트 메시지를 CIC로 전송합니다. |
 | TemplateRuntime    | [`LikeCommandIssued`](/Develop/References/MessageInterfaces/TemplateRuntime.md#LikeCommandIssued) | 사용자가 클라이언트 기기에서 미디어 플레이어에서 특정 미디어에 대해 좋아요 버튼(Like)을 눌렀을 때 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
+| TemplateRuntime    | [`MoreCommandIssued`](/Develop/References/MessageInterfaces/TemplateRuntime.md#MoreCommandIssued) | 사용자가 클라이언트 기기에서 미디어 플레이어에서 특정 미디어에 대해 좋아요 더보기(More)을 눌렀을 때 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
 | TemplateRuntime    | [`RequestPlayerInfo`](/Develop/References/MessageInterfaces/TemplateRuntime.md#RequestPlayerInfo) | 클라이언트가 미디어 플레이어에 표시할 재생 목록, 앨범 이미지, 가사와 같은 재생 메타 정보를 CIC에게 요청합니다. |
 | TemplateRuntime    | [`SubscribeCommandIssued`](/Develop/References/MessageInterfaces/TemplateRuntime.md#SubscribeCommandIssued) | 사용자가 클라이언트 기기에서 미디어 플레이어에서 구독 버튼(Subscribe)을 눌렀을 때 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다.  |
 | TemplateRuntime    | [`UnlikeCommandIssued`](/Develop/References/MessageInterfaces/TemplateRuntime.md#UnlikeCommandIssued) | 사용자가 클라이언트 기기에서 미디어 플레이어에서 특정 미디어에 대해 좋아요 취소 버튼(Unlike)을 눌렀을 때 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
