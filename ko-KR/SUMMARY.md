@@ -14,7 +14,7 @@
   * [조명 색상](/Design/Light.md#LightColor)
   * [조명 효과](/Design/Light.md#LightEffect)
   * [조명 가이드라인](/Design/Light.md#LightGuideline)
-* [소리](/Design/Audio.md)
+* [오디오](/Design/Audio.md)
   * [기본 오디오 재생 규칙](/Design/Audio.md#AudioInterruptionRule)
   * [사용자 발화 시 오디오 재생 규칙](/Design/Audio.md#AudioInterruptionRuleForUserUtterance)
   * [효과음](/Design/Audio.md#SoundEffect)
