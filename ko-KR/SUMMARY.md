@@ -31,9 +31,7 @@
   * [Clova inside 배경 색상](/Design/Clova_Inside.md#ClovaInsideBackgroundColor)
   * [Clova inside 적용 규칙](/Design/Clova_Inside.md#ClovaInsideRules)
 
-## Develop
-
-### Guides
+## Develop guides
 
 * [CIC 개요](/Develop/CIC_Overview.md)
   * [CIC란?](/Develop/CIC_Overview.md#WhatisCIC)
@@ -81,7 +79,7 @@
   * [음원 재생 상태 공유하기](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 * [설정 정보 처리하기](/Develop/Guides/Handle_Settings.md)
 
-### References
+## References
 
 * [CIC API](/Develop/References/CIC_API.md)
   * [API 기본 정보](/Develop/References/CIC_API.md#BasicInfo)
