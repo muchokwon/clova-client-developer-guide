@@ -21,12 +21,13 @@
   </thead>
   <tbody>
     <tr>
-      <td>2019-12-30</td>
+      <td>2019-01-06</td>
       <td>
         <ul>
           <li>더보기 버튼(More)을 표시하기 위해 <a href="/Develop/References/MessageInterfaces/TemplateRuntime.md#MoreCommandIssued">TemplateRuntime.MoreCommandIssued</a> 이벤트 메시지와 <a href="/Develop/References/MessageInterfaces/TemplateRuntime.md#RenderPlayerInfo">TemplateRuntime.RenderPlayerInfo</a> 지시 메시지의 playableItems[].controls[].name 필드에 "MORE" 항목 추가</li>
           <li><a href="/Develop/References/Content_Templates.md">Content template</a>의 예제 화면을 landscape 화면 형태의 UI 예제로 업데이트 (추후 모식도 제공 예정)</li>
           <li>블루투스 서비스 클래스 이름 정보를 공유하기 위해 <a href="/Develop/References/Context_Objects.md#DeviceState">Device.DeviceState</a> 맥락 정보의 <a href="/Develop/References/Context_Objects.md#BluetoothInfoObject">BluetoothInfoObject</a> 객체에 btlist[].availableServiceClassList 필드를 추가</li>
+          <li>클라이언트 지원 오디오 포맷을 보고 하기 위해 <a href="/Develop/References/Context_Objects.md">맥락 정보</a>에 <a href="/Develop/References/Context_Objects.md#Audio">Device.Audio</a> 객체 추가</li>
         </ul>
       </td>
     </tr>

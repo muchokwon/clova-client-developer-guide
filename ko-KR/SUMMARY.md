@@ -111,6 +111,7 @@
   * [AudioPlayer.PlaybackState](/Develop/References/Context_Objects.md#PlaybackState)
   * [Clova.Location](/Develop/References/Context_Objects.md#Location)
   * [Clova.SavedPlace](/Develop/References/Context_Objects.md#SavedPlace)
+  * [Device.Audio](/Develop/References/Context_Objects.md#Audio)
   * [Device.DeviceState](/Develop/References/Context_Objects.md#DeviceState)
     * [AirplaneInfoObject](/Develop/References/Context_Objects.md#AirplaneInfoObject)
     * [BatteryInfoObject](/Develop/References/Context_Objects.md#BatteryInfoObject)

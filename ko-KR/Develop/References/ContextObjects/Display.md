@@ -1,4 +1,5 @@
 ## Device.Display {#Display}
+
 `Device.Display`는 클라이언트 기기의 디스플레이 장치 정보를 CIC에게 보고할 때 사용하는 메시지 포맷입니다. 클라이언트 기기가 가진 디스플레이 장치의 정보를 Clova에게 전달함으로써 화면 비율과 DPI에 맞는 화질의 미디어 콘텐츠를 응답으로 받을 수 있게 됩니다. 이 맥락 정보(context)를 CIC로 전송하지 않으면 Clova는 Full HD 급의 해상도를 가진 디스플레이 장치가 클라이언트에 있다고 가정합니다.
 
 ### Object structure
