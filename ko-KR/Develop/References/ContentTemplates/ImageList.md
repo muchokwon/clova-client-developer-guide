@@ -87,15 +87,13 @@
 ## UI example {#UIExample}
 다음은 landscape 화면 형태에서 ImageList 템플릿의 내용을 표현한 UI 예제입니다.
 
-{% tabs example1="예제 1", example2="예제 2" %}
+* 예제 1
 
-{% content "example1" %}
-![Content_Template-ImageList-Example1](/Develop/Assets/Images/Content_Template-ImageList-Example1.png)
+  ![Content_Template-ImageList-Example1](/Develop/Assets/Images/Content_Template-ImageList-Example1.png)
+  
+* 예제 2
 
-{% content "example2" %}
-![Content_Template-ImageList-Example2](/Develop/Assets/Images/Content_Template-ImageList-Example2.png)
-
-{% endtabs %}
+  ![Content_Template-ImageList-Example2](/Develop/Assets/Images/Content_Template-ImageList-Example2.png)
 
 <div class="note">
   <p><strong>Note!</strong></p>
