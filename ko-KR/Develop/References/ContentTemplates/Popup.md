@@ -223,21 +223,21 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 ## UI example {#UIExample}
 다음은 landscape 화면 형태에서 Popup 템플릿의 내용을 표현한 UI 예제입니다.
 
-{% tabs example1="Toast 형태", example2="Alert 형태", example3="Popup 형태(버튼 1 개)", example4="Popup 형태(버튼 2 개)" %}
+* Toast 형태
 
-{% content "example1" %}
-![Content_Template-Toast](/Develop/Assets/Images/Content_Template-Toast.png)
+  ![Content_Template-Toast](/Develop/Assets/Images/Content_Template-Toast.png)
 
-{% content "example2" %}
-![Content_Template-Alert](/Develop/Assets/Images/Content_Template-Alert.png)
+* Alert 형태
 
-{% content "example3" %}
-![Content_Template-Popup_with_One_Button](/Develop/Assets/Images/Content_Template-Popup_with_One_Button.png)
+  ![Content_Template-Alert](/Develop/Assets/Images/Content_Template-Alert.png)
 
-{% content "example4" %}
-![Content-Template-Popup_with_Two_Buttons](/Develop/Assets/Images/Content_Template-Popup_with_Two_Buttons.png)
+* Popup 형태(버튼 1개)
 
-{% endtabs %}
+  ![Content_Template-Popup_with_One_Button](/Develop/Assets/Images/Content_Template-Popup_with_One_Button.png)
+
+* Popup 형태(버튼 2개)
+
+  ![Content-Template-Popup_with_Two_Buttons](/Develop/Assets/Images/Content_Template-Popup_with_Two_Buttons.png)
 
 <div class="note">
   <p><strong>Note!</strong></p>

@@ -311,18 +311,17 @@
 ## UI example {#UIExample}
 다음은 landscape 화면 형태에서 TodayWeather 템플릿의 내용을 표현한 UI 예제입니다.
 
-{% tabs example1="예제 1", example2="예제 2", example3="예제 3" %}
+* 예제 1
 
-{% content "example1" %}
-![Content_Template-TodayWeather-Example1](/Develop/Assets/Images/Content_Template-TodayWeather-Example1.png)
+  ![Content_Template-TodayWeather-Example1](/Develop/Assets/Images/Content_Template-TodayWeather-Example1.png)
 
-{% content "example2" %}
-![Content_Template-TodayWeather-Example2](/Develop/Assets/Images/Content_Template-TodayWeather-Example2.png)
+* 예제 2
 
-{% content "example3" %}
-![Content_Template-TodayWeather-Example3](/Develop/Assets/Images/Content_Template-TodayWeather-Example3.png)
+  ![Content_Template-TodayWeather-Example2](/Develop/Assets/Images/Content_Template-TodayWeather-Example2.png)
 
-{% endtabs %}
+* 예제 3
+
+  ![Content_Template-TodayWeather-Example3](/Develop/Assets/Images/Content_Template-TodayWeather-Example3.png)
 
 <div class="note">
   <p><strong>Note!</strong></p>

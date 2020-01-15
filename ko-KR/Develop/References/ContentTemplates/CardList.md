@@ -38,9 +38,6 @@
 
 ## Template example
 
-{% tabs example1="Type1, Type2 예제", example2="Type3 예제", example3="Type4 예제", example4="Type5 예제" %}
-
-{% content "example1" %}
 ```json
 // Type1, Type2 예제:
 // 사용자 요청: 공포 영화 추천해줘
@@ -153,9 +150,7 @@
     ...
   ]
 }
-```
-{% content "example2" %}
-```json
+
 // Type3 예제
 // 사용자 요청: 축구 동영상 보여줘
 {
@@ -269,10 +264,7 @@
     ...
   ]
 }
-```
 
-{% content "example3" %}
-```json
 // Type4 예제
 // 사용자 요청: 최신 뉴스 보여줘
 {
@@ -390,10 +382,7 @@
     ...
   ]
 }
-```
 
-{% content "example4" %}
-```json
 // Type5 예제
 // 사용자 요청: ASMR 들려줘
 {
@@ -514,29 +503,29 @@
   "type": "CardList"
 }
 ```
-{% endtabs %}
 
 ## UI example {#UIExample}
 다음은 landscape 화면 형태에서 CardList 템플릿의 내용을 각 카드 타입별로 표현한 UI 예제입니다.
 
-{% tabs type1_2="Type1, Type2", type3="Type3", type4="Type4", type5="Type5", type6="Type6" %}
+* Type1, Type2
 
-{% content "type1_2" %}
-![Content_Template-CardList-Type1_2](/Develop/Assets/Images/Content_Template-CardList-Type1_2.png)
+  ![Content_Template-CardList-Type1_2](/Develop/Assets/Images/Content_Template-CardList-Type1_2.png)
 
-{% content "type3" %}
-![Content_Template-CardList-Type3](/Develop/Assets/Images/Content_Template-CardList-Type3.png)
+* Type3
 
-{% content "type4" %}
-![Content_Template-CardList-Type4](/Develop/Assets/Images/Content_Template-CardList-Type4.png)
+  ![Content_Template-CardList-Type3](/Develop/Assets/Images/Content_Template-CardList-Type3.png)
 
-{% content "type5" %}
-![Content_Template-CardList-Type5](/Develop/Assets/Images/Content_Template-CardList-Type5.png)
+* Type4
 
-{% content "type6" %}
-![Content_Template-ImageList-Example1](/Develop/Assets/Images/Content_Template-ImageList-Example1.png)
+  ![Content_Template-CardList-Type4](/Develop/Assets/Images/Content_Template-CardList-Type4.png)
 
-{% endtabs %}
+* Type5
+
+  ![Content_Template-CardList-Type5](/Develop/Assets/Images/Content_Template-CardList-Type5.png)
+
+* Type6
+
+  ![Content_Template-ImageList-Example1](/Develop/Assets/Images/Content_Template-ImageList-Example1.png)
 
 <div class="tip">
   <p><strong>Tip!</strong></p>

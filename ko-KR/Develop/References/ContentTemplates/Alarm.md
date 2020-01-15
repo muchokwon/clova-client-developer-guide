@@ -101,15 +101,13 @@ CIC는 사용자가 알람을 생성하면 생성한 알람의 정보를 Alarm �
 
 참고로 알람을 울려야 할 때 화면 UI 예제는 다음과 같습니다.
 
-{% tabs example1="예제 1", example2="예제 2" %}
+* 예제 1
 
-{% content "example1" %}
-![Content_Template-Alarm_Goes_Off-Example1](/Develop/Assets/Images/Content_Template-Alarm_Goes_Off-Example1.png)
+  ![Content_Template-Alarm_Goes_Off-Example1](/Develop/Assets/Images/Content_Template-Alarm_Goes_Off-Example1.png)
 
-{% content "example2" %}
-![Content_Template-Alarm_Goes_Off-Example2](/Develop/Assets/Images/Content_Template-Alarm_Goes_Off-Example2.png)
+* 예제 2
 
-{% endtabs %}
+  ![Content_Template-Alarm_Goes_Off-Example2](/Develop/Assets/Images/Content_Template-Alarm_Goes_Off-Example2.png)
 
 ## See also
 * [AlarmList](/Develop/References/ContentTemplates/AlarmList.md)
