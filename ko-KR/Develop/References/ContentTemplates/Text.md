@@ -397,21 +397,21 @@
 ## UI example {#UIExample}
 다음은 landscape 화면 형태에서 Text 템플릿의 내용을 표현한 UI 예제입니다.
 
-{% tabs highlight="강조하는 형태", sentence="문장 형태", paragraph="문단 형태", table="표 형태" %}
+* 강조하는 형태
 
-{% content "highlight" %}
-![Content_Template-Text-Highlight](/Develop/Assets/Images/Content_Template-Text-Highlight.png)
+  ![Content_Template-Text-Highlight](/Develop/Assets/Images/Content_Template-Text-Highlight.png)
 
-{% content "sentence" %}
-![Content_Template-Text-Sentence](/Develop/Assets/Images/Content_Template-Text-Sentence.png)
+* 문장 형태
 
-{% content "paragraph" %}
-![Content_Template-Text-Paragraph](/Develop/Assets/Images/Content_Template-Text-Paragraph.png)
+  ![Content_Template-Text-Sentence](/Develop/Assets/Images/Content_Template-Text-Sentence.png)
 
-{% content "table" %}
-![Content_Template-Text-Table](/Develop/Assets/Images/Content_Template-Text-Table.png)
+* 문단 형태
 
-{% endtabs %}
+  ![Content_Template-Text-Paragraph](/Develop/Assets/Images/Content_Template-Text-Paragraph.png)
+
+* 표 형태
+
+  ![Content_Template-Text-Table](/Develop/Assets/Images/Content_Template-Text-Table.png)
 
 <div class="note">
   <p><strong>Note!</strong></p>

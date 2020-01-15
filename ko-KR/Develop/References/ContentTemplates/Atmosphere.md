@@ -244,15 +244,13 @@
 ## UI example {#UIExample}
 다음은 landscape 화면 형태에서 Atmosphere 템플릿의 내용을 표현한 UI 예제입니다.
 
-{% tabs example1="현재 대기 상태", example2="내일 대기 상태" %}
+* 현재 대기 상태
 
-{% content "example1" %}
-![Content_Template-Atmosphere-Now](/Develop/Assets/Images/Content_Template-Atmosphere-Now.png)
+  ![Content_Template-Atmosphere-Now](/Develop/Assets/Images/Content_Template-Atmosphere-Now.png)
 
-{% content "example2" %}
-![Content_Template-Atmosphere-Tomorrow](/Develop/Assets/Images/Content_Template-Atmosphere-Tomorrow.png)
+* 내일 대기 상태
 
-{% endtabs %}
+  ![Content_Template-Atmosphere-Tomorrow](/Develop/Assets/Images/Content_Template-Atmosphere-Tomorrow.png)
 
 <div class="note">
   <p><strong>Note!</strong></p>
