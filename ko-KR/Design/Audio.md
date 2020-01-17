@@ -148,17 +148,16 @@ Clova가 지원하는 오디오 압축 포맷(codec)은 다음과 같습니다.
 |----------------------------------|-----------|
 | MPEG-1 or MPEG-2 Audio Layer III | 무료       |
 
-Clova가 지원하는 오디오용 컨테이너 포맷은 다음과 같습니다.
+Clova가 지원하는 파일 확장자와 MIME 타입은 다음과 같습니다.
 
-| 컨테이너 포맷   | MIME 타입                      | 비고                           |
+| 파일확장자  | MIME 타입                 | 비고                           |
 |-------------|-------------------------------|-------------------------------|
-| mp3         | audio/mpeg                    | <!-- -->                      |
-| m3u8        | application/vnd.apple.mpegurl | HTTP Live Streaming 사용       |
+| MP3         | audio/mpeg                    | <!-- -->                      |
+| M3U8        | application/vnd.apple.mpegurl | HTTP Live Streaming 사용       |
 
+<!-- End of the shared content -->
 
 <div class="tip">
   <p><strong>Tip!</strong></p>
   <p><a href="/Develop/References/Context_Objects.md">맥락 정보</a> 중 <a href="/Develop/References/Context_Objects.md#Audio">Device.Audio</a> 객체를 이용하면 위와 같은 필수 지원 미디어 포맷뿐만 아니라  클라이언트 기기가 지원하는 미디어 포맷을 사용할 수 있습니다.</p>
 </div>
-
-<!-- End of the shared content -->

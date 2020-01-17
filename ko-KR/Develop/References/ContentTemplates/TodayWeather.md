@@ -10,8 +10,8 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`                 | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 배경 영상 파일의 URI 정보가 담긴 객체. <div class="warning"><p><strong>Warning!</strong></p><p>해당 필드의 데이터는 라이선스 문제로 제휴처에서는 사용하실 수 없습니다.</p></div> |
-| `bgDefaultUrl`              | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 배경 이미지 파일의 URI 정보가 담긴 객체. <div class="note"><p><strong>Note!</strong></p><p><code>bgClipUrl</code> 필드의 영상을 준비하는 동안 <code>bgDefaultUrl</code> 필드의 이미지를 표시할 수 있습니다. 또한, 기술적인 문제나 라이선스 문제로 <code>bgClipUrl</code> 필드의 영상을 제공할 수 없을 때 사용할 수 있습니다.</p></div> |
+| `bgClipUrl`                 | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 배경 영상 파일의 URI 정보가 담긴 객체. <div class="warning"><p><strong>Warning!</strong></p><p>이 필드가 제공하는 미디어 콘텐츠는 Clova 서비스 외의 용도로 사용하실 수 없습니다.</p></div> |
+| `bgDefaultUrl`              | [URIObject](/Develop/References/ContentTemplates/Shared_Objects.md#URIObject) | 배경 이미지 파일의 URI 정보가 담긴 객체. `bgClipUrl` 필드의 영상을 준비하는 동안 `bgDefaultUrl` 필드의 이미지를 표시할 수 있습니다. 또한, 기술적인 문제로 `bgClipUrl` 필드의 영상을 제공할 수 없을 때 사용할 수 있습니다. <div class="warning"><p><strong>Warning!</strong></p><p>이 필드가 제공하는 미디어 콘텐츠는 Clova 서비스 외의 용도로 사용하실 수 없습니다.</p></div> |
 | `concentrationOfFineDust`   | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 미세 먼지 수준 정보가 담긴 객체. |
 | `contentProviderText`       | [StringObject](/Develop/References/ContentTemplates/Shared_Objects.md#StringObject) | 콘텐츠 제공자의 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
 | `hourlyWeatherList[]` | object array | 시간대별 날씨 정보를 가지는 객체 배열 |
