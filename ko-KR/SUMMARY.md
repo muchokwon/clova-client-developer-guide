@@ -14,7 +14,7 @@
   * [조명 색상](/Design/Light.md#LightColor)
   * [조명 효과](/Design/Light.md#LightEffect)
   * [조명 가이드라인](/Design/Light.md#LightGuideline)
-* [소리](/Design/Audio.md)
+* [오디오](/Design/Audio.md)
   * [기본 오디오 재생 규칙](/Design/Audio.md#AudioInterruptionRule)
   * [사용자 발화 시 오디오 재생 규칙](/Design/Audio.md#AudioInterruptionRuleForUserUtterance)
   * [효과음](/Design/Audio.md#SoundEffect)
@@ -31,9 +31,7 @@
   * [Clova inside 배경 색상](/Design/Clova_Inside.md#ClovaInsideBackgroundColor)
   * [Clova inside 적용 규칙](/Design/Clova_Inside.md#ClovaInsideRules)
 
-## Develop
-
-### Guides
+## Develop guides
 
 * [CIC 개요](/Develop/CIC_Overview.md)
   * [CIC란?](/Develop/CIC_Overview.md#WhatisCIC)
@@ -81,7 +79,7 @@
   * [음원 재생 상태 공유하기](/Develop/Guides/Handle_Audio_Playback.md#ShareAudioPlaybackState)
 * [설정 정보 처리하기](/Develop/Guides/Handle_Settings.md)
 
-### References
+## References
 
 * [CIC API](/Develop/References/CIC_API.md)
   * [API 기본 정보](/Develop/References/CIC_API.md#BasicInfo)
@@ -113,6 +111,7 @@
   * [AudioPlayer.PlaybackState](/Develop/References/Context_Objects.md#PlaybackState)
   * [Clova.Location](/Develop/References/Context_Objects.md#Location)
   * [Clova.SavedPlace](/Develop/References/Context_Objects.md#SavedPlace)
+  * [Device.Audio](/Develop/References/Context_Objects.md#Audio)
   * [Device.DeviceState](/Develop/References/Context_Objects.md#DeviceState)
     * [AirplaneInfoObject](/Develop/References/Context_Objects.md#AirplaneInfoObject)
     * [BatteryInfoObject](/Develop/References/Context_Objects.md#BatteryInfoObject)

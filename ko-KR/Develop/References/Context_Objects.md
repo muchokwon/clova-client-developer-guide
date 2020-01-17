@@ -6,6 +6,7 @@
 * [`AudioPlayer.PlaybackState`](#PlaybackState)
 * [`Clova.Location`](#Location)
 * [`Clova.SavedPlace`](#SavedPlace)
+* [`Device.Audio`](#Audio)
 * [`Device.DeviceState`](#DeviceState)
 * [`Device.Display`](#Display)
 * [`Speaker.VolumeState`](#VolumeState)
@@ -18,6 +19,8 @@
 {% include "/Develop/References/ContextObjects/Location.md" %}
 
 {% include "/Develop/References/ContextObjects/SavedPlace.md" %}
+
+{% include "/Develop/References/ContextObjects/Audio.md" %}
 
 {% include "/Develop/References/ContextObjects/DeviceState.md" %}
 
