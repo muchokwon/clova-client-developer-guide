@@ -9,11 +9,17 @@
       "ClovaCustomExtensionDeveloperGuideBaseURI": "https://developers.naver.com/docs/clova/custom_ext",
       "ClovaHomeExtensionDeveloperGuideBaseURI": "https://developers.naver.com/docs/clova/home_ext",
       "DocOwner": "NAVER",
-      "DocVersion": "v2019-01-06",
+      "DocVersion": "v2020-01-06",
       "OutputFormat": "Web",
+<<<<<<< HEAD
       "ReleaseYear": "2019",
       "TargetReaderType": "Public",
       "FileExtensionForExternalLink": "md"
+=======
+      "ReleaseYear": "2020",
+      "TargetReaderType": "Public",
+      "FileExtensionForExternalLink": "md"
+>>>>>>> document
     },
     "ServiceEnv": {
       "AuthAPIBaseURI": "https://auth.clova.ai/",
